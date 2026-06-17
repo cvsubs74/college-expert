@@ -2,9 +2,12 @@
  * Config for the "Connect your AI agent" hub. The Stratia connector is a single
  * remote MCP server (Streamable HTTP + OAuth 2.1 / Dynamic Client Registration +
  * Google sign-in); each client below just adds that one URL. Steps/requirements
- * are current as of 2026-06 (researched from official docs); UI labels drift, so
+ * verified against each client's official docs on 2026-06-17; UI labels drift, so
  * copy is intentionally forgiving. Override nothing server-side per client — the
- * same endpoint serves them all.
+ * same endpoint serves them all. Config JSON keys differ per client and are
+ * load-bearing: Cursor uses `url`, Windsurf uses `serverUrl`, VS Code nests under
+ * `servers` with `type:"http"`, Cline uses `type:"streamableHttp"`, Goose uses
+ * `type:"streamable_http"`/`uri`, Gemini CLI's settings.json uses `httpUrl`.
  */
 
 export const MCP_URL = 'https://stratia-connector-pfnwjfp26a-ue.a.run.app/mcp';
@@ -19,11 +22,11 @@ export const MCP_CLIENTS = [
     supported: true,
     requires: 'Any plan (Free allows 1 custom connector). No developer mode.',
     steps: [
-      'In Claude, go to Settings → Connectors (Team/Enterprise: Organization settings → Connectors).',
-      "Scroll down and click 'Add custom connector'.",
-      'Paste the MCP URL below. Leave the Advanced (Client ID/Secret) fields blank — the server registers itself.',
-      "Click Add → Connect, then complete the Google sign-in.",
-      "In a chat, open '+' → Connectors and toggle Stratia on.",
+      'In Claude (web or desktop), go to Settings/Customize → Connectors (Team/Enterprise: an Owner adds it under Organization settings).',
+      "Click '+', then 'Add custom connector'.",
+      'Paste the MCP URL below. Leave the Advanced (OAuth Client ID/Secret) fields blank — the server self-registers.',
+      "Click Add, then complete the Google sign-in when the browser prompt appears.",
+      "In a chat, open '+' (lower-left) → Connectors and toggle Stratia on.",
     ],
   },
   {
@@ -35,11 +38,11 @@ export const MCP_CLIENTS = [
     supported: true,
     requires: 'ChatGPT Plus, Pro, Business, Enterprise or Edu — web only (not mobile/free).',
     steps: [
-      'On chatgpt.com, open Settings → Apps & Connectors → Advanced settings and turn Developer mode ON.',
+      'On chatgpt.com (web only), open Settings → Apps & Connectors → Advanced settings and turn Developer mode ON.',
       "Back on Apps & Connectors, click Create. Name it 'Stratia' and paste the MCP URL below.",
-      "Set Authentication to OAuth, leave Client ID/Secret blank, check 'I trust this application', then Create.",
+      "Set Authentication to OAuth. Leave Client ID/Secret blank — if the UI marks Client ID required, ignore it and submit anyway (the server self-registers). Tick 'I trust this application', then Create.",
       'Complete the Google sign-in / consent — the connector shows connected.',
-      "In a new chat, open '+' → Developer mode and enable Stratia for that chat.",
+      "In a chat, open '+' → More and select Stratia for that chat.",
     ],
   },
   {
@@ -51,12 +54,12 @@ export const MCP_CLIENTS = [
     supported: true,
     requires: 'Any Claude login or Anthropic API key.',
     steps: [
-      'Run the command below (add --scope user to share across all projects).',
+      'Run the command below (it uses --scope user so Stratia is available across all your projects).',
       'Start Claude Code and run /mcp, select stratia, and choose authenticate.',
       'Complete the Google sign-in in the browser that opens.',
       'Run /mcp again to confirm stratia is connected.',
     ],
-    command: `claude mcp add --transport http stratia ${MCP_URL}`,
+    command: `claude mcp add --transport http --scope user stratia ${MCP_URL}`,
   },
   {
     id: 'cursor',
@@ -109,14 +112,14 @@ export const MCP_CLIENTS = [
     sub: 'CLI',
     emoji: '✦',
     supported: true,
-    requires: 'Free; personal Google account.',
+    requires: 'Free; personal Google account. Needs a recent gemini-cli (remote-server OAuth).',
     steps: [
-      'Install: npm install -g @google/gemini-cli',
-      'Run the command below (add -s user for user scope).',
-      'Start gemini; on first use it opens the browser for Google sign-in.',
-      'Run /mcp to confirm stratia is connected.',
+      'Install or update: npm install -g @google/gemini-cli',
+      'Run the command below — it adds Stratia at user scope (without -s user it would only apply in the current folder).',
+      'Start gemini and run: /mcp auth stratia — a browser opens for Google sign-in; approve it. (This step is required; sign-in does not start on its own.)',
+      'Run /mcp to confirm stratia is connected. If sign-in never opens, update gemini-cli and retry — older versions lack remote-server OAuth.',
     ],
-    command: `gemini mcp add --transport http stratia ${MCP_URL}`,
+    command: `gemini mcp add --transport http -s user stratia ${MCP_URL}`,
   },
   {
     id: 'windsurf',
@@ -126,8 +129,8 @@ export const MCP_CLIENTS = [
     supported: true,
     requires: 'No paid tier for individuals (Enterprise: admin enables MCP).',
     steps: [
-      "Settings → Cascade → MCP Servers → Manage MCPs → 'View raw config'.",
-      "Add the entry below under mcpServers (note the 'serverUrl' field), then Save.",
+      "Open Windsurf Settings → Cascade → MCP Servers (or the MCP icon at the top of the Cascade panel), then click 'View raw config'.",
+      "Add the entry below under mcpServers (note the 'serverUrl' field — Windsurf-specific; no headers/API key), then Save.",
       'Click Refresh and complete the Google sign-in when prompted.',
     ],
     config: `{
@@ -144,11 +147,11 @@ export const MCP_CLIENTS = [
     sub: 'VS Code / JetBrains',
     emoji: '◆',
     supported: true,
-    requires: 'Free, open-source. Use a recent Cline build for OAuth.',
+    requires: 'Free, open-source. Cline 3.x or newer (OAuth for remote servers).',
     steps: [
       "Open Cline → MCP Servers icon → 'Remote Servers' tab.",
-      "Name it 'stratia-connector', paste the MCP URL, Transport = Streamable HTTP.",
-      'Click Add Server and complete the Google sign-in in the browser.',
+      "Name it 'stratia-connector', paste the MCP URL, set Transport Type = Streamable HTTP, then click Add Server.",
+      "The server appears needing auth — click its 'Authenticate' button, then complete the Google sign-in in the browser.",
     ],
     config: `{
   "mcpServers": {
@@ -167,9 +170,9 @@ export const MCP_CLIENTS = [
     supported: true,
     requires: 'Free, open-source. Recent build for Streamable HTTP + OAuth.',
     steps: [
-      "Settings → Extensions → '+ Add custom extension'.",
-      "Type = Streamable HTTP, Name 'Stratia', Endpoint = the MCP URL; leave headers empty.",
-      'On first use, complete the Google sign-in in the browser.',
+      "Open the Goose sidebar → Extensions → 'Add custom extension'.",
+      "Type = 'Remote Extension (Streaming HTTP)', Name 'Stratia', Endpoint = the MCP URL; leave headers empty, then Save.",
+      'Start a chat and ask Goose to use a Stratia tool — a browser opens for Google sign-in (OAuth runs on first tool use); approve it.',
     ],
     config: `{
   "extensions": {
