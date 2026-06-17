@@ -355,3 +355,9 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - REVIEW: reviewer agent APPROVED (behavior parity, partial-links safety, encoding/rel preserved, layout, dead imports). Verdict posted as PR comment.
 - TESTS: all 6 per-surface tests pass UNCHANGED (labels preserved); new AgentLaunchButtons test (verb/bare/partial/empty). Frontend 348 passed, build green. No backend change.
 - NOT shipped: PR #265 open (merge auto-deploys frontend to prod — needs user go-ahead). ConnectAgents AskRow left as-is (its own all-outline style; already has 4 providers from #262).
+
+## 2026-06-17 22:40 — shipped #264 (shared AgentLaunchButtons: Gemini + xAI everywhere, PR #265)
+- PR #265 squash-merged (05c36b85) → #264 auto-closed.
+- Tracking: #264 closed. Board set-status skipped (gh token lacks read:project).
+- Deploy: merge → cloudbuild-main.yaml → frontend. All agent-launch buttons (research cards, workflow groups, popular, weekly-plan banner, fix-my-balance, turn-into-tasks) now offer Claude/ChatGPT/Gemini/Grok via the shared AgentLaunchButtons.
+- With #262 (ask-something cards) + #263 ship, Gemini + xAI are now everywhere. Deep links remain best-effort (Copy reliable).
