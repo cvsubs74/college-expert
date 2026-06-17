@@ -1,6 +1,6 @@
 import React from 'react';
-import { PlayIcon } from '@heroicons/react/24/outline';
 import { balanceSegments, balanceVerdict } from '../../utils/listBalance';
+import AgentLaunchButtons from '../AgentLaunchButtons';
 
 const TONE = {
   good: { wrap: 'border-emerald-200 bg-emerald-50', head: 'text-emerald-800', dot: 'bg-emerald-500' },
@@ -87,26 +87,7 @@ export default function BalanceRing({ reach = 0, target = 0, safety = 0, estimat
         {fixLinks && (verdict.tone === 'warn') && (
           <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5 sm:justify-start">
             <span className="text-xs font-medium text-gray-600">Fix my balance:</span>
-            {fixLinks.claude && (
-              <a
-                href={fixLinks.claude}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 rounded-md bg-[#1A4D2E] px-2.5 py-1 text-xs font-medium text-white hover:bg-[#2D6B45]"
-              >
-                <PlayIcon className="h-3.5 w-3.5" /> Claude
-              </a>
-            )}
-            {fixLinks.chatgpt && (
-              <a
-                href={fixLinks.chatgpt}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-2.5 py-1 text-xs font-medium text-gray-700 hover:bg-gray-50"
-              >
-                <PlayIcon className="h-3.5 w-3.5" /> ChatGPT
-              </a>
-            )}
+            <AgentLaunchButtons links={fixLinks} verb={null} size="sm" />
           </div>
         )}
       </div>

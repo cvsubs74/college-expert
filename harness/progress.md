@@ -347,3 +347,11 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Tracking: #262 closed. Board set-status skipped (gh token lacks read:project).
 - Deploy: merge → cloudbuild-main.yaml → frontend. /connect Ask-something cards now offer Ask-in-Gemini + Ask-in-Grok (xAI) alongside Claude/ChatGPT.
 - Caveat: Gemini/Grok deep-link prefill is best-effort (Copy is the guaranteed path), same contract as the existing Claude/ChatGPT links.
+
+## 2026-06-17 22:25 — Shared AgentLaunchButtons: Gemini + xAI on every launch (PR #265, open) — #264
+- GOAL/steer: user said "Yes add them" → extend Gemini/Grok (from #262's Ask-something cards) to ALL agent-launch buttons.
+- Built a shared AgentLaunchButtons (single source of truth for the provider list: claude/chatgpt/gemini/grok; first-present primary green + optional verb; filters missing providers). Wired into 6 surfaces: ResearchCard workflow widget, WorkflowGroupCard, PopularWorkflowCard, WeeklyPlanBanner RunLinks, BalanceRing fix-links, TurnIntoTasks. Containers → flex-wrap; dead PlayIcon imports removed.
+- Net +107/-94 (the shared component removes the 6x duplication despite +2 providers each).
+- REVIEW: reviewer agent APPROVED (behavior parity, partial-links safety, encoding/rel preserved, layout, dead imports). Verdict posted as PR comment.
+- TESTS: all 6 per-surface tests pass UNCHANGED (labels preserved); new AgentLaunchButtons test (verb/bare/partial/empty). Frontend 348 passed, build green. No backend change.
+- NOT shipped: PR #265 open (merge auto-deploys frontend to prod — needs user go-ahead). ConnectAgents AskRow left as-is (its own all-outline style; already has 4 providers from #262).

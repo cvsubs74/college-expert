@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { PlayIcon, ArrowPathIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import { researchProvenance } from '../../utils/research';
+import AgentLaunchButtons from '../AgentLaunchButtons';
 
 /**
  * "This week" banner — the agent-authored weekly action card pinned to the top
@@ -31,7 +32,7 @@ export default function WeeklyPlanBanner({ plan, promptLinks = {} }) {
               Ask your connected agent for the 3 most important things to do this week — it’ll pin them here.
             </p>
           </div>
-          <div className="flex shrink-0 items-center gap-1.5">
+          <div className="flex flex-wrap items-center justify-end gap-1.5">
             <RunLinks promptLinks={promptLinks} verb="Get my plan" />
           </div>
         </div>
@@ -56,7 +57,7 @@ export default function WeeklyPlanBanner({ plan, promptLinks = {} }) {
           </span>
           <h2 className="mt-1.5 text-base font-semibold text-gray-900">{plan.title || 'This week’s plan'}</h2>
         </div>
-        <div className="flex shrink-0 items-center gap-1.5">
+        <div className="flex flex-wrap items-center justify-end gap-1.5">
           <RunLinks promptLinks={promptLinks} verb="Refresh" icon={ArrowPathIcon} />
         </div>
       </div>
@@ -80,28 +81,5 @@ export default function WeeklyPlanBanner({ plan, promptLinks = {} }) {
 
 /** Open-in-agent links shared by the plan + cold-start states. */
 function RunLinks({ promptLinks = {}, verb = 'Run', icon: Icon = PlayIcon }) {
-  return (
-    <>
-      {promptLinks.claude && (
-        <a
-          href={promptLinks.claude}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-1 rounded-md bg-[#1A4D2E] px-2.5 py-1.5 text-xs font-medium text-white hover:bg-[#2D6B45]"
-        >
-          <Icon className="h-3.5 w-3.5" /> {verb} in Claude
-        </a>
-      )}
-      {promptLinks.chatgpt && (
-        <a
-          href={promptLinks.chatgpt}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-1 rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50"
-        >
-          <Icon className="h-3.5 w-3.5" /> ChatGPT
-        </a>
-      )}
-    </>
-  );
+  return <AgentLaunchButtons links={promptLinks} verb={verb} Icon={Icon} size="sm" />;
 }
