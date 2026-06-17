@@ -361,3 +361,13 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Tracking: #264 closed. Board set-status skipped (gh token lacks read:project).
 - Deploy: merge → cloudbuild-main.yaml → frontend. All agent-launch buttons (research cards, workflow groups, popular, weekly-plan banner, fix-my-balance, turn-into-tasks) now offer Claude/ChatGPT/Gemini/Grok via the shared AgentLaunchButtons.
 - With #262 (ask-something cards) + #263 ship, Gemini + xAI are now everywhere. Deep links remain best-effort (Copy reliable).
+
+## 2026-06-17 22:56 — Fix /connect MCP connection steps for all clients (PR #267, open) — #266
+- GOAL: "make sure all the mcp connections work; steps correct + simplified." User reported Gemini CLI failing.
+- METHOD: 10-agent web-research workflow (wf_b118a574-404) verified each of 9 clients vs official docs; I then DIRECTLY verified the flagged Gemini CLI against google-gemini/gemini-cli docs (WebSearch + WebFetch) before acting.
+- KEY FINDING: Gemini CLI failure = missing OAuth step, NOT a syntax typo. Docs confirm remote-HTTP OAuth+DCR IS supported. Fix: command adds at user scope (-s user; default is project-only) + steps now include the REQUIRED  (sign-in doesn't auto-start) + "update gemini-cli" fallback. Kept supported (rejected an agent's over-eager "broken/#12628/demote" claim — unverified, contradicted by docs).
+- OTHER FIXES: Claude Code (--scope user baked in), Claude.ai (Customize→Connectors, "Add" button), ChatGPT (+→More→Stratia; Client-ID-can-be-blank caveat), Cline (Authenticate click + 3.x min), Goose (Remote Extension (Streaming HTTP) label, sidebar, OAuth on first tool use), Windsurf (drop non-existent "Manage MCPs"). Cursor + VS Code confirmed correct, unchanged.
+- SAFETY: all config JSON keys, MCP_URL, deep links byte-identical (load-bearing, not interchangeable). New mcpClients.test.js locks the corrected commands + config keys.
+- REVIEW: reviewer agent APPROVED (no config regression, deep links/URL intact, node --check, test assertions match). Verdict posted as PR comment.
+- TESTS: frontend 354 passed (+6), build green. No backend change.
+- NOT shipped: PR #267 open (merge auto-deploys frontend to prod — needs user go-ahead).
