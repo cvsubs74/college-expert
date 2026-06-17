@@ -332,3 +332,12 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Tracking: #250 closed. Board set-status skipped (gh token lacks read:project).
 - Deploy: merge → cloudbuild-main.yaml → profile_manager_v2 (get-college-list fit join) + connector + frontend.
 - ROADMAP COMPLETE: all 3 quick-wins (#243-245) + all 6 top features (Decision Ledger #247, This Week's 3 Things #248, Profile-aware Popular #249, Balance Ring fit-join #250, Research→Roadmap #251) + AI-agents whitepaper/landing #254 are shipped. Only #252 Fit Drift Timeline remains — deliberately deferred (ideation: wait until the recompute loop has fit-history volume).
+
+## 2026-06-17 09:41 — Ask-something: add Gemini + xAI (Grok) buttons (PR #263, open) — #262
+- GOAL: the /connect "Ask something real" cards should also offer Gemini and xAI, not just Claude/ChatGPT.
+- askLinks: added best-effort gemini (gemini.google.com/app?q=) + grok (grok.com/?q=) keys alongside claude/chatgpt (Copy stays the reliable path; additive — other consumers read specific keys, unaffected).
+- ConnectAgents AskRow: "Ask in Gemini" + "Ask in Grok" anchors; button group → flex-wrap so 4 buttons + Copy wrap. Subtitle → "Claude, ChatGPT, Gemini or Grok."
+- REVIEW: reviewer agent APPROVED (anchor consistency, flex-wrap, additive keys). Verdict posted as PR comment.
+- TESTS: ConnectAgents asserts gemini/grok links; frontend 344 passed, build green. No backend change.
+- NOT shipped: PR #263 open (merge auto-deploys frontend to prod — needs user go-ahead).
+- NOTE: deep-link prefill for Gemini/Grok is best-effort (can't verify without a live browser); Copy is the guaranteed path, consistent with the existing Claude/ChatGPT links.
