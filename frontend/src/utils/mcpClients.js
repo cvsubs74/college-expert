@@ -214,5 +214,7 @@ export function askLinks(prompt) {
   return {
     claude: `https://claude.ai/new?q=${q}`,
     chatgpt: `https://chatgpt.com/?q=${q}`,
+    gemini: `https://gemini.google.com/app?q=${q}`,
+    grok: `https://grok.com/?q=${q}`,
   };
 }

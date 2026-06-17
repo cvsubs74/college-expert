@@ -100,7 +100,7 @@ function AskRow({ item }) {
         <p className="truncate text-sm font-medium text-gray-800" title={item.title}>{item.title}</p>
         <p className="truncate text-xs text-gray-500" title={item.prompt}>{item.prompt}</p>
       </div>
-      <div className="flex shrink-0 items-center gap-1.5">
+      <div className="flex shrink-0 flex-wrap items-center justify-end gap-1.5">
         <a href={links.claude} target="_blank" rel="noreferrer"
           className="rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50">
           Ask in Claude
@@ -108,6 +108,14 @@ function AskRow({ item }) {
         <a href={links.chatgpt} target="_blank" rel="noreferrer"
           className="rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50">
           Ask in ChatGPT
+        </a>
+        <a href={links.gemini} target="_blank" rel="noreferrer"
+          className="rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50">
+          Ask in Gemini
+        </a>
+        <a href={links.grok} target="_blank" rel="noreferrer"
+          className="rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50">
+          Ask in Grok
         </a>
         <CopyButton text={item.prompt} />
       </div>
@@ -170,7 +178,7 @@ export default function ConnectAgents() {
       <section className="mt-8">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-gray-500">Ask something real</h2>
         <p className="mt-1 text-sm text-gray-600">
-          These aren’t questions a dashboard can answer. Copy one, or open it straight in Claude or ChatGPT.
+          These aren’t questions a dashboard can answer. Copy one, or open it straight in Claude, ChatGPT, Gemini or Grok.
         </p>
         <div className="mt-2 overflow-hidden rounded-xl border border-gray-200 bg-white">
           {ASK_PROMPTS.map((p, i) => (
