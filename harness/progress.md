@@ -386,3 +386,10 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - SECURITY REVIEW: CLEAN (no audience/replay/bypass weakening; public discovery route can't shadow auth routes; 404s under kill switch). Applied the trailing-slash NIT. Caveat: local SDK 1.12.4 != prod 1.27.2 -> live curl is the real test.
 - TESTS: connector 84, full backend 1049, green. settings test locks mcp_resource().
 - NOT YET DEPLOYED: connector is NOT auto-deployed on merge. After /ship (merge), run ./deploy.sh stratia-connector, then curl the well-known to confirm resource=.../mcp, then user re-tests Gemini /mcp auth stratia.
+
+## SHIPPED + DEPLOYED — #268 connector OAuth resource fix (PR #269)
+- PR #269 squash-merged (40b298a2) -> #268 auto-closed.
+- DEPLOYED the connector (NOT auto-deployed on merge): ./deploy.sh stratia-connector -> Cloud Run revision stratia-connector-00024-7hp, 100% traffic.
+- VERIFIED LIVE (curl): /.well-known/oauth-protected-resource/mcp now 200 with resource=.../mcp (was 404); bare /.well-known/oauth-protected-resource now resource=.../mcp via the alias (was root); 401 WWW-Authenticate resource_metadata points to the /mcp well-known. authorization_servers consistent (origin, trailing slash) on both docs.
+- RESULT: Gemini CLI's "Protected resource ... does not match expected .../mcp" check now passes. User to re-test: gemini -> /mcp auth stratia.
+- Board set-status skipped (gh token lacks read:project).
