@@ -377,3 +377,12 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Tracking: #266 closed. Board set-status skipped (gh token lacks read:project).
 - Deploy: merge -> cloudbuild-main.yaml -> frontend. Corrected/simplified MCP connect steps now live (Gemini CLI: -s user + /mcp auth stratia; plus Claude.ai/ChatGPT/Cline/Goose/Windsurf/Claude Code fixes).
 - Open follow-up: Windsurf is medium-confidence (DCR not doc-confirmed) — worth one manual click-through. #252 Fit Drift Timeline still deferred.
+
+## 2026-06-18 11:47 — Connector OAuth resource fix (Gemini CLI root cause) — PR #269, open — #268
+- REAL Gemini failure: /mcp auth stratia -> "Protected resource https://.../ does not match expected https://.../mcp". Server-side, not the instructions.
+- ROOT CAUSE: AuthSettings.resource_server_url = PUBLIC_BASE_URL (origin); mcp SDK published resource=origin in /.well-known/oauth-protected-resource + the 401 WWW-Authenticate. Strict clients (Gemini CLI) require resource == connected URL (/mcp); Claude ignores it. Confirmed live (resource=".../", /mcp well-known 404).
+- FIX (server.py): resource_server_url -> settings.mcp_resource() (.../mcp) — already the RFC 8707 audience the provider binds tokens to; resource_ok() is path-agnostic so token mint/validate unchanged. + back-compat alias custom_route at bare /.well-known/oauth-protected-resource serving the same doc (resource=.../mcp) so clients probing root don't regress. issuer_url stays origin.
+- VERIFY: mcp SDK 1.27.2 (prod) path-appends well-known to /mcp; build_resource_metadata_url + create_protected_resource_routes set resource=resource_server_url. Reasoned from SDK source.
+- SECURITY REVIEW: CLEAN (no audience/replay/bypass weakening; public discovery route can't shadow auth routes; 404s under kill switch). Applied the trailing-slash NIT. Caveat: local SDK 1.12.4 != prod 1.27.2 -> live curl is the real test.
+- TESTS: connector 84, full backend 1049, green. settings test locks mcp_resource().
+- NOT YET DEPLOYED: connector is NOT auto-deployed on merge. After /ship (merge), run ./deploy.sh stratia-connector, then curl the well-known to confirm resource=.../mcp, then user re-tests Gemini /mcp auth stratia.

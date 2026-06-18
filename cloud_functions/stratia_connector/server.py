@@ -63,7 +63,14 @@ mcp = FastMCP(
     auth_server_provider=provider,
     auth=AuthSettings(
         issuer_url=AnyHttpUrl(settings.PUBLIC_BASE_URL),
-        resource_server_url=AnyHttpUrl(settings.PUBLIC_BASE_URL),
+        # The protected resource is the MCP endpoint (…/mcp), NOT the origin. The
+        # SDK publishes this as the `resource` in /.well-known/oauth-protected-
+        # resource (path-appended per RFC 9728 §3.1) and in the 401
+        # WWW-Authenticate header. It MUST equal the URL the client connected to
+        # (…/mcp) or strict clients (e.g. Gemini CLI) abort with "Protected
+        # resource … does not match expected …/mcp". (matches settings.mcp_resource()
+        # / the RFC 8707 audience the provider already binds tokens to.)
+        resource_server_url=AnyHttpUrl(settings.mcp_resource()),
         required_scopes=[settings.MCP_SCOPE],
         client_registration_options=ClientRegistrationOptions(
             enabled=True,
@@ -543,6 +550,24 @@ async def google_callback(request: Request):
         logger.exception("Google callback failed")
         return HTMLResponse(f"Sign-in error: {e}", status_code=400)
     return RedirectResponse(redirect_url, status_code=302)
+
+
+@mcp.custom_route("/.well-known/oauth-protected-resource", methods=["GET"])
+async def protected_resource_root(_request: Request):
+    """Back-compat: the canonical protected-resource metadata lives at
+    /.well-known/oauth-protected-resource/mcp (path-appended per RFC 9728 §3.1,
+    which the SDK serves once resource_server_url carries the /mcp path). Some
+    clients still probe the bare well-known — serve the SAME doc here so none
+    regress. `resource` is the canonical …/mcp URL either way, so a client that
+    discovered metadata at this path still finds a matching resource."""
+    return JSONResponse({
+        "resource": settings.mcp_resource(),
+        # Normalize exactly as the SDK's canonical /mcp-path doc does (AnyHttpUrl
+        # adds the trailing slash) so the two well-knowns are byte-consistent.
+        "authorization_servers": [str(AnyHttpUrl(settings.PUBLIC_BASE_URL))],
+        "scopes_supported": [settings.MCP_SCOPE],
+        "bearer_methods_supported": ["header"],
+    })
 
 
 @mcp.custom_route("/health", methods=["GET"])
