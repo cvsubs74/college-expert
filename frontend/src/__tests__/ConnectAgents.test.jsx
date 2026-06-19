@@ -37,7 +37,9 @@ describe('ConnectAgents (Connect your AI agent hub)', () => {
     const first = rows[0];
     expect(within(first).getByRole('link', { name: /ask in claude/i })).toHaveAttribute('href', expect.stringContaining('claude.ai'));
     expect(within(first).getByRole('link', { name: /ask in chatgpt/i })).toHaveAttribute('href', expect.stringContaining('chatgpt.com'));
-    expect(within(first).getByRole('link', { name: /ask in gemini/i })).toHaveAttribute('href', expect.stringContaining('gemini.google.com'));
     expect(within(first).getByRole('link', { name: /ask in grok/i })).toHaveAttribute('href', expect.stringContaining('grok.com'));
+    // Gemini is a "Gemini CLI" copy button (its web app can't use MCP connectors), not a web link.
+    expect(within(first).queryByRole('link', { name: /gemini/i })).not.toBeInTheDocument();
+    expect(within(first).getByRole('button', { name: /gemini cli/i })).toBeInTheDocument();
   });
 });

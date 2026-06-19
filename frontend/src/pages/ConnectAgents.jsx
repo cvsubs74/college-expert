@@ -6,7 +6,7 @@ import {
   MinusIcon,
   ArrowTopRightOnSquareIcon,
 } from '@heroicons/react/24/outline';
-import { MCP_URL, MCP_CLIENTS, ASK_PROMPTS, askLinks } from '../utils/mcpClients';
+import { MCP_URL, MCP_CLIENTS, ASK_PROMPTS, askLinks, geminiCliCommand } from '../utils/mcpClients';
 
 /** Small copy-to-clipboard button with transient "Copied" feedback. */
 function CopyButton({ text, label = 'Copy', className = '' }) {
@@ -109,15 +109,15 @@ function AskRow({ item }) {
           className="rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50">
           Ask in ChatGPT
         </a>
-        <a href={links.gemini} target="_blank" rel="noreferrer"
-          className="rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50">
-          Ask in Gemini
-        </a>
+        {/* Gemini's web app can't use MCP connectors — only the CLI can — so this
+            copies a runnable command (paste in your terminal) instead of opening
+            a useless web link. */}
+        <CopyButton text={geminiCliCommand(item.prompt)} label="Gemini CLI" />
         <a href={links.grok} target="_blank" rel="noreferrer"
           className="rounded-md border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 hover:bg-gray-50">
           Ask in Grok
         </a>
-        <CopyButton text={item.prompt} />
+        <CopyButton text={item.prompt} label="Copy prompt" />
       </div>
     </div>
   );

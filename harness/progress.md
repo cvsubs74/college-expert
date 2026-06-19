@@ -393,3 +393,11 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - VERIFIED LIVE (curl): /.well-known/oauth-protected-resource/mcp now 200 with resource=.../mcp (was 404); bare /.well-known/oauth-protected-resource now resource=.../mcp via the alias (was root); 401 WWW-Authenticate resource_metadata points to the /mcp well-known. authorization_servers consistent (origin, trailing slash) on both docs.
 - RESULT: Gemini CLI's "Protected resource ... does not match expected .../mcp" check now passes. User to re-test: gemini -> /mcp auth stratia.
 - Board set-status skipped (gh token lacks read:project).
+
+## SESSION — Gemini agent button -> runnable CLI command (PR #271, open) — #270
+- USER ASK: "Ask in Gemini" opens gemini web, no prefill; can the button open a terminal + auto-run? ANSWER: no (browser can't open/run a terminal). Plus verified the Gemini WEB app can't use MCP connectors at all (only CLI/Antigravity/Enterprise can); Grok web CAN (grok.com/connectors). Sources cited.
+- USER CHOSE: hands-free (--approval-mode=yolo).
+- BUILT: geminiCliCommand(prompt) -> `gemini -p '<prompt>' --approval-mode=yolo` (POSIX single-quote escaped, injection-safe). AgentLaunchButtons: Gemini -> "Gemini CLI" copy button (recovers prompt from prop or the gemini link q-param, so callers unchanged); Claude/ChatGPT/Grok stay web links. ConnectAgents Ask-something cards: Gemini -> Gemini CLI copy; generic copy -> "Copy prompt".
+- REVIEW: reviewer agent died on an infra error (socket closed) mid-run -> self-verified the risk points (canonical POSIX escape, recovery path unit-tested, other providers + present[0]-primary unchanged, clipboard try/catch).
+- TESTS: frontend 357 passed (escaping incl apostrophes, copy button no-link, recovery-from-links path). Build green. No backend change.
+- NOT shipped: PR #271 open (frontend auto-deploys on merge).
