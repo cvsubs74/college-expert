@@ -401,3 +401,7 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - REVIEW: reviewer agent died on an infra error (socket closed) mid-run -> self-verified the risk points (canonical POSIX escape, recovery path unit-tested, other providers + present[0]-primary unchanged, clipboard try/catch).
 - TESTS: frontend 357 passed (escaping incl apostrophes, copy button no-link, recovery-from-links path). Build green. No backend change.
 - NOT shipped: PR #271 open (frontend auto-deploys on merge).
+
+##  — shipped #270 (Gemini CLI copy button, PR #271)
+- PR #271 squash-merged -> #270 closed. Frontend-only; auto-deploys via main pipeline.
+- "Ask in Gemini" now copies `gemini -p ... --approval-mode=yolo` (runnable in terminal) instead of a dead web link.
