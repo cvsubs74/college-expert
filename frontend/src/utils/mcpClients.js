@@ -211,6 +211,19 @@ export const ASK_PROMPTS = [
   { title: 'Tune up a stale fit and capture the strategy', prompt: 'Check which of my saved fits are stale, recompute the one that matters most (yes, spend the credit), then summarize what changed and save the updated strategy.' },
 ];
 
+/**
+ * A copy-pasteable Gemini CLI command that runs `prompt` non-interactively
+ * against the connected Stratia tools. The Gemini *web app* can't use MCP
+ * connectors (only the CLI can) and a web page can't open a terminal, so the
+ * useful hand-off for Gemini is a runnable command, not a link. `--approval-mode
+ * =yolo` auto-approves tool calls so it runs end-to-end from one paste. The
+ * prompt is POSIX single-quoted (embedded `'` escaped) so it's shell-safe.
+ */
+export function geminiCliCommand(prompt) {
+  const quoted = `'${String(prompt || '').replace(/'/g, "'\\''")}'`;
+  return `gemini -p ${quoted} --approval-mode=yolo`;
+}
+
 /** Open-in-agent deep links for a prompt (best-effort; Copy is the reliable path). */
 export function askLinks(prompt) {
   const q = encodeURIComponent(prompt);

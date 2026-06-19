@@ -9,8 +9,10 @@ describe('AgentLaunchButtons', () => {
     expect(claude.getAttribute('href')).toContain('claude.ai');
     expect(claude.getAttribute('href')).toContain(encodeURIComponent('do the thing'));
     expect(screen.getByRole('link', { name: /^chatgpt$/i }).getAttribute('href')).toContain('chatgpt.com');
-    expect(screen.getByRole('link', { name: /^gemini$/i }).getAttribute('href')).toContain('gemini.google.com');
     expect(screen.getByRole('link', { name: /^grok$/i }).getAttribute('href')).toContain('grok.com');
+    // Gemini renders a copy-the-CLI-command button (its web app can't use MCP), not a web link.
+    expect(screen.queryByRole('link', { name: /^gemini$/i })).not.toBeInTheDocument();
+    expect(screen.getByTestId('gemini-cli-copy').getAttribute('title')).toMatch(/gemini -p .*--approval-mode=yolo/);
   });
 
   it('verb=null renders bare product names (no "Run in")', () => {
@@ -25,6 +27,17 @@ describe('AgentLaunchButtons', () => {
     expect(screen.getByRole('link', { name: /^chatgpt$/i })).toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /^gemini$/i })).not.toBeInTheDocument();
     expect(screen.queryByRole('link', { name: /^grok$/i })).not.toBeInTheDocument();
+  });
+
+  it('recovers the prompt from a links object (the path real callers use) for the Gemini command', () => {
+    // Callers pass `links` (askLinks output), not the raw prompt — Gemini must
+    // still produce a runnable command by decoding the link's q param.
+    render(<AgentLaunchButtons links={{
+      claude: 'https://claude.ai/new?q=x',
+      gemini: `https://gemini.google.com/app?q=${encodeURIComponent("What's due next?")}`,
+    }} />);
+    const title = screen.getByTestId('gemini-cli-copy').getAttribute('title');
+    expect(title).toContain("gemini -p 'What'\\''s due next?' --approval-mode=yolo");
   });
 
   it('renders nothing with no usable links', () => {

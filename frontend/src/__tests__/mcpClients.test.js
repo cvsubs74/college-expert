@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { MCP_URL, MCP_CLIENTS } from '../utils/mcpClients';
+import { MCP_URL, MCP_CLIENTS, geminiCliCommand } from '../utils/mcpClients';
 
 const byId = (id) => MCP_CLIENTS.find((c) => c.id === id);
 
@@ -41,5 +41,17 @@ describe('mcpClients connection config (verified against official docs)', () => 
   it('Cline includes the required Authenticate click and names a min version', () => {
     expect(byId('cline').steps.join(' ')).toMatch(/Authenticate/);
     expect(byId('cline').requires).toMatch(/3\.x/);
+  });
+});
+
+describe('geminiCliCommand', () => {
+  it('builds a hands-free non-interactive Gemini CLI command', () => {
+    expect(geminiCliCommand('compare two colleges'))
+      .toBe("gemini -p 'compare two colleges' --approval-mode=yolo");
+  });
+
+  it('POSIX-escapes embedded single quotes so the prompt is shell-safe', () => {
+    expect(geminiCliCommand("What's due?"))
+      .toBe("gemini -p 'What'\\''s due?' --approval-mode=yolo");
   });
 });
