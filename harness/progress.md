@@ -412,3 +412,7 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - IMMEDIATE user workaround (no deploy needed): export GEMINI_API_KEY=<key> and re-run the copied command.
 - TESTS: frontend 358 passed; build green. Copy-only change, no heavy review.
 - NOT shipped: PR #273 open (frontend auto-deploys on merge).
+
+## 2026-06-20 09:33 — shipped #272 (Gemini CLI API-key card, PR #273)
+- PR #273 squash-merged -> #272 closed. Frontend-only; auto-deploys via main pipeline.
+- Gemini CLI card now documents GEMINI_API_KEY auth (Googles free CLI login retired 2026-06-18).
