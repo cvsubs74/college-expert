@@ -24,6 +24,13 @@ describe('mcpClients connection config (verified against official docs)', () => 
     expect(g.steps.some((s) => s.includes('/mcp auth stratia'))).toBe(true);
   });
 
+  it('Gemini CLI uses API-key auth (the free Google-account login was retired 2026-06-18)', () => {
+    const g = byId('gemini_cli');
+    expect(g.steps.some((s) => s.includes('GEMINI_API_KEY'))).toBe(true);
+    expect(g.steps.some((s) => /aistudio\.google\.com\/apikey/.test(s))).toBe(true);
+    expect(g.requires).toMatch(/API key/i);
+  });
+
   it('per-client config JSON keys are the load-bearing ones (they are NOT interchangeable)', () => {
     expect(byId('cursor').config).toContain('"url"');
     expect(byId('cursor').config).not.toContain('serverUrl');
