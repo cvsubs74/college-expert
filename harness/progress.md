@@ -405,3 +405,10 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 ##  — shipped #270 (Gemini CLI copy button, PR #271)
 - PR #271 squash-merged -> #270 closed. Frontend-only; auto-deploys via main pipeline.
 - "Ask in Gemini" now copies `gemini -p ... --approval-mode=yolo` (runnable in terminal) instead of a dead web link.
+
+## SESSION — Gemini CLI card -> API-key auth (PR #273, open) — #272
+- ROOT CAUSE (Google-side, 2026-06-18): Google retired gemini-cli free Google-account login (IneligibleTierError -> Antigravity). API-key auth is EXEMPT and works. Antigravity has open OAuth+FastMCP bugs (antigravity-cli#25, fastmcp#2489) -> unreliable for Stratia now. User chose Gemini CLI + API key (proven; their /mcp auth stratia already succeeded, only the model login broke).
+- FIX: Gemini CLI card steps now include getting a Gemini API key (aistudio.google.com/apikey) + export GEMINI_API_KEY before adding the server; requires notes the retirement. Command + /mcp auth step unchanged. The #270 copy button works once the key is set.
+- IMMEDIATE user workaround (no deploy needed): export GEMINI_API_KEY=<key> and re-run the copied command.
+- TESTS: frontend 358 passed; build green. Copy-only change, no heavy review.
+- NOT shipped: PR #273 open (frontend auto-deploys on merge).
