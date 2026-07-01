@@ -14,6 +14,7 @@ from google.genai import types
 
 from firestore_db import get_db
 from versioning import coerce_year, normalize_percentages, validate_profile
+from gemini_fallback import generate_content_with_fallback
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -661,10 +662,11 @@ The suggested_questions should be 3 relevant follow-up questions the user might 
             parts=[types.Part(text=question)]
         ))
         
-        # Call Gemini with JSON response format
+        # Call Gemini with JSON response format (auto-falls back to another model
+        # if the primary is overloaded, so a 503 doesn't kill the chat).
         client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-        response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
+        response = generate_content_with_fallback(
+            client,
             contents=contents,
             config=types.GenerateContentConfig(
                 temperature=0.7,

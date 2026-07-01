@@ -15,6 +15,8 @@ import {
 import ReactMarkdown from 'react-markdown';
 import { useAuth } from '../context/AuthContext';
 import ConfirmationModal from './ConfirmationModal';
+import AgentChatHandoff from './AgentChatHandoff';
+import { fitAgentPrompt } from '../utils/agentHandoff';
 
 // API Configuration
 const PROFILE_MANAGER_V2_URL = import.meta.env.VITE_PROFILE_MANAGER_V2_URL ||
@@ -699,6 +701,14 @@ const FitChatWidget = ({ universityId, universityName, fitCategory, intendedMajo
 
                 {/* Input */}
                 <div className="p-3 border-t bg-white">
+                    <AgentChatHandoff
+                        className="mb-2"
+                        prompt={fitAgentPrompt(universityName, {
+                            fitCategory,
+                            intendedMajor,
+                            question: [...messages].reverse().find((m) => m.role === 'user')?.content,
+                        })}
+                    />
                     <div className="flex gap-2">
                         <div className="flex flex-col flex-1 gap-2">
                             <div className="flex gap-2">

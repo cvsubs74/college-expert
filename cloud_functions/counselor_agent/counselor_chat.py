@@ -5,6 +5,7 @@ import json
 import requests
 import google.generativeai as genai
 from counselor_tools import get_student_profile, get_college_list, get_all_fits, get_targeted_university_context
+from gemini_fallback import send_message_with_fallback
 
 logger = logging.getLogger(__name__)
 
@@ -120,17 +121,17 @@ def chat_with_counselor(request):
         # Inject current date into system prompt as well
         system_prompt_with_date = SYSTEM_PROMPT.format(current_date=current_date)
         
-        model = genai.GenerativeModel('gemini-2.5-flash-lite', 
-                                      system_instruction=system_prompt_with_date)
-        
-        chat = model.start_chat(history=history)
-        
         # Inject context in the final message if it's the start or just append to user message
         # For simplicity/statelessness, we append context to the current message
         full_message = f"CONTEXT:\n{context_str}\n\nUSER MESSAGE:\n{message}"
-        
-        # 4. Generate Response
-        response = chat.send_message(full_message)
+
+        # 4. Generate Response (auto-falls back to another model if the primary
+        # is overloaded, so a 503 doesn't kill the chat).
+        response = send_message_with_fallback(
+            full_message,
+            history=history,
+            system_instruction=system_prompt_with_date,
+        )
         
         # 5. Parse JSON output
         try:

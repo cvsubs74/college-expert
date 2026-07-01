@@ -14,6 +14,8 @@ import {
 import ReactMarkdown from 'react-markdown';
 import { useAuth } from '../context/AuthContext';
 import ConfirmationModal from './ConfirmationModal';
+import AgentChatHandoff from './AgentChatHandoff';
+import { universityAgentPrompt } from '../utils/agentHandoff';
 
 // API Configuration
 const KNOWLEDGE_BASE_UNIVERSITIES_URL = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL ||
@@ -517,6 +519,10 @@ const UniversityChatWidget = ({ universityId, universityName, isOpen, onClose })
 
                 {/* Input */}
                 <div className="p-3 border-t bg-white">
+                    <AgentChatHandoff
+                        className="mb-2"
+                        prompt={universityAgentPrompt(universityName, [...messages].reverse().find((m) => m.role === 'user')?.content)}
+                    />
                     <div className="flex gap-2">
                         <input
                             ref={inputRef}
