@@ -439,3 +439,9 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - PR #276 squash-merged (commit 71809437), branch deleted.
 - Ad-hoc request (no issue). Backend: gemini_fallback.py in 3 chat services (university, fit, counselor) retries next model on 503/429; chain flash-lite -> flash -> 2.0-flash. Frontend: AgentChatHandoff "Ask in Claude/ChatGPT" row on all 4 student chats.
 - Deploys 3 cloud functions + frontend via main pipeline.
+
+## 2026-07-01 12:42 — #276 deploy recovered + LIVE
+- #276's own main build FAILED at the backend-tests gate (my counselor test's top-level 'import google.generativeai' died in CI's clean container — conftest stubbed google.generativeai but not the google parent). Gate abort => nothing deployed.
+- Fix 4249e4f9: stub google parent in counselor conftest (verified in a clean CI-parity venv: pytest -q => 1064 passed, 3 skipped).
+- Re-trigger eb11039e: minimal touch to the 4 target dirs (detect-targets diffs COMMIT^..COMMIT, so the tests-only fix wouldn't redeploy the feature). Build 2faac19d => SUCCESS: deployed counselor-agent, knowledge-universities-v2, profile-v2, frontend.
+- Gotcha saved to memory [[auto-deploy-on-main]]: red gate aborts before deploy; re-trigger needs target dirs in a fresh commit.
