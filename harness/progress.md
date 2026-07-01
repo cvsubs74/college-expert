@@ -434,3 +434,8 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - PR #275 squash-merged (commit 376f5da1), branch deleted.
 - Ad-hoc request (no issue). Reworded ASK_PROMPTS to use the user's real college list/profile instead of hardcoded schools (Stanford/UCLA/Michigan), with graceful fallbacks for empty data.
 - Frontend-only; auto-deploys via main pipeline.
+
+## 2026-07-01 12:22 — shipped chat fault tolerance + agentic escape hatch (PR #276)
+- PR #276 squash-merged (commit 71809437), branch deleted.
+- Ad-hoc request (no issue). Backend: gemini_fallback.py in 3 chat services (university, fit, counselor) retries next model on 503/429; chain flash-lite -> flash -> 2.0-flash. Frontend: AgentChatHandoff "Ask in Claude/ChatGPT" row on all 4 student chats.
+- Deploys 3 cloud functions + frontend via main pipeline.
