@@ -87,3 +87,5 @@ def send_message_with_fallback(message, *, history, system_instruction, models=N
                 logger.warning("Model %s unavailable (%s); trying %s", model_name, e, chain[i + 1])
                 continue
             raise
+
+# Deployed by the auto-deploy pipeline; an identical copy lives in each chat service.

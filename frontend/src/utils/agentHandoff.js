@@ -60,3 +60,5 @@ export function essayAgentPrompt(universityName, { promptText, currentText, ques
   parts.push(clean(question) || 'Give me specific, personal feedback and concrete next steps.');
   return parts.join(' ');
 }
+
+// Consumed by AgentChatHandoff across the University, Fit, Counselor and Essay chats.
