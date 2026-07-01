@@ -1,0 +1,333 @@
+# Sources consulted — Stanford University (cycle Fall 2027)
+
+Every URL the collector searched or fetched, for full transparency — **220 distinct URLs**: 2 backed a published deterministic value, 96 informed a section, 122 were consulted but **not used** (each with the reason).
+
+## 1. Backed a published deterministic value (2)
+- <https://drive.google.com/file/d/1GIPKgVj1d86dkmLkHI_mZVCk_iY6kiCp/view>
+    - **fields:** overall_acceptance_rate, transfer_acceptance_rate, applications_total, admits_total, enrolled_total, yield_rate, admits_class_size, sat_composite_middle_50, sat_reading_middle_50, sat_math_middle_50, act_composite_middle_50, test_submission_rate, gpa_unweighted_avg, race_white, race_black, race_hispanic, race_asian, race_native_american, race_pacific_islander, race_two_or_more, race_unknown, race_international, international_percentage, freshman_retention_rate, graduation_rate_4_year, graduation_rate_6_year, in_state_tuition, is_test_optional, test_policy_details, waitlist_offered, waitlist_accepted, waitlist_admitted
+    - roles: anchor, anchor:overall_acceptance_rate, anchor:in_state_acceptance_rate, anchor:out_of_state_acceptance_rate, anchor:transfer_acceptance_rate, anchor:international_acceptance_rate, anchor:applications_total, anchor:admits_total, anchor:enrolled_total, anchor:yield_rate, anchor:admits_class_size, anchor:sat_composite_middle_50, anchor:sat_reading_middle_50, anchor:sat_math_middle_50, anchor:act_composite_middle_50, anchor:test_submission_rate, anchor:gpa_weighted_avg, anchor:gpa_unweighted_avg, anchor:race_white, anchor:race_black, anchor:race_hispanic, anchor:race_asian, anchor:race_native_american, anchor:race_pacific_islander, anchor:race_two_or_more, anchor:race_unknown, anchor:race_international, anchor:first_gen_percentage, anchor:international_percentage, anchor:freshman_retention_rate, anchor:graduation_rate_4_year, anchor:graduation_rate_6_year, anchor:in_state_tuition, anchor:out_of_state_tuition, anchor:total_coa_in_state, anchor:total_coa_out_of_state, anchor:is_test_optional, anchor:test_policy_details, anchor:ed_applications, anchor:ed_admits, anchor:ed_acceptance_rate, anchor:ea_applications, anchor:ea_admits, anchor:ea_acceptance_rate, anchor:waitlist_offered, anchor:waitlist_accepted, anchor:waitlist_admitted, anchor:waitlist_admit_rate, verify:sat_composite_middle_50, verify:graduation_rate_6_year, section:application_process
+    - “Stanford CDS 2025-2026 PDF (linked from IRDS page). Primary source for all admissions/enrollment/profile/cost/test-policy values (sections B, C, D, F, G). Downloaded and text-extracted the actual tables.”
+    - “CDS C1: "Total first-time, first-year (degree-seeking) who applied 60,646 / Total first-time, first-year (degree-seeking) who were admitted 2,302" [computed: 2,302/60,646 = 3.80%; CDS states counts, not the rate]”
+- <https://collegescorecard.ed.gov/school/?243744-Stanford-University>
+    - **fields:** median_earnings_10yr
+    - roles: resolve:scorecard, resolve, anchor, anchor:median_earnings_10yr, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:freshman_retention_rate, verify:out_of_state_tuition, section:outcomes_extra
+    - “College Scorecard located”
+    - “Official College Scorecard school page for Stanford (school id 243744). Page is JS-rendered so WebFetch returned only the generic shell, but the canonical URL/id is confirmed by Scorecard search results.”
+
+## 2. Informed an official/community section (96)
+- <http://talk.collegeconfidential.com/stanford-university/403078-what-do-you-do-that-shows-your-intellectual-vitality.html> — section:student_insights
+    - “DIRECTLY FETCHED. Quotes: 'comes off in your essay, not in your stats'; '...NOT in the 16 AP 5's I had'; self-studying / self-taught programming as intellectual vitality.”
+- <https://admission.stanford.edu/> — resolve:admissions, resolve
+    - “official admissions page”
+- <https://admission.stanford.edu/afford/> — section:financials
+    - “CURRENT (2026-27) thresholds: '<$150,000... pay no tuition', '<$100,000... pay no tuition or room and board'; 'We meet the full financial need of every admitted undergraduate...'; 'We do not expect you to take out student loans...'. Used fo”
+- <https://admission.stanford.edu/apply/first-year/> — resolve, section:application_process
+    - “First-year applicants page; used the main admission landing (admission.stanford.edu/) as the canonical admissions URL instead.”
+- <https://admission.stanford.edu/apply/first-year/apply.html> — section:application_process, section:application_strategy
+    - “Platform = Common Application only ('please do so online by submitting the Common Application'); Stanford Questions supplement: several short questions (50 words each) + three short essays (100-250 words).”
+- <https://admission.stanford.edu/apply/first-year/arts.html> — section:application_process
+    - “Optional Arts Portfolio areas (Art Practice, Dance, Music, Theater and Performance Studies) and deadlines: REA app Oct 15 / materials Oct 20; RD app Dec 5 / materials Dec 10; QuestBridge NCM timeline does not align with arts portfolio.”
+- <https://admission.stanford.edu/apply/first-year/forms.html> — section:application_process
+    - “Two academic teacher letters required; School Report form + counselor letter; official transcript grades 9-12; midyear transcript due February 15 for RD and REA deferred/admitted.”
+- <https://admission.stanford.edu/apply/first-year/interview.html> — section:application_process
+    - “Interviews optional, offered via alumni; 'application considered complete with or without an interview'; declining is not penalized.”
+- <https://admission.stanford.edu/apply/first-year/testing.html> — verify:sat_composite_middle_50, section:application_process
+    - “Stanford admissions testing page (search result). Not fetched for a number; not used.”
+- <https://admission.stanford.edu/apply/overview/index.html> — section:strategic_profile, section:student_insights
+    - “Official Stanford holistic admission overview — direct source for admissions_philosophy quotes (holistic review, intellectual vitality, contextual review, depth over breadth).”
+- <https://admission.stanford.edu/apply/questbridge/index.html> — section:application_process
+    - “Stanford a QuestBridge partner 'since 2006'; 'Stanford's Match is binding'; Finalists' revised rankings/materials by November 1.”
+- <https://admission.stanford.edu/apply/transfer/credit.html> — section:credit_policies
+    - “Undergraduate Admission transfer page — quoted 'Stanford has no articulation agreements with any college or institution,' the four transfer-eligibility conditions, Registrar-decides-after-admission, and two-year residency requirement. Fetch”
+- <https://advising.stanford.edu/current-students/advising-student-handbook/declaring-major> — section:academic_structure
+    - “Major declaration timeline: declare by end of sophomore spring / junior standing (~90 units).”
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=243744> — anchor
+    - “Official College Scorecard API. Returned latest.earnings.10_yrs_after_entry.median = 124080 (used for median_earnings_10yr). Also returned admission_rate 0.0361, tuition 65910, avg_net_price 13807, cost.attendance 87833, completion 0.9237 —”
+- <https://bulletin.stanford.edu/academic-polices/degree-requirements/undergraduate-major> — section:academic_structure, section:application_strategy
+    - “Confirmed BA/BS/BAS degree types exist and that majors are offered across Engineering, H&S, etc.; 'check individual department'.”
+- <https://bulletin.stanford.edu/academic-polices/transfer-test-credit/undergraduate> — section:credit_policies
+    - “Undergraduate Transfer Credit policy — quoted 45/90 unit cap, C-/Pass minimum grade, no-duplication rule, no WAYS credit for online/independent study, no secondary-diploma double-count. Fetched successfully.”
+- <https://bulletin.stanford.edu/academic-polices/transfer-test-credit/undergraduate-test> — section:credit_policies
+    - “Primary source for philosophy, AP general rule (score 4/5), IB per-subject chart entries + scores, HL requirement examples, 10-unit per-exam cap, 45/90 external-unit ceiling, department discretion, and absence of an IB diploma bonus. Fetche”
+- <https://bulletin.stanford.edu/pages/41nSqfF3LBw2r5KoguqZ> — section:academic_structure
+    - “Undergraduate Minor policy: minor = 6+ courses of 3+ units, up to 36 letter-graded units.”
+- <https://bulletin.stanford.edu/pages/8mcCNkWH0chPAJwAHNnU> — section:academic_structure
+    - “Doerr School of Sustainability page; confirmed departments and BS undergraduate degree model.”
+- <https://bulletin.stanford.edu/pages/w34NFUmejruFXc9pkZZd> — section:academic_structure
+    - “School of Engineering page; confirmed nine academic departments and the BS degree model.”
+- <https://bulletin.stanford.edu/programs> — resolve:catalog, resolve, section:academic_structure
+    - “majors/catalog page”
+- <https://bulletin.stanford.edu/programs/AA-BS> — section:academic_structure
+    - “Confirmed Aeronautics and Astronautics BS.”
+- <https://bulletin.stanford.edu/programs/ARTHS-BA> — section:academic_structure
+    - “Confirmed Art History BA.”
+- <https://bulletin.stanford.edu/programs/BIO-BS> — section:academic_structure
+    - “Confirmed Biology BS.”
+- <https://bulletin.stanford.edu/programs/BIOE-BS> — section:academic_structure
+    - “Confirmed Bioengineering BS.”
+- <https://bulletin.stanford.edu/programs/CE-BS> — section:academic_structure
+    - “Confirmed Civil Engineering BS.”
+- <https://bulletin.stanford.edu/programs/CE-MIN> — section:academic_structure
+    - “Confirmed Civil Engineering minor.”
+- <https://bulletin.stanford.edu/programs/CHEME-BS> — section:academic_structure
+    - “Confirmed Chemical Engineering BS; the 3.5 GPA is an honors option, not a declaration gate.”
+- <https://bulletin.stanford.edu/programs/CS-BS> — section:academic_structure
+    - “Confirmed Computer Science BS; the 3.6 GPA is an honors-program threshold, not a declaration gate.”
+- <https://bulletin.stanford.edu/programs/DATSC-BS> — section:academic_structure
+    - “Confirmed Data Science BS.”
+- <https://bulletin.stanford.edu/programs/DESIGN-BS> — section:academic_structure
+    - “Confirmed Design/Product Design BS via d.school; page states '2025-2026 degree requirements' (cycle anchor).”
+- <https://bulletin.stanford.edu/programs/EASYS-BS> — section:academic_structure
+    - “Confirmed Earth Systems BS; interdisciplinary environmental science major with ~270-hour internship and focus areas.”
+- <https://bulletin.stanford.edu/programs/ECON-BA> — section:academic_structure
+    - “Confirmed Economics BA (paired with ECON-BS -> BA and BS).”
+- <https://bulletin.stanford.edu/programs/ECON-BS> — section:academic_structure
+    - “Confirmed Economics BS.”
+- <https://bulletin.stanford.edu/programs/EE-BS> — section:academic_structure
+    - “Confirmed Electrical Engineering BS.”
+- <https://bulletin.stanford.edu/programs/ENGL-BA> — section:academic_structure
+    - “Confirmed English BA.”
+- <https://bulletin.stanford.edu/programs/ENGR-BS> — section:academic_structure
+    - “Confirmed 'Engineering (BS)' general major with specializations; page references Academic Calendar 2025-26 (cycle anchor).”
+- <https://bulletin.stanford.edu/programs/ENVSE-BS> — section:academic_structure
+    - “Confirmed Environmental Systems Engineering BS (CEE) with focus areas: coastal, energy, freshwater, urban.”
+- <https://bulletin.stanford.edu/programs/ENVSE-MIN> — section:academic_structure
+    - “Confirmed Environmental Systems Engineering minor.”
+- <https://bulletin.stanford.edu/programs/EPS-BS> — section:academic_structure
+    - “Confirmed Earth and Planetary Sciences BS (formerly Geological Sciences).”
+- <https://bulletin.stanford.edu/programs/EPS-MIN> — section:academic_structure
+    - “Confirmed Earth and Planetary Sciences minor.”
+- <https://bulletin.stanford.edu/programs/GEOPH-BS> — section:academic_structure
+    - “Confirmed Geophysics BS.”
+- <https://bulletin.stanford.edu/programs/GEOPH-MIN> — section:academic_structure
+    - “Confirmed Geophysics minor.”
+- <https://bulletin.stanford.edu/programs/HSTRY-BA> — section:academic_structure
+    - “Confirmed History BA.”
+- <https://bulletin.stanford.edu/programs/HUMBI-BS> — section:academic_structure
+    - “Confirmed Human Biology BS (also HUMBI-BA).”
+- <https://bulletin.stanford.edu/programs/IDMEN-BS> — section:academic_structure
+    - “Confirmed Individually Designed Major in Engineering BS.”
+- <https://bulletin.stanford.edu/programs/INTLR-BA> — section:academic_structure
+    - “Confirmed International Relations BA.”
+- <https://bulletin.stanford.edu/programs/LING-BA> — section:academic_structure
+    - “Confirmed Linguistics BA.”
+- <https://bulletin.stanford.edu/programs/MATCS-BS> — section:academic_structure
+    - “Confirmed Mathematical and Computational Science BS.”
+- <https://bulletin.stanford.edu/programs/MATSC-BS> — section:academic_structure
+    - “Confirmed Materials Science and Engineering BS.”
+- <https://bulletin.stanford.edu/programs/ME-BS> — section:academic_structure
+    - “Confirmed Mechanical Engineering BS.”
+- <https://bulletin.stanford.edu/programs/MGTSC-BS> — section:academic_structure
+    - “Confirmed Management Science and Engineering BS.”
+- <https://bulletin.stanford.edu/programs/PHILO-BA> — section:academic_structure
+    - “Confirmed Philosophy BA.”
+- <https://bulletin.stanford.edu/programs/POLSC-BA> — section:academic_structure
+    - “Confirmed Political Science BA.”
+- <https://bulletin.stanford.edu/programs/PSYCH-BA> — section:academic_structure
+    - “Confirmed Psychology BA.”
+- <https://bulletin.stanford.edu/programs/PUBPO-BA> — section:academic_structure
+    - “Confirmed Public Policy BA.”
+- <https://bulletin.stanford.edu/programs/STS-BS> — section:academic_structure
+    - “Confirmed Science, Technology, and Society BS (also STS-BA -> BA and BS).”
+- <https://bulletin.stanford.edu/programs/SYMBO-BS> — section:academic_structure
+    - “Confirmed Symbolic Systems BS.”
+- <https://drive.google.com/file/d/1GIPKgVj1d86dkmLkHI_mZVCk_iY6kiCp/view (official PDF linked as "Stanford CDS 2025-2026" from https://irds.stanford.edu/data-findings/cds)> — verify:sat_composite_middle_50
+    - “"C9 Percent and number of first-time, first-year students enrolled in Fall 2025 who submitted national standardized (SAT/ACT) test scores." ... Column headers: "Assessment | 25th Percentile Score | 50th Percentile Score | 75th Percentile Sc”
+- <https://drive.google.com/file/d/1GIPKgVj1d86dkmLkHI_mZVCk_iY6kiCp/view?usp=sharing> — verify:overall_acceptance_rate
+    - “Official Stanford CDS 2025-2026 PDF (linked from the IRDS page). Downloaded and text-extracted; Section C1 gives the verbatim applicants/admits/enrolled counts (60,646 / 2,302 / 1,839) for Fall 2025 from which the 3.80% admit rate is comput”
+- <https://drive.google.com/uc?export=download&id=1GIPKgVj1d86dkmLkHI_mZVCk_iY6kiCp> — anchor
+    - “Direct download endpoint for the CDS 2025-2026 PDF (776KB, 20 pages).”
+- <https://engineering.stanford.edu/news/study-reports-stanford-alumni-create-nearly-3-trillion-economic-impact> — section:strategic_profile
+    - “Stanford Engineering report of Eesley & Miller study; direct fetch returned HTTP 403 but figures (~$2.7T revenue, 5.4M jobs, 39,900 companies) came from its WebSearch snippet — used for market_position/takeaways.”
+- <https://financialaid.stanford.edu/undergrad/how/index.html> — resolve:financial_aid, resolve, section:financials
+    - “financial-aid page”
+- <https://financialaid.stanford.edu/undergrad/how/parent.html> — section:financials
+    - “Parent-contribution thresholds: '<$100,000... will not expect a parent contribution' and '<$150,000... all tuition charges are covered.' Corroborates the income-band model (older phrasing than the current afford page).”
+- <https://financialaid.stanford.edu/undergrad/index.html> — section:financials
+    - “Need-blind quote: 'Our admission program is need-blind...'; scholarship reach: '60% receive scholarships from Stanford, including athletic scholarships. 46% receive need-based scholarships...'. Used for need-blind + percent_receiving_aid.”
+- <https://greatcollegeadvice.com/blog/how-to-apply-to-stanford/> — section:application_strategy
+    - “Community/consulting source. Quotes used: non-binding statement of intellectual interest, 'admissions officers use your intended major to assess the coherence of your intellectual trajectory,' 'Choose the major that is the most authentic an”
+- <https://humsci.stanford.edu/> — section:academic_structure
+    - “Corroborated H&S is Stanford's largest school with ~24 departments and ~25 interdisciplinary programs.”
+- <https://irds.stanford.edu/data-findings/cds> — resolve:common_data_set, resolve, anchor, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, verify:out_of_state_tuition, section:application_process, section:financials
+    - “CDS located (2027-2028 NOT yet posted (target Fall 2027). Stanford's official CDS index at irds.stanford.edu returns HTTP 403 to automated fetch, so the exact direct PDF/xlsx URL and latest edition could not be verified by fetching; per cur”
+- <https://nces.ed.gov/collegenavigator/?q=Stanford+University&s=all&id=243744> — resolve
+    - “FETCHED. Confirmed exact text 'Stanford University', 'Stanford, California 94305', control 'Private not-for-profit' for UnitID 243744 — anchors identity + control.”
+- <https://nces.ed.gov/ipeds/datacenter/institutionprofile.aspx?unitId=243744> — resolve
+    - “IPEDS Data Center institution profile keyed to unitId=243744 for Stanford; corroborates UnitID.”
+- <https://nces.ed.gov/ipeds/reported-data/243744> — resolve
+    - “NCES IPEDS reported-data page for Stanford; corroborates UnitID 243744.”
+- <https://ncsesdata.nsf.gov/profiles/site?method=report&tin=B4493001&id=h2> — section:strategic_profile
+    - “NSF NCSES Stanford R&D profile — cited as corroborating research-expenditure source for research_impact.”
+- <https://news.stanford.edu/stories/2026/02/undergraduate-tuition-rates-2026-2027> — verify:out_of_state_tuition, section:financials
+    - “Official Stanford Report article. WebFetch 403 Forbidden, but WebSearch summary surfaced its figure: 'the rate in 2026-27 will remain $67,731' — corroborates the Daily. Confirms no 2027-28 figure mentioned.”
+- <https://projects.propublica.org/colleges/schools/stanford-university> — section:outcomes_extra
+    - “USED for loan_default_rate. curl HTTP 200; extracted exact text 'Default Rate 0.8% 3-Year Cohort, Federal Loans'. Page vintage ~2013-2015 (2015 Debt by Degrees release from College Scorecard); recorded as as_of_cycle with staleness caveat.”
+- <https://rde.stanford.edu/student-living> — section:strategic_profile
+    - “Stanford R&DE student living — supports campus_dynamics social_environment (50+ options, community-based living, all undergrads housed).”
+- <https://resed.stanford.edu/houses> — section:strategic_profile
+    - “Stanford Residential Education houses — supports neighborhood/house-based social structure detail.”
+- <https://stanforddaily.com/2021/04/23/welcome-to-s-t-a-n-f-o-r-d-a-guide-for-choosing-your-neighborhood/> — section:strategic_profile
+    - “Explains the S-T-A-N-F-O-R-D neighborhood naming and East/West/Row organization used in social_environment.”
+- <https://stanforddaily.com/2024/02/01/behind-the-1-98-billion-in-stanfords-external-research-funds/> — section:strategic_profile
+    - “Source for FY2024 ~$1.98B external research funding and per-school breakdown in research_impact.”
+- <https://stanforddaily.com/2026/02/10/university-decides-against-increasing-undergraduate-tuition-for-upcoming-year/> — verify:out_of_state_tuition
+    - “Verbatim quote: full undergraduate tuition $67,731 held constant for 2026-27. This is the primary evidence.”
+- <https://studentservices.stanford.edu/my-academics/earn-my-degree/undergraduate-degree-progress/undergraduate-majors-and-minors> — section:academic_structure
+    - “Confirmed all incoming undergrads enter with majors undeclared; apply to the university, not a school/major.”
+- <https://sustainability.stanford.edu/admissions> — section:academic_structure
+    - “Cross-referenced Doerr undergraduate major set and the Environmental Justice minor.”
+- <https://t1.daumcdn.net/brunch/service/user/bLgN/file/4aqkv62-G68tP23NKOj-o8bkcEs.pdf> — verify:act_composite_middle_50, section:financials
+    - “Full PDF mirror of Stanford's CDS 2024-2025. Downloaded and text-extracted Section C9: 'ACT Composite 34 35 35' for first-years enrolled Fall 2024. This is the primary/canonical verbatim source anchoring the reported value.”
+- <https://talk.collegeconfidential.com/t/about-the-intellectual-vitality-essay/1213657> — section:student_insights
+    - “DIRECTLY FETCHED. Quotes on IV essay purpose: 'how your passion for that thing involves thought'; 'think outside the box'; 'deep curiosity and a willingness to maintain an open mind.'”
+- <https://talk.collegeconfidential.com/t/intellectual-vitality-passion-nani/2011012> — section:student_insights
+    - “DIRECTLY FETCHED. Verbatim quotes from users stannystu22 ('produced by the type of student that is most likely to thrive'; 'Resist that temptation!'; authentic voice) and riley2 ('no magic formula for admission'). Core backbone for what_it_”
+- <https://talk.collegeconfidential.com/t/post-your-roommate-essay/1226471> — section:student_insights
+    - “DIRECTLY FETCHED. Thin — only OP meta-comment used: roommate prompt 'is unlike any other prompt, and there is little guidance on how to write it.' Used for essay_tips roommate item.”
+- <https://transportation.stanford.edu/getting-stanford/marguerite> — section:strategic_profile
+    - “Stanford Transportation Marguerite page — supports transportation_impact (free shuttle, connects Palo Alto/Redwood City transit centers).”
+- <https://www.caltrain.com/shuttle/stanford-marguerite> — section:strategic_profile
+    - “Caltrain page — corroborates Caltrain-to-Marguerite connection for transportation_impact.”
+- <https://www.collegevine.com/faq/49749/stanford-admissions-do-they-admit-by-major> — section:application_strategy
+    - “Community source. Quotes used: intended major is 'a relatively small factor in the decision-making process,' the 'spike in a specific area' passage, and 'Highlighting your passion and dedication to your major in your essays can also make yo”
+- <https://www.eduavenues.com/blog/stanford-roommate-essay-guide> — section:student_insights
+    - “Roommate-essay guide. Corroborated 'avoid achievements disguised as personality' / 'be specific, not generic' consensus for essay_tips.”
+- <https://www.koppelmangroup.com/blog/2025/3/3/stanford-university-extracurricular-guide-for-high-school-students> — section:student_insights
+    - “TKG guide (secondary, not a forum). Corroborates community 'depth over quantity' + leadership/initiative theme. Attributed as a guide.”
+- <https://www.niche.com/colleges/stanford-university/> — section:student_insights
+    - “Not directly fetchable (403), but WebSearch surfaced review quotes from it: collaborative 'cooperation over competition' culture, 'without the competitive edge...', 600+ orgs, depth-over-breadth guidance. Attributed as search-surfaced, not ”
+- <https://www.princetonreview.com/college/stanford-university-1023584> — section:student_insights
+    - “DIRECTLY FETCHED. Student-survey quotes: 'very driven, independently motivated and willing to seek out opportunities'; 'work insanely hard during the week'; research/faculty access. Used for culture + common_activities + what_it_takes.”
+- <https://www.questbridge.org/partners/college-partners/stanford-university/financial-aid> — section:financials
+    - “QuestBridge Match at Stanford 2025-26: grants $92,288 covering full COA (tuition, housing/food $22,167, books $840, fees $2,475, new-student $775, personal $3,300); 'must apply for financial aid for each academic year'; SAP required.”
+- <https://www.road2college.com/stanford-common-data-set/> — resolve, anchor, verify:act_composite_middle_50, verify:freshman_retention_rate, section:financials
+    - “FETCHED. Third-party; links to a Google Drive copy, not the official irds.stanford.edu PDF. Most recent CDS mentioned = 2024-2025. Not authoritative.”
+- <https://www.shemmassianconsulting.com/blog/stanford-roommate-essay> — section:student_insights
+    - “Roommate-essay guide (secondary). Corroborates community consensus: conversational, personality/quirks over achievements. Used lightly for essay_tips.”
+- <https://www.unigo.com/colleges/stanford-university/heres-your-chance-say-anything-about-your-college> — section:student_insights
+    - “Not directly fetchable (403), but WebSearch surfaced student quotes: 'the burden of over-commitment'; 650+ orgs; 'work really hard but only compete with their own personal standard.' Used for red_flags + common_activities (search-surfaced).”
+
+## 3. Consulted but NOT used — with reason (122)
+- <http://web.archive.org/web/2025/https://irds.stanford.edu/data-findings/cds> — resolve — Attempted Wayback snapshot to bypass IRDS 403; WebFetch cannot fetch web.archive.org.
+- <http://web.archive.org/web/2025/https://majors.stanford.edu/majors/text-only-lists-majors-and-offerings> — section:academic_structure — Wayback Machine is blocked in this environment.
+- <http://web.stanford.edu/dept/registrar/bulletin_past/bulletin02-03/pdf/AP_Credit.pdf> — section:credit_policies — Archived 2002-03 AP credit PDF; rejected as outdated (target is current/Fall 2027).
+- <https://admission.stanford.edu/apply/> — section:application_process — Top-level apply landing page; only generic language, no platform/deadline detail — superseded by first-year subpages.
+- <https://admission.stanford.edu/apply/first-year/prepare.html> — section:application_strategy — PRIMARY page fetched but it covers recommended high-school curriculum, not the major/application structure; no quotable major-selection text, so not used.
+- <https://admission.stanford.edu/apply/first-year/questbridge.html> — section:application_process — 404 Page Not Found (wrong path); correct page is /apply/questbridge/index.html.
+- <https://admission.stanford.edu/apply/first-year/transcript.html> — section:application_process — 404 Page Not Found; correct forms/recommendations page is /apply/first-year/forms.html.
+- <https://admissionsight.com/stanford-acceptance-rate/> — verify:overall_acceptance_rate — Secondary aggregator in search results; not fetched.
+- <https://admit.stanford.edu/financial-aid> — section:financials — Admitted-students aid page — attempted direct fetch, HTTP 403 Forbidden. Not used.
+- <https://advising.stanford.edu/current-students/advising-student-handbook/ap-ib-transfer> — section:credit_policies — Academic Advising handbook AP/IB/Transfer page — returned HTTP 403 on fetch; could not obtain verbatim text, so not used for quotes (search snippet corroborated 'Registrar decides' and 45-unit cap but
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=243744&api_key=DEMO_KEY> — anchor — Rejected: DEMO_KEY returned OVER_RATE_LIMIT on all attempts. Switched to the Scorecard site's own key with a Referer header.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=243744&fields=school.name,latest.admissions.admission_rate.overall,latest.admissions.admission_rate.consumer_rate&api_key=DEMO_KEY> — verify:overall_acceptance_rate — College Scorecard API attempt to get overall admission_rate. Returned HTTP 429 Too Many Requests (DEMO_KEY rate limit); no data obtained.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?school.name=Stanford%20University> — verify:sat_composite_middle_50 — College Scorecard API with DEMO_KEY returned OVER_RATE_LIMIT; and it exposes section-level SAT, not the combined total middle-50%.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?school.name=Stanford%20University&fields=latest.student.retention_rate.four_year.full_time&api_key=DEMO_KEY> — verify:freshman_retention_rate — Official College Scorecard API (primary ED source). Returned OVER_RATE_LIMIT error with DEMO_KEY — no value retrieved; also 'latest' would not be the Fall 2027 target cycle.
+- <https://archived-bulletin.stanford.mobi/schoolofhumanitiesandsciences/> — section:academic_structure — Connection refused (ECONNREFUSED).
+- <https://beam.stanford.edu/> — section:outcomes_extra — Search result — Stanford's central undergraduate career hub (BEAM/Career Education). No public aggregate first-destination outcomes report. Not fetched further.
+- <https://bemoacademicconsulting.com/blog/stanford-essay-examples> — section:student_insights — Essay-examples guide — not relied on.
+- <https://blog.accepted.com/what-does-stanford-look-for-in-applicants/> — section:student_insights — Consultant blog surfaced on IV; not a community/forum source, not relied on for included points.
+- <https://bulletin.stanford.edu/academic-polices/degree-requirements/undergraduate-major (search listing) and other search hits (msande.stanford.edu, sierraadmissions.com, talk.collegeconfidential.com, studentservices.stanford.edu, advising.stanford.edu, collegeadvisor.com, tutorchase.com, ivycoach.com, toptieradmissions.com, sparkadmissions.com, ingeniusprep.com)> — section:application_strategy — Surfaced in the two WebSearch result sets but not individually fetched/quoted. The faculty-advocacy-for-less-populated-departments idea appeared only in a search summary with no fetchable exact-quote 
+- <https://bulletin.stanford.edu/bulletin/undergraduate-major-unit-requirements> — section:academic_structure — HTTP 404 — consolidated unit-requirements page not fetchable at this path.
+- <https://bulletin.stanford.edu/departments/HUMSCI/overview> — section:academic_structure — Fetched but JS-rendered; no program content returned.
+- <https://bulletin.stanford.edu/pages/VqSl2Uuhfo12Jl3CQqD2> — section:academic_structure — HTTP 404 — H&S bulletin page id not resolvable via fetch.
+- <https://bulletin.stanford.edu/programs/AMSTU-BA> — section:academic_structure — Confirmed American Studies BA exists; not included in final major list to keep the list at a representative size.
+- <https://bulletin.stanford.edu/programs/CHILT-BA> — section:academic_structure — Confirmed Chicana/o-Latina/o Studies BA exists; not included to keep list representative.
+- <https://bulletin.stanford.edu/programs/CLASS-BA> — section:academic_structure — Confirmed Classics BA exists; not selected for final list.
+- <https://bulletin.stanford.edu/programs/PHREL-BA> — section:academic_structure — Confirmed Philosophy and Religious Studies BA exists; not selected for final list.
+- <https://careered.stanford.edu/resources> — section:outcomes_extra — Search result — Stanford Career Education resources; no aggregate outcomes dataset. Not used.
+- <https://collegescorecard.ed.gov/app/#/institution/243744-Stanford-University> — verify:graduation_rate_6_year — Alternate College Scorecard app URL. WebFetch returned HTTP 404. Not usable.
+- <https://collegescorecard.ed.gov/school/?243744-Stanford-University=> — verify:act_composite_middle_50, verify:graduation_rate_6_year — Alternate canonical source per the task. WebFetch returned only header/nav chrome, no ACT data extractable; could not quote a figure.
+- <https://datausa.io/api/data?University=166027&measure=Cohort%20Default%20Rate&drilldowns=Year> — section:outcomes_extra — curl returned Data USA SPA HTML shell, not JSON data. Rejected.
+- <https://ed.stanford.edu/careers/outcomes/2024> — section:outcomes_extra — Search result — Graduate School of Education 2024 outcomes (171 grad students); program-specific graduate school, not university-wide undergrad. Not used.
+- <https://empowerly.com/applications/stanford-supplemental-essays/> — section:student_insights — Consultant blog; not relied on.
+- <https://en.wikipedia.org/wiki/List_of_companies_founded_by_Stanford_University_alumni> — section:strategic_profile — Wikipedia list of Stanford-founded companies; consulted as background, no figure taken from it.
+- <https://essaysthatworked.com/stanford-university> — section:student_insights — Essay-collection site; not relied on.
+- <https://exhibits.stanford.edu/stanford-pubs/catalog/yt471fb0077> — verify:sat_composite_middle_50 — Stanford digital-exhibits catalog for older CDS; WebFetch hit a CAPTCHA page. Not used.
+- <https://exploredegrees.stanford.edu/> — resolve — Redirects to the Stanford Bulletin; superseded by bulletin.stanford.edu/programs.
+- <https://exploredegrees.stanford.edu/schoolofhumanitiesandsciences/> — section:academic_structure — HTTP 403 — archived-format H&S degree list inaccessible.
+- <https://facts.stanford.edu/research> — section:strategic_profile — Official Stanford Facts research page surfaced in search; not fetched/quoted directly, so not relied on for specific figures.
+- <https://finance.yahoo.com/news/ranking-stanford-tops-wall-street-223448419.html> — section:strategic_profile — About the Wall Street Journal ranking, not US News; not used.
+- <https://financialaid.stanford.edu/> — resolve — General financial aid landing; chose the more specific undergrad 'How Aid Works' page.
+- <https://financialaid.stanford.edu/undergrad/budget/index.html> — verify:out_of_state_tuition — Stanford financial aid student budget page (surfaced in search); not fetched — Daily quote already provided the tuition figure.
+- <https://gary-app.datausa.io/profile/university/stanford-university> — section:outcomes_extra — WebFetch HTTP 404. Could not obtain a year-pinned default rate/earnings. Rejected.
+- <https://giving.stanford.edu/scholarships> — section:financials — Endowed need-based scholarships (donor-facing) — folded into the Stanford Scholarship need-based grant; no distinct student-facing figures used.
+- <https://irds.stanford.edu/sites/g/files/sbiybj10071/files/media/file/stanford_cds_2024-2025.pdf> — section:application_process — Guessed direct PDF path — 403 Forbidden to WebFetch. Superseded by the Google-Drive-hosted official PDF.
+- <https://irds.stanford.edu/sites/g/files/sbiybj10071/files/media/file/stanford_cds_2025-2026.pdf> — verify:act_composite_middle_50 — Guessed 2025-2026 CDS PDF URL — HTTP 404. Could not obtain a primary 2025-2026 file (tried several URL patterns, all 404).
+- <https://ivyhub.org/applications-that-worked/stanford/> — section:student_insights — Consultant 'applications that worked' page; not relied on.
+- <https://knight-hennessy.stanford.edu/> — section:financials — Knight-Hennessy Scholars — deliberately EXCLUDED: it is a graduate-only fellowship, not undergraduate financial aid.
+- <https://knight-hennessy.stanford.edu/program-overview/funding> — section:financials — Knight-Hennessy funding page — graduate-only; excluded from undergrad scholarships list.
+- <https://law.stanford.edu/careers/employment-outcomes/graduate-employment-outcomes/> — section:outcomes_extra — Search result — Stanford Law employment outcomes; professional-school scope. Not used.
+- <https://majors.stanford.edu/majors> — resolve, section:academic_structure — Official 'Explore Majors' site but WebFetch returned HTTP 403; used the fetch-verifiable Stanford Bulletin programs page instead.
+- <https://majors.stanford.edu/majors/text-only-lists-majors-and-offerings> — section:academic_structure — HTTP 403 — the ideal consolidated list was inaccessible.
+- <https://manuals.plus/m/73ee7352e23cb76a70ace74ddcc3f3951e235182d795dda65c33bde9d4d26702> — anchor, verify:freshman_retention_rate, section:application_process, section:financials — Rejected: third-party host of an older CDS; not official, not target cycle.
+- <https://msandecareers.stanford.edu/employment-report/employment-report-bachelor-science-graduates> — section:outcomes_extra — WebFetch 403; curl HTTP 200. Lists organizations undergraduates joined but UNRANKED, alphabetical, single department (MS&E), voluntary survey n=69 (2021-22..2024-25). Could not derive a defensible ran
+- <https://nces.ed.gov/ipeds/dfr/2022/ReportPDF.aspx?unitid=243744> — resolve — Older IPEDS DFR report referencing unitId 243744; corroborates ID but not the target cycle, not primary source.
+- <https://news.stanford.edu/stories/2023/02/undergraduate-families-100000-income-pay-no-tuition-room-board-stanford-beginning-2023-24> — section:financials — 2023-24 aid-expansion announcement — historical; superseded by 2026-27 policy; not used.
+- <https://news.stanford.edu/stories/2024/05/provost-presents-2024-25-budget-plan-to-faculty-senate> — section:strategic_profile — Budget plan article surfaced in search; not used for reported figures.
+- <https://news.stanford.edu/stories/2025/01/final-enrollment-data-for-class-of-2028-reported-in-common-data-set> — resolve, anchor, verify:overall_acceptance_rate, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year — Stanford Report article; context that the 2024-2025 CDS reports Class of 2028 enrollment — indicates most-recent posted edition, not the target cycle.
+- <https://news.stanford.edu/stories/2025/02/stanford-sets-2025-26-tuition-rates> — verify:out_of_state_tuition, section:financials — Prior-cycle (2025-26) tuition announcement surfaced in search; older cycle, not the target, not used.
+- <https://nextgenadmit.com/stanford-admission-statistics/> — anchor, verify:overall_acceptance_rate — Rejected: aggregator/blog admissions stats; not a primary authority.
+- <https://nsldsfap.ed.gov/cdr-searchable-database/school/search> — section:outcomes_extra — Search result — authoritative federal Cohort Default Rate database, but a JS search app; not fetchable/quotable here. Noted as the live authoritative source for a current figure.
+- <https://old.reddit.com/r/ApplyingToCollege/comments/search?q=Stanford> — section:student_insights — BLOCKED — WebFetch 'unable to fetch from old.reddit.com.'
+- <https://pursu.io/guide/average-sat-score-stanford-2026> — verify:sat_composite_middle_50 — Secondary aggregator quoting 1510-1570. Not used: secondary; wrong cycle vs. primary source.
+- <https://stanforddaily.com/2025/02/13/stanford-expands-financial-aid-to-cover-tuition-for-families-making-up-to-150k/> — section:financials — Student-paper coverage of the $150k tuition expansion — corroborating only, not an official source; not quoted.
+- <https://stanforddaily.com/2025/08/06/stanford-to-continue-legacy-admissions-reinstate-standardized-test-requirements/> — section:application_process — Student-paper article on test reinstatement + legacy; used only as background for the legacy caveat, not as a reported value.
+- <https://stanfordguide.org/how-to-get-into-stanford-6c8ebf1b6921> — section:student_insights — Medium guide by one author; not multi-source community opinion, not relied on.
+- <https://studentaid.gov/data-center/student/default> — section:outcomes_extra — Search result — federal Student Aid default-rate data center; not fetched (aggregate, not school-specific quote). Noted as authoritative source.
+- <https://studentservices.stanford.edu/advanced-placement-ap-credit-chart> — section:credit_policies — AP Credit Chart appeared in search results; not fetched (Bulletin undergraduate-test page already provided quotable AP/IB chart data).
+- <https://studentservices.stanford.edu/my-academics/earn-my-degree/undergraduate-degree-progress/test-transfer-credit/external-test-0> — section:credit_policies — External Test Credit Equivalency Charts page — HTTP 403, unreachable; equivalency-chart detail instead taken from the Bulletin undergraduate-test page.
+- <https://studentservices.stanford.edu/my-academics/earn-my-degree/undergraduate-degree-progress/test-transfer-credit/external-test-3> — section:credit_policies — 'How Do I Add Credit by Exam' procedural page in search results; not needed for policy content.
+- <https://studentservices.stanford.edu/my-academics/earn-my-degree/undergraduate-degree-progress/test-transfer-credit/external-test-credit> — section:credit_policies — External Test Credit landing page — HTTP 403, unreachable.
+- <https://studentservices.stanford.edu/my-finances/tuition-fees> — verify:out_of_state_tuition — Stanford tuition/fees page. WebFetch 403 Forbidden — could not read.
+- <https://studentservices.stanford.edu/my-finances/tuition-fees/estimate-your-undergraduate-charges-0> — verify:out_of_state_tuition — Stanford undergraduate charges estimator. WebFetch 403 Forbidden — could not read.
+- <https://sustainability.stanford.edu/undergraduate-programs> — section:academic_structure — HTTP 403 — could not fetch; Doerr undergrad majors instead confirmed via bulletin program slugs and domain-restricted search.
+- <https://techcrunch.com/2015/09/04/what-will-stanford-be-without-silicon-valley/> — section:strategic_profile — TechCrunch on Stanford-Silicon Valley interdependence; informed market_position framing but no specific figure taken.
+- <https://toptieradmissions.com/resources/college-acceptance-rates/stanford-acceptance-rates/> — verify:overall_acceptance_rate — Secondary aggregator appearing in search; not fetched. Non-canonical.
+- <https://ughb.stanford.edu/transfers-ap-exceptions> — section:credit_policies — School of Engineering 'Transfers-AP-Exceptions' handbook — HTTP 403, unreachable; SoE-specific AP exceptions therefore reported found=false.
+- <https://undergrad.stanford.edu/planning/academic-policies/transfer-credit> — section:credit_policies — Academic Advising transfer-credit policy page in search results; not fetched, redundant with Bulletin/Admissions sources used.
+- <https://www.acescollegeessaycoaching.com/blog/stanford-roommate-essay-guide> — section:student_insights — Roommate-essay guide — redundant.
+- <https://www.admitadvantage.com/blog/how-to-get-in-to-stanford-a-holistic-approach-to-acceptance/> — section:strategic_profile — Consulting blog; general holistic-admissions context, superseded by official Stanford page.
+- <https://www.bloomberg.com/news/articles/2012-11-09/stanfords-gift-to-the-world-alumnis-vast-economic-impact> — section:strategic_profile — Bloomberg coverage of the alumni economic-impact study; corroboration only.
+- <https://www.collegeadvisor.com/colleges/stanford-university/> — section:strategic_profile — Admissions-consulting profile surfaced in search; not quoted directly.
+- <https://www.collegeessayguy.com/blog/stanford-roommate-essay> — section:student_insights — Roommate-essay guide — redundant with Shemmassian/EduAvenues; not separately relied on.
+- <https://www.collegefactual.com/colleges/stanford-university/paying-for-college/student-loan-debt/> — section:outcomes_extra — WebFetch returned '2-year cohort default rate: 1.0%' and 'Borrowers in the cohort: 1297' but NO year and deprecated 2-yr methodology; rejected because it cannot be pinned to a cycle.
+- <https://www.collegefactual.com/colleges/stanford-university/paying-for-college/student-loan-debt/chart-loan-default-rates.html> — section:outcomes_extra — WebFetch gave no data (JS/image chart); curl HTML had only a PNG chart reference, no quotable number/year. Rejected.
+- <https://www.collegevine.com/faq/47864/stanford-roommate-essays-tips-and-tricks> — section:student_insights — Q&A site — redundant with essay guides.
+- <https://www.commondatasets.com/Stanford.html> — verify:sat_composite_middle_50 — Aggregator index; WebFetch returned HTTP 404. Not used.
+- <https://www.commondatasets.fyi/stanford> — verify:freshman_retention_rate, verify:graduation_rate_6_year — Aggregator showing Stanford CDS 2023-2024. Fetched but did not include B22 retention figure.
+- <https://www.cosmic.nyc/blog/stanford-admissions-2024-2025> — verify:sat_composite_middle_50, verify:graduation_rate_6_year, section:application_process — Secondary consultant blog citing 1510-1570 from CDS 2024-2025 (Fall 2024). Not used: secondary source and a prior cycle; superseded by the primary 2025-2026 figure (1520-1570).
+- <https://www.cosmic.nyc/blog/stanford-common-data-set-2025-2026> — verify:act_composite_middle_50 — Secondary. 'ACT composite: 34 to 36 (median 35)' for Fall 2025 cohort. Agrees with GradGPT on 2025-2026=34–36; not primary, so not used.
+- <https://www.crimsoneducation.org/us/blog/stanford-acceptance-rate> — verify:overall_acceptance_rate — Secondary blog appearing in search summary (stated 2,302 admitted / 60,646 for Class of 2029 = 3.80%, corroborating the CDS). Not fetched; non-canonical.
+- <https://www.entrepreneur.com/science-technology/where-most-employees-at-facebook-google-apple-and-other/296110> — section:outcomes_extra — Search result — anecdotal (e.g., '5.4% of Google is Stanford grads'); not a quotable Stanford top-employers list. Rejected.
+- <https://www.forbes.com/sites/petercohan/2012/11/06/stanfords-2-7-trillion-economic-jolt-beats-mits-2-trillion/> — section:strategic_profile — Forbes coverage corroborating the $2.7T figure; consulted as cross-check, not primary.
+- <https://www.google.com/search?q=Stanford+Common+Data+Set+retention+rate+B22+Fall+2023> — verify:freshman_retention_rate — WebSearch aggregated summaries reported 98.2% for the 2024-2025 CDS (Fall 2023 cohort enrolled Fall 2024). This is (a) a search-engine summary, not a primary page I fetched and read, and (b) a differe
+- <https://www.google.com/search?q=Stanford+University+Common+Data+Set+2027-2028+retention+rate> — verify:freshman_retention_rate — WebSearch: confirmed no 2027-2028 CDS exists; surfaced Stanford IRDS CDS index and 2024-2025 CDS references.
+- <https://www.gradgpt.com/common-data-set/stanford-university> — anchor, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year — Rejected: aggregator visualization of CDS data; not a primary authority.
+- <https://www.gsb.stanford.edu/faculty-research/books/silicon-valley-edge-habitat-innovation-entrepreneurship> — section:strategic_profile — Stanford GSB 'Silicon Valley Edge' — background on innovation-ecosystem framing; no specific figure taken.
+- <https://www.gsb.stanford.edu/organizations/recruit/strategies-resources/employment-reports> — section:outcomes_extra — Search result — index of GSB employment reports; led to the 2025 MBA PDF (which had no named employers). Not used.
+- <https://www.gsb.stanford.edu/programs/mba/career-impact/employment-outcomes> — section:outcomes_extra — WebFetch: MBA Class of 2025 metrics (90% offers within 3 months) but no named employers and graduate-only scope. Not used.
+- <https://www.gsb.stanford.edu/sites/default/files/2025-12/report-2025-mba-employment-report.pdf> — section:outcomes_extra — Fetched PDF (820KB), text-extracted via pdfminer. MBA Class of 2025 report conforms to CSEA standards and contains NO named employers — only sectors/compensation. Rejected for top_employers.
+- <https://www.inc.com/peter-cohan/an-inside-look-at-stanfords-27-trillion-turbo-cha.html> — section:strategic_profile — Inc. coverage of same study; corroboration only, not primary.
+- <https://www.linkedin.com/school/stanford-university/people/> — section:outcomes_extra — Target LinkedIn alumni 'Where they work' module. HTTP 999 (auth wall) — cannot fetch or quote. Rejected.
+- <https://www.myprompt.com/post/stanford-roommate-essay-guide-and-examples> — section:student_insights — Roommate-essay guide — redundant, not separately relied on.
+- <https://www.niche.com/colleges/stanford-university/admissions/> — section:student_insights — Surfaced ~4% acceptance / SAT 1510-1580 / ACT 34-35. Deliberately excluded from the opinion arrays — not pinned to 2027-2028 CDS.
+- <https://www.niche.com/colleges/stanford-university/reviews/> — section:student_insights — Attempted direct fetch — HTTP 403 Forbidden. Could not read the page directly.
+- <https://www.niche.com/colleges/stanford-university/students/> — section:student_insights — Attempted direct fetch — HTTP 403 Forbidden.
+- <https://www.novascholar.org/blog-posts/insights-on-intellectual-vitality-from-a-former-stanford-admissions-officer> — section:strategic_profile — Consulting blog on intellectual vitality; context only, official Stanford page used instead.
+- <https://www.questbridge.org/partners/college-partners/stanford-university/application-requirements> — section:application_process — QuestBridge's Stanford partner page — surfaced via search; binding-match + Nov 1 confirmation taken instead from Stanford's own questbridge page.
+- <https://www.questbridge.org/partners/college-partners/stanford-university/financial-aid (search index)> — section:financials — Duplicate reference surfaced in search; the page itself is listed above as used:true.
+- <https://www.quora.com/Does-my-chosen-major-affect-my-admissions-chances-at-Stanford> — section:application_strategy — Appeared in search results; user-generated Q&A, not fetched/quoted — excluded to keep only verbatim-quotable sources.
+- <https://www.reddit.com/r/ApplyingToCollege/search/?q=Stanford+accepted&restrict_sr=1&sort=relevance> — section:student_insights — BLOCKED — WebFetch 'unable to fetch from www.reddit.com.' No Reddit content obtainable.
+- <https://www.scribd.com/document/846789118/stanford-cds-2024-2025> — resolve, anchor, verify:overall_acceptance_rate, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, section:application_process, section:financials — Third-party Scribd copy of Stanford CDS 2024-2025; not authoritative and not the target 2027-2028 cycle.
+- <https://www.techrepublic.com/article/top-10-universities-that-produce-the-most-staff-for-global-tech-firms/> — section:outcomes_extra — Search result — anecdotal tech-firm staffing ranking; not a quotable Stanford employer list. Rejected.
+- <https://www.timeshighereducation.com/student/news/which-colleges-do-facebook-google-and-other-top-employers-recruit> — section:outcomes_extra — Search result — anecdotal employer/recruiting article; no quotable Stanford ranking. Rejected for top_employers.
+- <https://www.unigo.com/colleges/stanford-university/describe-the-students-at-your-school> — section:student_insights — Attempted direct fetch — HTTP 403 Forbidden.
+- <https://www.universityguru.com/university/stanford-university-stanford> — section:strategic_profile — Ranking aggregator; rejected for the rank fact.
+- <https://www.upgrad.com/study-abroad/university/usa/stanford-university-687/ranking/> — section:strategic_profile — Third-party ranking aggregator; not an authoritative US News page — rejected for the rank fact.
+- <https://www.usnews.com/best-colleges/stanford-university-1305> — section:strategic_profile — Primary source needed for us_news_rank; WebFetch timed out on 3 separate attempts, could not fetch/quote — rank left null.
+- <https://www.usnews.com/best-colleges/stanford-university-1305/overall-rankings> — section:strategic_profile — Alternate US News rankings page; WebFetch timed out — could not fetch/quote.
+- <https://www.usnews.com/education/best-global-universities/stanford-university-243744> — section:strategic_profile — US News Best Global Universities page; WebFetch timed out — could not fetch/quote.
+- <https://www.volunteerfdip.org/university-college-reviews/usa/stanford-university> — section:student_insights — Low-authority aggregator surfaced in search; not used.
+- <https://www.washingtonpost.com/documents/581d9314-6112-421a-8111-84c6f1d1ec24.pdf> — anchor, verify:freshman_retention_rate — Rejected: hosted copy of Stanford CDS 2022-2023; wrong cycle and not the primary source.
+- <https://www.yahoo.com/news/us-news-ranks-stanford-uc-001356019.html> — section:strategic_profile — Secondary rank coverage; not a US News page, so not used for the us_news_rank fact.

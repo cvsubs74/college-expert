@@ -1,0 +1,289 @@
+# Sources consulted — Johns Hopkins University (cycle Fall 2027)
+
+Every URL the collector searched or fetched, for full transparency — **197 distinct URLs**: 2 backed a published deterministic value, 75 informed a section, 120 were consulted but **not used** (each with the reason).
+
+## 1. Backed a published deterministic value (2)
+- <https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf>
+    - **fields:** overall_acceptance_rate, in_state_acceptance_rate, out_of_state_acceptance_rate, transfer_acceptance_rate, international_acceptance_rate, applications_total, admits_total, enrolled_total, yield_rate, admits_class_size, sat_composite_middle_50, sat_reading_middle_50, sat_math_middle_50, act_composite_middle_50, test_submission_rate, gpa_unweighted_avg, race_white, race_black, race_hispanic, race_asian, race_native_american, race_pacific_islander, race_two_or_more, race_unknown, race_international, international_percentage, freshman_retention_rate, graduation_rate_4_year, graduation_rate_6_year, in_state_tuition, out_of_state_tuition, is_test_optional, test_policy_details, ed_applications, ed_admits, ed_acceptance_rate, waitlist_offered, waitlist_accepted, waitlist_admitted, waitlist_admit_rate
+    - roles: resolve:common_data_set, resolve, anchor, anchor:overall_acceptance_rate, anchor:in_state_acceptance_rate, anchor:out_of_state_acceptance_rate, anchor:international_acceptance_rate, anchor:transfer_acceptance_rate, anchor:applications_total, anchor:admits_total, anchor:enrolled_total, anchor:yield_rate, anchor:admits_class_size, anchor:sat_composite_middle_50, anchor:sat_reading_middle_50, anchor:sat_math_middle_50, anchor:act_composite_middle_50, anchor:test_submission_rate, anchor:gpa_weighted_avg, anchor:gpa_unweighted_avg, anchor:race_white, anchor:race_black, anchor:race_hispanic, anchor:race_asian, anchor:race_native_american, anchor:race_pacific_islander, anchor:race_two_or_more, anchor:race_unknown, anchor:race_international, anchor:first_gen_percentage, anchor:international_percentage, anchor:freshman_retention_rate, anchor:graduation_rate_4_year, anchor:graduation_rate_6_year, anchor:in_state_tuition, anchor:out_of_state_tuition, anchor:total_coa_in_state, anchor:total_coa_out_of_state, anchor:is_test_optional, anchor:test_policy_details, anchor:ed_applications, anchor:ed_admits, anchor:ed_acceptance_rate, anchor:ea_applications, anchor:ea_admits, anchor:ea_acceptance_rate, anchor:waitlist_offered, anchor:waitlist_accepted, anchor:waitlist_admitted, anchor:waitlist_admit_rate, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:out_of_state_tuition, section:application_process
+    - “CDS located (2025-2026 (latest available; 2027-2028 not yet posted as of July 2026))”
+    - “Direct PDF of the most recent Common Data Set (2025-2026); search result title 'Common Data Set 2025-2026 Johns Hopkins University A0' confirms it. Direct fetch returned 403 (bot-block) but URL is verified real. 2027-2028 not yet posted.”
+- <https://collegescorecard.ed.gov/school/?162928-Johns-Hopkins-University=>
+    - **fields:** median_earnings_10yr
+    - roles: resolve:scorecard, resolve, anchor, anchor:median_earnings_10yr, verify:freshman_retention_rate
+    - “College Scorecard located”
+    - “College Scorecard school profile; slug 162928-Johns-Hopkins-University confirms UnitID and is the Scorecard URL. Search context notes it is a private institution founded 1876.”
+
+## 2. Informed an official/community section (75)
+- <http://archive.org/wayback/available?url=oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf> — anchor, verify:overall_acceptance_rate
+    - “Wayback availability API — located the archived CDS PDF snapshot.”
+- <http://archive.org/wayback/available?url=oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University.pdf> — verify:freshman_retention_rate
+    - “Availability check; original filename had no snapshot, prompting a CDX search that found the -v2 filename.”
+- <http://archive.org/wayback/available?url=oira.jhu.edu/wp-content/uploads/CDS_2024-2025_JHU.pdf> — verify:graduation_rate_6_year
+    - “Wayback availability API — located the archived 2024-2025 PDF; also confirmed NO snapshot exists for CDS_2025-2026 or CDS_2026-2027, i.e. no newer edition published.”
+- <http://web.archive.org/cdx/search/cdx?url=api.data.gov/ed/collegescorecard*&filter=original:.*162928.*> — anchor
+    - “Wayback CDX search — located an archived api.data.gov Scorecard JSON response for JHU (unitid 162928).”
+- <http://web.archive.org/cdx/search/cdx?url=oira.jhu.edu/wp-content/uploads*> — verify:overall_acceptance_rate
+    - “Wayback CDX index. Confirmed the newest archived JHU CDS is 2025-2026 (captured 2026-06-22); no 2026-2027 or 2027-2028 exists. Located the archive URL used above.”
+- <http://web.archive.org/cdx/search/cdx?url=oira.jhu.edu/wp-content/uploads/*&filter=original:.*2025.*CDS.*pdf> — verify:freshman_retention_rate
+    - “CDX discovery query; revealed the archived 2025-2026-CDS-Johns-Hopkins-University-v2.pdf snapshot (timestamp 20260622013031).”
+- <http://web.archive.org/web/20251116145010/https://oira.jhu.edu/wp-content/uploads/CDS_2024-2025_JHU.pdf> — verify:graduation_rate_6_year
+    - “Actual 498KB PDF fetched and parsed (pypdf). Page 5 / Section B line H contains the quoted six-year graduation rate: Total 93.8% (Pell 93.6% / Stafford-non-Pell 92.3% / neither 94.1%), Fall 2018 cohort.”
+- <http://web.archive.org/web/20251116145010id_/https://oira.jhu.edu/wp-content/uploads/CDS_2024-2025_JHU.pdf> — verify:freshman_retention_rate
+    - “Cross-check, prior cycle. 2024-2025 CDS B22 = 98.09% for Fall 2023 cohort measured as of Fall 2024. Confirms method and value trend; not the target cycle.”
+- <http://web.archive.org/web/20260427081339/https://oira.jhu.edu/common-data-set-2025-26/> — verify:freshman_retention_rate
+    - “Archived JHU 2025-26 CDS landing page; supplied the correct PDF filename (2025-2026-CDS-Johns-Hopkins-University...) enabling retrieval of the primary PDF.”
+- <http://web.archive.org/web/20260622013031id_/https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf> — verify:freshman_retention_rate
+    - “Wayback snapshot actually fetched (HTTP 200, 35-page PDF) to read the 2025-2026 CDS B22 value of 97.83%.”
+- <http://web.archive.org/web/20260622013031if_/https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf> — anchor, verify:overall_acceptance_rate
+    - “Wayback snapshot (2026-06-22) of the CDS PDF — the actual 35-page document parsed with pypdf/pdfplumber for C1, C2, C8, C9, B2, B22, B graduation, D2, G1.”
+- <https://admitreport.com/blog/johns-hopkins-common-data-set> — verify:sat_composite_middle_50, section:application_process
+    - “Third-party blog; non-canonical, not target cycle.”
+- <https://apply.jhu.edu/> — resolve:admissions, resolve, section:application_process
+    - “official admissions page”
+- <https://apply.jhu.edu/academics/majors-minors-programs/> — resolve, section:academic_structure, section:application_strategy
+    - “Admissions-side majors/minors listing; the authoritative academic catalogue page was preferred for majors_catalog_url.”
+- <https://apply.jhu.edu/academics/majors-minors-programs/biomedical-engineering/> — section:application_strategy
+    - “Official. Quoted: BME is the only limited-enrollment major, goal 100-120 new first-years/year; no separate application, must list first-choice; possible to be admitted to university without BME; internal transfer only if seats open at end o”
+- <https://apply.jhu.edu/academics/special-programs/biomedical-engineering/> — section:application_strategy
+    - “Official. Quoted: must indicate BME first-choice; admitted on credentials + space available; can be admitted to university without BME; second-choice/other major fallback; declare any Krieger/Whiting major in spring of first year; BME admit”
+- <https://apply.jhu.edu/academics/special-programs/peabody-double-degree-in-music-or-fine-arts/> — section:academic_structure
+    - “Surfaced via search; source for the Peabody Double Degree program (combine Peabody BM/BFA with a Homewood BA/BS).”
+- <https://apply.jhu.edu/fast-facts/> — verify:sat_composite_middle_50, section:outcomes_extra
+    - “JHU admissions Fast Facts page; would show current-class stats (Fall 2024/2025), not Fall 2027, and not a CDS. Not fetched in detail.”
+- <https://apply.jhu.edu/frequently-asked-questions/> — section:academic_structure, section:student_insights, section:application_strategy
+    - “Source for the two load-bearing quotes: apply to the full university not a school/major (except BME), and 'Applicants must apply and be admitted to the BME program during the application period.'”
+- <https://apply.jhu.edu/how-to-apply/> — section:application_process
+    - “PRIMARY source for platforms: 'We accept both the Common Application and Coalition on Scoir.' Confirmed the page is silent on interviews and demonstrated interest.”
+- <https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/> — section:application_process, section:application_strategy
+    - “PRIMARY source for exact quoted deadlines (Nov 1 2025 / Jan 2 2026 / Mar 1 2026 — the 2025-2026 cycle = Fall 2026 entry, Class of 2030), supplemental essay prompt, two teacher evaluations, secondary school report, mid-year report, and the s”
+- <https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/early-decision/> — section:application_process
+    - “PRIMARY source for binding language: 'Early Decision I and Early Decision II are both binding agreements' and the enroll/withdraw commitment.”
+- <https://apply.jhu.edu/how-to-apply/transfer-students/transfer-credit-policies/> — section:credit_policies
+    - “JHU Admissions transfer-credit page. Confirmed grade-of-C requirement, credit caps, case-by-case adviser/faculty evaluation, and NO articulation tool/database (no Transferology).”
+- <https://apply.jhu.edu/life-at-hopkins/> — section:strategic_profile
+    - “Fetched OK. Source for social_environment: 'lively and close-knit community', '430+ clubs and student organizations', Homewood red-brick/quad campus setting, residential life as social hub.”
+- <https://apply.jhu.edu/tuition-aid/> — resolve, section:financials
+    - “Admissions 'Tuition & Aid' page; not selected over the SFS office hub.”
+- <https://apply.jhu.edu/tuition-aid/common-financial-aid-questions/> — section:financials
+    - “Exact aid-philosophy quotes: 'need-blind for domestic applicants ... need-aware for international'; 'meet 100% of a family's demonstrated need'; 'without any loans'; 'Hopkins awards both merit and need-based scholarships ... automatically c”
+- <https://blog.collegevine.com/how-to-write-the-johns-hopkins-university-essays> — section:student_insights
+    - “DIRECTLY FETCHED. Essay specificity advice (go a level deeper to a particular professor/program; show you did your homework; show-don't-tell).”
+- <https://blog.collegevine.com/what-is-john-hopkins-acceptance-rate-admissions-requirements> — section:student_insights
+    - “Via search. Corroborating (counselor blog, not community): ~3.9 avg GPA, top 10%, research boost for BME, spike/depth-over-breadth, holistic review.”
+- <https://collegeshortcuts.com/blog/comprehensive-guide-to-johns-hopkins-university-admissions-class-of-2028> — section:strategic_profile
+    - “Via WebSearch snippet. Source for admissions selectivity figures (~45,134 apps, ~2,558 admits, ~5.7%) and holistic-review description.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/biology/biology-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'Biology, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/chemistry/chemistry-bachelor-science/> — section:academic_structure
+    - “Verified leaf title 'Chemistry, Bachelor of Science'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/cognitive-science/cognitive-science-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'Cognitive Science, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/economics/economics-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'Economics, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/english/english-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'English, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/history/history-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'History, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/international-studies/international-studies-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'International Studies, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/mathematics/mathematics-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'Mathematics, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/neuroscience/neuroscience-bachelor-science/> — section:academic_structure
+    - “Verified leaf title 'Neuroscience, Bachelor of Science'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/physics-astronomy/physics-bachelor-science/> — section:academic_structure
+    - “Verified leaf title 'Physics, Bachelor of Science'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/political-science/political-science-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'Political Science, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/public-health-studies/public-health-studies-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'Public Health Studies, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/sociology/sociology-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'Sociology, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/writing-seminars/writing-seminars-bachelor-arts/> — section:academic_structure
+    - “Verified leaf title 'Writing Seminars, Bachelor of Arts'.”
+- <https://e-catalogue.jhu.edu/ksas-wse/undergraduate-policies/academic-policies/external-credit-policies/> — section:credit_policies
+    - “HTML version of the same catalogue page; direct fetch returned only navigation chrome, but it is the canonical landing URL for the PDF that provided the content.”
+- <https://e-catalogue.jhu.edu/ksas-wse/undergraduate-policies/academic-policies/external-credit-policies/external-credit-policies.pdf> — section:credit_policies
+    - “PRIMARY authoritative source. Full verbatim External Credit Policies text (philosophy, AP table + forfeiture/lab-waiver/chemistry/calculus/CS/foreign-language exceptions, HL-IB table, transfer caps/rules/restrictions). Extracted locally wit”
+- <https://e-catalogue.jhu.edu/peabody/> — section:academic_structure
+    - “Official catalogue Peabody page. Source for all 8 Peabody undergraduate programs (BM specializations + BFA in Dance) and the 5 Peabody minors.”
+- <https://e-catalogue.jhu.edu/programs/> — resolve:catalog, resolve, section:academic_structure
+    - “majors/catalog page”
+- <https://forums.studentdoctor.net/threads/how-extreme-is-the-deflation-at-hopkins-undergrad.1236167/> — section:student_insights
+    - “Direct WebFetch BLOCKED (HTTP 403). Via search extraction: grade deflation 'most premed classes average a B-', '2/3 of premeds drop off', med schools discount deflation ('3.5 at JHU ~ 3.7-3.8 elsewhere').”
+- <https://hub.jhu.edu/2025/09/23/us-news-best-colleges-rankings-2025/ (via WebSearch snippet)> — section:strategic_profile
+    - “WebSearch result snippet confirmed JHU #7 (2026 edition), tied with Duke/Northwestern/Penn, and #1 biomedical engineering. Used only for the academic-brand takeaway and transparency note, not for the us_news_rank fact.”
+- <https://nces.ed.gov/ipeds/dfr/2023/ReportHTML.aspx?unitId=162928> — resolve
+    - “NCES IPEDS Data Feedback Report for unitId=162928 rendered 'Johns Hopkins University / Baltimore, MD' — cross-check confirms UnitID 162928 on name+city+state.”
+- <https://oira.jhu.edu/common-data-set-2025-26/> — resolve, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:out_of_state_tuition
+    - “CDS 2025-26 landing page; fetch returned 403 (bot-block). URL confirmed via search.”
+- <https://oira.jhu.edu/reports-2/> — resolve, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:out_of_state_tuition
+    - “JHU OIRA Common Data Sets index page; lists CDS editions (2021-22 through 2025-26). Fetch returned 403; superseded by the direct 2025-2026 PDF URL.”
+- <https://oira.jhu.edu/wp-content/uploads/CDS_2024-2025_JHU.pdf> — resolve, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, section:application_process, section:outcomes_extra
+    - “Prior-year CDS (2024-2025); older than the 2025-2026 edition used, so not selected.”
+- <https://peabody.jhu.edu/audition-apply/instructions/undergraduate-instructions/> — section:academic_structure
+    - “Surfaced via search; source for Peabody's separate audition-based application (pre-screen video/portfolio then audition), distinct from Homewood.”
+- <https://sfs.jhu.edu/> — resolve:financial_aid, resolve, section:financials
+    - “financial-aid page”
+- <https://sfs.jhu.edu/cost-tuition/> — verify:out_of_state_tuition
+    - “Canonical JHU financial-support cost page. Confirms latest published tuition is 2026-27 ('Tuition* $68,670'); explicitly no 2027-2028 figure present. Used to establish that Fall 2027 is unpublished.”
+- <https://sfs.jhu.edu/tuition-promise/> — section:financials
+    - “Johns Hopkins Tuition Promise — 'permanently need blind and no-loan' (Bloomberg $1.8B, 2018); 'tuition-free ... up to $200,000'; '$0 parent cost ... up to $100,000' starting 2026-2027; applies to Krieger + Whiting undergrads. Used for aid_p”
+- <https://sfs.jhu.edu/types-of-aid/scholarships/> — section:financials
+    - “Primary source for named scholarships: Hodson Trust, Cummings Scholars, Hopkins Scholarship, QuestBridge, Westgate Engineering, Hodson Gilliam Success — quoted eligibility, renewal, application method.”
+- <https://studentaffairs.jhu.edu/on-campus-living/apply-for-housing/> — section:academic_structure
+    - “Surfaced via search; corroborated the two-year on-campus residency requirement and second-year housing options (Bradford, Homewood Apartments, McCoy, Rogers, Scott-Bates).”
+- <https://talk.collegeconfidential.com/johns-hopkins-university/1972827-johns-hopkins-rd-results.html> — section:student_insights
+    - “DIRECTLY FETCHED. Primary source for accepted/rejected self-reported profiles (GPA/ACT/SAT/rank/major/ECs) and the verbatim quotes 'The essay really does matter' (accepted BME) and 'My application was too generic' (rejected).”
+- <https://web.archive.org/web/20250121233040id_/https://api.data.gov/ed/collegescorecard/v1/schools/?api_key=B2QoBnDDsR5fJfwPeaZuie95ecS3APrL707HNRvr&id=162928> — anchor
+    - “Archived Scorecard API JSON (captured 2025-01-21). Parsed latest.earnings.10_yrs_after_entry.median = 87555 (median earnings 10 years after entry). Also showed admission_rate.overall 0.0725 and avg_net_price.overall 20820 (not used; CDS is ”
+- <https://www.appily.com/colleges/johns-hopkins-university/reviews> — section:student_insights
+    - “DIRECTLY FETCHED. Verbatim student reviews on intense intro classes, 'painstakingly hard', 'not as cut-throat as many put it out to be', 'people there [don't] want to sabotage your grades', 'the opportunities find you when you are at Hopkin”
+- <https://www.collegeessayguy.com/blog/johns-hopkins-supplemental-essay> — section:student_insights
+    - “Via search. Corroborated personal-voice / narrative / show-don't-tell essay advice.”
+- <https://www.collegefactual.com/colleges/johns-hopkins-university/student-life/crime/> — section:strategic_profile
+    - “Via WebSearch snippet. Informed the location/safety takeaway (higher-than-average urban crime; patrolled campus generally seen as safe, off-campus caution).”
+- <https://www.cosmic.nyc/blog/johns-hopkins-common-data-set-2025-2026> — verify:sat_composite_middle_50, verify:act_composite_middle_50, section:application_process
+    - “Third-party blog referencing the 2025-2026 CDS; not an authoritative source and not the target cycle.”
+- <https://www.eduavenues.com/blog/johns-hopkins-essay> — section:student_insights
+    - “Via search. Essay guide: 'if your essay could plug in the name of any top school, it is not a Hopkins essay'; wants a real question + prior work + specific Hopkins resources.”
+- <https://www.gradgpt.com/common-data-set/johns-hopkins-university> — verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, section:application_process
+    - “Third-party CDS visualizer. Not canonical; not used.”
+- <https://www.ivyscholars.com/how-to-switch-majors-at-top-30-colleges/> — section:application_strategy
+    - “Community/consulting source. Quoted JHU section: changing majors within a school is easy (advisor meeting); can declare a second major in a school you aren't part of after an advisor meeting; can never change your major into BME. Anchors ta”
+- <https://www.jhunewsletter.com/2004/01/29/social-life-dull-blame-the-greeks-what-its-worth-56907/> — section:student_insights
+    - “Via search extraction (student newspaper). Corroborated: not a party school, Greek life present but does not predominate, bonds form through activities/labs.”
+- <https://www.jhunewsletter.com/article/2025/08/jimmy-and-friends-navigating-transit-from-homewood> — section:strategic_profile
+    - “Via WebSearch snippet. Source for transportation_impact: JHMI 'Jimmy' shuttle L-shaped route Homewood to medical campus, ~every 15 min 6am-12:30am, Night Ride, TransLoc tracking.”
+- <https://www.jhunewsletter.com/article/2025/09/hopkins-ranked-seventh-best-college-nationally-by-u-s-news-world-report> — section:strategic_profile
+    - “Fetched OK. Provided context that JHU is in a four-way tie for 7th in the 2026 US News edition (tied Duke, Northwestern, Penn), down from 6th in 2025. NOT a US News page, so used only for transparency/notes context, NOT to populate the us_n”
+- <https://www.niche.com/colleges/johns-hopkins-university/academics/> — section:student_insights
+    - “Direct fetch not attempted (Niche 403 pattern). Via search extraction: 'wealth of research opportunities', strong undergraduate-research focus, 'everyone starts out as pre-med'.”
+- <https://www.niche.com/colleges/johns-hopkins-university/campus-life/> — section:strategic_profile, section:student_insights
+    - “Via WebSearch snippet. Corroborated student-culture characterization (academically intense, less party-centric, can feel competitive).”
+- <https://www.niche.com/colleges/johns-hopkins-university/reviews/> — section:student_insights
+    - “Direct WebFetch BLOCKED (HTTP 403). Content used only via WebSearch extraction: 'pressure cooker', 'locked in, talented, and ambitious', competitive/cut-throat vs community-support tension, 'join a frat/sorority'.”
+- <https://www.timeshighereducation.com/world-university-rankings/how-johns-hopkins-built-team-star-grant-winners> — section:strategic_profile
+    - “Fetched OK. Source for market_position and research_impact: '$3.4 billion in federal funds for research and development in 2022', Catalyst/Discovery awards, research-development 'SWAT team' cutting proposal prep from ~18 months to ~1.5.”
+
+## 3. Consulted but NOT used — with reason (120)
+- <http://archive.org/wayback/available?url=collegescorecard.ed.gov/school/?162928-Johns-Hopkins-University> — anchor — Found an archived Scorecard page snapshot (2025-08-10) but did not use it — the page is a JS SPA, so the archived HTML carries no data values.
+- <http://web.archive.org/web/20260411011827id_/https://imagine.jhu.edu/our-student-outcomes/> — section:outcomes_extra — Attempt to read archived JHU dashboard -- 'Claude Code is unable to fetch from web.archive.org' (blocked in this harness).
+- <https://admissionsight.com/how-to-get-into-johns-hopkins/> — verify:overall_acceptance_rate — General admissions blog. Not canonical; not used.
+- <https://admissionsight.com/johns-hopkins-acceptance-rate/> — verify:overall_acceptance_rate — Blog reporting Class of 2029 (Fall 2025) ~5.14% with 49,112 apps / 2,525 admits. Differs from the authoritative CDS C1 (50,259 / 3,072 = 6.11%), likely a headline count excluding waitlist/summer-start
+- <https://admissionsight.com/johns-hopkins-university-cost/> — section:financials — Third-party commercial blog; rejected in favor of official pages.
+- <https://advising.jhu.edu/completing-your-degree/declare-major-minor/> — section:application_strategy — Surfaced as official declare-major page; not fetched because the switching/second-major tactic was already sourced and cross-checked. Could corroborate tactic 5 if needed.
+- <https://advising.jhu.edu/student-roadmap/first-year/first-year-faq/> — section:credit_policies — First-year FAQ surfaced in search; not fetched — not a primary credit-policy source.
+- <https://advising.jhu.edu/transfer-courses/> — section:credit_policies — KSAS advising transfer-courses hub surfaced in search; not fetched.
+- <https://advising.jhu.edu/transfer-courses/incoming-students/> — section:credit_policies — Incoming first-years advising page surfaced in search; not fetched.
+- <https://advising.jhu.edu/transfer-courses/incoming-transfer-students/> — section:credit_policies — Incoming transfer-students advising page surfaced in search; not fetched — catalogue authoritative.
+- <https://advising.jhu.edu/transfer-courses/transfer-courses-faq/> — section:credit_policies — Transfer courses FAQ surfaced in Transferology search; not fetched.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=162928&api_key=B2QoBnDDsR5fJfwPeaZuie95ecS3APrL707HNRvr> — anchor — Live Scorecard API with a key recovered from an archived request — rejected (API_KEY_UNAUTHORIZED; key is referer-bound).
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=162928&api_key=DEMO_KEY> — anchor — Live Scorecard API with DEMO_KEY — rejected (OVER_RATE_LIMIT on the shared demo key across multiple retries).
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=162928&fields=school.name,latest.completion.completion_rate_4yr_150nt,...> — verify:graduation_rate_6_year — College Scorecard API queried with DEMO_KEY; returned HTTP 429 OVER_RATE_LIMIT. No usable data obtained.
+- <https://apply.jhu.edu/how-to-apply/what-we-look-for/> — section:student_insights — Official JHU page surfaced in search; excluded because task scope is crowdsourced community OPINION, not institutional statements.
+- <https://apply.jhu.edu/international-applicants/> — section:financials — Search result only; not fetched — need-aware-for-international detail already captured from common-financial-aid-questions.
+- <https://apply.jhu.edu/life-at-hopkins/living-at-hopkins/> — section:application_strategy — Housing search lead; not fetched. The residential-college determination relied on the housing search result summary + JHU's standard residence-hall structure.
+- <https://apscorecalc.com/ap-credit/johns-hopkins/> — section:credit_policies — Third-party aggregator; not official, rejected.
+- <https://apstudents.collegeboard.org/getting-credit-placement/search-policies/college/808> — section:credit_policies — College Board's AP credit search for JHU; third-party aggregation, not used — JHU catalogue is the official source.
+- <https://archive.org/wayback/available?url=imagine.jhu.edu/our-student-outcomes/> — section:outcomes_extra — Wayback availability API confirmed a snapshot exists (timestamp 20260411011827, status 200).
+- <https://ask.shiksha.com/what-is-the-first-destination-survey-of-johns-hopkins-university-qna-7570827> — section:outcomes_extra — Describes what the FDS is; no quotable JHU figures.
+- <https://assist.org/> — section:credit_policies — ASSIST (California) articulation system; irrelevant to JHU, rejected.
+- <https://blog.collegevine.com/the-ultimate-guide-to-applying-to-johns-hopkins> — section:application_strategy — Search lead; not fetched.
+- <https://cdn.uconnectlabs.com/wp-content/uploads/sites/299/2024/06/2023-First-Destination-Survey-Results.pdf> — section:outcomes_extra — Surfaced by search as a JHU FDS report; on opening (pdfplumber, 12 pages) it is CALVIN UNIVERSITY's Class of 2023 First Destination Survey (Grand Rapids, MI; Calvin Career Center), NOT Johns Hopkins. 
+- <https://collegescorecard.ed.gov/school/?162928-Johns-Hopkins-University> — verify:act_composite_middle_50, verify:graduation_rate_6_year, verify:out_of_state_tuition, section:outcomes_extra — College Scorecard JHU page (alternate canonical source). WebFetch returned only the site navigation shell with no institutional data; and Scorecard reports an older cohort, not Fall 2027. Not used.
+- <https://collegesource.com/transfer-tools/transferology/> — section:credit_policies — Transferology vendor page; background only, no JHU linkage.
+- <https://e-catalogue.jhu.edu/> — resolve — Academic Catalogue home; /programs/ is the more specific majors/catalog entry point.
+- <https://e-catalogue.jhu.edu/arts-sciences/> — section:academic_structure — Krieger catalogue homepage — navigation shell, no undergraduate major list.
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/> — section:academic_structure — Krieger degree-programs landing page rendered only as a JS/navigation shell for the fetcher; no degree list extractable.
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/biology/> — section:academic_structure — Department landing page — JS shell, no degrees rendered.
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/biology/biology-bachelor-science/> — section:academic_structure — HTTP 404 on this slug; Biology BS not asserted despite the dept offering it.
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/chemistry/chemistry-bachelor-arts/> — section:academic_structure — Requested BA slug but the fetcher returned 'Chemistry, Bachelor of Science' (likely redirect); ambiguous, so I relied on the confirmed BS leaf instead.
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/economics/> — section:academic_structure — Department landing page — JS shell.
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/international-studies/> — section:academic_structure — Department landing page — JS shell.
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/physics-astronomy/> — section:academic_structure — Department landing page — JS shell (confirmed the dept slug exists, used for the physics leaf).
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/psychological-and-brain-sciences/psychology-bachelor-arts/> — section:academic_structure — HTTP 404 (wrong slug guess); Psychology degree type not verified, so Psychology was omitted from the majors list.
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/public-health-studies/> — section:academic_structure — Department landing page — JS shell.
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/writing-seminars/> — section:academic_structure — Department landing page — JS shell.
+- <https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/undergraduate-policies/academic-policies/requirements-for-a-bachelors-degree/> — section:application_strategy — Official catalogue lead on double-major/degree requirements; not fetched — not needed for application-stage tactics.
+- <https://e-catalogue.jhu.edu/programs/?type=undergraduate> — section:academic_structure — Filtered programs URL returned no extractable content (JS-driven filter).
+- <https://educationdata.urban.org/api/v1/college-university/scorecard/earnings/2022/?unitid=162928> — anchor — Urban Institute Education Data Portal (Scorecard mirror) — returned empty bodies / 404s / Cloudflare challenge; could not retrieve earnings this way. Superseded by the archived Scorecard API JSON.
+- <https://en.wikipedia.org/wiki/Zanvyl_Krieger_School_of_Arts_and_Sciences> — section:academic_structure — Appeared in search results; not used — Wikipedia is not the official catalogue.
+- <https://engineering.jhu.edu/ug-academic/advising/current-students/transfer-credits/> — section:credit_policies — WSE current-students transfer-credit page (source of the writing-evaluation form) surfaced in search; not fetched.
+- <https://engineering.jhu.edu/ug-academic/advising/eng-101/external-credits/> — section:credit_policies — WSE external-credits advising page surfaced in search; not fetched — catalogue already authoritative and comprehensive.
+- <https://hub.jhu.edu/2024/01/05/nsf-higher-education-research-spending-2022/> — section:strategic_profile — HTTP 403 Forbidden on fetch. Its NSF R&D leadership claim (leads nation, ~44 consecutive years) was corroborated via WebSearch snippet instead.
+- <https://hub.jhu.edu/2025/09/23/us-news-best-colleges-rankings-2025/> — section:strategic_profile — HTTP 403 Forbidden on fetch. JHU's own report of the #7 (2026 edition) ranking; not usable for the us_news_rank fact regardless (not a US News page).
+- <https://hub.jhu.edu/2025/11/13/johns-hopkins-tuition-free-undergraduates/> — section:financials — JHU Hub news article on the tuition-free announcement (search snippet only); official SFS pages used instead for verifiable quotes.
+- <https://imagine.jhu.edu/first-destination-outcomes/> — section:outcomes_extra — Same dynamic dashboard; WebFetch returned only contact info, no figures.
+- <https://imagine.jhu.edu/life-design-lab-first-destination/> — section:outcomes_extra — HTTP 404 on fetch.
+- <https://imagine.jhu.edu/our-student-outcomes/> — section:outcomes_extra — JHU Life Design Lab outcomes page. WebFetch returned only contact info/hours -- data is in a JS-rendered dashboard, not extractable.
+- <https://jhfre.jhu.edu/ts/transportation/shuttle-services/> — section:strategic_profile — HTTP 403 Forbidden on fetch. Shuttle-service details corroborated via WebSearch snippet and the News-Letter instead.
+- <https://johnshopkinsadmissions.org/apply/exam-credit/> — section:credit_policies — Official JHU admissions AP/IB/exam-credit page — fetch failed with ECONNREFUSED; could not verify, so not used.
+- <https://johnshopkinsadmissions.org/discover/residential-life/> — section:application_strategy — Residential life lead; not fetched. Reviewed only via search summary confirming JHU uses residence halls, not a named/ranked residential-college system — basis for empty college_ranking_tactics.
+- <https://krieger.jhu.edu/academics/majors-minors/> — section:academic_structure — HTTP 403 Forbidden to fetcher.
+- <https://krieger.jhu.edu/academics/majors-minors/ (WebSearch result)> — section:academic_structure — Search result referenced but page itself 403s; not fetched for content.
+- <https://me.jhu.edu/education/undergraduate-studies/bs-first-destinations/> — section:outcomes_extra — Mechanical-Engineering BS First Destinations (dept-level employer list). HTTP 403 Forbidden on multiple attempts -- could not read employer list.
+- <https://nces.ed.gov/ipeds/datacenter/Default.aspx?profileunitid=162928> — resolve — IPEDS Data Center profile for UnitID 162928; fetch failed with too-many-redirects. Identity instead confirmed via the DFR ReportHTML page.
+- <https://nces.ed.gov/ipeds/dfr/2024/ReportHTML.aspx?unitId=162928> — verify:freshman_retention_rate, verify:graduation_rate_6_year, section:outcomes_extra — IPEDS DFR report surfaced in search; not fetched; not the CDS target cycle.
+- <https://nces.ed.gov/ipeds/reported-data/162928> — resolve — IPEDS reported-data landing for 162928; corroborates UnitID but the DFR report was used for the confirmation quote.
+- <https://nextadmit.com/blog/johns-hopkins-act-scores/> — verify:act_composite_middle_50 — Secondary blog on JHU ACT scores. Not primary, not target cycle; not used.
+- <https://nextgenadmit.com/johns-hopkins-admission-statistics/> — verify:overall_acceptance_rate, verify:act_composite_middle_50 — Third-party stats page. Not canonical; not used.
+- <https://oira.jhu.edu/> — resolve — JHU Office of Institutional Research & Analytics home; entry point to CDS reports, not directly used.
+- <https://oira.jhu.edu/common-data-set-2024-25/> — verify:act_composite_middle_50 — JHU OIRA CDS 2024-25 landing page (older cycle). Not the target Fall 2027; not used.
+- <https://oira.jhu.edu/institutional-data/common-data-set> — verify:graduation_rate_6_year, section:application_process — JHU CDS index page — WebFetch returned Cloudflare HTTP 403 Forbidden; could not enumerate available editions from the live site.
+- <https://oira.jhu.edu/institutional-research/common-data-set> — verify:sat_composite_middle_50, verify:out_of_state_tuition — Attempted to fetch JHU OIRA's CDS index page for the authoritative list of available editions; returned HTTP 403 Forbidden to WebFetch.
+- <https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University.pdf> — verify:freshman_retention_rate — Archive returned 404 for this original filename; superseded by the -v2 filename.
+- <https://oira.jhu.edu/wp-content/uploads/CDS_2021-2022.pdf> — verify:sat_composite_middle_50 — Official 2021-2022 CDS; older cycle, not target.
+- <https://oira.jhu.edu/wp-content/uploads/CDS_2022-2023.pdf> — verify:sat_composite_middle_50 — Official 2022-2023 CDS; older cycle, not target.
+- <https://oira.jhu.edu/wp-content/uploads/CDS_2023-2024_JHU_20250401.pdf> — verify:act_composite_middle_50 — Primary-source PDF, 2023-2024 cycle (search-surfaced). Older cycle, not target; not fetched/used.
+- <https://oira.jhu.edu/wp-content/uploads/CDS_2023-2024-1.pdf> — verify:sat_composite_middle_50 — Official 2023-2024 CDS; older cycle, not target.
+- <https://oira.jhu.edu/wp-content/uploads/CDS_2025-2026_JHU.pdf> — verify:freshman_retention_rate — Guessed filename for current PDF; curl returned 403 and filename was wrong (actual name uses -v2).
+- <https://pages.jh.edu/design/oliver/academic_manual2010-2011/credit.html> — section:credit_policies — 2010-2011 archived academic manual; outdated cycle, rejected in favor of the current catalogue.
+- <https://publichealth.jhu.edu/offices-and-services/office-of-student-affairs/career-services/graduate-employment-outcomes-dashboard> — section:outcomes_extra — Bloomberg School of Public Health = GRADUATE program only; not university-wide undergrad outcomes. Not used.
+- <https://r.jina.ai/https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf> — anchor — Reader proxy attempt to bypass Cloudflare — rejected (401 AuthenticationRequiredError, 'blocked from anonymous queries due to bad network reputation').
+- <https://recognition.ibo.org/en-US/university-statements/?university=Johns+Hopkins+University> — section:credit_policies — IB's own university-statements listing for JHU; not fetched — deferred to JHU's own catalogue as the official primary source.
+- <https://research.com/best-colleges/johns-hopkins-university/graduation-rate-and-career> — section:outcomes_extra — Intended for default rate / employment / employers; HTTP 403 Forbidden.
+- <https://sais.jhu.edu/student-experience/career-services/employment-outcomes> — section:outcomes_extra — SAIS graduate-program outcomes (e.g. MAIR 92% employed/further-study Classes 2020-2025; employers Deloitte, Bain, etc.). Graduate-only, not undergrad university outcomes -> not used for these fields.
+- <https://sfs.jhu.edu/applying-for-financial-aid/> — section:financials — Fetched but contained no aid statistics; only restated the tuition-free-up-to-$200,000 policy. Nothing new taken.
+- <https://studentaffairs.jhu.edu/careers/about-us/first-destination-reports/> — section:outcomes_extra — HTTP 403 Forbidden.
+- <https://studentaffairs.jhu.edu/community-living/university-housing/how-to-apply/first-year-students/> — section:academic_structure — HTTP 403 Forbidden to direct fetch; housing policy instead grounded via search snippets of this and related studentaffairs.jhu.edu pages.
+- <https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/> — section:application_strategy — Housing lead; not fetched.
+- <https://talk.collegeconfidential.com/t/johns-hopkins-class-of-2028-official-thread/3655582> — section:student_insights — DIRECTLY FETCHED but contained only application logistics (financial-aid portal, deadlines), no admissions substance - rejected.
+- <https://transferologylab-support.collegesource.com/article/475-transfer-equivalencies-view-export-or-print-an-institutions-equivalencies> — section:credit_policies — Transferology support doc; irrelevant to JHU policy, rejected.
+- <https://undergrad.krieger.jhu.edu/majors-minors/> — section:academic_structure — HTTP 403 Forbidden to fetcher.
+- <https://uscanadacolleges.com/schools/162928-jhu-edu-acceptance-rate-sat-act-score/> — verify:act_composite_middle_50 — Secondary aggregator. Not primary, not target cycle; not used.
+- <https://www.aau.edu/johns-hopkins-becomes-tuition-free-undergraduate-students-families-earning-200000> — section:financials — Third-party (AAU) coverage of the same announcement; not used — non-primary source.
+- <https://www.albert.io/blog/johns-hopkins-advanced-placement-ap-credits/> — section:credit_policies — Third-party blog; not an official page, rejected.
+- <https://www.bing.com/search?q=Johns+Hopkins+University+2027-2028+tuition+and+fees+cost+of+attendance> — verify:out_of_state_tuition — WebSearch for 2027-2028 tuition/COA. No 2027-2028 data found; results referenced only 2025-26/2026-27. Rejected.
+- <https://www.bing.com/search?q=Johns+Hopkins+University+Common+Data+Set+2027-2028+tuition> — verify:out_of_state_tuition — WebSearch for the 2027-2028 CDS. No 2027-2028 CDS exists; top real CDS PDFs returned were 2024-2025 and 2023-2024. Rejected.
+- <https://www.collegefactual.com/colleges/johns-hopkins-university/academic-life/graduation-and-retention/> — verify:freshman_retention_rate — Aggregator (search summary cited ~98.1%); non-canonical and cycle-ambiguous, not used.
+- <https://www.collegefactual.com/colleges/johns-hopkins-university/outcomes/> — section:outcomes_extra — Only gave 'graduates ... earn about $68,000 in their early career' (no year); no employer list, no employment/grad-school split. Earnings comes from anchor anyway.
+- <https://www.collegefactual.com/colleges/johns-hopkins-university/paying-for-college/student-loan-debt/> — section:outcomes_extra — Quoted '2-year cohort default rate: 1.7%' and 'Borrowers in the cohort: 2747' but NO cohort year given and uses deprecated 2-yr metric; conflicts with other aggregators. Not year-pinnable -> rejected 
+- <https://www.collegetransfer.net/Search/Search-for-Course-Equivalencies/Equivalency-Search-Results?from=3702> — section:credit_policies — Third-party equivalency search; not official, rejected.
+- <https://www.collegetransitions.com/blog/how-to-get-into-johns-hopkins-university-admissions-data-and-strategies/> — section:application_strategy — Search lead for community strategies; not fetched — official pages gave stronger, quotable structure.
+- <https://www.collegevine.com/faq/98776/johns-hopkins-and-ap-credit> — section:credit_policies — Community Q&A; not official, rejected.
+- <https://www.collegevine.com/faq/98804/can-someone-shed-light-on-ap-credit-at-johns-hopkins> — section:credit_policies — Community Q&A; not official, rejected.
+- <https://www.commondatasets.fyi/johns-hopkins> — verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:graduation_rate_6_year — Third-party CDS mirror. Not canonical; not used.
+- <https://www.crimsoneducation.org/us/blog/johns-hopkins-supplement-essay> — section:student_insights — Surfaced in essay search; counselor blog, not community; overlapping advice already covered by fetched sources, so not relied upon.
+- <https://www.greekrank.net/uni/118/greek-life/> — section:student_insights — Surfaced for Greek life; not fetched/verified; social-life points sourced from more-consistent Niche/News-Letter instead.
+- <https://www.ivycoach.com/the-ivy-coach-blog/college-admissions/how-to-get-into-johns-hopkins/> — section:application_strategy — Search lead; not fetched.
+- <https://www.ivycoach.com/the-ivy-coach-blog/college-admissions/johns-hopkins-admissions-statistics/> — verify:overall_acceptance_rate — Blog on Class of 2030 (Fall 2026) early/RD admit counts. Not canonical, not the CDS, and still not Fall 2027; not used.
+- <https://www.jhu.edu/about/notable-alumni/> — section:outcomes_extra — Notable individual alumni, not employer-of-graduates data. Not usable for top_employers.
+- <https://www.jhu.edu/admissions/financial-aid/> — resolve, section:financials — General financial-aid page under jhu.edu; sfs.jhu.edu is the more specific SFS office hub.
+- <https://www.linkedin.com/school/johns-hopkins-university/people/> — section:outcomes_extra — LinkedIn alumni 'where they work' -- HTTP 999 (bot-blocked). Could not extract top employers.
+- <https://www.nextfour.ai/johns-hopkins-university/sat-score-data> — verify:sat_composite_middle_50 — Third-party SAT stats aggregator; unverified/non-canonical, not the target cycle.
+- <https://www.niche.com/colleges/johns-hopkins-university/student-loans/> — section:outcomes_extra — Intended for a year-pinned cohort default rate; HTTP 403 Forbidden.
+- <https://www.parchment.com/platform/higher-education/transfer-articulation/> — section:credit_policies — Vendor articulation product page; irrelevant, rejected.
+- <https://www.questbridge.org/partners/college-partners/johns-hopkins-university/financial-aid> — section:financials — QuestBridge partner page (search result); QuestBridge scholarship details sourced from JHU's own sfs.jhu.edu scholarships page instead.
+- <https://www.quora.com/How-did-you-get-accepted-into-Johns-Hopkins-stats-ECs> — section:student_insights — Surfaced in search; could not fetch/verify individual answers, so not used to avoid unverifiable quotes.
+- <https://www.quora.com/How-does-applying-for-a-competitive-major-affect-your-chances-of-admissions-at-a-top-school-such-as-JHU-Would-it-be-better-to-apply-as-undecided> — section:application_strategy — Surfaced in search as a lead on undecided-vs-specific major strategy; not fetched/quoted because the same claims were verified directly on official apply.jhu.edu pages.
+- <https://www.quora.com/I-know-that-Johns-Hopkins-University-meets-100-of-financial-needs-of-those-who-were-accepted-However-will-JH-University-provide-financial-aid-of-70-000> — section:financials — Quora — user-generated, non-authoritative; rejected.
+- <https://www.road2college.com/johns-hopkins-common-data-set/> — verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, section:application_process — Third-party CDS aggregator. Not canonical; not used for the value.
+- <https://www.sparkadmissions.com/blog/how-credits-transfer-course-equivalencies/> — section:credit_policies — Third-party blog on credit transfer generally; not official, rejected.
+- <https://www.swotanalysis.com/johns-hopkins-university> — section:strategic_profile — Appeared in search results for market position; not fetched/quoted, so not relied upon.
+- <https://www.transferology.com/> — section:credit_policies — Transferology tool homepage; checked to confirm JHU is not listed as using it — no evidence JHU participates.
+- <https://www.transferologylab.com/index.htm> — section:credit_policies — Transferology Lab (staff portal) marketing; no JHU linkage, rejected.
+- <https://www.usnews.com/best-colleges/jhu-2077> — section:strategic_profile — Primary target for us_news_rank; WebFetch timed out on both attempts (usnews.com bot-blocks). Could not fetch/quote, so rank left null.
+- <https://www.usnews.com/best-colleges/jhu-2077/overall-rankings> — section:strategic_profile — Alternate US News rank page; WebFetch timed out.
+- <https://www.usnews.com/best-colleges/rankings/national-universities> — section:strategic_profile — US News National Universities list; WebFetch timed out.
+- <https://www.usnews.com/education/best-global-universities/johns-hopkins-university-162928> — section:strategic_profile — US News Best Global Universities profile; WebFetch timed out. (Would have been a global rank, not the national rank, anyway.)

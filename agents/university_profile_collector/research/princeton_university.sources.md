@@ -1,0 +1,247 @@
+# Sources consulted — Princeton University (cycle Fall 2027)
+
+Every URL the collector searched or fetched, for full transparency — **162 distinct URLs**: 2 backed a published deterministic value, 69 informed a section, 91 were consulted but **not used** (each with the reason).
+
+## 1. Backed a published deterministic value (2)
+- <http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf>
+    - **fields:** overall_acceptance_rate, in_state_acceptance_rate, out_of_state_acceptance_rate, transfer_acceptance_rate, international_acceptance_rate, applications_total, admits_total, enrolled_total, yield_rate, admits_class_size, sat_composite_middle_50, sat_reading_middle_50, sat_math_middle_50, act_composite_middle_50, test_submission_rate, gpa_unweighted_avg, race_white, race_black, race_hispanic, race_asian, race_native_american, race_pacific_islander, race_two_or_more, race_unknown, race_international, international_percentage, freshman_retention_rate, graduation_rate_4_year, graduation_rate_6_year, is_test_optional, test_policy_details, waitlist_offered, waitlist_accepted, waitlist_admitted, waitlist_admit_rate
+    - roles: anchor, anchor:overall_acceptance_rate, anchor:in_state_acceptance_rate, anchor:out_of_state_acceptance_rate, anchor:transfer_acceptance_rate, anchor:international_acceptance_rate, anchor:applications_total, anchor:admits_total, anchor:enrolled_total, anchor:yield_rate, anchor:admits_class_size, anchor:sat_composite_middle_50, anchor:sat_reading_middle_50, anchor:sat_math_middle_50, anchor:act_composite_middle_50, anchor:test_submission_rate, anchor:gpa_weighted_avg, anchor:gpa_unweighted_avg, anchor:race_white, anchor:race_black, anchor:race_hispanic, anchor:race_asian, anchor:race_native_american, anchor:race_pacific_islander, anchor:race_two_or_more, anchor:race_unknown, anchor:race_international, anchor:first_gen_percentage, anchor:international_percentage, anchor:freshman_retention_rate, anchor:graduation_rate_4_year, anchor:graduation_rate_6_year, anchor:is_test_optional, anchor:test_policy_details, anchor:ed_applications, anchor:ed_admits, anchor:ed_acceptance_rate, anchor:ea_applications, anchor:ea_admits, anchor:ea_acceptance_rate, anchor:waitlist_offered, anchor:waitlist_accepted, anchor:waitlist_admitted, anchor:waitlist_admit_rate
+    - “PRIMARY SOURCE. Actual 30-page Princeton Common Data Set 2025-2026 PDF (593KB). Read cells C1/C2 (admissions/waitlist), C8/C9 (test policy, SAT/ACT, GPA), B1/B2 (enrollment/race), B22 (retention), B4-B21 (graduation), D2 (transfer), G (cost deferred).”
+    - “C1 (Fall 2025): total first-time, first-year applied = 21692 males + 20593 females + 18 unknown = 42303; admitted = 915 + 953 = 1868. Derived admit rate = 1868/42303 = 4.42%.”
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=186131-Princeton-University>
+    - **fields:** in_state_tuition, total_coa_in_state, total_coa_out_of_state, median_earnings_10yr
+    - roles: anchor:in_state_tuition, anchor:out_of_state_tuition, anchor:total_coa_in_state, anchor:total_coa_out_of_state, anchor:median_earnings_10yr
+    - “Scorecard 'latest.cost.tuition.in_state': 62688 (Princeton is private; in-state = out-of-state). CDS section G was blank: Princeton checked 'costs of attendance are not available at this time', date 7/1/2026.”
+    - “Scorecard 'latest.cost.tuition.out_of_state': 62688. CDS section G left blank (Princeton checked '2026-2027 costs of attendance not available at this time', date 7/1/2026).”
+
+## 2. Informed an official/community section (69)
+- <http://archive.org/wayback/available> — section:credit_policies
+    - “Wayback availability API used to locate the most recent snapshots of the four target Princeton pages.”
+- <http://archive.org/wayback/available?url=ir.princeton.edu/other-university-data/common-data-set> — verify:sat_composite_middle_50
+    - “Wayback availability API returned a 2026-06-18 snapshot of the CDS index — the accessible route to Princeton's canonical page.”
+- <http://archive.org/wayback/available?url=ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf> — anchor
+    - “Wayback availability API located a 200 snapshot from 2026-05-19 of the CDS PDF.”
+- <http://web.archive.org/web/20250912133711/https://advising.princeton.edu/choosing-courses/taking-courses-transfer-credit> — section:credit_policies
+    - “Actual retrieval URL for the transfer-credit page; extracted full body text.”
+- <http://web.archive.org/web/20251114212420/https://advising.princeton.edu/placement/advanced-standing> — section:credit_policies
+    - “Actual retrieval URL for the advanced-standing page; extracted full body text.”
+- <http://web.archive.org/web/20260527192705/https://advising.princeton.edu/placement/advanced-placement> — section:credit_policies
+    - “Actual retrieval URL for the advanced-placement page; extracted full body text.”
+- <http://web.archive.org/web/20260618065133/https://ir.princeton.edu/other-university-data/common-data-set> — verify:sat_composite_middle_50, verify:act_composite_middle_50, section:application_process
+    - “DECISIVE. Archived Princeton IR CDS index. Lists editions through 2025-2026 (document/606) as the newest; no 2026-2027 or 2027-2028 edition exists. Confirms the target Fall 2027 CDS does not exist yet.”
+- <https://admission.princeton.edu/> — resolve:admissions, resolve
+    - “official admissions page”
+- <https://admission.princeton.edu/academics> — section:academic_structure, section:application_strategy
+    - “Confirmed unified admission, A.B. declares major 'in the spring of their sophomore year', B.S.E. is '~25% of each class' and engineers 'choose to concentrate in one of the six engineering departments' at end of first year.”
+- <https://admission.princeton.edu/academics/degrees-departments> — resolve:catalog, resolve, section:academic_structure, section:application_strategy
+    - “majors/catalog page”
+- <https://admission.princeton.edu/academics/minors-and-certificate-programs> — section:academic_structure
+    - “Verbatim list of 71 minors/certificate programs (all included in minors_certificates).”
+- <https://admission.princeton.edu/apply/application-checklist> — section:application_process
+    - “Platform = Common Application only (CEEB 2672); graded written paper required; 2 teacher recs + counselor rec + school report + midyear + transcript; optional arts supplement; optional alumni interview (30-45 min); test-optional fall 2026/2”
+- <https://admission.princeton.edu/apply/before-you-apply> — section:application_strategy
+    - “Confirmed A.B./B.S.E. degree selection occurs after enrollment; corroborates structure. Did not surface the 'does not affect chances' line (that came from FAQ).”
+- <https://admission.princeton.edu/apply/first-year-application-dates-deadlines> — section:application_process
+    - “Deadline table: SCEA Nov. 1 / arts supplement Nov. 6 / decision mid-December; RD Jan. 1 / arts supplement Jan. 8 / decision late March; reply deadline May 1. No year printed.”
+- <https://admission.princeton.edu/apply/princeton-specific-questions> — section:application_strategy
+    - “Official B.S.E. essay prompt verbatim (250 words) — basis for B.S.E.-only and 'Why Princeton engineering' tactics.”
+- <https://admission.princeton.edu/apply/questbridge> — section:application_process
+    - “QuestBridge NCM is a binding match ('you must withdraw all applications to other schools'); PFAA + tax docs due Nov. 1; non-rankers may instead use SCEA (Nov 1) or RD (Jan 1).”
+- <https://admission.princeton.edu/community/residential-colleges-housing> — section:application_strategy
+    - “Verbatim: 'Entering first-year students are randomly assigned to a residential college...' — justifies empty college_ranking_tactics.”
+- <https://admission.princeton.edu/cost-aid> — section:financials
+    - “Most current stats (2025-26): 69% of Class of 2029 qualified for aid, average grant $80,000, need-blind, meets 100% with grants, no-loan since 2001, 90% graduate debt-free.”
+- <https://admission.princeton.edu/cost-aid/fees-payment-options> — verify:out_of_state_tuition
+    - “Official Princeton Admission fees page. Verbatim 'Tuition: $68,140' labeled for the 2026-27 academic year; explicitly no 2027-2028 figure present.”
+- <https://admission.princeton.edu/eating-clubs> — section:strategic_profile
+    - “Official eating-clubs description: ~two-thirds join, co-ed, sign-in and bicker.”
+- <https://admission.princeton.edu/faqs> — section:application_process
+    - “Official legacy quote: parent/stepparent Princeton attendance 'can act as a plus factor amongst similarly qualified applicants in our holistic review process.'”
+- <https://admission.princeton.edu/faqs?page=21> — section:application_strategy
+    - “Primary source. Verbatim: 'On the application we ask you to indicate the degree program (A.B., B.S.E. or undecided)...'; 'These choices don't affect your chances for admission, nor do they commit you to a particular course of study.'; 'We l”
+- <https://admission.princeton.edu/how-apply> — section:application_process
+    - “SCEA due Nov. 1 (single-choice/restrictive, non-binding), RD due Jan. 1, transfer March 1; references graded written paper and optional arts supplement.”
+- <https://advising.princeton.edu/choosing-courses/taking-courses-transfer-credit> — section:credit_policies
+    - “PRIMARY source for transfer articulation tools (TigerHub Pre-Approval / Completion forms) and all transfer restrictions (course caps, C-or-better, in-person, distribution limits, no double counting). Read via Wayback capture 2025-09-12 (liv”
+- <https://advising.princeton.edu/placement/advanced-placement> — section:credit_policies
+    - “PRIMARY source for philosophy, AP general rule, approved/prohibited uses, IB HL and A-level acceptance, and the no-credit statement. Read via Wayback capture 2026-05-27 because the live page returns Cloudflare 403.”
+- <https://advising.princeton.edu/placement/advanced-standing> — section:credit_policies
+    - “PRIMARY source for the advanced-standing discontinuation (Class of 2029+) and the 'no units of credit' rule for fall-2025-and-beyond entrants. Read via Wayback capture 2025-11-14 (live page returns Cloudflare 403).”
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=186131> — anchor
+    - “PRIMARY SOURCE (Scorecard authority, DEMO_KEY). Provided median_earnings_10yr=110066, tuition in/out=62688, cost.attendance.academic_year=84040, admission_rate.overall=0.0462, completion_rate_4yr_150nt=0.9761, retention 0.9835 (cross-checks”
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=186131&fields=2019..2025.completion.completion_rate_4yr_150nt,...rate_suppressed.overall&api_key=DEMO_KEY> — verify:graduation_rate_6_year
+    - “Year-prefixed queries (2019-2025) to pin the cycle: 2019=0.979, 2020=0.9802, 2021=0.9757, 2022=0.9755, 2023=0.9709, 2024=0.9761 (matches 'latest'), 2025=null. Confirms 'latest' = 2024 data year.”
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=186131&fields=school.name,latest.completion.completion_rate_4yr_150nt,latest.completion.rate_suppressed.overall&api_key=DEMO_KEY> — verify:graduation_rate_6_year
+    - “College Scorecard API: returned completion_rate_4yr_150nt=0.9761 (six-year/150%-time completion rate) and rate_suppressed.overall=0.9735 for Princeton (id 186131).”
+- <https://collegescorecard.ed.gov/school/?186131-Princeton-University> — resolve:scorecard, resolve, anchor, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year
+    - “College Scorecard located”
+- <https://empowerly.com/applications/5-things-princeton-university-is-known-for/> — section:strategic_profile
+    - “What Princeton is known for; undergraduate research and reputation points.”
+- <https://en.wikipedia.org/wiki/Princeton_University_eating_clubs> — section:strategic_profile
+    - “Eating-club structure (11 clubs, sign-in vs bicker) for social_environment.”
+- <https://engineering.princeton.edu/undergraduate-studies/concentrations> — section:academic_structure
+    - “Confirmed the six B.S.E. engineering departments and that Computer Science grants both B.S.E. and A.B.”
+- <https://finaid.princeton.edu/> — resolve:financial_aid, resolve, section:financials
+    - “financial-aid page”
+- <https://finaid.princeton.edu/apply-aid-prospective-students> — section:financials
+    - “2026-27 cycle: aid deadline 'May 1 2026', PFAA + FAFSA (code 002627) + 2024 tax docs + non-custodial info; points to outside-scholarship policy.”
+- <https://finaid.princeton.edu/how-aid-works> — section:financials
+    - “Core philosophy quotes: need-based program, no-loan policy ('need is met through grants, rather than loans'), 'meet 100 percent of your demonstrated financial need'; no merit/athletic mention.”
+- <https://finaid.princeton.edu/how-aid-works/student-budget> — verify:out_of_state_tuition
+    - “Official Princeton Financial Aid Student Budget page. Cross-confirms 2026-27 tuition $68,140 and lists 2025-26 as $65,210; no 2027-2028 figure.”
+- <https://finaid.princeton.edu/policies-procedures/outside-scholarships> — section:financials
+    - “Outside scholarships reduce the Princeton Grant, not the family contribution; reporting form required; up to $3,500 computer-purchase exception. Context for named/outside awards.”
+- <https://gsadminportal.princeton.edu/handbooks/dgs-handbook-2024-2025-section-5-access-diversity-and-inclusion/holistic-file-review> — section:strategic_profile
+    - “Princeton's own framing of holistic file review; supports admissions_philosophy.”
+- <https://ir.princeton.edu/document/606> — resolve, anchor, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:out_of_state_tuition, section:application_process
+    - “Common Data Set 2025-2026 (latest available edition); search-indexed title reads 'Common Data Set 2025-2026 A0 Respondent Information'. 2027-2028 target edition not yet posted as of July 2026.”
+- <https://ir.princeton.edu/other-university-data/common-data-set> — resolve:common_data_set, resolve, anchor, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:out_of_state_tuition, section:application_process
+    - “CDS located (2025-2026 (latest available; 2027-2028 not yet posted))”
+- <https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v2.pdf> — verify:freshman_retention_rate
+    - “CANONICAL SOURCE. Princeton's own 2025-2026 Common Data Set PDF. Extracted text of section B22: initial cohort 1407, retained 1387, retention rate = 99% for the Fall 2024 entering cohort as of the Fall 2025 census date. This is the most rec”
+- <https://legacyonlineschool.com/blog/princeton-ab-or-bse-degree.html> — section:application_strategy
+    - “Used only to flag a CONTESTED switching-direction claim: 'go A.B.—it's easier to transfer into B.S.E. later than the reverse.' Conflicts with another summary; reported as unverified, not as fact.”
+- <https://nces.ed.gov/collegenavigator/?id=186131> — section:outcomes_extra
+- <https://nces.ed.gov/ipeds/dfr/2024/ReportHTML.aspx?unitId=186131> — resolve
+    - “NCES IPEDS Data Feedback Report for UnitID 186131; fetched successfully — states 'Princeton University', 'Princeton, NJ', control 'Private Not-for-profit'. Confirms UnitID cross-check on name+city+state.”
+- <https://odus.princeton.edu/student-engagement/dining-eating-clubs-and-co-ops> — section:strategic_profile
+    - “Dining/eating-club and co-op detail supporting social_environment.”
+- <https://pathivy.com/blog/ivy-league-comparison-2025-why-princeton-university-stands-out-among-the-ivies> — section:strategic_profile
+    - “Market position and undergraduate-focus / ~5:1 ratio framing; peer-tier positioning.”
+- <https://talk.collegeconfidential.com/t/best-topic-for-essay-focusing-on-an-extracurricular-activity-princeton-and-harvard/2077905> — section:student_insights
+    - “Essay-tip quotes: cinnamon1212 ('WHY you do the activity... not the nuts and bolts') and viarulesandrocks ('downplay the political aspect').”
+- <https://talk.collegeconfidential.com/t/chance-me-please/2075599> — section:student_insights
+    - “coolguy40 ('~5%... subjective lottery'), fretfulmother ('work on the humility'), apparently22 ('Going to Princeton can't be your goal'), DadTwoGirls.”
+- <https://talk.collegeconfidential.com/t/impact-of-intended-major-in-admissions-for-princeton/3625003> — section:application_strategy
+    - “Community tactic: 'Princeton does not admit by major'; only list a specific major with 'extended ECs, essays and other factors that can point to your interest.'”
+- <https://talk.collegeconfidential.com/t/please-chance-me-for-princeton/2033033> — section:student_insights
+    - “Verbatim what-it-takes and red-flag quotes: DadTwoGirls ('most applicants... with a 1600 are turned down'), momofboiler1, raclut, lostaccount, Nocreativity1, flutespell ('DONT MENTION UR IQ').”
+- <https://talk.collegeconfidential.com/t/princeton-university-early-action-for-fall-2024-admission/3644749> — section:student_insights
+    - “Self-reported applicant activity lists: Fredd (RSI research, startup founder, hospital outreach, track) and ShivomP (Mock Trial, National History Bee state champion, archery).”
+- <https://theivyinst.org/blog/unveiling-princeton-the-insiders-view-on-what-makes-princeton-university-unique> — section:strategic_profile
+    - “Distinctive point that Princeton is the only Ivy with no med/law/business school.”
+- <https://transportation.princeton.edu/getting-campus/public-transit/trains> — section:strategic_profile
+    - “Official train/NJ Transit access detail for transportation_impact.”
+- <https://www.appily.com/colleges/princeton-university/reviews> — section:student_insights
+    - “Crowdsourced student reviews (Niche-substitute): Tara, Tiger '13, Annika, Gabriella, Carolyn on workload/fit/community.”
+- <https://www.collegeessayguy.com/blog/princeton-supplemental-essays> — section:student_insights, section:application_strategy
+    - “Surfaced in search; not fetched — coaching blog, not crowdsourced community opinion, out of scope.”
+- <https://www.cosmic.nyc/blog/princeton-common-data-set-2025-2026> — anchor, verify:overall_acceptance_rate, verify:act_composite_middle_50
+    - “Consultant blog surfaced in search; confirmed 2025-2026 is the current CDS but not used as a source.”
+- <https://www.dailyprincetonian.com/article/2021/11/orange-bubble-princeton-nyc-campus> — section:strategic_profile
+    - “Orange Bubble vs NYC proximity; students rarely leave campus.”
+- <https://www.dailyprincetonian.com/article/2024/04/opinion-column-isolated-campus-activism-orange-bubble> — section:strategic_profile
+    - “'Orange Bubble' isolation framing for transportation_impact and location takeaway.”
+- <https://www.dailyprincetonian.com/article/2025/09/princeton-news-adpol-university-admits-4-percent-of-applicants-class-of-2029> — verify:overall_acceptance_rate
+    - “Fetched successfully. Verbatim: 'admitted 4.4 percent of applicants in its most recent admissions cycle'; applicant pool 42,303; Class of 2029 = Fall 2025 entering. Source of the reported value and cycle.”
+- <https://www.google.com/search?q=Princeton+Common+Data+Set+2025-2026+retention+B22> — verify:freshman_retention_rate
+    - “WebSearch that located the exact canonical 2025-2026 CDS PDF URL on ir.princeton.edu and confirmed B22 references the Fall 2024 entering cohort.”
+- <https://www.gradgpt.com/common-data-set/princeton-university> — anchor, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, section:application_process
+    - “Aggregator surfaced in search; not fetched/used — primary CDS PDF preferred.”
+- <https://www.njtransit.com/dinky> — section:strategic_profile
+    - “Dinky shuttle connecting campus to Princeton Junction on the Northeast Corridor.”
+- <https://www.princeton.edu/news/2025/08/07/princeton-enhances-financial-aid-again-it-welcomes-class-2029-which-includes> — section:strategic_profile, section:financials
+    - “2025-26 financial aid figures: avg package >$80k, ~two-thirds aided, income thresholds; first to drop loans (2001).”
+- <https://www.princeton.edu/one-community/housing-dining> — section:strategic_profile
+    - “Seven residential colleges named; required for first-year/sophomore housing.”
+- <https://www.princetonreview.com/college/princeton-university-1024041> — section:strategic_profile, section:student_insights
+    - “Reputation and undergraduate research emphasis (research_impact).”
+- <https://www.questbridge.org/partners/college-partners/princeton-university/financial-aid> — section:financials
+    - “QuestBridge National College Match at Princeton (2025-26): grants $90,718, $0 student/parent contribution, $0 loans; matches only zero-Parent-Contribution students; must maintain satisfactory progress. No QB deadline stated here.”
+- <https://www.sparkadmissions.com/blog/how-hard-is-it-to-get-into-princeton/> — section:strategic_profile
+    - “Selectivity context and holistic-review description.”
+- <https://www.tutorchase.com/blog/princeton-university-acceptance-rates> — section:strategic_profile
+    - “Class of 2028 ~4.62% acceptance rate and 40,000+ applications figure.”
+
+## 3. Consulted but NOT used — with reason (91)
+- <http://archive.org/wayback/available?url=ir.princeton.edu/document/546> — verify:sat_composite_middle_50 — Wayback availability check for the 2024-2025 CDS PDF — no archived snapshots exist.
+- <http://archive.org/wayback/available?url=ir.princeton.edu/document/606> — verify:act_composite_middle_50 — Wayback availability check for the 2025-2026 CDS doc: no archived snapshot exists.
+- <http://web.archive.org/cdx/search/cdx?url=ir.princeton.edu/document/*> — verify:act_composite_middle_50 — Wayback CDX search for archived CDS docs; showed docs 606/546 archived only as 403 (Cloudflare) — no readable data snapshot.
+- <https://admission.princeton.edu/apply/admission-statistics> — verify:overall_acceptance_rate — Fetched, but page only shows enrolled-class demographics for Class of 2029 — no applicant count, admit count, or admit rate. Did not yield the value.
+- <https://admission.princeton.edu/cost-aid/apply-financial-aid> — resolve — Admission-side 'Apply for Financial Aid' page; superseded by the finaid.princeton.edu office homepage as the primary financial-aid source.
+- <https://admission.princeton.edu/cost-aid/how-financial-aid-works> — section:financials — Could not fetch — HTTP 403 Forbidden. Philosophy content recovered from finaid.princeton.edu/how-aid-works instead.
+- <https://admission.princeton.edu/financial-aid-numbers> — section:financials — Rejected: served STALE cached content (Class of 2025 62% receiving aid, $62,200 avg grant, 2021-22 grant total) — superseded by current cost-aid page; no 2026-27/2027-28 data.
+- <https://admission.princeton.edu/how-apply/what-were-looking> — section:application_process — 404 Not Found.
+- <https://admission.princeton.edu/how-apply/whom-we-consider> — section:application_process — 404 Not Found.
+- <https://admission.princeton.edu/transfer-students> — section:credit_policies — Admissions transfer-student landing page; the enrolled-student transfer-credit articulation page was the more precise source, so this was not quoted.
+- <https://admissionsight.com/princeton-acceptance-rate/> — verify:overall_acceptance_rate — Third-party blog on Class of 2030. Not canonical; not used.
+- <https://admissionsight.com/princeton-sat-requirements/> — verify:sat_composite_middle_50 — Search-surfaced third-party aggregator; non-canonical and unverifiable. Rejected.
+- <https://advising.princeton.edu/degree-planning/choosing-degree-ab-and-bse> — section:academic_structure, section:application_strategy — HTTP 403 Forbidden; could not fetch. Declaration timing sourced from admission.princeton.edu/academics instead.
+- <https://advising.princeton.edu/degree-planning/choosing-major> — section:application_strategy — Surfaced in search on major declaration timing; not fetched — declaration-timing point already sourced from FAQ/academics.
+- <https://advising.princeton.edu/placement/advanced-placement/ap-table-class-2030> — section:credit_policies — Referenced as the AP Credit Reference Table holding per-subject minimum AP/IB/A-level scores; not exhaustively transcribed, so no per-subject numbers asserted. Live page also Cloudflare-blocked.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=186131&fields=...sat_scores...> — verify:sat_composite_middle_50 — College Scorecard API (DEMO_KEY). Every attempt returned HTTP 429 OVER_RATE_LIMIT; no data retrieved. Note: Scorecard also lags ~2 yrs and reports section-level percentiles/averages, not a stated SAT 
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=186131&fields=latest.admissions.act_scores...&api_key=DEMO_KEY> — verify:act_composite_middle_50 — Federal College Scorecard API for Princeton ACT. Every attempt returned HTTP 429 OVER_RATE_LIMIT (shared DEMO_KEY throttled). No value obtained.
+- <https://apstudents.collegeboard.org/getting-credit-placement/search-policies/college/4221> — section:credit_policies — College Board's third-party listing of Princeton's AP policy; rejected in favor of Princeton's own official pages per the 'official page' requirement.
+- <https://archive.org/wayback/available?url=ir.princeton.edu/document/606> — section:application_process — No archived snapshot of the CDS document exists (Cloudflare blocks archive.org crawler too).
+- <https://blog.collegevine.com/what-does-it-really-take-to-get-into-princeton> — section:student_insights — Surfaced in search; not fetched — commercial blog, not a community source.
+- <https://en.wikipedia.org/wiki/Princeton_station_(NJ_Transit)> — section:strategic_profile — Station location context; not directly quoted.
+- <https://engineering.princeton.edu/undergraduate-studies/degree-programs> — section:academic_structure — HTTP 404 — page not found; abandoned.
+- <https://hres.princeton.edu/undergraduate-housing/incoming-students/about-residential-colleges> — section:application_strategy — Returned HTTP 403 Forbidden — substituted the admission.princeton.edu residential-colleges page for the random-assignment quote.
+- <https://ir.princeton.edu/document/486> — resolve, verify:overall_acceptance_rate — Common Data Set 2022-2023 — older edition, not the target cycle.
+- <https://ir.princeton.edu/document/491> — resolve — Common Data Set 2023-2024 — older edition, not the target cycle.
+- <https://ir.princeton.edu/document/546> — resolve, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:graduation_rate_6_year, section:application_process — Common Data Set 2024-2025 — older edition, not the target cycle.
+- <https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf> — anchor — Direct download of the live CDS 2025-2026 PDF returned HTTP 404 (v1.3 replaced on the live site) / redirect to IR homepage; could not read live copy.
+- <https://ir.princeton.edu/university-factbook> — verify:graduation_rate_6_year — WebFetch and curl both returned HTTP 403 Forbidden (bot protection); could not list/access CDS documents.
+- <https://legacyonlineschool.com/blog/princeton-university-majors-degrees-and-fields-of-study.html> — section:application_strategy — Surfaced in first search; appears to be the origin of the conflicting 'B.S.E.-to-A.B. easier' summary. Not fetched directly; the switching-direction claim is therefore treated as unresolved.
+- <https://nces.ed.gov/ipeds/datacenter/institutionprofile.aspx?unitId=186131> — resolve — IPEDS institution profile for UnitID 186131 — WebFetch failed with too-many-redirects; identity confirmed via the DFR report instead.
+- <https://nextgenadmit.com/princeton-admission-statistics/> — anchor, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:freshman_retention_rate — Aggregator surfaced in search; not used.
+- <https://njbiz.com/princeton-maintains-grip-on-top-spot-in-u-s-news-college-rankings/> — section:strategic_profile — Search result corroborating Princeton #1, but a secondary outlet, not a US News page - cannot set us_news_rank from it.
+- <https://odoc.princeton.edu/curriculum/general-education-requirements/information-advanced-placement-and-advanced-standing> — section:credit_policies — Redirect target of princeton.edu/pub/ap; returned Cloudflare 403 to both WebFetch and curl. Only a stale 2021 Wayback snapshot existed, so I used the newer advising.princeton.edu pages instead.
+- <https://odoc.princeton.edu/learning-curriculum/majors-minors> — resolve, section:academic_structure — Office of the Dean of the College Majors & Minors page; found via search, not used.
+- <https://paw.princeton.edu/article/princeton-expands-financial-aid-across-income-spectrum> — section:financials — Search result not fetched — Princeton Alumni Weekly (secondary/editorial); preferred official finaid/admission pages.
+- <https://paw.princeton.edu/article/princeton-tops-us-news-rankings-13th-consecutive-year> — section:strategic_profile — Princeton Alumni Weekly noting top US News spot; corroborates top-ranking narrative but is not a US News page, so not used to set us_news_rank.
+- <https://paw.princeton.edu/article/will-princeton-avoid-endowment-tax-increasing-financial-aid> — section:strategic_profile — Endowment/tax context; endowment ~$36.4B figure surfaced via search summary, treated as approximate context not a verified section fact.
+- <https://pr.princeton.edu/pub/ap/> — section:credit_policies — 302-redirects to the odoc advanced-placement-and-advanced-standing page; not directly usable.
+- <https://r.jina.ai/https://ir.princeton.edu/document/606> — section:application_process — Reader-proxy attempt to bypass Cloudflare; returned 401, no content.
+- <https://registrar.princeton.edu/catalogs> — resolve — Registrar catalogs index; found via search, not used.
+- <https://registrar.princeton.edu/enrollment> — anchor, verify:overall_acceptance_rate, verify:graduation_rate_6_year — Princeton registrar enrollment page surfaced in search; not needed — B1/B2 read directly from CDS.
+- <https://scholarshub.net/unlocking-insights-what-the-princeton-university-common-data-set-reveals-about-academic-success/> — anchor — SEO blog surfaced in search; not used.
+- <https://talk.collegeconfidential.com/c/colleges-and-universities/princeton-university/399> — section:student_insights — CC Princeton category index; not fetched (used specific threads instead).
+- <https://talk.collegeconfidential.com/t/extracurricular-essay-for-princeton-is-it-too-weird-or-pointless/1916175> — section:student_insights — Surfaced in search; not fetched (essay-tip needs already met by thread 2077905).
+- <https://talk.collegeconfidential.com/t/how-ap-ib-credits-at-princeton-works/482944> — section:credit_policies — Forum thread; not authoritative.
+- <https://talk.collegeconfidential.com/t/princeton-class-of-2028-official-thread/3655063> — section:student_insights — Fetched but only interview-logistics chatter (skieurope, E_P, toandfro); no usable insight content.
+- <https://talk.collegeconfidential.com/t/princeton-class-of-2030-official-rd-thread/3698691> — section:student_insights — Surfaced in search; not fetched (already had sufficient CC threads).
+- <https://test-ninjas.com/princeton-admissions-analysis> — verify:overall_acceptance_rate, verify:sat_composite_middle_50 — Search result blog. Not used.
+- <https://toptieradmissions.com/resources/college-acceptance-rates/princeton-admissions-stats-acceptance-rates/> — verify:overall_acceptance_rate — Third-party aggregator. Not canonical; not fetched.
+- <https://ua.princeton.edu/> — resolve — Undergraduate Announcement — Princeton's full official academic catalog; found via search, not fetched. Alternative to the majors page used.
+- <https://ua.princeton.edu/academic-units/minors> — section:academic_structure — HTTP 403 Forbidden; could not fetch. Used the admission.princeton.edu minors page instead.
+- <https://ua.princeton.edu/fields-study> — resolve — Fields of Study within the Undergraduate Announcement catalog; found via search, not fetched.
+- <https://ua.princeton.edu/fields-study/minors> — section:academic_structure — Appeared in search results; not fetched — the admission.princeton.edu minors page already gave a verbatim list.
+- <https://ua.princeton.edu/policies-resources/academic-regulations/academic-year> — section:credit_policies — Undergraduate Announcement academic regulations page; returned Cloudflare 403 to WebFetch. Not needed once the advising pages provided the quotes.
+- <https://ua.princeton.edu/policies-resources/undergraduate-program/program-study-degree-bachelor-science-engineering> — section:academic_structure — Appeared in search results as authoritative on B.S.E. program of study; not fetched (already had confirmation from directly-fetched official pages).
+- <https://web.archive.org/cdx/search/cdx?url=ir.princeton.edu/document/606> — verify:sat_composite_middle_50 — Wayback CDX for latest CDS PDF returned empty; also empty for document/556. No archived copy of the actual CDS documents.
+- <https://www.albert.io/blog/princeton-advanced-placement-ap-credits/> — section:credit_policies — Third-party blog; not an official source.
+- <https://www.collegefactual.com/colleges/princeton-university/academic-life/graduation-and-retention/> — verify:freshman_retention_rate — Third-party aggregator surfaced in search (retention ~97%); not a canonical primary source and no verbatim primary quote — rejected.
+- <https://www.collegekickstart.com/blog/tag/Princeton> — verify:overall_acceptance_rate — Search result aggregator. Not used.
+- <https://www.collegevine.com/faq/101752/deadline-for-princeton-early-application> — section:application_process — Third-party deadline summary; superseded by official pages.
+- <https://www.collegevine.com/faq/21861/ab-vs-bse-at-princeton> — section:application_strategy — Fetched; contained coursework differences but NO advice on comparative admission difficulty or switching — rejected as not relevant to admissions tactics.
+- <https://www.collegevine.com/faq/97222/finding-college-common-data-sets-specifically-for-princeton> — resolve — Third-party CDS locator; rejected — not authoritative.
+- <https://www.commondatasets.fyi/princeton> — verify:overall_acceptance_rate, verify:sat_composite_middle_50 — Third-party CDS aggregator. Not fetched.
+- <https://www.crimsoneducation.org/us/blog/princeton-acceptance-rate> — verify:overall_acceptance_rate — Search result, third-party blog on Class of 2029. Not canonical; not fetched/used.
+- <https://www.dailyprincetonian.com/article/2023/03/princeton-ivy-day-admissions-2023> — anchor — News article surfaced in search (2023); not used.
+- <https://www.google.com/search?q=College+Scorecard+Princeton+University+retention+rate+first-time+full-time> — verify:freshman_retention_rate — WebSearch returning aggregator claims of 98% (Scorecard); no verbatim primary quote obtained, so not used as the reported value.
+- <https://www.google.com/search?q=Princeton+University+2027-28+tuition+and+fees+announced> — verify:out_of_state_tuition — Web search. No 2027-28 tuition announcement exists; surfaced the official admission fees page (2026-27) which I then fetched.
+- <https://www.google.com/search?q=Princeton+University+Common+Data+Set+2027-2028+first-year+retention+rate> — verify:freshman_retention_rate — WebSearch for the TARGET 2027-2028 cycle — confirmed no 2027-2028 CDS is published; most recent available is 2024-2025/2025-2026. Established the target cycle does not exist yet.
+- <https://www.google.com/search?q=Princeton+University+Common+Data+Set+2027-2028+graduation+rate> — verify:graduation_rate_6_year — WebSearch: confirmed the 2027-2028 CDS is not yet published (would appear ~2028); pointed to Princeton IR/registrar CDS pages and secondary mirrors.
+- <https://www.google.com/search?q=Princeton+University+Common+Data+Set+2027-2028+tuition> — verify:out_of_state_tuition — Web search. Confirmed 2027-2028 CDS not published; latest available is 2024-2025/2025-2026. Used only to locate canonical pages.
+- <https://www.google.com/search?q=Princeton+University+Common+Data+Set+six-year+graduation+rate+section+B> — verify:graduation_rate_6_year — WebSearch: surfaced Princeton IR/registrar CDS document URLs (e.g. ir.princeton.edu/document/546 = 2024-2025 CDS); all IR docs later returned 403.
+- <https://www.highereddive.com/news/us-news-best-college-rankings-latest-2025-princeton-mit-harvard-methodology/727819/> — section:strategic_profile — Corroborates Princeton/MIT/Harvard atop US News; secondary source, not used for the rank fact.
+- <https://www.ir.pitt.edu/sites/default/files/2026-02/CDS_2025-2026_PGH-UA_0.pdf> — verify:overall_acceptance_rate — University of Pittsburgh CDS — wrong institution, surfaced in search by accident. Irrelevant.
+- <https://www.ivycoach.com/the-ivy-coach-blog/ivy-league/princeton-admissions-statistics/> — verify:overall_acceptance_rate — Search result on Class of 2030 (Fall 2026). Third-party blog, not canonical; Fall 2026 official data not yet released. Not used.
+- <https://www.koppelmangroup.com/blog/2025/4/8/princeton-university-legacy-policies-and-guide> — section:application_process — Third-party; legacy 'plus factor' claim independently confirmed on official FAQ, so third-party not used as source.
+- <https://www.koppelmangroup.com/blog/2026/1/17/princeton-admissions-statistics-2025> — verify:overall_acceptance_rate — Third-party blog (Jan 2026) on Class of 2029 stats. Not primary; not fetched.
+- <https://www.nextfour.ai/princeton-university/sat-score-data> — verify:sat_composite_middle_50 — Search-surfaced aggregator; non-canonical. Rejected.
+- <https://www.niche.com/colleges/princeton-university/campus-life/> — section:strategic_profile, section:student_insights — Campus-life ratings; not directly quoted, overlapped with official sources.
+- <https://www.niche.com/colleges/princeton-university/reviews/> — section:student_insights — HTTP 403 Forbidden — could not verify; not used.
+- <https://www.oreateai.com/blog/princeton-university-the-ultimate-academic-pursuit-and-selection-philosophy-behind-the-lowkey-king/dbf52187e314bd77d9274ee391b88542> — section:strategic_profile — Selection-philosophy blog; overlapped with stronger sources, not directly quoted.
+- <https://www.prepscholar.com/sat/s/colleges/Princeton-tuition-financial-aid> — section:financials — Search result not fetched — third-party site; not authoritative for official figures.
+- <https://www.princeton.edu/academics/areas-of-study> — resolve — University-level 'Areas of Study' page; found via search, not used in favor of the admission Degrees & Departments page.
+- <https://www.princeton.edu/news/2024/03/26/princeton-sets-70-financial-aid-and-22-pell-enrollment-goals> — section:financials — Search result not fetched — 2024 goal-setting announcement (70% aid / 22% Pell targets), superseded by 2025-08-07 news for actuals.
+- <https://www.princeton.edu/pub/ap/> — section:credit_policies — 301-redirects to pr.princeton.edu/pub/ap then to the odoc page; not directly usable.
+- <https://www.reddit.com/r/Princeton/comments/.json> — section:student_insights — 'Claude Code is unable to fetch from www.reddit.com' — Reddit blocked to crawler; no Reddit content used.
+- <https://www.road2college.com/princeton-common-data-set/> — resolve, anchor, verify:overall_acceptance_rate, verify:act_composite_middle_50, verify:freshman_retention_rate, section:application_process — Third-party CDS mirror; rejected — not an authoritative primary source.
+- <https://www.studocu.com/en-us/document/mingus-union-high-school/ap-chemistry/common-data-set-2024-2025-princeton-university-overview/156059008> — verify:overall_acceptance_rate — User-uploaded CDS 2024-2025 doc. Older cycle, not canonical; not used.
+- <https://www.usnews.com/best-colleges/princeton-university-2627> — section:strategic_profile — Primary target for us_news_rank; WebFetch attempted twice, timed out at 60s both times. Not usable to quote a rank.
+- <https://www.usnews.com/best-colleges/princeton-university-2627/overall-rankings> — section:strategic_profile — Attempted twice for exact rank text; both timed out. No quotable rank obtained.
+- <https://www.usnews.com/best-colleges/princeton-university-2627/paying> — section:financials — Search result not fetched — third-party aggregator (US News); task requires official Princeton pages only.
+- <https://www.usnews.com/best-colleges/rankings/national-universities> — section:strategic_profile — Attempted to fetch the ranked list to place Princeton; timed out. Not usable.

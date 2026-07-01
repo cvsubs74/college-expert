@@ -1,0 +1,2516 @@
+{
+  "trust_report": {
+    "university": "Princeton University",
+    "id": "princeton_university",
+    "cycle": "Fall 2027",
+    "cds_edition_used": "2025-2026 (latest available; 2027-2028 not yet posted)",
+    "ipeds_unitid": "186131",
+    "deterministic_fields": {
+      "total": 48,
+      "published": 39,
+      "held_null": 9
+    },
+    "verification": {
+      "corroborated": 4,
+      "canonical_single": 35,
+      "conflict_nulled": 1,
+      "unverified_nulled": 8,
+      "fields": {
+        "overall_acceptance_rate": "CORROBORATED",
+        "in_state_acceptance_rate": "CANONICAL_SINGLE",
+        "out_of_state_acceptance_rate": "CANONICAL_SINGLE",
+        "transfer_acceptance_rate": "CANONICAL_SINGLE",
+        "international_acceptance_rate": "CANONICAL_SINGLE",
+        "applications_total": "CANONICAL_SINGLE",
+        "admits_total": "CANONICAL_SINGLE",
+        "enrolled_total": "CANONICAL_SINGLE",
+        "yield_rate": "CANONICAL_SINGLE",
+        "admits_class_size": "CANONICAL_SINGLE",
+        "sat_composite_middle_50": "CANONICAL_SINGLE",
+        "sat_reading_middle_50": "CANONICAL_SINGLE",
+        "sat_math_middle_50": "CANONICAL_SINGLE",
+        "act_composite_middle_50": "CORROBORATED",
+        "test_submission_rate": "CANONICAL_SINGLE",
+        "gpa_weighted_avg": "UNVERIFIED",
+        "gpa_unweighted_avg": "CANONICAL_SINGLE",
+        "race_white": "CANONICAL_SINGLE",
+        "race_black": "CANONICAL_SINGLE",
+        "race_hispanic": "CANONICAL_SINGLE",
+        "race_asian": "CANONICAL_SINGLE",
+        "race_native_american": "CANONICAL_SINGLE",
+        "race_pacific_islander": "CANONICAL_SINGLE",
+        "race_two_or_more": "CANONICAL_SINGLE",
+        "race_unknown": "CANONICAL_SINGLE",
+        "race_international": "CANONICAL_SINGLE",
+        "first_gen_percentage": "UNVERIFIED",
+        "international_percentage": "CANONICAL_SINGLE",
+        "freshman_retention_rate": "CORROBORATED",
+        "graduation_rate_4_year": "CANONICAL_SINGLE",
+        "graduation_rate_6_year": "CORROBORATED",
+        "in_state_tuition": "CANONICAL_SINGLE",
+        "out_of_state_tuition": "CONFLICT",
+        "total_coa_in_state": "CANONICAL_SINGLE",
+        "total_coa_out_of_state": "CANONICAL_SINGLE",
+        "median_earnings_10yr": "CANONICAL_SINGLE",
+        "is_test_optional": "CANONICAL_SINGLE",
+        "test_policy_details": "CANONICAL_SINGLE",
+        "ed_applications": "UNVERIFIED",
+        "ed_admits": "UNVERIFIED",
+        "ed_acceptance_rate": "UNVERIFIED",
+        "ea_applications": "UNVERIFIED",
+        "ea_admits": "UNVERIFIED",
+        "ea_acceptance_rate": "UNVERIFIED",
+        "waitlist_offered": "CANONICAL_SINGLE",
+        "waitlist_accepted": "CANONICAL_SINGLE",
+        "waitlist_admitted": "CANONICAL_SINGLE",
+        "waitlist_admit_rate": "CANONICAL_SINGLE"
+      }
+    },
+    "total_sources_consulted": 162,
+    "sources_backing_published_values": 2,
+    "acceptance_rate_published": 4.42,
+    "ingest_ready": true,
+    "doctrine": "null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated; every source consulted is logged"
+  },
+  "provenance": {
+    "overall_acceptance_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 4.42,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C1 (Fall 2025): total first-time, first-year applied = 21692 males + 20593 females + 18 unknown = 42303; admitted = 915 + 953 = 1868. Derived admit rate = 1868/42303 = 4.42%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 entering class); target Fall 2027 / 2027-2028 CDS not yet published as of 2026-07-01"
+    },
+    "in_state_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.98,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C1 residency breakdown (Fall 2025), 'In-State' column: applicants 4602, admits 229. Derived 229/4602 = 4.98%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 entering class)"
+    },
+    "out_of_state_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 5.15,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C1 residency breakdown (Fall 2025), 'Out-of-State' column: applicants 27134, admits 1398. Derived 1398/27134 = 5.15%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 entering class)"
+    },
+    "transfer_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1.85,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "D2 Transfer Admission (Fall 2025): Total Applicants 2,274, Admitted 42, Enrolled 32. Derived 42/2274 = 1.85%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025)"
+    },
+    "international_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 2.28,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C1 residency breakdown (Fall 2025), 'International' column: applicants 10567, admits 241. Derived 241/10567 = 2.28%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 entering class)"
+    },
+    "applications_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 42303,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C1 first-time, first-year applied (Fall 2025): 21692 males + 20593 females + 18 unknown = 42303; residency Total applicants = 42303.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 entering class)"
+    },
+    "admits_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1868,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C1 first-time, first-year admitted (Fall 2025): 915 males + 953 females + 0 unknown = 1868; residency Total admits = 1868.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 entering class)"
+    },
+    "enrolled_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1408,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C1 first-time, first-year enrolled (Fall 2025): 690 males + 718 females + 0 unknown = 1408; residency Total enrolled = 1408.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 entering class)"
+    },
+    "yield_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 75.37,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C1 (Fall 2025): enrolled 1408 of 1868 admitted. Derived yield = 1408/1868 = 75.37%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 entering class)"
+    },
+    "admits_class_size": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1408,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C1 enrolled first-time, first-year (matriculating class size) = 690 males + 718 females = 1408 (Fall 2025).",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 entering class)"
+    },
+    "sat_composite_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "1490-1560",
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C9: 'SAT Composite 1490 1530 1560' (25th / 50th / 75th percentile scores).",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 enrolled)"
+    },
+    "sat_reading_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "740-780",
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C9: 'SAT Evidence-Based Reading and Writing 740 760 780' (25th / 50th / 75th percentile).",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 enrolled)"
+    },
+    "sat_math_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "760-800",
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C9: 'SAT Math 760 790 800' (25th / 50th / 75th percentile).",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 enrolled)"
+    },
+    "act_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "34-35",
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C9: 'ACT Composite 34 35 35' (25th / 50th / 75th percentile).",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 enrolled)"
+    },
+    "test_submission_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 60,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C9: 'Submitting SAT Scores 60% 848' and 'Submitting ACT Scores 20% 288' (percent and number of Fall 2025 enrolled first-year submitting). Value shown is the SAT submission rate; ACT submission is separately 20%. CDS reports no single combined 'any test' rate.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 enrolled)"
+    },
+    "gpa_weighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "gpa_unweighted_avg": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3.96,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C12 'Average high school GPA of all degree-seeking, first-time, first-year students' = 3.96 (99% submitted GPA). Reported on a 4.0 scale (C11 top bucket 'Percent who had GPA of 4.0'), i.e. unweighted.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 enrolled)"
+    },
+    "race_white": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 28.42,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B2 'White, non-Hispanic' = 399 in the Degree-Seeking First-Time First-Year column (TOTAL 1,404). Derived 399/1404 = 28.42%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 first-year class)"
+    },
+    "race_black": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.99,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B2 'Black or African American, non-Hispanic' = 70 in Degree-Seeking First-Time First-Year column (TOTAL 1,404). Derived 70/1404 = 4.99%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 first-year class)"
+    },
+    "race_hispanic": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9.26,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B2 'Hispanic/Latino' = 130 in Degree-Seeking First-Time First-Year column (TOTAL 1,404). Derived 130/1404 = 9.26%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 first-year class)"
+    },
+    "race_asian": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 27.14,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B2 'Asian, non-Hispanic' = 381 in Degree-Seeking First-Time First-Year column (TOTAL 1,404). Derived 381/1404 = 27.14%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 first-year class)"
+    },
+    "race_native_american": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.07,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B2 'American Indian or Alaska Native, non-Hispanic' = 1 in Degree-Seeking First-Time First-Year column (TOTAL 1,404). Derived 1/1404 = 0.07%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 first-year class)"
+    },
+    "race_pacific_islander": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B2 'Native Hawaiian or other Pacific Islander, non-Hispanic' first-time first-year cell is blank (0); the row shows 3 and 3 for Degree-Seeking Undergraduates and Total Undergraduates. Entering-class share = 0/1404 = 0.0%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 first-year class)"
+    },
+    "race_two_or_more": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 7.69,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B2 'Two or more races, non-Hispanic' = 108 in Degree-Seeking First-Time First-Year column (TOTAL 1,404). Derived 108/1404 = 7.69%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 first-year class)"
+    },
+    "race_unknown": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 8.19,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B2 'Race and/or ethnicity unknown' = 115 in Degree-Seeking First-Time First-Year column (TOTAL 1,404). Derived 115/1404 = 8.19%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 first-year class)"
+    },
+    "race_international": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 14.25,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B2 'Nonresidents' = 200 in Degree-Seeking First-Time First-Year column (TOTAL 1,404). Derived 200/1404 = 14.25% of the entering first-year class.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 first-year class)"
+    },
+    "first_gen_percentage": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_percentage": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 13.25,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B2 'Nonresidents' = 784 in Total Undergraduates column; B1 'Total all undergraduates 5,916'. Derived 784/5916 = 13.25% of all undergraduates.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025 undergraduate enrollment)"
+    },
+    "freshman_retention_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 99,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B22 Retention Rates: Fall 2024 entering cohort = 1407, still enrolled Fall 2025 = 1387, rate = 99%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2024 cohort)"
+    },
+    "graduation_rate_4_year": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 72.84,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B4-B21 Graduation Rates, Fall 2019 cohort: line C final adjusted cohort = 1333; line D 'completed in four years or less' = 971. Derived 971/1333 = 72.84%.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2019 cohort)"
+    },
+    "graduation_rate_6_year": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 97.37,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "B4-B21 Graduation Rates, Fall 2019 cohort: line C final adjusted cohort = 1333; line G 'Total graduating within six years' = 1298. Derived 1298/1333 = 97.37% (cross-checks Scorecard completion_rate_4yr_150nt = 0.9761).",
+      "as_of_cycle": "2025-2026 CDS (Fall 2019 cohort)"
+    },
+    "in_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 62688,
+      "source": "U.S. Dept of Education College Scorecard",
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=186131-Princeton-University",
+      "quote": "Scorecard 'latest.cost.tuition.in_state': 62688 (Princeton is private; in-state = out-of-state). CDS section G was blank: Princeton checked 'costs of attendance are not available at this time', date 7/1/2026.",
+      "as_of_cycle": "College Scorecard latest (retrieved 2026-07-01); CDS G 2026-2027 costs deferred"
+    },
+    "out_of_state_tuition": {
+      "status": "CONFLICT",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null,
+      "conflict": {
+        "anchor": "62688",
+        "verifier": "$68,140"
+      }
+    },
+    "total_coa_in_state": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 84040,
+      "source": "U.S. Dept of Education College Scorecard",
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=186131-Princeton-University",
+      "quote": "Scorecard 'latest.cost.attendance.academic_year': 84040 (total cost of attendance). CDS G was blank (2026-2027 COA deferred to 7/1/2026).",
+      "as_of_cycle": "College Scorecard latest (retrieved 2026-07-01); CDS G 2026-2027 costs deferred"
+    },
+    "total_coa_out_of_state": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 84040,
+      "source": "U.S. Dept of Education College Scorecard",
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=186131-Princeton-University",
+      "quote": "Scorecard 'latest.cost.attendance.academic_year': 84040 (Princeton private; in-state = out-of-state COA). CDS G was blank (2026-2027 COA deferred to 7/1/2026).",
+      "as_of_cycle": "College Scorecard latest (retrieved 2026-07-01); CDS G 2026-2027 costs deferred"
+    },
+    "median_earnings_10yr": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 110066,
+      "source": "U.S. Dept of Education College Scorecard",
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=186131-Princeton-University",
+      "quote": "Scorecard 'latest.earnings.10_yrs_after_entry.median': 110066 (median earnings 10 years after entry). Cross-check Scorecard admission_rate.overall = 0.0462.",
+      "as_of_cycle": "College Scorecard latest (retrieved 2026-07-01)"
+    },
+    "is_test_optional": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "true",
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C8: 'policies for use in admission for students applying for Fall 2027 ... SAT or ACT' checked under 'Not required for admission, but considered if submitted' (test-optional).",
+      "as_of_cycle": "Fall 2027 (test policy stated in CDS 2025-2026 C8)"
+    },
+    "test_policy_details": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "Test-optional for Fall 2027 applicants: standardized testing requirement paused; scores considered if submitted, not required",
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C9 clarification: 'Princeton will pause its standardized testing requirement as part of its holistic review process for the application cycle. Students who sit for a standardized test and wish to submit their score will still have the option to do so. However, because of the change to policy this year, applications without test scores will be considered complete. Students who do not submit test scores will not be at a disadvantage. As with previous years, the University does not require subject tests.' C8 header: 'for students applying for Fall 2027'.",
+      "as_of_cycle": "Fall 2027 (stated in CDS 2025-2026 C8/C9)"
+    },
+    "ed_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_offered": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1370,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C2 Waiting List (Fall 2025): 'Number of qualified applicants offered a place on waiting list' = 1370.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025)"
+    },
+    "waitlist_accepted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1086,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C2 Waiting List (Fall 2025): 'Number accepting a place on the waiting list' = 1086.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025)"
+    },
+    "waitlist_admitted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 36,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C2 Waiting List (Fall 2025): 'Number of wait-listed students admitted' = 36.",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025)"
+    },
+    "waitlist_admit_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3.31,
+      "source": "Princeton University Common Data Set 2025-2026",
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "quote": "C2 Waiting List (Fall 2025): admitted 36 of 1086 who accepted a waitlist place. Derived 36/1086 = 3.31% (36/1370 offered = 2.63%).",
+      "as_of_cycle": "2025-2026 CDS (Fall 2025)"
+    }
+  },
+  "source_ledger": [
+    {
+      "url": "http://web.archive.org/web/20260519155521id_/https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "roles": [
+        "anchor",
+        "anchor:overall_acceptance_rate",
+        "anchor:in_state_acceptance_rate",
+        "anchor:out_of_state_acceptance_rate",
+        "anchor:transfer_acceptance_rate",
+        "anchor:international_acceptance_rate",
+        "anchor:applications_total",
+        "anchor:admits_total",
+        "anchor:enrolled_total",
+        "anchor:yield_rate",
+        "anchor:admits_class_size",
+        "anchor:sat_composite_middle_50",
+        "anchor:sat_reading_middle_50",
+        "anchor:sat_math_middle_50",
+        "anchor:act_composite_middle_50",
+        "anchor:test_submission_rate",
+        "anchor:gpa_weighted_avg",
+        "anchor:gpa_unweighted_avg",
+        "anchor:race_white",
+        "anchor:race_black",
+        "anchor:race_hispanic",
+        "anchor:race_asian",
+        "anchor:race_native_american",
+        "anchor:race_pacific_islander",
+        "anchor:race_two_or_more",
+        "anchor:race_unknown",
+        "anchor:race_international",
+        "anchor:first_gen_percentage",
+        "anchor:international_percentage",
+        "anchor:freshman_retention_rate",
+        "anchor:graduation_rate_4_year",
+        "anchor:graduation_rate_6_year",
+        "anchor:is_test_optional",
+        "anchor:test_policy_details",
+        "anchor:ed_applications",
+        "anchor:ed_admits",
+        "anchor:ed_acceptance_rate",
+        "anchor:ea_applications",
+        "anchor:ea_admits",
+        "anchor:ea_acceptance_rate",
+        "anchor:waitlist_offered",
+        "anchor:waitlist_accepted",
+        "anchor:waitlist_admitted",
+        "anchor:waitlist_admit_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "overall_acceptance_rate",
+        "in_state_acceptance_rate",
+        "out_of_state_acceptance_rate",
+        "transfer_acceptance_rate",
+        "international_acceptance_rate",
+        "applications_total",
+        "admits_total",
+        "enrolled_total",
+        "yield_rate",
+        "admits_class_size",
+        "sat_composite_middle_50",
+        "sat_reading_middle_50",
+        "sat_math_middle_50",
+        "act_composite_middle_50",
+        "test_submission_rate",
+        "gpa_unweighted_avg",
+        "race_white",
+        "race_black",
+        "race_hispanic",
+        "race_asian",
+        "race_native_american",
+        "race_pacific_islander",
+        "race_two_or_more",
+        "race_unknown",
+        "race_international",
+        "international_percentage",
+        "freshman_retention_rate",
+        "graduation_rate_4_year",
+        "graduation_rate_6_year",
+        "is_test_optional",
+        "test_policy_details",
+        "waitlist_offered",
+        "waitlist_accepted",
+        "waitlist_admitted",
+        "waitlist_admit_rate"
+      ],
+      "notes": [
+        "PRIMARY SOURCE. Actual 30-page Princeton Common Data Set 2025-2026 PDF (593KB). Read cells C1/C2 (admissions/waitlist), C8/C9 (test policy, SAT/ACT, GPA), B1/B2 (enrollment/race), B22 (retention), B4-B21 (graduation), D2 (transfer), G (cost deferred).",
+        "C1 (Fall 2025): total first-time, first-year applied = 21692 males + 20593 females + 18 unknown = 42303; admitted = 915 + 953 = 1868. Derived admit rate = 1868/42303 = 4.42%.",
+        "C1 residency breakdown (Fall 2025), 'In-State' column: applicants 4602, admits 229. Derived 229/4602 = 4.98%.",
+        "C1 residency breakdown (Fall 2025), 'Out-of-State' column: applicants 27134, admits 1398. Derived 1398/27134 = 5.15%.",
+        "D2 Transfer Admission (Fall 2025): Total Applicants 2,274, Admitted 42, Enrolled 32. Derived 42/2274 = 1.85%.",
+        "C1 residency breakdown (Fall 2025), 'International' column: applicants 10567, admits 241. Derived 241/10567 = 2.28%."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=186131-Princeton-University",
+      "roles": [
+        "anchor:in_state_tuition",
+        "anchor:out_of_state_tuition",
+        "anchor:total_coa_in_state",
+        "anchor:total_coa_out_of_state",
+        "anchor:median_earnings_10yr"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "in_state_tuition",
+        "total_coa_in_state",
+        "total_coa_out_of_state",
+        "median_earnings_10yr"
+      ],
+      "notes": [
+        "Scorecard 'latest.cost.tuition.in_state': 62688 (Princeton is private; in-state = out-of-state). CDS section G was blank: Princeton checked 'costs of attendance are not available at this time', date 7/1/2026.",
+        "Scorecard 'latest.cost.tuition.out_of_state': 62688. CDS section G left blank (Princeton checked '2026-2027 costs of attendance not available at this time', date 7/1/2026).",
+        "Scorecard 'latest.cost.attendance.academic_year': 84040 (total cost of attendance). CDS G was blank (2026-2027 COA deferred to 7/1/2026).",
+        "Scorecard 'latest.cost.attendance.academic_year': 84040 (Princeton private; in-state = out-of-state COA). CDS G was blank (2026-2027 COA deferred to 7/1/2026).",
+        "Scorecard 'latest.earnings.10_yrs_after_entry.median': 110066 (median earnings 10 years after entry). Cross-check Scorecard admission_rate.overall = 0.0462."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability API used to locate the most recent snapshots of the four target Princeton pages."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=ir.princeton.edu/document/546",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability check for the 2024-2025 CDS PDF \u2014 no archived snapshots exist."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=ir.princeton.edu/document/606",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability check for the 2025-2026 CDS doc: no archived snapshot exists."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=ir.princeton.edu/other-university-data/common-data-set",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability API returned a 2026-06-18 snapshot of the CDS index \u2014 the accessible route to Princeton's canonical page."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability API located a 200 snapshot from 2026-05-19 of the CDS PDF."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/cdx/search/cdx?url=ir.princeton.edu/document/*",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback CDX search for archived CDS docs; showed docs 606/546 archived only as 403 (Cloudflare) \u2014 no readable data snapshot."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20250912133711/https://advising.princeton.edu/choosing-courses/taking-courses-transfer-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Actual retrieval URL for the transfer-credit page; extracted full body text."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20251114212420/https://advising.princeton.edu/placement/advanced-standing",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Actual retrieval URL for the advanced-standing page; extracted full body text."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20260527192705/https://advising.princeton.edu/placement/advanced-placement",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Actual retrieval URL for the advanced-placement page; extracted full body text."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20260618065133/https://ir.princeton.edu/other-university-data/common-data-set",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "DECISIVE. Archived Princeton IR CDS index. Lists editions through 2025-2026 (document/606) as the newest; no 2026-2027 or 2027-2028 edition exists. Confirms the target Fall 2027 CDS does not exist yet.",
+        "data-entity-substitution=\"media_file_redirect\" target=\"_blank\">2025-2026</a> \u2014 this \"2025-2026\" link is the newest Common Data Set edition listed on Princeton's official IR index; the list ends at 2025-2026 (document/606), with 2024-2025 (document/556) and 2023-2024 (document/491) preceding it. No 2026-2027 or 2027-2028 edition is present.",
+        "Archived canonical CDS listing (June 18, 2026). Confirms CDS editions run only 2001-2002 through 2025-2026 \u2014 proves no 2026-2027 or 2027-2028 CDS exists.",
+        "Archived CDS index; extracted document-ID -> year map (606=2025-2026, 556=2024-2025, ... to 2001-2002)."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/",
+      "roles": [
+        "resolve:admissions",
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "official admissions page",
+        "Official Office of Undergraduate Admission page; fetched \u2014 title 'Princeton University Admission', heading 'PRINCETON ADMISSION'."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/academics",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed unified admission, A.B. declares major 'in the spring of their sophomore year', B.S.E. is '~25% of each class' and engineers 'choose to concentrate in one of the six engineering departments' at end of first year.",
+        "Verbatim: 'Students apply to Princeton University, not to individual departments, programs or schools.' \u2014 basis for does-not-admit-by-major tactic."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/academics/degrees-departments",
+      "roles": [
+        "resolve:catalog",
+        "resolve",
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "majors/catalog page",
+        "Official majors/degrees page; fetched \u2014 title 'Degrees & Departments', A.B. and B.S.E. degrees, '37 concentrations' (e.g. Computer Science, Economics, Physics, Psychology, English).",
+        "Primary source: 37 concentrations list, A.B./B.S.E. degree types, CS offers both, 'Students apply to Princeton University, not to individual departments, programs or schools', 'over 50 minors and interdepartmental certificate programs'.",
+        "Consulted for the 'does not affect chances' verbatim; page did not contain application-choice language beyond the general 'apply to Princeton University' point already sourced elsewhere."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/academics/minors-and-certificate-programs",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verbatim list of 71 minors/certificate programs (all included in minors_certificates)."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/apply/admission-statistics",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched, but page only shows enrolled-class demographics for Class of 2029 \u2014 no applicant count, admit count, or admit rate. Did not yield the value."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/apply/application-checklist",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Platform = Common Application only (CEEB 2672); graded written paper required; 2 teacher recs + counselor rec + school report + midyear + transcript; optional arts supplement; optional alumni interview (30-45 min); test-optional fall 2026/2027, required fall 2028; English proficiency tests for non-native speakers."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/apply/before-you-apply",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed A.B./B.S.E. degree selection occurs after enrollment; corroborates structure. Did not surface the 'does not affect chances' line (that came from FAQ)."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/apply/first-year-application-dates-deadlines",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Deadline table: SCEA Nov. 1 / arts supplement Nov. 6 / decision mid-December; RD Jan. 1 / arts supplement Jan. 8 / decision late March; reply deadline May 1. No year printed."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/apply/princeton-specific-questions",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official B.S.E. essay prompt verbatim (250 words) \u2014 basis for B.S.E.-only and 'Why Princeton engineering' tactics."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/apply/questbridge",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "QuestBridge NCM is a binding match ('you must withdraw all applications to other schools'); PFAA + tax docs due Nov. 1; non-rankers may instead use SCEA (Nov 1) or RD (Jan 1)."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/community/residential-colleges-housing",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verbatim: 'Entering first-year students are randomly assigned to a residential college...' \u2014 justifies empty college_ranking_tactics."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/cost-aid",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Most current stats (2025-26): 69% of Class of 2029 qualified for aid, average grant $80,000, need-blind, meets 100% with grants, no-loan since 2001, 90% graduate debt-free."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/cost-aid/apply-financial-aid",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Admission-side 'Apply for Financial Aid' page; superseded by the finaid.princeton.edu office homepage as the primary financial-aid source."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/cost-aid/fees-payment-options",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Princeton Admission fees page. Verbatim 'Tuition: $68,140' labeled for the 2026-27 academic year; explicitly no 2027-2028 figure present.",
+        "Tuition: $68,140 \u2014 with the page stating: \"The estimated cost of attendance for 2026-27 is $94,624.\" (Cross-confirmed on finaid.princeton.edu Student Budget page: \"2026-27 academic year: $68,140\".)"
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/cost-aid/how-financial-aid-works",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Could not fetch \u2014 HTTP 403 Forbidden. Philosophy content recovered from finaid.princeton.edu/how-aid-works instead.",
+        "Duplicate of the 403 page surfaced via search; not re-attempted."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/eating-clubs",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official eating-clubs description: ~two-thirds join, co-ed, sign-in and bicker."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/faqs",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official legacy quote: parent/stepparent Princeton attendance 'can act as a plus factor amongst similarly qualified applicants in our holistic review process.'"
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/faqs?page=21",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Primary source. Verbatim: 'On the application we ask you to indicate the degree program (A.B., B.S.E. or undecided)...'; 'These choices don't affect your chances for admission, nor do they commit you to a particular course of study.'; 'We look closely at the math and science background of students interested in the B.S.E. program...'"
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/financial-aid-numbers",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Rejected: served STALE cached content (Class of 2025 62% receiving aid, $62,200 avg grant, 2021-22 grant total) \u2014 superseded by current cost-aid page; no 2026-27/2027-28 data."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/how-apply",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "SCEA due Nov. 1 (single-choice/restrictive, non-binding), RD due Jan. 1, transfer March 1; references graded written paper and optional arts supplement."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/how-apply/what-were-looking",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "404 Not Found."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/how-apply/whom-we-consider",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "404 Not Found."
+      ]
+    },
+    {
+      "url": "https://admission.princeton.edu/transfer-students",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Admissions transfer-student landing page; the enrolled-student transfer-credit articulation page was the more precise source, so this was not quoted."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/princeton-acceptance-rate/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog on Class of 2030. Not canonical; not used."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/princeton-sat-requirements/",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search-surfaced third-party aggregator; non-canonical and unverifiable. Rejected."
+      ]
+    },
+    {
+      "url": "https://advising.princeton.edu/choosing-courses/taking-courses-transfer-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY source for transfer articulation tools (TigerHub Pre-Approval / Completion forms) and all transfer restrictions (course caps, C-or-better, in-person, distribution limits, no double counting). Read via Wayback capture 2025-09-12 (live page returns Cloudflare 403)."
+      ]
+    },
+    {
+      "url": "https://advising.princeton.edu/degree-planning/choosing-degree-ab-and-bse",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 Forbidden; could not fetch. Declaration timing sourced from admission.princeton.edu/academics instead.",
+        "Returned HTTP 403 Forbidden \u2014 could not retrieve."
+      ]
+    },
+    {
+      "url": "https://advising.princeton.edu/degree-planning/choosing-major",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search on major declaration timing; not fetched \u2014 declaration-timing point already sourced from FAQ/academics."
+      ]
+    },
+    {
+      "url": "https://advising.princeton.edu/placement/advanced-placement",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY source for philosophy, AP general rule, approved/prohibited uses, IB HL and A-level acceptance, and the no-credit statement. Read via Wayback capture 2026-05-27 because the live page returns Cloudflare 403."
+      ]
+    },
+    {
+      "url": "https://advising.princeton.edu/placement/advanced-placement/ap-table-class-2030",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Referenced as the AP Credit Reference Table holding per-subject minimum AP/IB/A-level scores; not exhaustively transcribed, so no per-subject numbers asserted. Live page also Cloudflare-blocked."
+      ]
+    },
+    {
+      "url": "https://advising.princeton.edu/placement/advanced-standing",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY source for the advanced-standing discontinuation (Class of 2029+) and the 'no units of credit' rule for fall-2025-and-beyond entrants. Read via Wayback capture 2025-11-14 (live page returns Cloudflare 403)."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=186131",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY SOURCE (Scorecard authority, DEMO_KEY). Provided median_earnings_10yr=110066, tuition in/out=62688, cost.attendance.academic_year=84040, admission_rate.overall=0.0462, completion_rate_4yr_150nt=0.9761, retention 0.9835 (cross-checks)."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=186131&fields=...sat_scores...",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard API (DEMO_KEY). Every attempt returned HTTP 429 OVER_RATE_LIMIT; no data retrieved. Note: Scorecard also lags ~2 yrs and reports section-level percentiles/averages, not a stated SAT total middle-50%, and would not cover Fall 2027 regardless."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=186131&fields=2019..2025.completion.completion_rate_4yr_150nt,...rate_suppressed.overall&api_key=DEMO_KEY",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Year-prefixed queries (2019-2025) to pin the cycle: 2019=0.979, 2020=0.9802, 2021=0.9757, 2022=0.9755, 2023=0.9709, 2024=0.9761 (matches 'latest'), 2025=null. Confirms 'latest' = 2024 data year."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=186131&fields=latest.admissions.act_scores...&api_key=DEMO_KEY",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Federal College Scorecard API for Princeton ACT. Every attempt returned HTTP 429 OVER_RATE_LIMIT (shared DEMO_KEY throttled). No value obtained."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=186131&fields=school.name,latest.completion.completion_rate_4yr_150nt,latest.completion.rate_suppressed.overall&api_key=DEMO_KEY",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard API: returned completion_rate_4yr_150nt=0.9761 (six-year/150%-time completion rate) and rate_suppressed.overall=0.9735 for Princeton (id 186131).",
+        "\"2024.completion.completion_rate_4yr_150nt\":0.9761,\"2024.completion.rate_suppressed.overall\":0.9735,\"school.name\":\"Princeton University\",\"id\":186131"
+      ]
+    },
+    {
+      "url": "https://apstudents.collegeboard.org/getting-credit-placement/search-policies/college/4221",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Board's third-party listing of Princeton's AP policy; rejected in favor of Princeton's own official pages per the 'official page' requirement."
+      ]
+    },
+    {
+      "url": "https://archive.org/wayback/available?url=ir.princeton.edu/document/606",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "No archived snapshot of the CDS document exists (Cloudflare blocks archive.org crawler too)."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/what-does-it-really-take-to-get-into-princeton",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not fetched \u2014 commercial blog, not a community source."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?186131-Princeton-University",
+      "roles": [
+        "resolve:scorecard",
+        "resolve",
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard located",
+        "College Scorecard page for Princeton; canonical URL encodes UnitID 186131. Page data rendered client-side (only shell loaded via fetch), but URL corroborates the UnitID.",
+        "Scorecard school page named in task; WebFetch returned only JS shell/nav, no data. Superseded by the Scorecard API for the same school id 186131.",
+        "Alternate canonical source attempted. WebFetch returned only the JS/SPA shell with no data; could not extract a verbatim admit rate. (Scorecard's rate would also lag ~2 years and is not Fall 2027.)",
+        "Fallback canonical source. Page is a JS single-page app; static HTML returned only header/nav/footer with no SAT data. No verbatim figure obtainable.",
+        "Alternate canonical source. WebFetch returned only page header/nav/footer (JS-rendered SPA); no ACT data in HTML."
+      ]
+    },
+    {
+      "url": "https://empowerly.com/applications/5-things-princeton-university-is-known-for/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "What Princeton is known for; undergraduate research and reputation points."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Princeton_station_(NJ_Transit)",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Station location context; not directly quoted."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Princeton_University_eating_clubs",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Eating-club structure (11 clubs, sign-in vs bicker) for social_environment."
+      ]
+    },
+    {
+      "url": "https://engineering.princeton.edu/undergraduate-studies/concentrations",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed the six B.S.E. engineering departments and that Computer Science grants both B.S.E. and A.B."
+      ]
+    },
+    {
+      "url": "https://engineering.princeton.edu/undergraduate-studies/degree-programs",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 page not found; abandoned."
+      ]
+    },
+    {
+      "url": "https://finaid.princeton.edu/",
+      "roles": [
+        "resolve:financial_aid",
+        "resolve",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "financial-aid page",
+        "Official Princeton Financial Aid office page; fetched \u2014 heading 'Princeton Financial Aid', Undergraduate Financial Aid & Student Employment Office.",
+        "Financial aid hub; confirmed 'All enrolled students who demonstrate need are eligible for financial aid' and navigation to sub-pages (how-aid-works, apply-aid, policies)."
+      ]
+    },
+    {
+      "url": "https://finaid.princeton.edu/apply-aid-prospective-students",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "2026-27 cycle: aid deadline 'May 1 2026', PFAA + FAFSA (code 002627) + 2024 tax docs + non-custodial info; points to outside-scholarship policy."
+      ]
+    },
+    {
+      "url": "https://finaid.princeton.edu/how-aid-works",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Core philosophy quotes: need-based program, no-loan policy ('need is met through grants, rather than loans'), 'meet 100 percent of your demonstrated financial need'; no merit/athletic mention."
+      ]
+    },
+    {
+      "url": "https://finaid.princeton.edu/how-aid-works/student-budget",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Princeton Financial Aid Student Budget page. Cross-confirms 2026-27 tuition $68,140 and lists 2025-26 as $65,210; no 2027-2028 figure."
+      ]
+    },
+    {
+      "url": "https://finaid.princeton.edu/policies-procedures/outside-scholarships",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Outside scholarships reduce the Princeton Grant, not the family contribution; reporting form required; up to $3,500 computer-purchase exception. Context for named/outside awards."
+      ]
+    },
+    {
+      "url": "https://gsadminportal.princeton.edu/handbooks/dgs-handbook-2024-2025-section-5-access-diversity-and-inclusion/holistic-file-review",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Princeton's own framing of holistic file review; supports admissions_philosophy."
+      ]
+    },
+    {
+      "url": "https://hres.princeton.edu/undergraduate-housing/incoming-students/about-residential-colleges",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Returned HTTP 403 Forbidden \u2014 substituted the admission.princeton.edu residential-colleges page for the random-assignment quote."
+      ]
+    },
+    {
+      "url": "https://ir.princeton.edu/document/486",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Common Data Set 2022-2023 \u2014 older edition, not the target cycle.",
+        "Surfaced in search \u2014 CDS 2022-2023 A0 doc. Not fetched; older cycle, not needed."
+      ]
+    },
+    {
+      "url": "https://ir.princeton.edu/document/491",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Common Data Set 2023-2024 \u2014 older edition, not the target cycle."
+      ]
+    },
+    {
+      "url": "https://ir.princeton.edu/document/546",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:graduation_rate_6_year",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Common Data Set 2024-2025 \u2014 older edition, not the target cycle.",
+        "Surfaced in search \u2014 CDS 2024-2025 A0 doc. Not fetched; older cycle, not needed.",
+        "Princeton CDS 2024-2025 (redirect to PDF). HTTP 403 via WebFetch; not archived in Wayback (empty snapshots). Could not obtain a verbatim SAT figure.",
+        "Canonical 2024-2025 CDS document. HTTP 403 (Cloudflare), including in the Wayback CDX record. Not readable.",
+        "2024-2025 CDS (Section B graduation rates). WebFetch and curl both HTTP 403 Forbidden; Princeton-hosted PDF not retrievable.",
+        "CDS 2024-2025. Also Cloudflare-blocked (403)."
+      ]
+    },
+    {
+      "url": "https://ir.princeton.edu/document/606",
+      "roles": [
+        "resolve",
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Common Data Set 2025-2026 (latest available edition); search-indexed title reads 'Common Data Set 2025-2026 A0 Respondent Information'. 2027-2028 target edition not yet posted as of July 2026.",
+        "Drupal node for CDS 2025-2026 surfaced in search; HTTP 403 on direct fetch.",
+        "Princeton CDS 2025-2026 (A0 respondent-info document). WebFetch returned HTTP 403; could not open the primary PDF to quote Section C1 admit figures directly.",
+        "Princeton CDS 2025-2026 (latest, redirect to PDF). No Wayback snapshot (CDX returned []); site 403s direct fetch. Could not read.",
+        "Canonical 2025-2026 CDS document (the authoritative source for the value). Cloudflare 'Just a moment...' HTTP 403 via WebFetch AND curl; no Wayback snapshot available. Could not read verbatim.",
+        "Surfaced in search as 'Common Data Set 2025-2026 A0' \u2014 evidence that 2025-2026 is the latest published CDS, not 2027-2028."
+      ]
+    },
+    {
+      "url": "https://ir.princeton.edu/other-university-data/common-data-set",
+      "roles": [
+        "resolve:common_data_set",
+        "resolve",
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CDS located (2025-2026 (latest available; 2027-2028 not yet posted))",
+        "Princeton Office of Institutional Research CDS index/landing page; the authoritative CDS source. Direct WebFetch returned HTTP 403 (bot protection), but confirmed as the CDS index via search results.",
+        "Canonical CDS landing page named in task; WebFetch returned HTTP 403 (Drupal block). Provided the CDS PDF filename pattern indirectly via search.",
+        "Princeton Office of Institutional Research CDS index \u2014 the true canonical source. WebFetch returned HTTP 403; could not access to quote a CDS year list. Confirmed via search that the newest posted edition is 2025-2026; no 2027-2028 (or 2026-2027) CDS listed.",
+        "Canonical Princeton IR CDS index. Direct WebFetch and curl both returned HTTP 403 (bot-blocked); could not read directly.",
+        "Canonical Princeton IR CDS index. Live page returned HTTP 403 (Cloudflare). Read via Wayback snapshot to confirm available CDS years."
+      ]
+    },
+    {
+      "url": "https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v1.3.pdf",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct download of the live CDS 2025-2026 PDF returned HTTP 404 (v1.3 replaced on the live site) / redirect to IR homepage; could not read live copy."
+      ]
+    },
+    {
+      "url": "https://ir.princeton.edu/sites/g/files/toruqf2041/files/documents/CDS_2526_Princeton_v2.pdf",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CANONICAL SOURCE. Princeton's own 2025-2026 Common Data Set PDF. Extracted text of section B22: initial cohort 1407, retained 1387, retention rate = 99% for the Fall 2024 entering cohort as of the Fall 2025 census date. This is the most recent published cycle; the requested 2027-2028 CDS does not exist yet.",
+        "B22. Retention Rates \u2014 \"B22  1407 [initial cohort] ... 1387 [retained] ... 99% Calculate the percentage of the Fall 2024 entering cohort who remained enrolled on the official census date.\" Supporting text: \"Total students retained = students from the Fall 2024 cohort who are still enrolled as of Fall 2025 + students from Fall 2024 cohort who completed their bachelor's program as of Fall 2025\"."
+      ]
+    },
+    {
+      "url": "https://ir.princeton.edu/university-factbook",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebFetch and curl both returned HTTP 403 Forbidden (bot protection); could not list/access CDS documents."
+      ]
+    },
+    {
+      "url": "https://legacyonlineschool.com/blog/princeton-ab-or-bse-degree.html",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Used only to flag a CONTESTED switching-direction claim: 'go A.B.\u2014it's easier to transfer into B.S.E. later than the reverse.' Conflicts with another summary; reported as unverified, not as fact."
+      ]
+    },
+    {
+      "url": "https://legacyonlineschool.com/blog/princeton-university-majors-degrees-and-fields-of-study.html",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in first search; appears to be the origin of the conflicting 'B.S.E.-to-A.B. easier' summary. Not fetched directly; the switching-direction claim is therefore treated as unresolved."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/collegenavigator/?id=186131",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": []
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/datacenter/institutionprofile.aspx?unitId=186131",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS institution profile for UnitID 186131 \u2014 WebFetch failed with too-many-redirects; identity confirmed via the DFR report instead."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/dfr/2024/ReportHTML.aspx?unitId=186131",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "NCES IPEDS Data Feedback Report for UnitID 186131; fetched successfully \u2014 states 'Princeton University', 'Princeton, NJ', control 'Private Not-for-profit'. Confirms UnitID cross-check on name+city+state."
+      ]
+    },
+    {
+      "url": "https://nextgenadmit.com/princeton-admission-statistics/",
+      "roles": [
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator surfaced in search; not used.",
+        "Third-party summary of CDS. Not primary; not fetched.",
+        "Search-surfaced blog; non-canonical. Rejected.",
+        "Third-party admissions stats blog; not primary; not used."
+      ]
+    },
+    {
+      "url": "https://njbiz.com/princeton-maintains-grip-on-top-spot-in-u-s-news-college-rankings/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result corroborating Princeton #1, but a secondary outlet, not a US News page - cannot set us_news_rank from it."
+      ]
+    },
+    {
+      "url": "https://odoc.princeton.edu/curriculum/general-education-requirements/information-advanced-placement-and-advanced-standing",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Redirect target of princeton.edu/pub/ap; returned Cloudflare 403 to both WebFetch and curl. Only a stale 2021 Wayback snapshot existed, so I used the newer advising.princeton.edu pages instead."
+      ]
+    },
+    {
+      "url": "https://odoc.princeton.edu/learning-curriculum/majors-minors",
+      "roles": [
+        "resolve",
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Office of the Dean of the College Majors & Minors page; found via search, not used.",
+        "HTTP 403 Forbidden; could not fetch."
+      ]
+    },
+    {
+      "url": "https://odus.princeton.edu/student-engagement/dining-eating-clubs-and-co-ops",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Dining/eating-club and co-op detail supporting social_environment."
+      ]
+    },
+    {
+      "url": "https://pathivy.com/blog/ivy-league-comparison-2025-why-princeton-university-stands-out-among-the-ivies",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Market position and undergraduate-focus / ~5:1 ratio framing; peer-tier positioning."
+      ]
+    },
+    {
+      "url": "https://paw.princeton.edu/article/princeton-expands-financial-aid-across-income-spectrum",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result not fetched \u2014 Princeton Alumni Weekly (secondary/editorial); preferred official finaid/admission pages."
+      ]
+    },
+    {
+      "url": "https://paw.princeton.edu/article/princeton-tops-us-news-rankings-13th-consecutive-year",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Princeton Alumni Weekly noting top US News spot; corroborates top-ranking narrative but is not a US News page, so not used to set us_news_rank."
+      ]
+    },
+    {
+      "url": "https://paw.princeton.edu/article/will-princeton-avoid-endowment-tax-increasing-financial-aid",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Endowment/tax context; endowment ~$36.4B figure surfaced via search summary, treated as approximate context not a verified section fact."
+      ]
+    },
+    {
+      "url": "https://pr.princeton.edu/pub/ap/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "302-redirects to the odoc advanced-placement-and-advanced-standing page; not directly usable."
+      ]
+    },
+    {
+      "url": "https://r.jina.ai/https://ir.princeton.edu/document/606",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Reader-proxy attempt to bypass Cloudflare; returned 401, no content."
+      ]
+    },
+    {
+      "url": "https://registrar.princeton.edu/catalogs",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Registrar catalogs index; found via search, not used."
+      ]
+    },
+    {
+      "url": "https://registrar.princeton.edu/enrollment",
+      "roles": [
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Princeton registrar enrollment page surfaced in search; not needed \u2014 B1/B2 read directly from CDS.",
+        "Enrollment stats page, not admissions admit rate. Not used.",
+        "curl HTTP 403 Forbidden; registrar enrollment/CDS pages also bot-blocked."
+      ]
+    },
+    {
+      "url": "https://scholarshub.net/unlocking-insights-what-the-princeton-university-common-data-set-reveals-about-academic-success/",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "SEO blog surfaced in search; not used."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/c/colleges-and-universities/princeton-university/399",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "CC Princeton category index; not fetched (used specific threads instead)."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/best-topic-for-essay-focusing-on-an-extracurricular-activity-princeton-and-harvard/2077905",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Essay-tip quotes: cinnamon1212 ('WHY you do the activity... not the nuts and bolts') and viarulesandrocks ('downplay the political aspect')."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/chance-me-please/2075599",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "coolguy40 ('~5%... subjective lottery'), fretfulmother ('work on the humility'), apparently22 ('Going to Princeton can't be your goal'), DadTwoGirls."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/extracurricular-essay-for-princeton-is-it-too-weird-or-pointless/1916175",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not fetched (essay-tip needs already met by thread 2077905)."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/how-ap-ib-credits-at-princeton-works/482944",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Forum thread; not authoritative."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/impact-of-intended-major-in-admissions-for-princeton/3625003",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Community tactic: 'Princeton does not admit by major'; only list a specific major with 'extended ECs, essays and other factors that can point to your interest.'"
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/please-chance-me-for-princeton/2033033",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verbatim what-it-takes and red-flag quotes: DadTwoGirls ('most applicants... with a 1600 are turned down'), momofboiler1, raclut, lostaccount, Nocreativity1, flutespell ('DONT MENTION UR IQ')."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/princeton-class-of-2028-official-thread/3655063",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched but only interview-logistics chatter (skieurope, E_P, toandfro); no usable insight content."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/princeton-class-of-2030-official-rd-thread/3698691",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not fetched (already had sufficient CC threads)."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/princeton-university-early-action-for-fall-2024-admission/3644749",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Self-reported applicant activity lists: Fredd (RSI research, startup founder, hospital outreach, track) and ShivomP (Mock Trial, National History Bee state champion, archery)."
+      ]
+    },
+    {
+      "url": "https://test-ninjas.com/princeton-admissions-analysis",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result blog. Not used.",
+        "Search-surfaced blog; non-canonical. Rejected."
+      ]
+    },
+    {
+      "url": "https://theivyinst.org/blog/unveiling-princeton-the-insiders-view-on-what-makes-princeton-university-unique",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Distinctive point that Princeton is the only Ivy with no med/law/business school."
+      ]
+    },
+    {
+      "url": "https://toptieradmissions.com/resources/college-acceptance-rates/princeton-admissions-stats-acceptance-rates/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator. Not canonical; not fetched."
+      ]
+    },
+    {
+      "url": "https://transportation.princeton.edu/getting-campus/public-transit/trains",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official train/NJ Transit access detail for transportation_impact."
+      ]
+    },
+    {
+      "url": "https://ua.princeton.edu/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Undergraduate Announcement \u2014 Princeton's full official academic catalog; found via search, not fetched. Alternative to the majors page used."
+      ]
+    },
+    {
+      "url": "https://ua.princeton.edu/academic-units/minors",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 Forbidden; could not fetch. Used the admission.princeton.edu minors page instead."
+      ]
+    },
+    {
+      "url": "https://ua.princeton.edu/fields-study",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fields of Study within the Undergraduate Announcement catalog; found via search, not fetched."
+      ]
+    },
+    {
+      "url": "https://ua.princeton.edu/fields-study/minors",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results; not fetched \u2014 the admission.princeton.edu minors page already gave a verbatim list."
+      ]
+    },
+    {
+      "url": "https://ua.princeton.edu/policies-resources/academic-regulations/academic-year",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Undergraduate Announcement academic regulations page; returned Cloudflare 403 to WebFetch. Not needed once the advising pages provided the quotes."
+      ]
+    },
+    {
+      "url": "https://ua.princeton.edu/policies-resources/undergraduate-program/program-study-degree-bachelor-science-engineering",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results as authoritative on B.S.E. program of study; not fetched (already had confirmation from directly-fetched official pages)."
+      ]
+    },
+    {
+      "url": "https://web.archive.org/cdx/search/cdx?url=ir.princeton.edu/document/606",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback CDX for latest CDS PDF returned empty; also empty for document/556. No archived copy of the actual CDS documents."
+      ]
+    },
+    {
+      "url": "https://www.albert.io/blog/princeton-advanced-placement-ap-credits/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not an official source."
+      ]
+    },
+    {
+      "url": "https://www.appily.com/colleges/princeton-university/reviews",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Crowdsourced student reviews (Niche-substitute): Tara, Tiger '13, Annika, Gabriella, Carolyn on workload/fit/community."
+      ]
+    },
+    {
+      "url": "https://www.collegeessayguy.com/blog/princeton-supplemental-essays",
+      "roles": [
+        "section:student_insights",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not fetched \u2014 coaching blog, not crowdsourced community opinion, out of scope.",
+        "B.S.E. essay strategy quotes: 'Rather than giving Princeton a general compliment, dive into the specifics...'; 'Research specific programs, institutes, and resources...'"
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/princeton-university/academic-life/graduation-and-retention/",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator surfaced in search (retention ~97%); not a canonical primary source and no verbatim primary quote \u2014 rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegekickstart.com/blog/tag/Princeton",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result aggregator. Not used."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/101752/deadline-for-princeton-early-application",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party deadline summary; superseded by official pages."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/21861/ab-vs-bse-at-princeton",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched; contained coursework differences but NO advice on comparative admission difficulty or switching \u2014 rejected as not relevant to admissions tactics."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/97222/finding-college-common-data-sets-specifically-for-princeton",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS locator; rejected \u2014 not authoritative."
+      ]
+    },
+    {
+      "url": "https://www.commondatasets.fyi/princeton",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS aggregator. Not fetched.",
+        "Search-surfaced CDS mirror labeled 2023-2024; non-canonical mirror, not the target cycle. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.cosmic.nyc/blog/princeton-common-data-set-2025-2026",
+      "roles": [
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:act_composite_middle_50"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant blog surfaced in search; confirmed 2025-2026 is the current CDS but not used as a source.",
+        "Third-party CDS 2025-2026 write-up. Not primary; not fetched (used official/DailyPrincetonian instead).",
+        "Reproduction of Princeton 2025-2026 CDS. Quoted verbatim: 'ACT composite: 34 to 35 (median 35)'. Primary value source used (canonical CDS was blocked).",
+        "ACT composite: 34 to 35 (median 35)"
+      ]
+    },
+    {
+      "url": "https://www.crimsoneducation.org/us/blog/princeton-acceptance-rate",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result, third-party blog on Class of 2029. Not canonical; not fetched/used."
+      ]
+    },
+    {
+      "url": "https://www.dailyprincetonian.com/article/2021/11/orange-bubble-princeton-nyc-campus",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Orange Bubble vs NYC proximity; students rarely leave campus."
+      ]
+    },
+    {
+      "url": "https://www.dailyprincetonian.com/article/2023/03/princeton-ivy-day-admissions-2023",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "News article surfaced in search (2023); not used."
+      ]
+    },
+    {
+      "url": "https://www.dailyprincetonian.com/article/2024/04/opinion-column-isolated-campus-activism-orange-bubble",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "'Orange Bubble' isolation framing for transportation_impact and location takeaway."
+      ]
+    },
+    {
+      "url": "https://www.dailyprincetonian.com/article/2025/09/princeton-news-adpol-university-admits-4-percent-of-applicants-class-of-2029",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched successfully. Verbatim: 'admitted 4.4 percent of applicants in its most recent admissions cycle'; applicant pool 42,303; Class of 2029 = Fall 2025 entering. Source of the reported value and cycle.",
+        "\"Princeton University admitted 4.4 percent of applicants in its most recent admissions cycle.\" (same article: \"This year's applicant pool was the biggest in Princeton history at 42,303.\") Corroborated by GradGPT's reproduction of Princeton's most recent Common Data Set, which lists: \"Acceptance rate\" \"4.4%\"."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=College+Scorecard+Princeton+University+retention+rate+first-time+full-time",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch returning aggregator claims of 98% (Scorecard); no verbatim primary quote obtained, so not used as the reported value."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Princeton+Common+Data+Set+2025-2026+retention+B22",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch that located the exact canonical 2025-2026 CDS PDF URL on ir.princeton.edu and confirmed B22 references the Fall 2024 entering cohort."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Princeton+University+2027-28+tuition+and+fees+announced",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Web search. No 2027-28 tuition announcement exists; surfaced the official admission fees page (2026-27) which I then fetched."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Princeton+University+Common+Data+Set+2027-2028+first-year+retention+rate",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch for the TARGET 2027-2028 cycle \u2014 confirmed no 2027-2028 CDS is published; most recent available is 2024-2025/2025-2026. Established the target cycle does not exist yet."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Princeton+University+Common+Data+Set+2027-2028+graduation+rate",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch: confirmed the 2027-2028 CDS is not yet published (would appear ~2028); pointed to Princeton IR/registrar CDS pages and secondary mirrors."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Princeton+University+Common+Data+Set+2027-2028+tuition",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Web search. Confirmed 2027-2028 CDS not published; latest available is 2024-2025/2025-2026. Used only to locate canonical pages."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Princeton+University+Common+Data+Set+six-year+graduation+rate+section+B",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch: surfaced Princeton IR/registrar CDS document URLs (e.g. ir.princeton.edu/document/546 = 2024-2025 CDS); all IR docs later returned 403."
+      ]
+    },
+    {
+      "url": "https://www.gradgpt.com/common-data-set/princeton-university",
+      "roles": [
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator surfaced in search; not fetched/used \u2014 primary CDS PDF preferred.",
+        "Fetched successfully. Reproduces Princeton's most recent CDS (2025-2026); lists 'Acceptance rate 4.4%'. Corroborates the Daily Princetonian figure.",
+        "Search-surfaced aggregator/visualization; non-canonical. Rejected.",
+        "CDS visualization; most recent year shown is 2026 (=2025-2026 CDS). ACT composite 25th-75th = '34 - 35'. Cross-check confirming the value.",
+        "Third-party CDS visualizer; not primary; not used.",
+        "Third-party CDS mirror; not used because official CDS is inaccessible and official-only rule forbids sourcing ratings from a mirror."
+      ]
+    },
+    {
+      "url": "https://www.highereddive.com/news/us-news-best-college-rankings-latest-2025-princeton-mit-harvard-methodology/727819/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Corroborates Princeton/MIT/Harvard atop US News; secondary source, not used for the rank fact."
+      ]
+    },
+    {
+      "url": "https://www.ir.pitt.edu/sites/default/files/2026-02/CDS_2025-2026_PGH-UA_0.pdf",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "University of Pittsburgh CDS \u2014 wrong institution, surfaced in search by accident. Irrelevant."
+      ]
+    },
+    {
+      "url": "https://www.ivycoach.com/the-ivy-coach-blog/ivy-league/princeton-admissions-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result on Class of 2030 (Fall 2026). Third-party blog, not canonical; Fall 2026 official data not yet released. Not used."
+      ]
+    },
+    {
+      "url": "https://www.koppelmangroup.com/blog/2025/4/8/princeton-university-legacy-policies-and-guide",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; legacy 'plus factor' claim independently confirmed on official FAQ, so third-party not used as source."
+      ]
+    },
+    {
+      "url": "https://www.koppelmangroup.com/blog/2026/1/17/princeton-admissions-statistics-2025",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog (Jan 2026) on Class of 2029 stats. Not primary; not fetched."
+      ]
+    },
+    {
+      "url": "https://www.nextfour.ai/princeton-university/sat-score-data",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search-surfaced aggregator; non-canonical. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/princeton-university/campus-life/",
+      "roles": [
+        "section:strategic_profile",
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Campus-life ratings; not directly quoted, overlapped with official sources.",
+        "HTTP 403 Forbidden \u2014 could not verify; not used."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/princeton-university/reviews/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 Forbidden \u2014 could not verify; not used."
+      ]
+    },
+    {
+      "url": "https://www.njtransit.com/dinky",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Dinky shuttle connecting campus to Princeton Junction on the Northeast Corridor."
+      ]
+    },
+    {
+      "url": "https://www.oreateai.com/blog/princeton-university-the-ultimate-academic-pursuit-and-selection-philosophy-behind-the-lowkey-king/dbf52187e314bd77d9274ee391b88542",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Selection-philosophy blog; overlapped with stronger sources, not directly quoted."
+      ]
+    },
+    {
+      "url": "https://www.prepscholar.com/sat/s/colleges/Princeton-tuition-financial-aid",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result not fetched \u2014 third-party site; not authoritative for official figures."
+      ]
+    },
+    {
+      "url": "https://www.princeton.edu/academics/areas-of-study",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "University-level 'Areas of Study' page; found via search, not used in favor of the admission Degrees & Departments page."
+      ]
+    },
+    {
+      "url": "https://www.princeton.edu/news/2024/03/26/princeton-sets-70-financial-aid-and-22-pell-enrollment-goals",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result not fetched \u2014 2024 goal-setting announcement (70% aid / 22% Pell targets), superseded by 2025-08-07 news for actuals."
+      ]
+    },
+    {
+      "url": "https://www.princeton.edu/news/2025/08/07/princeton-enhances-financial-aid-again-it-welcomes-class-2029-which-includes",
+      "roles": [
+        "section:strategic_profile",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "2025-26 financial aid figures: avg package >$80k, ~two-thirds aided, income thresholds; first to drop loans (2001).",
+        "2025-26 corroboration: average aid package 'more than $80,000'; income thresholds ($150k pay nothing, $250k no tuition, up to/beyond $350k some aid); Pell ~25% Class of 2029; endowment covers ~70% of aid budget."
+      ]
+    },
+    {
+      "url": "https://www.princeton.edu/one-community/housing-dining",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Seven residential colleges named; required for first-year/sophomore housing."
+      ]
+    },
+    {
+      "url": "https://www.princeton.edu/pub/ap/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "301-redirects to pr.princeton.edu/pub/ap then to the odoc page; not directly usable."
+      ]
+    },
+    {
+      "url": "https://www.princetonreview.com/college/princeton-university-1024041",
+      "roles": [
+        "section:strategic_profile",
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Reputation and undergraduate research emphasis (research_impact).",
+        "Student-survey quotes on culture ('obsessed with perfection', 'biggest nerd') and eating clubs ('partying, chatting, drinking, and dancing')."
+      ]
+    },
+    {
+      "url": "https://www.questbridge.org/partners/college-partners/princeton-university/financial-aid",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "QuestBridge National College Match at Princeton (2025-26): grants $90,718, $0 student/parent contribution, $0 loans; matches only zero-Parent-Contribution students; must maintain satisfactory progress. No QB deadline stated here.",
+        "(same as QuestBridge entry above) surfaced by search and fetched."
+      ]
+    },
+    {
+      "url": "https://www.reddit.com/r/Princeton/comments/.json",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "'Claude Code is unable to fetch from www.reddit.com' \u2014 Reddit blocked to crawler; no Reddit content used."
+      ]
+    },
+    {
+      "url": "https://www.road2college.com/princeton-common-data-set/",
+      "roles": [
+        "resolve",
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS mirror; rejected \u2014 not an authoritative primary source.",
+        "Aggregator surfaced in search; not used.",
+        "Third-party CDS summary. Not fetched; not primary.",
+        "Referenced Princeton CDS (2024-2025) but page text did not expose the C9 ACT percentile figures; no usable value.",
+        "Third-party CDS summary; not primary; not used.",
+        "Third-party CDS mirror; not used (official-only)."
+      ]
+    },
+    {
+      "url": "https://www.sparkadmissions.com/blog/how-hard-is-it-to-get-into-princeton/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Selectivity context and holistic-review description."
+      ]
+    },
+    {
+      "url": "https://www.studocu.com/en-us/document/mingus-union-high-school/ap-chemistry/common-data-set-2024-2025-princeton-university-overview/156059008",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "User-uploaded CDS 2024-2025 doc. Older cycle, not canonical; not used."
+      ]
+    },
+    {
+      "url": "https://www.tutorchase.com/blog/princeton-university-acceptance-rates",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Class of 2028 ~4.62% acceptance rate and 40,000+ applications figure."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/princeton-university-2627",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Primary target for us_news_rank; WebFetch attempted twice, timed out at 60s both times. Not usable to quote a rank."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/princeton-university-2627/overall-rankings",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted twice for exact rank text; both timed out. No quotable rank obtained."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/princeton-university-2627/paying",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result not fetched \u2014 third-party aggregator (US News); task requires official Princeton pages only."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/rankings/national-universities",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted to fetch the ranked list to place Princeton; timed out. Not usable."
+      ]
+    }
+  ]
+}

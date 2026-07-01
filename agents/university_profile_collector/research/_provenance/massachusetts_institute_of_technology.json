@@ -1,0 +1,2605 @@
+{
+  "trust_report": {
+    "university": "Massachusetts Institute of Technology",
+    "id": "massachusetts_institute_of_technology",
+    "cycle": "Fall 2027",
+    "cds_edition_used": "2024-2025 (latest available; 2027-2028 not yet posted)",
+    "ipeds_unitid": "166683",
+    "deterministic_fields": {
+      "total": 48,
+      "published": 35,
+      "held_null": 13
+    },
+    "verification": {
+      "corroborated": 4,
+      "canonical_single": 31,
+      "conflict_nulled": 1,
+      "unverified_nulled": 12,
+      "fields": {
+        "overall_acceptance_rate": "CORROBORATED",
+        "in_state_acceptance_rate": "UNVERIFIED",
+        "out_of_state_acceptance_rate": "UNVERIFIED",
+        "transfer_acceptance_rate": "CANONICAL_SINGLE",
+        "international_acceptance_rate": "UNVERIFIED",
+        "applications_total": "CANONICAL_SINGLE",
+        "admits_total": "CANONICAL_SINGLE",
+        "enrolled_total": "CANONICAL_SINGLE",
+        "yield_rate": "CANONICAL_SINGLE",
+        "admits_class_size": "CANONICAL_SINGLE",
+        "sat_composite_middle_50": "CANONICAL_SINGLE",
+        "sat_reading_middle_50": "CANONICAL_SINGLE",
+        "sat_math_middle_50": "CANONICAL_SINGLE",
+        "act_composite_middle_50": "CORROBORATED",
+        "test_submission_rate": "CANONICAL_SINGLE",
+        "gpa_weighted_avg": "UNVERIFIED",
+        "gpa_unweighted_avg": "UNVERIFIED",
+        "race_white": "CANONICAL_SINGLE",
+        "race_black": "CANONICAL_SINGLE",
+        "race_hispanic": "CANONICAL_SINGLE",
+        "race_asian": "CANONICAL_SINGLE",
+        "race_native_american": "CANONICAL_SINGLE",
+        "race_pacific_islander": "CANONICAL_SINGLE",
+        "race_two_or_more": "CANONICAL_SINGLE",
+        "race_unknown": "CANONICAL_SINGLE",
+        "race_international": "CANONICAL_SINGLE",
+        "first_gen_percentage": "UNVERIFIED",
+        "international_percentage": "CANONICAL_SINGLE",
+        "freshman_retention_rate": "CORROBORATED",
+        "graduation_rate_4_year": "CANONICAL_SINGLE",
+        "graduation_rate_6_year": "CORROBORATED",
+        "in_state_tuition": "CANONICAL_SINGLE",
+        "out_of_state_tuition": "CONFLICT",
+        "total_coa_in_state": "CANONICAL_SINGLE",
+        "total_coa_out_of_state": "CANONICAL_SINGLE",
+        "median_earnings_10yr": "CANONICAL_SINGLE",
+        "is_test_optional": "CANONICAL_SINGLE",
+        "test_policy_details": "CANONICAL_SINGLE",
+        "ed_applications": "UNVERIFIED",
+        "ed_admits": "UNVERIFIED",
+        "ed_acceptance_rate": "UNVERIFIED",
+        "ea_applications": "UNVERIFIED",
+        "ea_admits": "UNVERIFIED",
+        "ea_acceptance_rate": "UNVERIFIED",
+        "waitlist_offered": "CANONICAL_SINGLE",
+        "waitlist_accepted": "CANONICAL_SINGLE",
+        "waitlist_admitted": "CANONICAL_SINGLE",
+        "waitlist_admit_rate": "CANONICAL_SINGLE"
+      }
+    },
+    "total_sources_consulted": 174,
+    "sources_backing_published_values": 2,
+    "acceptance_rate_published": 4.55,
+    "ingest_ready": true,
+    "doctrine": "null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated; every source consulted is logged"
+  },
+  "provenance": {
+    "overall_acceptance_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 4.55,
+      "source": "MIT Common Data Set 2024-2025 (C1) / College Scorecard",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "CDS C1 Total admitted: 1,284 of Total applicants: 28,232 [computed 1,284/28,232 = 4.55%]; College Scorecard latest.admissions.admission_rate.overall = 0.0455",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025 / Scorecard latest); target Fall 2027 CDS not yet published"
+    },
+    "in_state_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "out_of_state_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "transfer_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 2.38,
+      "source": "MIT Common Data Set 2024-2025 (Section D, Transfers)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "Section D Transfer applicants: 1,346; Transfer applicants admitted: 32 [computed 32/1,346 = 2.38%]",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "international_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "applications_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 28232,
+      "source": "MIT Common Data Set 2024-2025 (Section C1)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C1 first-time, first-year applicants \u2014 Men: 17,210; Women: 8,975; Another gender: 997; Gender unknown: 1,050; Total: 28,232",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "admits_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1284,
+      "source": "MIT Common Data Set 2024-2025 (Section C1)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C1 admitted \u2014 Men: 606; Women: 612; Another gender: 36; Gender unknown: 30; Total: 1,284",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "enrolled_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1106,
+      "source": "MIT Common Data Set 2024-2025 (Section C1)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C1 enrolled \u2014 Men: 547; Women: 499; Another gender: 34; Gender unknown: 26; Total: 1,106",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "yield_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 86.1,
+      "source": "MIT Common Data Set 2024-2025 (Section C1)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C1 Total enrolled: 1,106; Total admitted: 1,284 [computed yield 1,106/1,284 = 86.1%]",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "admits_class_size": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1106,
+      "source": "MIT Common Data Set 2024-2025 (Section C1)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "Interpreted as entering first-year class size = C1 Total enrolled first-time first-years: 1,106 (Total admitted for reference: 1,284)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "sat_composite_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "1520-1570",
+      "source": "MIT Common Data Set 2024-2025 (Section C9)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C9 SAT Composite: 25th=1520, 50th=1550, 75th=1570",
+      "as_of_cycle": "Fall 2024 enrolled first-years (CDS 2024-2025)"
+    },
+    "sat_reading_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "740-780",
+      "source": "MIT Common Data Set 2024-2025 (Section C9)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C9 SAT Evidence-Based Reading and Writing: 25th=740, 50th=760, 75th=780",
+      "as_of_cycle": "Fall 2024 enrolled first-years (CDS 2024-2025)"
+    },
+    "sat_math_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "780-800",
+      "source": "MIT Common Data Set 2024-2025 (Section C9)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C9 SAT Math: 25th=780, 50th=800, 75th=800",
+      "as_of_cycle": "Fall 2024 enrolled first-years (CDS 2024-2025)"
+    },
+    "act_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "34-36",
+      "source": "MIT Common Data Set 2024-2025 (Section C9)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C9 ACT Composite: 25th=34, 50th=35, 75th=36",
+      "as_of_cycle": "Fall 2024 enrolled first-years (CDS 2024-2025)"
+    },
+    "test_submission_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 83,
+      "source": "MIT Common Data Set 2024-2025 (Section C9)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C9 Submitting SAT Scores: 83% (918 students); Submitting ACT Scores: 29% (323 students) \u2014 value shown is the SAT submission rate; some students submitted both",
+      "as_of_cycle": "Fall 2024 enrolled first-years (CDS 2024-2025)"
+    },
+    "gpa_weighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "gpa_unweighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "race_white": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 21.3,
+      "source": "MIT Common Data Set 2024-2025 (Section B2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B2 White, non-Hispanic: 964 of Total degree-seeking undergraduates 4,535 [computed 964/4,535 = 21.3%]; CDS B2 prints counts, not percentages",
+      "as_of_cycle": "Fall 2024 total degree-seeking undergrads (CDS 2024-2025)"
+    },
+    "race_black": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 7.7,
+      "source": "MIT Common Data Set 2024-2025 (Section B2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B2 Black or African American, non-Hispanic: 349 of 4,535 [computed 349/4,535 = 7.7%]",
+      "as_of_cycle": "Fall 2024 total degree-seeking undergrads (CDS 2024-2025)"
+    },
+    "race_hispanic": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 14.1,
+      "source": "MIT Common Data Set 2024-2025 (Section B2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B2 Hispanic/Latino: 639 of 4,535 [computed 639/4,535 = 14.1%]",
+      "as_of_cycle": "Fall 2024 total degree-seeking undergrads (CDS 2024-2025)"
+    },
+    "race_asian": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 35.2,
+      "source": "MIT Common Data Set 2024-2025 (Section B2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B2 Asian, non-Hispanic: 1,595 of 4,535 [computed 1,595/4,535 = 35.2%]",
+      "as_of_cycle": "Fall 2024 total degree-seeking undergrads (CDS 2024-2025)"
+    },
+    "race_native_american": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.2,
+      "source": "MIT Common Data Set 2024-2025 (Section B2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B2 American Indian or Alaska Native, non-Hispanic: 9 of 4,535 [computed 9/4,535 = 0.2%]",
+      "as_of_cycle": "Fall 2024 total degree-seeking undergrads (CDS 2024-2025)"
+    },
+    "race_pacific_islander": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.04,
+      "source": "MIT Common Data Set 2024-2025 (Section B2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B2 Native Hawaiian or other Pacific Islander, non-Hispanic: 2 of 4,535 [computed 2/4,535 = 0.04%]",
+      "as_of_cycle": "Fall 2024 total degree-seeking undergrads (CDS 2024-2025)"
+    },
+    "race_two_or_more": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 6.8,
+      "source": "MIT Common Data Set 2024-2025 (Section B2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B2 Two or more races, non-Hispanic: 310 of 4,535 [computed 310/4,535 = 6.8%]",
+      "as_of_cycle": "Fall 2024 total degree-seeking undergrads (CDS 2024-2025)"
+    },
+    "race_unknown": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3,
+      "source": "MIT Common Data Set 2024-2025 (Section B2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B2 Race/ethnicity unknown: 138 of 4,535 [computed 138/4,535 = 3.0%]",
+      "as_of_cycle": "Fall 2024 total degree-seeking undergrads (CDS 2024-2025)"
+    },
+    "race_international": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 11.7,
+      "source": "MIT Common Data Set 2024-2025 (Section B2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B2 Nonresident (aliens): 529 of 4,535 [computed 529/4,535 = 11.7%]",
+      "as_of_cycle": "Fall 2024 total degree-seeking undergrads (CDS 2024-2025)"
+    },
+    "first_gen_percentage": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_percentage": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 11.7,
+      "source": "MIT Common Data Set 2024-2025 (Section B2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B2 Nonresident (aliens): 529 of Total degree-seeking undergraduates 4,535 [computed 529/4,535 = 11.7%]",
+      "as_of_cycle": "Fall 2024 total degree-seeking undergrads (CDS 2024-2025)"
+    },
+    "freshman_retention_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 99,
+      "source": "MIT Common Data Set 2024-2025 (Section B22)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "B22 first-year retention rate: 99.0% of full-time, first-time bachelor's degree-seeking students (Fall 2023 cohort) retained to Fall 2024",
+      "as_of_cycle": "Fall 2023 entering cohort (CDS 2024-2025)"
+    },
+    "graduation_rate_4_year": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 82.75,
+      "source": "MIT Common Data Set 2024-2025 (Section B) / College Scorecard",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "CDS four-year completion: 921 of 1,113 (2018 entering cohort) = 82.75%; College Scorecard latest.completion.completion_rate_4yr_100nt = 0.8275",
+      "as_of_cycle": "2018 entering cohort (CDS 2024-2025 / Scorecard latest)"
+    },
+    "graduation_rate_6_year": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 96,
+      "source": "MIT Common Data Set 2024-2025 (Section B) / College Scorecard",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "CDS: 'Six-year graduation rate for 2018 cohort (G divided by C) ... 96%'; College Scorecard latest.completion.completion_rate_4yr_150nt = 0.9641",
+      "as_of_cycle": "2018 entering cohort (CDS 2024-2025 / Scorecard latest)"
+    },
+    "in_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 64310,
+      "source": "MIT Common Data Set 2024-2025 (Section G)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "G Tuition: $64,310 (2025-2026 charges). MIT is private; in-state and out-of-state tuition are identical.",
+      "as_of_cycle": "2025-2026 academic year (reported in CDS 2024-2025)"
+    },
+    "out_of_state_tuition": {
+      "status": "CONFLICT",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null,
+      "conflict": {
+        "anchor": "64310",
+        "verifier": "$66,720"
+      }
+    },
+    "total_coa_in_state": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 82730,
+      "source": "U.S. Dept of Education College Scorecard",
+      "url": "https://collegescorecard.ed.gov/school?166683-Massachusetts-Institute-of-Technology",
+      "quote": "College Scorecard latest.cost.attendance.academic_year = 82730 (average annual total cost of attendance). Note: CDS G lists components for 2025-26 (tuition $64,310 + fees $420 + room/board $21,264 + books $910 + other $2,436) but prints no single COA total.",
+      "as_of_cycle": "College Scorecard latest release (retrieved 2026-07-01; ~2024-2025 AY)"
+    },
+    "total_coa_out_of_state": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 82730,
+      "source": "U.S. Dept of Education College Scorecard",
+      "url": "https://collegescorecard.ed.gov/school?166683-Massachusetts-Institute-of-Technology",
+      "quote": "College Scorecard latest.cost.attendance.academic_year = 82730. MIT is private; out-of-state COA equals in-state.",
+      "as_of_cycle": "College Scorecard latest release (retrieved 2026-07-01; ~2024-2025 AY)"
+    },
+    "median_earnings_10yr": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 143372,
+      "source": "U.S. Dept of Education College Scorecard",
+      "url": "https://collegescorecard.ed.gov/school?166683-Massachusetts-Institute-of-Technology",
+      "quote": "College Scorecard latest.earnings.10_yrs_after_entry.median = 143372 (median earnings of former students 10 years after entry)",
+      "as_of_cycle": "College Scorecard latest release (retrieved 2026-07-01)"
+    },
+    "is_test_optional": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "false",
+      "source": "MIT Common Data Set 2024-2025 (Section C8)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C8: 'SAT or ACT' marked 'Required to be considered for admission' (latest submission Feb. 15). MIT is neither test-optional nor test-blind.",
+      "as_of_cycle": "2024-2025 admissions cycle (CDS 2024-2025)"
+    },
+    "test_policy_details": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "SAT or ACT required for first-year applicants (not test-optional or test-blind); latest test date accepted Feb. 15",
+      "source": "MIT Common Data Set 2024-2025 (Section C8)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C8: 'SAT or ACT' Required to be considered for admission; latest date for test scores: Feb. 15",
+      "as_of_cycle": "2024-2025 admissions cycle (CDS 2024-2025)"
+    },
+    "ed_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_offered": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 590,
+      "source": "MIT Common Data Set 2024-2025 (Section C2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C2 Number of students offered a place on the waitlist: 590 (waitlist not ranked)",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "waitlist_accepted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 509,
+      "source": "MIT Common Data Set 2024-2025 (Section C2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C2 Number accepting a place on the waitlist: 509",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "waitlist_admitted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9,
+      "source": "MIT Common Data Set 2024-2025 (Section C2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C2 Number of waitlisted students admitted: 9",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    },
+    "waitlist_admit_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1.77,
+      "source": "MIT Common Data Set 2024-2025 (Section C2)",
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "quote": "C2 Admitted from waitlist: 9 of 509 who accepted a waitlist place [computed 9/509 = 1.77%]",
+      "as_of_cycle": "Fall 2024 (CDS 2024-2025)"
+    }
+  },
+  "source_ledger": [
+    {
+      "url": "https://ir.mit.edu/projects/2024-25-common-data-set/",
+      "roles": [
+        "resolve",
+        "anchor",
+        "anchor:overall_acceptance_rate",
+        "anchor:in_state_acceptance_rate",
+        "anchor:out_of_state_acceptance_rate",
+        "anchor:transfer_acceptance_rate",
+        "anchor:international_acceptance_rate",
+        "anchor:applications_total",
+        "anchor:admits_total",
+        "anchor:enrolled_total",
+        "anchor:yield_rate",
+        "anchor:admits_class_size",
+        "anchor:sat_composite_middle_50",
+        "anchor:sat_reading_middle_50",
+        "anchor:sat_math_middle_50",
+        "anchor:act_composite_middle_50",
+        "anchor:test_submission_rate",
+        "anchor:gpa_weighted_avg",
+        "anchor:gpa_unweighted_avg",
+        "anchor:race_white",
+        "anchor:race_black",
+        "anchor:race_hispanic",
+        "anchor:race_asian",
+        "anchor:race_native_american",
+        "anchor:race_pacific_islander",
+        "anchor:race_two_or_more",
+        "anchor:race_unknown",
+        "anchor:race_international",
+        "anchor:first_gen_percentage",
+        "anchor:international_percentage",
+        "anchor:freshman_retention_rate",
+        "anchor:graduation_rate_4_year",
+        "anchor:graduation_rate_6_year",
+        "anchor:in_state_tuition",
+        "anchor:out_of_state_tuition",
+        "anchor:is_test_optional",
+        "anchor:test_policy_details",
+        "anchor:ed_applications",
+        "anchor:ed_admits",
+        "anchor:ed_acceptance_rate",
+        "anchor:ea_applications",
+        "anchor:ea_admits",
+        "anchor:ea_acceptance_rate",
+        "anchor:waitlist_offered",
+        "anchor:waitlist_accepted",
+        "anchor:waitlist_admitted",
+        "anchor:waitlist_admit_rate",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "overall_acceptance_rate",
+        "transfer_acceptance_rate",
+        "applications_total",
+        "admits_total",
+        "enrolled_total",
+        "yield_rate",
+        "admits_class_size",
+        "sat_composite_middle_50",
+        "sat_reading_middle_50",
+        "sat_math_middle_50",
+        "act_composite_middle_50",
+        "test_submission_rate",
+        "race_white",
+        "race_black",
+        "race_hispanic",
+        "race_asian",
+        "race_native_american",
+        "race_pacific_islander",
+        "race_two_or_more",
+        "race_unknown",
+        "race_international",
+        "international_percentage",
+        "freshman_retention_rate",
+        "graduation_rate_4_year",
+        "graduation_rate_6_year",
+        "in_state_tuition",
+        "is_test_optional",
+        "test_policy_details",
+        "waitlist_offered",
+        "waitlist_accepted",
+        "waitlist_admitted",
+        "waitlist_admit_rate"
+      ],
+      "notes": [
+        "MIT 2024-25 CDS project page \u2014 most recent edition; data presented inline on the page, no separate downloadable PDF/xlsx file link found.",
+        "Primary source. Pulled C1 (apps/admits/enrolled), C2 (waitlist), C8 (test policy), C9 (SAT/ACT/submission), B2 (race counts), B22 (retention), B (4/6-yr grad), G (tuition/cost), D (transfers), C21/C22 (ED=No, EA=Yes but counts not reported).",
+        "CDS C1 Total admitted: 1,284 of Total applicants: 28,232 [computed 1,284/28,232 = 4.55%]; College Scorecard latest.admissions.admission_rate.overall = 0.0455",
+        "MIT does not report first-year acceptance rate broken out by state residency in the CDS or Scorecard.",
+        "Section D Transfer applicants: 1,346; Transfer applicants admitted: 32 [computed 32/1,346 = 2.38%]",
+        "MIT does not report acceptance rate for international applicants in the CDS or Scorecard."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school?166683-Massachusetts-Institute-of-Technology",
+      "roles": [
+        "resolve:scorecard",
+        "resolve",
+        "anchor",
+        "anchor:total_coa_in_state",
+        "anchor:total_coa_out_of_state",
+        "anchor:median_earnings_10yr"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "total_coa_in_state",
+        "total_coa_out_of_state",
+        "median_earnings_10yr"
+      ],
+      "notes": [
+        "College Scorecard located",
+        "College Scorecard school page keyed to UnitID 166683 \u2014 used as the Scorecard URL; page is a JS app so server-rendered fetch returned only nav, but the 166683 key confirms identity linkage.",
+        "Scorecard profile page; JS-rendered so no data in markdown, but source of the median-earnings/COA figures obtained via its backend API.",
+        "College Scorecard latest.cost.attendance.academic_year = 82730 (average annual total cost of attendance). Note: CDS G lists components for 2025-26 (tuition $64,310 + fees $420 + room/board $21,264 + books $910 + other $2,436) but prints no single COA total.",
+        "College Scorecard latest.cost.attendance.academic_year = 82730. MIT is private; out-of-state COA equals in-state.",
+        "College Scorecard latest.earnings.10_yrs_after_entry.median = 143372 (median earnings of former students 10 years after entry)"
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/mit-acceptance-rate/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; claims Class of 2030 stats in search snippet, but no official MIT page confirms a Class of 2030/Fall 2026 figure; rejected as non-canonical and unverified."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/mit-application-deadline/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog \u2014 rejected (not official)."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/mit-common-data-set/",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party (non-canonical); not fetched/used \u2014 only official MIT sources considered authoritative.",
+        "Third-party summary; not used \u2014 primary MIT IR CDS is the canonical source and no Fall 2027 data exists anywhere.",
+        "Third-party blog; rejected as non-canonical",
+        "Third-party blog; rejected as non-canonical.",
+        "Third-party commentary (search result); rejected as non-canonical."
+      ]
+    },
+    {
+      "url": "https://admitreport.com/blog/mit-common-data-set",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS summary \u2014 rejected (not official)."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=166683&fields=...&api_key=B2QoBnDDsR5fJfwPeaZuie95ecS3APrL707HNRvr (with Referer header)",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Scorecard API queried with the site's own key + Referer. Returned: median earnings 10yr=143372, admission_rate.overall=0.0455, tuition in/out=62396, cost.attendance.academic_year=82730, student.size=4535, completion_rate_4yr_100nt=0.8275, completion_rate_4yr_150nt=0.9641."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=166683&fields=...&api_key=DEMO_KEY",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Scorecard API but DEMO_KEY was rate-limited (HTTP 429, OVER_RATE_LIMIT) on multiple attempts via both curl and WebFetch."
+      ]
+    },
+    {
+      "url": "https://apstudents.collegeboard.org/getting-credit-placement/search-policies/college/4075",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Board's summary of MIT AP policy \u2014 third party; used MIT's own page instead."
+      ]
+    },
+    {
+      "url": "https://capd.mit.edu/post-graduateandsummer/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "CAPD outcomes landing page; only links to interactive dashboards, no numeric figures on the page itself."
+      ]
+    },
+    {
+      "url": "https://catalog.mit.edu/degree-charts/",
+      "roles": [
+        "resolve:catalog",
+        "resolve",
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "majors/catalog page",
+        "MIT Course Catalog Degree Charts \u2014 used as undergraduate majors/catalog URL.",
+        "PRIMARY SOURCE. Full list of undergraduate (and graduate) degree charts grouped by school + Interdisciplinary Programs. Provided all major names and Course numbers used in the colleges array."
+      ]
+    },
+    {
+      "url": "https://catalog.mit.edu/interdisciplinary/undergraduate-programs/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Catalog undergraduate programs page; consulted, not selected."
+      ]
+    },
+    {
+      "url": "https://catalog.mit.edu/mit/overview/campus/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via web search snippet. Source for 500+ student orgs, 35 living groups, 168-acre riverside campus across the Charles from Boston; feeds campus_dynamics."
+      ]
+    },
+    {
+      "url": "https://catalog.mit.edu/mit/overview/campus/campus_bostoncambridgetext.pdf",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search (Boston/Cambridge environment PDF); not fetched, no unique claim used."
+      ]
+    },
+    {
+      "url": "https://catalog.mit.edu/mit/undergraduate-education/academic-programs/majors/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not fetched \u2014 degree-charts index already provided the major list and declaration model was verified via registrar."
+      ]
+    },
+    {
+      "url": "https://catalog.mit.edu/mit/undergraduate-education/admissions/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Catalog admissions page; rejected in favor of the official MIT Admissions site (mitadmissions.org)."
+      ]
+    },
+    {
+      "url": "https://catalog.mit.edu/mit/undergraduate-education/costs/costs.pdf",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result referenced 2024-2025 cost of attendance; older cycle, not the target; not fetched."
+      ]
+    },
+    {
+      "url": "https://catalog.mit.edu/mit/undergraduate-education/financial-aid/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Catalog financial-aid page; rejected in favor of the authoritative SFS office page (sfs.mit.edu)."
+      ]
+    },
+    {
+      "url": "https://catalog.mit.edu/schools/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed MIT organized into five schools + one college (Schwarzman College of Computing) and that undergrad degrees are the SB. (First fetch mis-said 'six schools'; corrected to 5 schools + 1 college.)"
+      ]
+    },
+    {
+      "url": "https://catalog.mit.edu/schools/computing/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted to enumerate Schwarzman College of Computing programs directly; returned HTTP 404. Fell back to the degree-charts index + schools page for the College's EECS programs."
+      ]
+    },
+    {
+      "url": "https://cdo.mit.edu/blog/... (MIT Sloan startup ecosystem)",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Duplicate-context Sloan resource surfaced in search listing; superseded by the specific CDO blog entry above."
+      ]
+    },
+    {
+      "url": "https://cdo.mit.edu/blog/2023/06/02/entrepreneurship-startup-resources-in-the-mit-and-boston-cambridge-ecosystem/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via web search snippet. Source for Kendall Square as a leading tech/research/biotech innovation hub adjacent to MIT; feeds market_position and campus_dynamics."
+      ]
+    },
+    {
+      "url": "https://cdo.mit.edu/employment-reports/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; MIT Sloan MBA employment reports only (graduate program), not undergraduate outcomes. Skipped."
+      ]
+    },
+    {
+      "url": "https://chemistry.mit.edu/academic-programs/undergraduate-programs/transfer-students-transfer-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Chemistry department transfer page; departmental scope, not used."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/_nuxt/Cey6aFi7.js",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Downloaded main JS bundle searching for API key; key was not in this chunk (it was in the HTML runtime config instead)."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/_payload.json",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Nuxt SSR payload; did not contain the per-school data or key needed."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?166683-Massachusetts-Institute-of-Technology",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard institution page is a JS app; fetch returned only header/nav, no default-rate data."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?166683-Massachusetts-Institute-of-Technology (raw HTML via curl)",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched raw HTML; found the site's Nuxt public runtime config containing the official api.data.gov key (B2Qo...HNRvr) used to query the Scorecard API successfully."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?166683-Massachusetts-Institute-of-Technology=",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard MIT profile surfaced in search as an alternate canonical source; not fetched because the CDS provided the figure and Scorecard would also not carry a Fall 2027 value."
+      ]
+    },
+    {
+      "url": "https://commondataset.org/wp-content/uploads/2024/11/CDS-2024-2025-TEMPLATE.pdf",
+      "roles": [
+        "resolve",
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Generic blank CDS 2024-2025 template from commondataset.org \u2014 not MIT-specific; rejected.",
+        "Blank CDS template, not MIT data; rejected"
+      ]
+    },
+    {
+      "url": "https://commondataset.org/wp-content/uploads/2025/11/CDS-PDF-2025-2026_PDF_Template.pdf",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Blank CDS template, not MIT data \u2014 rejected."
+      ]
+    },
+    {
+      "url": "https://educationdata.urban.org/api/v1/college-university/scorecard/earnings/2022/?unitid=166683",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Urban Institute mirror probe; wrong endpoint path returned count=0, no records. Abandoned in favor of the official Scorecard API."
+      ]
+    },
+    {
+      "url": "https://empowerly.com/applications/mit-acceptance-rate-2029/",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Class of 2029 (Fall 2025) blog; unofficial, cites admitted-student ranges that vary (1510\u20131580 / 1530\u20131580). Rejected: not canonical, not enrolled-first-year CDS data, and still not the Fall 2027 target."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Housing_at_the_Massachusetts_Institute_of_Technology",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in housing search; encyclopedic overview. Not used \u2014 relied on MIT's own housing page instead."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via web search snippet. Source for Harvard-MIT research collaborations (Harvard-MIT Health Sciences & Technology, Broad Institute); feeds analyst_takeaways/research_impact."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Massachusetts_Institute_of_Technology_academics",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result; not used \u2014 preferred official MIT sources over Wikipedia."
+      ]
+    },
+    {
+      "url": "https://facts.mit.edu/alumni/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY. MIT Facts official page. Class of 2025 bachelor's: 'Graduate school 42%', 'Work 48%'; full 20-org 'Top Employers' list; labeled 2025 Graduating Students' Post-Graduation Plans. Basis for grad_school_rate and top_employers."
+      ]
+    },
+    {
+      "url": "https://facts.mit.edu/schools-college/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in web search; corroborates 'five schools and one college' but not fetched directly \u2014 relied on catalog schools page instead."
+      ]
+    },
+    {
+      "url": "https://facts.mit.edu/undergraduate-admissions/undergraduate-tuition/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Context/prior-cycle corroboration: 'Tuition: $64,310' for 2025\u20132026 academic year \u2014 confirms 2026-27 ($66,720) is the latest and 2027-28 is unpublished."
+      ]
+    },
+    {
+      "url": "https://firstyear.mit.edu/academics-exploration/advanced-standing-exams/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Advanced Standing Exams page \u2014 related but out of scope for AP/IB/transfer credit policy."
+      ]
+    },
+    {
+      "url": "https://firstyear.mit.edu/academics-exploration/ap-transfer-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Section index page; not separately fetched \u2014 its child pages (Advanced Placement, International Examinations) carry the authoritative detail."
+      ]
+    },
+    {
+      "url": "https://firstyear.mit.edu/academics-exploration/ap-transfer-credit/advanced-placement/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY AP source. Fetched twice for verbatim text: AP general rule (score of 5, no partial credit, no credit for secondary-school AP courses), all 'No credit is given for...' sentences (Biology, Chemistry, Computer Science, Physics 1/2 separately, Environmental Science, Statistics), Calculus BC->18.01, Calculus AB->18.01A/18.02A, Physics C->8.01, HASS-Requirement usage sentence, unrestricted-electives definition, and the Class of 2030 (Fall 2026) effective statement."
+      ]
+    },
+    {
+      "url": "https://firstyear.mit.edu/academics-exploration/ap-transfer-credit/international-examinations/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY IB source. Verbatim: AS-Level exams get NO credit, HL score of 7 -> 18.01 and 8.01, HL humanities 7 -> 9 units unrestricted elective, English HL 7 -> CI-H/CI-HW Required without First Year Essay Evaluation, no credit for IB Biology/Chemistry/ITGS, and confirmation there is no IB diploma bonus."
+      ]
+    },
+    {
+      "url": "https://firstyear.mit.edu/academics-exploration/ap-transfer-credit/transfer-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "First-Year office transfer-credit page; the registrar page was used as the authoritative transfer source instead."
+      ]
+    },
+    {
+      "url": "https://firstyear.mit.edu/academics-exploration/ap-transfer-credit/transfer-credit/how-to-seek-transfer-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Procedural how-to; process details already captured verbatim from the registrar page."
+      ]
+    },
+    {
+      "url": "https://firstyear.mit.edu/academics-exploration/major-exploration/major-and-minor-options/declaring-your-major/",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search on declaration timing; not fetched \u2014 registrar page gave the authoritative quote.",
+        "Surfaced in search; MIT Office of the First Year declaration timeline. Not fetched; redundant with primary FAQ."
+      ]
+    },
+    {
+      "url": "https://firstyear.mit.edu/wp-content/uploads/2025/04/Transfer-Credit-Info-Sheet-Class-of-2029.pdf",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Class of 2029 (Fall 2025) info sheet \u2014 older cycle than the live Class of 2030 pages; not used to avoid mixing cycles."
+      ]
+    },
+    {
+      "url": "https://giving.mit.edu/undergraduate-tuition",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in web search (MIT giving page on free tuition under $200K). Not fetched; thresholds taken from the SFS page instead."
+      ]
+    },
+    {
+      "url": "https://housing.mit.edu/residences",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "MIT Housing (via search summary). Confirmed MIT houses undergrads in 11 residence halls/dormitories with distinct cultures and live-in house teams, chosen after admission \u2014 i.e., housing communities, NOT academic residential colleges ranked on the application. Basis for residential_college_system=false and empty college_ranking_tactics."
+      ]
+    },
+    {
+      "url": "https://ibo.org/university-admission/find-countries-and-universities-that-recognize-the-ib/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IBO directory; third party, not used."
+      ]
+    },
+    {
+      "url": "https://ibwritingservice.com/blog/does-mit-accept-ib/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not used."
+      ]
+    },
+    {
+      "url": "https://ir.mit.edu/outcomes/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "MIT Institutional Research outcomes index; describes data categories (Graduating Student Survey, Student Placement) but shows no percentages."
+      ]
+    },
+    {
+      "url": "https://ir.mit.edu/project-topic/common-data-set/",
+      "roles": [
+        "resolve:common_data_set",
+        "resolve",
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CDS located (2024-2025 (latest available; 2027-2028 not yet posted))",
+        "MIT Institutional Research CDS archive index \u2014 lists editions 2024-25 (most recent), 2023-24, 2022-23, 2021-22. Used as CDS URL since 2027-2028 is not yet posted.",
+        "MIT IR CDS archive index; confirmed most recent published edition is 2024-25 (2025-26 not yet posted). Target CDS 2027-2028 does not exist.",
+        "MIT Institutional Research CDS archive. Lists CDS editions 2024-25, 2023-24, 2022-23, 2021-22. Confirms most recent CDS is 2024-25 and that NO 2027-2028 (nor 2026-27, nor 2025-26) CDS exists yet \u2014 establishes the target Fall 2027 value cannot be sourced.",
+        "MIT IR Common Data Set archive \u2014 lists editions only through 2024-25; no 2025-26, 2026-27, or 2027-28 edition exists. Confirms target Fall 2027 cycle is unavailable.",
+        "MIT IR CDS archive index \u2014 confirmed the most recent published edition is 2024-25; no 2025-26, 2026-27, or 2027-28 exists yet"
+      ]
+    },
+    {
+      "url": "https://ir.mit.edu/project-topic/graduation-rate/",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "MIT graduation-rate archive listing (from search results); not fetched \u2014 the CDS page already provided the canonical Section B figure with verbatim text."
+      ]
+    },
+    {
+      "url": "https://ir.mit.edu/projects/2021-22-common-data-set/",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Older CDS edition; not used."
+      ]
+    },
+    {
+      "url": "https://ir.mit.edu/projects/2022-23-common-data-set/",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Older CDS edition; not used."
+      ]
+    },
+    {
+      "url": "https://ir.mit.edu/projects/2023-24-common-data-set/",
+      "roles": [
+        "verify:freshman_retention_rate",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Older CDS edition; not needed since 2024-25 is more recent and Fall 2027 unavailable.",
+        "Cross-check of prior-year C7: read 'Alumni/ae relation = Not Considered' (vs 2024-25 read 'Considered'), which flagged legacy as unreliable and led me to null legacy_consideration."
+      ]
+    },
+    {
+      "url": "https://ir.mit.edu/projects/graduating-student-survey/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "GSS description page; no figures rendered (data is in an interactive dashboard)."
+      ]
+    },
+    {
+      "url": "https://ir.mit.edu/projects/us-news-world-report/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search as MIT Institutional Research US News page; an MIT source (not US News) so would not qualify for us_news_rank; not fetched."
+      ]
+    },
+    {
+      "url": "https://math.mit.edu/academics/undergrad/first/ap.html",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Math department AP page; departmental, not the institute-wide policy \u2014 not used."
+      ]
+    },
+    {
+      "url": "https://math.mit.edu/academics/undergrad/first/transfer/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Math department transfer page; departmental scope, not used."
+      ]
+    },
+    {
+      "url": "https://misti.mit.edu/sites/default/files/2022-06/transfer-credit-2022.pdf",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "2022 MISTI PDF; outdated and off-topic, not used."
+      ]
+    },
+    {
+      "url": "https://misti.mit.edu/transfer-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "MISTI (study-abroad) transfer credit; different context, not used."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/afford/cost-aid-basics/access-affordability/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result on affordability/aid policy; not fetched \u2014 does not state the 2027-2028 published tuition figure."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/firstyear/",
+      "roles": [
+        "resolve:admissions",
+        "resolve",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "official admissions page",
+        "Official MIT Admissions first-year application section \u2014 used as official admissions URL.",
+        "First-year eligibility page; source of the quote 'Students who are denied Early Action are not eligible to apply Regular Action.' Did not contain deadlines/platform detail."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/firstyear/deadlines-requirements/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Primary source: platform quote ('MIT application portal ... apply.mitadmissions.org'), EA 'November 1' / RA 'January 5' (month/day only, no year), 2 letters of rec, SSR+transcript, SAT/ACT, Feb Updates & Notes (mid-Feb), portfolios via SlideRoom."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/firstyear/early-vs-regular/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Non-binding quote: 'Our Early Action isn't single-choice, binding, or anything like that.' + 'we do not place any limits on where else you may apply, nor do we require you to attend if admitted.'"
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/firstyear/essays-activities-academics/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official MIT essays/activities page - excluded as non-community source."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/firstyear/first-year-eligibility/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "First-year eligibility page found in search; not chosen as the primary admissions URL (used the broader /apply/firstyear/ landing instead)."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/firstyear/getting-started/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirms application component list (bio, essays/activities/academics, transcripts, letters, tests, interview, creative portfolios, Feb Updates) and the Nov 1 / Jan 5 deadlines."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/firstyear/interview/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Interview policy: offered 'whenever possible' via MIT Educational Council (3,500+ alumni volunteers); 'If we are unable to offer you an interview, it will be waived and your application will not be adversely affected.'"
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/firstyear/portfolios-additional-material/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Optional creative portfolios (Research supplement, Music & Theater Arts, Visual Art & Architecture, Maker) via SlideRoom, $10 with waivers, same deadline as application cycle."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/firstyear/tests-scores/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Testing policy: 'We require the SAT or the ACT'; ACT writing / SAT essay not required; superscored; self-reported; EA before Nov 30 / RA before Dec 31."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/prepare/credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official MIT overview of transfer credit & advanced standing; not needed once the detailed firstyear/registrar pages were fetched."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/process/profile/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search (first-year class profile); not fetched \u2014 stats page was more directly relevant for admit rate."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/process/stats/",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "MIT Admissions stats page appeared in search; not fetched/used \u2014 CDS is the authoritative admissions-stats source.",
+        "Official MIT Admissions statistics page. Most recent cycle shown is Class of 2029 (Fall 2025 entry): applications 29,281, admits 1,334, 'Percentage admitted: 4.6%'. Source of the reported value; verbatim admit-rate figure. This is the most recent CANONICAL cycle available \u2014 but it is Fall 2025, NOT the requested Fall 2027.",
+        "First-year applications: 29,281 | First-year admits: 1,334 | Percentage admitted: 4.6%",
+        "MIT Admissions stats page appeared in results; not fetched \u2014 secondary to the canonical CDS and would not provide a Fall 2027 figure.",
+        "MIT Admissions stats page surfaced in search; not fetched \u2014 CDS is the more canonical, cycle-pinned source and was authoritative",
+        "MIT Admissions stats page surfaced in search; not fetched \u2014 not the canonical CDS retention source."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/apply/process/what-we-look-for/",
+      "roles": [
+        "section:strategic_profile",
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Source for the 'match between applicant and the Institute drives our selection process' philosophy and grades-not-determinative framing; feeds admissions_philosophy and analyst_takeaways.",
+        "Official MIT page - excluded because this section is explicitly crowdsourced community opinion, not official criteria."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/blogs/entry/an-open-letter-to-mit-applicants/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official MIT admissions blog - excluded as non-community source."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/blogs/entry/ask-me-anything-about-portfolios/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official MIT portfolio blog - excluded as non-community source."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/blogs/entry/fyi-undergraduates-with-family-income-below-200000-can-expect-to-attend-mit-tuition-free-starting-in-2025/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in web search; not fetched. Thresholds confirmed via SFS page."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/discover/about-mit/life-after-mit/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Class of 2024 first-destination: '44% ... took jobs', '49% went straight to graduate school'. Older cycle; superseded by facts.mit.edu Class-of-2025 data. Context only."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/discover/the-mit-education/majors-minors/",
+      "roles": [
+        "resolve",
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "MIT Admissions majors/minors overview; rejected in favor of the official Course Catalog degree charts for the catalog URL.",
+        "Exact quote 'When you apply to MIT, you apply to the entire university, not to a specific major or school'; 'begin MIT undeclared'; and the complete 53-item minors list.",
+        "Primary source. Verbatim: 'When you apply to MIT, you apply to the entire university, not to a specific major or school, so all first-year students begin MIT undeclared'; 'you are then free to choose from among any of MIT's courses of study, without any additional requirements or admission procedures.' Basis for admits_by_major, tactics 2 and 4, and alternate_major_strategy."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/discover/the-mit-education/mits-educational-philosophy/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; educational philosophy context, not directly quoted."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/help/faq/ap-ib-college-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official MIT Admissions FAQ. Corroborated the Arts/English/History & Social Sciences/World Languages 9-units-each unrestricted-elective sentence and the Capstone Seminar+Research 9-unit rule that appeared in search snippets."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/help/faq/early-action-ea-regular-action-ra/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search for EA/RA difference; corroborated non-binding but I used the early-vs-regular page's direct quote instead, so not directly fetched."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/help/faq/first-year-application-deadlines/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirms EA 'November 1' / RA 'January 5'; test cutoffs 'any test taken before November 30' (EA) and 'before December 31' (RA)."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/help/faq/majors/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Primary source. Verbatim: 'the choice doesn't have any impact on admission decisions'; 'Our application asks students to list their course of interest only'; 'Students apply to MIT for general admission and select a major at the end of the first year'; large percentage end up in a different major. Basis for tactics 1 and 3."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/help/faq/mit-mission-statement/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; mission wording overlaps with What We Look For which I already fetched; not separately used."
+      ]
+    },
+    {
+      "url": "https://mitadmissions.org/help/faq/transfer-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Admissions FAQ on transfer credit; registrar page used instead for exact restriction text."
+      ]
+    },
+    {
+      "url": "https://mitclubs.com/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; alumni clubs, not relevant."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/collegenavigator/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "NCES College Navigator landing; used only to corroborate UnitID lookup, no institution-specific data extracted."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/dfr/2023/ReportHTML.aspx?unitId=166683",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS 2023 Data Feedback Report \u2014 quoted 'Massachusetts Institute of Technology', location Cambridge, MA, control Private not-for-profit. Confirms name+city+state+control for UnitID 166683."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/institution-profile/166683",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "NCES IPEDS Institution Data Profile for MIT \u2014 confirms UnitID 166683 maps to Massachusetts Institute of Technology; page itself hit a redirect loop on fetch but the URL/UnitID is corroborated by DFR report and search."
+      ]
+    },
+    {
+      "url": "https://news.mit.edu/2024/3-questions-tracking-mit-graduate-career-trajectories-1217",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; PhD/doctoral career-trajectory Q&A, not undergraduate outcome rates. Skipped."
+      ]
+    },
+    {
+      "url": "https://news.mit.edu/2024/mit-tuition-undergraduates-family-income-1120",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in web search; corroborated the $200K tuition-free / $100K pay-nothing thresholds and the 2025 start, but I relied on the primary SFS making-mit-affordable page and did not fetch this one directly."
+      ]
+    },
+    {
+      "url": "https://news.mit.edu/2025/mit-named-no-2-university-us-news-2025-26-0923",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Quotes 'MIT named No. 2 university by U.S. News for 2025-26' and reports undergrad engineering/CS/business as No. 1. Used for prose/attribution only; NOT used for us_news_rank because it is a MIT page, not a US News page."
+      ]
+    },
+    {
+      "url": "https://nextgenadmit.com/mit-admission-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party (non-canonical); not fetched/used.",
+        "Third-party; rejected"
+      ]
+    },
+    {
+      "url": "https://nsldsfap.ed.gov/cdr-searchable-database/school/search",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official NSLDS cohort-default-rate search; JS app, returned only 'NSLDS', no data for MIT."
+      ]
+    },
+    {
+      "url": "https://onlineeduhelp.com/does-mit-take-ap-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not authoritative, not used."
+      ]
+    },
+    {
+      "url": "https://recognition.ibo.org/en-US/university-statements/?university=Massachusetts+Institute+of+Technology",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IBO recognition statement \u2014 third-party aggregator; used MIT's own International Examinations page instead."
+      ]
+    },
+    {
+      "url": "https://registrar.mit.edu/registration-academics/academic-requirements/majors-minors/declaring-major",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Exact quote on declaration timing: 'Most students declare a major in the spring term of their first year at MIT. Those who do not must decide on a major by the end of their sophomore year.' Confirmed no cap/GPA/application info => supports open declaration.",
+        "Surfaced in search on major declaration; corroborates spring-of-first-year declaration but not fetched \u2014 primary quotes already obtained from mitadmissions.org, so not used as source of record."
+      ]
+    },
+    {
+      "url": "https://registrar.mit.edu/registration-academics/transfer-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY transfer source. Verbatim: grade of S, cannot receive credit for subjects used to fulfill a degree elsewhere, HASS-elective-only with examiner approval, consult transfer credit examiner before registering, official transcript to records@mit.edu, Transfer Credit Request Form. Confirmed NO online articulation/Transferology tool is mentioned."
+      ]
+    },
+    {
+      "url": "https://registrar.mit.edu/registration-academics/tuition-fees/undergraduate",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Canonical corroboration: 'Full regular tuition' of '$33,360' per term for 2026-2027 (\u00d72 = $66,720/yr). Only 2026-2027 shown; no 2027-2028 figure exists."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "SFS homepage; rejected in favor of the undergraduate-specific SFS page."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/undergraduate-students/",
+      "roles": [
+        "resolve:financial_aid",
+        "resolve",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "financial-aid page",
+        "MIT Student Financial Services undergraduate page \u2014 used as financial-aid URL; states MIT meets 100% of demonstrated need, need-blind.",
+        "Anchor/landing page. Sourced need-blind admission, meet-full-need-for-four-years, definition of full need (100% via scholarships/grants/employment), need-based framing, sub-page links, and the 88%-debt-free (2025) and sub-$200K-tuition-free statements."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/undergraduate-students/our-approach-to-aid/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Only yielded the mission statement ('ensure an MIT education is affordable to every admitted student...regardless of financial circumstances'); other specifics were on linked pages. Minor corroboration."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/undergraduate-students/the-cost-of-attendance/annual-student-budget/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY value source: 'Tuition: $66,720' for the 2026\u20132027 academic year; full 2026-27 cost-of-attendance breakdown totaling $92,760 before aid.",
+        "Tuition: $66,720 [for the 2026\u20132027 academic year] (MIT SFS Annual student budget). Corroborated by MIT Registrar: \"Full regular tuition\" of \"$33,360\" per term (fall + spring = $66,720) for 2026-2027."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/undergraduate-students/the-cost-of-attendance/making-mit-affordable/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Authoritative affordability page: $200K tuition-free (2025-2026 onward), sub-$100K pay-nothing, need-blind AND full-need for all domestic+international undergrads, no-loan calculation statement, 57% MIT Scholarship recipients (2024-2025), 88% graduate debt-free."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/undergraduate-students/the-cost-of-attendance/types-of-financial-aid/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 page does not exist at this path."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/undergraduate-students/types-of-aid/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed the three named institutional grants: MIT Scholarship, First Year Grant ($2,000, split fall/spring, first-years only), Health Insurance Grant (highest-need). Verified no merit-based scholarships listed."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/undergraduate-students/types-of-aid/federal-and-state-aid/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 could not confirm federal Pell/SEOG or state grant details; omitted rather than guess."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/undergraduate-students/types-of-aid/grants-and-scholarships/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 could not use to add Pell/SEOG/state grants."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/undergraduate-students/types-of-aid/mit-scholarship/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "MIT Scholarship detail: definition, need-only basis, median $69,777 for 2024-2025, ~57% of undergrads receive it, CSS Profile auto-consideration, and Student Information Review Form May 1-July 1 deadline."
+      ]
+    },
+    {
+      "url": "https://sfs.mit.edu/undergraduate-students/types-of-aid/outside-scholarships/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Glossary definition of outside/private scholarships (source other than MIT: community groups, high schools, corporations, foundations, employer). Reporting/treatment details not present on the fetched glossary page."
+      ]
+    },
+    {
+      "url": "https://static1.squarespace.com/static/5b63672bcef372eea958d8a5/t/5b883b854d7a9c413de793a8/1535654790466/MIT-CDS-2015-16.pdf",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Old 2015-16 CDS PDF (search result); outdated cycle, not used."
+      ]
+    },
+    {
+      "url": "https://studentlife.mit.edu/policies-and-resources/first-year-residency-requirement/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Exact quote 'MIT requires all first year students to live on campus for the duration of their first year at MIT' \u2014 used for housing_profile."
+      ]
+    },
+    {
+      "url": "https://studentlife.mit.edu/policies-and-resources/housing-policies/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in housing search; not fetched \u2014 the dedicated first-year-residency page gave the exact requirement quote."
+      ]
+    },
+    {
+      "url": "https://summerspringboard.com/campus/cambridge/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party summer-program page surfaced in search; not relevant."
+      ]
+    },
+    {
+      "url": "https://sustainability.mit.edu/climate-action/build-resilience/biodiversity-and-landscape",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; sustainability topic, not relevant to this profile."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/an-open-letter-to-mit-applicants/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebFetch returned HTTP 404; could not read."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/can-i-get-into-mit/3696786",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly. Chance-me applicant activity list (Stanford lab intern, own nonprofit, NSDA national debater, national-level sports); used for common_activities."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/chance-me-for-mit/1951867",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly. Source of the core verbatim quotes: 'not a robot,' 'only your strength in STEM,' 'inspired your team mates... emotional support,' 'helpful and fun,' 'if they don't ask for it, don't send it,' 'if being academically impressive were enough.'"
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/mit-admissions/3699811",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly. Community advice on recommendations (STEM + humanities teacher, prefer 11th-grade academic teachers); light use for context on what MIT expects."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/mit-class-of-2028-official-thread/3655061",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly but contained no usable accepted-student activity/essay detail (mostly interview-timing chatter)."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/mit-class-of-2030-official-rd-thread/3698660",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly. Accepted student RohanfromSG profile: 'mock trial prez, IOI silver medal' + national service; used for common_activities."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/mit-early-action-class-of-2030-official-thread/3692920",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched directly. Only one thin profile (IBDP, SAT 1580, physics major, 'good ECs'); minimal use."
+      ]
+    },
+    {
+      "url": "https://thetech.com/2023/04/14/2027-admit-stats",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "MIT student newspaper article about Class of 2027 (which entered Fall 2023 \u2014 a naming collision, NOT the Fall 2027 target cycle). Irrelevant to the target; not used."
+      ]
+    },
+    {
+      "url": "https://toptieradmissions.com/cracking-the-code-navigating-mits-admissions-process/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Paid-consultant blog - not crowdsourced community opinion; excluded."
+      ]
+    },
+    {
+      "url": "https://toptieradmissions.com/mit-acceptance-rate-class-of-2029/",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary consultancy blog for Fall 2025 class; rejected as non-canonical and off-target cycle."
+      ]
+    },
+    {
+      "url": "https://toptieradmissions.com/resources/college-acceptance-rates/mit-admissions-acceptance-rates-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not fetched/used."
+      ]
+    },
+    {
+      "url": "https://toptieradmissions.com/us-news-college-rankings-whats-new-in-2025/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party admissions blog surfaced in search; not an authoritative rank source, rejected."
+      ]
+    },
+    {
+      "url": "https://web.mit.edu/campus-life/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; context on campus life but not independently fetched or directly quoted."
+      ]
+    },
+    {
+      "url": "https://www.albert.io/blog/mit-advanced-placement-ap-credits/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not used."
+      ]
+    },
+    {
+      "url": "https://www.collegeadvisor.com/acceptance-rates/mit-acceptance-rate/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; not fetched/used."
+      ]
+    },
+    {
+      "url": "https://www.collegeadvisor.com/resources/mit-majors/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary aggregator; source of the 'nearly half change major' phrasing, but rejected in favor of MIT's own 'large percentage' wording."
+      ]
+    },
+    {
+      "url": "https://www.collegeessayguy.com/blog/how-to-get-into-mit",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; rejected"
+      ]
+    },
+    {
+      "url": "https://www.collegeessayguy.com/blog/mit-supplemental-essay",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant essay guide - not community-sourced; excluded."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/massachusetts-institute-of-technology/academic-life/graduation-and-retention/",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator (99% retention); rejected as non-canonical and uncited to a specific cycle."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/massachusetts-institute-of-technology/paying-for-college/student-loan-debt/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party. Showed '2-year cohort default rate: 1.1%', 791 borrowers, no cohort year; conflicts with a search snippet (0.6% 3-year, FY2017). Unreliable/unpinned -> rejected, loan_default_rate left null."
+      ]
+    },
+    {
+      "url": "https://www.collegeraptor.com/getting-in/articles/act-sat/mit-act-and-sat-scores-what-it-takes-to-get-in/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; rejected"
+      ]
+    },
+    {
+      "url": "https://www.collegetransitions.com/blog/how-to-get-into-mit/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not fetched/used."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/146980/mit-s-ranking-and-reputation-on-niche",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant Q&A - not community-sourced; excluded."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/20091/understanding-mit-s-common-dataset",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party FAQ; rejected"
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/69265/mit-s-retention-rate",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party Q&A; rejected as non-canonical."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/74327/deadlines-for-mit-admissions",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party \u2014 rejected (not official)."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/questions/20131/applying-to-different-major-at-mit",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary forum; not used."
+      ]
+    },
+    {
+      "url": "https://www.commondatasets.fyi/mit",
+      "roles": [
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS mirror (2023-2024); rejected in favor of the official MIT IR page.",
+        "Third-party CDS aggregator (search result); rejected in favor of MIT's own IR page as the canonical source."
+      ]
+    },
+    {
+      "url": "https://www.crimsoneducation.org/us/blog/mit-acceptance-rate",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; search snippet cited 'Class of 2030 4.58%' but not confirmable on any official MIT page; rejected as non-canonical/unverified."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search (WebSearch: MIT College Scorecard median earnings 10 years)",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "No exact earnings figure in snippets; only pointed back to the Scorecard profile page, which I obtained via the API instead."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search (WebSearch: MIT Common Data Set 2025-2026 ir.mit.edu)",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed 2025-26 CDS not yet published; latest is 2024-25. No usable figures taken beyond edition availability."
+      ]
+    },
+    {
+      "url": "https://www.gradgpt.com/common-data-set/massachusetts-institute-of-technology-mit",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS visualizer; rejected in favor of primary MIT IR source, and does not contain a Fall 2027 edition.",
+        "Third-party CDS visualizer; rejected as non-canonical/unverified",
+        "Third-party CDS visualizer \u2014 rejected in favor of official ir.mit.edu."
+      ]
+    },
+    {
+      "url": "https://www.highereddive.com/news/us-news-best-college-rankings-latest-2025-princeton-mit-harvard-methodology/727819/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Media coverage of rankings surfaced in search; corroborates Princeton/MIT/Harvard order but not a US News page, rejected for the rank FACT."
+      ]
+    },
+    {
+      "url": "https://www.ivycentral.com/a-comprehensive-analysis-of-mits-class-of-2028/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not fetched/used."
+      ]
+    },
+    {
+      "url": "https://www.ivycentral.com/acceptance-rate-mit/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not fetched/used."
+      ]
+    },
+    {
+      "url": "https://www.ivycoach.com/the-ivy-coach-blog/college-admissions/how-to-get-into-mit/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; rejected"
+      ]
+    },
+    {
+      "url": "https://www.ivywise.com/blog/how-to-get-into-mit-all-you-need-to-know/",
+      "roles": [
+        "section:application_process",
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party \u2014 rejected (not official).",
+        "Consultancy blog; not used as source of record."
+      ]
+    },
+    {
+      "url": "https://www.koppelmangroup.com/blog/2026/2/9/mit-admissions-statistics-2025",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; rejected"
+      ]
+    },
+    {
+      "url": "https://www.mines.edu/registrar/ib-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Colorado School of Mines IB page \u2014 wrong institution, appeared in search noise; not used."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/massachusetts-institute-of-technology/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct WebFetch 403; overview only, no additional verbatim review content used."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/massachusetts-institute-of-technology/academics/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct WebFetch 403; read via WebSearch. Reinforced firehose/rigor and UROP research themes."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/massachusetts-institute-of-technology/admissions/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; contains acceptance-rate/test-score stats which are out of scope for this opinion section, so not used."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/massachusetts-institute-of-technology/campus-life/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct WebFetch 403; read via WebSearch. Source of hackathons/dance/a cappella/sports and Greek-life social-scene points."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/massachusetts-institute-of-technology/reviews/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct WebFetch 403; content read via WebSearch of niche.com. Source of 'drinking from a firehose,' 'workaholic/preprofessional,' collaborative-culture and activity themes."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/Does-my-major-subject-at-MIT-affect-my-chances-of-getting-into-MIT",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary/forum; corroborated 'major doesn't affect chances' but rejected as source of record in favor of primary mitadmissions.org."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/What-does-the-IB-diploma-do-for-my-chances-at-MIT",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Quora forum; not authoritative, not used."
+      ]
+    },
+    {
+      "url": "https://www.reddit.com/r/ApplyingToCollege/search.json?q=MIT+accepted+activities",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "BLOCKED: 'Claude Code is unable to fetch from www.reddit.com.' No Reddit content obtained or included."
+      ]
+    },
+    {
+      "url": "https://www.road2college.com/mit-common-data-set/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party summary; rejected as non-canonical"
+      ]
+    },
+    {
+      "url": "https://www.successcribe.com/profile-building-for-mit/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant blog ('spike'/core-traits framing) - not community-sourced; excluded (theme independently echoed by CC)."
+      ]
+    },
+    {
+      "url": "https://www.thethinkacademy.com/blog/2026-u-s-news-top-50-colleges/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog surfaced in search; not authoritative, rejected."
+      ]
+    },
+    {
+      "url": "https://www.today.com/parents/teens/us-news-college-rankings-2025-rcna172418",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Media summary surfaced in search; secondary, not used."
+      ]
+    },
+    {
+      "url": "https://www.tutorchase.com/blog/massachusetts-institute-of-technology-mit-acceptance-rates",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not fetched/used.",
+        "Secondary aggregator; not used."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/massachusetts-institute-of-technology-2178",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted 2x (WebFetch): 60s timeouts. usnews.com blocks automated fetches. Would have carried the '#X in National Universities' quote."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/massachusetts-institute-of-technology-2178/overall-rankings",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted 1x (WebFetch): 60s timeout. Could not load to quote MIT's rank."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/rankings/national-universities",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted 3x (WebFetch): one socket-close, two 60s timeouts. This is the authoritative page for us_news_rank but could not be loaded, so the rank FACT field is null."
+      ]
+    }
+  ]
+}
