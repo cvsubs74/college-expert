@@ -80,8 +80,14 @@ class FirestoreDB:
             versions = []
             for doc in self._versions(university_id).stream():
                 data = doc.to_dict() or {}
+                year = data.get('data_year')
+                if year is None:
+                    try:
+                        year = int(doc.id)
+                    except (TypeError, ValueError):
+                        continue  # junk doc id — skip it, don't hide the rest
                 versions.append({
-                    "year": data.get('data_year') or int(doc.id),
+                    "year": year,
                     "official_name": data.get('official_name'),
                     "indexed_at": data.get('indexed_at'),
                     "last_updated": data.get('last_updated'),

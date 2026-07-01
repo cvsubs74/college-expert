@@ -187,6 +187,7 @@ def build_history(main_doc: Optional[Dict], version_docs: List[Dict],
     single 'kb_current' row (year possibly null, never guessed).
     """
     version_docs = version_docs or []
+    had_versions = bool(version_docs)
     if years:
         wanted = set(years)
         version_docs = [d for d in version_docs if d.get('data_year') in wanted]
@@ -210,7 +211,14 @@ def build_history(main_doc: Optional[Dict], version_docs: List[Dict],
 
     snapshots = [extract_year_summary(d) for d in version_docs]
     snapshots.sort(key=lambda s: (s['year'] is not None, s['year'] or 0), reverse=True)
-    if not snapshots and main_doc:
+    if not snapshots and had_versions:
+        # A years filter matched nothing. Never substitute the current doc —
+        # that would serve a different year's data under a false label.
+        notes.append(
+            'No versioned snapshots match the requested years — check '
+            'available_years.'
+        )
+    elif not snapshots and main_doc:
         snapshots = [extract_year_summary(main_doc, source='kb_current')]
         notes.append(
             'No versioned snapshots stored yet for this university — the single '

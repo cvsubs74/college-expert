@@ -95,7 +95,7 @@ agent-native doctrine (labeled facts > fabricated synthesis).
 ## MCP connector (stratia_connector)
 
 - `get_university(university_id, year=None, sections=None)` — forwards both;
-  `sections` is **enum-typed** (`Literal` of the 12 section names) so agents
+  `sections` is **enum-typed** (`Literal` of the 11 section names) so agents
   discover valid names from the tool schema with zero calls; the backend
   stays permissive. Backend errors are surfaced verbatim (they name the
   missing year and list available ones) instead of collapsing to "not found".

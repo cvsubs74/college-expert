@@ -209,6 +209,18 @@ class TestHistory:
         assert [s['year'] for s in result['snapshots']] == [2026, 2024]
         assert result['available_years'] == [2024, 2025, 2026]  # coverage still full
 
+    def test_years_filter_miss_returns_empty_not_current_doc(self, kb, make_profile):
+        """A filter matching nothing must NOT fall back to the serving doc —
+        that would hand the agent a different year's data under a false label."""
+        kb.main.ingest_university(make_profile(), year=2025)
+        kb.main.ingest_university(make_profile(), year=2026)
+        result = kb.main.get_university_history('testu', years=[2030])
+        assert result['success'] is True
+        assert result['snapshots'] == []
+        assert not any('No versioned snapshots stored yet' in n for n in result['notes'])
+        assert any('match the requested years' in n for n in result['notes'])
+        assert result['available_years'] == [2025, 2026]  # self-correction data
+
     def test_zero_version_legacy_school(self, kb, make_profile):
         """The dominant prod shape today: a main doc that was never
         re-ingested under versioning — history degrades honestly."""

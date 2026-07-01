@@ -245,6 +245,22 @@ def test_get_university_history_evicts_oldest_years_when_oversized(captured):
     assert len(_json.dumps(out, default=str)) <= sc._RESULT_CAP
 
 
+def test_get_university_history_single_oversized_year_drops_sections(captured):
+    # One remaining year can alone exceed the cap — its largest sections are
+    # dropped (recorded) instead of returning an over-cap payload the platform
+    # would hard-truncate mid-JSON.
+    captured["_get_payload"] = {
+        "success": True, "official_name": "Duke", "available_years": [2026],
+        "years": {"2026": {"student_insights": {"blob": "x" * 200_000},
+                           "admissions_data": {"rate": 6.0}}},
+        "notes": []}
+    out = sc.get_university_history("duke", sections=["student_insights", "admissions_data"])
+    assert out["years"]["2026"] == {"admissions_data": {"rate": 6.0}}
+    assert out["truncated_sections"] == {"2026": ["student_insights"]}
+    import json as _json
+    assert len(_json.dumps(out, default=str)) <= sc._RESULT_CAP
+
+
 def test_get_roadmap_and_credits_wrappers(captured):
     captured["_get_payload"] = {"success": True, "tasks": [{"task_id": "t1", "title": "Draft essay"}], "count": 1}
     rm = sc.get_roadmap("a@b.com", status="pending")

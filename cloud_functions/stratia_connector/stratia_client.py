@@ -217,6 +217,18 @@ def get_university_history(university_id, sections=None, years=None):
             truncated.append(oldest)
         if truncated:
             out["truncated_years"] = sorted(truncated)
+        # A single remaining year can still exceed the cap (one broad-section
+        # year of a 150KB profile) — drop its largest sections until it fits,
+        # recording them so the agent can re-request narrower sections.
+        if len(json.dumps(out, default=str)) > _RESULT_CAP and year_map:
+            (year, secs), = year_map.items()
+            dropped = []
+            while len(json.dumps(out, default=str)) > _RESULT_CAP and len(secs) > 1:
+                largest = max(secs, key=lambda k: len(json.dumps(secs[k], default=str)))
+                secs.pop(largest)
+                dropped.append(largest)
+            if dropped:
+                out["truncated_sections"] = {year: sorted(dropped)}
         return out
 
     out["snapshots"] = _prune(data.get("snapshots") or [],
