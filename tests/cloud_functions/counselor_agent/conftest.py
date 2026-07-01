@@ -32,10 +32,15 @@ def _ensure_module(name):
     return mod
 
 
-# Stub google.generativeai — counselor_chat.py imports it at module load.
-# We don't exercise chat in unit tests, but planner.py and work_feed.py
-# don't trigger it; this stub just keeps any incidental imports inert.
+# Stub google.generativeai — counselor_chat.py imports it at module load, and
+# gemini_fallback.py imports it lazily. We must stub the `google` PARENT too, or
+# a bare `import google.generativeai` still hits the real import machinery and
+# fails in CI's clean container (No module named 'google') — it only "worked"
+# locally because a dev venv has google installed. Mirror profile_manager_v2's
+# conftest and link the submodules onto the parent.
+_google = _ensure_module('google')
 _genai = _ensure_module('google.generativeai')
+_google.generativeai = _genai
 _genai.configure = lambda *a, **k: None
 class _StubGenerativeModel:
     def __init__(self, *a, **k):
@@ -45,7 +50,7 @@ class _StubGenerativeModel:
 _genai.GenerativeModel = _StubGenerativeModel
 
 # google.genai (the newer SDK alias) sometimes also gets imported.
-_ensure_module('google.genai')
+_google.genai = _ensure_module('google.genai')
 
 
 # A stable "today" the tests can override per-test via the fixture below.
