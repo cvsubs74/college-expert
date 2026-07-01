@@ -4,10 +4,8 @@
  * Google sign-in); each client below just adds that one URL. Steps/requirements
  * verified against each client's official docs on 2026-06-17; UI labels drift, so
  * copy is intentionally forgiving. Override nothing server-side per client — the
- * same endpoint serves them all. Config JSON keys differ per client and are
- * load-bearing: Cursor uses `url`, Windsurf uses `serverUrl`, VS Code nests under
- * `servers` with `type:"http"`, Cline uses `type:"streamableHttp"`, Goose uses
- * `type:"streamable_http"`/`uri`, Gemini CLI's settings.json uses `httpUrl`.
+ * same endpoint serves them all. We surface only Claude.ai and ChatGPT — the two
+ * consumer agents our students actually use.
  */
 
 export const MCP_URL = 'https://stratia-connector-pfnwjfp26a-ue.a.run.app/mcp';
@@ -45,149 +43,6 @@ export const MCP_CLIENTS = [
       "In a chat, open '+' → More and select Stratia for that chat.",
     ],
   },
-  {
-    id: 'claude_code',
-    name: 'Claude Code',
-    sub: 'CLI',
-    emoji: '⌘',
-    primary: true,
-    supported: true,
-    requires: 'Any Claude login or Anthropic API key.',
-    steps: [
-      'Run the command below (it uses --scope user so Stratia is available across all your projects).',
-      'Start Claude Code and run /mcp, select stratia, and choose authenticate.',
-      'Complete the Google sign-in in the browser that opens.',
-      'Run /mcp again to confirm stratia is connected.',
-    ],
-    command: `claude mcp add --transport http --scope user stratia ${MCP_URL}`,
-  },
-  {
-    id: 'cursor',
-    name: 'Cursor',
-    sub: 'IDE',
-    emoji: '▷',
-    supported: true,
-    requires: 'Any plan, including Free.',
-    steps: [
-      'Settings → Tools & MCP → New MCP Server (opens mcp.json).',
-      'Add the entry below (just a url — no type or client id), then Save.',
-      "The server shows 'Needs Login' — click it and complete the Google sign-in.",
-    ],
-    config: `{
-  "mcpServers": {
-    "stratia-connector": {
-      "url": "${MCP_URL}"
-    }
-  }
-}`,
-    deepLink:
-      'cursor://anysphere.cursor-deeplink/mcp/install?name=stratia-connector&config=eyJ1cmwiOiJodHRwczovL3N0cmF0aWEtY29ubmVjdG9yLXBmbndqZnAyNmEtdWUuYS5ydW4uYXBwL21jcCJ9',
-  },
-  {
-    id: 'vscode',
-    name: 'VS Code',
-    sub: 'GitHub Copilot (Agent mode)',
-    emoji: '⧉',
-    supported: true,
-    requires: 'GitHub Copilot (any plan) with Chat in Agent mode.',
-    steps: [
-      "Command Palette → 'MCP: Add Server' → HTTP → paste the MCP URL → name it 'stratia'.",
-      'Choose Workspace or Global, then click Start on the server.',
-      'Complete the Google sign-in when the browser opens.',
-    ],
-    config: `{
-  "servers": {
-    "stratia": {
-      "type": "http",
-      "url": "${MCP_URL}"
-    }
-  }
-}`,
-    deepLink:
-      'vscode:mcp/install?%7B%22name%22%3A%22stratia%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fstratia-connector-pfnwjfp26a-ue.a.run.app%2Fmcp%22%7D',
-  },
-  {
-    id: 'gemini_cli',
-    name: 'Gemini CLI',
-    sub: 'CLI',
-    emoji: '✦',
-    supported: true,
-    requires: 'Free. A Gemini API key (AI Studio) — Google retired gemini-cli’s free Google-account login on 2026-06-18; an API key still works.',
-    steps: [
-      'Install or update: npm install -g @google/gemini-cli',
-      'Get a free Gemini API key at aistudio.google.com/apikey, then set it: export GEMINI_API_KEY=your-key  (Google retired gemini-cli’s free Google-account login on 2026-06-18, so an API key is the supported path; without it you’ll see an IneligibleTierError.)',
-      'Run the command below to add Stratia at user scope (without -s user it only applies in the current folder).',
-      'Start gemini and run /mcp auth stratia — a browser opens to authorize Stratia (this is separate from the model API key); approve it. (Required; it does not start on its own.)',
-      'Run /mcp to confirm stratia is connected.',
-    ],
-    command: `gemini mcp add --transport http -s user stratia ${MCP_URL}`,
-  },
-  {
-    id: 'windsurf',
-    name: 'Windsurf',
-    sub: 'Cascade',
-    emoji: '⋈',
-    supported: true,
-    requires: 'No paid tier for individuals (Enterprise: admin enables MCP).',
-    steps: [
-      "Open Windsurf Settings → Cascade → MCP Servers (or the MCP icon at the top of the Cascade panel), then click 'View raw config'.",
-      "Add the entry below under mcpServers (note the 'serverUrl' field — Windsurf-specific; no headers/API key), then Save.",
-      'Click Refresh and complete the Google sign-in when prompted.',
-    ],
-    config: `{
-  "mcpServers": {
-    "stratia-connector": {
-      "serverUrl": "${MCP_URL}"
-    }
-  }
-}`,
-  },
-  {
-    id: 'cline',
-    name: 'Cline',
-    sub: 'VS Code / JetBrains',
-    emoji: '◆',
-    supported: true,
-    requires: 'Free, open-source. Cline 3.x or newer (OAuth for remote servers).',
-    steps: [
-      "Open Cline → MCP Servers icon → 'Remote Servers' tab.",
-      "Name it 'stratia-connector', paste the MCP URL, set Transport Type = Streamable HTTP, then click Add Server.",
-      "The server appears needing auth — click its 'Authenticate' button, then complete the Google sign-in in the browser.",
-    ],
-    config: `{
-  "mcpServers": {
-    "stratia-connector": {
-      "url": "${MCP_URL}",
-      "type": "streamableHttp"
-    }
-  }
-}`,
-  },
-  {
-    id: 'goose',
-    name: 'Goose',
-    sub: 'Block',
-    emoji: '◐',
-    supported: true,
-    requires: 'Free, open-source. Recent build for Streamable HTTP + OAuth.',
-    steps: [
-      "Open the Goose sidebar → Extensions → 'Add custom extension'.",
-      "Type = 'Remote Extension (Streaming HTTP)', Name 'Stratia', Endpoint = the MCP URL; leave headers empty, then Save.",
-      'Start a chat and ask Goose to use a Stratia tool — a browser opens for Google sign-in (OAuth runs on first tool use); approve it.',
-    ],
-    config: `{
-  "extensions": {
-    "stratia": {
-      "enabled": true,
-      "type": "streamable_http",
-      "uri": "${MCP_URL}",
-      "timeout": 300
-    }
-  }
-}`,
-    deepLink:
-      'goose://extension?type=streamable_http&url=https%3A%2F%2Fstratia-connector-pfnwjfp26a-ue.a.run.app%2Fmcp&name=Stratia',
-  },
 ];
 
 /**
@@ -195,9 +50,10 @@ export const MCP_CLIENTS = [
  * be copied or opened directly in Claude / ChatGPT (the connected agent runs the
  * tools to answer).
  */
-// A weekly-plan prompt that explicitly asks the agent to save a `weekly_plan`
-// note, so the app pins it to the top of the Research Notebook as "This week".
-export const WEEKLY_PLAN_PROMPT = "Look at my Stratia deadlines, roadmap tasks, and any stale fits, then tell me the 3 most important things to do this week — each one short action tied to a real deadline or task. Save it to my research notebook as a weekly_plan so it pins to the top.";
+// A weekly-plan prompt. It doesn't force a save — it asks the agent to offer,
+// so if you accept, the agent saves a `weekly_plan` note and the app pins it to
+// the top of the Research Notebook as "This week".
+export const WEEKLY_PLAN_PROMPT = "Look at my Stratia deadlines, roadmap tasks, and any stale fits, then tell me the 3 most important things to do this week — each one a short action tied to a real deadline or task. When you're done, ask me whether I'd like to save it to my Research Notebook as this week's plan so it pins to the top.";
 
 export const ASK_PROMPTS = [
   { title: "What should I do this week?", prompt: WEEKLY_PLAN_PROMPT },
@@ -207,23 +63,10 @@ export const ASK_PROMPTS = [
   { title: 'Find scholarships I actually qualify for', prompt: "Look at my profile and scholarship tracker, then surface scholarships I'm eligible for that I haven't started yet. Rank them by award amount and deadline." },
   { title: 'Brainstorm essay angles from my real story', prompt: "Using my extracurriculars, awards, and intended major, draft three distinct Common App personal-statement angles that aren't clichés, each with a one-line hook." },
   { title: 'Build my fall application roadmap', prompt: 'Look at my roadmap tasks, college list, and deadlines, then build a week-by-week action plan from now through my earliest deadline.' },
-  { title: 'Compare two colleges side by side', prompt: 'Compare UCLA and the University of Michigan for me on admissions odds given my stats, cost after aid, and strength in my intended major. Save the comparison to my notebook.' },
+  { title: 'Compare two colleges side by side', prompt: "Compare UCLA and the University of Michigan for me on admissions odds given my stats, cost after aid, and strength in my intended major. When you're done, ask me whether I'd like to save the comparison to my Research Notebook." },
   { title: 'Is my list balanced (reach/target/safety)?', prompt: "Pull my full college list with each school's fit category and tell me if my reach/target/safety balance is healthy. If it's too top-heavy, suggest additions." },
-  { title: 'Tune up a stale fit and capture the strategy', prompt: 'Check which of my saved fits are stale, recompute the one that matters most (yes, spend the credit), then summarize what changed and save the updated strategy.' },
+  { title: 'Tune up a stale fit and capture the strategy', prompt: "Check which of my saved fits are stale, recompute the one that matters most (yes, spend the credit), then summarize what changed. When you're done, ask me whether I'd like to save the updated strategy to my Research Notebook." },
 ];
-
-/**
- * A copy-pasteable Gemini CLI command that runs `prompt` non-interactively
- * against the connected Stratia tools. The Gemini *web app* can't use MCP
- * connectors (only the CLI can) and a web page can't open a terminal, so the
- * useful hand-off for Gemini is a runnable command, not a link. `--approval-mode
- * =yolo` auto-approves tool calls so it runs end-to-end from one paste. The
- * prompt is POSIX single-quoted (embedded `'` escaped) so it's shell-safe.
- */
-export function geminiCliCommand(prompt) {
-  const quoted = `'${String(prompt || '').replace(/'/g, "'\\''")}'`;
-  return `gemini -p ${quoted} --approval-mode=yolo`;
-}
 
 /** Open-in-agent deep links for a prompt (best-effort; Copy is the reliable path). */
 export function askLinks(prompt) {
@@ -231,7 +74,5 @@ export function askLinks(prompt) {
   return {
     claude: `https://claude.ai/new?q=${q}`,
     chatgpt: `https://chatgpt.com/?q=${q}`,
-    gemini: `https://gemini.google.com/app?q=${q}`,
-    grok: `https://grok.com/?q=${q}`,
   };
 }

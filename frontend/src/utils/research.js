@@ -125,8 +125,8 @@ export function repeatPrompt(note) {
   const steps = workflowSteps(note).map((s) => s.label);
   const base = note?.title ? `Re-run my "${note.title}" Stratia workflow` : 'Re-run this Stratia workflow';
   return steps.length
-    ? `${base}: ${steps.join('; ')}. Then save the updated result to my Stratia research notebook.`
-    : `${base} and save the updated result to my Stratia research notebook.`;
+    ? `${base}: ${steps.join('; ')}. When you're done, ask me whether I'd like to save the updated result to my Stratia Research Notebook.`
+    : `${base}, then ask me whether I'd like to save the updated result to my Stratia Research Notebook.`;
 }
 
 /**
@@ -295,8 +295,8 @@ export function popularWorkflowPrompt(wf, { profile, collegeList } = {}) {
   const steps = popularTools(wf).map(toolLabel);
   const kindLabel = kindMeta(wf?.kind).label.toLowerCase();
   const base = steps.length
-    ? `Run a Stratia ${kindLabel} workflow that does the following with my data: ${steps.join(', then ')}. Then save the result to my research notebook.`
-    : `Run a Stratia ${kindLabel} workflow and save the result to my research notebook.`;
+    ? `Run a Stratia ${kindLabel} workflow that does the following with my data: ${steps.join(', then ')}. When you're done, ask me whether I'd like to save the result to my research notebook.`
+    : `Run a Stratia ${kindLabel} workflow, then ask me whether I'd like to save the result to my research notebook.`;
   const ctx = personalContext(profile, collegeList);
   return ctx ? `${base} ${ctx}` : base;
 }

@@ -1,9 +1,17 @@
 import { describe, it, expect } from 'vitest';
-import { MCP_URL, MCP_CLIENTS, geminiCliCommand } from '../utils/mcpClients';
+import { MCP_URL, MCP_CLIENTS, askLinks } from '../utils/mcpClients';
 
 const byId = (id) => MCP_CLIENTS.find((c) => c.id === id);
 
 describe('mcpClients connection config (verified against official docs)', () => {
+  it('offers only Claude.ai and ChatGPT, both primary, each with steps', () => {
+    expect(MCP_CLIENTS.map((c) => c.id)).toEqual(['claude_web', 'chatgpt']);
+    for (const c of MCP_CLIENTS) {
+      expect(c.primary).toBe(true);
+      expect(Array.isArray(c.steps) && c.steps.length).toBeTruthy();
+    }
+  });
+
   it('every client with a command/config/deepLink carries the canonical MCP URL', () => {
     for (const c of MCP_CLIENTS) {
       const blob = [c.command, c.config, c.deepLink].filter(Boolean).join('\n');
@@ -13,52 +21,19 @@ describe('mcpClients connection config (verified against official docs)', () => 
     }
   });
 
-  it('Claude Code adds the server over HTTP at user scope', () => {
-    expect(byId('claude_code').command).toBe(`claude mcp add --transport http --scope user stratia ${MCP_URL}`);
-  });
-
-  it('Gemini CLI adds at user scope AND the steps include the required /mcp auth sign-in', () => {
-    const g = byId('gemini_cli');
-    expect(g.command).toContain('--transport http');
-    expect(g.command).toContain('-s user');
-    expect(g.steps.some((s) => s.includes('/mcp auth stratia'))).toBe(true);
-  });
-
-  it('Gemini CLI uses API-key auth (the free Google-account login was retired 2026-06-18)', () => {
-    const g = byId('gemini_cli');
-    expect(g.steps.some((s) => s.includes('GEMINI_API_KEY'))).toBe(true);
-    expect(g.steps.some((s) => /aistudio\.google\.com\/apikey/.test(s))).toBe(true);
-    expect(g.requires).toMatch(/API key/i);
-  });
-
-  it('per-client config JSON keys are the load-bearing ones (they are NOT interchangeable)', () => {
-    expect(byId('cursor').config).toContain('"url"');
-    expect(byId('cursor').config).not.toContain('serverUrl');
-    expect(byId('windsurf').config).toContain('"serverUrl"');
-    expect(byId('vscode').config).toContain('"servers"');
-    expect(byId('vscode').config).toContain('"type": "http"');
-    expect(byId('cline').config).toContain('"type": "streamableHttp"');
-    expect(byId('goose').config).toContain('"type": "streamable_http"');
-  });
-
-  it('Windsurf no longer references the non-existent "Manage MCPs" menu', () => {
-    expect(byId('windsurf').steps.join(' ')).not.toMatch(/Manage MCPs/);
-  });
-
-  it('Cline includes the required Authenticate click and names a min version', () => {
-    expect(byId('cline').steps.join(' ')).toMatch(/Authenticate/);
-    expect(byId('cline').requires).toMatch(/3\.x/);
+  it('ChatGPT needs Developer mode and the OAuth self-registration note', () => {
+    const c = byId('chatgpt');
+    expect(c.steps.join(' ')).toMatch(/Developer mode/i);
+    expect(c.steps.join(' ')).toMatch(/self-registers/i);
   });
 });
 
-describe('geminiCliCommand', () => {
-  it('builds a hands-free non-interactive Gemini CLI command', () => {
-    expect(geminiCliCommand('compare two colleges'))
-      .toBe("gemini -p 'compare two colleges' --approval-mode=yolo");
-  });
-
-  it('POSIX-escapes embedded single quotes so the prompt is shell-safe', () => {
-    expect(geminiCliCommand("What's due?"))
-      .toBe("gemini -p 'What'\\''s due?' --approval-mode=yolo");
+describe('askLinks', () => {
+  it('returns only Claude and ChatGPT deep links, URL-encoding the prompt', () => {
+    const links = askLinks("What's due next?");
+    expect(Object.keys(links)).toEqual(['claude', 'chatgpt']);
+    expect(links.claude).toContain('claude.ai');
+    expect(links.chatgpt).toContain('chatgpt.com');
+    expect(links.claude).toContain(encodeURIComponent("What's due next?"));
   });
 });

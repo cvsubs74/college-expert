@@ -107,7 +107,7 @@ describe('research workflow helpers', () => {
     const p = repeatPrompt({ title: 'Duke vs UCSD', workflow: [{ label: 'Pulled profile' }, { label: 'Got fit' }] });
     expect(p).toContain('Duke vs UCSD');
     expect(p).toContain('Pulled profile; Got fit');
-    expect(p).toMatch(/save the updated result/i);
+    expect(p).toMatch(/ask me whether i'd like to save the updated result/i);
   });
 });
 
@@ -154,7 +154,7 @@ describe('popular workflow helpers', () => {
   it('popularWorkflowPrompt is generic and PII-free', () => {
     const p = popularWorkflowPrompt({ kind: 'comparison', tools: ['get_profile', 'get_fit_analysis'] });
     expect(p).toContain('Get profile, then Get fit analysis');
-    expect(p).toMatch(/save the result to my research notebook/i);
+    expect(p).toMatch(/ask me whether i'd like to save the result to my research notebook/i);
   });
   it('falls back to the signature when tools are absent', () => {
     expect(popularWorkflowName({ kind: 'note', signature: 'a>b' })).toContain('A → B');

@@ -4,22 +4,22 @@ import ConnectAgents from '../pages/ConnectAgents';
 import { MCP_CLIENTS, MCP_URL } from '../utils/mcpClients';
 
 describe('ConnectAgents (Connect your AI agent hub)', () => {
-  it('shows the MCP URL and the primary clients (Claude.ai, ChatGPT, Claude Code)', () => {
+  it('shows the MCP URL and only the Claude.ai + ChatGPT clients', () => {
     render(<ConnectAgents />);
     expect(screen.getByTestId('mcp-url')).toHaveTextContent(MCP_URL);
     expect(screen.getByText('Claude.ai')).toBeInTheDocument();
     expect(screen.getByText('ChatGPT')).toBeInTheDocument();
-    expect(screen.getByText('Claude Code')).toBeInTheDocument();
-    // collapsed by default: only the 3 primary clients
-    expect(screen.getAllByTestId('client-row')).toHaveLength(3);
+    // Only Claude and ChatGPT are offered — no dev-tool clients.
+    expect(screen.queryByText('Claude Code')).not.toBeInTheDocument();
+    expect(screen.getAllByTestId('client-row')).toHaveLength(2);
   });
 
-  it('reveals all clients via "See all N clients"', () => {
+  it('has no "See all clients" toggle (every client is primary)', () => {
     render(<ConnectAgents />);
-    fireEvent.click(screen.getByRole('button', { name: /see all \d+ clients/i }));
-    expect(screen.getAllByTestId('client-row')).toHaveLength(MCP_CLIENTS.length);
-    expect(screen.getByText('Cursor')).toBeInTheDocument();
-    expect(screen.getByText('VS Code')).toBeInTheDocument();
+    expect(MCP_CLIENTS).toHaveLength(2);
+    expect(screen.queryByRole('button', { name: /see all \d+ clients/i })).not.toBeInTheDocument();
+    expect(screen.queryByText('Cursor')).not.toBeInTheDocument();
+    expect(screen.queryByText('VS Code')).not.toBeInTheDocument();
   });
 
   it('expands a client to reveal its steps', () => {
@@ -30,16 +30,16 @@ describe('ConnectAgents (Connect your AI agent hub)', () => {
     expect(within(row).getAllByText(/Developer mode/i).length).toBeGreaterThan(0);
   });
 
-  it('renders the ask-something-real prompts with Ask-in-agent links', () => {
+  it('renders the ask-something-real prompts with Claude + ChatGPT links only', () => {
     render(<ConnectAgents />);
     const rows = screen.getAllByTestId('ask-row');
     expect(rows.length).toBeGreaterThanOrEqual(6);
     const first = rows[0];
     expect(within(first).getByRole('link', { name: /ask in claude/i })).toHaveAttribute('href', expect.stringContaining('claude.ai'));
     expect(within(first).getByRole('link', { name: /ask in chatgpt/i })).toHaveAttribute('href', expect.stringContaining('chatgpt.com'));
-    expect(within(first).getByRole('link', { name: /ask in grok/i })).toHaveAttribute('href', expect.stringContaining('grok.com'));
-    // Gemini is a "Gemini CLI" copy button (its web app can't use MCP connectors), not a web link.
-    expect(within(first).queryByRole('link', { name: /gemini/i })).not.toBeInTheDocument();
-    expect(within(first).getByRole('button', { name: /gemini cli/i })).toBeInTheDocument();
+    // Gemini and Grok are no longer offered.
+    expect(within(first).queryByRole('link', { name: /grok/i })).not.toBeInTheDocument();
+    expect(within(first).queryByRole('button', { name: /gemini/i })).not.toBeInTheDocument();
+    expect(within(first).getByRole('button', { name: /copy prompt/i })).toBeInTheDocument();
   });
 });
