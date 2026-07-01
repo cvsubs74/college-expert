@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import AgentChatHandoff from '../components/AgentChatHandoff';
+import { essayAgentPrompt } from '../utils/agentHandoff';
 import {
     ArrowLeftIcon,
     LightBulbIcon,
@@ -989,6 +991,14 @@ export default function EssayHelpPage() {
                                                         {loadingChat[index] ? '...' : 'Ask'}
                                                     </button>
                                                 </div>
+                                                <AgentChatHandoff
+                                                    className="mt-2"
+                                                    prompt={essayAgentPrompt(universityName, {
+                                                        promptText: prompt.prompt,
+                                                        currentText: essayDrafts[index],
+                                                        question: chatQuestion[index],
+                                                    })}
+                                                />
                                                 {chatResponse[index] && (
                                                     <div className="mt-3 p-3 bg-white/90 border border-[#D6E8D5] rounded-lg">
                                                         <p className="text-sm text-[#2C2C2C] leading-relaxed">{chatResponse[index]}</p>

@@ -15,6 +15,7 @@ from firestore_db import get_db
 from profile_operations import get_student_profile
 from fit_analysis import get_fit_analysis
 from essay_copilot import fetch_university_profile
+from gemini_fallback import generate_content_with_fallback
 
 logger = logging.getLogger(__name__)
 
@@ -153,10 +154,11 @@ Return a JSON object with this structure:
             parts=[types.Part(text=question)]
         ))
         
-        # Call Gemini with JSON mode
+        # Call Gemini with JSON mode (auto-falls back to another model if the
+        # primary is overloaded, so a 503 doesn't kill the chat).
         client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-        response = client.models.generate_content(
-            model="gemini-2.5-flash-lite",
+        response = generate_content_with_fallback(
+            client,
             contents=contents,
             config=types.GenerateContentConfig(
                 temperature=0.7,

@@ -5,6 +5,8 @@ import { useAuth } from '../../context/AuthContext';
 import { fetchCounselorChat, fetchStudentRoadmap, saveCounselorChat, listCounselorChats, loadCounselorChat } from '../../services/api';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import AgentChatHandoff from '../AgentChatHandoff';
+import { counselorAgentPrompt } from '../../utils/agentHandoff';
 
 // `onClose`, when provided, renders a close button in the header (used when
 // CounselorChat is hosted inside a floating launcher / dismissable panel).
@@ -368,6 +370,10 @@ const CounselorChat = ({ onClose }) => {
 
             {/* Input Area */}
             <div className="p-4 bg-white border-t border-stone-100">
+                <AgentChatHandoff
+                    className="mb-2"
+                    prompt={counselorAgentPrompt(roadmapTitle, [...messages].reverse().find((m) => m.sender === 'user')?.text)}
+                />
                 <div className="relative">
                     <input
                         type="text"
