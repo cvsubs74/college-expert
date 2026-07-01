@@ -4,12 +4,13 @@ KB-wide sweep: normalize stale application-deadline (and ISO scholarship
 deadline_date) YEARS to the correct admissions cycle, across every university.
 
 The bug class this fixes: a deadline stored with a past-cycle year — e.g. a
-2026-27 doc (data_year=2026) holding "2024-11-30" for Regular Decision. The
-month/day are trusted; only the stale YEAR is corrected to the cycle window:
+data_year=2026 doc holding a fall-2025 date for Early Action. The month/day are
+trusted; only the stale YEAR is corrected to the cycle window. The convention
+matches versioning.current_cycle_year and docs/university-kb-yearly-refresh.md:
 
-    2026-27 cycle (data_year=2026) = Fall 2026 entry
-      → fall deadlines (Aug–Dec) belong to 2025
-      → winter/spring deadlines (Jan–Jul) belong to 2026
+    cycle year N (data_year=N) = deadlines due fall N / winter N+1 (enroll fall N+1)
+      → fall deadlines (Aug–Dec) belong to N
+      → winter/spring deadlines (Jan–Jul) belong to N+1
 
 This is deterministic and reviewable — it never invents a date, only shifts a
 date that is already present onto its own cycle. Docs without a data_year
@@ -39,8 +40,10 @@ _STRICT_ISO = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 def cycle_year(month, data_year):
     """The calendar year a deadline in `month` belongs to for `data_year`'s
-    cycle. Fall (Aug–Dec) → data_year-1; winter/spring (Jan–Jul) → data_year."""
-    return data_year - 1 if month >= 8 else data_year
+    cycle (year N = deadlines fall N / winter N+1, per the documented
+    convention). Fall (Aug–Dec) → data_year; winter/spring (Jan–Jul) →
+    data_year+1."""
+    return data_year if month >= 8 else data_year + 1
 
 
 def fix_iso_year(date_str, data_year):

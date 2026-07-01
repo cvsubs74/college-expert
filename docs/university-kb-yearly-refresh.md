@@ -44,6 +44,17 @@ RD Jan 2027 deadlines → `--year 2026`. When `--year` is omitted the CLI
 derives it from today's date (April–December → this year, January–March →
 last year).
 
+> ⚠️ **Collector year is OFF BY ONE from the KB cycle year — this is load-bearing.**
+> `kb_collect_workflow.js` takes `year` = the **entering-cohort Fall year**
+> (`CYCLE = "Fall ${year}"`), which is **KB cycle year + 1**. To refresh KB
+> cycle year **Y**, run the collector with **`year = Y+1`**, then ingest
+> **`--year Y`**. Example (done 2026-07): to fix the current cycle (KB
+> `data_year=2026`, deadlines Nov 2026 / Jan 2027) we ran the workflow with
+> `year=2027` and ingested `--year 2026`. Following the workflow's own
+> "ingest with the *same* year" note instead files **last cycle's** deadlines
+> under the current year — that off-by-one is exactly what made the whole KB
+> one cycle stale (161 schools, fixed via `scripts/fix_stale_kb_deadline_years.py`).
+
 ## What the ingest enforces
 
 - **Rejected (per-file FAIL, nothing written):** missing `_id`, missing
