@@ -32,6 +32,12 @@ NC='\033[0m' # No Color
 GCP_ACCOUNT=${GCP_ACCOUNT:-"cvsubs@gmail.com"}
 PROJECT_ID=${GCP_PROJECT_ID:-"college-counselling-478115"}
 REGION="us-east1"
+# Warm min-instances for latency-sensitive services (profile-manager-v2,
+# counselor-agent, hybrid agent). Default 0 = scale-to-zero, so idle/pre-launch
+# costs nothing; export WARM_MIN_INSTANCES=1 at launch for low first-request
+# latency. (2026-07-01 cost cleanup — idle spend came from warm instances +
+# the qa-agent poll; see the idle-cost investigation.)
+WARM_MIN_INSTANCES=${WARM_MIN_INSTANCES:-0}
 RAG_AGENT_SERVICE_NAME="college-expert-rag-agent"
 ES_AGENT_SERVICE_NAME="college-expert-es-agent"
 HYBRID_AGENT_SERVICE_NAME="college-expert-hybrid-agent"
@@ -442,12 +448,12 @@ EOF
     HYBRID_AGENT_URL=$(gcloud run services describe $HYBRID_AGENT_SERVICE_NAME --region=$REGION --format='value(status.url)')
     echo -e "${GREEN}✓ Hybrid Agent deployed: ${HYBRID_AGENT_URL}${NC}"
     
-    # Set min-instances to prevent cold starts
-    echo -e "${YELLOW}Setting min-instances=1 for Hybrid Agent...${NC}"
+    # Warm instances (0 by default; export WARM_MIN_INSTANCES=1 at launch for latency).
+    echo -e "${YELLOW}Setting min-instances=${WARM_MIN_INSTANCES} for Hybrid Agent...${NC}"
     gcloud run services update $HYBRID_AGENT_SERVICE_NAME \
         --region=$REGION \
-        --min-instances=1
-    echo -e "${GREEN}✓ Hybrid Agent min-instances set to 1${NC}"
+        --min-instances=$WARM_MIN_INSTANCES
+    echo -e "${GREEN}✓ Hybrid Agent min-instances set to ${WARM_MIN_INSTANCES}${NC}"
 }
 
 deploy_agents() {
@@ -555,7 +561,7 @@ EOF
         --timeout=540s \
         --memory=1024MB \
         --cpu=1 \
-        --min-instances=1 \
+        --min-instances=$WARM_MIN_INSTANCES \
         --max-instances=10
     
     PROFILE_MANAGER_V2_URL=$(gcloud functions describe profile-manager-v2 --region=$REGION --gen2 --format='value(serviceConfig.uri)')
@@ -1172,9 +1178,9 @@ KNOWLEDGE_BASE_UNIVERSITIES_URL: "${KB_URL}"
 GEMINI_API_KEY: "${GEMINI_API_KEY}"
 EOF
 
-    # min-instances=1 keeps one warm instance so the /work-feed focus card on
-    # the Roadmap tab never lands on a cold start. Same pattern used by the
-    # hybrid ADK agent. See docs/design/roadmap-consolidation.md.
+    # WARM_MIN_INSTANCES (0 by default) keeps a warm instance at launch so the
+    # /work-feed focus card on the Roadmap tab never lands on a cold start; it's
+    # 0 pre-launch to avoid idle cost. See docs/design/roadmap-consolidation.md.
     gcloud functions deploy $COUNSELOR_AGENT_FUNCTION \
         --gen2 \
         --runtime=python312 \
@@ -1186,7 +1192,7 @@ EOF
         --env-vars-file=env.deploy.yaml \
         --timeout=300s \
         --memory=512MB \
-        --min-instances=1 \
+        --min-instances=$WARM_MIN_INSTANCES \
         --max-instances=10
 
     COUNSELOR_AGENT_URL=$(gcloud functions describe $COUNSELOR_AGENT_FUNCTION --region=$REGION --gen2 --format='value(serviceConfig.uri)')
