@@ -424,3 +424,8 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - TESTS: frontend 352 passed (49 files); build green. Updated AgentLaunchButtons/ConnectAgents/mcpClients/research tests.
 - REVIEW: self-verified (no dangling geminiCliCommand/links.grok refs; build compiles). No heavy reviewer for a copy/config-only frontend change.
 - NOT shipped: PR #274 open (frontend auto-deploys on merge).
+
+## 2026-07-01 11:31 — shipped agents-page trim (PR #274)
+- PR #274 squash-merged (commit 9dab30d5), branch deleted (local + remote).
+- Ad-hoc request (no issue) — nothing to auto-close; no project card.
+- Connect Agents page now shows Claude + ChatGPT only; pre-seeded prompts ask before saving instead of auto-saving. Frontend-only; auto-deploys via main pipeline.
