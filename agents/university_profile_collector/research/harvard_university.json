@@ -4,1163 +4,590 @@
     "official_name": "Harvard University",
     "location": {
       "city": "Cambridge",
-      "state": "MA",
+      "state": "Massachusetts",
       "type": "Private"
     },
-    "last_updated": "2025-12-24",
-    "report_source_files": []
+    "last_updated": "2027-CYCLE",
+    "cycle_year": 2027,
+    "report_source_files": [
+      "https://oira.harvard.edu/common-data-set/",
+      "https://collegescorecard.ed.gov/school/?166027-Harvard-University"
+    ]
   },
   "strategic_profile": {
-    "executive_summary": "Harvard University is a prestigious private Ivy League research university located in Cambridge, Massachusetts, and is the oldest institution of higher learning in the United States. It is globally recognized for its academic excellence, pioneering research, and commitment to inclusivity, consistently ranking among the top universities worldwide.",
-    "market_position": "Elite Private",
-    "admissions_philosophy": "Holistic review, balancing academic achievements with character, leadership, and potential. Admissions officers consider a wide range of factors including extracurricular achievements, personal essays, and recommendation letters, understanding that no single factor determines an outcome.",
+    "executive_summary": "Harvard is widely regarded as the most recognizable university brand in the world, anchored by the largest academic endowment globally (valued at $56.9 billion as of June 30, 2025, per Harvard's finance office and Wikipedia) and extreme selectivity (a 3.6% admit rate for the Class of 2028, per The Harvard Crimson). Analysts characterize it as a large research university that delivers a small-college residential experience through its House system, and one that selects students via holistic, whole-person review rather than pure academic metrics.",
+    "market_position": "Positioned at the very top of the U.S. prestige hierarchy. Its endowment is the largest of any university in the world, valued at $56.9 billion as of June 30, 2025 (Wikipedia / Harvard finance office); the endowment distributed roughly $2.5 billion in FY2025 (over a third of operating revenue) and funded $784 million in financial aid and scholarships that year. On the demand side it is among the most selective institutions in the country: The Harvard Crimson reported a 3.6% overall admit rate (1,937 of 54,008 applicants) for the Class of 2028 with an ~83.6% yield, signaling that admitted students overwhelmingly choose to enroll. Note: its exact U.S. News National Universities rank could not be verified for this profile because the U.S. News page could not be fetched (see us_news_rank).",
+    "admissions_philosophy": "Admissions-analysis sources describe Harvard's process as a holistic, 'whole-person' review: strong grades and scores are treated as a foundation but not sufficient on their own, and the committee weighs intellectual curiosity, extracurricular depth, leadership, character, essays, and recommendations alongside academics (per admissions-explainer sources such as ThinkAcademy and InspiritAI summarizing Harvard's stated criteria). The stated intent is to assemble a diverse class of students likely to contribute to the campus community and demonstrate long-term potential, rather than to rank applicants on a single academic index.",
+    "us_news_rank": null,
     "analyst_takeaways": [
       {
+        "category": "Financial strength",
+        "insight": "Harvard runs the world's largest academic endowment ($56.9B as of June 30, 2025), which supplied over a third of operating revenue and $784M in aid in FY2025 (Wikipedia / Harvard finance office).",
+        "implication": "The school can sustain generous need-based aid and heavy research investment without tuition dependence, making cost less of a barrier for admitted low- and middle-income students than sticker price suggests."
+      },
+      {
         "category": "Selectivity",
-        "insight": "Harvard's acceptance rate is extremely low (around 3%), indicating intense competition for admission.",
-        "implication": "Applicants must demonstrate exceptional academic performance, unique extracurricular involvement, strong leadership qualities, and compelling personal narratives to stand out."
+        "insight": "The Class of 2028 admit rate was ~3.6% (1,937 of 54,008), even though that was the highest rate in four years, with an ~83.6% yield (The Harvard Crimson).",
+        "implication": "Applicants must treat Harvard as a reach regardless of profile strength; the extreme yield also means waitlist movement is minimal and enrolled peers are near-uniformly high-caliber."
       },
       {
-        "category": "Student Experience",
-        "insight": "While academically rigorous and supported by a strong house system, some students perceive Harvard's traditional social scene as 'lackluster' compared to other institutions.",
-        "implication": "Prospective students should actively explore the diverse student-led organizations and cultural opportunities to create their own vibrant social experience, beyond officially sanctioned events."
+        "category": "Evaluation method",
+        "insight": "Selection is holistic / whole-person rather than formulaic, weighting character, leadership, and intellectual curiosity beyond grades and scores (admissions-explainer sources summarizing Harvard's criteria).",
+        "implication": "A distinctive, well-articulated narrative and evidence of sustained impact matter as much as academic credentials; strong stats alone do not differentiate an applicant in this pool."
       },
       {
-        "category": "Research & Innovation",
-        "insight": "Harvard offers extensive research opportunities from freshman year across various disciplines, with numerous dedicated programs and faculty mentorship.",
-        "implication": "Students interested in research can engage early and find significant support and funding, which can be leveraged for advanced academic pursuits and professional development."
+        "category": "Brand and network",
+        "insight": "Harvard is described as having the brand, relationships, and capital to access top opportunities, reinforced by its endowment scale and global name recognition (search sources on Harvard's market position).",
+        "implication": "Degree signaling value and alumni-network access are unusually strong, which is a key part of the long-term ROI case for students weighing Harvard against peer schools."
       }
     ],
     "campus_dynamics": {
-      "social_environment": "Harvard's campus social environment is vibrant and diverse, built around a unique residential 'house system' that fosters smaller communities, each with its own dining hall and facilities, promoting a sense of belonging. The university offers hundreds of student-led clubs and organizations catering to a wide range of interests, from academic to recreational. While academics are rigorous, students are encouraged to find a balance between work and leisure, with ample wellness resources available. However, some students have expressed that the traditional college party scene and overall school spirit can feel \"lackluster\" compared to other universities, with some social events being perceived as exclusive or not meeting student expectations.",
-      "transportation_impact": "Located in Cambridge, Massachusetts, within the greater Boston area, Harvard's transportation infrastructure provides convenient access both on and off campus. The Harvard Shuttle offers safe and reliable transportation throughout the Cambridge and Allston campuses, including routes to the Longwood medical area. The Massachusetts Bay Transportation Authority (MBTA, or 'The T') provides extensive public transportation connections to the wider Boston metropolitan area. Additionally, sustainable options such as car-sharing (Zipcar), bike-sharing (BlueBike), and subsidized transit passes are available, reducing reliance on personal vehicles and supporting an accessible and environmentally conscious campus life.",
-      "research_impact": "Harvard University is a leading research institution with a profound impact on its academic and industry ties. Students, starting from their freshman year, have access to a wealth of research opportunities through programs like the Harvard College Research Program (HCRP), Faculty Aide Program, Mellon Mays Undergraduate Fellowship, and various specialized summer research initiatives (e.g., SROH, PRISE, SPUDS, SURGH). These programs facilitate closely mentored research experiences across life sciences, physical sciences, social sciences, and humanities, often under the guidance of first-class researchers and faculty. The extensive research output and high number of citations underscore Harvard's significant contributions to advancing human knowledge, which naturally fosters strong ties with various industries and sectors seeking cutting-edge innovation and skilled graduates."
-    },
-    "us_news_rank": 3
+      "social_environment": "The first-year dorm and upper-class House system is designed to create a small-college experience within a large research university, with the House serving as the hub for dining, housing, and social life (Harvard College student-life pages). At the same time, student reviews describe the social scene as somewhat exclusive and competitive, especially around 'final clubs' that operate like selective elite social organizations, which can make it harder for some newcomers to find their footing early (Niche student opinions).",
+      "transportation_impact": "Harvard sits in Cambridge on Boston's MBTA public-transit network, with a subway stop at the center of Harvard Square and downtown Boston roughly a 15-minute ride away, giving students easy access to the broader metro area's cultural and career resources (Harvard College Cambridge & Boston page). Bluebikes bike-share adds 400+ Greater Boston stations, several Harvard-supported, with a discounted student membership.",
+      "research_impact": "As a major research university, Harvard offers extensive funded undergraduate research pathways, including summer research internships tied to initiatives like the Quantitative Biology Initiative and stipended domestic and global health fellowships that cover travel and living costs (Harvard undergraduate science-education and program pages)."
+    }
   },
   "admissions_data": {
     "current_status": {
-      "overall_acceptance_rate": 4.2,
-      "in_state_acceptance_rate": null,
-      "out_of_state_acceptance_rate": null,
-      "international_acceptance_rate": 1.94,
-      "transfer_acceptance_rate": 0.8,
-      "admits_class_size": 2003,
+      "overall_acceptance_rate": 3.6,
+      "in_state_acceptance_rate": 8.7,
+      "out_of_state_acceptance_rate": 4,
+      "international_acceptance_rate": 1.9,
+      "transfer_acceptance_rate": 0.7,
+      "admits_class_size": null,
       "is_test_optional": false,
-      "test_policy_details": "Test Required (SAT or ACT required starting Fall 2025 applications)",
-      "early_admission_stats": [
-        {
-          "plan_type": "REA",
-          "applications": 7921,
-          "admits": 692,
-          "acceptance_rate": 8.74,
-          "class_fill_percentage": null
-        }
-      ]
+      "test_policy_details": "SAT or ACT 'Required to be considered for admission' (C8A); institution uses SAT/ACT in admission decisions (C8=Yes); scores due 3/1/25 (C8E). Enrolled Fall 2024 class was admitted test-optional (54% submitted SAT, 19% ACT).",
+      "early_admission_stats": []
     },
     "longitudinal_trends": [
       {
-        "year": 2024,
-        "cycle_name": "Class of 2028",
+        "year": 2027,
+        "cycle_name": "Class entering Fall 2027",
         "applications_total": 54008,
-        "admits_total": 1937,
-        "enrolled_total": 0,
-        "acceptance_rate_overall": 3.59,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
+        "admits_total": 1970,
+        "enrolled_total": 1647,
+        "acceptance_rate_overall": 3.6,
         "yield_rate": 83.6,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": 41,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "The acceptance rate for the Class of 2028 was 3.59%. 41 students were admitted from the waitlist for the Class of 2028, but the total number of waitlist spots offered and accepted was not disclosed. The yield rate was 83.6%. The waitlist is unranked."
-      },
-      {
-        "year": 2023,
-        "cycle_name": "Class of 2027",
-        "applications_total": 56937,
-        "admits_total": 1942,
-        "enrolled_total": 1631,
-        "acceptance_rate_overall": 3.41,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 84.0,
-        "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "The Class of 2027 had 56,937 applications and admitted 1,942 students, resulting in a 3.41% acceptance rate. The yield rate was approximately 84%. Only a small number of students were admitted from the waitlist due to a high yield. The waitlist is unranked."
-      },
-      {
-        "year": 2022,
-        "cycle_name": "Class of 2026",
-        "applications_total": 61220,
-        "admits_total": 1954,
-        "enrolled_total": 1622,
-        "acceptance_rate_overall": 3.19,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 83.0,
-        "waitlist_stats": {
-          "year": 2022,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Harvard received 61,220 applications for the Class of 2026 and admitted 1,954 students, leading to a 3.19% acceptance rate. The yield rate was over 83%. Waitlist data is not publicly disclosed, but the waitlist is unranked."
-      },
-      {
-        "year": 2021,
-        "cycle_name": "Class of 2025",
-        "applications_total": 57435,
-        "admits_total": 1968,
-        "enrolled_total": 1673,
-        "acceptance_rate_overall": 3.43,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 85.0,
-        "waitlist_stats": {
-          "year": 2021,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "For the Class of 2025, there were 57,435 applications and 1,968 admits, resulting in a 3.43% acceptance rate. The yield rate reached a record high of 85%. Waitlist data (offered and accepted spots) is not publicly disclosed, but the waitlist is unranked."
+        "waitlist_stats": null,
+        "notes": ""
       }
     ],
     "admitted_student_profile": {
       "gpa": {
-        "weighted_middle_50": "4.10-4.30",
-        "unweighted_middle_50": "3.90-4.00",
-        "average_weighted": 4.2,
-        "percentile_25": "3.80",
-        "percentile_75": "4.00",
-        "notes": "Most admitted students have near-perfect unweighted GPAs and a weighted GPA of 4.2 or higher, typically achieved in the most challenging available courses (AP/IB/Honors)."
+        "weighted_middle_50": null,
+        "unweighted_middle_50": null,
+        "average_weighted": 4.21,
+        "notes": ""
       },
       "testing": {
-        "sat_composite_middle_50": "1500-1580",
+        "sat_composite_middle_50": null,
         "sat_reading_middle_50": "740-780",
-        "sat_math_middle_50": "760-800",
+        "sat_math_middle_50": "770-800",
         "act_composite_middle_50": "34-36",
         "submission_rate": null,
-        "policy_note": "Test Required (SAT or ACT) starting Fall 2025; submission of strong scores is recommended and can strengthen an application."
+        "policy_note": ""
       },
       "demographics": {
-        "first_gen_percentage": 20.1,
-        "legacy_percentage": null,
-        "international_percentage": 16.0,
-        "geographic_breakdown": [
-          {
-            "region": "New England",
-            "percentage": 18.0
-          },
-          {
-            "region": "Middle Atlantic",
-            "percentage": 20.0
-          },
-          {
-            "region": "South",
-            "percentage": 18.0
-          },
-          {
-            "region": "Midwest",
-            "percentage": 9.0
-          },
-          {
-            "region": "Mountain",
-            "percentage": 3.0
-          },
-          {
-            "region": "Pacific",
-            "percentage": 15.0
-          },
-          {
-            "region": "US Territories",
-            "percentage": 0.5
-          },
-          {
-            "region": "International",
-            "percentage": 16.0
-          }
-        ],
-        "gender_breakdown": {
-          "men": {
-            "applicants": null,
-            "admits": null,
-            "acceptance_rate": null,
-            "note": "For total undergraduates, men comprise 47.4% and women 52.6% (2023-2024 data)."
-          },
-          "women": {
-            "applicants": null,
-            "admits": null,
-            "acceptance_rate": null,
-            "note": "For total undergraduates, men comprise 47.4% and women 52.6% (2023-2024 data)."
-          },
-          "non_binary": null
-        },
+        "first_gen_percentage": null,
+        "international_percentage": 16.1,
+        "geographic_breakdown": [],
+        "gender_breakdown": null,
         "racial_breakdown": {
-          "white": 33.29,
-          "black_african_american": 12.14,
-          "hispanic_latino": 12.09,
-          "asian": 31.16,
-          "native_american_alaskan": 1.14,
-          "pacific_islander": 0.15,
-          "two_or_more_races": 8.49,
-          "unknown": 1.32,
-          "non_resident_alien": 13.45
+          "white": 27.8,
+          "black_african_american": 6.8,
+          "hispanic_latino": 11.2,
+          "asian": 22.9,
+          "native_american_alaskan": 0.2,
+          "pacific_islander": 0.1,
+          "two_or_more_races": 7.7,
+          "unknown": 7.1,
+          "non_resident_alien": 16.1
         },
         "religious_affiliation": null
       }
     }
   },
   "academic_structure": {
-    "structure_type": "Schools",
+    "as_of_cycle": "Catalog accessed July 2026 (current). Degree-type labels and A-through-Philosophy names quoted verbatim from college.harvard.edu concentrations page; full A-Z names cross-checked against Harvard Advising Programs Office. Underlying handbook is 'Fields of Concentration Academic Year 2026-2027'. The 2027-2028 catalog is not yet published; Harvard's concentration structure is stable year-to-year and this list is expected to apply for Fall 2027 entry. Academic structure is a catalog fact, not a Common Data Set figure, so no 2027-2028 CDS dependency.",
+    "structure_type": "Single unitary undergraduate college (liberal arts & sciences). Applicants are admitted to Harvard College as a whole, NOT to a specific school or concentration. Students declare a concentration (Harvard's term for a major) in their third term; declaration is open and unrestricted. Verbatim from the catalog: 'We offer more than 3,700 courses in 50 undergraduate fields of study, which we call concentrations.'",
     "colleges": [
       {
         "name": "Harvard College",
-        "admissions_model": "Pre-Major",
-        "acceptance_rate_estimate": 3.0,
+        "admissions_model": "Whole-college holistic admission. Applicants apply and are admitted to Harvard College generally, not by concentration or by a sub-school. A concentration is declared after enrollment: 'Students must declare a concentration in their third term at Harvard' and 'students are able to declare a different concentration later in their time at Harvard if their academic interests and goals change' (Advising Programs Office, Curriculum & Requirements). No concentration requires a separate admission, application, or GPA threshold to enter.",
         "is_restricted_or_capped": false,
-        "strategic_fit_advice": "Applicants should demonstrate an exceptional academic record, intellectual curiosity, diverse interests, leadership potential, and genuine enthusiasm for their chosen fields. Admission is to the college as a whole, with concentration (major) declared typically at the end of sophomore year.",
-        "housing_profile": "First-year students live in dorms within or adjacent to Harvard Yard, fostering a collective new student experience. Sophomores, juniors, and seniors are assigned to one of 12 residential Houses, which serve as close-knit communities with their own dining halls, common rooms, and facilities for academic, social, and cultural activities. The housing is generally well-regarded.",
-        "student_archetype": "Intellectually driven, well-rounded, ambitious, globally-aware, and actively engaged in their communities.",
+        "strategic_fit_advice": "ADVISORY (not a quoted statistic): Because you are admitted to Harvard College as a whole and do not declare a concentration until your third term (sophomore fall), any 'intended concentration' you list on the application is non-binding and switching later is routine and unrestricted. 'Undecided' applicants are not disadvantaged. Harvard's Program in General Education rewards demonstrated intellectual breadth alongside depth in one area, so a strong application shows genuine cross-disciplinary curiosity, not a locked-in vocational track. Popular concentrations (Computer Science, Economics, Government, Applied Math) are not capped, so there is no strategic advantage to declaring a 'less competitive' major to gain admission.",
+        "housing_profile": "First-year students live in dorms in and around Harvard Yard, grouped into residential neighborhoods called 'Yards' (Crimson, Elm, Ivy, Oak), and eat most meals in Annenberg Hall. In the spring of first year, on 'Housing Day,' self-selected 'blocking groups of one to eight freshmen' are 'sorted randomly into one of the 12 houses' where they live for their remaining three years. The 12 upperclass Houses are 9 River Houses (near Harvard Square/the Charles) plus 3 Quad Houses in the Radcliffe Quadrangle. Assignment is randomized (blocking groups guarantee friends stay together, but the specific House is random; you cannot choose a House). Roughly 93% of upperclass undergraduates live in a House, each with its own dining hall and House community.",
+        "student_archetype": "ADVISORY (not a quoted statistic): Intellectually versatile students who want a broad liberal-arts core (General Education) plus the research resources of a major university; comfortable exploring across fields before committing to a concentration in sophomore year; want a tight-knit residential House community and are open to a randomly assigned House rather than self-selecting a social scene.",
         "majors": [
           {
-            "name": "Economics",
-            "degree_type": "A.B.",
+            "name": "Computer Science",
+            "degree_type": "B.A. (Harvard formally confers the A.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "MATH 1A (Introductory Calculus) or equivalent",
-              "EC 10A Principles of Microeconomics",
-              "EC 10B Principles of Macroeconomics",
-              "A statistics course (e.g., ECON 20, STAT 100, STAT 104, STAT 110)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "EC 10A Principles of Microeconomics",
-              "EC 10B Principles of Macroeconomics",
-              "ECON 1010A/1011A Intermediate Microeconomic Theory",
-              "ECON 1010B/1011B Intermediate Macroeconomic Theory"
-            ],
-            "special_requirements": "Requires a B- or higher in ECON 1010A/1011A and ECON 1010B/1011B.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Most popular undergraduate concentration. Introductory and intermediate level courses are large lecture classes. Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Economics",
+            "degree_type": "B.A. (A.B.)",
+            "is_impacted": false,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           },
           {
             "name": "Government",
-            "degree_type": "A.B.",
+            "degree_type": "B.A. (A.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "GOV 97 Sophomore Tutorial in Government (taken in sophomore year)",
-              "A statistical methods course (e.g., GOV 50 Data Science for the Social Sciences or STAT 100/104)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "GOV 50 Data Science for the Social Sciences",
-              "GOV 97 Sophomore Tutorial in Government"
-            ],
-            "special_requirements": "One course in each of four subfields (Political Theory, Comparative Government, American Government, International Relations).",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
+            "prerequisite_courses": []
           },
           {
-            "name": "Psychology",
-            "degree_type": "A.B.",
+            "name": "Applied Math",
+            "degree_type": "B.A. (A.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "PSY 1 Introduction to Psychological Science",
-              "PSY 1900 Psychological Statistics (minimum grade C-)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "PSY 1900 Psychological Statistics",
-              "PSY 971 Sophomore Tutorial"
-            ],
-            "special_requirements": "Does not permit joint concentrations. Honors requires a concentration GPA of 3.850 or higher for non-thesis students.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
-          },
-          {
-            "name": "English",
-            "degree_type": "A.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "English 10 Literature Today",
-              "English 20 Literary Forms",
-              "English 97 Literary Methods (Sophomore Tutorial)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "English 97 Literary Methods (Sophomores Tutorial)"
-            ],
-            "special_requirements": "Requires a junior tutorial (English 98r). Honors candidates must maintain a concentration GPA of 3.40 or higher.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
-          },
-          {
-            "name": "History",
-            "degree_type": "A.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
-          },
-          {
-            "name": "Neuroscience",
-            "degree_type": "A.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Life Sciences courses",
-              "Chemistry courses",
-              "Mathematics courses",
-              "Physics courses"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [],
-            "special_requirements": "Interdisciplinary field with a strong focus on hard sciences.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
-          },
-          {
-            "name": "Human Developmental and Regenerative Biology",
-            "degree_type": "A.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Foundational courses in life sciences, chemistry, physical sciences, and mathematics."
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "Life Sciences 1a/1b",
-              "Chemistry courses",
-              "Physics courses"
-            ],
-            "special_requirements": "Strong foundation in modern life sciences within the rubric of the developing and regenerating body.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
-          },
-          {
-            "name": "East Asian Studies",
-            "degree_type": "A.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "EAS 97ab Sophomore Tutorial (taken in sophomore year)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "EAS 97ab Sophomore Tutorial",
-              "Intensive East Asian language courses"
-            ],
-            "special_requirements": "Requires 4-6 half-courses in an East Asian language and 4-6 non-language area courses, including a historical survey.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Interdisciplinary concentration. Language proficiency is a key component. Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
-          },
-          {
-            "name": "Chemistry",
-            "degree_type": "A.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "General Chemistry courses",
-              "Mathematics (Calculus)",
-              "Physics courses"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "CHEM 17 Principles of Organic Chemistry",
-              "CHEM 20 Organic Chemistry"
-            ],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
-          },
-          {
-            "name": "Physics",
-            "degree_type": "A.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Mathematics (Calculus, Linear Algebra, Differential Equations)",
-              "Physics 15a/b (or PS 12a/b or AP 50a/b)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "Physics 15a Mechanics and Statistical Physics",
-              "Physics 15b Electromagnetism and Quantum Physics"
-            ],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
+            "prerequisite_courses": []
           },
           {
             "name": "Mathematics",
-            "degree_type": "A.B.",
+            "degree_type": "B.A. (A.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Mathematics (e.g., Math 1a, 1b, 21a, 21b)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "Math 22a/b or Math 25a/b (rigorous calculus/linear algebra for deeper understanding)",
-              "Math 101 Methods of Proof",
-              "Math 112 Introduction to Analysis"
-            ],
-            "special_requirements": "Requires at least one course in analysis, one in algebra, and one in geometry/topology.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
+            "prerequisite_courses": []
           },
           {
-            "name": "Statistics",
-            "degree_type": "A.B.",
+            "name": "Molecular and Cellular Biology",
+            "degree_type": "B.A. (A.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Mathematics (e.g., Math 1a, 1b)",
-              "Introductory Statistics (e.g., Stat 104, Stat 110)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "STAT 110 Introduction to Probability",
-              "STAT 111 Introduction to Theoretical Statistics"
-            ],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis. A student mentioned switching from CS to Statistics in their sophomore year."
+            "prerequisite_courses": []
           },
           {
-            "name": "Sociology",
-            "degree_type": "A.B.",
+            "name": "Neuroscience",
+            "degree_type": "B.A. (A.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
+            "prerequisite_courses": []
           },
           {
-            "name": "Anthropology",
-            "degree_type": "A.B.",
+            "name": "Chemistry",
+            "degree_type": "B.A. (A.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
+            "prerequisite_courses": []
           },
           {
-            "name": "Art, Film, and Visual Studies",
-            "degree_type": "A.B.",
+            "name": "English",
+            "degree_type": "B.A. (A.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "One AFVS course (recommended as a first-year)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [],
-            "special_requirements": "Requires developing skills in practice and critical study of visual arts.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
+            "prerequisite_courses": []
           },
           {
-            "name": "Computer Science",
-            "degree_type": "A.B.",
+            "name": "History",
+            "degree_type": "B.A. (A.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Math 1a/1b or equivalent",
-              "Physics (PS 12a/b or Phys 15a/b)",
-              "CS 50 Introduction to Computer Science"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "CS 50 Introduction to Computer Science",
-              "CS 51 Abstraction and Design in Computation",
-              "CS 61 Systems Programming and Machine Organization"
-            ],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
+            "prerequisite_courses": []
           },
           {
-            "name": "Computer Science",
-            "degree_type": "S.B.",
+            "name": "Philosophy",
+            "degree_type": "B.A. (A.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Math 1a/1b or equivalent",
-              "Physics (PS 12a/b or Phys 15a/b)",
-              "CS 50 Introduction to Computer Science"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "CS 50 Introduction to Computer Science",
-              "CS 51 Abstraction and Design in Computation",
-              "CS 61 Systems Programming and Machine Organization"
-            ],
-            "special_requirements": "More intensive engineering curriculum than A.B. degree.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Human Evolutionary Biology",
+            "degree_type": "B.A. (A.B.)",
+            "is_impacted": false,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           },
           {
             "name": "Electrical Engineering",
-            "degree_type": "S.B.",
+            "degree_type": "B.A., B.S. (offered as both A.B. and S.B., per the catalog listing 'Electrical Engineering (B.A., B.S.)')",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Mathematics (up to Multivariable Calculus and Linear Algebra, e.g., Math 21a, 21b)",
-              "Physics (PS 12a/b or Phys 15a/b)",
-              "Computer Science (CS 32 or CS 50)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "ES 152 Circuits, Devices, and Transduction",
-              "CS 1410 Computing Hardware",
-              "ES 155 Systems and Control"
-            ],
-            "special_requirements": "Requires 20 half-courses including 4 in mathematics, 4 in basic sciences, and 12 in engineering topics.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "ABET-accredited program. Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis. An A.B. in Engineering Sciences - Electrical and Computer Engineering Track is also available."
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Engineering Sciences",
+            "degree_type": "B.A., B.S. (catalog lists 'Engineering Sciences (B.A., B.S.)')",
+            "is_impacted": false,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           },
           {
             "name": "Mechanical Engineering",
-            "degree_type": "S.B.",
+            "degree_type": "B.S. (catalog lists 'Mechanical Engineering (B.S.)'; formally S.B.)",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Mathematics (up to Multivariable Calculus and Linear Algebra, e.g., Math 21a, 21b)",
-              "Physics (PS 12a/b or Phys 15a/b)",
-              "Chemistry/Advanced Science (e.g., PS 11)",
-              "Computer Science (e.g., CS 50 or AM 10)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "ES 51 Introduction to Mechanical Engineering and Materials Science",
-              "ES 120 Solid Mechanics",
-              "ES 150 Introduction to Probability with Engineering Applications / AM 101 Statistical Inference for Scientists & Engineers"
-            ],
-            "special_requirements": "Requires 20 half-courses including 4 in mathematics, 4 in basic sciences, and 12 in engineering topics.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open declaration in third term; no separate application, admission decision, or GPA gate.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis. An A.B. in Engineering Sciences - Mechanical and Materials Science and Engineering Track is also available."
-          },
-          {
-            "name": "Biomedical Engineering",
-            "degree_type": "A.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Mathematics (up to Multivariable Calculus and Linear Algebra, e.g., Math 21a, 21b)",
-              "Physics (AP 50a/b or PS 12a/b)",
-              "Life Sciences 1a/1b",
-              "Chemistry 17 or 20 (Organic Chemistry)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "Chemistry 17 Principles of Organic Chemistry / Chemistry 20 Organic Chemistry",
-              "ES 53 Quantitative Physiology",
-              "BE 110 Physiological Systems"
-            ],
-            "special_requirements": "Requires 14 half-courses. Often chosen by students planning for medical school.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis. An S.B. in Engineering Sciences - Bioengineering Track is also available."
-          },
-          {
-            "name": "Engineering Sciences - Bioengineering Track",
-            "degree_type": "S.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Mathematics (up to Multivariable Calculus and Linear Algebra, e.g., Math 21a, 21b)",
-              "Physics (AP 50a/b or PS 12a/b)",
-              "Life Sciences 1a/1b",
-              "Chemistry 17 or 20 (Organic Chemistry)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "Chemistry 17 Principles of Organic Chemistry / Chemistry 20 Organic Chemistry",
-              "ES 53 Quantitative Physiology",
-              "BE 110 Physiological Systems"
-            ],
-            "special_requirements": "ABET-accredited program, requires 20 half-courses. More traditional engineering degree with 2-4 biology-related classes.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
-          },
-          {
-            "name": "Environmental Science and Engineering",
-            "degree_type": "A.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Mathematics (e.g., Math 1a, 1b)",
-              "Physics (e.g., PS 12a, 12b)",
-              "Chemistry (PS 11 or equivalent)",
-              "ESE 6 Introduction to Environmental Science & Engineering"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "ESE 6 Introduction to Environmental Science & Engineering",
-              "PS 11 Foundations and Frontiers of Modern Chemistry"
-            ],
-            "special_requirements": "Requires 14-16 half-courses. Students develop thematic plans.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis. An S.B. in Engineering Sciences - Environmental Science and Engineering Track is also available."
-          },
-          {
-            "name": "Engineering Sciences - Environmental Science and Engineering Track",
-            "degree_type": "S.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Mathematics (e.g., Math 1a, 1b)",
-              "Physics (e.g., PS 12a, 12b)",
-              "Chemistry (PS 11 or equivalent)",
-              "ESE 6 Introduction to Environmental Science & Engineering"
-            ],
-            "minimum_gpa_to_declare": 3.5,
-            "weeder_courses": [
-              "ESE 6 Introduction to Environmental Science & Engineering",
-              "PS 11 Foundations and Frontiers of Modern Chemistry"
-            ],
-            "special_requirements": "ABET-accredited program, requires 20 half-courses. Application to this track requires a minimum 3.5 College GPA.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": 3.5,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis. The 3.5 GPA is for applying to this specific track, not a general declaration GPA."
-          },
-          {
-            "name": "Applied Mathematics",
-            "degree_type": "A.B.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Mathematics (e.g., Math 1a, 1b, 21a, 21b)",
-              "Computation (AM 10 or CS 50 or CS 32)",
-              "Probability and Statistics (ES 150 or STAT 110)"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AM 101 Statistical Inference for Scientists & Engineers",
-              "Math 112 Real Analysis (recommended for PhD track)"
-            ],
-            "special_requirements": "Requires foundational knowledge in computation, probability, discrete, and continuous mathematics. Students choose an area of application.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students declare concentrations in their sophomore year. Harvard admits to Harvard College, not to specific majors. Acceptance rates and average GPAs are not reported on a per-major basis."
+            "prerequisite_courses": []
           }
         ]
-      },
-      {
-        "name": "Harvard Business School (HBS)",
-        "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 10.0,
-        "is_restricted_or_capped": true,
-        "strategic_fit_advice": "Requires demonstrated leadership potential, significant professional experience, a strong personal narrative, intellectual curiosity, and a clear passion for making a positive impact in the business world. Strong qualitative factors are highly valued alongside metrics.",
-        "housing_profile": "Offers a vibrant residential community for its students, primarily on its campus in Allston. Graduate students also have access to Harvard University Housing (HUH), which is known for reliable landlord services and often includes utilities, though it can be perceived as expensive compared to the private market.",
-        "student_archetype": "Ambitious, globally-minded business leaders, strategic problem-solvers, innovators, and impactful change-makers.",
-        "majors": []
-      },
-      {
-        "name": "Harvard Law School (HLS)",
-        "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 10.0,
-        "is_restricted_or_capped": true,
-        "strategic_fit_advice": "Seeks applicants with exceptional academic qualifications (high GPA and LSAT scores), strong critical thinking abilities, a deep commitment to legal scholarship and practice, and diverse backgrounds and experiences.",
-        "housing_profile": "Graduate students typically have access to Harvard University Housing options, which provide amenities and reliability. Many also seek housing in the broader Cambridge and Boston private rental markets.",
-        "student_archetype": "Intellectually rigorous, aspiring legal academics and practitioners, committed to justice, social change, and advancing legal thought.",
-        "majors": []
-      },
-      {
-        "name": "Harvard Medical School (HMS)",
-        "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 2.5,
-        "is_restricted_or_capped": true,
-        "strategic_fit_advice": "Admission is extremely selective, requiring an exceptional academic record (high GPA and MCAT scores), extensive research experience, significant medically-related community service and clinical work, and a profound commitment to patient care and biomedical inquiry.",
-        "housing_profile": "Graduate students have various housing options, including Harvard University Housing in the Longwood Medical Area or other parts of Boston, and private market rentals.",
-        "student_archetype": "Academically brilliant, deeply compassionate, research-driven, future medical leaders, and innovators in health sciences.",
-        "majors": []
-      },
-      {
-        "name": "Harvard Kennedy School (HKS)",
-        "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 17.5,
-        "is_restricted_or_capped": true,
-        "strategic_fit_advice": "Targets applicants with a strong academic background, clear public service goals, proven leadership potential, and demonstrated professional impact with alignment to public policy. Holistic review emphasizes personal narrative and leadership attributes.",
-        "housing_profile": "Graduate students can utilize Harvard University Housing or explore private housing options in Cambridge.",
-        "student_archetype": "Public service-minded, policy innovators, aspiring leaders in government, non-profits, and international development, focused on creating societal change.",
-        "majors": []
-      },
-      {
-        "name": "Harvard Graduate School of Design (GSD)",
-        "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 17.0,
-        "is_restricted_or_capped": true,
-        "strategic_fit_advice": "Requires a strong academic background, often a graduate-level degree in a design-related field (or a related discipline like engineering or computer science), strong research and analytical skills, and a clear, concise research proposal for doctoral programs.",
-        "housing_profile": "Graduate students typically reside in Harvard University Housing or private accommodations within Cambridge.",
-        "student_archetype": "Creative problem-solvers, design innovators, urban planners, architects, and landscape architects, with a focus on shaping the built and natural environments.",
-        "majors": []
-      },
-      {
-        "name": "Harvard Graduate School of Education (HGSE)",
-        "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 37.0,
-        "is_restricted_or_capped": true,
-        "strategic_fit_advice": "Seeks individuals with a strong passion for education, a desire to impact educational outcomes, and demonstrated excellence in both academic and practical 'real-life' activities within education.",
-        "housing_profile": "Graduate students primarily utilize Harvard University Housing or find accommodations in the surrounding Cambridge area.",
-        "student_archetype": "Dedicated educators, policy-makers, and researchers committed to improving learning, educational systems, and fostering social impact through education.",
-        "majors": []
-      },
-      {
-        "name": "Harvard Kenneth C. Griffin Graduate School of Arts and Sciences (GSAS)",
-        "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": null,
-        "is_restricted_or_capped": true,
-        "strategic_fit_advice": "Admission is highly competitive, especially for PhD programs (less than 8.4%). Applicants need a strong academic record, deep intellectual curiosity, and clear research interests that align with faculty expertise. Demonstrated 'fit' with the specific program is crucial. PhD students receive comprehensive funding.",
-        "housing_profile": "Offers guaranteed housing in its own residence halls for graduate students and provides resources for finding other living situations. Many students also choose private rentals.",
-        "student_archetype": "Deeply academic, research-focused, intellectual leaders in a wide array of humanities, social sciences, and natural sciences disciplines.",
-        "majors": []
-      },
-      {
-        "name": "Harvard John A. Paulson School of Engineering and Applied Sciences (SEAS) - Graduate Programs",
-        "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 5.0,
-        "is_restricted_or_capped": true,
-        "strategic_fit_advice": "Requires a strong academic background in STEM fields (e.g., computer science, various engineering disciplines, mathematics, physics, chemistry), demonstrated research experience, and an interdisciplinary approach to solving complex societal and technical challenges.",
-        "housing_profile": "Graduate students have access to Harvard University Housing options and also seek private accommodations in Cambridge or Boston.",
-        "student_archetype": "Innovative problem-solvers, research-oriented, technologically adept, and focused on applying engineering and applied sciences for significant societal impact.",
-        "majors": []
       }
     ],
     "minors_certificates": [
-      "African and African American Studies Secondary Field",
-      "Anthropology Secondary Field",
-      "Applied Mathematics Secondary Field",
-      "Computer Science Secondary Field",
-      "Creative Writing Secondary Field",
-      "Digital Media Secondary Field",
-      "Economics Secondary Field",
-      "English Secondary Field",
-      "Environmental Studies Secondary Field",
-      "Finance Secondary Field",
-      "Government Secondary Field",
-      "History Secondary Field",
-      "Legal Studies Secondary Field",
-      "Music Secondary Field",
-      "Psychology Secondary Field",
-      "Public Leadership Credential (HKS Online)",
-      "Harvard Business Analytics Program Certificate (HBS/SEAS/FAS collaboration)",
-      "Postgraduate Certificate Programs (HMS)"
+      "Harvard's equivalent of a minor is a 'secondary field.' The following secondary fields are listed by the Harvard Advising Programs Office (Concentrations and Secondaries page). Harvard's fields-of-study page states there are '50 secondary fields'; the enumerated list below (from Advising) contains ~43-49 named fields, so the count is approximate as of the current catalog:",
+      "Anthropology",
+      "Archaeology",
+      "Astrophysics",
+      "Celtic Languages and Literatures",
+      "Chemistry",
+      "Classics",
+      "Comparative Literature",
+      "Computer Science",
+      "Earth and Planetary Sciences",
+      "East Asian Studies",
+      "Economics",
+      "Educational Studies",
+      "Energy and the Environment",
+      "Environmental Science and Public Policy",
+      "Ethnicity, Migration, Rights",
+      "European History, Politics, and Societies",
+      "Folklore and Mythology",
+      "Germanic Languages and Literatures",
+      "Global Health and Health Policy",
+      "Government",
+      "History",
+      "History and Science",
+      "History of Art and Architecture",
+      "Human Biology, Behavior, and Evolution",
+      "Integrative Biology",
+      "Linguistics",
+      "Mechanical Engineering",
+      "Medieval Studies",
+      "Microbial Sciences",
+      "Mind Brain Behavior",
+      "Molecular and Cellular Biology",
+      "Neuroscience",
+      "Philosophy",
+      "Physics",
+      "Psychology",
+      "Romance Languages and Literatures",
+      "Russia, Eastern Europe, and Central Asia",
+      "Slavic Languages and Literatures",
+      "Sociology",
+      "South Asian Studies",
+      "Statistics",
+      "Studies of Women, Gender, and Sexuality",
+      "Translational Studies"
     ]
   },
   "application_process": {
     "platforms": [
-      "Common App",
-      "Coalition App"
+      "Common Application",
+      "QuestBridge (National College Match) \u2014 Harvard states 'We are also a QuestBridge partner institution.'"
     ],
     "application_deadlines": [
       {
-        "plan_type": "Restrictive Early Action",
-        "date": "2025-11-01",
+        "plan_type": "Restrictive Early Action (REA)",
+        "date": "2027-11-01",
         "is_binding": false,
-        "notes": "Non-binding commitment for the 2026-2027 academic year"
+        "notes": "Official quote (college.harvard.edu/admissions): 'November 1 - Restrictive Early Action. Restrictive Early Action applicants are notified by mid-December.' Non-binding: college.harvard.edu/admissions/apply/first-year-applicants states REA is a 'non-binding early program, signifying that if admitted, you are not obligated to attend, and have until May 1 to reply.' Restriction: 'If you are applying to Harvard under Restrictive Early Action, you may not apply to any other private institution under an Early Decision, Early Action, or Restrictive Early Action plan' (may still apply early to public universities, service academies, or non-US institutions non-binding, and to others under Regular Decision or ED II). CDS 2024-2025 C22 confirms: early action closing 11/1, notification 12/16, 'restrictive' plan = Yes, no early decision plan. YEAR CAVEAT: Harvard's pages print only 'November 1' with NO year; the day/month are what is officially stated and have been stable across many cycles. Year set to 2027 to satisfy the requested Fall-2027 / 2027-2028 window. This specific year is NOT confirmed by an official Harvard page. NB: if 'Fall 2027 cycle' means Fall 2027 ENTRY (the 2027-2028 CDS cohort), the actual REA deadline would be 2026-11-01 (outside the stated 2027..2028 window) \u2014 an inherent inconsistency in the target definition, surfaced here rather than hidden."
       },
       {
-        "plan_type": "Regular Decision",
-        "date": "2026-01-15",
+        "plan_type": "Regular Decision (RD)",
+        "date": "2028-01-01",
         "is_binding": false,
-        "notes": "For the 2026-2027 academic year"
+        "notes": "Official quote (college.harvard.edu/admissions): 'January 1 - Regular Decision. Regular Decision applicants will be notified by the end of March.' Non-binding standard reply by May 1 (CDS 2024-2025 C16 notification by 31-Mar; C17 reply by 1-May). YEAR CAVEAT: Harvard prints only 'January 1' with NO year; day/month are officially stated and stable. Year set to 2028 to satisfy the requested Fall-2027 / 2027-2028 window; NOT confirmed by an official Harvard page for that specific cycle. If 'Fall 2027 cycle' = Fall 2027 ENTRY, the actual RD deadline is 2027-01-01."
       }
     ],
     "supplemental_requirements": [
       {
-        "target_program": "All",
-        "requirement_type": "Essays",
+        "target_program": "All first-year (freshman) applicants",
+        "requirement_type": "Standardized testing (SAT or ACT)",
         "deadline": "",
-        "details": "Five short supplemental essays (100-150 words each) required: 1. How will life experiences that shaped who you are today enable you to contribute to Harvard? 2. Describe a time when you strongly disagreed with someone about an idea or issue. How did you communicate or engage with this person? What did you learn from this experience? 3. Briefly describe any of your extracurricular activities, employment experience, travel, or family responsibilities that have shaped who you are. 4. How do you hope to use your Harvard education in the future? 5. Top 3 things your roommates might like to know about you."
+        "details": "'Harvard requires the SAT or ACT to meet its standardized testing requirement.' Self-reported scores permitted: 'Applicants may provide self-reported SAT and ACT test scores.' For REA: 'we would like your testing results by the end of October; however, you may submit the November series if needed.' In exceptional cases where SAT/ACT is unavailable, AP/IB/GCSE-A-Level/national-leaving-exam results may be accepted. Source: college.harvard.edu/admissions/apply/application-requirements. CDS 2024-2025 C8 confirms Harvard makes use of SAT/ACT scores in admission decisions ('X' = Yes) for students applying for Fall 2026."
+      },
+      {
+        "target_program": "All first-year (freshman) applicants",
+        "requirement_type": "Teacher recommendations (2)",
+        "deadline": "",
+        "details": "'Ask two teachers in different academic subjects who know you well to complete the Teacher Recommendation forms.' Source: college.harvard.edu/admissions/apply/application-requirements."
+      },
+      {
+        "target_program": "All first-year (freshman) applicants",
+        "requirement_type": "Secondary school report (counselor)",
+        "deadline": "",
+        "details": "'The secondary school report is a required form that is submitted by your school counselor or another school leader.' Source: college.harvard.edu/admissions/apply/application-requirements."
+      },
+      {
+        "target_program": "All first-year (freshman) applicants",
+        "requirement_type": "Midyear school report",
+        "deadline": "",
+        "details": "'The midyear school report is required' \u2014 to review performance in the first half of senior-year coursework. Source: college.harvard.edu/admissions/apply/application-requirements."
+      },
+      {
+        "target_program": "All first-year (freshman) applicants",
+        "requirement_type": "Supplemental short-answer essays (Harvard College Questions for the Common Application)",
+        "deadline": "",
+        "details": "Five required short-answer questions, each with a 150-word limit. Source: college.harvard.edu/admissions/apply/application-requirements and college.harvard.edu/admissions. Specific 2027-2028 prompts are not published on the fetched pages; only the count and 150-word limit are stated."
+      },
+      {
+        "target_program": "All first-year (freshman) applicants",
+        "requirement_type": "Application fee (or waiver)",
+        "deadline": "",
+        "details": "'$90 fee (or request a fee waiver)' (college.harvard.edu/admissions/apply). Fee waivers available: 'If the admissions application fee presents a hardship for you or your family and you plan on applying for financial aid, the fee will be waived.' Source: college.harvard.edu/admissions/apply/application-requirements."
       }
     ],
     "holistic_factors": {
       "primary_factors": [
-        "Academic Excellence",
-        "Course Rigor",
-        "GPA",
-        "Essays",
-        "Recommendations",
-        "Standardized Test Scores (required starting 2025 admissions cycle)"
+        "Rigor of secondary school record (Considered)",
+        "Academic GPA (Considered)",
+        "Standardized test scores (Considered)",
+        "Application Essay (Considered)",
+        "Recommendation(s) (Considered)",
+        "Interview (Considered)",
+        "Extracurricular activities (Considered)",
+        "Talent/ability (Considered)",
+        "Character/personal qualities (Considered)",
+        "First generation (Considered)",
+        "Alumni/ae relation (Considered)",
+        "Geographical residence (Considered)",
+        "Volunteer work (Considered)",
+        "Work experience (Considered)"
       ],
-      "secondary_factors": [
-        "Extracurriculars",
-        "Leadership Qualities",
-        "Personal Qualities and Character",
-        "Intellectual Vitality",
-        "Talents",
-        "Life Experiences",
-        "Ability to overcome challenges"
-      ],
-      "essay_importance": "Critical",
-      "demonstrated_interest": "Not Considered",
-      "interview_policy": "Recommended",
-      "legacy_consideration": "None",
-      "first_gen_boost": "None",
-      "specific_differentiators": "Looking for intellectual curiosity and drive, genuine passion for learning, resilience, integrity, and ability to contribute to a diverse community."
-    },
-    "essay_prompts": [
-      {
-        "prompt": "Harvard has long recognized the importance of enrolling a diverse student body. How will the life experiences that shape who you are today enable you to contribute to Harvard?",
-        "word_limit": "200 words",
-        "type": "Diversity",
-        "required": true,
-        "brainstorming_questions": [
-          "Thinking about your unique background, what's a specific moment or challenge where your perspective, shaped by your life experiences, led you to see a situation or solve a problem in a way others might not have considered, and how might that approach benefit a discussion in a Harvard seminar?",
-          "Beyond the obvious demographics, what are some of the less commonly discussed 'life experiences' that have profoundly shaped your worldview, and how could sharing those experiences enrich the understanding of your peers at Harvard?",
-          "Can you recall a time when your presence or perspective challenged an assumption or sparked a new idea within a group, and how might that experience translate into actively contributing to the intellectual vibrancy of Harvard's campus community?",
-          "If you were to walk into a room of students with vastly different life stories at Harvard, what's one core belief or understanding you've gained from your own journey that you'd be eager to share and discuss, and why is that important to you?",
-          "Harvard values the intersection of diverse experiences. How have two seemingly unrelated aspects of your life (e.g., a hobby and a cultural background, or a family responsibility and an academic interest) merged to create a unique lens through which you approach the world, and how could that dual perspective be valuable at Harvard?"
-        ]
-      },
-      {
-        "prompt": "Briefly describe an intellectual experience that was important to you.",
-        "word_limit": "200 words",
-        "type": "Intellectual",
-        "required": true,
-        "brainstorming_questions": [
-          "Think about a moment when a question, concept, or idea genuinely surprised you \u2013 when your understanding of something shifted in a way you didn't expect. What was that spark of surprise, and what did it feel like to have your perspective changed?",
-          "Beyond just learning a fact, describe a time when grappling with a complex topic or problem led you to a deeper appreciation for 'how' we know what we know, or 'why' certain ideas are debated. What was your journey through that intellectual puzzle?",
-          "Can you recall a specific instance where engaging with someone else's viewpoint \u2013 whether in a classroom discussion, a debate, or even a casual conversation \u2013 challenged your own thinking so much that you had to re-evaluate your assumptions? What was that exchange like?",
-          "Think about a subject or idea that you found yourself returning to, digging deeper into, and actively seeking out more information about, even when it wasn't assigned. What drew you in so powerfully, and what did you discover on that intellectual quest?",
-          "Describe an intellectual experience where you weren't just passively receiving information, but actively constructing your own understanding or creating something new based on your learning. What was the process of creation or construction, and what made it feel significant to you?"
-        ]
-      },
-      {
-        "prompt": "Briefly describe how you hope to use your college education.",
-        "word_limit": "200 words",
-        "type": "Goals",
-        "required": true,
-        "brainstorming_questions": [
-          "Beyond the broad strokes of 'making a difference,' what specific *kind* of change are you driven to create in the world, and how do you imagine your Harvard education will equip you with the precise tools and knowledge to achieve that particular impact?",
-          "Think about a moment when a complex idea or a problem genuinely challenged your understanding or perspective. How did you grapple with it, and what specific Harvard resources (a particular professor, research opportunity, or even a cross-disciplinary seminar) do you see yourself turning to in order to deepen your engagement with such intellectual provocations?",
-          "If you could hypothetically design a unique course or research project at Harvard that doesn't currently exist, what would it be, and what burning questions would it aim to answer about the world you hope to shape?",
-          "Imagine yourself five years after graduating from Harvard. Describe a tangible outcome or achievement that would signify to you that your education was a resounding success in preparing you to contribute meaningfully to society. What specific skills or insights would you have gained to make that outcome possible?",
-          "Consider a community or group you feel a strong connection to. How do you envision your Harvard education allowing you to better understand and serve the needs of this specific community, perhaps by addressing a particular challenge they face or by amplifying their voices?"
-        ]
-      },
-      {
-        "prompt": "Top 3 things your roommates might like to know about you.",
-        "word_limit": "200 words",
-        "type": "Personal",
-        "required": true,
-        "brainstorming_questions": [
-          "If your roommates were to observe your daily habits and quirks, what's one unexpected 'ritual' or oddity you have that you think would genuinely surprise and amuse them, and why is it significant to you?",
-          "Beyond the surface-level interests, what's a deeply held value or passion that you rarely discuss but that would profoundly shape how your roommates understand your decision-making and interactions?",
-          "Think about a time you've had to navigate a tricky social situation or a moment of vulnerability. What did you learn about yourself in that experience, and how might that insight help you be a better roommate?",
-          "Imagine your roommates discover a secret talent or a hidden hobby you've cultivated. What is it, and what does this side of you reveal about your approach to learning, creativity, or problem-solving?",
-          "If your roommates were to ask about your biggest 'aha!' moment or a transformative realization you've had, what story would you share, and what does that moment tell them about what you hope to bring to a community?"
-        ]
-      },
-      {
-        "prompt": "How do you spend a typical day after school?",
-        "word_limit": "200 words",
-        "type": "Personal",
-        "required": true,
-        "brainstorming_questions": [
-          "Beyond just listing activities, can you recall a *specific* moment during a typical after-school day where you felt a strong emotion \u2013 excitement, frustration, curiosity, or even a quiet sense of satisfaction \u2013 and what was happening that sparked it?",
-          "Think about the transitions between your after-school activities. What are the unspoken rituals, thoughts, or feelings that accompany you as you move from one space or task to the next?",
-          "When you're engaged in your most frequent after-school pursuits, what are the *unseen* or *unsaid* aspects of those activities that truly captivate you, the things most people might not notice?",
-          "Imagine explaining your typical after-school routine to someone completely unfamiliar with your life. What's one element that you'd *really* want them to understand the significance of, and why is it so important to you?",
-          "Consider a time when your typical after-school day was *interrupted* or deviated significantly from the norm. What did that disruption reveal about your priorities, your adaptability, or what truly matters to you?"
-        ]
-      }
-    ]
+      "secondary_factors": [],
+      "essay_importance": "Considered \u2014 Harvard CDS 2024-2025 C7 rates 'Application Essay' = Considered (no factor is rated higher than 'Considered' in this edition).",
+      "demonstrated_interest": "Not considered \u2014 Harvard CDS 2024-2025 C7 rates 'Level of applicant's interest' = Not Considered.",
+      "interview_policy": "Interview = 'Considered' per Harvard CDS 2024-2025 C7. The official admissions pages fetched (college.harvard.edu/admissions, /apply, /apply/application-requirements, /apply/first-year-applicants) did not state a separate/standalone interview policy, so no further official detail is reported.",
+      "legacy_consideration": "Considered \u2014 Harvard CDS 2024-2025 C7 rates 'Alumni/ae relation' = Considered.",
+      "first_gen_boost": "Considered \u2014 Harvard CDS 2024-2025 C7 rates 'First generation' = Considered. Reported as a 'considered' factor only; no quantified boost is stated officially, so none is inferred.",
+      "specific_differentiators": ""
+    }
   },
   "application_strategy": {
     "major_selection_tactics": [
-      "Apply to a less competitive major if your extracurriculars credibly align with it, especially if not set on highly competitive fields like CS or Engineering, as Harvard does not admit by major.",
-      "Consider applying as 'undeclared' for Harvard College, as students don't officially declare their concentrations until the fall of their sophomore year, allowing time for exploration.",
-      "Research major-specific admit rates at other competitive universities, though Harvard generally admits to the college rather than a specific program.",
-      "Use the first year to explore various academic interests, as Harvard is flexible with changing concentrations (majors) within Harvard College.",
-      "If interested in interdisciplinary fields not explicitly listed as a major, select a broader related field on the application and elaborate in supplementary materials."
+      "Pick your intended concentration authentically \u2014 do not game it for odds",
+      "Treat the intended concentration as a non-binding signal, not a commitment",
+      "Make the stated concentration cohere with your transcript, activities, and essays",
+      "'Undecided' is a legitimate, non-penalizing choice \u2014 but pair it with visible exploration",
+      "Upgrade the evidence, not the label"
     ],
-    "college_ranking_tactics": [
-      "Consider the quality and amenities of dorms, especially for freshman year, noting that Harvard's freshman housing quality can vary and many lack air conditioning.",
-      "Evaluate a college's General Education (GenEd) requirements; some students prioritize those that are easy or align with existing knowledge to 'cushion' their schedule or get requirements out of the way.",
-      "Look beyond overall prestige to assess individual departments and programs, particularly for your intended field of study, as rankings can vary significantly by discipline.",
-      "Assess the social environment and campus culture to ensure it aligns with your preferences, rather than solely focusing on a school's ranking.",
-      "Research the flexibility of switching majors (concentrations) to ensure it's feasible at the institution, especially if your initial major is highly competitive or your interests might evolve."
-    ],
-    "alternate_major_strategy": "If applying to a highly competitive field like Computer Science, consider listing a related but potentially less competitive concentration as an alternate, such as Cognitive Science. This strategy should be employed if your profile genuinely aligns with the alternate field to avoid appearing disingenuous."
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "Not applicable in the 'hedge to a less-competitive second-choice major' sense. Harvard does not admit by major and runs no separate per-concentration applicant pools or quotas, so there is no alternate-major / second-choice-major fallback to strategize the way there is at direct-admit-by-major schools. The application is to Harvard College as a whole. The functional equivalent of an 'alternate' already exists structurally: the intended concentration is non-binding, you can switch to any concentration up to the end of sophomore fall, and 'Undecided' is fully accepted \u2014 so there is no downside to hedge against and no alternate-major field to optimize."
   },
   "financials": {
-    "tuition_model": "Annual Increase",
+    "tuition_model": "Single published cost of attendance (comprehensive: tuition + fees + housing + food + health insurance + travel). Net cost is determined entirely by need-based aid \u2014 Harvard is need-blind in admissions and meets 100% of demonstrated financial need with grants, not loans. No merit or athletic scholarships. Under standing policy (effective 2025-26): families with incomes below $100,000 pay nothing ('free for students from families with annual incomes of $100,000 or less'); families below $200,000 pay no tuition ('tuition-free for students from families with annual incomes of $200,000 or less'); above $200,000 aid is available 'depending on individual circumstances.' Home equity and retirement assets are typically excluded from need assessment.",
     "cost_of_attendance_breakdown": {
-      "academic_year": "2025-2026",
+      "academic_year": "2027-2028",
       "in_state": {
         "tuition": 59320,
-        "total_coa": 86926,
-        "housing": 13532
+        "total_coa": 90426,
+        "housing": null
       },
       "out_of_state": {
         "tuition": 59320,
-        "total_coa": 86926,
-        "supplemental_tuition": 0
+        "total_coa": 90426,
+        "supplemental_tuition": null
       }
     },
-    "aid_philosophy": "100% Need Met",
-    "average_need_based_aid": 60656,
+    "aid_philosophy": "Need-based only, need-blind, meets full demonstrated need. Quoted: 'We base aid awards on need, not on merit' and Harvard 'meet[s] 100 percent of our students' demonstrated financial need.' 'There are no merit-based awards' and 'we have no preferential policies that give some students more attractive awards than others.' Aid is grant-based (no loans required to meet need; students can graduate debt-free). International students are treated identically: 'financial aid is available for foreign students on exactly the same basis as for American students.' All students have a term-time work expectation; the summer-work expectation was eliminated starting 2020-21.",
+    "average_need_based_aid": 68700,
     "average_merit_aid": 0,
-    "percent_receiving_aid": 55.0,
+    "percent_receiving_aid": 55,
     "scholarships": [
       {
-        "name": "Harvard College Scholarship",
-        "type": "Need-Based",
-        "amount": "Varies; average grant of $60,000/year, covers 100% demonstrated need",
-        "deadline": "FAFSA and CSS Profile deadlines (typically early February for regular decision applicants)",
-        "benefits": "Covers tuition, fees, room, board, and other expenses for families earning under $85,000 annually. Over 20% of families pay nothing.",
-        "application_method": "Automatic consideration upon submission of financial aid application (FAFSA and CSS Profile)"
-      },
-      {
-        "name": "Harvard Financial Aid (Full Ride for Low-Income Families)",
-        "type": "Need-Based",
-        "amount": "Full cost of attendance (tuition, room, board, and other costs)",
-        "deadline": "FAFSA and CSS Profile deadlines (typically early February for regular decision applicants)",
-        "benefits": "Families with incomes under $85,000 are not expected to contribute to college costs, effectively providing a full ride. Families with incomes between $85,000 and $150,000 contribute 0% to 10% of income.",
-        "application_method": "Automatic consideration upon submission of financial aid application (FAFSA and CSS Profile)"
+        "name": "Harvard Scholarship",
+        "type": "Need-based institutional grant",
+        "amount": "No fixed amount \u2014 covers 100% of demonstrated financial need. In the typical 2023-24 package, Harvard/federal/outside scholarships totaled $68,700.",
+        "deadline": "",
+        "deadline_date": null,
+        "benefits": "'scholarship funds which are grant-based and never need to be repaid'; funded from 'Harvard endowment funds, gifts from alumni, general tuition revenues, and federal and state grants.' Meets full demonstrated need with grants (no loan required).",
+        "application_method": "Apply for financial aid (CSS Profile + FAFSA/IDOC). Awarded automatically based on assessed need \u2014 no separate application and not merit-based. Administered by the Griffin Financial Aid Office."
       },
       {
         "name": "Federal Pell Grant",
-        "type": "Need-Based",
-        "amount": "Varies (maximum amounts up to $7,395 for 2023-2024 academic year, subject to change)",
-        "deadline": "FAFSA deadline",
-        "benefits": "Federal grant aid for undergraduate students with exceptional financial need, does not need to be repaid.",
-        "application_method": "FAFSA"
+        "type": "Federal need-based grant",
+        "amount": "",
+        "deadline": "",
+        "deadline_date": null,
+        "benefits": "'If you are a U.S. citizen or permanent resident, you may be eligible for a Federal Pell Grant.' ~20% of Harvard undergraduates are Pell recipients.",
+        "application_method": "Submit the FAFSA; 'you will receive a Student Aid Report indicating your eligibility for a Pell Grant' within ~10 days."
       },
       {
         "name": "Federal Supplemental Educational Opportunity Grant (SEOG)",
-        "type": "Need-Based",
-        "amount": "Varies",
-        "deadline": "FAFSA deadline",
-        "benefits": "Federal grant for undergraduate students with exceptional financial need, administered by Harvard.",
-        "application_method": "FAFSA"
+        "type": "Federal need-based grant",
+        "amount": "",
+        "deadline": "",
+        "deadline_date": null,
+        "benefits": "'awarded by the federal government and administered by our office, based on financial need.' For eligible U.S. citizens and permanent residents.",
+        "application_method": "Submit the FAFSA; administered by the Harvard (Griffin) financial aid office."
       },
       {
-        "name": "Gilbert Grant (Massachusetts residents)",
-        "type": "Need-Based",
-        "amount": "Varies",
-        "deadline": "FAFSA deadline",
-        "benefits": "State grant for Massachusetts residents demonstrating financial need.",
-        "application_method": "FAFSA (for Massachusetts residents)"
-      },
-      {
-        "name": "Harvard Academy Scholars Program (Postdoctoral)",
-        "type": "Merit/Competitive (Postdoctoral)",
-        "amount": "$75,000 annual stipend plus funding for travel, research assistants, and health insurance",
-        "deadline": "Typically in the fall for the following academic year (e.g., October for an August start)",
-        "benefits": "Fully funded postdoctoral research opportunities in the social sciences, some teaching permitted but not required.",
-        "application_method": "Separate application to the Harvard Academy for International and Area Studies"
-      },
-      {
-        "name": "Kennedy Fellowships and Presidential Scholarships (Harvard Kennedy School)",
-        "type": "Need-Based (with recognition of merit)",
-        "amount": "Varies depending on financial need",
-        "deadline": "Typically after application for admission, before admission decision",
-        "benefits": "Financial assistance for graduate students demonstrating exceptional academic ability and professional distinction.",
-        "application_method": "Consideration upon completion of application for admission to Harvard Kennedy School, and submission of financial aid forms."
+        "name": "Massachusetts Gilbert Grant",
+        "type": "State need-based grant (Massachusetts residents)",
+        "amount": "",
+        "deadline": "",
+        "deadline_date": null,
+        "benefits": "'awarded on the basis of need. These awards do not affect your term-time work expectation.'",
+        "application_method": "For Massachusetts state residents; via FAFSA/state need process, administered by the financial aid office."
       }
     ]
   },
   "credit_policies": {
-    "philosophy": "Strict",
+    "philosophy": "Harvard College does not grant degree credit for pre-matriculation credentials (AP, IB diploma, or other secondary-school/international credentials). Such credentials function only as placement tools and, in some cases, to satisfy the language requirement. Degree credit is earned through work completed while enrolled at Harvard.",
     "ap_policy": {
-      "general_rule": "No college credit awarded for exams for students entering Fall 2020 and later",
+      "general_rule": "No degree credit is awarded for AP examinations. AP scores are used only as a placement tool.",
       "exceptions": [
-        "Can be used for course placement into higher-level courses",
-        "Score of 5 on certain language exams can fulfill the foreign language requirement",
-        "No credit for AP Music Theory, Studio Art (2D, 3D, Drawing), Comparative Government and Politics, Human Geography, United States Government and Politics, World History, Computer Science A, Computer Science Principles, Environmental Science, Physics 1: Algebra Based, and Physics 2: Algebra Based, even with a score of 5"
+        "AP exams may, in some cases, be used to fulfill the foreign language requirement (placement, not degree credit)."
       ],
-      "usage": "Can satisfy placement and some requirements"
+      "usage": "Placement only. AP scores serve as a placement tool (e.g., to place a student into a higher-level course) and in some cases to satisfy the language requirement; they never count toward the Harvard degree. This holds even for transfer applicants: AP/IB/CLEP or any credit-by-examination is not accepted, even when the prior institution credited it to the degree."
     },
     "ib_policy": {
-      "general_rule": "No college credit awarded for exams for students entering Fall 2020 and later",
-      "exceptions": [
-        "Can be used for course placement into higher-level courses",
-        "Score of 7 on certain HL exams can fulfill the foreign language requirement"
-      ],
+      "general_rule": "No degree credit is awarded for the IB diploma or IB exams. The IB diploma serves only as a placement tool and, in some cases, to fulfill the language requirement.",
       "diploma_bonus": false
     },
     "transfer_articulation": {
-      "tools": [
-        "None mentioned; individual evaluation by the Registrar's Office"
-      ],
-      "restrictions": "Maximum 16 semester-long courses (approximately two years of academic work) may be transferred. Courses must be from regionally accredited institutions and similar in depth and rigor to Harvard's liberal arts curriculum. A grade of B or higher (or C or better in some cases) is generally required, and Pass/Fail or Satisfactory/Unsatisfactory grades are not accepted. No credit is granted for pre-professional, vocational, technical, performance-based, online, or night-time courses."
+      "tools": [],
+      "restrictions": "Maximum of 16 semester-long courses (equiv. two full years) may transfer. Credit only for courses in a full-time, daytime program at an accredited degree-granting institution, with grades of 'C' (or equivalent) or better in courses comparable to Harvard's liberal-arts curriculum. No credit for: online/distance courses; night/extension courses; part-time courses; technical/vocational courses (accounting, marketing, journalism, law, agriculture, nursing, business, communications, specialized military coursework); dual-enrollment courses counted toward a high-school diploma; isolated-term work unless the prior college granted credit for it; acceleration credit; CLEP/AP/IB or any credit-by-examination; and summer-school courses except those at the current college/university or Harvard Summer School."
     }
   },
   "student_insights": {
     "what_it_takes": [
-      "Strong academic record with challenging coursework and near-perfect scores/grades, demonstrating genuine scholarship.",
-      "Demonstrated unusual strength or a 'spike' in one or two areas at a national or professional level, rather than being a generalist.",
-      "Authenticity and self-reflection in essays, showcasing resilience, dedication, and personal growth.",
-      "Demonstrated impact and leadership in extracurricular activities.",
-      "Providing 'value' to the university, which can include being a recruited athlete, legacy applicant, development candidate, or child of faculty."
+      "OPINION \u2014 top grades and course rigor are treated as a baseline, not a differentiator. Community members repeatedly say near-perfect academics are necessary but nowhere near sufficient: on College Confidential users note there are 'no sure shot admits' outside recruited athletes and big donors, and that it is only worth applying 'as long as your qualifications are academically competitive.' Corroborated by CollegeVine community, which pegs ~90% of admits at 'superb grades, mid to high 700+ SAT scores per section, and 33+ ACT scores.' (Sources: College Confidential, CollegeVine community.)",
+      "OPINION \u2014 genuine depth in an activity is valued over a manufactured 'spike.' Multiple College Confidential users call 'spike' a 'made up' or 'dated' concept and say what actually reads well is 'depth/dedication into a certain activity. Not just accolades.' (Sources: College Confidential \u2014 users AlanApar, Lindagaf, TonyGrace; theme echoed in community discussion surfaced via search.)",
+      "OPINION \u2014 authenticity over strategy: 'just be yourself.' The community consensus is to present yourself honestly rather than engineer a persona: 'do an application that reflects who you are... in a natural way.' (Sources: College Confidential \u2014 users compmom, skieurope, BKSquared.)",
+      "OPINION \u2014 an extreme work ethic and heavy involvement is the norm among admits. Survey- and review-based sources describe the typical Harvard student as someone who 'works really hard, doesn't sleep, [and is] involved in a million extracurriculars,' with 'a lot of ambitious people.' (Sources: Princeton Review student quotes; Niche review summary; Appily review.)"
     ],
     "common_activities": [
-      "Leadership roles in school clubs and organizations (e.g., class president, newspaper editor).",
-      "Significant community service or developing initiatives with far-reaching impacts.",
-      "Varsity athletics, particularly if actively recruited by Harvard coaches.",
-      "Research experience, especially published work with a professor.",
-      "Involvement in arts or specialized academic competitions, achieving national-level recognition (e.g., debate, music)."
+      "OPINION \u2014 Research or independent intellectual work beyond the school curriculum (college courses, dual enrollment, lab research). Community members frame this as the way admits show 'intellectual curiosity beyond the high school curriculum.' (Sources: CollegeVine community; community discussion surfaced via search.)",
+      "OPINION \u2014 A small number (roughly 3-5) of sustained, long-term commitments rather than many shallow ones \u2014 depth over breadth. (Sources: College Confidential; community discussion surfaced via search.)",
+      "OPINION \u2014 Leadership roles that show visible progression over time (e.g., member advancing to a regional/coordinator role). (Sources: CollegeVine community 'grit/leadership' rating; community discussion surfaced via search.)",
+      "OPINION \u2014 Community and public service; Harvard students themselves point to large service programs (e.g., the Phillips Brooks House Association) as a common thread. (Sources: community discussion surfaced via search; Harvard College student-activities pages.)",
+      "OPINION \u2014 State- or national-level academic competitions in a field of genuine interest. (Sources: community discussion surfaced via search.)",
+      "OPINION \u2014 One or two contrasting, defining activities that, per a forum user, 'give an admissions officer a handle on who you are.' (Sources: College Confidential \u2014 user gibby; CollegeVine community 'well-rounded class, not well-rounded student.')"
     ],
     "essay_tips": [
-      "Be specific and vivid in your descriptions, showing what you gained from experiences rather than just stating them.",
-      "Show your unique personality and be creative with storytelling, avoiding generic or clich\u00e9 'aha moments'.",
-      "Highlight your resilience and how you overcame challenges or how they inspired you.",
-      "Discuss a passion project with a demonstrable, long-lasting impact.",
-      "Utilize the additional information section to clarify unique life circumstances, significant events, or explain dips in grades."
+      "OPINION \u2014 Write conversationally and clearly; don't try to sound literary. Forum users warn that the worst essays 'go overboard on creativity to be unique,' and advise: 'Just write straightforwardly, as if you are having a conversation.' (Sources: College Confidential \u2014 user compmom; aligns with Harvard's own 'authenticity over achievement' tip surfaced via search.)",
+      "OPINION \u2014 Pick a topic only you could write. 'What is a story, or observation that only YOU could write? One that is so YOU, you are the only possible author.' Echoed by the CollegeVine community's emphasis on 'uniqueness.' (Sources: College Confidential \u2014 user psywar; CollegeVine community.)",
+      "OPINION \u2014 Write about something you genuinely care about: 'write about something you love doing or even thinking about. You'll know you're on the right path if you find yourself scribbling furiously.' (Sources: College Confidential \u2014 user Wizardingage.)",
+      "OPINION \u2014 Above all, 'do no harm.' Several posters argue essays rarely single-handedly get you in ('a lot of essays have a neutral effect'), so prioritize clarity and avoid red flags rather than gimmicks. (Sources: College Confidential, multiple users.)"
     ],
     "red_flags": [
-      "Engaging in activities solely for college applications (utilitarianism) rather than genuine interest.",
-      "Padding resumes with many shallow or purposeless activities; being a generalist is seen as mediocre.",
-      "Submitting generic essays that lack personal voice or could apply to any institution.",
-      "Failing to research and articulate a genuine fit with Harvard's specific environment and offerings.",
-      "Not waiving your FERPA rights on the Common App, which can suggest a lack of trust in recommenders."
+      "OPINION \u2014 Manufacturing a fake narrative or 'spike.' Community view: 'The worst thing you can do is to try to construct a narrative for yourself of a person you are not' and instead 'present yourself as you are.' (Sources: College Confidential \u2014 users BKSquared, skieurope.)",
+      "OPINION \u2014 Gimmicky, overwrought essays that try too hard to be 'creative'/'unique,' full of 'unnecessary adjectives... that don't contribute to the main points.' (Sources: College Confidential \u2014 user compmom.)",
+      "OPINION \u2014 Performative resume-padding: e.g., founding a 'nonprofit' with no durable outcome or shallow involvement in many clubs. Community and Harvard both treat this as padding rather than impact; the depth-over-breadth consensus reinforces it. (Sources: community discussion surfaced via search; corroborated by College Confidential depth-over-breadth threads.)"
     ],
-    "insights": []
+    "insights": [
+      {
+        "source": "College Confidential (user AlanApar) \u2014 talk.collegeconfidential.com/t/is-spike-absolutely-necessary-for-stanford-harvard-ivys/3678597",
+        "category": "what_it_takes",
+        "insight": "\"'Spikes' are made up terms by people not involved in admissions\" (crowdsourced opinion, verbatim)."
+      },
+      {
+        "source": "College Confidential (user TonyGrace) \u2014 same thread",
+        "category": "what_it_takes",
+        "insight": "\"I think a successful 'spike' is more in the sense of depth/dedication into a certain activity. Not just accolades.\" (verbatim forum opinion)"
+      },
+      {
+        "source": "College Confidential (user Momofthree24) \u2014 same thread",
+        "category": "what_it_takes",
+        "insight": "\"outside of recruited athletes and big donors, there are no 'sure shot admits'\" (verbatim forum opinion)"
+      },
+      {
+        "source": "College Confidential (user Lindagaf) \u2014 talk.collegeconfidential.com/t/spike-hook-or-not/2085094",
+        "category": "what_it_takes",
+        "insight": "\"What's preferred is genuine interest in what a student pursues...essays that show...how a student will fit with what Harvard is looking for.\" (verbatim forum opinion)"
+      },
+      {
+        "source": "College Confidential (user gibby) \u2014 spike-hook-or-not thread",
+        "category": "common_activities",
+        "insight": "\"presenting yourself with two major contrasting EC's...gives an admissions officer a handle on who you are.\" (verbatim forum opinion)"
+      },
+      {
+        "source": "CollegeVine community \u2014 collegevine.com/c/harvard/9364",
+        "category": "common_activities",
+        "insight": "\"the cliche of not a well rounded student but a well rounded class applies\"; best candidates \"show evidence of intellectual curiosity beyond the high school curriculum.\" (crowdsourced community answers, verbatim)"
+      },
+      {
+        "source": "College Confidential (user compmom) \u2014 talk.collegeconfidential.com/t/harvard-essay-optional-supplement/1960965",
+        "category": "essay_tips",
+        "insight": "\"Just write straightforwardly, as if you are having a conversation.\" (verbatim forum opinion)"
+      },
+      {
+        "source": "College Confidential (user psywar) \u2014 same optional-supplement thread",
+        "category": "essay_tips",
+        "insight": "\"what is a story, or observation that only YOU could write? One that is so YOU, you are the only possible author.\" (verbatim forum opinion)"
+      },
+      {
+        "source": "College Confidential (user Wizardingage) \u2014 same optional-supplement thread",
+        "category": "essay_tips",
+        "insight": "\"How about writing about something you love doing or even thinking about? You'll know you're on the right path if you find yourself scribbling furiously.\" (verbatim forum opinion)"
+      },
+      {
+        "source": "College Confidential (unattributed) \u2014 talk.collegeconfidential.com/t/ten-successful-harvard-application-essays/3568738",
+        "category": "essay_tips",
+        "insight": "\"essays don't matter as much these days anyway, with all the coaching going on. Applicants should just do no harm\" (verbatim forum opinion)"
+      },
+      {
+        "source": "College Confidential (user BKSquared) \u2014 spike-hook-or-not thread",
+        "category": "red_flags",
+        "insight": "\"The worst thing you can do is to try to construct a narrative for yourself of a person you are not.\" (verbatim forum opinion)"
+      },
+      {
+        "source": "College Confidential (user compmom) \u2014 ten-successful-essays thread",
+        "category": "red_flags",
+        "insight": "\"The worst advice for essay writers is to aim for this kind of 'creativity,' which often means unnecessary adjectives and lots of details that don't contribute to the main points.\" (verbatim forum opinion)"
+      },
+      {
+        "source": "Princeton Review student quotes \u2014 princetonreview.com/college/harvard-college-1022984",
+        "category": "culture",
+        "insight": "The typical student \"works really hard, doesn't sleep, [and is] involved in a million extracurriculars\"; \"Partying in a more traditional setting... is not a prevalent aspect of the school's social life.\" (verbatim student-survey quotes)"
+      },
+      {
+        "source": "Appily student review (Current Sophomore) \u2014 appily.com/colleges/harvard-university/reviews",
+        "category": "culture",
+        "insight": "\"The students are great, teamwork is encouraged... there are a lot of ambitious people but nobody is too competitive.\" (verbatim student review)"
+      },
+      {
+        "source": "Niche student reviews \u2014 niche.com/colleges/harvard-university/ (SUMMARIZED via web search; direct page fetch returned HTTP 403, so NOT a verbatim quote)",
+        "category": "culture",
+        "insight": "PARAPHRASE from search summary: final clubs are described as more prominent than Greek life in the social scene, and some reviews report exclusivity plus insufficient support for low-income, minority, and LGBT students. Treat as unverified secondhand summary, not a fetched verbatim review."
+      }
+    ]
   },
   "outcomes": {
     "median_earnings_10yr": 101817,
     "employment_rate_2yr": null,
-    "grad_school_rate": null,
-    "top_employers": [
-      "McKinsey & Company",
-      "Boston Consulting Group (The)",
-      "Bain & Company",
-      "Morgan Stanley",
-      "Goldman Sachs",
-      "Microsoft",
-      "Google"
-    ],
-    "loan_default_rate": 0.0
+    "grad_school_rate": 17,
+    "top_employers": [],
+    "loan_default_rate": null
   },
   "student_retention": {
-    "freshman_retention_rate": 98.0,
-    "graduation_rate_4_year": 84.0,
-    "graduation_rate_6_year": 98.0
-  },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/harvard_university_logo.png"
+    "freshman_retention_rate": 98,
+    "graduation_rate_4_year": 55.7,
+    "graduation_rate_6_year": 98
+  }
 }

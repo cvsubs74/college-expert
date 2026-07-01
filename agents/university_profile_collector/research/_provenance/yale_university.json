@@ -1,0 +1,2435 @@
+{
+  "trust_report": {
+    "university": "Yale University",
+    "id": "yale_university",
+    "cycle": "Fall 2027",
+    "cds_edition_used": "2025-2026 (latest available; 2027-2028 edition not yet posted as of July 2026 \u2014 CDS index at https://oir.yale.edu/common-data-set lists 2025-2026 as most recent)",
+    "ipeds_unitid": "130794",
+    "deterministic_fields": {
+      "total": 48,
+      "published": 34,
+      "held_null": 14
+    },
+    "verification": {
+      "corroborated": 4,
+      "canonical_single": 30,
+      "conflict_nulled": 1,
+      "unverified_nulled": 13,
+      "fields": {
+        "overall_acceptance_rate": "CORROBORATED",
+        "in_state_acceptance_rate": "UNVERIFIED",
+        "out_of_state_acceptance_rate": "UNVERIFIED",
+        "transfer_acceptance_rate": "CANONICAL_SINGLE",
+        "international_acceptance_rate": "UNVERIFIED",
+        "applications_total": "CANONICAL_SINGLE",
+        "admits_total": "CANONICAL_SINGLE",
+        "enrolled_total": "CANONICAL_SINGLE",
+        "yield_rate": "CANONICAL_SINGLE",
+        "admits_class_size": "UNVERIFIED",
+        "sat_composite_middle_50": "CORROBORATED",
+        "sat_reading_middle_50": "CANONICAL_SINGLE",
+        "sat_math_middle_50": "CANONICAL_SINGLE",
+        "act_composite_middle_50": "CANONICAL_SINGLE",
+        "test_submission_rate": "CANONICAL_SINGLE",
+        "gpa_weighted_avg": "UNVERIFIED",
+        "gpa_unweighted_avg": "UNVERIFIED",
+        "race_white": "CANONICAL_SINGLE",
+        "race_black": "CANONICAL_SINGLE",
+        "race_hispanic": "CANONICAL_SINGLE",
+        "race_asian": "CANONICAL_SINGLE",
+        "race_native_american": "CANONICAL_SINGLE",
+        "race_pacific_islander": "CANONICAL_SINGLE",
+        "race_two_or_more": "CANONICAL_SINGLE",
+        "race_unknown": "CANONICAL_SINGLE",
+        "race_international": "CANONICAL_SINGLE",
+        "first_gen_percentage": "UNVERIFIED",
+        "international_percentage": "CANONICAL_SINGLE",
+        "freshman_retention_rate": "CORROBORATED",
+        "graduation_rate_4_year": "CANONICAL_SINGLE",
+        "graduation_rate_6_year": "CORROBORATED",
+        "in_state_tuition": "CANONICAL_SINGLE",
+        "out_of_state_tuition": "CONFLICT",
+        "total_coa_in_state": "CANONICAL_SINGLE",
+        "total_coa_out_of_state": "CANONICAL_SINGLE",
+        "median_earnings_10yr": "CANONICAL_SINGLE",
+        "is_test_optional": "CANONICAL_SINGLE",
+        "test_policy_details": "CANONICAL_SINGLE",
+        "ed_applications": "UNVERIFIED",
+        "ed_admits": "UNVERIFIED",
+        "ed_acceptance_rate": "UNVERIFIED",
+        "ea_applications": "UNVERIFIED",
+        "ea_admits": "UNVERIFIED",
+        "ea_acceptance_rate": "UNVERIFIED",
+        "waitlist_offered": "CANONICAL_SINGLE",
+        "waitlist_accepted": "CANONICAL_SINGLE",
+        "waitlist_admitted": "CANONICAL_SINGLE",
+        "waitlist_admit_rate": "CANONICAL_SINGLE"
+      }
+    },
+    "total_sources_consulted": 157,
+    "sources_backing_published_values": 2,
+    "acceptance_rate_published": 4.7,
+    "ingest_ready": true,
+    "doctrine": "null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated; every source consulted is logged"
+  },
+  "provenance": {
+    "overall_acceptance_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 4.7,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C1: admitted (men 1189 + women 1198 = 2387) / applied (men 22819 + women 27445 = 50264) = 4.7%. 'Total first-time, first-year men who were admitted 1189 ... women who were admitted 1198'; 'men who applied 22819 ... women who applied 27445'",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "in_state_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "out_of_state_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "transfer_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 2.6,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "D2 (Fall 2025 transfers): 'Total 1747 45 35' (Applicants 1747, Admitted 45, Enrolled 35); 45/1747 = 2.6%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "international_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "applications_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 50264,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C1: 'Total first-time, first-year men who applied 22819' + 'Total first-time, first-year women who applied 27445' = 50264 (no Other-gender row reported).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "admits_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 2387,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C1: 'Total first-time, first-year men who were admitted 1189' + 'Total first-time, first-year women who were admitted 1198' = 2387.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "enrolled_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1633,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C1: 'Total first-time, first-year men who enrolled 799' + 'women who enrolled 834' = 1633; cross-checked by B2 'TOTAL 1633' first-time first-year.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "yield_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 68.4,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C1 derived: enrolled 1633 / admitted 2387 = 68.4% yield.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "admits_class_size": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "sat_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "1480-1560",
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C9: 'SAT Composite 1480 1540 1560' (25th / 50th / 75th percentile).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "sat_reading_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "730-780",
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C9: 'SAT Evidence-Based Reading & Writing 730 760 780' (25th / 50th / 75th percentile).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "sat_math_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "740-790",
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C9: 'SAT Math 740 780 790' (25th / 50th / 75th percentile).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "act_composite_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "33-35",
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C9: 'ACT Composite 33 34 35' (25th / 50th / 75th percentile).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "test_submission_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 92,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C9: 'Submitting SAT Scores 67% 1092' + 'Submitting ACT Scores 25% 412' = ~92% of the 1,633 enrolled submitting a national SAT/ACT score (sum assumes no SAT+ACT overlap; Yale is test-flexible so remainder submitted AP/IB).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "gpa_weighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "gpa_unweighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "race_white": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 30.7,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B2 (Degree-Seeking First-Time First-Year): 'White 501 ...' of 'TOTAL 1633' = 30.7%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_black": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 8.4,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B2 first-year: 'Black or African American 137 ...' of 1633 = 8.4%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_hispanic": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 13.6,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B2 first-year: 'Hispanic or Latino of Any Race 222 ...' of 1633 = 13.6%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_asian": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 25.8,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B2 first-year: 'Asian 422 ...' of 1633 = 25.8%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_native_american": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.6,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B2 first-year: 'American Indian or Alaska Native 10 ...' of 1633 = 0.6%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_pacific_islander": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.2,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B2 first-year: 'Native Hawaiian or other Pacific Islander 4 ...' of 1633 = 0.2%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_two_or_more": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 7.9,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B2 first-year: 'Two or more races 129 ...' of 1633 = 7.9%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_unknown": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3.2,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B2 first-year: 'Unknown 53 ...' of 1633 = 3.2%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_international": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9.5,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B2 first-year: 'Nonresident Alien 155 ...' of 'TOTAL 1633' = 9.5%.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "first_gen_percentage": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_percentage": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 9.5,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B2: first-year 'Nonresident Alien 155' of 1633 = 9.5% of the entering class (all-undergrad alternative: 706 of 6636 degree-seeking = 10.6%).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "freshman_retention_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 99.4,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B22: 'Calculate the percentage of the Fall 2024 entering cohort who remained enrolled on the official census date. 99.4%' (cohort 1,554; still enrolled 1,545).",
+      "as_of_cycle": "Fall 2024 cohort (reported in 2025-26 CDS)"
+    },
+    "graduation_rate_4_year": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 52.8,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B4-B11 Fall 2019 cohort: 'D. ...completed the program in four years or less (by Aug. 31, 2023) ... 818' / 'C. Final 2019 cohort ... 1550' = 52.8% (COVID-depressed on-time rate; many delayed to 5 yrs \u2014 E total 606).",
+      "as_of_cycle": "Fall 2019 cohort (reported in 2025-26 CDS)"
+    },
+    "graduation_rate_6_year": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 96.3,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "B4-B11: 'H. Six-year graduation rate for 2019 cohort (G divided by C) ... 0.963' (total column).",
+      "as_of_cycle": "Fall 2019 cohort (reported in 2025-26 CDS)"
+    },
+    "in_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 72500,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "G1 (2026-2027 academic year), private institution flat tuition: 'PRIVATE INSTITUTION ... Tuition $72,500' (public in-state/out-of-state rows are blank/dashes \u2014 no residency distinction).",
+      "as_of_cycle": "2026-2027 academic year"
+    },
+    "out_of_state_tuition": {
+      "status": "CONFLICT",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null,
+      "conflict": {
+        "anchor": "72500",
+        "verifier": "$72,500"
+      }
+    },
+    "total_coa_in_state": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 98900,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "G1+G5 (2026-27, on-campus resident) derived sum: Tuition $72,500 + Food and Housing $21,600 + Books and supplies $1,000 + Transportation $1,100 + Other expenses $2,700 = $98,900 (G1 Required Fees cell left blank).",
+      "as_of_cycle": "2026-2027 academic year"
+    },
+    "total_coa_out_of_state": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 98900,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "Same as in-state (private): Tuition $72,500 + Food/Housing $21,600 + Books $1,000 + Transportation $1,100 + Other $2,700 = $98,900.",
+      "as_of_cycle": "2026-2027 academic year"
+    },
+    "median_earnings_10yr": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 100533,
+      "source": "U.S. Dept of Education College Scorecard (api.data.gov backend of the school profile page)",
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=130794&fields=latest.earnings.10_yrs_after_entry.median",
+      "quote": "College Scorecard API (id 130794 Yale University): '\"latest.earnings.10_yrs_after_entry.median\": 100533' \u2014 median earnings of former students 10 years after entry = $100,533.",
+      "as_of_cycle": "latest available (College Scorecard 'latest' release)"
+    },
+    "is_test_optional": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "false",
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C8F: 'Yale has a test-flexible policy which requires all first-year and transfer applicants to submit standardized test scores.' Not test-optional \u2014 scores are required (SAT/ACT/AP/IB flexible).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "test_policy_details": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "Test-flexible: all applicants must submit standardized test scores, choosing from SAT, ACT, AP, or IB.",
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C8F: 'Yale has a test-flexible policy which requires all first-year and transfer applicants to submit standardized test scores. Applicants choose which scores to include from four options: ACT, Advanced Placement (AP), International Baccalaureate (IB), and ACT.' (verbatim; the four options are SAT/ACT/AP/IB \u2014 CDS text mistypes ACT twice). C8 table marks SAT or ACT 'Not required for admission, but considered if submitted.'",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "ed_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_offered": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 944,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C2: 'Number of qualified applicants offered a place on waiting list 944'.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "waitlist_accepted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 738,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C2: 'Number accepting a place on the waiting list 738'.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "waitlist_admitted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 32,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C2: 'Number of wait-listed students admitted 32'.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "waitlist_admit_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.3,
+      "source": "Yale University Common Data Set 2025-26 (Yale OIR)",
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "quote": "C2 derived: admitted 32 / accepting a place on waitlist 738 = 4.3% (vs 32/944 offered = 3.4%).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    }
+  },
+  "source_ledger": [
+    {
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2025-26_md_20260616.pdf",
+      "roles": [
+        "resolve:common_data_set",
+        "resolve",
+        "anchor",
+        "anchor:overall_acceptance_rate",
+        "anchor:in_state_acceptance_rate",
+        "anchor:out_of_state_acceptance_rate",
+        "anchor:transfer_acceptance_rate",
+        "anchor:international_acceptance_rate",
+        "anchor:applications_total",
+        "anchor:admits_total",
+        "anchor:enrolled_total",
+        "anchor:yield_rate",
+        "anchor:admits_class_size",
+        "anchor:sat_composite_middle_50",
+        "anchor:sat_reading_middle_50",
+        "anchor:sat_math_middle_50",
+        "anchor:act_composite_middle_50",
+        "anchor:test_submission_rate",
+        "anchor:gpa_weighted_avg",
+        "anchor:gpa_unweighted_avg",
+        "anchor:race_white",
+        "anchor:race_black",
+        "anchor:race_hispanic",
+        "anchor:race_asian",
+        "anchor:race_native_american",
+        "anchor:race_pacific_islander",
+        "anchor:race_two_or_more",
+        "anchor:race_unknown",
+        "anchor:race_international",
+        "anchor:first_gen_percentage",
+        "anchor:international_percentage",
+        "anchor:freshman_retention_rate",
+        "anchor:graduation_rate_4_year",
+        "anchor:graduation_rate_6_year",
+        "anchor:in_state_tuition",
+        "anchor:out_of_state_tuition",
+        "anchor:total_coa_in_state",
+        "anchor:total_coa_out_of_state",
+        "anchor:is_test_optional",
+        "anchor:test_policy_details",
+        "anchor:ed_applications",
+        "anchor:ed_admits",
+        "anchor:ed_acceptance_rate",
+        "anchor:ea_applications",
+        "anchor:ea_admits",
+        "anchor:ea_acceptance_rate",
+        "anchor:waitlist_offered",
+        "anchor:waitlist_accepted",
+        "anchor:waitlist_admitted",
+        "anchor:waitlist_admit_rate",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "overall_acceptance_rate",
+        "transfer_acceptance_rate",
+        "applications_total",
+        "admits_total",
+        "enrolled_total",
+        "yield_rate",
+        "sat_composite_middle_50",
+        "sat_reading_middle_50",
+        "sat_math_middle_50",
+        "act_composite_middle_50",
+        "test_submission_rate",
+        "race_white",
+        "race_black",
+        "race_hispanic",
+        "race_asian",
+        "race_native_american",
+        "race_pacific_islander",
+        "race_two_or_more",
+        "race_unknown",
+        "race_international",
+        "international_percentage",
+        "freshman_retention_rate",
+        "graduation_rate_4_year",
+        "graduation_rate_6_year",
+        "in_state_tuition",
+        "total_coa_in_state",
+        "total_coa_out_of_state",
+        "is_test_optional",
+        "test_policy_details",
+        "waitlist_offered",
+        "waitlist_accepted",
+        "waitlist_admitted",
+        "waitlist_admit_rate"
+      ],
+      "notes": [
+        "CDS located (2025-2026 (latest available; 2027-2028 edition not yet posted as of July 2026 \u2014 CDS index at https://oir.yale.edu/common-data-set lists 2025-2026 as most recent))",
+        "Direct URL to the latest available CDS (2025-2026), used as the CDS source since target 2027-2028 is not yet published.",
+        "Yale's official Common Data Set 2025-26 (Fall 2025 entering class). Source for all admissions/enrollment/test/GPA/race/retention/graduation/cost fields. NOTE: this is the 2025-26 CDS, not the requested 2027-28 \u2014 the 2027-28 CDS does not yet exist, so as_of_cycle recorded as 2025-2026.",
+        "C1: admitted (men 1189 + women 1198 = 2387) / applied (men 22819 + women 27445 = 50264) = 4.7%. 'Total first-time, first-year men who were admitted 1189 ... women who were admitted 1198'; 'men who applied 22819 ... women who applied 27445'",
+        "C1 residency table left entirely blank: 'If available, please provide residency breakdowns for total applicants, admits, and enrolled students: Fall 2025 ... IN-STATE OUT-OF-STATE INTERNATIONAL UNKNOWN TOTAL' \u2014 no values provided.",
+        "C1 residency breakdown table (IN-STATE/OUT-OF-STATE/INTERNATIONAL/UNKNOWN) provided by Yale is blank \u2014 no out-of-state admit figures reported."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=130794&fields=latest.earnings.10_yrs_after_entry.median",
+      "roles": [
+        "anchor:median_earnings_10yr"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "median_earnings_10yr"
+      ],
+      "notes": [
+        "College Scorecard API (id 130794 Yale University): '\"latest.earnings.10_yrs_after_entry.median\": 100533' \u2014 median earnings of former students 10 years after entry = $100,533."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/2024/https://www.niche.com/colleges/yale-university/reviews/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "REJECTED \u2014 WebFetch blocked ('unable to fetch from web.archive.org'); could not recover a verbatim Niche page via archive."
+      ]
+    },
+    {
+      "url": "https://accreditation.yale.edu/student-outcomes",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Only contains links to other reporting resources; no actual employment/default-rate figures to quote."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/",
+      "roles": [
+        "resolve:admissions",
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "official admissions page",
+        "Fetched; confirmed official Yale College Undergraduate Admissions site (title 'Undergraduate Admissions'). Used as official_admissions_url."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/affordability",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Need-blind for all; 'award every dollar... on the basis of demonstrated financial need'; 'No Tuition \u2014 For families with incomes below $200,000'; '$75,220 Average annual need-based scholarship' (undated); '88% graduates with no student loan debt'; '80% US families qualify for grants covering at least tuition.'"
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/application-deadlines",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search for deadlines; not fetched \u2014 aid deadlines taken from finaid.yale.edu/apply/prospective."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/apply",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Platforms (Common App, Coalition on SCOIR, QuestBridge; one application per cycle), required components, test-required statement, optional supplementary materials (Visual Art/Dance/Music/Film/STEM research), and the three decision plans."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/bulldogs-blogs/isabella/2021/11/28/major-you-apply-not-binding-thank-god",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Student blog surfaced in search corroborating that the indicated major is non-binding; not used as an authoritative source (relied on official admissions page instead).",
+        "HTTP 404 \u2014 could not fetch; did not rely on its body. Non-binding-major point corroborated via CollegeVine instead."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/deadlines-decisions",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Rejected \u2014 returned HTTP 404. Superseded by /timelines."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/essay-topics",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale-specific short-answer questions (academic areas + 200-word), Short Takes (Common App/Coalition, ~35 words each), and the 400-word essay prompts."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/extracurriculars",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Yale page; not community opinion. Not used."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/faq/applying-yale-college",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Quoted 'All undergraduates enroll in one college with access to the same programs and majors' \u2014 basis for unified single-college admission model.",
+        "Yale admits to the college, not by major; confirms 'All undergraduates enroll in one college with access to the same programs and majors' theme (exact quote captured from residential-colleges page)."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/majors-and-academic-programs",
+      "roles": [
+        "resolve",
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Admissions-side majors overview; the official catalog page preferred as authoritative source.",
+        "Yale states '80+ majors'; confirms breadth. No per-major degree types here."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/requirements",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Recommendation letters (2 teachers + counselor), School Report + transcript + Mid-Year Report, self-report ACT/SAT, fee-waiver policy, accepted platforms."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/residential-colleges",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verbatim: 'Before arriving, every students is randomly assigned to one of fourteen residential colleges...' \u2014 basis for empty college_ranking_tactics; also 'access to the same programs and majors'."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/short-answer-questions",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 official prompt page unreachable; prompt wording taken from CollegeEssayAdvisors and cross-checked via search summary."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/single-choice-early-action",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not fetched \u2014 SCEA binding/deadline details already obtained from /timelines and /apply."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/sites/default/files/classprofile2028web.pdf",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale class profile for Class of 2028 (Fall 2024) \u2014 wrong cycle and press-style figure, not the requested CDS admit rate. Not used.",
+        "Yale class-of-2028 profile (Fall 2024) surfaced in search; wrong cycle and marketing profile, not the CDS; not used.",
+        "Official Class of 2028 profile PDF surfaced in search but not fetched/parsed directly this run."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/standardized-testing",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Test-required policy verbatim: 'All first-year and transfer applicants must include scores from the ACT or SAT'; AP/IB optional; superscoring; no cycle year stated."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/timelines",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Deadline month/day (Nov 1 SCEA, Nov 1 QuestBridge, Jan 2 RD), binding status (SCEA non-binding/restrictive, QuestBridge binding, RD non-binding), decision-release windows, May 1 reply. NO year printed."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/transfer-details",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Rejected: Requirements page covers application materials (recs, transcripts, testing), not credit limits/subjects; linked to transfer-eligibility which held the actual credit text."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/transfer-eligibility",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verbatim transfer-applicant rules: up to 18 credits transferable / min 18 at Yale, transferable vs non-transferable subject lists, A/B in three-quarters / no lower than C grade requirement."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/travel-arrangements",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Getting to Yale \u2014 Union Station, Yale Shuttle, airports (HVN, BDL, NYC-area) for transportation_impact."
+      ]
+    },
+    {
+      "url": "https://admissions.yale.edu/what-yale-looks-for",
+      "roles": [
+        "section:strategic_profile",
+        "section:student_insights",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Source for admissions_philosophy: transcript most important, holistic review, 'make the people around them better,' community contribution.",
+        "Official Yale page, not a community/crowdsourced source; consulted for context only, not reported (task is community OPINION).",
+        "Surfaced in search; not fetched \u2014 holistic-review framing already covered by fetched community/consulting sources."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/yale-acceptance-rate/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog \u2014 rejected."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/yale-application-deadline/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party admissions blog; not used."
+      ]
+    },
+    {
+      "url": "https://advising.yalecollege.yale.edu/acceleration-and-acceleration-credits",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Rejected as a threshold source: only states rules are 'complex, and exceptions are not allowed' and links out to the catalog Acceleration Policies and Table of Acceleration Credit; no verbatim scores."
+      ]
+    },
+    {
+      "url": "https://advising.yalecollege.yale.edu/choosing-major",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search on declaring/choosing majors; background only, not fetched for a specific value."
+      ]
+    },
+    {
+      "url": "https://advising.yalecollege.yale.edu/courses-and-majors/majors-and-concentrations-require-application-review-or-audition",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Authoritative list of majors needing application/review/audition (Architecture, Cognitive Science, Global Affairs, Special Divisional Major, Art w/ ART 111/114 + sophomore review, English Journalism/Writing tracks, Theater THST 210 audition w/ THST 110/111). Explicitly no fixed-number caps.",
+        "Application-required majors (Architecture, Cognitive Science, Global Affairs, Special Divisional Major, plus Art/English/Theater reviews) apply AFTER enrollment, not at admission. Basis for alternate_major_strategy."
+      ]
+    },
+    {
+      "url": "https://advising.yalecollege.yale.edu/declaring-major",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not fetched \u2014 declaration-timeline point already covered by CollegeVine and residential-colleges page."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=130794 (DEMO_KEY)",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Initial attempts with DEMO_KEY returned OVER_RATE_LIMIT; abandoned in favor of the site key + Referer header."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=130794&fields=id,school.name,latest.repayment.3_yr_default_rate,latest.repayment.2_yr_default_rate,latest.repayment.cohort_year&api_key=DEMO_KEY",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard API (authoritative) - returned OVER_RATE_LIMIT on DEMO_KEY across multiple retries; no data obtained."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=130794&fields=latest.earnings.10_yrs_after_entry.median,...",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official College Scorecard API (with the site's referer-restricted key). Returned median_earnings_10yr=100533, avg net price 23777, completion rate 0.9603. Sole source for median_earnings_10yr."
+      ]
+    },
+    {
+      "url": "https://apstudents.collegeboard.org/getting-credit-placement/search-policies/college/4123",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party (College Board), not an official Yale page; not fetched/quoted per instruction to use official pages only."
+      ]
+    },
+    {
+      "url": "https://bulletin.yale.edu/bulletins/drama/financial-aid-policy",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Graduate/Drama school aid policy, not undergraduate Yale College; out of scope; rejected."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/div/educational-expenses-financial-aid/tuition-fees/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted fetch for an additional cross-check; request timed out (60s), no data obtained."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/div/standards-requirements/transfer-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search; this is the Divinity School transfer-credit page, not Yale College undergraduate \u2014 out of scope, not used."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/nursing/ysn-student-policies-guidelines/transfer-credit-policy/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Nursing School policy, not undergraduate Yale College \u2014 out of scope, not used."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/ycps/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed catalog edition is 'Yale College Programs of Study 2026-2027' \u2014 used to pin as_of_cycle."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/ycps/academic-regulations/acceleration-policies/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed acceleration framework (36 credits across fewer terms; use of acceleration credits) but defers definitions/thresholds to the Table of Acceleration Credit; no unique quotes on scores here."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/ycps/academic-regulations/credit-from-other-universities/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verbatim continuing-student outside-credit restrictions: max 2 outside credits, cannot reduce terms of enrollment, A/B expected/C acceptable, accreditation and 3-credit-hour minimums, no internships/independent study, nine-credit combined cap."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/ycps/academic-regulations/transfer-students/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verbatim articulation process: preliminary evaluation at admission, final determination on receipt of official transcripts; enrollment minimums."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/ycps/majors-in-yale-college/",
+      "roles": [
+        "resolve:catalog",
+        "resolve",
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "majors/catalog page",
+        "Yale College Programs of Study \u2014 'Majors in Yale College' catalog page. Used as majors_catalog_url.",
+        "Official YCPS catalog majors list; source of the full major roster and the exact per-major degree designations (B.A. / B.S. / 'B.A. or B.S.')."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/ycps/programs_certificates/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Full certificate list (Advanced Language, Interdisciplinary, Skills-Based) copied into minors_certificates; basis for 'Yale College offers certificates, not minors.'"
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/ycps/subjects-of-instruction/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Alternate catalog page (subjects of instruction); majors-in-yale-college page chosen as the canonical majors list."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/ycps/subjects-of-instruction/global-affairs/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Current catalog for Global Affairs: no separate application, declare via completing eight introductory courses + declaration form, no cap or GPA stated."
+      ]
+    },
+    {
+      "url": "https://catalog.yale.edu/ycps/table-of-acceleration-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY source for AP/IB/A-level acceleration-credit thresholds, 2-credit-per-subject cap, prior-to-matriculation rule, combining-testing-and-coursework restriction with ENGL 1020 example, and forfeiture rule. Verbatim quotes taken."
+      ]
+    },
+    {
+      "url": "https://cdn.ocs.yale.edu/wp-content/uploads/sites/77/2025/01/Final-Class-of-2023-Report-6-months.pdf",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Class of 2023 report - cross-checked prior-year grad-school rate (19.0%) and employer list for consistency with the Class of 2024 figures."
+      ]
+    },
+    {
+      "url": "https://cdn.ocs.yale.edu/wp-content/uploads/sites/77/2025/02/First-Destination-Report_-Class-of-2024-.pdf",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY. Yale OCS First Destination Report: Class of 2024. Source for grad_school_rate (19.2%) and the verbatim top-employers list. Extracted locally with pypdf; WebFetch could not parse the binary PDF."
+      ]
+    },
+    {
+      "url": "https://college.yale.edu/residential-colleges",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Residential college system detail (own dining hall/library/traditions; defining feature of undergrad life) for social_environment."
+      ]
+    },
+    {
+      "url": "https://collegedunia.com/usa/university/1699-yale-university-new-haven/ranking",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator ranking page; not used."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Scorecard homepage HTML; extracted the Nuxt runtime config apiUrl (https://api.data.gov/ed/collegescorecard/v1/) and apiKey (B2QoBnDDsR5fJfwPeaZuie95ecS3APrL707HNRvr) used to query the official data API."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?130794-Yale-University",
+      "roles": [
+        "resolve:scorecard",
+        "resolve",
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard located",
+        "College Scorecard school page for UnitID 130794. Reported as scorecard_url; page body is JS-rendered so text not quotable, but UnitID-in-URL corroborates identity confirmed via IPEDS/Navigator.",
+        "Requested Scorecard school page; a client-side Nuxt JS app \u2014 WebFetch returned only nav/header, no data. Used to locate the backend API instead."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?130794-Yale-University=",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Authoritative source attempted but page is a JS-rendered SPA; WebFetch returned only nav/header, no data."
+      ]
+    },
+    {
+      "url": "https://cwur.org/2025/yale-university.php",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "CWUR ranking, not US News; not used."
+      ]
+    },
+    {
+      "url": "https://educationdata.urban.org/api/v1/college-university/scorecard/earnings/{2020,2021,2022,2023}/?unitid=130794",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Urban Institute mirror probed for earnings; 2020-2022 returned count:0 (empty), 2023 returned error 524. Not used \u2014 got the figure from the official Scorecard API instead."
+      ]
+    },
+    {
+      "url": "https://empowerly.com/applications/acceptance-rates/2028-yale-university-acceptance-rate-3-7/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party (Empowerly) citing Class of 2028 = 3.7%. Not canonical, wrong cycle, and a press-announced figure not the CDS. Rejected."
+      ]
+    },
+    {
+      "url": "https://empowerly.com/applications/how-to-get-into-yale-university/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not fetched \u2014 general 'how to get in' guide, not needed for structure-specific tactics."
+      ]
+    },
+    {
+      "url": "https://en-academic.com/dic.nsf/enwiki/3951808",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wikipedia-derived list of Yale orgs surfaced in search; encyclopedic, not crowdsourced opinion. Not used for insights."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/List_of_colleges_and_universities_in_the_United_States_by_endowment",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Corroborated Yale endowment ranking (2nd, after Harvard, ahead of Princeton) for market_position."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Residential_colleges_of_Yale_University",
+      "roles": [
+        "section:strategic_profile",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Confirmed 14 residential colleges as the defining feature of undergraduate life.",
+        "Corroborated random pre-matriculation assignment with legacy exception; informed the college_ranking_tactics_note. Not quoted verbatim in data (Yale official page used as primary)."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Yale_School_of_Engineering_and_Applied_Science",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search for SEAS background; not directly fetched, not relied on for any reported value."
+      ]
+    },
+    {
+      "url": "https://engineering.yale.edu/academic-study/undergraduate/disciplines-and-degrees",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "SEAS undergrad degree page; confirmed engineering degree types (Mechanical/Biomedical/Chemical/Electrical B.S., CS B.S./B.A.) and that engineering is a set of Yale College degrees."
+      ]
+    },
+    {
+      "url": "https://features.yaledailynews.com/blog/2022/04/08/is-yale-seeing-the-decline-of-the-residential-college/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Opinion feature on residential colleges; not used to keep campus_dynamics attributed to official sources."
+      ]
+    },
+    {
+      "url": "https://finaid.yale.edu/",
+      "roles": [
+        "resolve:financial_aid",
+        "resolve",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "financial-aid page",
+        "Yale Undergraduate Financial Aid hub (surfaced and used as financial_aid_url).",
+        "Aid form = 'need-based Yale Scholarship grants'; Yale was 'America's first private research university to establish need-blind admissions and need-based financial aid.' No stats on this page."
+      ]
+    },
+    {
+      "url": "https://finaid.yale.edu/affordability",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Avg scholarship 'Almost $73,000' in 2024-25; '55%' receive need-based aid; no-loan policy; $2,000 Start-Up Grant; hospitalization coverage; $100,000 zero-parent-share threshold; '100% of demonstrated need.'"
+      ]
+    },
+    {
+      "url": "https://finaid.yale.edu/apply/prospective",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Application requirements/deadlines: CSS Profile code 3987, FAFSA 001426; 2026-27 cycle deadlines (EA/QuestBridge Nov 1 2025, Intl EA Dec 1 2025, RD Feb 15 2026, Transfer Apr 1 2026)."
+      ]
+    },
+    {
+      "url": "https://finaid.yale.edu/costs-affordability/apply-aid/first-year-applicants",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted direct fetch for first-year aid deadlines \u2014 returned HTTP 404. Deadlines obtained instead from finaid.yale.edu/apply/prospective."
+      ]
+    },
+    {
+      "url": "https://finaid.yale.edu/faq",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verbatim: 'No, Yale College does not offer merit nor athletic scholarships.' CSS Profile via IDOC; offers not reduced for late submission; aid regardless of citizenship."
+      ]
+    },
+    {
+      "url": "https://finaid.yale.edu/typesofaid",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Named aid types: Yale Scholarship (need only), entitlement grants (Pell/SEOG/state/Yale Club) reduce Yale Scholarship dollar-for-dollar, term-time jobs/Federal Work-Study; outside merit scholarships 'not offered by Yale' may reduce/replace Student Share; no loans in package."
+      ]
+    },
+    {
+      "url": "https://finlit.yale.edu/getting/funding-opportunities",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not fetched \u2014 start-up grant detail obtained from the start-grant page snippet."
+      ]
+    },
+    {
+      "url": "https://finlit.yale.edu/getting/start-grant",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via search snippet: Start-Up Grant/Supplemental Allowance = $2,000 for zero-parent-share first-years (parents under $75,000 with typical assets); covers winter clothing, dorm necessities, course supplies. Threshold differs from affordability page."
+      ]
+    },
+    {
+      "url": "https://forhumanity.yale.edu/scholarships-fellowships/yale-college-financial-aid",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "$270.5M/year need-based aid; average yearly scholarship $72,866; 'fifty-three percent of students receive need-based assistance'; $15K average debt at graduation. Figures dated 2025."
+      ]
+    },
+    {
+      "url": "https://investments.yale.edu/the-endowment",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale Investments endowment page surfaced in search; market_position sourced from funding-yale overview and Wikipedia instead."
+      ]
+    },
+    {
+      "url": "https://jackson.yale.edu/academics/the-global-affairs-major/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search on Global Affairs; not fetched \u2014 catalog + YDN were sufficient and more current."
+      ]
+    },
+    {
+      "url": "https://myliaison.com/colleges/yale-university-ct/",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party profile page in search results; not relevant/not fetched."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/collegenavigator/?id=130794",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "NCES College Navigator id=130794 \u2014 quoted 'Yale University', 'New Haven, Connecticut 06520', '4-year, Private not-for-profit'. Confirms name+city+state+control on the UnitID."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/datacenter/Default.aspx?profileunitid=130794",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS Data Center profile for 130794; not fetched in detail \u2014 identity already confirmed."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/dfr/2023/ReportHTML.aspx?unitId=130794",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "NCES IPEDS Data Feedback Report for unitId=130794 \u2014 header reads 'Yale University', 'New Haven, CT'; FASB/private context. Confirms UnitID maps to Yale."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/reported-data/130794",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS reported-data landing for 130794; corroborated UnitID but Navigator/DFR already gave quotable text."
+      ]
+    },
+    {
+      "url": "https://nextadmit.com/blog/yale-act-scores/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant blog; non-canonical. Not used."
+      ]
+    },
+    {
+      "url": "https://nextgenadmit.com/yale-admission-statistics/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant blog; non-canonical. Not used."
+      ]
+    },
+    {
+      "url": "https://ocs.yale.edu/4-year-out/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale OCS 'Four-Year Look' surfaced in search results; it is a 4-years-out report, not the requested 2-year horizon, so not used for employment_rate_2yr."
+      ]
+    },
+    {
+      "url": "https://ocs.yale.edu/outcomes/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale College First Destinations landing page. Provided Class of 2025 headline '95.3% employed or in graduate school within six months of graduation', 90.7% knowledge rate, top-5 industries. Used for context/6-month employment note; no employer list or grad-school % breakout on the page."
+      ]
+    },
+    {
+      "url": "https://oir.yale.edu/common-data-set",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale Office of Institutional Research CDS index. Confirmed most recent edition is 2025-2026; NO 2026-2027 or 2027-2028 posted. Provided direct PDF list.",
+        "Yale OIR CDS index \u2014 confirmed latest available edition is CDS 2025-2026; NO 2026-2027 or 2027-2028 edition exists. Established that the Fall 2027 target cannot be sourced.",
+        "Official Yale OIR CDS index. Confirmed 2025-2026 is the most recent edition; NO 2026-2027 or 2027-2028 exists \u2192 target Fall 2027 cycle unavailable.",
+        "Canonical Yale OIR CDS index. Confirmed most recent published edition is CDS 2025-2026; NO 2027-2028 and NO 2026-2027 CDS exist. This establishes the target Fall 2027 value cannot be sourced.",
+        "No 2027-2028 (or 2026-2027) Common Data Set exists. The OIR index lists editions only through \"CDS 2025-2026\" as the most recent. For the record, the most recent figure I could verify verbatim is from the 2024-2025 CDS section C9: \"ACT Composite ... 25th Percentile ... 33 ... 50th Percentile ... 34 ... 75th Percentile ... 35\" \u2014 this is the 2024-2025 cycle, NOT the requested Fall 2027 cycle.",
+        "Yale OIR canonical CDS index. Confirmed most recent edition is 2025-2026 (yale_cds_2025-26_md_20260616.pdf); NO 2027-2028 CDS exists. Editions run 2010-11 through 2025-26."
+      ]
+    },
+    {
+      "url": "https://oir.yale.edu/data-browser/student-data/admissions/yale-college-admissions-summary-w033",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale OIR admissions summary data browser \u2014 potential canonical alt, but CDS is the specified canonical source and already provided the figure; not fetched further."
+      ]
+    },
+    {
+      "url": "https://oir.yale.edu/data-browser/student-data/admissions/yale-college-first-year-student-sat-scores-w032",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale OIR SAT data-browser landing page; displays only PDF/CSV download links, no inline figures \u2014 nothing quotable."
+      ]
+    },
+    {
+      "url": "https://oir.yale.edu/data-browser/student-data/degrees/yale-college-graduation-rates-w041",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale OIR W041 graduation-rates data browser; canonical-adjacent but the CDS is the requested/primary artifact, so not fetched."
+      ]
+    },
+    {
+      "url": "https://oir.yale.edu/sites/default/files/cds_yale_2023-24_vf_20240320.pdf",
+      "roles": [
+        "verify:act_composite_middle_50",
+        "section:application_process",
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "2023-2024 CDS; older cycle, not the Fall 2027 target.",
+        "Prior-year (2023-24) CDS surfaced in search; not used \u2014 2024-25 is more recent.",
+        "Yale Common Data Set 2023-24 surfaced in search; the CDS does not contain career outcomes or loan default rate, so not fetched."
+      ]
+    },
+    {
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2024-25_rmd_2025-03-05.pdf",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Earlier-dated variant of the same 2024-2025 CDS; not used since the 20250612 revised version was already extracted and it is not the target cycle anyway."
+      ]
+    },
+    {
+      "url": "https://oir.yale.edu/sites/default/files/yale_cds_2024-25_rmd_20250612.pdf",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Prior-cycle CDS (Fall 2024). Fetched but the compressed PDF stream would not parse via WebFetch; superseded by the newer 2025-2026 edition, so not used.",
+        "Prior-year CDS (Fall 2024). Superseded by 2025-2026; not used. WebFetch could not decode compressed PDF anyway.",
+        "Fetched and text-extracted the 2024-2025 CDS PDF. Section C9 verbatim: ACT Composite 25th=33, 50th=34, 75th=35. Documented for the record as the most recent verifiable value, but it is the 2024-2025 cycle, NOT the requested Fall 2027 \u2014 so not reported as the answer.",
+        "Prior-year 2024-2025 CDS (Fall 2023 cohort). Superseded by the 2025-2026 edition; not fetched in detail.",
+        "Prior-year (2024-25) CDS. WebFetch could not parse the binary PDF; superseded by the newer 2025-26 edition, so not used for the final value. (2024-25 reported the Fall 2018 cohort six-year rate = 95.7%.)",
+        "Official Yale Common Data Set 2024-25. Downloaded and text-extracted with pypdf. Source of all C7 holistic factor ratings (pages 11-12) and C8 test policy. Title confirms 'Common Data Set 2024-25'."
+      ]
+    },
+    {
+      "url": "https://old.reddit.com/r/yale/search?q=clubs+activities",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "REJECTED \u2014 WebFetch hard-blocked on old.reddit.com. Reddit excluded from synthesis."
+      ]
+    },
+    {
+      "url": "https://provost.yale.edu/faqs-university-endowment-tax-and-federal-funding",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Source context for ~$900M federal research funding FY2024 used in research_impact/takeaways."
+      ]
+    },
+    {
+      "url": "https://provost.yale.edu/news/yale-affirms-holistic-admissions",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search on holistic admissions; content covered by 'What Yale Looks For', not separately needed."
+      ]
+    },
+    {
+      "url": "https://recognition.ibo.org/en-US/university-statements/?university=Yale+University",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party (IBO) statement, not a Yale-owned page; not used."
+      ]
+    },
+    {
+      "url": "https://research.com/best-colleges/yale-university/graduation-rate-and-career",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; not fetched - secondary aggregator, primary OCS report preferred."
+      ]
+    },
+    {
+      "url": "https://rushyale.com/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale Singing Group Council site surfaced in search; not fetched/quoted. Not used."
+      ]
+    },
+    {
+      "url": "https://scholarshiproar.com/yale-university-scholarships/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party 'Yale scholarships 2027' listicle; not credible/official; rejected."
+      ]
+    },
+    {
+      "url": "https://som.yale.edu/sites/default/files/2025-01/Employment%20Data%202024-25.pdf",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale School of Management MBA employment report surfaced in search; graduate/professional-school data, not Yale College undergraduate outcomes - out of scope."
+      ]
+    },
+    {
+      "url": "https://student-accounts.yale.edu/tuition-and-fees",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Independent cross-check. Yale Student Accounts page shows 'Tuition $72,500' under the '2026\u20132027 Tuition and Fees' section \u2014 matches the CDS G1 figure exactly."
+      ]
+    },
+    {
+      "url": "https://studyabroad.yale.edu/get-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Study-abroad credit mechanics; adjacent but not AP/IB/transfer-articulation core \u2014 not quoted."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/does-yale-admit-by-major-or-not/413470",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Community: 'They admit students to Yale College'; T26E4 'just stating one's degree won't give him the edge...only because it supports the applicants other passions.' Basis for tactic 1."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/underenrolled-majors/1938154",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Community warnings that gaming an under-enrolled major is detectable ('pretty obvious the candidate had only superficial knowledge'; 'there isn't one [way to game it]'). Basis for tactics 1, 4, 5."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/yale-and-brown/3648064",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "College Confidential forum, fetched verbatim \u2014 'extraordinary accomplishments inside and outside the classroom... academics alone will not be enough'; 'strong and consistent academic record.' Used for what_it_takes."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/yale-supplemental-essay/610771",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "College Confidential forum, fetched verbatim \u2014 real user essay advice with usernames (Mythbuster2000 'make yourself unique'; marcjacobs_lover on distinctiveness and non-intellect essays). Core community essay_tips source."
+      ]
+    },
+    {
+      "url": "https://toptieradmissions.com/yale-acceptance-rate/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Corroborated Class of 2028 acceptance-rate figures used in selectivity takeaway and executive_summary."
+      ]
+    },
+    {
+      "url": "https://www.aau.edu/yale-offer-free-tuition-families-incomes-below-200000",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; describes the below-$200,000 free-tuition / below-$100,000 zero-cost policy and 2026-27 effective date. Not fetched directly; policy verified from Yale's own admissions/finaid pages instead."
+      ]
+    },
+    {
+      "url": "https://www.albert.io/blog/yale-advanced-placement-ap-credits/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not authoritative, not used."
+      ]
+    },
+    {
+      "url": "https://www.collegeessayadvisors.com/supplemental-essay/yale-university-supplemental-essay-prompt-guide/",
+      "roles": [
+        "section:student_insights",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant blog \u2014 via search: 'if your response could be copied and pasted into another school's application, it is not specific enough'; concise-under-200-words advice. Used for essay_tips/red_flags, labeled consultant.",
+        "Exact 'up to three academic areas' prompt + 200-word follow-up wording; 'be honest...you're set!' Basis for tactic 3 and the application mechanism."
+      ]
+    },
+    {
+      "url": "https://www.collegeessayguy.com/blog/yale-supplemental-essay",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant blog (not community), fetched verbatim \u2014 'get really specific about the school + you,' list of Why-Yale mistakes to avoid, short-answer personality tip. Used for essay_tips + red_flags, labeled as consultant."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/yale-university/academic-life/graduation-and-retention/",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party stats aggregator surfaced in search; not fetched."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/yale-university/paying-for-college/student-loan-debt/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "REJECTED for loan_default_rate: internally inconsistent and not pinned to a cohort year (search snippet said 1.1% 3-yr for a 2017 cohort, 13 of 1,146; fetched page said 1.0% 2-yr, 1426 borrowers, no year). Secondary aggregator, fails the pin-to-year rule."
+      ]
+    },
+    {
+      "url": "https://www.collegetransfer.net/YaleUniversity/TransferProfile/tabid/145/Default.aspx",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator, not official Yale \u2014 not used."
+      ]
+    },
+    {
+      "url": "https://www.collegetransitions.com/blog/yale-inside-the-numbers/",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog \u2014 rejected.",
+        "Third-party blog. Not canonical; not used.",
+        "Third-party blog in search results; not canonical, not used.",
+        "Third-party blog surfaced in search; not a canonical primary source, not fetched.",
+        "Third-party blog surfaced in search; not fetched \u2014 non-canonical secondary source, superseded by Yale's own CDS and Student Accounts pages."
+      ]
+    },
+    {
+      "url": "https://www.collegetuitioncompare.com/edu/130794/yale-university/financial-aid/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not used."
+      ]
+    },
+    {
+      "url": "https://www.collegetuitioncompare.com/edu/130794/yale-university/tuition/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator surfaced in search; not fetched \u2014 non-canonical and includes estimated/projected figures, which the task forbids."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/122961/how-do-i-change-my-major-to-yale-cs",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verbatim: 'you are admitted as an overall candidate without regard to your listed intended major' and 'Stating your intended major generally doesn't bind or significantly constrain you.' Basis for tactic 2 + alternate_major_strategy."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/142442/what-s-the-student-vibe-like-at-yale",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CollegeVine community Q&A, fetched verbatim \u2014 collaborative/supportive culture, intellectual curiosity, extensive clubs. Used for culture + what_it_takes."
+      ]
+    },
+    {
+      "url": "https://www.commondatasets.fyi/yale",
+      "roles": [
+        "verify:act_composite_middle_50",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS mirror; non-canonical and not the target cycle. Not used.",
+        "Third-party CDS aggregator; not used, went to primary OIR PDF instead."
+      ]
+    },
+    {
+      "url": "https://www.cosmic.nyc/blog/yale-admissions-2024-2025",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party consulting blog \u2014 rejected as non-authoritative.",
+        "Third-party consulting blog referencing 2024-2025 CDS. Not canonical; not used.",
+        "Third-party consultant blog; non-canonical aggregator and wrong cycle. Not opened/used.",
+        "Third-party consultant blog appearing in search; not canonical, not used.",
+        "Third-party consultant blog citing 95.7% (2024-25 CDS); secondary source, not used."
+      ]
+    },
+    {
+      "url": "https://www.crimsoneducation.org/us/blog/yale-supplemental-essays",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 \u2014 could not fetch page body; not relied upon. Prompt wording sourced from CollegeEssayAdvisors instead."
+      ]
+    },
+    {
+      "url": "https://www.gradgpt.com/common-data-set/yale-university",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS visualizer. Not canonical; not used.",
+        "Third-party aggregator surfaced in search; not canonical, not fetched/used.",
+        "Third-party CDS visualizer; non-canonical. Not used.",
+        "Third-party CDS aggregator in search results; not canonical, not used.",
+        "Third-party CDS visualizer; not a primary source, not fetched."
+      ]
+    },
+    {
+      "url": "https://www.ivycoach.com/the-ivy-coach-blog/ivy-league/yale-admissions-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog (Ivy Coach). Not canonical; not used.",
+        "Class of 2028 stats: 3.73% overall accept on 57,465 apps, ~2.75% RD, ~9.02% EA."
+      ]
+    },
+    {
+      "url": "https://www.ivyscholars.com/does-your-major-affect-admission/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "'picking a less selective major for admissions purposes will generally be recognized as a disingenuous tactic'; alignment advice quote. Basis for tactics 4 and alternate_major_strategy alignment."
+      ]
+    },
+    {
+      "url": "https://www.ivywise.com/blog/applying-to-yale-heres-what-you-need-to-know/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Summary of Yale CDS factor weightings (six factors 'very important', GPA only 'considered') used in admissions_philosophy and a takeaway."
+      ]
+    },
+    {
+      "url": "https://www.ivywise.com/blog/yale-supplemental-essays/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant blog surfaced in search; not fetched, duplicative of College Essay Guy. Not used."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/yale-university/",
+      "roles": [
+        "section:strategic_profile",
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "General campus/social overview aggregator; not needed \u2014 used primary Yale pages instead.",
+        "Niche overview surfaced in search; no distinct quotable review content beyond subpages already used."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/yale-university/academics/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Niche academics page surfaced in search; not separately quoted."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/yale-university/campus-life/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Niche campus life \u2014 direct WebFetch 403; via search: 8/8/8 rule, 500 student groups, 90 performance groups, 60 cultural associations, party/drinking + STEM-teaching concerns. Search-surfaced."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/yale-university/reviews/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Niche student reviews \u2014 direct WebFetch returned HTTP 403; review content ('passionate, intellectually and ideologically diverse,' 'engaged, passionate, and knows how to have fun,' drinking-culture concern) surfaced via WebSearch. Used but flagged search-surfaced, not page-verified."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/yale-university/students/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Niche student body page \u2014 direct WebFetch 403; via search: 'friendly and inclusive,' singing/dance/theater/political/service groups. Search-surfaced."
+      ]
+    },
+    {
+      "url": "https://www.prepscholar.com/act/s/colleges/Yale-act-scores-GPA",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Test-prep aggregator; non-canonical and undated relative to Fall 2027. Not used."
+      ]
+    },
+    {
+      "url": "https://www.prepscholar.com/sat/s/colleges/Yale-tuition-financial-aid",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; not used."
+      ]
+    },
+    {
+      "url": "https://www.princetonreview.com/college/yale-university-1023891",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Princeton Review student-survey quotes, fetched verbatim \u2014 'passion' as the common trait, 'committed to learning and to each other,' '400 student groups,' 'no pressure to drink.' Used across sections."
+      ]
+    },
+    {
+      "url": "https://www.questbridge.org/partners/college-partners/yale-university/financial-aid",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Partner site; QuestBridge deadline corroborated from Yale's own prospective page instead; not used."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/How-can-I-get-into-Yale-as-an-undergrad",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Quora surfaced in search; not fetched, unverified. Not used."
+      ]
+    },
+    {
+      "url": "https://www.reddit.com/r/ApplyingToCollege/search.json?q=Yale+accepted+extracurriculars",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "REJECTED \u2014 WebFetch hard-blocked ('Claude Code is unable to fetch from www.reddit.com'). No Reddit content obtainable."
+      ]
+    },
+    {
+      "url": "https://www.road2college.com/yale-common-data-set/",
+      "roles": [
+        "resolve",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS aggregator \u2014 rejected; not an authoritative primary source.",
+        "Third-party aggregator surfaced in search; not canonical, not fetched/used.",
+        "Third-party aggregator; non-canonical. Not used.",
+        "Third-party CDS mirror; not used, primary OIR PDF preferred."
+      ]
+    },
+    {
+      "url": "https://www.shiksha.com/studyabroad/usa/universities/yale-university/ranking",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator ranking page; not authoritative for us_news_rank; not used."
+      ]
+    },
+    {
+      "url": "https://www.unigo.com/colleges/yale-university/what-are-the-most-popular-student-activities-groups",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Unigo student reviews \u2014 direct WebFetch 403; via search: a cappella 'second family,' volunteering in New Haven, debate teams, intramurals/Tyng Cup, Yale Political Union. Search-surfaced, used for common_activities."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/rankings/national-universities",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News National Universities list page; WebFetch timed out \u2014 could not verify Yale's numeric rank."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/yale-university-1426",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Target page for the authoritative US News National Universities rank; WebFetch timed out (60s) on 3 separate attempts \u2014 could not fetch/quote, so rank left null."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/yale-university-1426/overall-rankings",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Alternate US News rankings page; WebFetch timed out \u2014 could not verify rank."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/yale-university-1426/paying",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not used \u2014 official Yale pages preferred for all figures."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/education/best-global-universities/yale-university-130794",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News Best GLOBAL Universities \u2014 a different ranking than the requested National Universities rank; not used."
+      ]
+    },
+    {
+      "url": "https://www.yale.edu/about-yale/yale-facts",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale facts page; does not carry the CDS six-year grad-rate breakdown; not fetched."
+      ]
+    },
+    {
+      "url": "https://www.yale.edu/admissions/financial-aid",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale.edu financial-aid landing; redundant to finaid.yale.edu which is the dedicated undergraduate aid site."
+      ]
+    },
+    {
+      "url": "https://www.yale.edu/funding-yale",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Endowment-funded aid/research allocations and academic priority areas for market_position and research_impact."
+      ]
+    },
+    {
+      "url": "https://www.yale.edu/funding-yale-home/overview-yales-endowment",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Endowment overview \u2014 reported ~$44B, second-largest after Harvard; funds aid/research/faculty."
+      ]
+    },
+    {
+      "url": "https://yaledailynews.com/articles/data-the-class-of-2028-in-numbers",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Student newspaper covering Class of 2028 (Fall 2024); wrong cycle and non-canonical. Not used."
+      ]
+    },
+    {
+      "url": "https://yaledailynews.com/articles/dean-says-yale-ap-policy-will-stand",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Student newspaper article, not an official policy page; not used."
+      ]
+    },
+    {
+      "url": "https://yaledailynews.com/articles/do-you-sing-a-guide-to-yales-vast-singing-group-community",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Yale student newspaper \u2014 via search: 18+ a cappella groups, Whiffenpoofs (1909). Corroborated a cappella as a top activity."
+      ]
+    },
+    {
+      "url": "https://yaledailynews.com/articles/global-affairs-major-does-away-with-application-requirement",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via search snippet: Global Affairs application eliminated for the class of 2029 / 2026-2027 academic year; historical cap of ~50-90 accepted. Basis for the time-sensitive Global Affairs note."
+      ]
+    },
+    {
+      "url": "https://yaledailynews.com/blog/2022/10/02/yales-application-based-majors-have-dwindled-in-recent-years/",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted WebFetch returned HTTP 403; could not retrieve. Superseded by the Yale advising page and catalog.",
+        "Surfaced in search; not fetched \u2014 background that application-based majors have shrunk; the advising page already provided the authoritative post-enrollment list."
+      ]
+    },
+    {
+      "url": "https://yocket.com/universities/yale-university-2657/rankings",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party ranking aggregator; not an authoritative US News page \u2014 rejected for us_news_rank."
+      ]
+    },
+    {
+      "url": "https://your.yale.edu/work-yale/campus-services/travel/ground-transportation/rail",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Rail connectivity (Metro-North to NYC, Amtrak, Shoreline East at Union Station) for transportation_impact."
+      ]
+    }
+  ]
+}

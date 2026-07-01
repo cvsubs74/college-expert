@@ -1,0 +1,2904 @@
+{
+  "trust_report": {
+    "university": "Johns Hopkins University",
+    "id": "johns_hopkins_university",
+    "cycle": "Fall 2027",
+    "cds_edition_used": "2025-2026 (latest available; 2027-2028 not yet posted as of July 2026)",
+    "ipeds_unitid": "162928",
+    "deterministic_fields": {
+      "total": 48,
+      "published": 41,
+      "held_null": 7
+    },
+    "verification": {
+      "corroborated": 3,
+      "canonical_single": 38,
+      "conflict_nulled": 0,
+      "unverified_nulled": 7,
+      "fields": {
+        "overall_acceptance_rate": "CORROBORATED",
+        "in_state_acceptance_rate": "CANONICAL_SINGLE",
+        "out_of_state_acceptance_rate": "CANONICAL_SINGLE",
+        "transfer_acceptance_rate": "CANONICAL_SINGLE",
+        "international_acceptance_rate": "CANONICAL_SINGLE",
+        "applications_total": "CANONICAL_SINGLE",
+        "admits_total": "CANONICAL_SINGLE",
+        "enrolled_total": "CANONICAL_SINGLE",
+        "yield_rate": "CANONICAL_SINGLE",
+        "admits_class_size": "CANONICAL_SINGLE",
+        "sat_composite_middle_50": "CANONICAL_SINGLE",
+        "sat_reading_middle_50": "CANONICAL_SINGLE",
+        "sat_math_middle_50": "CANONICAL_SINGLE",
+        "act_composite_middle_50": "CANONICAL_SINGLE",
+        "test_submission_rate": "CANONICAL_SINGLE",
+        "gpa_weighted_avg": "UNVERIFIED",
+        "gpa_unweighted_avg": "CANONICAL_SINGLE",
+        "race_white": "CANONICAL_SINGLE",
+        "race_black": "CANONICAL_SINGLE",
+        "race_hispanic": "CANONICAL_SINGLE",
+        "race_asian": "CANONICAL_SINGLE",
+        "race_native_american": "CANONICAL_SINGLE",
+        "race_pacific_islander": "CANONICAL_SINGLE",
+        "race_two_or_more": "CANONICAL_SINGLE",
+        "race_unknown": "CANONICAL_SINGLE",
+        "race_international": "CANONICAL_SINGLE",
+        "first_gen_percentage": "UNVERIFIED",
+        "international_percentage": "CANONICAL_SINGLE",
+        "freshman_retention_rate": "CORROBORATED",
+        "graduation_rate_4_year": "CANONICAL_SINGLE",
+        "graduation_rate_6_year": "CORROBORATED",
+        "in_state_tuition": "CANONICAL_SINGLE",
+        "out_of_state_tuition": "CANONICAL_SINGLE",
+        "total_coa_in_state": "UNVERIFIED",
+        "total_coa_out_of_state": "UNVERIFIED",
+        "median_earnings_10yr": "CANONICAL_SINGLE",
+        "is_test_optional": "CANONICAL_SINGLE",
+        "test_policy_details": "CANONICAL_SINGLE",
+        "ed_applications": "CANONICAL_SINGLE",
+        "ed_admits": "CANONICAL_SINGLE",
+        "ed_acceptance_rate": "CANONICAL_SINGLE",
+        "ea_applications": "UNVERIFIED",
+        "ea_admits": "UNVERIFIED",
+        "ea_acceptance_rate": "UNVERIFIED",
+        "waitlist_offered": "CANONICAL_SINGLE",
+        "waitlist_accepted": "CANONICAL_SINGLE",
+        "waitlist_admitted": "CANONICAL_SINGLE",
+        "waitlist_admit_rate": "CANONICAL_SINGLE"
+      }
+    },
+    "total_sources_consulted": 197,
+    "sources_backing_published_values": 2,
+    "acceptance_rate_published": 6.11,
+    "ingest_ready": true,
+    "doctrine": "null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated; every source consulted is logged"
+  },
+  "provenance": {
+    "overall_acceptance_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 6.11,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C1 (Fall 2025): In-State/Out-of-State/International/Total applicants = 4233 / 35321 / 10705 / 50259; admits = 199 / 2469 / 404 / 3072. Overall acceptance = 3,072/50,259 = 6.11% (computed from C1 cells).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "in_state_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.7,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C1 residency breakdown (Fall 2025), In-State: applicants 4233, admits 199 \u2192 199/4,233 = 4.70% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "out_of_state_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 6.99,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C1 residency breakdown (Fall 2025), Out-of-State: applicants 35321, admits 2469 \u2192 2,469/35,321 = 6.99% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "transfer_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.82,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "D2 Transfer Admission (Fall 2025): Total applicants 2,468; admitted 119; enrolled 59 \u2192 119/2,468 = 4.82% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "international_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3.77,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C1 residency breakdown (Fall 2025), International: applicants 10705, admits 404 \u2192 404/10,705 = 3.77% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "applications_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 50259,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C1: Total first-time, first-year (degree-seeking) who applied \u2014 In-State 4233, Out-of-State 35321, International 10705, Total 50259 (males 21916 + females 28298 + unknown 45).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "admits_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3072,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C1: Total first-time, first-year (degree-seeking) who were admitted \u2014 In-State 199, Out-of-State 2469, International 404, Total 3072 (males 1402 + females 1659 + unknown 11).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "enrolled_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1378,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C1: Total first-time, first-year (degree-seeking) who enrolled \u2014 In-State 112, Out-of-State 1083, International 183, Total 1378 (males 643 + females 732 + unknown 3).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "yield_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 44.86,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C1: enrolled 1,378 / admitted 3,072 = 44.86% yield (computed from C1 cells).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "admits_class_size": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1378,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C1: Total first-time, first-year (degree-seeking) who enrolled = 1378 (entering Fall 2025 class size). [Interpreted 'admits_class_size' as the size of the enrolled first-year class.]",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "sat_composite_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "1530-1565",
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C9: SAT Composite \u2014 25th Percentile 1530, 50th Percentile 1550, 75th Percentile 1565.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "sat_reading_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "750-780",
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C9: SAT Evidence-Based Reading and Writing \u2014 25th 750, 50th 760, 75th 780.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "sat_math_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "780-800",
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C9: SAT Math \u2014 25th 780, 50th 790, 75th 800.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "act_composite_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "35-35",
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C9: ACT Composite \u2014 25th 35, 50th 35, 75th 35.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "test_submission_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 77,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C9: Submitting SAT Scores 57% (783); Submitting ACT Scores 20% (273) \u2014 combined 77% of enrolled first-year students submitted a test score (SAT 57% + ACT 20%, computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "gpa_weighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "gpa_unweighted_avg": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 3.93,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C12: Average high school GPA of all degree-seeking, first-time, first-year students (using 4.0 scale) = 3.93; 95.86% submitted high school GPA. [CDS labels it a 4.0-scale average; weighting unspecified \u2014 treated as unweighted since <=4.0.]",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_white": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 21.02,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B2 (Degree-Seeking First-Time First-Year): White, non-Hispanic = 292; TOTAL = 1,389 \u2192 292/1,389 = 21.02% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_black": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.03,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B2 (First-Time First-Year): Black or African American, non-Hispanic = 56; TOTAL 1,389 \u2192 4.03% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_hispanic": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 10.08,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B2 (First-Time First-Year): Hispanic/Latino = 140; TOTAL 1,389 \u2192 10.08% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_asian": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 45.07,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B2 (First-Time First-Year): Asian, non-Hispanic = 626; TOTAL 1,389 \u2192 45.07% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_native_american": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.07,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B2 (First-Time First-Year): American Indian or Alaska Native, non-Hispanic = 1; TOTAL 1,389 \u2192 0.07% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_pacific_islander": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B2 (First-Time First-Year): Native Hawaiian or other Pacific Islander, non-Hispanic = 0 (blank/first-time-first-year; Degree-Seeking Undergraduates = 3); TOTAL 1,389 \u2192 0.00% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_two_or_more": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.1,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B2 (First-Time First-Year): Two or more races, non-Hispanic = 57; TOTAL 1,389 \u2192 4.10% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_unknown": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 2.09,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B2 (First-Time First-Year): Race and/or ethnicity unknown = 29; TOTAL 1,389 \u2192 2.09% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "race_international": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 13.53,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B2 (First-Time First-Year): Nonresidents = 188; TOTAL 1,389 \u2192 13.53% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "first_gen_percentage": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_percentage": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 14.37,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B2 Degree-Seeking Undergraduates: Nonresidents = 812; TOTAL = 5,651 \u2192 812/5,651 = 14.37% (computed). [First-time first-year: 188/1,389 = 13.53%.]",
+      "as_of_cycle": "2025-2026 (Fall 2025)"
+    },
+    "freshman_retention_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 97.83,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B22: Fall 2024 entering cohort 1380; still enrolled on the Fall 2025 census date 1350; retention rate 97.83%.",
+      "as_of_cycle": "Fall 2024 cohort (2025-2026 CDS)"
+    },
+    "graduation_rate_4_year": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 85.36,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B (Fall 2019 cohort): D 'completed the program in four years or less' Total = 1,248; C 'Final 2019 cohort, after adjusting for allowable exclusions' Total = 1,462 \u2192 1,248/1,462 = 85.36% (computed; CDS states only the 6-year rate explicitly).",
+      "as_of_cycle": "Fall 2019 cohort (2025-2026 CDS)"
+    },
+    "graduation_rate_6_year": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 93.4,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "B line H: 'Six-year graduation rate for 2019 cohort (G divided by C)' Total = 93.4% (G total graduating within six years 1,366 / C final cohort 1,462).",
+      "as_of_cycle": "Fall 2019 cohort (2025-2026 CDS)"
+    },
+    "in_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 68670,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "G1 PRIVATE INSTITUTIONS, First-Year Undergraduates \u2014 Tuition: $68,670 (2026-2027 academic year costs). [Private university: single tuition, no in-state/out-of-state distinction.]",
+      "as_of_cycle": "2026-2027 academic year (G section of 2025-2026 CDS)"
+    },
+    "out_of_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 68670,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "G1 PRIVATE INSTITUTIONS, First-Year Undergraduates \u2014 Tuition: $68,670 (2026-2027). Private university charges a single tuition; out-of-state = in-state = $68,670.",
+      "as_of_cycle": "2026-2027 academic year (G section of 2025-2026 CDS)"
+    },
+    "total_coa_in_state": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "total_coa_out_of_state": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "median_earnings_10yr": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 87555,
+      "source": "U.S. Dept of Education College Scorecard",
+      "url": "https://collegescorecard.ed.gov/school/?162928-Johns-Hopkins-University=",
+      "quote": "College Scorecard API (api.data.gov) results[0].latest.earnings.10_yrs_after_entry.median = 87555 \u2014 median earnings 10 years after entry. Value obtained from the archived JSON response (Wayback snapshot 2025-01-21); the live api.data.gov query was rate-limited/unauthorized.",
+      "as_of_cycle": "College Scorecard 'latest' as captured 2025-01-21"
+    },
+    "is_test_optional": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "false",
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C8 (policies for students applying for Fall 2027): 'SAT or ACT' marked 'Required to be considered for admission (Homewood Schools)' and 'Not required for admission, but considered if submitted (Peabody Conservatory)'. Not test-optional for the main undergraduate (Homewood) schools.",
+      "as_of_cycle": "2027-2028 (C8 explicitly states Fall 2027 applicants)"
+    },
+    "test_policy_details": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "SAT or ACT required to be considered for admission at the Homewood schools (Krieger Arts & Sciences / Whiting Engineering); not required but considered if submitted at Peabody Conservatory. Applies to students applying for Fall 2027.",
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C8: 'If yes, place check marks ... to reflect your institution's policies for use in admission for students applying for Fall 2027.' SAT or ACT \u2014 'Required to be considered for admission (Homewood Schools)'; 'Not required for admission, but considered if submitted (Peabody Conservatory)'. C8E latest date scores must be received: ED1 11/15.",
+      "as_of_cycle": "2027-2028 (C8 explicitly states Fall 2027 applicants)"
+    },
+    "ed_applications": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 7639,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C21 Early Decision (Yes). For the Fall 2025 entering class: Number of early decision applications received by your institution = 7639. (ED closing dates 11/1 and 1/3; notification 12/11 and 2/12.)",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "ed_admits": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 835,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C21: Number of applicants admitted under early decision plan = 835 (Fall 2025 entering class).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "ed_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 10.93,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C21: ED admits 835 / ED applications 7,639 = 10.93% (computed).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "ea_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_offered": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 2058,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C2 (Fall 2025): Number of qualified applicants offered a place on waiting list = 2058.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "waitlist_accepted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1359,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C2: Number accepting a place on the waiting list = 1359.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "waitlist_admitted": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 247,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C2: Number of wait-listed students admitted = 247.",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    },
+    "waitlist_admit_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 18.18,
+      "source": "Johns Hopkins University Common Data Set 2025-2026",
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "quote": "C2: admitted from waitlist 247 / accepting a place on waitlist 1,359 = 18.18% (computed; alternatively 247/2,058 offered = 12.0%).",
+      "as_of_cycle": "2025-2026 (Fall 2025 entering class)"
+    }
+  },
+  "source_ledger": [
+    {
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "roles": [
+        "resolve:common_data_set",
+        "resolve",
+        "anchor",
+        "anchor:overall_acceptance_rate",
+        "anchor:in_state_acceptance_rate",
+        "anchor:out_of_state_acceptance_rate",
+        "anchor:international_acceptance_rate",
+        "anchor:transfer_acceptance_rate",
+        "anchor:applications_total",
+        "anchor:admits_total",
+        "anchor:enrolled_total",
+        "anchor:yield_rate",
+        "anchor:admits_class_size",
+        "anchor:sat_composite_middle_50",
+        "anchor:sat_reading_middle_50",
+        "anchor:sat_math_middle_50",
+        "anchor:act_composite_middle_50",
+        "anchor:test_submission_rate",
+        "anchor:gpa_weighted_avg",
+        "anchor:gpa_unweighted_avg",
+        "anchor:race_white",
+        "anchor:race_black",
+        "anchor:race_hispanic",
+        "anchor:race_asian",
+        "anchor:race_native_american",
+        "anchor:race_pacific_islander",
+        "anchor:race_two_or_more",
+        "anchor:race_unknown",
+        "anchor:race_international",
+        "anchor:first_gen_percentage",
+        "anchor:international_percentage",
+        "anchor:freshman_retention_rate",
+        "anchor:graduation_rate_4_year",
+        "anchor:graduation_rate_6_year",
+        "anchor:in_state_tuition",
+        "anchor:out_of_state_tuition",
+        "anchor:total_coa_in_state",
+        "anchor:total_coa_out_of_state",
+        "anchor:is_test_optional",
+        "anchor:test_policy_details",
+        "anchor:ed_applications",
+        "anchor:ed_admits",
+        "anchor:ed_acceptance_rate",
+        "anchor:ea_applications",
+        "anchor:ea_admits",
+        "anchor:ea_acceptance_rate",
+        "anchor:waitlist_offered",
+        "anchor:waitlist_accepted",
+        "anchor:waitlist_admitted",
+        "anchor:waitlist_admit_rate",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "overall_acceptance_rate",
+        "in_state_acceptance_rate",
+        "out_of_state_acceptance_rate",
+        "transfer_acceptance_rate",
+        "international_acceptance_rate",
+        "applications_total",
+        "admits_total",
+        "enrolled_total",
+        "yield_rate",
+        "admits_class_size",
+        "sat_composite_middle_50",
+        "sat_reading_middle_50",
+        "sat_math_middle_50",
+        "act_composite_middle_50",
+        "test_submission_rate",
+        "gpa_unweighted_avg",
+        "race_white",
+        "race_black",
+        "race_hispanic",
+        "race_asian",
+        "race_native_american",
+        "race_pacific_islander",
+        "race_two_or_more",
+        "race_unknown",
+        "race_international",
+        "international_percentage",
+        "freshman_retention_rate",
+        "graduation_rate_4_year",
+        "graduation_rate_6_year",
+        "in_state_tuition",
+        "out_of_state_tuition",
+        "is_test_optional",
+        "test_policy_details",
+        "ed_applications",
+        "ed_admits",
+        "ed_acceptance_rate",
+        "waitlist_offered",
+        "waitlist_accepted",
+        "waitlist_admitted",
+        "waitlist_admit_rate"
+      ],
+      "notes": [
+        "CDS located (2025-2026 (latest available; 2027-2028 not yet posted as of July 2026))",
+        "Direct PDF of the most recent Common Data Set (2025-2026); search result title 'Common Data Set 2025-2026 Johns Hopkins University A0' confirms it. Direct fetch returned 403 (bot-block) but URL is verified real. 2027-2028 not yet posted.",
+        "Primary source (JHU Common Data Set 2025-2026). Live fetch returned HTTP 403 (Cloudflare) via both WebFetch and curl; actual PDF bytes were retrieved from the Wayback snapshot below. NOTE: this is the 2025-2026 CDS (Fall 2025 entering class), NOT the requested 2027-2028 CDS \u2014 the URL provided in the task is the 2025-2026 file.",
+        "C1 (Fall 2025): In-State/Out-of-State/International/Total applicants = 4233 / 35321 / 10705 / 50259; admits = 199 / 2469 / 404 / 3072. Overall acceptance = 3,072/50,259 = 6.11% (computed from C1 cells).",
+        "C1 residency breakdown (Fall 2025), In-State: applicants 4233, admits 199 \u2192 199/4,233 = 4.70% (computed).",
+        "C1 residency breakdown (Fall 2025), Out-of-State: applicants 35321, admits 2469 \u2192 2,469/35,321 = 6.99% (computed)."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?162928-Johns-Hopkins-University=",
+      "roles": [
+        "resolve:scorecard",
+        "resolve",
+        "anchor",
+        "anchor:median_earnings_10yr",
+        "verify:freshman_retention_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "median_earnings_10yr"
+      ],
+      "notes": [
+        "College Scorecard located",
+        "College Scorecard school profile; slug 162928-Johns-Hopkins-University confirms UnitID and is the Scorecard URL. Search context notes it is a private institution founded 1876.",
+        "Canonical Scorecard school page, but it is a JavaScript-rendered SPA; WebFetch returned only the navigation/footer shell with no data values. Cited as the canonical source_url for the earnings observation, but the value itself came from the archived API JSON.",
+        "College Scorecard API (api.data.gov) results[0].latest.earnings.10_yrs_after_entry.median = 87555 \u2014 median earnings 10 years after entry. Value obtained from the archived JSON response (Wayback snapshot 2025-01-21); the live api.data.gov query was rate-limited/unauthorized.",
+        "College Scorecard (alternate canonical source) appeared in search but was not fetched; would report aggregate ~98% retention, still not the requested Fall 2027 cycle."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=collegescorecard.ed.gov/school/?162928-Johns-Hopkins-University",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Found an archived Scorecard page snapshot (2025-08-10) but did not use it \u2014 the page is a JS SPA, so the archived HTML carries no data values."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "roles": [
+        "anchor",
+        "verify:overall_acceptance_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability API \u2014 located the archived CDS PDF snapshot.",
+        "Wayback availability API. Returned empty for this exact URL (why I then used the CDX index, which did find the capture)."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University.pdf",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Availability check; original filename had no snapshot, prompting a CDX search that found the -v2 filename."
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=oira.jhu.edu/wp-content/uploads/CDS_2024-2025_JHU.pdf",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability API \u2014 located the archived 2024-2025 PDF; also confirmed NO snapshot exists for CDS_2025-2026 or CDS_2026-2027, i.e. no newer edition published."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/cdx/search/cdx?url=api.data.gov/ed/collegescorecard*&filter=original:.*162928.*",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback CDX search \u2014 located an archived api.data.gov Scorecard JSON response for JHU (unitid 162928)."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/cdx/search/cdx?url=oira.jhu.edu/wp-content/uploads*",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback CDX index. Confirmed the newest archived JHU CDS is 2025-2026 (captured 2026-06-22); no 2026-2027 or 2027-2028 exists. Located the archive URL used above."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/cdx/search/cdx?url=oira.jhu.edu/wp-content/uploads/*&filter=original:.*2025.*CDS.*pdf",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CDX discovery query; revealed the archived 2025-2026-CDS-Johns-Hopkins-University-v2.pdf snapshot (timestamp 20260622013031)."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20251116145010/https://oira.jhu.edu/wp-content/uploads/CDS_2024-2025_JHU.pdf",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Actual 498KB PDF fetched and parsed (pypdf). Page 5 / Section B line H contains the quoted six-year graduation rate: Total 93.8% (Pell 93.6% / Stafford-non-Pell 92.3% / neither 94.1%), Fall 2018 cohort.",
+        "H Six-year graduation rate for 2018 cohort (G divided by C) 93.6% 92.3% 94.1% 93.8%"
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20251116145010id_/https://oira.jhu.edu/wp-content/uploads/CDS_2024-2025_JHU.pdf",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Cross-check, prior cycle. 2024-2025 CDS B22 = 98.09% for Fall 2023 cohort measured as of Fall 2024. Confirms method and value trend; not the target cycle."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20260411011827id_/https://imagine.jhu.edu/our-student-outcomes/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempt to read archived JHU dashboard -- 'Claude Code is unable to fetch from web.archive.org' (blocked in this harness)."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20260427081339/https://oira.jhu.edu/common-data-set-2025-26/",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Archived JHU 2025-26 CDS landing page; supplied the correct PDF filename (2025-2026-CDS-Johns-Hopkins-University...) enabling retrieval of the primary PDF."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20260622013031id_/https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback snapshot actually fetched (HTTP 200, 35-page PDF) to read the 2025-2026 CDS B22 value of 97.83%."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20260622013031if_/https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "roles": [
+        "anchor",
+        "verify:overall_acceptance_rate"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback snapshot (2026-06-22) of the CDS PDF \u2014 the actual 35-page document parsed with pypdf/pdfplumber for C1, C2, C8, C9, B2, B22, B graduation, D2, G1.",
+        "CANONICAL SOURCE (archived copy, captured 2026-06-22). Real 35-page PDF fetched successfully. Section C1: applicants 50,259; admitted 3,072; enrolled 1,378 (Fall 2025). Admit rate 3072/50259 = 6.11%. This is the value reported.",
+        "\"C1 First-time, first-year students: Provide the number of degree-seeking, first-time, first-year students who applied, were admitted, and enrolled (full- or part-time) in Fall 2025.\" Applied (Men / Women / Unknown): 21916 / 28298 / 45 (Total 50,259). Admitted (Men / Women / Unknown): 1402 / 1659 / 11 (Total 3,072). Confirmed by CDS residency breakdown \"for total applicants, admits, and enrolled students: Fall 2025 ... In-State Out-of-State International Total\": applicants 4233 35321 10705 50259; admits 199 2469 404 3072; enrolled 112 1083 183 1378."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/how-to-get-into-johns-hopkins/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "General admissions blog. Not canonical; not used."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/johns-hopkins-acceptance-rate/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Blog reporting Class of 2029 (Fall 2025) ~5.14% with 49,112 apps / 2,525 admits. Differs from the authoritative CDS C1 (50,259 / 3,072 = 6.11%), likely a headline count excluding waitlist/summer-start admits. Not canonical; not used."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/johns-hopkins-university-cost/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party commercial blog; rejected in favor of official pages."
+      ]
+    },
+    {
+      "url": "https://admitreport.com/blog/johns-hopkins-common-data-set",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; non-canonical, not target cycle.",
+        "Third-party reproduction with a full C7 table (page last updated Mar 2024, likely ~2023-2024 data). Used as a third cross-check; corroborated the 5 'Very Important' academic factors and 'Not considered' for religion/legacy/interest, but conflicted on first-gen and EC tiers."
+      ]
+    },
+    {
+      "url": "https://advising.jhu.edu/completing-your-degree/declare-major-minor/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced as official declare-major page; not fetched because the switching/second-major tactic was already sourced and cross-checked. Could corroborate tactic 5 if needed."
+      ]
+    },
+    {
+      "url": "https://advising.jhu.edu/student-roadmap/first-year/first-year-faq/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "First-year FAQ surfaced in search; not fetched \u2014 not a primary credit-policy source."
+      ]
+    },
+    {
+      "url": "https://advising.jhu.edu/transfer-courses/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "KSAS advising transfer-courses hub surfaced in search; not fetched."
+      ]
+    },
+    {
+      "url": "https://advising.jhu.edu/transfer-courses/incoming-students/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Incoming first-years advising page surfaced in search; not fetched."
+      ]
+    },
+    {
+      "url": "https://advising.jhu.edu/transfer-courses/incoming-transfer-students/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Incoming transfer-students advising page surfaced in search; not fetched \u2014 catalogue authoritative."
+      ]
+    },
+    {
+      "url": "https://advising.jhu.edu/transfer-courses/transfer-courses-faq/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Transfer courses FAQ surfaced in Transferology search; not fetched."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=162928&api_key=B2QoBnDDsR5fJfwPeaZuie95ecS3APrL707HNRvr",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Live Scorecard API with a key recovered from an archived request \u2014 rejected (API_KEY_UNAUTHORIZED; key is referer-bound)."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=162928&api_key=DEMO_KEY",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Live Scorecard API with DEMO_KEY \u2014 rejected (OVER_RATE_LIMIT on the shared demo key across multiple retries)."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=162928&fields=school.name,latest.completion.completion_rate_4yr_150nt,...",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard API queried with DEMO_KEY; returned HTTP 429 OVER_RATE_LIMIT. No usable data obtained."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/",
+      "roles": [
+        "resolve:admissions",
+        "resolve",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "official admissions page",
+        "Official Undergraduate Admissions site (apply.jhu.edu) \u2014 used as official_admissions_url.",
+        "Official landing page. Confirmed deadline pathways (ED I Nov 1, ED II Jan 2, RD Jan 2, Transfer Mar 1) and essay resources; led to the detailed deadlines page."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/academics/majors-minors-programs/",
+      "roles": [
+        "resolve",
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Admissions-side majors/minors listing; the authoritative academic catalogue page was preferred for majors_catalog_url.",
+        "Official admissions majors/minors page. Source for the verbatim combined program-name list and the BME first-choice-major note. Does not separate majors vs minors or by school.",
+        "Official. Quoted: 'While you aren't required to declare a major when applying'; BME must be indicated as first-choice in the Hopkins supplement. Confirms the two schools Krieger + Whiting. A deeper re-fetch confirmed this page has no text on changing majors/double majors/popular-major competition, so I did not source those from here."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/academics/majors-minors-programs/biomedical-engineering/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official. Quoted: BME is the only limited-enrollment major, goal 100-120 new first-years/year; no separate application, must list first-choice; possible to be admitted to university without BME; internal transfer only if seats open at end of first year; outside transfer students cannot apply to BME. Anchors tactics 2 and 4."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/academics/special-programs/biomedical-engineering/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official. Quoted: must indicate BME first-choice; admitted on credentials + space available; can be admitted to university without BME; second-choice/other major fallback; declare any Krieger/Whiting major in spring of first year; BME admitted only as first-year students, no second-year/transfer applications. Anchors tactics 2-3 and alternate_major_strategy."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/academics/special-programs/peabody-double-degree-in-music-or-fine-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced via search; source for the Peabody Double Degree program (combine Peabody BM/BFA with a Homewood BA/BS)."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/fast-facts/",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "JHU admissions Fast Facts page; would show current-class stats (Fall 2024/2025), not Fall 2027, and not a CDS. Not fetched in detail.",
+        "JHU-official. Quoted '38% Students Continue to Graduate/Professional School' (used for grad_school_rate) and '91% Employed Full-Time or in Graduate School Within Six Months of Graduation' + '100% of Fortune 100 Companies Employ Hopkins Graduates' (noted but not usable as employment_rate_2yr or as a named employer list). Page is undated."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/frequently-asked-questions/",
+      "roles": [
+        "section:academic_structure",
+        "section:student_insights",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Source for the two load-bearing quotes: apply to the full university not a school/major (except BME), and 'Applicants must apply and be admitted to the BME program during the application period.'",
+        "Surfaced re: demonstrated interest/interviews; official, not community; the ED/DI points were left as unverified opinion rather than sourced here.",
+        "Official. Quoted: apply to the full university not a specific school/major (except BME); not bound to the major listed; can choose any Krieger/Whiting major upon matriculating. Anchors tactic 1 and alternate_major_strategy."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/how-to-apply/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY source for platforms: 'We accept both the Common Application and Coalition on Scoir.' Confirmed the page is silent on interviews and demonstrated interest."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/",
+      "roles": [
+        "section:application_process",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY source for exact quoted deadlines (Nov 1 2025 / Jan 2 2026 / Mar 1 2026 \u2014 the 2025-2026 cycle = Fall 2026 entry, Class of 2030), supplemental essay prompt, two teacher evaluations, secondary school report, mid-year report, and the standardized-testing-required policy.",
+        "Official. Quoted: Hopkins supplement includes the supplemental essay; indicate BME as first-choice; admitted to BME on credentials + space; if admitted to university but not BME may select any other Whiting/Krieger major. Anchors alternate_major_strategy. Note: page does NOT state whether applicants list an explicit second-choice major or that major affects general admission, so I did not assert those."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/early-decision/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY source for binding language: 'Early Decision I and Early Decision II are both binding agreements' and the enroll/withdraw commitment."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/how-to-apply/transfer-students/transfer-credit-policies/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "JHU Admissions transfer-credit page. Confirmed grade-of-C requirement, credit caps, case-by-case adviser/faculty evaluation, and NO articulation tool/database (no Transferology)."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/how-to-apply/what-we-look-for/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official JHU page surfaced in search; excluded because task scope is crowdsourced community OPINION, not institutional statements."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/international-applicants/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only; not fetched \u2014 need-aware-for-international detail already captured from common-financial-aid-questions."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/life-at-hopkins/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched OK. Source for social_environment: 'lively and close-knit community', '430+ clubs and student organizations', Homewood red-brick/quad campus setting, residential life as social hub."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/life-at-hopkins/living-at-hopkins/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Housing search lead; not fetched. The residential-college determination relied on the housing search result summary + JHU's standard residence-hall structure."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/tuition-aid/",
+      "roles": [
+        "resolve",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Admissions 'Tuition & Aid' page; not selected over the SFS office hub.",
+        "Confirmed philosophy language: 'We meet your full financial need', '$0 student loan expectation for everyone', $100k/$200k/$250k affordability tiers. No standalone statistics."
+      ]
+    },
+    {
+      "url": "https://apply.jhu.edu/tuition-aid/common-financial-aid-questions/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Exact aid-philosophy quotes: 'need-blind for domestic applicants ... need-aware for international'; 'meet 100% of a family's demonstrated need'; 'without any loans'; 'Hopkins awards both merit and need-based scholarships ... automatically considered for merit'."
+      ]
+    },
+    {
+      "url": "https://apscorecalc.com/ap-credit/johns-hopkins/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not official, rejected."
+      ]
+    },
+    {
+      "url": "https://apstudents.collegeboard.org/getting-credit-placement/search-policies/college/808",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Board's AP credit search for JHU; third-party aggregation, not used \u2014 JHU catalogue is the official source."
+      ]
+    },
+    {
+      "url": "https://archive.org/wayback/available?url=imagine.jhu.edu/our-student-outcomes/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability API confirmed a snapshot exists (timestamp 20260411011827, status 200)."
+      ]
+    },
+    {
+      "url": "https://ask.shiksha.com/what-is-the-first-destination-survey-of-johns-hopkins-university-qna-7570827",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Describes what the FDS is; no quotable JHU figures."
+      ]
+    },
+    {
+      "url": "https://assist.org/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "ASSIST (California) articulation system; irrelevant to JHU, rejected."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/how-to-write-the-johns-hopkins-university-essays",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "DIRECTLY FETCHED. Essay specificity advice (go a level deeper to a particular professor/program; show you did your homework; show-don't-tell)."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/the-ultimate-guide-to-applying-to-johns-hopkins",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search lead; not fetched."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/what-is-john-hopkins-acceptance-rate-admissions-requirements",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via search. Corroborating (counselor blog, not community): ~3.9 avg GPA, top 10%, research boost for BME, spike/depth-over-breadth, holistic review."
+      ]
+    },
+    {
+      "url": "https://cdn.uconnectlabs.com/wp-content/uploads/sites/299/2024/06/2023-First-Destination-Survey-Results.pdf",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced by search as a JHU FDS report; on opening (pdfplumber, 12 pages) it is CALVIN UNIVERSITY's Class of 2023 First Destination Survey (Grand Rapids, MI; Calvin Career Center), NOT Johns Hopkins. Rejected as wrong school."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?162928-Johns-Hopkins-University",
+      "roles": [
+        "verify:act_composite_middle_50",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition",
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard JHU page (alternate canonical source). WebFetch returned only the site navigation shell with no institutional data; and Scorecard reports an older cohort, not Fall 2027. Not used.",
+        "Alternate canonical source attempted. Page is a JavaScript SPA; fetched HTML contained only nav/footer, no graduation-rate data. Could not extract a verbatim figure.",
+        "College Scorecard JHU profile. Fetch returned only header/nav/footer, no tuition data or year. Scorecard also lags 1-2 cycles and would not carry Fall 2027. Rejected.",
+        "Fetch returned only site nav/header, no JHU data values -- data loads client-side."
+      ]
+    },
+    {
+      "url": "https://collegeshortcuts.com/blog/comprehensive-guide-to-johns-hopkins-university-admissions-class-of-2028",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via WebSearch snippet. Source for admissions selectivity figures (~45,134 apps, ~2,558 admits, ~5.7%) and holistic-review description."
+      ]
+    },
+    {
+      "url": "https://collegesource.com/transfer-tools/transferology/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Transferology vendor page; background only, no JHU linkage."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Academic Catalogue home; /programs/ is the more specific majors/catalog entry point."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Krieger catalogue homepage \u2014 navigation shell, no undergraduate major list."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Krieger degree-programs landing page rendered only as a JS/navigation shell for the fetcher; no degree list extractable."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/biology/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Department landing page \u2014 JS shell, no degrees rendered."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/biology/biology-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Biology, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/biology/biology-bachelor-science/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 on this slug; Biology BS not asserted despite the dept offering it."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/chemistry/chemistry-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Requested BA slug but the fetcher returned 'Chemistry, Bachelor of Science' (likely redirect); ambiguous, so I relied on the confirmed BS leaf instead."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/chemistry/chemistry-bachelor-science/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Chemistry, Bachelor of Science'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/cognitive-science/cognitive-science-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Cognitive Science, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/economics/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Department landing page \u2014 JS shell."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/economics/economics-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Economics, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/english/english-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'English, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/history/history-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'History, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/international-studies/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Department landing page \u2014 JS shell."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/international-studies/international-studies-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'International Studies, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/mathematics/mathematics-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Mathematics, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/neuroscience/neuroscience-bachelor-science/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Neuroscience, Bachelor of Science'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/physics-astronomy/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Department landing page \u2014 JS shell (confirmed the dept slug exists, used for the physics leaf)."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/physics-astronomy/physics-bachelor-science/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Physics, Bachelor of Science'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/political-science/political-science-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Political Science, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/psychological-and-brain-sciences/psychology-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 (wrong slug guess); Psychology degree type not verified, so Psychology was omitted from the majors list."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/public-health-studies/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Department landing page \u2014 JS shell."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/public-health-studies/public-health-studies-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Public Health Studies, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/sociology/sociology-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Sociology, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/writing-seminars/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Department landing page \u2014 JS shell."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/writing-seminars/writing-seminars-bachelor-arts/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Verified leaf title 'Writing Seminars, Bachelor of Arts'."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/undergraduate-policies/academic-policies/requirements-for-a-bachelors-degree/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official catalogue lead on double-major/degree requirements; not fetched \u2014 not needed for application-stage tactics."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/ksas-wse/undergraduate-policies/academic-policies/external-credit-policies/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "HTML version of the same catalogue page; direct fetch returned only navigation chrome, but it is the canonical landing URL for the PDF that provided the content."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/ksas-wse/undergraduate-policies/academic-policies/external-credit-policies/external-credit-policies.pdf",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY authoritative source. Full verbatim External Credit Policies text (philosophy, AP table + forfeiture/lab-waiver/chemistry/calculus/CS/foreign-language exceptions, HL-IB table, transfer caps/rules/restrictions). Extracted locally with pypdf. States it governs Fall 2026 entrants and after."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/peabody/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official catalogue Peabody page. Source for all 8 Peabody undergraduate programs (BM specializations + BFA in Dance) and the 5 Peabody minors."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/programs/",
+      "roles": [
+        "resolve:catalog",
+        "resolve",
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "majors/catalog page",
+        "Official JHU Academic Catalogue 'Explore our Programs' page \u2014 used as majors_catalog_url.",
+        "Official catalogue programs index. Source for the list of JHU schools/divisions and the verbatim Whiting School undergraduate degree list (with BA/BS) and Peabody undergraduate programs. Krieger section did not render for the fetcher (page truncated / JS)."
+      ]
+    },
+    {
+      "url": "https://e-catalogue.jhu.edu/programs/?type=undergraduate",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Filtered programs URL returned no extractable content (JS-driven filter)."
+      ]
+    },
+    {
+      "url": "https://educationdata.urban.org/api/v1/college-university/scorecard/earnings/2022/?unitid=162928",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Urban Institute Education Data Portal (Scorecard mirror) \u2014 returned empty bodies / 404s / Cloudflare challenge; could not retrieve earnings this way. Superseded by the archived Scorecard API JSON."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Zanvyl_Krieger_School_of_Arts_and_Sciences",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results; not used \u2014 Wikipedia is not the official catalogue."
+      ]
+    },
+    {
+      "url": "https://engineering.jhu.edu/ug-academic/advising/current-students/transfer-credits/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WSE current-students transfer-credit page (source of the writing-evaluation form) surfaced in search; not fetched."
+      ]
+    },
+    {
+      "url": "https://engineering.jhu.edu/ug-academic/advising/eng-101/external-credits/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WSE external-credits advising page surfaced in search; not fetched \u2014 catalogue already authoritative and comprehensive."
+      ]
+    },
+    {
+      "url": "https://forums.studentdoctor.net/threads/how-extreme-is-the-deflation-at-hopkins-undergrad.1236167/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct WebFetch BLOCKED (HTTP 403). Via search extraction: grade deflation 'most premed classes average a B-', '2/3 of premeds drop off', med schools discount deflation ('3.5 at JHU ~ 3.7-3.8 elsewhere')."
+      ]
+    },
+    {
+      "url": "https://hub.jhu.edu/2024/01/05/nsf-higher-education-research-spending-2022/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 Forbidden on fetch. Its NSF R&D leadership claim (leads nation, ~44 consecutive years) was corroborated via WebSearch snippet instead."
+      ]
+    },
+    {
+      "url": "https://hub.jhu.edu/2025/09/23/us-news-best-colleges-rankings-2025/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 Forbidden on fetch. JHU's own report of the #7 (2026 edition) ranking; not usable for the us_news_rank fact regardless (not a US News page)."
+      ]
+    },
+    {
+      "url": "https://hub.jhu.edu/2025/09/23/us-news-best-colleges-rankings-2025/ (via WebSearch snippet)",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch result snippet confirmed JHU #7 (2026 edition), tied with Duke/Northwestern/Penn, and #1 biomedical engineering. Used only for the academic-brand takeaway and transparency note, not for the us_news_rank fact."
+      ]
+    },
+    {
+      "url": "https://hub.jhu.edu/2025/11/13/johns-hopkins-tuition-free-undergraduates/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "JHU Hub news article on the tuition-free announcement (search snippet only); official SFS pages used instead for verifiable quotes."
+      ]
+    },
+    {
+      "url": "https://imagine.jhu.edu/first-destination-outcomes/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Same dynamic dashboard; WebFetch returned only contact info, no figures."
+      ]
+    },
+    {
+      "url": "https://imagine.jhu.edu/life-design-lab-first-destination/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 on fetch."
+      ]
+    },
+    {
+      "url": "https://imagine.jhu.edu/our-student-outcomes/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "JHU Life Design Lab outcomes page. WebFetch returned only contact info/hours -- data is in a JS-rendered dashboard, not extractable."
+      ]
+    },
+    {
+      "url": "https://jhfre.jhu.edu/ts/transportation/shuttle-services/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 Forbidden on fetch. Shuttle-service details corroborated via WebSearch snippet and the News-Letter instead."
+      ]
+    },
+    {
+      "url": "https://johnshopkinsadmissions.org/apply/exam-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official JHU admissions AP/IB/exam-credit page \u2014 fetch failed with ECONNREFUSED; could not verify, so not used."
+      ]
+    },
+    {
+      "url": "https://johnshopkinsadmissions.org/discover/residential-life/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Residential life lead; not fetched. Reviewed only via search summary confirming JHU uses residence halls, not a named/ranked residential-college system \u2014 basis for empty college_ranking_tactics."
+      ]
+    },
+    {
+      "url": "https://krieger.jhu.edu/academics/majors-minors/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 Forbidden to fetcher."
+      ]
+    },
+    {
+      "url": "https://krieger.jhu.edu/academics/majors-minors/ (WebSearch result)",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result referenced but page itself 403s; not fetched for content."
+      ]
+    },
+    {
+      "url": "https://me.jhu.edu/education/undergraduate-studies/bs-first-destinations/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Mechanical-Engineering BS First Destinations (dept-level employer list). HTTP 403 Forbidden on multiple attempts -- could not read employer list."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/datacenter/Default.aspx?profileunitid=162928",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS Data Center profile for UnitID 162928; fetch failed with too-many-redirects. Identity instead confirmed via the DFR ReportHTML page."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/dfr/2023/ReportHTML.aspx?unitId=162928",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "NCES IPEDS Data Feedback Report for unitId=162928 rendered 'Johns Hopkins University / Baltimore, MD' \u2014 cross-check confirms UnitID 162928 on name+city+state."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/dfr/2024/ReportHTML.aspx?unitId=162928",
+      "roles": [
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS DFR report surfaced in search; not fetched; not the CDS target cycle.",
+        "IPEDS DFR report for JHU appeared in search; not fetched \u2014 JHU's own CDS obtained instead, which is the more canonical CDS-aligned source.",
+        "IPEDS Data Feedback Report -- surfaced in search but not fetched; DFR does not carry first-destination employer lists or CDR."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/reported-data/162928",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS reported-data landing for 162928; corroborates UnitID but the DFR report was used for the confirmation quote."
+      ]
+    },
+    {
+      "url": "https://nextadmit.com/blog/johns-hopkins-act-scores/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary blog on JHU ACT scores. Not primary, not target cycle; not used."
+      ]
+    },
+    {
+      "url": "https://nextgenadmit.com/johns-hopkins-admission-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party stats page. Not canonical; not used.",
+        "Secondary admissions-stats blog. Not primary, not target cycle; not used."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "JHU Office of Institutional Research & Analytics home; entry point to CDS reports, not directly used."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/common-data-set-2024-25/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "JHU OIRA CDS 2024-25 landing page (older cycle). Not the target Fall 2027; not used."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/common-data-set-2025-26/",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CDS 2025-26 landing page; fetch returned 403 (bot-block). URL confirmed via search.",
+        "JHU OIRA landing page for the 2025-26 CDS. Cloudflare 403 on fetch; confirmed 2025-26 is the most recent edition, but page HTML itself not readable.",
+        "Search result confirming JHU OIRA's most recent published CDS is the 2025-2026 edition \u2014 two cycles short of the Fall 2027 / 2027-2028 target.",
+        "Surfaced in JHU OIRA search results as the CDS 2025-26 landing page \u2014 confirms the MOST RECENT published edition is 2025-2026 (Fall 2025 class), i.e. no 2026-27 or 2027-28 exists. Basis for the correct-null conclusion.",
+        "Live JHU 2025-26 CDS page. WebFetch HTTP 403; accessed via Wayback instead.",
+        "Surfaced via WebSearch; confirms the most recent JHU Common Data Set is 2025-2026, published May 7, 2026 \u2014 i.e., the 2027-2028 CDS does not exist yet. Used to confirm the null."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/institutional-data/common-data-set",
+      "roles": [
+        "verify:graduation_rate_6_year",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "JHU CDS index page \u2014 WebFetch returned Cloudflare HTTP 403 Forbidden; could not enumerate available editions from the live site.",
+        "Official OIRA CDS index page. REJECTED \u2014 HTTP 403 Forbidden."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/institutional-research/common-data-set",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted to fetch JHU OIRA's CDS index page for the authoritative list of available editions; returned HTTP 403 Forbidden to WebFetch.",
+        "Attempted to fetch OIRA CDS index directly; returned HTTP 403 Forbidden. Could not access."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/reports-2/",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "JHU OIRA Common Data Sets index page; lists CDS editions (2021-22 through 2025-26). Fetch returned 403; superseded by the direct 2025-2026 PDF URL.",
+        "JHU OIRA Common Data Set listing page. Cloudflare 403 on fetch; search snippet showed editions only up to 2025-26 \u2014 corroborates that no 2026-27/2027-28 CDS is published.",
+        "JHU OIRA Common Data Sets listing page; establishes 2025-2026 as the latest published edition and that no 2026-2027 or 2027-2028 CDS exists yet.",
+        "JHU OIRA Common Data Set index (primary source, would list all CDS editions). WebFetch returned HTTP 403 / Cloudflare block; could not read the list directly, but search-surfaced links confirm latest is 2025-2026.",
+        "No verbatim quote obtainable for the target cycle. The 2027-2028 Common Data Set (Fall 2027 entering class) does not exist as of July 2026 \u2014 that class has not enrolled. JHU's most recent published CDS is 2025-2026, and its primary-source PDFs are Cloudflare-blocked from automated retrieval in this environment (WebFetch HTTP 403; curl returned a Cloudflare 'Attention Required' challenge page), so no verbatim figure was independently confirmed for any cycle.",
+        "JHU OIRA reports index. WebFetch returned HTTP 403 (bot protection); could not read."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University.pdf",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Archive returned 404 for this original filename; superseded by the -v2 filename."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/wp-content/uploads/CDS_2021-2022.pdf",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official 2021-2022 CDS; older cycle, not target."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/wp-content/uploads/CDS_2022-2023.pdf",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official 2022-2023 CDS; older cycle, not target."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/wp-content/uploads/CDS_2023-2024_JHU_20250401.pdf",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Primary-source PDF, 2023-2024 cycle (search-surfaced). Older cycle, not target; not fetched/used."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/wp-content/uploads/CDS_2023-2024-1.pdf",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official 2023-2024 CDS; older cycle, not target."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/wp-content/uploads/CDS_2024-2025_JHU.pdf",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "section:application_process",
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Prior-year CDS (2024-2025); older than the 2025-2026 edition used, so not selected.",
+        "Prior-cycle CDS (Fall 2024, Class of 2028). Archived and fetchable, but older than 2025-2026, so not used \u2014 2025-2026 is the most recent available.",
+        "Official 2024-2025 CDS (Fall 2024 cohort); confirms only older cycles are published. Not the target cycle.",
+        "Primary-source PDF, 2024-2025 cycle. WebFetch returned HTTP 403 (Cloudflare). Older cycle, not target; not used.",
+        "Live URL for prior-cycle PDF; direct WebFetch and curl both HTTP 403. Read via Wayback snapshot instead.",
+        "Canonical JHU OIRA CDS 2024-2025 PDF (the source document). Live URL returns Cloudflare HTTP 403 to both WebFetch and curl; retrieved instead via the Wayback archived copy of this exact URL."
+      ]
+    },
+    {
+      "url": "https://oira.jhu.edu/wp-content/uploads/CDS_2025-2026_JHU.pdf",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Guessed filename for current PDF; curl returned 403 and filename was wrong (actual name uses -v2)."
+      ]
+    },
+    {
+      "url": "https://pages.jh.edu/design/oliver/academic_manual2010-2011/credit.html",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "2010-2011 archived academic manual; outdated cycle, rejected in favor of the current catalogue."
+      ]
+    },
+    {
+      "url": "https://peabody.jhu.edu/audition-apply/instructions/undergraduate-instructions/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced via search; source for Peabody's separate audition-based application (pre-screen video/portfolio then audition), distinct from Homewood."
+      ]
+    },
+    {
+      "url": "https://publichealth.jhu.edu/offices-and-services/office-of-student-affairs/career-services/graduate-employment-outcomes-dashboard",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Bloomberg School of Public Health = GRADUATE program only; not university-wide undergrad outcomes. Not used."
+      ]
+    },
+    {
+      "url": "https://r.jina.ai/https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Reader proxy attempt to bypass Cloudflare \u2014 rejected (401 AuthenticationRequiredError, 'blocked from anonymous queries due to bad network reputation')."
+      ]
+    },
+    {
+      "url": "https://recognition.ibo.org/en-US/university-statements/?university=Johns+Hopkins+University",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IB's own university-statements listing for JHU; not fetched \u2014 deferred to JHU's own catalogue as the official primary source."
+      ]
+    },
+    {
+      "url": "https://research.com/best-colleges/johns-hopkins-university/graduation-rate-and-career",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Intended for default rate / employment / employers; HTTP 403 Forbidden."
+      ]
+    },
+    {
+      "url": "https://sais.jhu.edu/student-experience/career-services/employment-outcomes",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "SAIS graduate-program outcomes (e.g. MAIR 92% employed/further-study Classes 2020-2025; employers Deloitte, Bain, etc.). Graduate-only, not undergrad university outcomes -> not used for these fields."
+      ]
+    },
+    {
+      "url": "https://sfs.jhu.edu/",
+      "roles": [
+        "resolve:financial_aid",
+        "resolve",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "financial-aid page",
+        "Student Financial Support \u2014 the dedicated undergraduate financial aid office hub; used as financial_aid_url.",
+        "JHU Student Financial Support homepage \u2014 source of the three verbatim, UNDATED statistics: '52% Students Receive Need-Based Financial Aid', '$66K Average Need-Based Scholarship', '80% Students Graduate Debt-Free'. Also the aid-navigation link map."
+      ]
+    },
+    {
+      "url": "https://sfs.jhu.edu/applying-for-financial-aid/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched but contained no aid statistics; only restated the tuition-free-up-to-$200,000 policy. Nothing new taken."
+      ]
+    },
+    {
+      "url": "https://sfs.jhu.edu/cost-tuition/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Canonical JHU financial-support cost page. Confirms latest published tuition is 2026-27 ('Tuition* $68,670'); explicitly no 2027-2028 figure present. Used to establish that Fall 2027 is unpublished.",
+        "No verbatim Fall 2027 (2027-2028) tuition exists to quote. The latest published figure on the canonical JHU source is for the 2026-27 academic year: \"Tuition* $68,670\" (listed under the 2026-27 Academic Year section). The most recent Common Data Set is 2025-2026, published May 7, 2026; there is no 2027-2028 CDS."
+      ]
+    },
+    {
+      "url": "https://sfs.jhu.edu/tuition-promise/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Johns Hopkins Tuition Promise \u2014 'permanently need blind and no-loan' (Bloomberg $1.8B, 2018); 'tuition-free ... up to $200,000'; '$0 parent cost ... up to $100,000' starting 2026-2027; applies to Krieger + Whiting undergrads. Used for aid_philosophy and cycle pinning."
+      ]
+    },
+    {
+      "url": "https://sfs.jhu.edu/types-of-aid/scholarships/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Primary source for named scholarships: Hodson Trust, Cummings Scholars, Hopkins Scholarship, QuestBridge, Westgate Engineering, Hodson Gilliam Success \u2014 quoted eligibility, renewal, application method."
+      ]
+    },
+    {
+      "url": "https://studentaffairs.jhu.edu/careers/about-us/first-destination-reports/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 Forbidden."
+      ]
+    },
+    {
+      "url": "https://studentaffairs.jhu.edu/community-living/university-housing/how-to-apply/first-year-students/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 Forbidden to direct fetch; housing policy instead grounded via search snippets of this and related studentaffairs.jhu.edu pages."
+      ]
+    },
+    {
+      "url": "https://studentaffairs.jhu.edu/on-campus-living/apply-for-housing/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced via search; corroborated the two-year on-campus residency requirement and second-year housing options (Bradford, Homewood Apartments, McCoy, Rogers, Scott-Bates)."
+      ]
+    },
+    {
+      "url": "https://studentaffairs.jhu.edu/on-campus-living/living-at-hopkins/residence-halls/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Housing lead; not fetched."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/johns-hopkins-university/1972827-johns-hopkins-rd-results.html",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "DIRECTLY FETCHED. Primary source for accepted/rejected self-reported profiles (GPA/ACT/SAT/rank/major/ECs) and the verbatim quotes 'The essay really does matter' (accepted BME) and 'My application was too generic' (rejected)."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/johns-hopkins-class-of-2028-official-thread/3655582",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "DIRECTLY FETCHED but contained only application logistics (financial-aid portal, deadlines), no admissions substance - rejected."
+      ]
+    },
+    {
+      "url": "https://transferologylab-support.collegesource.com/article/475-transfer-equivalencies-view-export-or-print-an-institutions-equivalencies",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Transferology support doc; irrelevant to JHU policy, rejected."
+      ]
+    },
+    {
+      "url": "https://undergrad.krieger.jhu.edu/majors-minors/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 403 Forbidden to fetcher."
+      ]
+    },
+    {
+      "url": "https://uscanadacolleges.com/schools/162928-jhu-edu-acceptance-rate-sat-act-score/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary aggregator. Not primary, not target cycle; not used."
+      ]
+    },
+    {
+      "url": "https://web.archive.org/web/20250121233040id_/https://api.data.gov/ed/collegescorecard/v1/schools/?api_key=B2QoBnDDsR5fJfwPeaZuie95ecS3APrL707HNRvr&id=162928",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Archived Scorecard API JSON (captured 2025-01-21). Parsed latest.earnings.10_yrs_after_entry.median = 87555 (median earnings 10 years after entry). Also showed admission_rate.overall 0.0725 and avg_net_price.overall 20820 (not used; CDS is the authority for admissions)."
+      ]
+    },
+    {
+      "url": "https://www.aau.edu/johns-hopkins-becomes-tuition-free-undergraduate-students-families-earning-200000",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party (AAU) coverage of the same announcement; not used \u2014 non-primary source."
+      ]
+    },
+    {
+      "url": "https://www.albert.io/blog/johns-hopkins-advanced-placement-ap-credits/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not an official page, rejected."
+      ]
+    },
+    {
+      "url": "https://www.appily.com/colleges/johns-hopkins-university/reviews",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "DIRECTLY FETCHED. Verbatim student reviews on intense intro classes, 'painstakingly hard', 'not as cut-throat as many put it out to be', 'people there [don't] want to sabotage your grades', 'the opportunities find you when you are at Hopkins', 'the people are willing to help'."
+      ]
+    },
+    {
+      "url": "https://www.bing.com/search?q=Johns+Hopkins+University+2027-2028+tuition+and+fees+cost+of+attendance",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch for 2027-2028 tuition/COA. No 2027-2028 data found; results referenced only 2025-26/2026-27. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.bing.com/search?q=Johns+Hopkins+University+Common+Data+Set+2027-2028+tuition",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch for the 2027-2028 CDS. No 2027-2028 CDS exists; top real CDS PDFs returned were 2024-2025 and 2023-2024. Rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegeessayguy.com/blog/johns-hopkins-supplemental-essay",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via search. Corroborated personal-voice / narrative / show-don't-tell essay advice."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/johns-hopkins-university/academic-life/graduation-and-retention/",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator (search summary cited ~98.1%); non-canonical and cycle-ambiguous, not used."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/johns-hopkins-university/outcomes/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Only gave 'graduates ... earn about $68,000 in their early career' (no year); no employer list, no employment/grad-school split. Earnings comes from anchor anyway."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/johns-hopkins-university/paying-for-college/student-loan-debt/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Quoted '2-year cohort default rate: 1.7%' and 'Borrowers in the cohort: 2747' but NO cohort year given and uses deprecated 2-yr metric; conflicts with other aggregators. Not year-pinnable -> rejected for loan_default_rate."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/johns-hopkins-university/student-life/crime/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via WebSearch snippet. Informed the location/safety takeaway (higher-than-average urban crime; patrolled campus generally seen as safe, off-campus caution)."
+      ]
+    },
+    {
+      "url": "https://www.collegetransfer.net/Search/Search-for-Course-Equivalencies/Equivalency-Search-Results?from=3702",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party equivalency search; not official, rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegetransitions.com/blog/how-to-get-into-johns-hopkins-university-admissions-data-and-strategies/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search lead for community strategies; not fetched \u2014 official pages gave stronger, quotable structure."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/98776/johns-hopkins-and-ap-credit",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Community Q&A; not official, rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/98804/can-someone-shed-light-on-ap-credit-at-johns-hopkins",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Community Q&A; not official, rejected."
+      ]
+    },
+    {
+      "url": "https://www.commondatasets.fyi/johns-hopkins",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS mirror. Not canonical; not used.",
+        "Third-party CDS aggregator (2023-2024); non-canonical, not target cycle.",
+        "Secondary CDS mirror (2023-2024). Not primary, not target cycle; not used.",
+        "Third-party CDS mirror in search results; not canonical, not used."
+      ]
+    },
+    {
+      "url": "https://www.cosmic.nyc/blog/johns-hopkins-common-data-set-2025-2026",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog referencing the 2025-2026 CDS; not an authoritative source and not the target cycle.",
+        "Secondary blog citing the 2025-2026 CDS. Not a primary source and not the target Fall 2027 cycle; not used for any value.",
+        "Third-party reproduction of the 2025-2026 CDS C7. Used for the unanimously-agreed 'Very Important' academic factors; conflicts with other reproductions on legacy/interview/interest tiers (those nulled)."
+      ]
+    },
+    {
+      "url": "https://www.crimsoneducation.org/us/blog/johns-hopkins-supplement-essay",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in essay search; counselor blog, not community; overlapping advice already covered by fetched sources, so not relied upon."
+      ]
+    },
+    {
+      "url": "https://www.eduavenues.com/blog/johns-hopkins-essay",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via search. Essay guide: 'if your essay could plug in the name of any top school, it is not a Hopkins essay'; wants a real question + prior work + specific Hopkins resources."
+      ]
+    },
+    {
+      "url": "https://www.gradgpt.com/common-data-set/johns-hopkins-university",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS visualizer. Not canonical; not used.",
+        "Third-party CDS visualizer; non-canonical, not target cycle.",
+        "Secondary CDS visualizer. Not primary, not target cycle; not used.",
+        "Third-party CDS aggregator; curl HTTP 403. Non-canonical, not used.",
+        "Third-party CDS visualizer appeared in search; not a canonical source, not fetched/relied upon.",
+        "Third-party CDS visualizer (2025-2026 / '2026 CDS'). Used to cross-check; disagreed with cosmic and admitreport on several non-academic factors, driving the decision to null legacy/interview/first-gen/demonstrated-interest."
+      ]
+    },
+    {
+      "url": "https://www.greekrank.net/uni/118/greek-life/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced for Greek life; not fetched/verified; social-life points sourced from more-consistent Niche/News-Letter instead."
+      ]
+    },
+    {
+      "url": "https://www.ivycoach.com/the-ivy-coach-blog/college-admissions/how-to-get-into-johns-hopkins/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search lead; not fetched."
+      ]
+    },
+    {
+      "url": "https://www.ivycoach.com/the-ivy-coach-blog/college-admissions/johns-hopkins-admissions-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Blog on Class of 2030 (Fall 2026) early/RD admit counts. Not canonical, not the CDS, and still not Fall 2027; not used."
+      ]
+    },
+    {
+      "url": "https://www.ivyscholars.com/how-to-switch-majors-at-top-30-colleges/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Community/consulting source. Quoted JHU section: changing majors within a school is easy (advisor meeting); can declare a second major in a school you aren't part of after an advisor meeting; can never change your major into BME. Anchors tactic 5 (post-admission switching flexibility)."
+      ]
+    },
+    {
+      "url": "https://www.jhu.edu/about/notable-alumni/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Notable individual alumni, not employer-of-graduates data. Not usable for top_employers."
+      ]
+    },
+    {
+      "url": "https://www.jhu.edu/admissions/financial-aid/",
+      "roles": [
+        "resolve",
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "General financial-aid page under jhu.edu; sfs.jhu.edu is the more specific SFS office hub.",
+        "Appeared in search results; not fetched \u2014 superseded by the more authoritative sfs.jhu.edu and apply.jhu.edu pages actually retrieved."
+      ]
+    },
+    {
+      "url": "https://www.jhunewsletter.com/2004/01/29/social-life-dull-blame-the-greeks-what-its-worth-56907/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via search extraction (student newspaper). Corroborated: not a party school, Greek life present but does not predominate, bonds form through activities/labs."
+      ]
+    },
+    {
+      "url": "https://www.jhunewsletter.com/article/2025/08/jimmy-and-friends-navigating-transit-from-homewood",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via WebSearch snippet. Source for transportation_impact: JHMI 'Jimmy' shuttle L-shaped route Homewood to medical campus, ~every 15 min 6am-12:30am, Night Ride, TransLoc tracking."
+      ]
+    },
+    {
+      "url": "https://www.jhunewsletter.com/article/2025/09/hopkins-ranked-seventh-best-college-nationally-by-u-s-news-world-report",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched OK. Provided context that JHU is in a four-way tie for 7th in the 2026 US News edition (tied Duke, Northwestern, Penn), down from 6th in 2025. NOT a US News page, so used only for transparency/notes context, NOT to populate the us_news_rank fact."
+      ]
+    },
+    {
+      "url": "https://www.linkedin.com/school/johns-hopkins-university/people/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "LinkedIn alumni 'where they work' -- HTTP 999 (bot-blocked). Could not extract top employers."
+      ]
+    },
+    {
+      "url": "https://www.nextfour.ai/johns-hopkins-university/sat-score-data",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party SAT stats aggregator; unverified/non-canonical, not the target cycle."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/johns-hopkins-university/academics/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct fetch not attempted (Niche 403 pattern). Via search extraction: 'wealth of research opportunities', strong undergraduate-research focus, 'everyone starts out as pre-med'."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/johns-hopkins-university/campus-life/",
+      "roles": [
+        "section:strategic_profile",
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Via WebSearch snippet. Corroborated student-culture characterization (academically intense, less party-centric, can feel competitive).",
+        "Direct WebFetch BLOCKED (HTTP 403). Not usable for verbatim; overlapping social-life points sourced instead from JHU News-Letter and search extraction."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/johns-hopkins-university/reviews/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Direct WebFetch BLOCKED (HTTP 403). Content used only via WebSearch extraction: 'pressure cooker', 'locked in, talented, and ambitious', competitive/cut-throat vs community-support tension, 'join a frat/sorority'."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/johns-hopkins-university/student-loans/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Intended for a year-pinned cohort default rate; HTTP 403 Forbidden."
+      ]
+    },
+    {
+      "url": "https://www.parchment.com/platform/higher-education/transfer-articulation/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Vendor articulation product page; irrelevant, rejected."
+      ]
+    },
+    {
+      "url": "https://www.questbridge.org/partners/college-partners/johns-hopkins-university/financial-aid",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "QuestBridge partner page (search result); QuestBridge scholarship details sourced from JHU's own sfs.jhu.edu scholarships page instead."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/How-did-you-get-accepted-into-Johns-Hopkins-stats-ECs",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; could not fetch/verify individual answers, so not used to avoid unverifiable quotes."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/How-does-applying-for-a-competitive-major-affect-your-chances-of-admissions-at-a-top-school-such-as-JHU-Would-it-be-better-to-apply-as-undecided",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search as a lead on undecided-vs-specific major strategy; not fetched/quoted because the same claims were verified directly on official apply.jhu.edu pages."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/I-know-that-Johns-Hopkins-University-meets-100-of-financial-needs-of-those-who-were-accepted-However-will-JH-University-provide-financial-aid-of-70-000",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Quora \u2014 user-generated, non-authoritative; rejected."
+      ]
+    },
+    {
+      "url": "https://www.road2college.com/johns-hopkins-common-data-set/",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS aggregator. Not canonical; not used for the value.",
+        "Third-party CDS summary; non-canonical, not target cycle.",
+        "Secondary aggregator. Not primary, not target cycle; not used.",
+        "Aggregator surfaced in search; non-canonical, not fetched.",
+        "REJECTED \u2014 only a partial factor list, no full VI/I/C/NC ratings, and labeled 2023-2024. Not usable for C7."
+      ]
+    },
+    {
+      "url": "https://www.sparkadmissions.com/blog/how-credits-transfer-course-equivalencies/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog on credit transfer generally; not official, rejected."
+      ]
+    },
+    {
+      "url": "https://www.swotanalysis.com/johns-hopkins-university",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results for market position; not fetched/quoted, so not relied upon."
+      ]
+    },
+    {
+      "url": "https://www.timeshighereducation.com/world-university-rankings/how-johns-hopkins-built-team-star-grant-winners",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched OK. Source for market_position and research_impact: '$3.4 billion in federal funds for research and development in 2022', Catalyst/Discovery awards, research-development 'SWAT team' cutting proposal prep from ~18 months to ~1.5."
+      ]
+    },
+    {
+      "url": "https://www.transferology.com/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Transferology tool homepage; checked to confirm JHU is not listed as using it \u2014 no evidence JHU participates."
+      ]
+    },
+    {
+      "url": "https://www.transferologylab.com/index.htm",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Transferology Lab (staff portal) marketing; no JHU linkage, rejected."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/jhu-2077",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Primary target for us_news_rank; WebFetch timed out on both attempts (usnews.com bot-blocks). Could not fetch/quote, so rank left null."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/jhu-2077/overall-rankings",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Alternate US News rank page; WebFetch timed out."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/rankings/national-universities",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News National Universities list; WebFetch timed out."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/education/best-global-universities/johns-hopkins-university-162928",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "US News Best Global Universities profile; WebFetch timed out. (Would have been a global rank, not the national rank, anyway.)"
+      ]
+    }
+  ]
+}

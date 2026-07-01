@@ -4,1009 +4,790 @@
     "official_name": "Johns Hopkins University",
     "location": {
       "city": "Baltimore",
-      "state": "MD",
+      "state": "Maryland",
       "type": "Private"
     },
-    "last_updated": "2025-12-24",
-    "report_source_files": []
+    "last_updated": "2027-CYCLE",
+    "cycle_year": 2027,
+    "report_source_files": [
+      "https://oira.jhu.edu/wp-content/uploads/2025-2026-CDS-Johns-Hopkins-University-v2.pdf",
+      "https://collegescorecard.ed.gov/school/?162928-Johns-Hopkins-University="
+    ]
   },
   "strategic_profile": {
-    "executive_summary": "Johns Hopkins University is a private research institution in Baltimore, Maryland, recognized as the first research university in the U.S.. It is consistently ranked among the top universities nationally and globally, excelling particularly in fields like medicine, public health, nursing, and engineering.",
-    "market_position": "Elite Private",
-    "admissions_philosophy": "Holistic review, highly selective with a focus on strong academic performance, robust extracurricular engagement, and well-crafted applications.",
+    "executive_summary": "Johns Hopkins University is a private research university in Baltimore, Maryland, widely regarded as America's first research university and a globally recognized brand in medicine, public health, and biomedical engineering. It is highly selective (recent cycles report an acceptance rate of roughly 5.7%) and is the longstanding national leader in federally funded research and development spending. Its defining tension is world-class research intensity set against an urban Baltimore campus and an academically driven, less party-centric student culture.",
+    "market_position": "Positioned as the U.S. leader in research intensity: per Times Higher Education, JHU secured a record '$3.4 billion (\u00a32.7 billion) in federal funds for research and development in 2022,' and secondary sources (JHU Hub reporting NSF data) describe it as leading the nation in R&D spending for a streak variously cited as 44-45 consecutive years, well ahead of peers such as UC San Francisco (~$1.8B) and Michigan (~$1.79B). This anchors a globally respected brand in medicine and STEM. (Sourced opinion; primary US News ranking page could not be fetched.)",
+    "admissions_philosophy": "JHU describes a comprehensive, holistic review that weighs high-school academic performance alongside contributions in and out of the classroom that demonstrate intellectual curiosity and leadership potential, evaluated in the context of each applicant's opportunities (per apply.jhu.edu and admissions guides). It ended legacy preference in 2014. Selectivity is extreme: college-guide sources report ~45,134 applications and ~2,558 admits (~5.7%) in a recent cycle. (Attributed to JHU Admissions and secondary college-guide sources.)",
+    "us_news_rank": null,
     "analyst_takeaways": [
       {
+        "category": "Research funding",
+        "insight": "JHU is the longstanding U.S. leader in federal R&D spending ($3.4B in FY2022 per Times Higher Education; ~44-45 consecutive years leading per NSF data reported by JHU Hub), backed by an internal 'SWAT team' research-development office that cut proposal prep from ~18 months to ~1.5.",
+        "implication": "Unmatched depth of research opportunity and infrastructure for undergraduates, but heavy dependence on federal grant funding is a concentration risk if that pipeline tightens."
+      },
+      {
         "category": "Selectivity",
-        "insight": "Johns Hopkins University is highly selective, with an acceptance rate around 8%.",
-        "implication": "Prospective students need exceptional academic records and comprehensive applications to be competitive."
+        "insight": "Recent cycles report ~5.7% acceptance with an explicitly holistic, context-aware review prioritizing intellectual curiosity and leadership; legacy preference was ended in 2014.",
+        "implication": "Strong stats are necessary but insufficient; applicants need demonstrated intellectual initiative (research, sustained pursuits) to be competitive."
       },
       {
-        "category": "Value & Financial Aid",
-        "insight": "The university is ranked as a \"Best Value School\" by U.S. News, offering generous financial aid that significantly reduces the net cost for many students.",
-        "implication": "Despite a high sticker price, substantial financial aid makes the institution accessible and affordable for a broad range of admitted students."
+        "category": "Academic brand",
+        "insight": "JHU's reputation is concentrated in medicine, public health, and biomedical engineering, where it is consistently placed at or near #1 nationally (secondary sources cite a tie for #1 in biomedical engineering).",
+        "implication": "Best fit and highest signaling value for pre-med, STEM, and research-oriented students; the brand halo is narrower for students seeking a broad liberal-arts or large-party campus feel."
       },
       {
-        "category": "Research Prowess",
-        "insight": "As the nation's first research university, JHU maintains a strong emphasis on research and innovation, particularly excelling in biomedical engineering, public health, and medicine.",
-        "implication": "Students interested in cutting-edge research and impactful discoveries will find extensive opportunities and resources, often with strong industry ties."
+        "category": "Location / safety",
+        "insight": "The Homewood undergraduate campus sits in a North Baltimore neighborhood with higher-than-average urban crime; students generally describe the patrolled campus itself as safe but exercise caution off-campus after dark (per college-safety and student-forum sources).",
+        "implication": "Location is a real fit filter; the university's heavy investment in security, shuttles, and escort services partly offsets it, but students uncomfortable with an urban setting should weigh this."
+      },
+      {
+        "category": "Student culture",
+        "insight": "Social life is described as organized, intentional, and varied but academically intense and less party-centric than peer campuses, with 430+ clubs and a close-knit community (apply.jhu.edu and student-life sources), though some students find it competitive.",
+        "implication": "Rewards self-directed, driven students; those wanting a laid-back or Greek-dominated social scene may find the culture demanding."
       }
     ],
     "campus_dynamics": {
-      "social_environment": "The social environment at Johns Hopkins is described as a lively and close-knit community, with a diverse student body engaged in over 400 student-run clubs and organizations. While not primarily known for large party culture, students balance demanding academics with varied social activities, including active Greek life, campus events like Spring Fair, and exploring Baltimore. Socialization often occurs within study groups, dorms, and student organizations.",
-      "transportation_impact": "Transportation in and around Johns Hopkins and Baltimore is highly accessible and convenient without the need for a car. The university provides free Blue Jay Shuttles connecting various JHU campuses and local areas, including the Homewood-Peabody-JHMI Shuttle. Additionally, the Collegetown Shuttle and Charm City Circulator (a free bus service) link the campus to other parts of Baltimore, enhancing student access to city amenities and other college campuses. Public transit options like MTA buses, Metro, and Light Rail are also available.",
-      "research_impact": "Johns Hopkins is fundamentally a research university, profoundly integrating research into its academic fabric and student experience. It boasts a high volume of research opportunities for undergraduate and graduate students, including interdisciplinary 'Industry Insight Projects' where doctoral scholars collaborate with industry partners on real-world challenges. The university's strong industry ties, facilitated by Johns Hopkins Technology Ventures, lead to collaborations in areas like early cancer detection and Alzheimer's research, fostering innovation and providing educational and career opportunities for trainees. Many of its schools, such as the Bloomberg School of Public Health and the School of Medicine, are world-renowned research powerhouses."
-    },
-    "us_news_rank": 7
+      "social_environment": "Per JHU Admissions, students form a 'lively and close-knit community' with 430+ clubs and student organizations and a residential-life-centered social hub on the 140-acre Homewood campus of red-brick buildings and grassy quads. Secondary student-life sources characterize the culture as organized and intentional but academically rigorous and less party-centric than many peers, and some students describe it as competitive. (Sourced opinion.)",
+      "transportation_impact": "Transportation is a defining daily-life factor because JHU is split between the Homewood (undergraduate) campus in North Baltimore and the East Baltimore medical campus. The JHMI shuttle (nicknamed the 'Jimmy'), the most popular line, runs an L-shaped route linking Homewood to the medical campus via Charles Village, Mount Vernon/Peabody, and Penn Station roughly every 15 minutes from ~6 a.m. to ~12:30 a.m. weekdays, supplemented by commuter routes, Night Ride shuttles, and TransLoc live tracking. This network makes car-free living practical and knits the two campuses together. (Per JHU News-Letter and JHU transportation sources.)",
+      "research_impact": "Research is the central engine of campus dynamics: as the longstanding national leader in federal R&D spending ($3.4B in FY2022 per Times Higher Education; ~44-45 consecutive years per NSF data via JHU Hub), the university channels resources into internal Catalyst and Discovery awards and a research-development office that dramatically shortens grant-proposal timelines. For students this translates into broad, well-funded undergraduate research access across fields from human genetics to AI, reinforcing a research-first campus identity. (Sourced opinion.)"
+    }
   },
   "admissions_data": {
     "current_status": {
-      "overall_acceptance_rate": 6.44,
-      "in_state_acceptance_rate": null,
-      "out_of_state_acceptance_rate": null,
-      "international_acceptance_rate": null,
-      "transfer_acceptance_rate": 5.3,
-      "admits_class_size": 2558,
-      "is_test_optional": true,
-      "test_policy_details": "Test Optional",
+      "overall_acceptance_rate": 6.11,
+      "in_state_acceptance_rate": 4.7,
+      "out_of_state_acceptance_rate": 6.99,
+      "international_acceptance_rate": 3.77,
+      "transfer_acceptance_rate": 4.82,
+      "admits_class_size": 1378,
+      "is_test_optional": false,
+      "test_policy_details": "SAT or ACT required to be considered for admission at the Homewood schools (Krieger Arts & Sciences / Whiting Engineering); not required but considered if submitted at Peabody Conservatory. Applies to students applying for Fall 2027.",
       "early_admission_stats": [
         {
           "plan_type": "ED",
-          "applications": null,
-          "admits": 809,
-          "acceptance_rate": null,
-          "class_fill_percentage": null
+          "applications": 7639,
+          "admits": 835,
+          "acceptance_rate": 10.93
         }
       ]
     },
     "longitudinal_trends": [
       {
-        "year": 2025,
-        "cycle_name": "Class of 2029",
-        "applications_total": 49112,
-        "admits_total": 2526,
-        "enrolled_total": 1297,
-        "acceptance_rate_overall": 5.14,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 51.37,
+        "year": 2027,
+        "cycle_name": "Class entering Fall 2027",
+        "applications_total": 50259,
+        "admits_total": 3072,
+        "enrolled_total": 1378,
+        "acceptance_rate_overall": 6.11,
+        "yield_rate": 44.86,
         "waitlist_stats": {
-          "year": 2025,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
+          "year": 2027,
+          "offered_spots": 2058,
+          "accepted_spots": 1359,
+          "admitted_from_waitlist": 247,
+          "waitlist_admit_rate": 18.18,
+          "is_waitlist_ranked": null
         },
-        "notes": "Preliminary data for Class of 2029 (Application Year 2025). Total applicants estimated from recent 'Fast Facts' data. Admits calculated from acceptance rate. Enrolled calculated from admits and yield rate."
-      },
-      {
-        "year": 2024,
-        "cycle_name": "Class of 2028",
-        "applications_total": 45134,
-        "admits_total": 2558,
-        "enrolled_total": 1203,
-        "acceptance_rate_overall": 5.7,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 47.02,
-        "waitlist_stats": {
-          "year": 2024,
-          "offered_spots": 2478,
-          "accepted_spots": 1748,
-          "admitted_from_waitlist": 71,
-          "waitlist_admit_rate": 4.06,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Admissions data for Class of 2028 from 2023-2024 cycle. Acceptance rate is 5.7%. Yield rate for Class of 2028 is 47.02%. Waitlist data from Common Data Set 2023-2024."
-      },
-      {
-        "year": 2023,
-        "cycle_name": "Class of 2027",
-        "applications_total": 37844,
-        "admits_total": 2745,
-        "enrolled_total": 1323,
-        "acceptance_rate_overall": 7.3,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 48.18,
-        "waitlist_stats": {
-          "year": 2023,
-          "offered_spots": 3443,
-          "accepted_spots": 2358,
-          "admitted_from_waitlist": 0,
-          "waitlist_admit_rate": 0.0,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Admissions data for Class of 2027 from 2022-2023 cycle. Yield rate for Class of 2027 is 48.18%. Waitlist data from Fall 2022 admissions cycle (Class of 2027) Common Data Set 2022-2023."
-      },
-      {
-        "year": 2022,
-        "cycle_name": "Class of 2026",
-        "applications_total": 39515,
-        "admits_total": 2972,
-        "enrolled_total": 1433,
-        "acceptance_rate_overall": 7.5,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 48.2,
-        "waitlist_stats": {
-          "year": 2022,
-          "offered_spots": 3724,
-          "accepted_spots": 2611,
-          "admitted_from_waitlist": 2,
-          "waitlist_admit_rate": 0.08,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Admissions data for Class of 2026 from 2021-2022 cycle. Yield rate for 2022 is 48.2%. Waitlist data from Common Data Set 2021-2022."
-      },
-      {
-        "year": 2021,
-        "cycle_name": "Class of 2025",
-        "applications_total": 30115,
-        "admits_total": 3330,
-        "enrolled_total": 1432,
-        "acceptance_rate_overall": 11.1,
-        "acceptance_rate_in_state": null,
-        "acceptance_rate_out_of_state": null,
-        "yield_rate": 43.0,
-        "waitlist_stats": {
-          "year": 2021,
-          "offered_spots": null,
-          "accepted_spots": null,
-          "admitted_from_waitlist": null,
-          "waitlist_admit_rate": null,
-          "is_waitlist_ranked": false
-        },
-        "notes": "Admissions data for Class of 2025 from 2020-2021 cycle. Yield rate estimated at 43.0% based on historical averages. Waitlist data not publicly disclosed in Common Data Set for this cycle."
+        "notes": ""
       }
     ],
     "admitted_student_profile": {
       "gpa": {
         "weighted_middle_50": null,
-        "unweighted_middle_50": "3.80-4.00",
+        "unweighted_middle_50": null,
         "average_weighted": null,
-        "percentile_25": null,
-        "percentile_75": null,
-        "notes": "Average unweighted GPA for admitted students is 3.93. 62.53% of enrolled students had a 4.0 GPA, and 27.99% had a GPA between 3.75 and 3.99. Most admits have straight A's in honors/AP coursework, and the rigor of secondary school record and academic GPA are considered 'Very Important' factors in admission."
+        "notes": ""
       },
       "testing": {
-        "sat_composite_middle_50": "1530-1560",
-        "sat_reading_middle_50": "740-770",
+        "sat_composite_middle_50": "1530-1565",
+        "sat_reading_middle_50": "750-780",
         "sat_math_middle_50": "780-800",
-        "act_composite_middle_50": "34-36",
-        "submission_rate": 50.0,
-        "policy_note": "Johns Hopkins University is test-optional. For the 2024-2025 admissions cycle, 50% of enrolled students submitted SAT scores and 18% submitted ACT scores. Standardized test scores are 'Considered' in admission decisions."
+        "act_composite_middle_50": "35-35",
+        "submission_rate": 77,
+        "policy_note": ""
       },
       "demographics": {
-        "first_gen_percentage": 29.0,
-        "legacy_percentage": 0.0,
-        "international_percentage": 15.0,
-        "geographic_breakdown": [
-          {
-            "region": "California",
-            "percentage": 10.0
-          },
-          {
-            "region": "Other US States",
-            "percentage": 73.0
-          },
-          {
-            "region": "International",
-            "percentage": 15.0
-          }
-        ],
-        "gender_breakdown": {
-          "men": {
-            "applicants": 17355,
-            "admits": 1371,
-            "acceptance_rate": 7.9,
-            "note": ""
-          },
-          "women": {
-            "applicants": 21538,
-            "admits": 1552,
-            "acceptance_rate": 7.21,
-            "note": ""
-          },
-          "non_binary": null
-        },
+        "first_gen_percentage": null,
+        "international_percentage": 14.37,
+        "geographic_breakdown": [],
+        "gender_breakdown": null,
         "racial_breakdown": {
-          "white": 20.0,
-          "black_african_american": 9.0,
-          "hispanic_latino": 21.0,
-          "asian": 27.0,
-          "native_american_alaskan": 0.5,
-          "pacific_islander": 0.3,
-          "two_or_more_races": 6.0,
-          "unknown": 1.5,
-          "non_resident_alien": 15.0
+          "white": 21.02,
+          "black_african_american": 4.03,
+          "hispanic_latino": 10.08,
+          "asian": 45.07,
+          "native_american_alaskan": 0.07,
+          "pacific_islander": 0,
+          "two_or_more_races": 4.1,
+          "unknown": 2.09,
+          "non_resident_alien": 13.53
         },
         "religious_affiliation": null
       }
     }
   },
   "academic_structure": {
-    "structure_type": "Schools",
+    "school": "Johns Hopkins University",
+    "as_of_cycle": "Academic structure/majors from the Johns Hopkins University Academic Catalogue, 2026-27 Edition (e-catalogue.jhu.edu); admissions/major-declaration policy from apply.jhu.edu current cycle. This is the most recent catalogue published as of July 2026 and is the applicable reference for Fall 2027 (2027-2028) planning; no 2027-28 catalogue edition exists yet. Academic structure is stable year-over-year.",
+    "structure_type": "Multi-division private research university. Undergraduate bachelor's degrees are granted by three divisions: the Zanvyl Krieger School of Arts and Sciences and the G.W.C. Whiting School of Engineering (both on the Homewood campus, sharing one undergraduate admission office and housing system), and the Peabody Institute (conservatory, separate audition-based admission on the Mount Vernon campus). Applicants apply to the university as a whole, NOT to a specific school or major, and may freely declare/switch majors after matriculating. The sole exception is biomedical engineering (BME), which is a restricted-admission major you must apply to and be admitted to during the application cycle. Verbatim from apply.jhu.edu FAQ: 'When you applied to Hopkins, you applied to the full university, and not to a specific school or major (except in the case of biomedical engineering).'",
     "colleges": [
       {
         "name": "Zanvyl Krieger School of Arts and Sciences",
-        "admissions_model": "Direct Admit to School",
-        "acceptance_rate_estimate": 6.5,
+        "admissions_model": "No separate school admission. Applicants apply to Johns Hopkins as a whole (not to this school or to a major). Admitted students may pursue any Krieger major and can declare or switch majors after matriculating with no separate admission and no officially stated GPA gate. Indicating a Krieger major on the application is non-binding.",
         "is_restricted_or_capped": false,
-        "strategic_fit_advice": "Ideal for students seeking a broad liberal arts education with strong research opportunities and interdisciplinary exploration across humanities, social sciences, and natural sciences.",
-        "housing_profile": "First and second-year students are required to live on the Homewood campus. Options include traditional corridor-style dorms (AMR I, AMR II) with communal bathrooms and social spaces, and suite-style living (AMR III A & B, Wolman Hall, McCoy Hall) with private or shared bathrooms and kitchenettes. Upperclassmen typically live off-campus in nearby apartments. Housing generally offers a mix of modern and older buildings, with amenities like study rooms, common kitchens, and laundry facilities.",
-        "student_archetype": "Intellectually curious, driven, and collaborative students who enjoy in-depth research and interdisciplinary learning. Many are pre-health, but stereotypes of being solely pre-med or cutthroat are often debunked by students. They balance academic rigor with social engagement and often have a 'work hard, play hard' mentality.",
+        "strategic_fit_advice": "Fits students who want breadth across humanities, social sciences, and natural sciences under an open curriculum (no fixed university core) and the freedom to double-major or add minors across Krieger and Whiting. Because admission is to the university rather than to the major, the intended major listed on the application does not affect which major you can ultimately declare (BME excepted). Large pre-med and pre-law contingent. Grounded in apply.jhu.edu: students 'can choose any major you're interested in pursuing across the Krieger School of Arts & Sciences and Whiting School of Engineering, and you are not bound to the major you listed on your application.'",
+        "housing_profile": "Homewood campus (shared with Whiting). Johns Hopkins requires first-year and second-year (sophomore) undergraduates to live in University Housing \u2014 a two-year on-campus residency requirement; the only exception is a commuter exemption for students living with a parent/legal guardian within commuting distance (source: studentaffairs.jhu.edu; direct fetch was 403 but the official policy was surfaced via search of studentaffairs.jhu.edu pages).",
+        "student_archetype": "Intellectually flexible liberal-arts and pre-professional students (notably a large pre-med cohort) who prefer curricular freedom over a prescribed track.",
         "majors": [
           {
             "name": "Biology",
-            "degree_type": "B.A.",
+            "degree_type": "Bachelor of Arts",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "General Biology I & II",
-              "General Chemistry I & II",
-              "Organic Chemistry I & II",
-              "Physics",
-              "Calculus"
-            ],
-            "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": [
-              "AS.020.151-152 General Biology I & II",
-              "AS.030.205-206 Introductory Organic Chemistry I & II"
-            ],
-            "special_requirements": "All required core courses must be taken for a letter grade (not S/U) and passed with a C- or better, with one exception for a senior."
-          },
-          {
-            "name": "Neuroscience",
-            "degree_type": "B.S.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "AS.200.141 Foundations of Brain, Behavior and Cognition OR AS.050.105 Introduction to Cognitive Neuropsychology",
-              "General Biology I & II",
-              "General Chemistry I & II",
-              "Organic Chemistry I & II",
-              "Physics I & II",
-              "Calculus I & II"
-            ],
-            "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": [
-              "AS.080.305 Neuroscience: Cellular and Systems I",
-              "AS.080.306 Neuroscience: Cellular and Systems II",
-              "Introductory science courses (Biology, Chemistry, Organic Chemistry, Physics)"
-            ],
-            "special_requirements": "6 credits of undergraduate research. Introduction to Computing (AS.250.205) required for students declaring in Spring 2023 and later. All required courses must receive a grade of C- or better."
-          },
-          {
-            "name": "Economics",
-            "degree_type": "B.A.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I",
-              "AS.180.101 Elements of Macroeconomics",
-              "AS.180.102 Elements of Microeconomics",
-              "One semester of statistics"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.180.301 Microeconomic Theory",
-              "AS.180.302 Macroeconomic Theory",
-              "AS.180.334 Econometrics"
-            ],
-            "special_requirements": "For students entering Fall 2023 and beyond, a grade of C or better is required in AS.180.101 and AS.180.102. C- or better for all other major courses. At least 5 of 10 required economics courses must be taken at JHU."
-          },
-          {
-            "name": "Political Science",
-            "degree_type": "B.A.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Two introductory political science courses (e.g., PS 1 Intro to American Politics, PS 2 Intro to Comparative Politics, PS 4 Intro to Political Theory, PS 5 Intro to International Relations)"
-            ],
-            "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": [
-              "Introductory 100-level Political Science courses (PS 1, 2, 4, 5)"
-            ],
-            "special_requirements": "2.0 GPA overall and in major courses to declare. All courses applied towards the major must be taken for a letter grade and students must receive a grade of C or higher. No AP credit for government."
-          },
-          {
-            "name": "Psychology",
-            "degree_type": "B.A.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Three 100-level psychology courses (e.g., AS.200.101 Introduction to Psychology, AS.200.141 Foundations of Brain, Behavior, and Cognition)"
-            ],
-            "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": [
-              "AS.200.200 Research Methods in Psychology",
-              "AS.200.300 Design & Statistical Analysis for Psychology"
-            ],
-            "special_requirements": "All classes taken for the major must be taken for a grade and be completed with a C- or better. 9 additional Science and Data credits outside the psychology department. 3 credits of small group experience (research, internship, independent study, or small 300-level course)."
+            "admissions_pathway": "Open major \u2014 not admitted by major; declared after matriculation (no separate admission, no stated GPA gate). Verified catalogue leaf title: 'Biology, Bachelor of Arts'. (The Biology department also offers a Bachelor of Science, but only the BA leaf page was verified in this pass.)",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           },
           {
             "name": "Chemistry",
-            "degree_type": "B.A.",
+            "degree_type": "Bachelor of Science",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "General Chemistry I & II",
-              "Calculus I & II",
-              "Physics I & II"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.030.101-102 Introductory Chemistry I & II",
-              "AS.030.205-206 Introductory Organic Chemistry I & II"
-            ],
-            "special_requirements": "All major courses must be passed with a C- or better."
-          },
-          {
-            "name": "Chemistry",
-            "degree_type": "B.S.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "General Chemistry I & II",
-              "Calculus I & II",
-              "Physics I & II"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.030.101-102 Introductory Chemistry I & II",
-              "AS.030.205-206 Introductory Organic Chemistry I & II",
-              "AS.030.225 Introductory Organic Chemistry Lab"
-            ],
-            "special_requirements": "More intensive science focus than the B.A., including additional advanced chemistry coursework and research. All major courses must be passed with a C- or better."
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'Chemistry, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           },
           {
             "name": "Physics",
-            "degree_type": "B.S.",
+            "degree_type": "Bachelor of Science",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I, II, III",
-              "Physics I & II"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.171.101-102 General Physics I & II",
-              "AS.171.103-104 General Physics Lab I & II",
-              "AS.110.201 Linear Algebra",
-              "AS.110.302 Differential Equations with Applications"
-            ],
-            "special_requirements": "All major courses must be passed with a C- or better. Requires a substantial number of advanced physics and mathematics courses.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'Physics, Bachelor of Science'.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Double majoring with Computer Science and Physics (BS) is feasible."
+            "prerequisite_courses": []
           },
           {
-            "name": "English",
-            "degree_type": "B.A.",
+            "name": "Mathematics",
+            "degree_type": "Bachelor of Arts",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Foreign language proficiency through the intermediate level",
-              "AS.060.107 Introduction to Literary Study"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.060.107 Introduction to Literary Study"
-            ],
-            "special_requirements": "All major requirements must be completed with a C- or better. No more than 2 introductory (100-level) English courses (excluding AS.060.107) can count towards the 9 additional English courses required. At least 5 courses must be 300-500 level. At least 2 pre-1800 literature courses and 1 global/minority literature course."
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'Mathematics, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           },
           {
-            "name": "History",
-            "degree_type": "B.A.",
+            "name": "Neuroscience",
+            "degree_type": "Bachelor of Science",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Two introductory history courses (AS.100.1xx or AS.100.2xx)",
-              "Foreign language proficiency through the intermediate level"
-            ],
-            "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": [
-              "AS.100.293 Historical Methods, Archives and Interpretations",
-              "AS.100.388 Practicing Historical Research",
-              "Introductory 100/200 level history courses"
-            ],
-            "special_requirements": "C- or higher in all courses used to satisfy major requirements. Honors requires a 3.25 overall GPA and a 3.5 GPA in history courses."
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'Neuroscience, Bachelor of Science' (Solomon H. Snyder Department of Neuroscience).",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           },
           {
             "name": "Public Health Studies",
-            "degree_type": "B.A.",
+            "degree_type": "Bachelor of Arts",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "One semester of Calculus",
-              "Two semesters of Biology with one lab",
-              "Two introductory social science courses",
-              "AS.280.101 Introduction to Public Health",
-              "AS.280.240 Research Methods in Public Health"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.280.101 Introduction to Public Health",
-              "AS.280.240 Research Methods in Public Health",
-              "AS.280.345 Public Health Biostatistics"
-            ],
-            "special_requirements": "All courses must be taken for a letter grade (unless not offered as graded) and passed with a C- or higher. 15 credits from the Johns Hopkins Bloomberg School of Public Health (taken in final year). Required Applied Experience (80 hours/4 weeks). Honors requires a 3.5 major GPA."
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'Public Health Studies, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Economics",
+            "degree_type": "Bachelor of Arts",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'Economics, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "International Studies",
+            "degree_type": "Bachelor of Arts",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'International Studies, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Political Science",
+            "degree_type": "Bachelor of Arts",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'Political Science, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "History",
+            "degree_type": "Bachelor of Arts",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'History, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "English",
+            "degree_type": "Bachelor of Arts",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'English, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Writing Seminars",
+            "degree_type": "Bachelor of Arts",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'Writing Seminars, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Cognitive Science",
+            "degree_type": "Bachelor of Arts",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'Cognitive Science, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Sociology",
+            "degree_type": "Bachelor of Arts",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue leaf title: 'Sociology, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           }
         ]
       },
       {
-        "name": "Whiting School of Engineering",
-        "admissions_model": "Direct Admit to School with one capped major",
-        "acceptance_rate_estimate": 6.5,
-        "is_restricted_or_capped": true,
-        "strategic_fit_advice": "Suited for ambitious problem-solvers with a strong STEM background, interested in hands-on learning, cutting-edge research, and interdisciplinary engineering challenges. Biomedical Engineering (BME) is a highly competitive, capped major requiring a separate admissions review.",
-        "housing_profile": "First and second-year students are required to live on the Homewood campus. Options include traditional corridor-style dorms (AMR I, AMR II) with communal bathrooms and social spaces, and suite-style living (AMR III A & B, Wolman Hall, McCoy Hall) with private or shared bathrooms and kitchenettes. Upperclassmen typically live off-campus in nearby apartments. Housing generally offers a mix of modern and older buildings, with amenities like study rooms, common kitchens, and laundry facilities.",
-        "student_archetype": "Highly driven, analytical, and research-oriented students with a 'work hard, play hard' mentality. They collaborate well on projects, are encouraged to explore interests across disciplines, and often pursue interdisciplinary applications of engineering.",
+        "name": "G.W.C. Whiting School of Engineering",
+        "admissions_model": "No separate school admission (applicants apply to the university as a whole), with ONE exception: biomedical engineering (BME) is a restricted-admission major you must apply to and be admitted to during the application cycle. Undeclared engineering students must select a primary major no later than the end of the first year. Catalogue lists the school as 'Whiting School of Engineering' (Homewood).",
+        "is_restricted_or_capped": false,
+        "strategic_fit_advice": "Fits students who want ABET-style engineering rigor while retaining Hopkins' cross-division flexibility (engineering and arts-and-sciences majors are freely combinable). Applicants who want biomedical engineering must name it as first-choice major on the Hopkins supplement and be admitted to BME during the application cycle \u2014 it is the only major that must be secured at application. All other engineering majors are open to declare after enrolling.",
+        "housing_profile": "Homewood campus (shared with Krieger). Same two-year on-campus residency requirement: first-year and sophomore undergraduates must live in University Housing, with only a commuter exemption (studentaffairs.jhu.edu).",
+        "student_archetype": "Quantitatively strong, build-oriented students; many combine engineering with a Krieger major or minor.",
         "majors": [
           {
             "name": "Biomedical Engineering",
-            "degree_type": "B.S.",
-            "is_impacted": true,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "High school Calculus",
-              "High school Physics",
-              "High school Chemistry",
-              "High school Biology"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [],
-            "special_requirements": "Must indicate BME as first-choice major on application. Admission to BME is decided at the time of university admission.",
-            "admissions_pathway": "Direct Admit",
-            "internal_transfer_allowed": true,
+            "degree_type": "Bachelor of Science",
+            "is_impacted": false,
+            "admissions_pathway": "RESTRICTED-ADMISSION / direct-admit major. Applicants must indicate BME as their first-choice major on the Hopkins supplement and be admitted to the BME program during the application period. Verbatim from apply.jhu.edu: 'Applicants must apply and be admitted to the BME program during the application period.' Students admitted to the university but not to BME cannot select BME afterward. Verified catalogue entry: 'Biomedical Engineering, Bachelor of Science'.",
             "direct_admit_only": true,
             "internal_transfer_gpa": null,
-            "notes": "Extremely competitive. External transfer students are not eligible for the BME major. Internal transfer from other JHU majors is very rare and only occurs if spaces open up, usually at the end of the first year, and is highly competitive. Students are advised not to enroll with the expectation of transferring into BME."
-          },
-          {
-            "name": "Computer Science",
-            "degree_type": "B.S.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I",
-              "Calculus II",
-              "Linear Algebra",
-              "Probability & Statistics",
-              "Two semesters of core science with labs (Physics, Chemistry, or Biology)"
-            ],
-            "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": [
-              "EN.500.112/113/114 Gateway Computing (requires C+)",
-              "EN.601.220 Intermediate Programming",
-              "EN.601.226 Data Structures",
-              "EN.601.229 Computer System Fundamentals"
-            ],
-            "special_requirements": "C+ or higher in Gateway Computing; C- or higher in all other CS courses. 40 CS credits required.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Declaration involves an online request through SIS, developing a 4-year plan, and review with an Academic Program Coordinator or Director of Undergraduate Studies. Departmental honors require a 3.5 GPA in CS courses."
-          },
-          {
-            "name": "Computer Science",
-            "degree_type": "B.A.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I",
-              "Calculus II",
-              "Linear Algebra",
-              "Probability & Statistics",
-              "Two semesters of core science with labs (Physics, Chemistry, or Biology)"
-            ],
-            "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": [
-              "EN.500.112/113/114 Gateway Computing (requires C+)",
-              "EN.601.220 Intermediate Programming",
-              "EN.601.226 Data Structures",
-              "EN.601.229 Computer System Fundamentals"
-            ],
-            "special_requirements": "C+ or higher in Gateway Computing; C- or higher in all other CS courses. 33 CS credits required.",
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Offers a liberal arts focus within computer science. Declaration process is similar to the B.S. program. Departmental honors require a 3.5 GPA in CS courses."
-          },
-          {
-            "name": "Chemical and Biomolecular Engineering",
-            "degree_type": "B.S.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "General Chemistry I & II",
-              "Calculus I & II",
-              "Physics I & II"
-            ],
-            "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": [
-              "AS.030.101-102 Introductory Chemistry I & II",
-              "AS.030.105-106 Introductory Chemistry Laboratory I & II",
-              "ChemBE Core Courses (e.g., Transport Phenomena, Kinetics, Thermodynamics)"
-            ],
-            "special_requirements": "Minimum 2.0 GPA in ChemBE Core Courses for graduation. Grades of C- or higher required for Foundational Abilities (FA2), D or higher for other major courses."
-          },
-          {
-            "name": "Mechanical Engineering",
-            "degree_type": "B.S.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I & II",
-              "Physics I & II"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "EN.530.101 What is Engineering?",
-              "Calculus I (AS.110.106/108)",
-              "Physics I (AS.171.101/103)"
-            ],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Students admitted to the Whiting School of Engineering typically declare a major by the end of freshman year."
-          },
-          {
-            "name": "Electrical and Computer Engineering",
-            "degree_type": "B.S.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I & II",
-              "Physics I & II",
-              "Introductory Programming"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.171.101-102 General Physics I & II",
-              "AS.110.201 Linear Algebra",
-              "EN.520.214 Circuits"
-            ],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "The Computer Engineering degree is jointly offered with the Computer Science Department."
-          },
-          {
-            "name": "Civil Engineering",
-            "degree_type": "B.S.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I & II",
-              "Physics I & II"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.110.106/108 Calculus I",
-              "AS.171.101/103 General Physics I"
-            ],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null,
-            "notes": "Part of the Department of Civil and Systems Engineering."
-          },
-          {
-            "name": "Materials Science and Engineering",
-            "degree_type": "B.S.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I & II",
-              "General Chemistry I & II",
-              "Physics I & II"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.030.101-102 Introductory Chemistry I & II",
-              "AS.171.101-102 General Physics I & II"
-            ],
-            "special_requirements": "Biomaterials engineering is a track within this major."
-          },
-          {
-            "name": "Environmental Engineering",
-            "degree_type": "B.S.",
-            "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I & II",
-              "General Chemistry I & II",
-              "General Biology I & II",
-              "Physics I & II"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.030.101-102 Introductory Chemistry I & II",
-              "AS.020.151-152 General Biology I & II"
-            ],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
-            "direct_admit_only": false,
-            "internal_transfer_gpa": null
+            "prerequisite_courses": []
           },
           {
             "name": "Applied Mathematics and Statistics",
-            "degree_type": "B.S.",
+            "degree_type": "Bachelor of Arts; Bachelor of Science",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I & II",
-              "Linear Algebra",
-              "Probability & Statistics"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "AS.110.201 Linear Algebra",
-              "AS.110.302 Differential Equations with Applications",
-              "EN.553.420 Introduction to Probability",
-              "EN.553.421 Introduction to Statistics"
-            ],
-            "special_requirements": null,
-            "admissions_pathway": "Pre-Major",
-            "internal_transfer_allowed": true,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entries: 'Applied Mathematics and Statistics, Bachelor of Arts' and 'Applied Mathematics and Statistics, Bachelor of Science'.",
             "direct_admit_only": false,
             "internal_transfer_gpa": null,
-            "notes": "Department is housed within the Whiting School of Engineering."
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Chemical and Biomolecular Engineering",
+            "degree_type": "Bachelor of Science",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entry: 'Chemical and Biomolecular Engineering, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Civil Engineering",
+            "degree_type": "Bachelor of Science",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entry: 'Civil Engineering, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Computer Engineering",
+            "degree_type": "Bachelor of Science",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entry: 'Computer Engineering, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Computer Science",
+            "degree_type": "Bachelor of Arts; Bachelor of Science",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entries: 'Computer Science, Bachelor of Arts' and 'Computer Science, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Electrical Engineering",
+            "degree_type": "Bachelor of Science",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entry: 'Electrical Engineering, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Environmental Engineering",
+            "degree_type": "Bachelor of Science",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entry: 'Environmental Engineering, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Materials Science and Engineering",
+            "degree_type": "Bachelor of Science",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entry: 'Materials Science and Engineering, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Mechanical Engineering",
+            "degree_type": "Bachelor of Science",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entry: 'Mechanical Engineering, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Engineering Mechanics",
+            "degree_type": "Bachelor of Science",
+            "is_impacted": false,
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entry: 'Engineering Mechanics, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           },
           {
             "name": "Systems Engineering",
-            "degree_type": "B.S.",
+            "degree_type": "Bachelor of Science",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [
-              "Calculus I & II",
-              "Linear Algebra"
-            ],
-            "minimum_gpa_to_declare": null,
-            "weeder_courses": [
-              "EN.570.201 Intro to Mathematical Decision Making",
-              "Courses in Optimization, Network Theory, Data Analysis, and Uncertainty Quantification"
-            ],
-            "special_requirements": "Trans-disciplinary program connecting mathematics, engineering, social and physical sciences, and medicine."
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entry: 'Systems Engineering, Bachelor of Science'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           },
           {
             "name": "General Engineering",
-            "degree_type": "B.A.",
+            "degree_type": "Bachelor of Arts",
             "is_impacted": false,
-            "acceptance_rate": null,
-            "average_gpa_admitted": null,
-            "prerequisite_courses": [],
-            "minimum_gpa_to_declare": 2.0,
-            "weeder_courses": [
-              "EN.530.101 What Is Engineering?"
-            ],
-            "special_requirements": "Not accredited by ABET. Intended for students desiring an engineering background for careers in fields like public policy, business, law, or medicine."
+            "admissions_pathway": "Open major \u2014 declared after matriculation. Verified catalogue entry: 'General Engineering, Bachelor of Arts'.",
+            "direct_admit_only": false,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
           }
         ]
       },
       {
-        "name": "Peabody Institute",
-        "admissions_model": "Direct Admit",
-        "acceptance_rate_estimate": 26.5,
+        "name": "Peabody Institute (Peabody Conservatory)",
+        "admissions_model": "Separate, audition-based admission via Peabody's own application, distinct from Homewood undergraduate admission. Applicants must meet both the university's requirements and Peabody's requirements; many programs require a pre-screen video/portfolio followed by an audition. Students may combine a Peabody bachelor's degree with a Homewood BA/BS via the Peabody Double Degree program. (Sources: peabody.jhu.edu undergraduate application instructions; apply.jhu.edu Peabody Double Degree page.)",
         "is_restricted_or_capped": true,
-        "strategic_fit_advice": "For exceptionally talented and dedicated musicians and dancers seeking intensive conservatory training. Admission is highly competitive and heavily relies on audition performance and strong academic achievement.",
-        "housing_profile": "Peabody students have access to university housing, with freshman housing available. Housing options vary, offering a mix of facilities from traditional dorms to more modern suites. Security measures like keycard access and campus police are in place.",
-        "student_archetype": "Passionate, disciplined, and artistically focused individuals committed to rigorous training in music or dance. They often balance demanding artistic schedules with academic components and are driven by performance and creative expression.",
-        "majors": []
+        "strategic_fit_advice": "For pre-professional performers, composers, and dancers seeking conservatory training. Admission is by audition/portfolio to a specific program (instrument/discipline), so fit is program-specific rather than school-wide. Strong candidates for the Double Degree route pair Peabody with a Homewood BA/BS.",
+        "housing_profile": "Peabody has its own residential life on the Mount Vernon campus, separate from the Homewood dorm system used by Krieger and Whiting (peabody.jhu.edu residential life). Specific residency-requirement text was not verified in this pass.",
+        "student_archetype": "Audition-track conservatory musicians and dancers; a subset pursue the rigorous Double Degree with Homewood.",
+        "majors": [
+          {
+            "name": "Composition",
+            "degree_type": "Bachelor of Music",
+            "is_impacted": false,
+            "admissions_pathway": "Audition/portfolio-based admission to this specific Peabody program via Peabody's separate application. Verified catalogue entry: 'Bachelor of Music in Composition'.",
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Performance",
+            "degree_type": "Bachelor of Music",
+            "is_impacted": false,
+            "admissions_pathway": "Audition-based admission to the chosen instrument/voice within this program. Verified catalogue entry: 'Bachelor of Music in Performance' (specializations include Computer Music, Guitar, Harpsichord, Historical Performance, Orchestral Instruments, Organ, Piano, and Voice).",
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Jazz Performance",
+            "degree_type": "Bachelor of Music",
+            "is_impacted": false,
+            "admissions_pathway": "Audition-based admission. Verified catalogue entry: 'Bachelor of Music in Jazz Performance'.",
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Music Education",
+            "degree_type": "Bachelor of Music",
+            "is_impacted": false,
+            "admissions_pathway": "Audition-based admission. Verified catalogue entry: 'Bachelor of Music in Music Education'.",
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Music for New Media",
+            "degree_type": "Bachelor of Music",
+            "is_impacted": false,
+            "admissions_pathway": "Portfolio/audition-based admission. Verified catalogue entry: 'Bachelor of Music in Music for New Media'.",
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Recording Arts & Sciences",
+            "degree_type": "Bachelor of Music",
+            "is_impacted": false,
+            "admissions_pathway": "Audition/portfolio-based admission. Verified catalogue entry: 'Bachelor of Music in Recording Arts & Sciences'.",
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Hip Hop",
+            "degree_type": "Bachelor of Music",
+            "is_impacted": false,
+            "admissions_pathway": "Audition-based admission. Verified catalogue entry: 'Bachelor of Music in Hip Hop'.",
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          },
+          {
+            "name": "Dance",
+            "degree_type": "Bachelor of Fine Arts",
+            "is_impacted": false,
+            "admissions_pathway": "Audition-based admission. Verified catalogue entry: 'Bachelor of Fine Arts in Dance (BFA)'.",
+            "direct_admit_only": true,
+            "internal_transfer_gpa": null,
+            "prerequisite_courses": []
+          }
+        ]
       }
     ],
     "minors_certificates": [
-      "Business of Music Minor",
-      "Liberal Arts Minor",
-      "Music Theory Minor",
-      "Musicology Minor",
-      "Computer Science Minor",
-      "Entrepreneurship & Management Minor",
-      "Public Health Studies Minor",
-      "International Studies Minor"
-    ]
+      "{\"name\":\"Business of Music\",\"offered_by\":\"Peabody Institute\",\"type\":\"minor\",\"note\":\"Quoted from e-catalogue.jhu.edu/peabody/ as a Peabody BM minor.\"}",
+      "{\"name\":\"Historical Performance\",\"offered_by\":\"Peabody Institute\",\"type\":\"minor\",\"note\":\"Quoted from e-catalogue.jhu.edu/peabody/ as a Peabody BM minor.\"}",
+      "{\"name\":\"Liberal Arts\",\"offered_by\":\"Peabody Institute\",\"type\":\"minor\",\"note\":\"Quoted from e-catalogue.jhu.edu/peabody/ as a Peabody BM minor.\"}",
+      "{\"name\":\"Music Theory\",\"offered_by\":\"Peabody Institute\",\"type\":\"minor\",\"note\":\"Quoted from e-catalogue.jhu.edu/peabody/ as a Peabody BM minor.\"}",
+      "{\"name\":\"Musicology\",\"offered_by\":\"Peabody Institute\",\"type\":\"minor\",\"note\":\"Quoted from e-catalogue.jhu.edu/peabody/ as a Peabody BM minor.\"}"
+    ],
+    "data_quality_note": "Only the Peabody minors above were verified with a direct quote in this pass. Johns Hopkins offers roughly 50+ additional minors and certificates across Krieger and Whiting (e.g., names such as Bioethics, Museums and Society, Entrepreneurship and Management, Robotics, Financial Economics, Computational Medicine, Marketing & Communications appear on apply.jhu.edu's combined majors/minors list), but that page does not label which are minors vs majors, so they were intentionally NOT classified here to avoid guessing. A complete minors/certificates inventory requires parsing the e-catalogue minors section, which was not exhaustively fetched."
   },
   "application_process": {
     "platforms": [
-      "Common App",
-      "Coalition App"
+      "Common Application",
+      "Coalition Application on Scoir"
     ],
     "application_deadlines": [
       {
         "plan_type": "Early Decision I",
         "date": "2025-11-01",
         "is_binding": true,
-        "notes": "Binding commitment"
+        "notes": "Official quote from apply.jhu.edu deadlines page: 'November 1, 2025' (application), 'November 15, 2025' (financial aid), decision release 'December 12, 2025'. Binding: 'Early Decision I and Early Decision II are both binding agreements' and applicant/parents sign that 'you'll enroll at Hopkins if admitted and withdraw any other applications to other schools.' AS_OF_CYCLE: 2025-2026 application cycle = Fall 2026 entry (Class of 2030). This is NOT the requested Fall 2027 cycle and does NOT fall in the 2027-2028 window; the official Fall 2027 (2026-2027 application cycle) date is not yet published on apply.jhu.edu as of this fetch. Not inferred/predicted."
       },
       {
         "plan_type": "Early Decision II",
-        "date": "2026-01-05",
+        "date": "2026-01-02",
         "is_binding": true,
-        "notes": "Binding commitment"
+        "notes": "Official quote: application 'January 2, 2026', financial aid 'January 15, 2026', decision release 'February 13, 2026'. Binding per 'Early Decision I and Early Decision II are both binding agreements.' AS_OF_CYCLE: 2025-2026 cycle (Fall 2026 entry). NOT the requested Fall 2027 cycle; Fall 2027 date not yet published."
       },
       {
         "plan_type": "Regular Decision",
-        "date": "2026-01-15",
+        "date": "2026-01-02",
         "is_binding": false,
-        "notes": ""
+        "notes": "Official quote: application 'January 2, 2026', financial aid 'January 15, 2026', decision release 'March 18, 2026', reply-by 'May 1, 2026'. Non-binding. AS_OF_CYCLE: 2025-2026 cycle (Fall 2026 entry). NOT the requested Fall 2027 cycle; Fall 2027 date not yet published."
+      },
+      {
+        "plan_type": "Transfer",
+        "date": "2026-03-01",
+        "is_binding": false,
+        "notes": "Official quote: application 'March 1, 2026', financial aid 'March 15, 2026'. AS_OF_CYCLE: 2025-2026 cycle. Included for completeness; not a first-year plan and not the requested Fall 2027 cycle."
       }
     ],
     "supplemental_requirements": [
       {
-        "target_program": "All",
-        "requirement_type": "Essays",
+        "target_program": "All first-year applicants",
+        "requirement_type": "Supplemental essay",
         "deadline": "",
-        "details": "One supplemental essay required: 'Tell us about an important first in your life\u2014big or small\u2014that has shaped you' (350-word limit)."
+        "details": "'Tell us about an important first in your life\u2014big or small\u2014that has shaped you (350-word limit).' AS_OF: 2025-2026 cycle prompt (apply.jhu.edu). The Fall 2027 prompt is not yet published and JHU changes this prompt between cycles, so it may differ."
       },
       {
-        "target_program": "Music (Peabody Institute)",
-        "requirement_type": "Audition",
+        "target_program": "All first-year applicants",
+        "requirement_type": "Teacher evaluations",
         "deadline": "",
-        "details": "Pre-screening recording required; specific requirements and deadlines are available on the Peabody Institute website."
+        "details": "'Two teacher evaluations' (letters of recommendation). Source: apply.jhu.edu deadlines & requirements page, 2025-2026 cycle."
+      },
+      {
+        "target_program": "All first-year applicants",
+        "requirement_type": "Secondary school report",
+        "deadline": "",
+        "details": "Secondary school report including counselor recommendation and transcript. Source: apply.jhu.edu, 2025-2026 cycle."
+      },
+      {
+        "target_program": "All first-year applicants",
+        "requirement_type": "Mid-year report",
+        "deadline": "",
+        "details": "'Your mid-year report Due in mid-February.' Source: apply.jhu.edu, 2025-2026 cycle."
+      },
+      {
+        "target_program": "All first-year applicants",
+        "requirement_type": "Standardized testing (required)",
+        "deadline": "",
+        "details": "'Johns Hopkins University requires standardized testing. As part of our holistic review process, submitted scores will be taken into consideration within the context of your broader application.' Source: apply.jhu.edu, 2025-2026 cycle. Note: search also indicated 'for Homewood applicants, scores are required for Fall 2027' but this was not confirmed via a directly-quoted official page."
+      },
+      {
+        "target_program": "Biomedical Engineering (BME)",
+        "requirement_type": "Major selection",
+        "deadline": "",
+        "details": "BME applicants must 'indicate it as your first-choice major' with 'no separate application process.' Source: apply.jhu.edu, 2025-2026 cycle."
       }
     ],
     "holistic_factors": {
       "primary_factors": [
-        "Course Rigor",
-        "GPA",
-        "Essays",
-        "Recommendations",
-        "Extracurriculars"
+        "Rigor of secondary school record (Very Important)",
+        "Academic GPA (Very Important)",
+        "Recommendation(s) (Very Important)",
+        "Standardized test scores (Very Important)",
+        "Application Essay (Very Important)"
       ],
       "secondary_factors": [
-        "Talents",
-        "Character",
-        "Impact & Initiative"
+        "Extracurricular activities (Important)",
+        "Talent/ability (Important)",
+        "Character/personal qualities (Important)"
       ],
-      "essay_importance": "Critical",
+      "essay_importance": "Very important",
       "demonstrated_interest": "Not Considered",
       "interview_policy": "Not Offered",
-      "legacy_consideration": "None",
-      "first_gen_boost": "None",
-      "specific_differentiators": "Looking for intellectual curiosity and drive; students who are energized by new ideas, dig deeper into topics that matter to them, and make an impact in their communities."
-    },
-    "essay_prompts": [
-      {
-        "prompt": "Tell us about an important first in your life\u2014big or small\u2014that has shaped you.",
-        "word_limit": "350 words",
-        "type": "Personal",
-        "required": true,
-        "brainstorming_questions": [
-          "Thinking about your 'important firsts,' can you recall a moment where you felt a significant internal shift\u2014perhaps a newfound curiosity, a challenging realization, or a quiet sense of accomplishment\u2014that you can trace back to that initial experience?",
-          "Beyond the obvious milestones, was there a 'first' time you encountered something (a concept, a place, a person's perspective) that fundamentally altered how you saw the world or your place within it, even if it wasn't a grand event?",
-          "When you consider 'important firsts,' what's a memory that, upon reflection, still evokes a strong emotional response\u2014joy, frustration, determination, or even a touch of embarrassment\u2014and what was the lasting lesson learned from that feeling?",
-          "Imagine you had to explain the ripple effect of one of your 'important firsts' to someone unfamiliar with your life. What specific actions, decisions, or ways of thinking have you adopted since then that directly stem from that initial experience?",
-          "For an 'important first' that was 'big or small,' what was a moment *during* that first experience where you had to actively adapt, learn, or overcome a challenge, and how did that internal process shape your approach to future endeavors?"
-        ]
-      }
-    ]
+      "legacy_consideration": "Unknown",
+      "first_gen_boost": "Unknown",
+      "specific_differentiators": ""
+    }
   },
   "application_strategy": {
     "major_selection_tactics": [
-      "Apply to less competitive majors if not set on highly impacted fields like CS/Engineering, ensuring your extracurriculars align with the chosen major.",
-      "Consider applying as 'undeclared' in a broader college like Letters and Science, especially if unsure or aiming for a less competitive entry point.",
-      "Research specific major-by-major admit rates and internal transfer policies for your target universities, as these vary significantly.",
-      "Evaluate potential majors by reviewing course catalogs to identify classes that genuinely interest you, rather than just focusing on the major title.",
-      "Be aware that switching into highly competitive majors (e.g., CS, Engineering, Nursing, Business) after admission can be difficult or impossible at some institutions."
+      "For any major EXCEPT biomedical engineering, pick the intended major that fits your story honestly rather than gaming 'undecided vs. specific' \u2014 you are admitted to the whole university, not to that major, and you are not locked into it.",
+      "Only put biomedical engineering (BME) as your first-choice major if it is a genuine top target and your profile is strong \u2014 BME is the one exception that is evaluated separately for a capped seat count, so it is materially more competitive than being admitted to the university at large.",
+      "Listing BME first-choice does NOT jeopardize your overall admission \u2014 it has a built-in university-level fallback. If you are not admitted to BME you can still be admitted to Hopkins and then enroll under your second-choice or any other Krieger/Whiting major in the spring of first year, so choose a real second-choice major you'd be happy with.",
+      "If BME is your goal, get it right in the application \u2014 do not treat 'get in undeclared and transfer into BME later' as a plan. Internal transfer only happens if seats open at the end of first year, and outside transfer students cannot apply to BME at all.",
+      "Because switching is flexible post-admission (changing majors within a school is easy, and you can add a second major in a school you aren't part of after an advisor meeting), you can safely apply with a less-saturated intended major and pivot after you arrive \u2014 the ONE thing you can never switch into is BME."
     ],
-    "college_ranking_tactics": [
-      "Prioritize factors beyond popular 'prestige' rankings, such as opportunities, faculty quality, and campus culture.",
-      "Consider the quality of living standards and housing (e.g., dorm conditions, AC availability) when evaluating colleges.",
-      "Assess the surrounding area and its fit with your preferences (e.g., urban vs. rural, social scene).",
-      "Look for rankings or information specific to departments or majors, as overall school rankings may not reflect program strength.",
-      "Examine college data for retention and graduation rates, adjusted for student caliber, to understand how a university 'improves' its students."
-    ],
-    "alternate_major_strategy": "If applying to a highly competitive major, list a backup in a different college or a less competitive field. For example, if applying to CS in Engineering, list Cognitive Science in Letters and Science as an alternate. Confirm the university's policy on alternate majors, as some only guarantee review of the primary major, while others use the alternate if the first choice is denied."
+    "college_ranking_tactics": [],
+    "alternate_major_strategy": "{\"found\":true,\"summary\":\"JHU has ONE formal alternate-major mechanism, and it exists only for biomedical engineering. Applicants who want BME list it as first-choice on the Hopkins supplement; if denied BME they can still be admitted to the university and then enroll under their listed second-choice major, or declare any Krieger/Whiting major in the spring of first year. For every non-BME applicant there is effectively no alternate-major game to play: you apply to the full university, are not bound to the major you listed, and can choose any Krieger/Whiting major after matriculating. The critical caveat is that the BME fallback is one-directional \u2014 a student admitted to the university (but not BME) can pick any other major but can never later switch into BME, so BME must be won at the application stage, not treated as a later add-on.\",\"source_type\":\"official\",\"source_urls\":[\"https://apply.jhu.edu/how-to-apply/application-deadlines-requirements/\",\"https://apply.jhu.edu/academics/special-programs/biomedical-engineering/\",\"https://apply.jhu.edu/frequently-asked-questions/\"],\"source_quotes\":[\"Students are admitted to BME based on evaluation of credentials and space available. It is possible to be admitted to the university without acceptance to the BME major. If you are admitted to the university but not to the BME major, you may select any other intended major in the Whiting School of Engineering or Krieger School of Arts & Sciences. (apply.jhu.edu/how-to-apply/application-deadlines-requirements/)\",\"If you choose to attend Hopkins, you may enroll under your second-choice major or select a different major. Students who are admitted to Hopkins but not BME may declare any major in the Krieger School of Arts & Sciences or Whiting School of Engineering in the spring of their first year. (apply.jhu.edu BME special-programs page)\",\"You are not bound to the major you listed on your application. (apply.jhu.edu FAQ \u2014 establishes that for non-BME applicants no alternate-major hedging is needed)\"]}"
   },
   "financials": {
-    "tuition_model": "Annual Increase",
+    "tuition_model": "Flat full-time undergraduate tuition for the Krieger School of Arts & Sciences and the Whiting School of Engineering, delivered under a need-based aid model rather than a merit-discount model. Actual tuition/COA dollar figures are provided by the cost anchor and are intentionally not restated here. Source: https://sfs.jhu.edu/tuition-promise/ (\"applies to Krieger School of Arts and Sciences and the Whiting School of Engineering undergraduates\").",
     "cost_of_attendance_breakdown": {
-      "academic_year": "2025-2026",
+      "academic_year": "2027-2028",
       "in_state": {
-        "tuition": 64730,
-        "total_coa": 88476,
-        "housing": 20500
+        "tuition": 68670,
+        "total_coa": null,
+        "housing": null
       },
       "out_of_state": {
-        "tuition": 64730,
-        "total_coa": 88476,
-        "supplemental_tuition": 0
+        "tuition": 68670,
+        "total_coa": null,
+        "supplemental_tuition": null
       }
     },
-    "aid_philosophy": "100% Need Met",
-    "average_need_based_aid": 63401,
-    "average_merit_aid": 22347,
-    "percent_receiving_aid": 65.0,
+    "aid_philosophy": "Need-blind for domestic applicants and need-aware for international applicants, meets 100% of demonstrated need, and packages are loan-free (no-loan). Per apply.jhu.edu/tuition-aid/common-financial-aid-questions/: \"Hopkins is need-blind for domestic applicants, which includes U.S. citizens, permanent residents, students with DACA or undocumented status\"; \"We promise to meet 100% of a family's demonstrated need\u2014the difference between the total cost of attendance each year and what a family can pay\"; \"We also promise to meet this need without any loans.\" JHU became \"permanently need blind and no-loan in financial aid\" following Michael Bloomberg's $1.8 billion gift (2018) (https://sfs.jhu.edu/tuition-promise/). Under the Johns Hopkins Tuition Promise (stated to start the 2026-2027 academic year and continuing as standing policy): \"tuition-free for all undergraduate students from families earning up to $200,000 a year\" and \"$0 parent cost for families earning up to $100,000\" (https://sfs.jhu.edu/tuition-promise/, https://apply.jhu.edu/tuition-aid/). JHU also awards merit scholarships: \"Yes, Hopkins awards both merit and need-based scholarships... all applicants are automatically considered for merit scholarships when they apply to Hopkins\" (apply.jhu.edu common-financial-aid-questions).",
+    "average_need_based_aid": 66000,
+    "average_merit_aid": null,
+    "percent_receiving_aid": 52,
     "scholarships": [
       {
         "name": "Hodson Trust Scholarship",
-        "type": "Merit",
-        "amount": "Covers 2/3 of tuition",
-        "deadline": "Automatic consideration with admission application",
-        "benefits": "Renewable yearly (maintaining 3.0 GPA)",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Charles R. Westgate Scholarship in Engineering",
-        "type": "Merit",
-        "amount": "Full tuition for four years",
-        "deadline": "Automatic consideration with admission application",
-        "benefits": "Covers full tuition for undergraduate engineering study",
-        "application_method": "Automatic Consideration"
-      },
-      {
-        "name": "Hopkins Scholarship",
-        "type": "Need",
-        "amount": "Varies based on demonstrated financial need",
-        "deadline": "FAFSA/CSS Profile deadlines",
-        "benefits": "Does not need to be repaid, renewable annually based on need",
-        "application_method": "Automatic Consideration (appears in financial aid offer)"
+        "type": "merit",
+        "amount": "Not published (renewable merit award; awarded to fewer than twenty freshmen each year)",
+        "deadline": "",
+        "deadline_date": null,
+        "benefits": "Merit scholarship based on \"academic and personal achievement, leadership, and engagement beyond the classroom.\" \"automatically renewed yearly, provided the recipient maintains a 3.0-grade point average.\"",
+        "application_method": "No separate application: \"All freshman applicants for admission will be considered... A separate application is not required.\""
       },
       {
         "name": "Cummings Scholars Program",
-        "type": "Need",
-        "amount": "Full cost-of-attendance (for family income <= $80k) or capped family contribution (for family income between $80k-$150k)",
-        "deadline": "Standard procedure for applying for need-based aid",
-        "benefits": "Covers tuition, room, board, and fees for eligible Baltimore City/Washington D.C. public school graduates",
-        "application_method": "Automatic Consideration with need-based aid application"
+        "type": "need-based",
+        "amount": "Family income up to $80,000: \"full cost-of-attendance scholarships covering tuition, room, board, and fees\"; family income $80,000-$150,000: \"family contributions capped at 10% of family income.\"",
+        "deadline": "",
+        "deadline_date": null,
+        "benefits": "Need-based scholarship for graduates of Baltimore City or Washington, DC public schools.",
+        "application_method": "\"No separate application required.\""
+      },
+      {
+        "name": "Hopkins Scholarship (Hopkins Grant)",
+        "type": "need-based",
+        "amount": "Varies by demonstrated need (renewable annually based on need)",
+        "deadline": "",
+        "deadline_date": null,
+        "benefits": "Institutional need-based grant: \"offered from institutional funds or endowments to students who demonstrate financial need.\"",
+        "application_method": "Determined via FAFSA and CSS Profile; no separate scholarship application."
       },
       {
         "name": "QuestBridge Scholars Program",
-        "type": "Need",
-        "amount": "Full four-year scholarship (full cost of attendance)",
-        "deadline": "QuestBridge National College Match deadlines",
-        "benefits": "Covers full tuition, room, board, and fees for high-achieving, low-income students",
-        "application_method": "QuestBridge National College Match application"
+        "type": "need-based",
+        "amount": "\"full four-year scholarships\"",
+        "deadline": "",
+        "deadline_date": null,
+        "benefits": "For \"high-achieving, low-income students\" with \"total family incomes of $80,000 or less,\" awarded through the QuestBridge National College Match early admission.",
+        "application_method": "Via the QuestBridge National College Match application ranking Johns Hopkins."
       },
       {
-        "name": "Vivien Thomas Scholars Initiative (VTSI)",
-        "type": "Merit/Fellowship",
-        "amount": "Full tuition, stipend, and benefits",
-        "deadline": "Application for PhD programs in STEM fields",
-        "benefits": "Targeted mentoring, networking, community, professional development opportunities",
-        "application_method": "Separate application (for eligible PhD students in STEM)"
+        "name": "Charles R. Westgate Scholarship in Engineering",
+        "type": "merit",
+        "amount": "Not published",
+        "deadline": "",
+        "deadline_date": null,
+        "benefits": "Merit scholarship for engineering (Whiting School) students; renewable \"annually for a total of four years\" with a \"3.0 GPA or better\" and continued enrollment.",
+        "application_method": "Considered through admission to the engineering program (no separate application indicated)."
       },
       {
-        "name": "Departmental Scholarships",
-        "type": "Merit/Need",
-        "amount": "Varies",
-        "deadline": "Varies by department (often automatic consideration with program application)",
-        "benefits": "Varies by department; can be based on academic achievement or demonstrated need",
-        "application_method": "Automatic Consideration or separate application depending on department/program"
+        "name": "Hodson Gilliam Success Scholarship",
+        "type": "need-based (with merit component)",
+        "amount": "Not published (renewable)",
+        "deadline": "",
+        "deadline_date": null,
+        "benefits": "For \"first-year students who demonstrate academic and personal achievement and have financial need\"; includes access to a \"distinctive, 150-member community\" with mentoring; renewable with satisfactory academic progress.",
+        "application_method": "Determined via the admission and financial aid application process."
       }
     ]
   },
   "credit_policies": {
-    "philosophy": "Moderate",
+    "philosophy": "It is expected that the majority of credits applied towards degree requirements are earned by completion of courses taught at Johns Hopkins University by our faculty. We do recognize that some students may have other sources of college-level credit that could be applicable to some requirements. This section explains the conditions and restrictions regarding credits earned outside of JHU.",
     "ap_policy": {
-      "general_rule": "Scores of 4 or 5 generally grant credit for many subjects.",
+      "general_rule": "JHU awards AP credit only for the specific exams listed in its Academic Catalogue table, at the specified minimum scores (generally a 4 or 5; Calculus BC also grants 4 credits for a 3 or 4). Exams must be taken no later than the year of admission. Verbatim: 'To receive credit based on an external exam program, examinations must be taken no later than the year the student is admitted to the university.' Credit-granting table (subject | JHU course | score | credit): Biology | AS.020.151 & AS.020.152 | 5 | 6; Chemistry | AS.030.101 & AS.030.102 and labs AS.030.105-AS.030.106 | 5 | 8; Chemistry | AS.030.101 and lab AS.030.105 | 4 | 4; Environmental Science | TR.270.100 | 4 or 5 | 4; Computer Science A | EN.500.112 | 5 | 3; Calculus AB | AS.110.108 | 5 | 4; Calculus BC | AS.110.108 | 3 or 4 | 4; Calculus BC | AS.110.108 and AS.110.109 | 5 | 8; Physics C Mechanics | AS.171.101 | 4 or 5 | 4; Physics C Electricity and Magnetism | AS.171.102 | 4 or 5 | 4; Statistics | EN.553.111 | 4 or 5 | 4.",
       "exceptions": [
-        "AP credit cannot be used to satisfy foundational ability requirements in the Krieger School of Arts and Sciences.",
-        "If an equivalent JHU course is taken, the AP credit for that course will be disallowed.",
-        "Some foreign language departments may require additional placement tests.",
-        "AP credit cannot be used to meet distribution requirements."
+        "Forfeiture / no double-dipping: 'If a student enters the University with credit from an Advanced Placement Exam and then earns credit for an equivalent course at the University, the credits from advanced placement (and lab course waiver, if applicable) will be disallowed. The credits and grade for the Hopkins course will appear on the academic record. The Advanced Placement Exam title also remains on the record, but the credit value is converted to zero. This policy also applies to IB credit, GCE credit, and credit from foreign exams.'",
+        "Lab waiver, no lab credit (Biology/Physics): 'Students who are awarded credit for AP Biology are exempt from taking the corresponding lab courses (AS.020.153 General Biology Laboratory I-AS.020.154 General Biology Lab II). The lab courses are waived but no credit is awarded.' The same waiver-without-credit rule is stated for AP Physics labs (AS.173.111/AS.173.112).",
+        "Chemistry (score 4 vs 5 nuance): 'Effective fall 2014, students with a score of 4 on the AP Chemistry exam ... may not take AS.030.102 Introductory Chemistry II/AS.030.106 Introductory Chemistry Laboratory II without taking AS.030.101 Introductory Chemistry I/AS.030.105 Introductory Chemistry Laboratory I at JHU (forfeiting four AP credits). Students with a score of 4 should take AS.030.103 Applied Chemical Equilibrium and Reactivity w/lab in order to complete the introductory chemistry requirements to retain AP credits.'",
+        "Calculus (one exam only): 'Students may receive credit for Calculus I via only one exam. Students who have AP Calculus I credits who earn credit for AS.110.106 Calculus I (Biology and Social Sciences) will lose four AP credits for AS.110.108 Calculus I (Physical Sciences & Engineering).'",
+        "Computer Science (AP exam OR Gateway course, not both): 'Students may receive credit for either the AP Computer Science A exam or one of the Gateway Computing courses (EN.500.112 Gateway Computing: JAVA, EN.500.113 Gateway Computing: Python, EN.500.114 Gateway Computing: Matlab). Students who have AP Computer Science A credits and earn credit for one of the Gateway Computing courses will lose the three AP Computer Science A exam credits.' Also: 'The applicability of AP Computer Science exam credits to the computer programming requirement of a particular major is determined by the academic department responsible for that major.'",
+        "Foreign language exception: 'The Modern Languages and Literatures Department does not award any credit for Spanish based on AP/IB exams or other foreign certificate exams. French, German, and Italian will grant six credits for AP scores of 4 or 5 (IB Exams for 6 or 7) only after a student successfully completes two courses in that same language sequence at the intermediate level or higher.'"
       ],
-      "usage": "Can satisfy degree requirements towards the 120-credit degree, major and minor requirements, and allow placement out of some introductory courses."
+      "usage": "Arts & Sciences students may NOT use exam credit toward foundational abilities; Engineering students may. Verbatim: 'Arts and Science students may not use exam credits to fulfill the foundational abilities degree requirements. Engineering students may use exam credits to fulfill foundational abilities requirements.' AP credit is exempt from the transfer-credit cap: 'The 12-credit limit on transfer credits does not include credit from Hopkins summer courses, Advanced Placement examinations, British General Certificate of Education courses, International Baccalaureate courses, or foreign certificate courses.' Posting requires an official score report submitted to JHU."
     },
     "ib_policy": {
-      "general_rule": "Higher Level (HL) exams with acceptable scores grant credit.",
+      "general_rule": "JHU grants IB credit only for Higher Level (HL) exams (section heading: 'Higher Level International Baccalaureate Courses'), and the AP forfeiture rule applies: 'The rules regarding credit forfeiture described in the Advanced Placement Exam section above also apply to IB exam credits.' Credit-granting table (subject | JHU course | score | credit): Biology | AS.020.151 & AS.020.152 (labs AS.020.153 & AS.020.154 waived with no credit) | 6 or 7 | 6; Chemistry | AS.030.101 & AS.030.102 and labs AS.030.105 & AS.030.106 | 6 or 7 | 8; Computer Science | TR.601.100 | 6 or 7 | 3; Math | AS.110.108 | 6 or 7 | 4; Physics | AS.171.101 (lab AS.173.111 waived) | 6 | 4; Physics | AS.171.101 & AS.171.102 (labs waived) | 7 | 8. Footnote: 'Either IB math HL course, Mathematics: Analysis and Approaches and Mathematics: Applications and Interpretation, will garner credit as described in the chart.' Foreign-language HL exams for French/German/Italian grant 6 credits at 6 or 7 only after completing two intermediate-level courses in that language; no Spanish credit is awarded for IB.",
       "diploma_bonus": false
     },
     "transfer_articulation": {
       "tools": [],
-      "restrictions": "Students admitted directly from high school may transfer up to 12 credits from other institutions (excluding AP/IB). Transfer students may transfer up to 60 credits towards a 120-credit degree (KSAS) or 60-68 credits (WSE), with at least 60 credits needing to be earned in residence at JHU. Courses must be from an approved college and completed with a grade of C or better. Community college credits are transferred only if taken prior to matriculation."
+      "restrictions": "Eligibility/grade: 'To be eligible for transfer credit, an approved course must be taken for a grade at an approved college and completed with a grade of C or better.' Credit caps: entering freshmen \u2014 'Students who enter the University from high school may transfer up to 12 credits from approved courses taken at other institutions, whether taken before or after matriculation.' Transfer-admitted students \u2014 'may transfer any number of credits taken prior to matriculation; however, at least 60 of the total JHU degree credits must be earned in residence as a full-time student at JHU,' plus 'up to an additional 12 credits after matriculation.' Scope: 'In order to be transferable, a course does not have to match a currently existing JHU course; however, courses should cover topics that are broadly defined as part of the curriculum at Hopkins.' A course transfers 'as either: 1. a direct equivalent to one of our courses, or 2. a generic course affiliated with a field of study.' Grades do not transfer: 'The grades earned in these courses do not appear on the Hopkins record and therefore do not contribute to the grade point average.' Duplicate content: 'A transfer course will not be approved when the course content has significant overlap with other courses the student has already completed ... the transfer credit will be zeroed out on the transcript.' Not accepted: Physical Education/Personal Health & Wellness, Study Skills/Career Development, math below pre-calculus, Theology, Developmental English/Grammar/ESL, Independent Study/Research/Internship, Trade Skill, and Computer Software courses (each with narrow exceptions). Approved US institutions must be regionally accredited (Middle States, NECHE, HLC, NWCCU, SACSCOC, WASC ACCJC/WSCUC); non-US institutions are approved case-by-case."
     }
   },
   "student_insights": {
     "what_it_takes": [
-      "Strong academic record with challenging coursework, often including high GPAs (3.9 UW and up) and high standardized test scores (1530-1580 SAT or 34-35 ACT for admitted students, though test-optional is offered).",
-      "Demonstrated academic curiosity and initiative, going beyond basic coursework to explore interests deeply.",
-      "Tangible research experience in one's field of interest is highly valued.",
-      "A compelling personal narrative that highlights individual passions and how they align with Hopkins' community and opportunities.",
-      "Strong letters of recommendation from academic teachers that provide insight into a student's academic and personal qualities."
+      "Community consensus: top-tier academics are the entry ticket but NOT sufficient on their own. Self-reported ACCEPTED profiles on College Confidential's RD-results thread cluster around 3.9-4.0 unweighted GPA with ACT 32-34 / SAT ~1410+; yet several REJECTED posters in the same thread had SAT 1530-1550 and top-8% rank. One rejected poster's own diagnosis: 'My application was too generic.' (Sources: College Confidential RD-results thread [directly fetched]; corroborated by CollegeVine blog, which says aim for the ~3.9 average GPA and top 10% of class.)",
+      "Reviewers and admissions blogs repeatedly say research is the differentiator, especially for competitive majors like Biomedical Engineering. CollegeVine: 'having independent projects or research with a well-respected professional or institution... will likely offer a boost, especially if you're applying for a particularly competitive or specialized program, like Biomedical Engineering.' Accepted College Confidential profiles frequently listed research (e.g., one accepted student 'studied abroad in rural china for 4 months doing anthropological research'). (Sources: CollegeVine; College Confidential accepted profiles.)",
+      "Depth over breadth / a 'spike.' Multiple advice sources say Hopkins wants 1-2 well-developed passions, not scattered activities: CollegeVine advises '1-2 well-developed interests... than disparate activities across many different areas (also known as a spike)' and 'four years of serious involvement in two activities [rather] than scattered participation in ten clubs.' This mirrors the College Confidential rejection pattern where high-stat applicants with generic/scattered profiles were turned down. (Sources: CollegeVine; College Confidential.)",
+      "Fit with a research/discovery culture matters more than raw achievement. Essay-advice sources frame Hopkins as building 'future researchers, not just high achievers' and reward demonstrated intellectual curiosity that aligns with a specific field. (Sources: CollegeVine; EduAvenues essay blog.)",
+      "Applying Early Decision is widely reported as a meaningful statistical edge: community and advisory sources cite an ED acceptance rate around 13.6% for the Class of 2028 versus roughly 4-6% regular decision, while noting ED is binding. Note: Hopkins does NOT track demonstrated interest and does not use evaluative interviews, per multiple sources. (Sources: multiple admissions-guide search results; treat as opinion/estimate, not verified CDS data.)"
     ],
     "common_activities": [
-      "Research experience, often related to intended major or field of interest.",
-      "Leadership roles in school clubs and organizations.",
-      "Community service and initiatives that show a desire to make an impact beyond the classroom.",
-      "Participation in academic competitions (e.g., Physics Olympiad).",
-      "Involvement in arts (e.g., opera, music) and athletics."
+      "Independent research, or research alongside a professor/institution (repeatedly cited as the highest-signal activity; appears on accepted College Confidential profiles and is emphasized by CollegeVine, especially for BME).",
+      "Clinical / hospital volunteering for pre-med applicants (accepted College Confidential BME poster: 'Volunteering at my local hospital since 9th grade').",
+      "Large sustained community-service hour totals (accepted College Confidential profiles cited '800+ hours total' and '150+ hours' of volunteering at a local city engineering department).",
+      "STEM competitions and science clubs with leadership (College Confidential profiles listed Science Olympiad, including a Science Olympiad President).",
+      "Student publications / journalism leadership (accepted College Confidential profiles: yearbook Editor-in-Chief, arts-magazine editor-in-chief, news editor of a publication).",
+      "National Honor Society leadership roles (recurring on accepted College Confidential profiles, e.g., NHS Vice President).",
+      "Student government / class office (accepted and rejected College Confidential profiles both listed it).",
+      "Founding a nonprofit or a mentorship/service program (College Confidential profiles: 'Co-Founder of a College Mentorship Program'; a nonprofit founder also appeared, though rejected \u2014 signal is that founding is common but not a guarantee)."
     ],
     "essay_tips": [
-      "Be specific about why Johns Hopkins and connect your interests directly to opportunities at the university, including specific professors or programs.",
-      "Show, don't tell, by using personal stories and descriptive imagery to reveal character, values, and how experiences have shaped you.",
-      "Highlight how you will contribute to the campus community and build upon your interests at Hopkins.",
-      "Reflect on personal growth, challenges overcome, and lessons learned.",
-      "Ensure essays are authentic and convey genuine passion, avoiding generic statements."
+      "Be hyper-specific to Hopkins: name particular labs, professors, and programs. Essay guides are unanimous that a generic 'why us' fails - EduAvenues: 'If your essay could plug in the name of any top school, it is not a Hopkins essay.' CollegeVine: go 'a level deeper, to a particular professor... and a particular program... [to] show Hopkins admissions officers that you've done your homework.' (Sources: EduAvenues; CollegeVine [directly fetched].)",
+      "The supplemental essay genuinely moves the needle. An accepted College Confidential BME poster wrote 'The essay really does matter,' while a rejected 1530-SAT poster attributed the outcome to a 'too generic' application. (Source: College Confidential RD-results thread [directly fetched].)",
+      "Anchor the essay in a real question or interest you already care about and show what you have already DONE about it (reading, a project, a dataset, a volunteer role) rather than stating future goals abstractly. (Sources: EduAvenues; CollegeVine.)",
+      "Use an authentic personal voice and a concrete anecdote - 'show, don't tell' with sensory detail, then reflect on how it changed you. Reviewers say a conversational, personal tone is acceptable and effective here. (Sources: CollegeVine [directly fetched]; College Essay Guy via search.)"
     ],
     "red_flags": [
-      "Generic essays that could apply to any school and do not demonstrate specific interest in Johns Hopkins.",
-      "Lack of attention to detail, such as misspelling 'Johns Hopkins' as 'John Hopkins' in the application.",
-      "An application that feels rushed or copied-and-pasted.",
-      "Declining grades or a weak academic record without significant compensatory factors.",
-      "A disingenuous list of extracurriculars that don't reflect genuine passions or dedication."
+      "A generic, interchangeable application or essay. Both a rejected College Confidential poster ('My application was too generic') and essay guides ('if your essay could plug in the name of any top school, it is not a Hopkins essay') flag this as the top killer. (Sources: College Confidential; EduAvenues.)",
+      "High stats with a scattered, unfocused profile (no spike). College Confidential rejections included applicants with SAT 1530-1550 and top-8% rank; advice sources stress depth over breadth. Numbers alone do not carry a Hopkins application. (Sources: College Confidential; CollegeVine.)",
+      "Underestimating the workload / grade deflation as a fit risk. Community forums warn the environment is a 'pressure cooker' and that 'most premed classes average a B-' with roughly '2/3 of premeds drop off from freshman to senior year' - applicants expecting an easy pre-med path may be a poor fit. (Sources: Student Doctor Network via search; Niche student reviews via search.)"
     ],
     "insights": [
       {
-        "source": "student_review",
-        "category": "general",
-        "insight": "Johns Hopkins is highly selective with an acceptance rate around 8%."
+        "source": "College Confidential (RD-results thread, directly fetched)",
+        "category": "admissions_stats",
+        "insight": "Accepted self-reported profiles clustered around 3.9-4.0 GPA and ACT 32-34 / SAT 1410+, but multiple applicants with SAT 1530-1550 and top-8% rank were rejected - stats are necessary, not sufficient."
       },
       {
-        "source": "student_review",
-        "category": "general",
-        "insight": "Applying Early Decision (ED1 or ED2) can slightly increase acceptance odds for students who are certain Hopkins is their top choice."
+        "source": "College Confidential (RD-results thread, directly fetched)",
+        "category": "essays",
+        "insight": "An accepted BME applicant said 'The essay really does matter'; a rejected high-scorer said 'My application was too generic' - the essay is treated as decisive."
       },
       {
-        "source": "student_review",
-        "category": "general",
-        "insight": "The university values intellectual passion and a drive to succeed, often attracting students interested in the medical field or engineering, though a diversity of majors is supported."
+        "source": "College Confidential (RD-results thread, directly fetched)",
+        "category": "activities",
+        "insight": "Accepted profiles repeatedly featured research, sustained hospital/community volunteering (150-800+ hours), publication leadership, and STEM competitions."
       },
       {
-        "source": "student_review",
-        "category": "general",
-        "insight": "While academics are rigorous, students appreciate the abundance of research opportunities, expert faculty, and supportive advising systems."
+        "source": "Appily student reviews (directly fetched)",
+        "category": "academics",
+        "insight": "Students describe the rigor as extreme but survivable: 'Even the intro classes that everyone takes are very intense' and 'painstakingly hard academically, [but] the people you meet... make up for all the long nights.'"
       },
       {
-        "source": "student_review",
-        "category": "general",
-        "insight": "The social scene can sometimes feel competitive and less vibrant compared to other universities, with a primary focus on academics, but opportunities for social events exist."
+        "source": "Appily student reviews (directly fetched)",
+        "category": "culture",
+        "insight": "The 'cutthroat' reputation is contested by students: 'the school is not as cut-throat as many put it out to be' and being ultra-competitive 'does not mean the people there want to sabotage your grades'; 'the people are willing to help.'"
+      },
+      {
+        "source": "Appily student reviews (directly fetched)",
+        "category": "research",
+        "insight": "Reviewers emphasize research access: 'You don't find opportunities; the opportunities find you when you are at Hopkins.'"
+      },
+      {
+        "source": "Niche student reviews (via web-search extraction; direct fetch blocked 403)",
+        "category": "premed",
+        "insight": "Reviews report grade deflation is real ('most premed classes average a B-') and that 'everyone starts out as pre-med,' which can feel intimidating and competitive."
+      },
+      {
+        "source": "Niche student reviews (via web-search extraction; direct fetch blocked 403)",
+        "category": "social_life",
+        "insight": "Reviewers say the social scene is secondary to academics and that students who want more of a party scene should 'join a frat/sorority'; described as a 'pressure cooker' where peers are 'locked in, talented, and ambitious.'"
+      },
+      {
+        "source": "Student Doctor Network forums (via web-search extraction; direct fetch blocked 403)",
+        "category": "premed",
+        "insight": "Forum posters say roughly '2/3 of premeds drop off from freshman to senior year' due to deflation, but med schools reportedly account for it ('a 3.5 at JHU might be the equivalent of a 3.7 or 3.8 elsewhere')."
+      },
+      {
+        "source": "JHU News-Letter (student newspaper) + campus-life reviews (via web-search extraction)",
+        "category": "social_life",
+        "insight": "Hopkins 'isn't really a party school'; Greek life is present but 'does not predominate the social scene,' and students bond through labs, project teams, ensembles, and clubs rather than broad party networks."
+      },
+      {
+        "source": "CollegeVine admissions blog (via search) + JHU 'What We Look For' (surfaced)",
+        "category": "activities",
+        "insight": "Depth beats breadth - Hopkins rewards a 'spike': '1-2 well-developed interests... [rather] than disparate activities across many different areas,' with research or applied projects, especially for BME."
+      },
+      {
+        "source": "EduAvenues + CollegeVine essay guides (via search / directly fetched)",
+        "category": "essays",
+        "insight": "The dominant essay advice is specificity: name real Hopkins labs/professors/programs and center a genuine question you've already explored - 'if your essay could plug in the name of any top school, it is not a Hopkins essay.'"
       }
     ]
   },
   "outcomes": {
     "median_earnings_10yr": 87555,
     "employment_rate_2yr": null,
-    "grad_school_rate": 38.0,
-    "top_employers": [
-      "Amazon",
-      "Goldman Sachs",
-      "Deloitte",
-      "McKinsey & Company",
-      "AstraZeneca",
-      "U.S. Department of State",
-      "World Bank Group"
-    ],
-    "loan_default_rate": 1.1
+    "grad_school_rate": 38,
+    "top_employers": [],
+    "loan_default_rate": null
   },
   "student_retention": {
-    "freshman_retention_rate": 98.0,
-    "graduation_rate_4_year": 87.0,
-    "graduation_rate_6_year": 93.8
-  },
-  "logo_url": "https://storage.googleapis.com/college-counselor-assets/university-logos/johns_hopkins_university_logo.png"
+    "freshman_retention_rate": 97.83,
+    "graduation_rate_4_year": 85.36,
+    "graduation_rate_6_year": 93.4
+  }
 }

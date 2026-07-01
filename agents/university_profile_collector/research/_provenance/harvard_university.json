@@ -1,0 +1,2619 @@
+{
+  "trust_report": {
+    "university": "Harvard University",
+    "id": "harvard_university",
+    "cycle": "Fall 2027",
+    "cds_edition_used": "2024-2025 (latest available; 2027-2028 not yet posted)",
+    "ipeds_unitid": "166027",
+    "deterministic_fields": {
+      "total": 48,
+      "published": 33,
+      "held_null": 15
+    },
+    "verification": {
+      "corroborated": 4,
+      "canonical_single": 29,
+      "conflict_nulled": 0,
+      "unverified_nulled": 15,
+      "fields": {
+        "overall_acceptance_rate": "CORROBORATED",
+        "in_state_acceptance_rate": "CANONICAL_SINGLE",
+        "out_of_state_acceptance_rate": "CANONICAL_SINGLE",
+        "transfer_acceptance_rate": "CANONICAL_SINGLE",
+        "international_acceptance_rate": "CANONICAL_SINGLE",
+        "applications_total": "CANONICAL_SINGLE",
+        "admits_total": "CANONICAL_SINGLE",
+        "enrolled_total": "CANONICAL_SINGLE",
+        "yield_rate": "CANONICAL_SINGLE",
+        "admits_class_size": "UNVERIFIED",
+        "sat_composite_middle_50": "UNVERIFIED",
+        "sat_reading_middle_50": "CANONICAL_SINGLE",
+        "sat_math_middle_50": "CANONICAL_SINGLE",
+        "act_composite_middle_50": "CORROBORATED",
+        "test_submission_rate": "UNVERIFIED",
+        "gpa_weighted_avg": "CANONICAL_SINGLE",
+        "gpa_unweighted_avg": "UNVERIFIED",
+        "race_white": "CANONICAL_SINGLE",
+        "race_black": "CANONICAL_SINGLE",
+        "race_hispanic": "CANONICAL_SINGLE",
+        "race_asian": "CANONICAL_SINGLE",
+        "race_native_american": "CANONICAL_SINGLE",
+        "race_pacific_islander": "CANONICAL_SINGLE",
+        "race_two_or_more": "CANONICAL_SINGLE",
+        "race_unknown": "CANONICAL_SINGLE",
+        "race_international": "CANONICAL_SINGLE",
+        "first_gen_percentage": "UNVERIFIED",
+        "international_percentage": "CANONICAL_SINGLE",
+        "freshman_retention_rate": "CORROBORATED",
+        "graduation_rate_4_year": "CANONICAL_SINGLE",
+        "graduation_rate_6_year": "CORROBORATED",
+        "in_state_tuition": "CANONICAL_SINGLE",
+        "out_of_state_tuition": "CANONICAL_SINGLE",
+        "total_coa_in_state": "CANONICAL_SINGLE",
+        "total_coa_out_of_state": "CANONICAL_SINGLE",
+        "median_earnings_10yr": "CANONICAL_SINGLE",
+        "is_test_optional": "CANONICAL_SINGLE",
+        "test_policy_details": "CANONICAL_SINGLE",
+        "ed_applications": "UNVERIFIED",
+        "ed_admits": "UNVERIFIED",
+        "ed_acceptance_rate": "UNVERIFIED",
+        "ea_applications": "UNVERIFIED",
+        "ea_admits": "UNVERIFIED",
+        "ea_acceptance_rate": "UNVERIFIED",
+        "waitlist_offered": "UNVERIFIED",
+        "waitlist_accepted": "UNVERIFIED",
+        "waitlist_admitted": "UNVERIFIED",
+        "waitlist_admit_rate": "UNVERIFIED"
+      }
+    },
+    "total_sources_consulted": 173,
+    "sources_backing_published_values": 2,
+    "acceptance_rate_published": 3.6,
+    "ingest_ready": true,
+    "doctrine": "null-over-guess; deterministic fields anchored to CDS/Scorecard with provenance; high-stakes fields blind-verified; arithmetic-gated; every source consulted is logged"
+  },
+  "provenance": {
+    "overall_acceptance_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 3.6,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C1: 'Total first-time, first-year who applied 54008' / 'Total first-time, first-year who were admitted 1970' => 1970/54008 = 3.6% (corroborated by College Scorecard ADM_RATE=0.0365 = 3.65%).",
+      "as_of_cycle": "2024-2025 (Fall 2024 entering class); target 2027-2028 CDS not yet published"
+    },
+    "in_state_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 8.7,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C1 residency breakdown (Fall 2024): applied In-State 3032, admitted In-State 265 => 265/3032 = 8.7%.",
+      "as_of_cycle": "2024-2025 (Fall 2024 entering class)"
+    },
+    "out_of_state_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C1 residency breakdown (Fall 2024): applied Out-of-State 34216, admitted Out-of-State 1380 => 1380/34216 = 4.0%.",
+      "as_of_cycle": "2024-2025 (Fall 2024 entering class)"
+    },
+    "transfer_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.7,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "D2 Transfer Admission (Fall 2024): Total Applicants 2,256, Admitted 16, Enrolled 13 => 16/2,256 = 0.7%.",
+      "as_of_cycle": "2024-2025 (Fall 2024)"
+    },
+    "international_acceptance_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1.9,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C1 residency breakdown (Fall 2024): applied International 16760, admitted International 325 => 325/16760 = 1.9%.",
+      "as_of_cycle": "2024-2025 (Fall 2024 entering class)"
+    },
+    "applications_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 54008,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C1: 'Total first-time, first-year who applied 54008' (men 25613 + women 28372 + another gender 23).",
+      "as_of_cycle": "2024-2025 (Fall 2024 entering class)"
+    },
+    "admits_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1970,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C1: 'Total first-time, first-year who were admitted 1970' (men 920 + women 1050 + another gender 0).",
+      "as_of_cycle": "2024-2025 (Fall 2024 entering class)"
+    },
+    "enrolled_total": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 1647,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C1: 'Total first-time, first-year who enrolled 1647' (full-time men 767 + women 880).",
+      "as_of_cycle": "2024-2025 (Fall 2024 entering class)"
+    },
+    "yield_rate": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 83.6,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C1: enrolled 1647 / admitted 1970 = 83.6% (yield; not printed in CDS, derived from the two C1 cells).",
+      "as_of_cycle": "2024-2025 (Fall 2024 entering class)"
+    },
+    "admits_class_size": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "sat_composite_middle_50": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "sat_reading_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "740-780",
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C9: 'SAT Evidence-Based Reading 740 760 780' (25th=740, 50th=760, 75th=780).",
+      "as_of_cycle": "2024-2025 (enrolled Fall 2024)"
+    },
+    "sat_math_middle_50": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "770-800",
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C9: 'SAT Math 770 790 800' (25th=770, 50th=790, 75th=800).",
+      "as_of_cycle": "2024-2025 (enrolled Fall 2024)"
+    },
+    "act_composite_middle_50": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": "34-36",
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C9: 'ACT Composite 34 35 36' (25th=34, 50th=35, 75th=36).",
+      "as_of_cycle": "2024-2025 (enrolled Fall 2024)"
+    },
+    "test_submission_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "gpa_weighted_avg": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 4.21,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C12: average high school GPA = '4.21' (99.21% of enrolled first-year students submitted GPA). A 4.21 average exceeds 4.0, i.e. a weighted scale.",
+      "as_of_cycle": "2024-2025 (enrolled Fall 2024)"
+    },
+    "gpa_unweighted_avg": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "race_white": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 27.8,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B2 (Degree-Seeking First-Time First-Year): 'White, non-Hispanic 457'; total first-year 1,641 => 457/1641 = 27.8%.",
+      "as_of_cycle": "2024-2025 (enrolled first-year Fall 2024)"
+    },
+    "race_black": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 6.8,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B2 (First-Time First-Year): 'Black or African American, non-Hispanic 112'; total 1,641 => 112/1641 = 6.8%.",
+      "as_of_cycle": "2024-2025 (enrolled first-year Fall 2024)"
+    },
+    "race_hispanic": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 11.2,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B2 (First-Time First-Year): 'Hispanic/Latino 183'; total 1,641 => 183/1641 = 11.2%.",
+      "as_of_cycle": "2024-2025 (enrolled first-year Fall 2024)"
+    },
+    "race_asian": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 22.9,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B2 (First-Time First-Year): 'Asian, non-Hispanic 375'; total 1,641 => 375/1641 = 22.9%.",
+      "as_of_cycle": "2024-2025 (enrolled first-year Fall 2024)"
+    },
+    "race_native_american": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.2,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B2 (First-Time First-Year): 'American Indian or Alaska Native, non-Hispanic 3'; total 1,641 => 3/1641 = 0.2%.",
+      "as_of_cycle": "2024-2025 (enrolled first-year Fall 2024)"
+    },
+    "race_pacific_islander": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 0.1,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B2 (First-Time First-Year): 'Native Hawaiian or other Pacific Islander, non-Hispanic 2'; total 1,641 => 2/1641 = 0.1%.",
+      "as_of_cycle": "2024-2025 (enrolled first-year Fall 2024)"
+    },
+    "race_two_or_more": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 7.7,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B2 (First-Time First-Year): 'Two or more races, non-Hispanic 127'; total 1,641 => 127/1641 = 7.7%.",
+      "as_of_cycle": "2024-2025 (enrolled first-year Fall 2024)"
+    },
+    "race_unknown": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 7.1,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B2 (First-Time First-Year): 'Race and/or ethnicity unknown 117'; total 1,641 => 117/1641 = 7.1%.",
+      "as_of_cycle": "2024-2025 (enrolled first-year Fall 2024)"
+    },
+    "race_international": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 16.1,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B2 (First-Time First-Year): 'Nonresidents 265'; total 1,641 => 265/1641 = 16.1%.",
+      "as_of_cycle": "2024-2025 (enrolled first-year Fall 2024)"
+    },
+    "first_gen_percentage": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "international_percentage": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 16.1,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B2 Nonresidents: first-year 265 of 1,641 = 16.1%. (Alt. degree-seeking undergrad: 'Nonresidents 1,048' of 6,979 = 15.0%.)",
+      "as_of_cycle": "2024-2025 (enrolled first-year Fall 2024)"
+    },
+    "freshman_retention_rate": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 98,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "B22: full-time first-year cohort entering Fall 2023, percentage enrolled as of official Fall 2024 enrollment = '98%'.",
+      "as_of_cycle": "2024-2025 CDS (Fall 2023 entering cohort)"
+    },
+    "graduation_rate_4_year": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 55.7,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "Section B grad-rate grid, Fall 2018 cohort: D 'completed in four years or less (by Aug. 31, 2022)' Total = 920; C 'final cohort after adjusting for allowable exclusions' Total = 1653 => 920/1653 = 55.7%. Independently confirmed by College Scorecard C100_4 = 0.5566.",
+      "as_of_cycle": "2024-2025 CDS (Fall 2018 entering cohort)"
+    },
+    "graduation_rate_6_year": {
+      "status": "CORROBORATED",
+      "confidence": "high",
+      "value": 98,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "Section B: 'Six-year graduation rate for 2018 cohort (G divided by C)' Total = '98%'. Confirmed by College Scorecard C150_4 = 0.9758.",
+      "as_of_cycle": "2024-2025 CDS (Fall 2018 entering cohort)"
+    },
+    "in_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 59320,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "G1 PRIVATE INSTITUTIONS 'Tuition: $59,320' (First-Year and Undergraduates). Private institution: single tuition, no in-state/out-of-state distinction.",
+      "as_of_cycle": "2025-2026 academic year (per 2024-2025 CDS)"
+    },
+    "out_of_state_tuition": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 59320,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "G1 PRIVATE INSTITUTIONS 'Tuition: $59,320'. Private institution charges the same tuition regardless of residency.",
+      "as_of_cycle": "2025-2026 academic year (per 2024-2025 CDS)"
+    },
+    "total_coa_in_state": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 90426,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "Sum of stated G components (2025-2026): Tuition $59,320 + Required Fees $5,476 + Food and housing $22,130 + Books and supplies $1,000 + Other expenses $2,500 = $90,426 (Transportation listed as 'varies', excluded). CDS prints no single COA total.",
+      "as_of_cycle": "2025-2026 academic year (per 2024-2025 CDS)"
+    },
+    "total_coa_out_of_state": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 90426,
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "Private institution: same as in-state. Sum of G components (2025-2026): $59,320 + $5,476 + $22,130 + $1,000 + $2,500 = $90,426 (Transportation 'varies', excluded).",
+      "as_of_cycle": "2025-2026 academic year (per 2024-2025 CDS)"
+    },
+    "median_earnings_10yr": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": 101817,
+      "source": "U.S. Dept of Education College Scorecard (Most-Recent-Cohorts-Institution, 2026-06-10 release)",
+      "url": "https://collegescorecard.ed.gov/school/?166027-Harvard-University",
+      "quote": "College Scorecard institution data file (UNITID 166027, Harvard University): md_earn_wne_p10 = 101817 (median earnings of students working and not enrolled, 10 years after entry). Retrieved from ed-public-download.scorecard.network/downloads/Most-Recent-Cohorts-Institution_06102026.zip.",
+      "as_of_cycle": "College Scorecard 2026-06-10 release (most-recent cohort)"
+    },
+    "is_test_optional": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "false",
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C8A: for 'SAT or ACT' the checkbox is under column 1 = 'Required to be considered for admission'. C8: 'Does your institution make use of SAT or ACT scores in admission decisions...?' = Yes. (Note: the enrolled Fall 2024 class was admitted under a test-optional policy - only 54% submitted SAT / 19% ACT; the required-testing policy applies to subsequent applicants.)",
+      "as_of_cycle": "2024-2025 CDS (policy for applicants applying for Fall 2026)"
+    },
+    "test_policy_details": {
+      "status": "CANONICAL_SINGLE",
+      "confidence": "medium",
+      "value": "SAT or ACT 'Required to be considered for admission' (C8A); institution uses SAT/ACT in admission decisions (C8=Yes); scores due 3/1/25 (C8E). Enrolled Fall 2024 class was admitted test-optional (54% submitted SAT, 19% ACT).",
+      "source": "Harvard University Common Data Set 2024-2025",
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "quote": "C8 'make use of SAT or ACT scores in admission decisions' = Yes; C8A 'SAT or ACT' = 'Required to be considered for admission'; C8E 'Latest date by which SAT or ACT scores must be received for fall-term' = 3/1/25.",
+      "as_of_cycle": "2024-2025 CDS"
+    },
+    "ed_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ed_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_applications": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_admits": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "ea_acceptance_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_offered": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_accepted": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_admitted": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    },
+    "waitlist_admit_rate": {
+      "status": "UNVERIFIED",
+      "confidence": "none",
+      "value": null,
+      "source": null,
+      "url": null,
+      "quote": null,
+      "as_of_cycle": null
+    }
+  },
+  "source_ledger": [
+    {
+      "url": "https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "roles": [
+        "resolve",
+        "anchor",
+        "anchor:overall_acceptance_rate",
+        "anchor:in_state_acceptance_rate",
+        "anchor:out_of_state_acceptance_rate",
+        "anchor:transfer_acceptance_rate",
+        "anchor:international_acceptance_rate",
+        "anchor:applications_total",
+        "anchor:admits_total",
+        "anchor:enrolled_total",
+        "anchor:yield_rate",
+        "anchor:admits_class_size",
+        "anchor:sat_composite_middle_50",
+        "anchor:sat_reading_middle_50",
+        "anchor:sat_math_middle_50",
+        "anchor:act_composite_middle_50",
+        "anchor:test_submission_rate",
+        "anchor:gpa_weighted_avg",
+        "anchor:gpa_unweighted_avg",
+        "anchor:race_white",
+        "anchor:race_black",
+        "anchor:race_hispanic",
+        "anchor:race_asian",
+        "anchor:race_native_american",
+        "anchor:race_pacific_islander",
+        "anchor:race_two_or_more",
+        "anchor:race_unknown",
+        "anchor:race_international",
+        "anchor:first_gen_percentage",
+        "anchor:international_percentage",
+        "anchor:freshman_retention_rate",
+        "anchor:graduation_rate_4_year",
+        "anchor:graduation_rate_6_year",
+        "anchor:in_state_tuition",
+        "anchor:out_of_state_tuition",
+        "anchor:total_coa_in_state",
+        "anchor:total_coa_out_of_state",
+        "anchor:is_test_optional",
+        "anchor:test_policy_details",
+        "anchor:ed_applications",
+        "anchor:ed_admits",
+        "anchor:ed_acceptance_rate",
+        "anchor:ea_applications",
+        "anchor:ea_admits",
+        "anchor:ea_acceptance_rate",
+        "anchor:waitlist_offered",
+        "anchor:waitlist_accepted",
+        "anchor:waitlist_admitted",
+        "anchor:waitlist_admit_rate",
+        "verify:overall_acceptance_rate",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "overall_acceptance_rate",
+        "in_state_acceptance_rate",
+        "out_of_state_acceptance_rate",
+        "transfer_acceptance_rate",
+        "international_acceptance_rate",
+        "applications_total",
+        "admits_total",
+        "enrolled_total",
+        "yield_rate",
+        "sat_reading_middle_50",
+        "sat_math_middle_50",
+        "act_composite_middle_50",
+        "gpa_weighted_avg",
+        "race_white",
+        "race_black",
+        "race_hispanic",
+        "race_asian",
+        "race_native_american",
+        "race_pacific_islander",
+        "race_two_or_more",
+        "race_unknown",
+        "race_international",
+        "international_percentage",
+        "freshman_retention_rate",
+        "graduation_rate_4_year",
+        "graduation_rate_6_year",
+        "in_state_tuition",
+        "out_of_state_tuition",
+        "total_coa_in_state",
+        "total_coa_out_of_state",
+        "is_test_optional",
+        "test_policy_details"
+      ],
+      "notes": [
+        "Direct URL to the latest available CDS PDF (2024-2025), extracted from the OIRA index page. Provided as the most-recent-available edition; NOT the target Fall 2027 / 2027-2028 cycle.",
+        "Official CDS 2024-2025 PDF (302-redirects to wpmucdn CDN). Cited as canonical source_url for all CDS values.",
+        "C1: 'Total first-time, first-year who applied 54008' / 'Total first-time, first-year who were admitted 1970' => 1970/54008 = 3.6% (corroborated by College Scorecard ADM_RATE=0.0365 = 3.65%).",
+        "C1 residency breakdown (Fall 2024): applied In-State 3032, admitted In-State 265 => 265/3032 = 8.7%.",
+        "C1 residency breakdown (Fall 2024): applied Out-of-State 34216, admitted Out-of-State 1380 => 1380/34216 = 4.0%.",
+        "D2 Transfer Admission (Fall 2024): Total Applicants 2,256, Admitted 16, Enrolled 13 => 16/2,256 = 0.7%."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?166027-Harvard-University",
+      "roles": [
+        "resolve:scorecard",
+        "resolve",
+        "anchor",
+        "anchor:median_earnings_10yr",
+        "verify:sat_composite_middle_50",
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [
+        "median_earnings_10yr"
+      ],
+      "notes": [
+        "College Scorecard located",
+        "Canonical College Scorecard page for UnitID 166027. Reported as scorecard_url. Live fetch returned only the JS app shell (no rendered school data), so identity was verified via NCES College Navigator instead.",
+        "Canonical Scorecard school page for UNITID 166027, but the React SPA returned only nav/footer via fetch (no data rendered). Kept as human-facing source_url for median earnings.",
+        "College Scorecard institution data file (UNITID 166027, Harvard University): md_earn_wne_p10 = 101817 (median earnings of students working and not enrolled, 10 years after entry). Retrieved from ed-public-download.scorecard.network/downloads/Most-Recent-Cohorts-Institution_06102026.zip.",
+        "Named alternative canonical source. JS-rendered SPA; WebFetch returned only nav/footer, no data. Also lags years behind \u2014 cannot report Fall 2027 regardless.",
+        "Alternate canonical source; fetch returned only site nav/header, no institutional tuition data extractable. (Scorecard also lags by ~2 cycles, so would not carry 2027-2028 regardless.)"
+      ]
+    },
+    {
+      "url": "http://archive.org/wayback/available?url=oie.fas.harvard.edu/credit-policies",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Wayback availability API returned a snapshot (20250609190002), but the actual web.archive.org snapshot fetch was blocked by the tooling, so no content could be extracted."
+      ]
+    },
+    {
+      "url": "http://web.archive.org/web/20250609190002/https://oie.fas.harvard.edu/credit-policies",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted to retrieve the archived OIE credit-policies snapshot; WebFetch returned 'unable to fetch from web.archive.org'. Not usable."
+      ]
+    },
+    {
+      "url": "https://accoladetutor.com/harvard-university-common-data-set/",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party tutor blog; not canonical; rejected.",
+        "Third-party blog; not canonical, rejected.",
+        "Third-party; not used."
+      ]
+    },
+    {
+      "url": "https://admissionado.com/blog/college/does-harvard-admit-by-major/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Source for 'not separate applicant pools... no', 'not a four-year contract', 'upgrade the evidence', 'admits to the college not to majors', 'does not release admit-rate-by-concentration tables' \u2014 tactics 1, 2, 5 and alternate_major_strategy."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/extracurricular-activities-at-harvard/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant blog surfaced in activities search; not community opinion; rejected."
+      ]
+    },
+    {
+      "url": "https://admissionsight.com/harvard-application-deadline/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; not used."
+      ]
+    },
+    {
+      "url": "https://admitreport.com/blog/harvard-common-data-set",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary blog surfaced in search; not fetched \u2014 non-canonical.",
+        "Third-party blog; not canonical; rejected.",
+        "Third-party blog; not used."
+      ]
+    },
+    {
+      "url": "https://advising.college.harvard.edu/academic-planning-for-students/concentrations-and-secondaries/",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard Advising Programs Office. Used for the full A-Z concentration NAME list and the enumerated secondary-fields (minors) list. No degree types shown here.",
+        "Search result only, not fetched \u2014 internal advising page; declaration timeline already sourced from official student-story page."
+      ]
+    },
+    {
+      "url": "https://advising.college.harvard.edu/academic-planning-for-students/curriculum-and-requirements/",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Quoted the concentration-declaration rule: 'Students must declare a concentration in their third term at Harvard' and that students may declare a different concentration later. Basis for open/unrestricted admissions_model and direct_admit_only=false."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=166027&fields=...&api_key=DEMO_KEY",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Federal College Scorecard API; returned HTTP 429 OVER_RATE_LIMIT (shared DEMO_KEY exhausted, Retry-After ~79 min) on both WebFetch and curl. Could not use."
+      ]
+    },
+    {
+      "url": "https://api.data.gov/ed/collegescorecard/v1/schools?id=166027&fields=id,school.name,school.city,school.state,school.ownership",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard REST API (DEMO_KEY). Rejected: returned HTTP 429 / OVER_RATE_LIMIT on both WebFetch and curl. Could not retrieve JSON."
+      ]
+    },
+    {
+      "url": "https://apscorecalc.com/ap-credit/harvard/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party AP-credit aggregator. Non-official; not used."
+      ]
+    },
+    {
+      "url": "https://ballywalterps.co.uk/does-harvard-accept-ap-or-ib-college-credit-and-admission-tips-explained",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party SEO article. Non-official; not used."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/how-to-write-the-harvard-university-essays",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "CollegeVine editorial blog (distinct from the community Q&A used); not verbatim community, rejected."
+      ]
+    },
+    {
+      "url": "https://blog.collegevine.com/what-does-it-really-take-to-get-into-harvard",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not canonical; rejected."
+      ]
+    },
+    {
+      "url": "https://bold.org/blog/harvard-tuition/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog, non-canonical; not used."
+      ]
+    },
+    {
+      "url": "https://bpb-us-e1.wpmucdn.com/sites.harvard.edu/dist/6/210/files/2024/05/CDS_2023-2024-Final-4755619e875b1241.pdf",
+      "roles": [
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Older 2023-2024 CDS PDF surfaced in search; fetched via WebFetch but the binary could not be parsed, and it is an earlier cycle than the latest available, so not used.",
+        "Prior-year (2023-2024) Harvard CDS PDF found in search; not needed since a more recent edition (2024-2025) was available.",
+        "Surfaced in search \u2014 older 2023-2024 CDS, superseded; not the target cycle."
+      ]
+    },
+    {
+      "url": "https://bpb-us-e1.wpmucdn.com/sites.harvard.edu/dist/6/210/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf",
+      "roles": [
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Actual PDF bytes (redirect target) downloaded and text-extracted with pypdf (layout mode). Source of C1/C2/C8/C9/C12/B2/B22/B-grad/D2/G/C21-C22 cell values.",
+        "The actual canonical CDS 2024-2025 PDF (Harvard-hosted CDN). Extracted Section C1 verbatim: Fall 2024, 54,008 applied / 1,970 admitted. Source of the reported value.",
+        "\"Common Data Set 2024-2025 ... C1 First-time, first-year students: Provide the number of degree-seeking, first-time, first-year students who applied, were admitted, and enrolled (full- or part-time) in Fall 2024. ... Total first-time, first-year who applied 54008 ... Total first-time, first-year who were admitted 1970\". (The CDS states raw counts only; it does not print an admit-rate percentage. 1,970 / 54,008 = 3.65%.)",
+        "Actual 2024-2025 CDS PDF (also at oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf). Extracted C9: SAT Composite row BLANK; only SAT EBRW (740/760/780) and SAT Math (770/790/800) reported. Cohort = enrolled Fall 2024. No SAT total middle-50%.",
+        "Actual file served after redirect; extracted text locally with pypdf. Header confirms 'Common Data Set 2024-2025'; B22 Retention Rates = 98% for Fall 2023 cohort.",
+        "PRIMARY SOURCE. Fetched and text-extracted (pypdf). Section B contains the verbatim six-year graduation rate line for the 2018 cohort: Total = 98% (1613/1653)."
+      ]
+    },
+    {
+      "url": "https://careerservices.fas.harvard.edu/resources/job-market-insights/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Only a generic example query (Marketing Manager roles in Washington DC) with an example employer list unrelated to Harvard graduate placements; not usable as Harvard top employers."
+      ]
+    },
+    {
+      "url": "https://careerservices.fas.harvard.edu/resources/senior-survey-next-steps-data-graphic-archive/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard FAS Mignone Center official archive, but only covers Class of 2011-2019 (behind a PDF). Too stale for the target cycle; no employer list on the page."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/academics/fields-study/concentrations",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Alternate fields-of-study page. Only restated the '50 undergraduate fields' and '50 secondary fields' blurb; did NOT enumerate concentration names or degree types. Used only to corroborate the '50 secondary fields' count claim; not a source for the list itself."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/academics/liberal-arts-sciences/concentrations",
+      "roles": [
+        "resolve:catalog",
+        "resolve",
+        "section:academic_structure"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "majors/catalog page",
+        "Official Harvard College concentrations (majors) listing page. Reported as majors_catalog_url.",
+        "PRIMARY catalog page named in the task. Quoted the intro ('more than 3,700 courses in 50 undergraduate fields of study, which we call concentrations') and the verbatim concentration list with degree types for A-through-Philosophy (e.g., 'Mechanical Engineering (B.S.)', 'Electrical Engineering (B.A., B.S.)'). Page content truncated after Philosophy on both fetches, so P-Z degree types were not confirmed here."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/admissions",
+      "roles": [
+        "resolve:admissions",
+        "resolve",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "official admissions page",
+        "Official Harvard College undergraduate admissions page (returned as top official result). Reported as official_admissions_url.",
+        "Official. Quoted deadlines 'November 1 - Restrictive Early Action' (notified mid-December) and 'January 1 - Regular Decision' (notified end of March); Common Application; SAT/ACT required; five 150-word short-answer essays."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/admissions/admissions-statistics",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "section:strategic_profile",
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard College admissions-statistics page. Reports Class of 2029 (Fall 2025): 47,893 applicants, 2,003 admitted (~4.2%), no stated percentage. Rejected: not a CDS, does not state a rate, and still not the Fall 2027 target \u2014 a more recent but non-canonical, non-target cycle.",
+        "Harvard College admissions stats page (search result); not fetched; not the canonical CDS and no Fall 2027 data.",
+        "Harvard admissions-statistics page appeared in results; not fetched/quoted, so not used (Crimson figures used instead).",
+        "Search result only \u2014 general admissions stats; not relevant to major/house-ranking tactics."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/admissions/apply",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official. Common Application; '$90 fee (or request a fee waiver)'; REA Nov 1, RD Jan 1, Transfer Mar 1; no cycle year printed."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/admissions/apply/application-requirements",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official. 'We accept the Common Application' + 'We are also a QuestBridge partner institution'; SAT/ACT requirement + self-report; two teacher recs; secondary school report; midyear report required; five short-answers 150-word limit; fee waiver language."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/admissions/apply/first-year-applicants",
+      "roles": [
+        "section:academic_structure",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Checked to find an explicit 'admission is to the College, not a major' statement; the fetched content did not contain such a sentence, so I relied on the third-term-declaration quote instead. Rejected as a direct source.",
+        "Official. REA is 'non-binding'; restriction language (may not apply to other private ED/EA/REA; may apply early to public/service-academy/non-US non-binding, and RD/ED II elsewhere); Nov 1 / Jan 1 deadlines and notification timing."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/admissions/apply/transfer-applicants",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Harvard College page. Source of transfer restrictions: max 16 semester-long courses, accredited full-time daytime program, grade C or better, and the full ineligible-course list (including AP/IB/CLEP not accepted). Verbatim quotes captured."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/admissions/why-harvard/student-activities",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official list of activities available at Harvard (not admit-profile opinion); used as background for common_activities themes, not as a community source."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/campus-life/housing",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted for a housing quote; returned HTTP 404. Not usable."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/financial-aid",
+      "roles": [
+        "resolve:financial_aid",
+        "resolve",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "financial-aid page",
+        "Official Harvard College financial aid landing page. Reported as financial_aid_url.",
+        "Anchor page. Philosophy ('your financial circumstances will not keep you from Harvard'), need-based only, international students same basis, 25% pay nothing / 55% receive Harvard scholarship, ~$13k avg parent contribution, $100k/$200k income tiers."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/financial-aid/how-aid-works",
+      "roles": [
+        "verify:out_of_state_tuition",
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard College's own cost page; pinned $59,320 to AY 2025-2026 and gave latest-published AY 2026-2027 tuition = $62,226. No 2027-2028 figure.",
+        "Need-blind + 100% of need; 'There are no merit-based awards'; income thresholds; home equity/retirement excluded; summer work expectation eliminated 2020-21; $13k avg parent contribution."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/financial-aid/how-aid-works/affordability",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 page not found. Data recovered from other pages instead."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/financial-aid/how-aid-works/griffin-financial-aid-office",
+      "roles": [
+        "section:financials"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "HTTP 404 \u2014 page not found."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/financial-aid/types-aid",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Named grants: Harvard Scholarship (grant, never repaid), Federal Pell, SEOG, Massachusetts Gilbert Grant; plus work-study and loan details. Source for the scholarships array quotes."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/guides/application-tips",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Harvard tips surfaced via search; not community opinion, so used only as light corroboration, not cited as a crowdsourced source."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/guides/financial-aid-fact-sheet",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "'55% of our undergraduates receive need-based Harvard scholarships'; typical 2023-24 package ($68,700 scholarship, $12,800 parent contribution); ~20% Pell of ~6,700 undergrads."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/resources/faq/can-i-fulfill-academic-requirements-previous-coursework",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Harvard College FAQ. Source of the philosophy, AP general_rule, IB general_rule, diploma_bonus=false, and the language-requirement exception. Verbatim quote captured."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/resources/faq/what-courses-transfer-harvard-college-there-list-transferrable-courses",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Harvard College FAQ. Source for transfer_articulation.tools=[]: no transferable-course list is kept; credit evaluated individually by the Registrar's Office after admission. Verbatim quote captured."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/student-life",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "House-system small-college-within-a-research-university framing; used in social_environment."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/student-life/residential-life/cambridge-boston",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard College page; source for MBTA subway at Harvard Square, ~15-min ride to downtown Boston, Bluebikes 400+ stations + discount; used in transportation_impact."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/student-life/student-stories/come-block-me-virtually",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 blocking-group narrative; random-assignment point already sourced."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/student-life/student-stories/commonly-asked-qs-housing-system",
+      "roles": [
+        "section:academic_structure",
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Quoted House-assignment mechanics: blocking 'groups of one to eight freshmen' are 'sorted randomly into one of the 12 houses' on Housing Day in spring; '12 upperclassmen Houses: nine ... near Harvard Square/Charles River, and three ... in the Radcliffe Quadrangle.' Basis for housing_profile randomization detail.",
+        "Fetched (official Harvard). Confirmed Houses are randomly sorted via blocking groups in February of sophomore year, 'luck of the draw', no application-time ranking \u2014 basis for empty college_ranking_tactics."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/student-life/student-stories/exploring-best-concentration-harvard-undecided",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched (official Harvard). Source for 'do not need to pick a concentration until the end of your sophomore fall' and 'it is okay to be undecided' \u2014 tactics 2, 4."
+      ]
+    },
+    {
+      "url": "https://college.harvard.edu/student-life/student-stories/how-do-i-choose-major-harvard",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 general choose-a-major narrative; declaration timeline already covered."
+      ]
+    },
+    {
+      "url": "https://collegehousing.fas.harvard.edu/rising-sophomore-lottery/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 sophomore housing lottery detail; random-lottery point already confirmed via the official Commonly Asked Q's page."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/data/",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard data-download page; provided the current raw-data host (ed-public-download.scorecard.network) and the 2026-06-10 file names/sizes."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school?166027=",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched; JS-rendered, returned only header/nav/footer, no school data (loan default, employment, or grad-school rates)."
+      ]
+    },
+    {
+      "url": "https://collegescorecard.ed.gov/school/?166027-Harvard-University=",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "College Scorecard Harvard profile; WebFetch returned only nav/header shell (JS-rendered), no retention figure extractable. Not used as source."
+      ]
+    },
+    {
+      "url": "https://commondatasets.com/Harvard.html",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS aggregator; not primary source; rejected."
+      ]
+    },
+    {
+      "url": "https://dso.college.harvard.edu/houses",
+      "roles": [
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Dean of Students Office Houses page; returned HTTP 403 Forbidden. Could not fetch; housing facts sourced from the accessible Q&A page instead."
+      ]
+    },
+    {
+      "url": "https://ed-public-download.app.cloud.gov/downloads/Most-Recent-Cohorts-Institution.csv",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Old/legacy download host; returned HTTP 404 for all candidate filenames. Superseded by ed-public-download.scorecard.network."
+      ]
+    },
+    {
+      "url": "https://ed-public-download.scorecard.network/downloads/Most-Recent-Cohorts-Institution_06102026.zip",
+      "roles": [
+        "anchor"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Official College Scorecard institution-level data (23MB zip, 2026-06-10 release). Extracted UNITID 166027: md_earn_wne_p10=101817 (median earnings), plus cross-validation C150_4=0.9758, C100_4=0.5566, ADM_RATE=0.0365, SAT_AVG=1553, TUITIONFEE_IN/OUT=61676, COSTT4_A=85540."
+      ]
+    },
+    {
+      "url": "https://educationdata.urban.org/api/v1/college-university/scorecard/earnings/2022/?unitid=166027",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Urban Institute mirror of Scorecard earnings; DNS resolved (Cloudflare) but the sandbox network could not establish a connection (timeouts / HTTP 000). Also tried 2021 and ?mode=summary. Unreachable."
+      ]
+    },
+    {
+      "url": "https://empowerly.com/applications/harvard-acceptance-rate-class-2028/",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog about Class of 2028; not canonical, not Fall 2027; rejected."
+      ]
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Harvard_University_endowment",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Source (via search summary) for endowment $56.9B as of June 30, 2025 = largest academic endowment in the world; used in market_position and a takeaway."
+      ]
+    },
+    {
+      "url": "https://examplit.com/blog/harvard-application-profiles",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Blog aggregating profiles; not a verifiable community forum; rejected."
+      ]
+    },
+    {
+      "url": "https://extension.harvard.edu/registration-admissions/degree-program-admissions/undergraduate-transfer-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard Extension School (different school, not Harvard College). Out of scope; not used."
+      ]
+    },
+    {
+      "url": "https://features.thecrimson.com/2024/senior-survey/after-harvard/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Prior-cycle reference. Fetched; grad/professional school ~21% for Class of 2024; industries finance 21%/tech 16%/consulting 13%. Confirmed NO specific company/employer names anywhere in the article. Used for context; superseded by 2025 cycle for the reported value."
+      ]
+    },
+    {
+      "url": "https://features.thecrimson.com/2025/senior-survey/academics/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Appeared in search results; not fetched (academics section, not outcomes/employers)."
+      ]
+    },
+    {
+      "url": "https://features.thecrimson.com/2025/senior-survey/after-harvard/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "PRIMARY source for grad_school_rate. Directly fetched; exact quote 'About 17 percent of seniors plan to go to graduate or professional school' (Class of 2025). Also '64 percent plan to enter the workforce directly'; '6 percent are pursuing fellowships'. Confirmed NO company names present."
+      ]
+    },
+    {
+      "url": "https://finance.harvard.edu/endowment",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard finance office; source for endowment distribution (~$2.5B FY2025) and $784M FY2025 aid figures used in market_position/takeaways."
+      ]
+    },
+    {
+      "url": "https://gc.seas.harvard.edu/transferring-credits",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "SEAS graduate-school transfer credit page; out of scope (graduate, not Harvard College undergrad). Not used."
+      ]
+    },
+    {
+      "url": "https://gsas.harvard.edu/financial-support/cost-attendance-2026-2027",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search \u2014 GSAS (graduate) cost of attendance, not undergraduate College tuition; and 2026-2027 not target cycle."
+      ]
+    },
+    {
+      "url": "https://handbook.college.harvard.edu/sites/g/files/omnuum5551/files/2026-03/Fields%20of%20Concentration_0.pdf",
+      "roles": [
+        "resolve",
+        "section:academic_structure"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official 'Fields of Concentration Academic Year 2026-2027' handbook PDF (the authoritative record of concentration requirements). Consulted via search; not selected as majors_catalog_url in favor of the college.harvard.edu concentrations landing page, but is the deeper official catalog.",
+        "Official 'Fields of Concentration Academic Year 2026-2027' handbook PDF surfaced in search. Not opened/fetched (would be the authoritative source for full per-concentration degree types and requirements); noted for provenance and as the catalog-year anchor."
+      ]
+    },
+    {
+      "url": "https://harvard.service-now.com/ithelp?id=kb_article&sys_id=529e5ecadb6f4f04a914fff31d96190c",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only \u2014 internal my.Harvard IT KB on declaring/changing concentration; enrolled-student mechanics, not applicant tactics."
+      ]
+    },
+    {
+      "url": "https://harvardindependent.com/home-sweet-homeor-is-it/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 student-life opinion on housing; not needed."
+      ]
+    },
+    {
+      "url": "https://howtogetinto-harvard.com/extracurricular-activities-harvard/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "SEO blog; not community; rejected."
+      ]
+    },
+    {
+      "url": "https://icfs.com/specialists-desk/harvard-endowment-fund",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Endowment allocation commentary; corroborated endowment scale but not directly quoted (relied on Harvard/Wikipedia figures instead)."
+      ]
+    },
+    {
+      "url": "https://ifx.richmond.edu/pdfs/CDS2025-2026SectionC.pdf",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "University of Richmond's CDS (wrong institution); appeared in search, ignored."
+      ]
+    },
+    {
+      "url": "https://legacyonlineschool.com/blog/harvard-common-data-set.html",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not canonical; rejected.",
+        "Third-party blog, non-canonical; not used.",
+        "Third-party blog; not authoritative, not used."
+      ]
+    },
+    {
+      "url": "https://medium.com/harvard-open-data-project/why-the-harvard-housing-lottery-might-not-be-random-cd10c4e163b2",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 argues lottery may not be perfectly random, but still confirms no application-time ranking; not needed and could muddy the clean 'random, not ranked' finding."
+      ]
+    },
+    {
+      "url": "https://naceweb.org/docs/default-source/default-document-library/2025/publication/free-report/nace-first-destinations-college-class-of-2024.pdf",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "NACE national aggregate first-destinations report, not Harvard-specific; not used."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/collegenavigator/?id=166027",
+      "roles": [
+        "resolve"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "AUTHORITATIVE identity confirmation. Fetched page states: 'Harvard University', 'Massachusetts Hall, Cambridge, Massachusetts 02138', '4-year, Private not-for-profit'. Confirms UnitID 166027 matches name+city+state and Private status."
+      ]
+    },
+    {
+      "url": "https://nces.ed.gov/ipeds/datacenter/institutionprofile.aspx?unitId=166027",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "IPEDS Data Center institution profile for UnitID 166027. Fetch failed with 'Too many redirects' (ASPX session redirect). Identity confirmed via College Navigator instead."
+      ]
+    },
+    {
+      "url": "https://news.harvard.edu/gazette/story/2025/03/harvard-expands-financial-aid/",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Expansion effective 2025-26; $100k free / $200k tuition-free; 55% receive aid; $275M aid budget 2025-26; families paid avg $15,700 in 2023-24."
+      ]
+    },
+    {
+      "url": "https://nextgenadmit.com/harvard-admission-statistics/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary aggregator surfaced in search; not fetched \u2014 non-canonical."
+      ]
+    },
+    {
+      "url": "https://oie.fas.harvard.edu/credit-policies",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official Office of International Education transfer/study-abroad credit-policies page. HTTP 403 Access Denied (Akamai). Could not fetch."
+      ]
+    },
+    {
+      "url": "https://oie.fas.harvard.edu/transfer-credit-policies-guidelines-summer",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official OIE summer transfer-credit page (surfaced in search). Not fetched (same Akamai subdomain that 403'd); not used."
+      ]
+    },
+    {
+      "url": "https://oir.harvard.edu/common-data-set",
+      "roles": [
+        "resolve",
+        "verify:overall_acceptance_rate",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Older OIR (Office of Institutional Research) CDS URL surfaced in search. Not fetched/used; superseded by the current OIRA (oira.harvard.edu) CDS index.",
+        "Alternate/legacy OIR CDS landing page surfaced in search; not fetched \u2014 the oira.harvard.edu index already gave the canonical current PDF.",
+        "Alternate Harvard OIR path surfaced in search; the oira.harvard.edu index (used above) already resolved the canonical PDF.",
+        "Alternate Harvard CDS URL; returned HTTP 403 Forbidden, could not fetch.",
+        "Harvard OIR CDS landing page; returned HTTP 403 Forbidden to WebFetch, could not retrieve."
+      ]
+    },
+    {
+      "url": "https://oira.harvard.edu/2025/06/13/2024-25-common-data-set-cds-published/",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result confirming 2024-25 CDS was published June 13, 2025 \u2014 corroborates 2024-2025 is the most recent; not fetched in detail.",
+        "Official OIRA post confirming the 2024-2025 CDS was published 2025-06-13 (i.e., 2027-2028 does not exist yet). Appeared in search; used to date the latest edition."
+      ]
+    },
+    {
+      "url": "https://oira.harvard.edu/common-data-set/",
+      "roles": [
+        "resolve:common_data_set",
+        "resolve",
+        "anchor",
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:freshman_retention_rate",
+        "verify:graduation_rate_6_year",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "CDS located (2024-2025 (latest available; 2027-2028 not yet posted))",
+        "Harvard OIRA official CDS index. Fetched; lists 'Harvard's LATEST CDS Submission: 2024-2025'. No 2026-2027 or 2027-2028 edition posted. Used as common_data_set_url since the 2027-2028 target cycle is not yet available.",
+        "Harvard OIRA CDS index; confirmed most recent published CDS is 2024-2025 (2027-2028 does not exist yet) and gave the PDF link.",
+        "Official Harvard OIRA Common Data Set index. Confirmed the most recent CDS available is 2024-2025; NO 2027-2028 edition exists. Provided the canonical download link for the 2024-2025 PDF.",
+        "Harvard's official CDS index. Confirms latest edition is 2024-2025; no 2026-2027 or 2027-2028 exists. 'Download Harvard's LATEST CDS Submission: 2024-2025.'",
+        "Harvard OIRA CDS page: \"Download Harvard's LATEST CDS Submission: 2024-2025\" (no 2026-2027 or 2027-2028 edition listed). In the latest CDS (2024-2025), section C9 states \"Percent and number of first-time, first-year students enrolled in Fall 2024 who submitted national standardized (SAT/ACT) test scores,\" and the percentile table reads: \"SAT Composite\" [row left blank \u2014 no 25th/50th/75th values]; \"SAT Evidence-Based Reading 740 760 780\"; \"SAT Math 770 790 800\". Harvard reports no SAT Composite (total) middle-50% figure."
+      ]
+    },
+    {
+      "url": "https://oira.harvard.edu/factbook/fact-book-ug-tuition/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "OIRA Fact Book UG tuition table; latest row '2026' = $59,320, no 2027-2028 row \u2014 confirms target cycle unavailable."
+      ]
+    },
+    {
+      "url": "https://old.reddit.com/r/ApplyingToCollege/search/?q=harvard",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetch FAILED \u2014 'Claude Code is unable to fetch from old.reddit.com'. Reddit entirely inaccessible to crawler."
+      ]
+    },
+    {
+      "url": "https://pathivy.com/blog/what-gpa-do-you-need-to-get-into-harvard",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Marketing/blog aggregator surfaced in search; not community opinion; rejected."
+      ]
+    },
+    {
+      "url": "https://plexuss.com/f/what-s-the-student-loan-default-rate-for-harvard",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched; stated 'Harvard University has a 3 year student loan default rate of 0.8%' but 'Cohort/Fiscal Year: Not specified'. Undated secondary aggregator; conflicts with CollegeFactual 2-yr 1.4%; could not pin a cycle, so not used."
+      ]
+    },
+    {
+      "url": "https://psil.hsites.harvard.edu/american-college-application-timeline",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard sub-site (a program timeline, not admissions policy); not used."
+      ]
+    },
+    {
+      "url": "https://pursu.io/guide/average-sat-score-harvard-2026",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog citing 25th-75th percentile SAT; not canonical, not Fall 2027; rejected."
+      ]
+    },
+    {
+      "url": "https://registrar.fas.harvard.edu/placement-exam-scores",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Official FAS Registrar placement/exam-score page (would hold AP/IB placement score thresholds). HTTP 403 Access Denied (Akamai) via both WebFetch and curl with browser UA. Could not fetch, so no placement score cutoffs reported."
+      ]
+    },
+    {
+      "url": "https://registrar.fas.harvard.edu/tuition-and-fees",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Authoritative FAS Registrar tuition page, but returned HTTP 403 Forbidden on fetch \u2014 could not retrieve/verify."
+      ]
+    },
+    {
+      "url": "https://registrar.gse.harvard.edu/declaration-concentration-0",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only \u2014 Graduate School of Education registrar page, not undergraduate College; irrelevant."
+      ]
+    },
+    {
+      "url": "https://registrar.gse.harvard.edu/sites/g/files/omnuum3991/files/2026-05/Student%20Bill%20and%20Tuition%20Rates%2026-27.pdf",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search \u2014 Harvard Graduate School of Education tuition, wrong school unit."
+      ]
+    },
+    {
+      "url": "https://scienceeducation.fas.harvard.edu/research-opportunities",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Undergraduate research/funding overview; used in research_impact."
+      ]
+    },
+    {
+      "url": "https://sfs.harvard.edu/consumer-information",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard's own required consumer-information / cohort-default-rate disclosure. Attempted fetch returned HTTP 403 Forbidden; could not read the primary-source default rate."
+      ]
+    },
+    {
+      "url": "https://sfs.harvard.edu/financial-aid-harvard",
+      "roles": [
+        "resolve"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard University Student Financial Services aid page (university-wide, incl. grad). Consulted via search; college.harvard.edu/financial-aid chosen instead as the undergraduate-specific source."
+      ]
+    },
+    {
+      "url": "https://soflotutors.com/blog/harvard-ap-credit-policy/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Tutoring-company blog. Non-official; not used."
+      ]
+    },
+    {
+      "url": "https://ssqbiophd.hms.harvard.edu/prospective-students/student-life",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Summer research internship and funded fellowship examples; used in research_impact."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/effects-of-concentration-indication-on-harvard-application/876483",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Community forum. Source for coherence/cross-check quotes (Slavic Studies example, 'don't put down an obscure major', 'proactive in pursuing your interests') \u2014 tactics 3, 5."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/harvard-essay-optional-supplement/1960965",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched verbatim. Source of essay_tips quotes (compmom, psywar, Wizardingage)."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/is-spike-absolutely-necessary-for-stanford-harvard-ivys/3678597",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched verbatim. Source of spike/depth quotes (AlanApar, TonyGrace, Lindagaf, Momofthree24, NiceUnparticularMan) used in what_it_takes and insights."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/question-about-ap-credits-and-advanced-standing/3518000",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Forum thread. Non-official; not used."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/spike-hook-or-not/2085094",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched verbatim. Source of authenticity / red-flag quotes (BKSquared, skieurope, Lindagaf, gibby, compmom)."
+      ]
+    },
+    {
+      "url": "https://talk.collegeconfidential.com/t/ten-successful-harvard-application-essays/3568738",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched verbatim. Source of 'do no harm' essay opinion and 'overboard on creativity' red flag."
+      ]
+    },
+    {
+      "url": "https://transfergoat.com/ap-ib-credits-transfer-harvard/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party. Non-official; not used."
+      ]
+    },
+    {
+      "url": "https://www.albert.io/blog/harvard-advanced-placement-ap-credits/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog claiming AP Advanced Standing credit (5s on 4 exams). Contradicts current official FAQ (no pre-matriculation credit). Rejected as non-official and outdated."
+      ]
+    },
+    {
+      "url": "https://www.ameriinsight.com/harvard-university-common-data-set/",
+      "roles": [
+        "verify:act_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party summary; not canonical, rejected.",
+        "Third-party; not used."
+      ]
+    },
+    {
+      "url": "https://www.appily.com/colleges/harvard-university/reviews",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched verbatim. Crowdsourced student reviews; 'ambitious people but nobody too competitive' (Current Sophomore) and other culture quotes."
+      ]
+    },
+    {
+      "url": "https://www.axios.com/local/boston/2025/09/22/harvard-mit-us-news-best-colleges",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Local coverage of U.S. News rankings; not used for rank (rule requires quoting the U.S. News page itself)."
+      ]
+    },
+    {
+      "url": "https://www.bestcolleges.com/blog/college-application-deadlines/",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party deadline roundup; not used."
+      ]
+    },
+    {
+      "url": "https://www.collegeessayadvisors.com/supplemental-essay/harvard-university-supplemental-essay-prompt-guide/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Consultant essay guide, not community opinion; rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegeessayguy.com/blog/harvard-acceptance-rate",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary blog (CDS 2023) surfaced in search; not fetched \u2014 non-canonical and wrong cycle."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/harvard-university/academic-life/graduation-and-retention/",
+      "roles": [
+        "verify:freshman_retention_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator surfaced in search (states ~98%); not a canonical primary source, not fetched/used."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/harvard-university/paying-for-college/student-loan-debt/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched; stated '2-year cohort default rate: 1.4%' with '2,612 borrowers in the cohort' but gave NO cohort year. Secondary aggregator, undated, and conflicts with Plexuss 3-yr figure; could not pin to a cycle, so not used."
+      ]
+    },
+    {
+      "url": "https://www.collegefactual.com/colleges/harvard-university/paying-for-college/student-loan-debt/chart-loan-default-rates.html",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched; returned only navigation/headers (Compare/Trend), no actual default-rate numbers."
+      ]
+    },
+    {
+      "url": "https://www.collegesimply.com/colleges/massachusetts/harvard-university/admission/",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator; not canonical, rejected."
+      ]
+    },
+    {
+      "url": "https://www.collegesimply.com/colleges/massachusetts/harvard-university/salaries/",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Aggregator that republishes Scorecard earnings; fetch timed out and it is not the canonical source, so not used."
+      ]
+    },
+    {
+      "url": "https://www.collegetransfer.net/HarvardUniversityHarvardCollege/TransferProfile/tabid/145/Default.aspx",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party aggregator. Non-official; not used."
+      ]
+    },
+    {
+      "url": "https://www.collegetuitioncompare.com/edu/166027/harvard-university/tuition/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party tuition aggregator, non-canonical; not used."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/c/harvard/9364/what-does-harvard-look-for-in-students",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched verbatim. Community Q&A: 'intellectual curiosity beyond the high school curriculum', 'well rounded class not well rounded student', uniqueness."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/175663/transferring-college-credits-to-harvard",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party. Non-official; not used."
+      ]
+    },
+    {
+      "url": "https://www.collegevine.com/faq/30174/harvard-admissions-admit-by-major",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched. Source for 'does not use quotas for specific concentrations', 'don't feel compelled to choose an unconventional major', and 'demonstrate a genuine and well-developed interest' \u2014 tactics 1, 3."
+      ]
+    },
+    {
+      "url": "https://www.commondatasets.fyi/harvard",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS mirror (2023-2024); not primary and wrong cycle; rejected.",
+        "Third-party aggregator (2023-2024); not canonical, rejected."
+      ]
+    },
+    {
+      "url": "https://www.goodgoblin.ai/blog/HowToGetIntoHarvardUniversity2025",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party blog; not canonical; rejected.",
+        "Third-party blog; not used."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search (WebSearch, allowed_domains harvard.edu)",
+      "roles": [
+        "section:financials"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced the Gazette article and fact sheet; confirmed 55% receive aid, $275M 2025-26 budget, ~86% of U.S. families qualify. Also listed net-price-calculator, federal-disclosures, affordability, and FAQ pages (not individually fetched)."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search (WebSearch: 'Harvard University College Scorecard median earnings 10 years after entry 166027')",
+      "roles": [
+        "anchor"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced aggregators (collegesimply, decidemycampus, cnbc, ivycoach) citing ~$101,817 / older $95,114; used only to sanity-check the ballpark, not as the reported value."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Harvard+College+application+deadlines+2026-2027",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch. Corroborated Nov 1 REA / Jan 1 RD and surfaced the official Harvard apply/requirements URLs; no numeric values taken from third-party summaries."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Harvard+Common+Data+Set+2024-2025+PDF",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch. Surfaced the official CDS 2024-2025 PDF URL and the OIRA publication post."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Harvard+Common+Data+Set+2025-2026+C7",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch. Confirmed no 2025-2026/2027-2028 CDS for Harvard; third-party C7 summaries (gradgpt, admitreport, accoladetutor, etc.) not used \u2014 relied on the official PDF instead."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Harvard+University+Common+Data+Set+2027-2028+six-year+graduation+rate",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch for the 2027-2028 CDS; confirmed no 2027-2028 edition exists; returned only secondary blog aggregators (legacyonlineschool, accoladetutor, collegefactual, research.com) which were not used as sources."
+      ]
+    },
+    {
+      "url": "https://www.google.com/search?q=Harvard+University+Common+Data+Set+six-year+graduation+rate+section+B",
+      "roles": [
+        "verify:graduation_rate_6_year"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "WebSearch surfaced official OIR/OIRA CDS pages plus secondary aggregators (gradgpt, ameriinsight, scribd); used only to locate the official OIRA index, not for the value itself."
+      ]
+    },
+    {
+      "url": "https://www.gradgpt.com/common-data-set/harvard-university",
+      "roles": [
+        "verify:overall_acceptance_rate",
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party CDS visualizer surfaced in search results; not fetched \u2014 secondary aggregator, non-canonical.",
+        "Third-party CDS visualizer titled '2026 Common Data Set'; not a primary source; rejected.",
+        "Third-party CDS aggregator; not canonical, not fetched for the figure.",
+        "Third-party CDS aggregator, non-canonical; not used.",
+        "Third-party CDS visualization; not used \u2014 official Harvard PDF used instead."
+      ]
+    },
+    {
+      "url": "https://www.gse.harvard.edu/sites/default/files/2025-02/24-grad-outcomes-final_0.pdf",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard Graduate School of Education outcomes PDF; graduate school, out of scope for the College."
+      ]
+    },
+    {
+      "url": "https://www.harvardmagazine.com/2018/04/advanced-standing-harvard",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard Magazine 2018 news article on the reduction of Advanced Standing. Contextual/historical, not a policy page; not used for values."
+      ]
+    },
+    {
+      "url": "https://www.highereddive.com/news/us-news-best-college-rankings-latest-2025-princeton-mit-harvard-methodology/727819/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Reported Princeton/MIT/Harvard as 1-2-3 in U.S. News; NOT used because rank must come from a fetched U.S. News page, which failed to load."
+      ]
+    },
+    {
+      "url": "https://www.hks.harvard.edu/more/employers/about-our-graduates/employment-snapshot/class-2024-employment-snapshot",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard Kennedy School (graduate school) employment snapshot; out of scope for undergraduate Harvard College outcomes."
+      ]
+    },
+    {
+      "url": "https://www.hmc.harvard.edu/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard Management Company; context on endowment management, not a specific figure used."
+      ]
+    },
+    {
+      "url": "https://www.hodp.org/project/harvard-housing-part-1-who-gets-quadded/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 Quad-assignment analysis; enrolled-student housing detail, not applicant tactic."
+      ]
+    },
+    {
+      "url": "https://www.hsph.harvard.edu/r-o-student-knowledge-center/transferring-credits/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard Chan School of Public Health (graduate). Out of scope; not used."
+      ]
+    },
+    {
+      "url": "https://www.inspiritai.com/blogs/ai-blog/what-does-harvard-look-for",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Explainer on what Harvard looks for (academics + character/leadership/essays); used in admissions_philosophy."
+      ]
+    },
+    {
+      "url": "https://www.ivycoach.com/the-ivy-coach-blog/ivy-league/harvard-gpa-requirements/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Admissions-consultant blog; not crowdsourced; rejected."
+      ]
+    },
+    {
+      "url": "https://www.ivyscholars.com/harvards-most-and-least-popular-majors/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 about popularity of majors, not admissions-by-major mechanics; not needed."
+      ]
+    },
+    {
+      "url": "https://www.linkedin.com/school/harvard-university/people",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Candidate source for top employers ('where they work' alumni aggregation), but LinkedIn alumni data is behind a login wall and not fetchable via WebFetch; could not verify any named employers."
+      ]
+    },
+    {
+      "url": "https://www.nextfour.ai/harvard-university/sat-score-data",
+      "roles": [
+        "verify:sat_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party SAT-data aggregator; not canonical; rejected."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/harvard-university/",
+      "roles": [
+        "section:strategic_profile",
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "General campus/student-life context; supported social_environment.",
+        "Same \u2014 surfaced via search summary only; used for culture theme, page not directly fetchable (403)."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/harvard-university/campus-life/",
+      "roles": [
+        "section:strategic_profile",
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Student reviews describing an exclusive/competitive social scene and final clubs; used in campus_dynamics.social_environment.",
+        "Surfaced in search; not directly fetchable (Niche blocks crawler). Not independently used."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/harvard-university/reviews/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Page fetch FAILED (HTTP 403). Content used only via WebSearch summary (final clubs prominence, inclusion concerns) and clearly flagged as non-verbatim paraphrase."
+      ]
+    },
+    {
+      "url": "https://www.niche.com/colleges/harvard-university/students/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Surfaced in search; Niche blocks crawler; not fetched."
+      ]
+    },
+    {
+      "url": "https://www.odysseycollegeprep.com/how-to-get-into-harvard-admission-rates-sat-requirements-more/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 general how-to-get-in overview; no specific concentration-tactic content needed."
+      ]
+    },
+    {
+      "url": "https://www.prepscholar.com/act/s/colleges/Harvard-act-scores-GPA",
+      "roles": [
+        "verify:act_composite_middle_50"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party (PrepScholar) ACT summary surfaced when checking College Scorecard as an alternate; not canonical, not used."
+      ]
+    },
+    {
+      "url": "https://www.princetonreview.com/college/harvard-college-1022984",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetched verbatim. Student-survey quotes: 'works really hard, doesn't sleep, involved in a million extracurriculars'; partying not prevalent."
+      ]
+    },
+    {
+      "url": "https://www.prnewswire.com/news-releases/us-news-releases-2025-best-colleges-rankings-302254714.html",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "U.S. News rankings press release; not a U.S. News ranking page fetch, so not used for rank."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/Can-a-student-be-admitted-into-Harvard-without-declaring-a-major-as-an-undergraduate",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 Quora, lower reliability; the point (no major required) is already covered by the official Harvard and Admissionado sources."
+      ]
+    },
+    {
+      "url": "https://www.quora.com/How-important-is-it-to-have-a-declared-major-on-your-application-to-schools-like-Harvard",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 Quora, lower reliability; not needed."
+      ]
+    },
+    {
+      "url": "https://www.reddit.com/r/ApplyingToCollege/search.json?q=harvard+what+it+takes",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetch FAILED \u2014 'Claude Code is unable to fetch from www.reddit.com'. No Reddit content obtainable."
+      ]
+    },
+    {
+      "url": "https://www.road2college.com/harvard-common-data-set/",
+      "roles": [
+        "verify:overall_acceptance_rate"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary blog surfaced in search; not fetched \u2014 non-canonical."
+      ]
+    },
+    {
+      "url": "https://www.savemyexams.com/learning-hub/results-day/does-harvard-accept-ap-credit/",
+      "roles": [
+        "section:credit_policies"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party. Non-official; not used."
+      ]
+    },
+    {
+      "url": "https://www.scribd.com/document/963792494/HarvardUniversity-CDS-2024-2025",
+      "roles": [
+        "verify:sat_composite_middle_50",
+        "verify:act_composite_middle_50",
+        "verify:out_of_state_tuition",
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Scribd copy of the 2024-2025 CDS; used the official Harvard PDF instead.",
+        "Scribd re-host of the 2024-2025 CDS; used the official Harvard-hosted PDF instead.",
+        "Third-party re-host of the 2024-2025 CDS; used the official Harvard-hosted PDF instead.",
+        "Re-host of Harvard CDS on Scribd; not used \u2014 original Harvard PDF used."
+      ]
+    },
+    {
+      "url": "https://www.shiksha.com/studyabroad/usa/universities/harvard-university/admissions",
+      "roles": [
+        "section:application_process"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party; not used."
+      ]
+    },
+    {
+      "url": "https://www.sofi.com/harvard-tuition-fees/",
+      "roles": [
+        "verify:out_of_state_tuition"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Third-party commercial page, non-canonical; not used."
+      ]
+    },
+    {
+      "url": "https://www.thecrimson.com/admissions/article/2025/5/29/senior-survey-2025/",
+      "roles": [
+        "section:outcomes_extra"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Crimson 2025 senior survey article in search results; not fetched separately (the features.thecrimson.com/2025 after-harvard page already provided the quoted figures)."
+      ]
+    },
+    {
+      "url": "https://www.thecrimson.com/article/2018/9/12/harvard-student-admissions-file-analysis/",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Harvard Crimson journalism, not crowdsourced student opinion; not used for this section."
+      ]
+    },
+    {
+      "url": "https://www.thecrimson.com/article/2020/12/11/spring-housing-town-hall/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 pandemic-era blocking process; outdated and irrelevant to applicant tactics."
+      ]
+    },
+    {
+      "url": "https://www.thecrimson.com/article/2023/11/8/linking-groups-discontinued/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only, not fetched \u2014 change to blocking/linking rules; enrolled-student housing mechanics, not applicant tactics."
+      ]
+    },
+    {
+      "url": "https://www.thecrimson.com/article/2023/3/31/admissions-decisions-2027/",
+      "roles": [
+        "section:application_strategy"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Search result only \u2014 Class of 2027 admit-rate news; not about major-selection or house-ranking tactics."
+      ]
+    },
+    {
+      "url": "https://www.thecrimson.com/article/2024/3/29/harvard-class-of-2028-regular-decision/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "The Harvard Crimson; source for Class of 2028 admit rate 3.6% (1,937 of 54,008) and 83.6% yield used in market_position and selectivity takeaway."
+      ]
+    },
+    {
+      "url": "https://www.thinkacademy.ca/blog/blog/2025/09/07/harvard-admissions-holistic-criteria/",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": true,
+      "backed_published_fields": [],
+      "notes": [
+        "Admissions-explainer summarizing Harvard's holistic/whole-person criteria; used in admissions_philosophy."
+      ]
+    },
+    {
+      "url": "https://www.today.com/parents/teens/us-news-college-rankings-2025-rcna172418",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Secondary U.S. News rank coverage; not used for the same reason (rank left null)."
+      ]
+    },
+    {
+      "url": "https://www.unigo.com/colleges/harvard-university/reviews/what-is-the-stereotype-of-students-at-your-school",
+      "roles": [
+        "section:student_insights"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Fetch FAILED (HTTP 403). Crowdsourced student stereotypes not retrievable."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/harvard-university-2155",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted WebFetch for the National Universities rank; timed out (60s) on multiple tries. U.S. News blocks automated fetch, so rank could not be quoted -> us_news_rank left null."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/harvard-university-2155/overall-rankings",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted WebFetch for the rank; timed out. Not usable."
+      ]
+    },
+    {
+      "url": "https://www.usnews.com/best-colleges/rankings/national-universities",
+      "roles": [
+        "section:strategic_profile"
+      ],
+      "used": false,
+      "backed_published_fields": [],
+      "notes": [
+        "Attempted WebFetch of the ranking list to read Harvard's rank; timed out. Not usable."
+      ]
+    }
+  ]
+}

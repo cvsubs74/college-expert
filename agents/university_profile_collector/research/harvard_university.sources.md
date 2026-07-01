@@ -1,0 +1,241 @@
+# Sources consulted — Harvard University (cycle Fall 2027)
+
+Every URL the collector searched or fetched, for full transparency — **173 distinct URLs**: 2 backed a published deterministic value, 51 informed a section, 120 were consulted but **not used** (each with the reason).
+
+## 1. Backed a published deterministic value (2)
+- <https://oira.harvard.edu/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf>
+    - **fields:** overall_acceptance_rate, in_state_acceptance_rate, out_of_state_acceptance_rate, transfer_acceptance_rate, international_acceptance_rate, applications_total, admits_total, enrolled_total, yield_rate, sat_reading_middle_50, sat_math_middle_50, act_composite_middle_50, gpa_weighted_avg, race_white, race_black, race_hispanic, race_asian, race_native_american, race_pacific_islander, race_two_or_more, race_unknown, race_international, international_percentage, freshman_retention_rate, graduation_rate_4_year, graduation_rate_6_year, in_state_tuition, out_of_state_tuition, total_coa_in_state, total_coa_out_of_state, is_test_optional, test_policy_details
+    - roles: resolve, anchor, anchor:overall_acceptance_rate, anchor:in_state_acceptance_rate, anchor:out_of_state_acceptance_rate, anchor:transfer_acceptance_rate, anchor:international_acceptance_rate, anchor:applications_total, anchor:admits_total, anchor:enrolled_total, anchor:yield_rate, anchor:admits_class_size, anchor:sat_composite_middle_50, anchor:sat_reading_middle_50, anchor:sat_math_middle_50, anchor:act_composite_middle_50, anchor:test_submission_rate, anchor:gpa_weighted_avg, anchor:gpa_unweighted_avg, anchor:race_white, anchor:race_black, anchor:race_hispanic, anchor:race_asian, anchor:race_native_american, anchor:race_pacific_islander, anchor:race_two_or_more, anchor:race_unknown, anchor:race_international, anchor:first_gen_percentage, anchor:international_percentage, anchor:freshman_retention_rate, anchor:graduation_rate_4_year, anchor:graduation_rate_6_year, anchor:in_state_tuition, anchor:out_of_state_tuition, anchor:total_coa_in_state, anchor:total_coa_out_of_state, anchor:is_test_optional, anchor:test_policy_details, anchor:ed_applications, anchor:ed_admits, anchor:ed_acceptance_rate, anchor:ea_applications, anchor:ea_admits, anchor:ea_acceptance_rate, anchor:waitlist_offered, anchor:waitlist_accepted, anchor:waitlist_admitted, anchor:waitlist_admit_rate, verify:overall_acceptance_rate, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year
+    - “Direct URL to the latest available CDS PDF (2024-2025), extracted from the OIRA index page. Provided as the most-recent-available edition; NOT the target Fall 2027 / 2027-2028 cycle.”
+    - “Official CDS 2024-2025 PDF (302-redirects to wpmucdn CDN). Cited as canonical source_url for all CDS values.”
+- <https://collegescorecard.ed.gov/school/?166027-Harvard-University>
+    - **fields:** median_earnings_10yr
+    - roles: resolve:scorecard, resolve, anchor, anchor:median_earnings_10yr, verify:sat_composite_middle_50, verify:out_of_state_tuition
+    - “College Scorecard located”
+    - “Canonical College Scorecard page for UnitID 166027. Reported as scorecard_url. Live fetch returned only the JS app shell (no rendered school data), so identity was verified via NCES College Navigator instead.”
+
+## 2. Informed an official/community section (51)
+- <https://admissionado.com/blog/college/does-harvard-admit-by-major/> — section:application_strategy
+    - “Fetched. Source for 'not separate applicant pools... no', 'not a four-year contract', 'upgrade the evidence', 'admits to the college not to majors', 'does not release admit-rate-by-concentration tables' — tactics 1, 2, 5 and alternate_major”
+- <https://advising.college.harvard.edu/academic-planning-for-students/concentrations-and-secondaries/> — section:academic_structure, section:application_strategy
+    - “Harvard Advising Programs Office. Used for the full A-Z concentration NAME list and the enumerated secondary-fields (minors) list. No degree types shown here.”
+- <https://advising.college.harvard.edu/academic-planning-for-students/curriculum-and-requirements/> — section:academic_structure
+    - “Quoted the concentration-declaration rule: 'Students must declare a concentration in their third term at Harvard' and that students may declare a different concentration later. Basis for open/unrestricted admissions_model and direct_admit_o”
+- <https://bpb-us-e1.wpmucdn.com/sites.harvard.edu/dist/6/210/files/2025/06/HarvardUniversity_CDS_2024-2025.pdf> — anchor, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, verify:out_of_state_tuition, section:application_process
+    - “Actual PDF bytes (redirect target) downloaded and text-extracted with pypdf (layout mode). Source of C1/C2/C8/C9/C12/B2/B22/B-grad/D2/G/C21-C22 cell values.”
+- <https://college.harvard.edu/academics/liberal-arts-sciences/concentrations> — resolve:catalog, resolve, section:academic_structure
+    - “majors/catalog page”
+- <https://college.harvard.edu/admissions> — resolve:admissions, resolve, section:application_process
+    - “official admissions page”
+- <https://college.harvard.edu/admissions/apply> — section:application_process
+    - “Official. Common Application; '$90 fee (or request a fee waiver)'; REA Nov 1, RD Jan 1, Transfer Mar 1; no cycle year printed.”
+- <https://college.harvard.edu/admissions/apply/application-requirements> — section:application_process
+    - “Official. 'We accept the Common Application' + 'We are also a QuestBridge partner institution'; SAT/ACT requirement + self-report; two teacher recs; secondary school report; midyear report required; five short-answers 150-word limit; fee wa”
+- <https://college.harvard.edu/admissions/apply/first-year-applicants> — section:academic_structure, section:application_process
+    - “Checked to find an explicit 'admission is to the College, not a major' statement; the fetched content did not contain such a sentence, so I relied on the third-term-declaration quote instead. Rejected as a direct source.”
+- <https://college.harvard.edu/admissions/apply/transfer-applicants> — section:credit_policies
+    - “Official Harvard College page. Source of transfer restrictions: max 16 semester-long courses, accredited full-time daytime program, grade C or better, and the full ineligible-course list (including AP/IB/CLEP not accepted). Verbatim quotes ”
+- <https://college.harvard.edu/financial-aid> — resolve:financial_aid, resolve, section:financials
+    - “financial-aid page”
+- <https://college.harvard.edu/financial-aid/how-aid-works> — verify:out_of_state_tuition, section:financials
+    - “Harvard College's own cost page; pinned $59,320 to AY 2025-2026 and gave latest-published AY 2026-2027 tuition = $62,226. No 2027-2028 figure.”
+- <https://college.harvard.edu/financial-aid/types-aid> — section:financials
+    - “Named grants: Harvard Scholarship (grant, never repaid), Federal Pell, SEOG, Massachusetts Gilbert Grant; plus work-study and loan details. Source for the scholarships array quotes.”
+- <https://college.harvard.edu/guides/financial-aid-fact-sheet> — section:financials
+    - “'55% of our undergraduates receive need-based Harvard scholarships'; typical 2023-24 package ($68,700 scholarship, $12,800 parent contribution); ~20% Pell of ~6,700 undergrads.”
+- <https://college.harvard.edu/resources/faq/can-i-fulfill-academic-requirements-previous-coursework> — section:credit_policies
+    - “Official Harvard College FAQ. Source of the philosophy, AP general_rule, IB general_rule, diploma_bonus=false, and the language-requirement exception. Verbatim quote captured.”
+- <https://college.harvard.edu/resources/faq/what-courses-transfer-harvard-college-there-list-transferrable-courses> — section:credit_policies
+    - “Official Harvard College FAQ. Source for transfer_articulation.tools=[]: no transferable-course list is kept; credit evaluated individually by the Registrar's Office after admission. Verbatim quote captured.”
+- <https://college.harvard.edu/student-life> — section:strategic_profile
+    - “House-system small-college-within-a-research-university framing; used in social_environment.”
+- <https://college.harvard.edu/student-life/residential-life/cambridge-boston> — section:strategic_profile
+    - “Harvard College page; source for MBTA subway at Harvard Square, ~15-min ride to downtown Boston, Bluebikes 400+ stations + discount; used in transportation_impact.”
+- <https://college.harvard.edu/student-life/student-stories/commonly-asked-qs-housing-system> — section:academic_structure, section:application_strategy
+    - “Quoted House-assignment mechanics: blocking 'groups of one to eight freshmen' are 'sorted randomly into one of the 12 houses' on Housing Day in spring; '12 upperclassmen Houses: nine ... near Harvard Square/Charles River, and three ... in t”
+- <https://college.harvard.edu/student-life/student-stories/exploring-best-concentration-harvard-undecided> — section:application_strategy
+    - “Fetched (official Harvard). Source for 'do not need to pick a concentration until the end of your sophomore fall' and 'it is okay to be undecided' — tactics 2, 4.”
+- <https://collegescorecard.ed.gov/data/> — anchor
+    - “College Scorecard data-download page; provided the current raw-data host (ed-public-download.scorecard.network) and the 2026-06-10 file names/sizes.”
+- <https://ed-public-download.scorecard.network/downloads/Most-Recent-Cohorts-Institution_06102026.zip> — anchor
+    - “Official College Scorecard institution-level data (23MB zip, 2026-06-10 release). Extracted UNITID 166027: md_earn_wne_p10=101817 (median earnings), plus cross-validation C150_4=0.9758, C100_4=0.5566, ADM_RATE=0.0365, SAT_AVG=1553, TUITIONF”
+- <https://en.wikipedia.org/wiki/Harvard_University_endowment> — section:strategic_profile
+    - “Source (via search summary) for endowment $56.9B as of June 30, 2025 = largest academic endowment in the world; used in market_position and a takeaway.”
+- <https://features.thecrimson.com/2024/senior-survey/after-harvard/> — section:outcomes_extra
+    - “Prior-cycle reference. Fetched; grad/professional school ~21% for Class of 2024; industries finance 21%/tech 16%/consulting 13%. Confirmed NO specific company/employer names anywhere in the article. Used for context; superseded by 2025 cycl”
+- <https://features.thecrimson.com/2025/senior-survey/after-harvard/> — section:outcomes_extra
+    - “PRIMARY source for grad_school_rate. Directly fetched; exact quote 'About 17 percent of seniors plan to go to graduate or professional school' (Class of 2025). Also '64 percent plan to enter the workforce directly'; '6 percent are pursuing ”
+- <https://finance.harvard.edu/endowment> — section:strategic_profile
+    - “Harvard finance office; source for endowment distribution (~$2.5B FY2025) and $784M FY2025 aid figures used in market_position/takeaways.”
+- <https://nces.ed.gov/collegenavigator/?id=166027> — resolve
+    - “AUTHORITATIVE identity confirmation. Fetched page states: 'Harvard University', 'Massachusetts Hall, Cambridge, Massachusetts 02138', '4-year, Private not-for-profit'. Confirms UnitID 166027 matches name+city+state and Private status.”
+- <https://news.harvard.edu/gazette/story/2025/03/harvard-expands-financial-aid/> — section:financials
+    - “Expansion effective 2025-26; $100k free / $200k tuition-free; 55% receive aid; $275M aid budget 2025-26; families paid avg $15,700 in 2023-24.”
+- <https://oira.harvard.edu/2025/06/13/2024-25-common-data-set-cds-published/> — verify:sat_composite_middle_50, section:application_process
+    - “Search result confirming 2024-25 CDS was published June 13, 2025 — corroborates 2024-2025 is the most recent; not fetched in detail.”
+- <https://oira.harvard.edu/common-data-set/> — resolve:common_data_set, resolve, anchor, verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year, verify:out_of_state_tuition, section:application_process
+    - “CDS located (2024-2025 (latest available; 2027-2028 not yet posted))”
+- <https://oira.harvard.edu/factbook/fact-book-ug-tuition/> — verify:out_of_state_tuition
+    - “OIRA Fact Book UG tuition table; latest row '2026' = $59,320, no 2027-2028 row — confirms target cycle unavailable.”
+- <https://scienceeducation.fas.harvard.edu/research-opportunities> — section:strategic_profile
+    - “Undergraduate research/funding overview; used in research_impact.”
+- <https://ssqbiophd.hms.harvard.edu/prospective-students/student-life> — section:strategic_profile
+    - “Summer research internship and funded fellowship examples; used in research_impact.”
+- <https://talk.collegeconfidential.com/t/effects-of-concentration-indication-on-harvard-application/876483> — section:application_strategy
+    - “Fetched. Community forum. Source for coherence/cross-check quotes (Slavic Studies example, 'don't put down an obscure major', 'proactive in pursuing your interests') — tactics 3, 5.”
+- <https://talk.collegeconfidential.com/t/harvard-essay-optional-supplement/1960965> — section:student_insights
+    - “Fetched verbatim. Source of essay_tips quotes (compmom, psywar, Wizardingage).”
+- <https://talk.collegeconfidential.com/t/is-spike-absolutely-necessary-for-stanford-harvard-ivys/3678597> — section:student_insights
+    - “Fetched verbatim. Source of spike/depth quotes (AlanApar, TonyGrace, Lindagaf, Momofthree24, NiceUnparticularMan) used in what_it_takes and insights.”
+- <https://talk.collegeconfidential.com/t/spike-hook-or-not/2085094> — section:student_insights
+    - “Fetched verbatim. Source of authenticity / red-flag quotes (BKSquared, skieurope, Lindagaf, gibby, compmom).”
+- <https://talk.collegeconfidential.com/t/ten-successful-harvard-application-essays/3568738> — section:student_insights
+    - “Fetched verbatim. Source of 'do no harm' essay opinion and 'overboard on creativity' red flag.”
+- <https://www.appily.com/colleges/harvard-university/reviews> — section:student_insights
+    - “Fetched verbatim. Crowdsourced student reviews; 'ambitious people but nobody too competitive' (Current Sophomore) and other culture quotes.”
+- <https://www.collegevine.com/c/harvard/9364/what-does-harvard-look-for-in-students> — section:student_insights
+    - “Fetched verbatim. Community Q&A: 'intellectual curiosity beyond the high school curriculum', 'well rounded class not well rounded student', uniqueness.”
+- <https://www.collegevine.com/faq/30174/harvard-admissions-admit-by-major> — section:application_strategy
+    - “Fetched. Source for 'does not use quotas for specific concentrations', 'don't feel compelled to choose an unconventional major', and 'demonstrate a genuine and well-developed interest' — tactics 1, 3.”
+- <https://www.google.com/search (WebSearch, allowed_domains harvard.edu)> — section:financials
+    - “Surfaced the Gazette article and fact sheet; confirmed 55% receive aid, $275M 2025-26 budget, ~86% of U.S. families qualify. Also listed net-price-calculator, federal-disclosures, affordability, and FAQ pages (not individually fetched).”
+- <https://www.google.com/search?q=Harvard+College+application+deadlines+2026-2027> — section:application_process
+    - “WebSearch. Corroborated Nov 1 REA / Jan 1 RD and surfaced the official Harvard apply/requirements URLs; no numeric values taken from third-party summaries.”
+- <https://www.google.com/search?q=Harvard+Common+Data+Set+2024-2025+PDF> — section:application_process
+    - “WebSearch. Surfaced the official CDS 2024-2025 PDF URL and the OIRA publication post.”
+- <https://www.inspiritai.com/blogs/ai-blog/what-does-harvard-look-for> — section:strategic_profile
+    - “Explainer on what Harvard looks for (academics + character/leadership/essays); used in admissions_philosophy.”
+- <https://www.niche.com/colleges/harvard-university/> — section:strategic_profile, section:student_insights
+    - “General campus/student-life context; supported social_environment.”
+- <https://www.niche.com/colleges/harvard-university/campus-life/> — section:strategic_profile, section:student_insights
+    - “Student reviews describing an exclusive/competitive social scene and final clubs; used in campus_dynamics.social_environment.”
+- <https://www.niche.com/colleges/harvard-university/reviews/> — section:student_insights
+    - “Page fetch FAILED (HTTP 403). Content used only via WebSearch summary (final clubs prominence, inclusion concerns) and clearly flagged as non-verbatim paraphrase.”
+- <https://www.princetonreview.com/college/harvard-college-1022984> — section:student_insights
+    - “Fetched verbatim. Student-survey quotes: 'works really hard, doesn't sleep, involved in a million extracurriculars'; partying not prevalent.”
+- <https://www.thecrimson.com/article/2024/3/29/harvard-class-of-2028-regular-decision/> — section:strategic_profile
+    - “The Harvard Crimson; source for Class of 2028 admit rate 3.6% (1,937 of 54,008) and 83.6% yield used in market_position and selectivity takeaway.”
+- <https://www.thinkacademy.ca/blog/blog/2025/09/07/harvard-admissions-holistic-criteria/> — section:strategic_profile
+    - “Admissions-explainer summarizing Harvard's holistic/whole-person criteria; used in admissions_philosophy.”
+
+## 3. Consulted but NOT used — with reason (120)
+- <http://archive.org/wayback/available?url=oie.fas.harvard.edu/credit-policies> — section:credit_policies — Wayback availability API returned a snapshot (20250609190002), but the actual web.archive.org snapshot fetch was blocked by the tooling, so no content could be extracted.
+- <http://web.archive.org/web/20250609190002/https://oie.fas.harvard.edu/credit-policies> — section:credit_policies — Attempted to retrieve the archived OIE credit-policies snapshot; WebFetch returned 'unable to fetch from web.archive.org'. Not usable.
+- <https://accoladetutor.com/harvard-university-common-data-set/> — verify:sat_composite_middle_50, verify:act_composite_middle_50, section:application_process — Third-party tutor blog; not canonical; rejected.
+- <https://admissionsight.com/extracurricular-activities-at-harvard/> — section:student_insights — Consultant blog surfaced in activities search; not community opinion; rejected.
+- <https://admissionsight.com/harvard-application-deadline/> — section:application_process — Third-party; not used.
+- <https://admitreport.com/blog/harvard-common-data-set> — verify:overall_acceptance_rate, verify:sat_composite_middle_50, section:application_process — Secondary blog surfaced in search; not fetched — non-canonical.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=166027&fields=...&api_key=DEMO_KEY> — anchor — Federal College Scorecard API; returned HTTP 429 OVER_RATE_LIMIT (shared DEMO_KEY exhausted, Retry-After ~79 min) on both WebFetch and curl. Could not use.
+- <https://api.data.gov/ed/collegescorecard/v1/schools?id=166027&fields=id,school.name,school.city,school.state,school.ownership> — resolve — College Scorecard REST API (DEMO_KEY). Rejected: returned HTTP 429 / OVER_RATE_LIMIT on both WebFetch and curl. Could not retrieve JSON.
+- <https://apscorecalc.com/ap-credit/harvard/> — section:credit_policies — Third-party AP-credit aggregator. Non-official; not used.
+- <https://ballywalterps.co.uk/does-harvard-accept-ap-or-ib-college-credit-and-admission-tips-explained> — section:credit_policies — Third-party SEO article. Non-official; not used.
+- <https://blog.collegevine.com/how-to-write-the-harvard-university-essays> — section:student_insights — CollegeVine editorial blog (distinct from the community Q&A used); not verbatim community, rejected.
+- <https://blog.collegevine.com/what-does-it-really-take-to-get-into-harvard> — verify:sat_composite_middle_50 — Third-party blog; not canonical; rejected.
+- <https://bold.org/blog/harvard-tuition/> — verify:out_of_state_tuition — Third-party blog, non-canonical; not used.
+- <https://bpb-us-e1.wpmucdn.com/sites.harvard.edu/dist/6/210/files/2024/05/CDS_2023-2024-Final-4755619e875b1241.pdf> — verify:act_composite_middle_50, verify:freshman_retention_rate, verify:out_of_state_tuition — Older 2023-2024 CDS PDF surfaced in search; fetched via WebFetch but the binary could not be parsed, and it is an earlier cycle than the latest available, so not used.
+- <https://careerservices.fas.harvard.edu/resources/job-market-insights/> — section:outcomes_extra — Fetched. Only a generic example query (Marketing Manager roles in Washington DC) with an example employer list unrelated to Harvard graduate placements; not usable as Harvard top employers.
+- <https://careerservices.fas.harvard.edu/resources/senior-survey-next-steps-data-graphic-archive/> — section:outcomes_extra — Harvard FAS Mignone Center official archive, but only covers Class of 2011-2019 (behind a PDF). Too stale for the target cycle; no employer list on the page.
+- <https://college.harvard.edu/academics/fields-study/concentrations> — section:academic_structure — Alternate fields-of-study page. Only restated the '50 undergraduate fields' and '50 secondary fields' blurb; did NOT enumerate concentration names or degree types. Used only to corroborate the '50 sec
+- <https://college.harvard.edu/admissions/admissions-statistics> — verify:overall_acceptance_rate, verify:sat_composite_middle_50, section:strategic_profile, section:application_strategy — Harvard College admissions-statistics page. Reports Class of 2029 (Fall 2025): 47,893 applicants, 2,003 admitted (~4.2%), no stated percentage. Rejected: not a CDS, does not state a rate, and still no
+- <https://college.harvard.edu/admissions/why-harvard/student-activities> — section:student_insights — Official list of activities available at Harvard (not admit-profile opinion); used as background for common_activities themes, not as a community source.
+- <https://college.harvard.edu/campus-life/housing> — section:academic_structure — Attempted for a housing quote; returned HTTP 404. Not usable.
+- <https://college.harvard.edu/financial-aid/how-aid-works/affordability> — section:financials — HTTP 404 — page not found. Data recovered from other pages instead.
+- <https://college.harvard.edu/financial-aid/how-aid-works/griffin-financial-aid-office> — section:financials — HTTP 404 — page not found.
+- <https://college.harvard.edu/guides/application-tips> — section:student_insights — Official Harvard tips surfaced via search; not community opinion, so used only as light corroboration, not cited as a crowdsourced source.
+- <https://college.harvard.edu/student-life/student-stories/come-block-me-virtually> — section:application_strategy — Search result only, not fetched — blocking-group narrative; random-assignment point already sourced.
+- <https://college.harvard.edu/student-life/student-stories/how-do-i-choose-major-harvard> — section:application_strategy — Search result only, not fetched — general choose-a-major narrative; declaration timeline already covered.
+- <https://collegehousing.fas.harvard.edu/rising-sophomore-lottery/> — section:application_strategy — Search result only, not fetched — sophomore housing lottery detail; random-lottery point already confirmed via the official Commonly Asked Q's page.
+- <https://collegescorecard.ed.gov/school?166027=> — section:outcomes_extra — Fetched; JS-rendered, returned only header/nav/footer, no school data (loan default, employment, or grad-school rates).
+- <https://collegescorecard.ed.gov/school/?166027-Harvard-University=> — verify:freshman_retention_rate — College Scorecard Harvard profile; WebFetch returned only nav/header shell (JS-rendered), no retention figure extractable. Not used as source.
+- <https://commondatasets.com/Harvard.html> — verify:sat_composite_middle_50 — Third-party CDS aggregator; not primary source; rejected.
+- <https://dso.college.harvard.edu/houses> — section:academic_structure — Dean of Students Office Houses page; returned HTTP 403 Forbidden. Could not fetch; housing facts sourced from the accessible Q&A page instead.
+- <https://ed-public-download.app.cloud.gov/downloads/Most-Recent-Cohorts-Institution.csv> — anchor — Old/legacy download host; returned HTTP 404 for all candidate filenames. Superseded by ed-public-download.scorecard.network.
+- <https://educationdata.urban.org/api/v1/college-university/scorecard/earnings/2022/?unitid=166027> — anchor — Urban Institute mirror of Scorecard earnings; DNS resolved (Cloudflare) but the sandbox network could not establish a connection (timeouts / HTTP 000). Also tried 2021 and ?mode=summary. Unreachable.
+- <https://empowerly.com/applications/harvard-acceptance-rate-class-2028/> — verify:sat_composite_middle_50 — Third-party blog about Class of 2028; not canonical, not Fall 2027; rejected.
+- <https://examplit.com/blog/harvard-application-profiles> — section:student_insights — Blog aggregating profiles; not a verifiable community forum; rejected.
+- <https://extension.harvard.edu/registration-admissions/degree-program-admissions/undergraduate-transfer-credit/> — section:credit_policies — Harvard Extension School (different school, not Harvard College). Out of scope; not used.
+- <https://features.thecrimson.com/2025/senior-survey/academics/> — section:outcomes_extra — Appeared in search results; not fetched (academics section, not outcomes/employers).
+- <https://gc.seas.harvard.edu/transferring-credits> — section:credit_policies — SEAS graduate-school transfer credit page; out of scope (graduate, not Harvard College undergrad). Not used.
+- <https://gsas.harvard.edu/financial-support/cost-attendance-2026-2027> — verify:out_of_state_tuition — Surfaced in search — GSAS (graduate) cost of attendance, not undergraduate College tuition; and 2026-2027 not target cycle.
+- <https://handbook.college.harvard.edu/sites/g/files/omnuum5551/files/2026-03/Fields%20of%20Concentration_0.pdf> — resolve, section:academic_structure — Official 'Fields of Concentration Academic Year 2026-2027' handbook PDF (the authoritative record of concentration requirements). Consulted via search; not selected as majors_catalog_url in favor of t
+- <https://harvard.service-now.com/ithelp?id=kb_article&sys_id=529e5ecadb6f4f04a914fff31d96190c> — section:application_strategy — Search result only — internal my.Harvard IT KB on declaring/changing concentration; enrolled-student mechanics, not applicant tactics.
+- <https://harvardindependent.com/home-sweet-homeor-is-it/> — section:application_strategy — Search result only, not fetched — student-life opinion on housing; not needed.
+- <https://howtogetinto-harvard.com/extracurricular-activities-harvard/> — section:student_insights — SEO blog; not community; rejected.
+- <https://icfs.com/specialists-desk/harvard-endowment-fund> — section:strategic_profile — Endowment allocation commentary; corroborated endowment scale but not directly quoted (relied on Harvard/Wikipedia figures instead).
+- <https://ifx.richmond.edu/pdfs/CDS2025-2026SectionC.pdf> — section:application_process — University of Richmond's CDS (wrong institution); appeared in search, ignored.
+- <https://legacyonlineschool.com/blog/harvard-common-data-set.html> — verify:sat_composite_middle_50, verify:out_of_state_tuition, section:application_process — Third-party blog; not canonical; rejected.
+- <https://medium.com/harvard-open-data-project/why-the-harvard-housing-lottery-might-not-be-random-cd10c4e163b2> — section:application_strategy — Search result only, not fetched — argues lottery may not be perfectly random, but still confirms no application-time ranking; not needed and could muddy the clean 'random, not ranked' finding.
+- <https://naceweb.org/docs/default-source/default-document-library/2025/publication/free-report/nace-first-destinations-college-class-of-2024.pdf> — section:outcomes_extra — NACE national aggregate first-destinations report, not Harvard-specific; not used.
+- <https://nces.ed.gov/ipeds/datacenter/institutionprofile.aspx?unitId=166027> — resolve — IPEDS Data Center institution profile for UnitID 166027. Fetch failed with 'Too many redirects' (ASPX session redirect). Identity confirmed via College Navigator instead.
+- <https://nextgenadmit.com/harvard-admission-statistics/> — verify:overall_acceptance_rate — Secondary aggregator surfaced in search; not fetched — non-canonical.
+- <https://oie.fas.harvard.edu/credit-policies> — section:credit_policies — Official Office of International Education transfer/study-abroad credit-policies page. HTTP 403 Access Denied (Akamai). Could not fetch.
+- <https://oie.fas.harvard.edu/transfer-credit-policies-guidelines-summer> — section:credit_policies — Official OIE summer transfer-credit page (surfaced in search). Not fetched (same Akamai subdomain that 403'd); not used.
+- <https://oir.harvard.edu/common-data-set> — resolve, verify:overall_acceptance_rate, verify:act_composite_middle_50, verify:freshman_retention_rate, verify:graduation_rate_6_year — Older OIR (Office of Institutional Research) CDS URL surfaced in search. Not fetched/used; superseded by the current OIRA (oira.harvard.edu) CDS index.
+- <https://old.reddit.com/r/ApplyingToCollege/search/?q=harvard> — section:student_insights — Fetch FAILED — 'Claude Code is unable to fetch from old.reddit.com'. Reddit entirely inaccessible to crawler.
+- <https://pathivy.com/blog/what-gpa-do-you-need-to-get-into-harvard> — section:student_insights — Marketing/blog aggregator surfaced in search; not community opinion; rejected.
+- <https://plexuss.com/f/what-s-the-student-loan-default-rate-for-harvard> — section:outcomes_extra — Fetched; stated 'Harvard University has a 3 year student loan default rate of 0.8%' but 'Cohort/Fiscal Year: Not specified'. Undated secondary aggregator; conflicts with CollegeFactual 2-yr 1.4%; coul
+- <https://psil.hsites.harvard.edu/american-college-application-timeline> — section:application_process — Harvard sub-site (a program timeline, not admissions policy); not used.
+- <https://pursu.io/guide/average-sat-score-harvard-2026> — verify:sat_composite_middle_50 — Third-party blog citing 25th-75th percentile SAT; not canonical, not Fall 2027; rejected.
+- <https://registrar.fas.harvard.edu/placement-exam-scores> — section:credit_policies — Official FAS Registrar placement/exam-score page (would hold AP/IB placement score thresholds). HTTP 403 Access Denied (Akamai) via both WebFetch and curl with browser UA. Could not fetch, so no place
+- <https://registrar.fas.harvard.edu/tuition-and-fees> — verify:out_of_state_tuition — Authoritative FAS Registrar tuition page, but returned HTTP 403 Forbidden on fetch — could not retrieve/verify.
+- <https://registrar.gse.harvard.edu/declaration-concentration-0> — section:application_strategy — Search result only — Graduate School of Education registrar page, not undergraduate College; irrelevant.
+- <https://registrar.gse.harvard.edu/sites/g/files/omnuum3991/files/2026-05/Student%20Bill%20and%20Tuition%20Rates%2026-27.pdf> — verify:out_of_state_tuition — Surfaced in search — Harvard Graduate School of Education tuition, wrong school unit.
+- <https://sfs.harvard.edu/consumer-information> — section:outcomes_extra — Harvard's own required consumer-information / cohort-default-rate disclosure. Attempted fetch returned HTTP 403 Forbidden; could not read the primary-source default rate.
+- <https://sfs.harvard.edu/financial-aid-harvard> — resolve — Harvard University Student Financial Services aid page (university-wide, incl. grad). Consulted via search; college.harvard.edu/financial-aid chosen instead as the undergraduate-specific source.
+- <https://soflotutors.com/blog/harvard-ap-credit-policy/> — section:credit_policies — Tutoring-company blog. Non-official; not used.
+- <https://talk.collegeconfidential.com/t/question-about-ap-credits-and-advanced-standing/3518000> — section:credit_policies — Forum thread. Non-official; not used.
+- <https://transfergoat.com/ap-ib-credits-transfer-harvard/> — section:credit_policies — Third-party. Non-official; not used.
+- <https://www.albert.io/blog/harvard-advanced-placement-ap-credits/> — section:credit_policies — Third-party blog claiming AP Advanced Standing credit (5s on 4 exams). Contradicts current official FAQ (no pre-matriculation credit). Rejected as non-official and outdated.
+- <https://www.ameriinsight.com/harvard-university-common-data-set/> — verify:act_composite_middle_50, section:application_process — Third-party summary; not canonical, rejected.
+- <https://www.axios.com/local/boston/2025/09/22/harvard-mit-us-news-best-colleges> — section:strategic_profile — Local coverage of U.S. News rankings; not used for rank (rule requires quoting the U.S. News page itself).
+- <https://www.bestcolleges.com/blog/college-application-deadlines/> — section:application_process — Third-party deadline roundup; not used.
+- <https://www.collegeessayadvisors.com/supplemental-essay/harvard-university-supplemental-essay-prompt-guide/> — section:student_insights — Consultant essay guide, not community opinion; rejected.
+- <https://www.collegeessayguy.com/blog/harvard-acceptance-rate> — verify:overall_acceptance_rate — Secondary blog (CDS 2023) surfaced in search; not fetched — non-canonical and wrong cycle.
+- <https://www.collegefactual.com/colleges/harvard-university/academic-life/graduation-and-retention/> — verify:freshman_retention_rate — Third-party aggregator surfaced in search (states ~98%); not a canonical primary source, not fetched/used.
+- <https://www.collegefactual.com/colleges/harvard-university/paying-for-college/student-loan-debt/> — section:outcomes_extra — Fetched; stated '2-year cohort default rate: 1.4%' with '2,612 borrowers in the cohort' but gave NO cohort year. Secondary aggregator, undated, and conflicts with Plexuss 3-yr figure; could not pin to
+- <https://www.collegefactual.com/colleges/harvard-university/paying-for-college/student-loan-debt/chart-loan-default-rates.html> — section:outcomes_extra — Fetched; returned only navigation/headers (Compare/Trend), no actual default-rate numbers.
+- <https://www.collegesimply.com/colleges/massachusetts/harvard-university/admission/> — verify:act_composite_middle_50 — Third-party aggregator; not canonical, rejected.
+- <https://www.collegesimply.com/colleges/massachusetts/harvard-university/salaries/> — anchor — Aggregator that republishes Scorecard earnings; fetch timed out and it is not the canonical source, so not used.
+- <https://www.collegetransfer.net/HarvardUniversityHarvardCollege/TransferProfile/tabid/145/Default.aspx> — section:credit_policies — Third-party aggregator. Non-official; not used.
+- <https://www.collegetuitioncompare.com/edu/166027/harvard-university/tuition/> — verify:out_of_state_tuition — Third-party tuition aggregator, non-canonical; not used.
+- <https://www.collegevine.com/faq/175663/transferring-college-credits-to-harvard> — section:credit_policies — Third-party. Non-official; not used.
+- <https://www.commondatasets.fyi/harvard> — verify:sat_composite_middle_50, verify:act_composite_middle_50 — Third-party CDS mirror (2023-2024); not primary and wrong cycle; rejected.
+- <https://www.goodgoblin.ai/blog/HowToGetIntoHarvardUniversity2025> — verify:sat_composite_middle_50, section:application_process — Third-party blog; not canonical; rejected.
+- <https://www.google.com/search (WebSearch: 'Harvard University College Scorecard median earnings 10 years after entry 166027')> — anchor — Surfaced aggregators (collegesimply, decidemycampus, cnbc, ivycoach) citing ~$101,817 / older $95,114; used only to sanity-check the ballpark, not as the reported value.
+- <https://www.google.com/search?q=Harvard+Common+Data+Set+2025-2026+C7> — section:application_process — WebSearch. Confirmed no 2025-2026/2027-2028 CDS for Harvard; third-party C7 summaries (gradgpt, admitreport, accoladetutor, etc.) not used — relied on the official PDF instead.
+- <https://www.google.com/search?q=Harvard+University+Common+Data+Set+2027-2028+six-year+graduation+rate> — verify:graduation_rate_6_year — WebSearch for the 2027-2028 CDS; confirmed no 2027-2028 edition exists; returned only secondary blog aggregators (legacyonlineschool, accoladetutor, collegefactual, research.com) which were not used a
+- <https://www.google.com/search?q=Harvard+University+Common+Data+Set+six-year+graduation+rate+section+B> — verify:graduation_rate_6_year — WebSearch surfaced official OIR/OIRA CDS pages plus secondary aggregators (gradgpt, ameriinsight, scribd); used only to locate the official OIRA index, not for the value itself.
+- <https://www.gradgpt.com/common-data-set/harvard-university> — verify:overall_acceptance_rate, verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:out_of_state_tuition, section:application_process — Third-party CDS visualizer surfaced in search results; not fetched — secondary aggregator, non-canonical.
+- <https://www.gse.harvard.edu/sites/default/files/2025-02/24-grad-outcomes-final_0.pdf> — section:outcomes_extra — Harvard Graduate School of Education outcomes PDF; graduate school, out of scope for the College.
+- <https://www.harvardmagazine.com/2018/04/advanced-standing-harvard> — section:credit_policies — Harvard Magazine 2018 news article on the reduction of Advanced Standing. Contextual/historical, not a policy page; not used for values.
+- <https://www.highereddive.com/news/us-news-best-college-rankings-latest-2025-princeton-mit-harvard-methodology/727819/> — section:strategic_profile — Reported Princeton/MIT/Harvard as 1-2-3 in U.S. News; NOT used because rank must come from a fetched U.S. News page, which failed to load.
+- <https://www.hks.harvard.edu/more/employers/about-our-graduates/employment-snapshot/class-2024-employment-snapshot> — section:outcomes_extra — Harvard Kennedy School (graduate school) employment snapshot; out of scope for undergraduate Harvard College outcomes.
+- <https://www.hmc.harvard.edu/> — section:strategic_profile — Harvard Management Company; context on endowment management, not a specific figure used.
+- <https://www.hodp.org/project/harvard-housing-part-1-who-gets-quadded/> — section:application_strategy — Search result only, not fetched — Quad-assignment analysis; enrolled-student housing detail, not applicant tactic.
+- <https://www.hsph.harvard.edu/r-o-student-knowledge-center/transferring-credits/> — section:credit_policies — Harvard Chan School of Public Health (graduate). Out of scope; not used.
+- <https://www.ivycoach.com/the-ivy-coach-blog/ivy-league/harvard-gpa-requirements/> — section:student_insights — Admissions-consultant blog; not crowdsourced; rejected.
+- <https://www.ivyscholars.com/harvards-most-and-least-popular-majors/> — section:application_strategy — Search result only, not fetched — about popularity of majors, not admissions-by-major mechanics; not needed.
+- <https://www.linkedin.com/school/harvard-university/people> — section:outcomes_extra — Candidate source for top employers ('where they work' alumni aggregation), but LinkedIn alumni data is behind a login wall and not fetchable via WebFetch; could not verify any named employers.
+- <https://www.nextfour.ai/harvard-university/sat-score-data> — verify:sat_composite_middle_50 — Third-party SAT-data aggregator; not canonical; rejected.
+- <https://www.niche.com/colleges/harvard-university/students/> — section:student_insights — Surfaced in search; Niche blocks crawler; not fetched.
+- <https://www.odysseycollegeprep.com/how-to-get-into-harvard-admission-rates-sat-requirements-more/> — section:application_strategy — Search result only, not fetched — general how-to-get-in overview; no specific concentration-tactic content needed.
+- <https://www.prepscholar.com/act/s/colleges/Harvard-act-scores-GPA> — verify:act_composite_middle_50 — Third-party (PrepScholar) ACT summary surfaced when checking College Scorecard as an alternate; not canonical, not used.
+- <https://www.prnewswire.com/news-releases/us-news-releases-2025-best-colleges-rankings-302254714.html> — section:strategic_profile — U.S. News rankings press release; not a U.S. News ranking page fetch, so not used for rank.
+- <https://www.quora.com/Can-a-student-be-admitted-into-Harvard-without-declaring-a-major-as-an-undergraduate> — section:application_strategy — Search result only, not fetched — Quora, lower reliability; the point (no major required) is already covered by the official Harvard and Admissionado sources.
+- <https://www.quora.com/How-important-is-it-to-have-a-declared-major-on-your-application-to-schools-like-Harvard> — section:application_strategy — Search result only, not fetched — Quora, lower reliability; not needed.
+- <https://www.reddit.com/r/ApplyingToCollege/search.json?q=harvard+what+it+takes> — section:student_insights — Fetch FAILED — 'Claude Code is unable to fetch from www.reddit.com'. No Reddit content obtainable.
+- <https://www.road2college.com/harvard-common-data-set/> — verify:overall_acceptance_rate — Secondary blog surfaced in search; not fetched — non-canonical.
+- <https://www.savemyexams.com/learning-hub/results-day/does-harvard-accept-ap-credit/> — section:credit_policies — Third-party. Non-official; not used.
+- <https://www.scribd.com/document/963792494/HarvardUniversity-CDS-2024-2025> — verify:sat_composite_middle_50, verify:act_composite_middle_50, verify:out_of_state_tuition, section:application_process — Scribd copy of the 2024-2025 CDS; used the official Harvard PDF instead.
+- <https://www.shiksha.com/studyabroad/usa/universities/harvard-university/admissions> — section:application_process — Third-party; not used.
+- <https://www.sofi.com/harvard-tuition-fees/> — verify:out_of_state_tuition — Third-party commercial page, non-canonical; not used.
+- <https://www.thecrimson.com/admissions/article/2025/5/29/senior-survey-2025/> — section:outcomes_extra — Crimson 2025 senior survey article in search results; not fetched separately (the features.thecrimson.com/2025 after-harvard page already provided the quoted figures).
+- <https://www.thecrimson.com/article/2018/9/12/harvard-student-admissions-file-analysis/> — section:student_insights — Harvard Crimson journalism, not crowdsourced student opinion; not used for this section.
+- <https://www.thecrimson.com/article/2020/12/11/spring-housing-town-hall/> — section:application_strategy — Search result only, not fetched — pandemic-era blocking process; outdated and irrelevant to applicant tactics.
+- <https://www.thecrimson.com/article/2023/11/8/linking-groups-discontinued/> — section:application_strategy — Search result only, not fetched — change to blocking/linking rules; enrolled-student housing mechanics, not applicant tactics.
+- <https://www.thecrimson.com/article/2023/3/31/admissions-decisions-2027/> — section:application_strategy — Search result only — Class of 2027 admit-rate news; not about major-selection or house-ranking tactics.
+- <https://www.today.com/parents/teens/us-news-college-rankings-2025-rcna172418> — section:strategic_profile — Secondary U.S. News rank coverage; not used for the same reason (rank left null).
+- <https://www.unigo.com/colleges/harvard-university/reviews/what-is-the-stereotype-of-students-at-your-school> — section:student_insights — Fetch FAILED (HTTP 403). Crowdsourced student stereotypes not retrievable.
+- <https://www.usnews.com/best-colleges/harvard-university-2155> — section:strategic_profile — Attempted WebFetch for the National Universities rank; timed out (60s) on multiple tries. U.S. News blocks automated fetch, so rank could not be quoted -> us_news_rank left null.
+- <https://www.usnews.com/best-colleges/harvard-university-2155/overall-rankings> — section:strategic_profile — Attempted WebFetch for the rank; timed out. Not usable.
+- <https://www.usnews.com/best-colleges/rankings/national-universities> — section:strategic_profile — Attempted WebFetch of the ranking list to read Harvard's rank; timed out. Not usable.
