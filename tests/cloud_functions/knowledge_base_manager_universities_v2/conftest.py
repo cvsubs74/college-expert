@@ -74,13 +74,20 @@ def _load(filename, alias):
 
 kb_versioning = _load('versioning.py', 'kbv2_versioning')
 kb_firestore_db = _load('firestore_db.py', 'kbv2_firestore_db')
+kb_year_history = _load('year_history.py', 'kbv2_year_history')
+kb_gemini_fallback = _load('gemini_fallback.py', 'kbv2_gemini_fallback')
 
 # main.py does `from firestore_db import get_db` / `from versioning import …`
 # — alias the plain names just long enough for those imports to bind to OUR
-# modules, then restore whatever was there (or nothing).
-_saved = {n: sys.modules.get(n) for n in ('firestore_db', 'versioning')}
+# modules, then restore whatever was there (or nothing). gemini_fallback is
+# aliased too so this suite runs in isolation (previously it only resolved
+# because counselor_agent's conftest happened to put ITS copy on sys.path).
+_saved = {n: sys.modules.get(n)
+          for n in ('firestore_db', 'versioning', 'year_history', 'gemini_fallback')}
 sys.modules['firestore_db'] = kb_firestore_db
 sys.modules['versioning'] = kb_versioning
+sys.modules['year_history'] = kb_year_history
+sys.modules['gemini_fallback'] = kb_gemini_fallback
 try:
     kb_main = _load('main.py', 'kbv2_main')
 finally:
@@ -117,8 +124,12 @@ class FakeDocRef:
         self._store = store
         self._path = path
 
-    def get(self):
-        return FakeDocSnapshot(self._path[-1], self._store.get(self._path), reference=self)
+    def get(self, field_paths=None):
+        data = self._store.get(self._path)
+        if data is not None and field_paths:
+            wanted = set(field_paths)
+            data = {k: v for k, v in data.items() if k in wanted}
+        return FakeDocSnapshot(self._path[-1], data, reference=self)
 
     def set(self, data):
         import copy
@@ -187,12 +198,13 @@ def kb(db):
         main=kb_main,
         firestore_db=kb_firestore_db,
         versioning=kb_versioning,
+        year_history=kb_year_history,
         db=db,
     )
 
 
 def _make_profile(uid='testu', name='Test University', acceptance_rate=25.0,
-                  deadlines=None, **overrides):
+                  deadlines=None, longitudinal_trends=None, **overrides):
     profile = {
         '_id': uid,
         'metadata': {
@@ -204,6 +216,8 @@ def _make_profile(uid='testu', name='Test University', acceptance_rate=25.0,
                 'overall_acceptance_rate': acceptance_rate,
                 'test_policy_details': 'Test optional',
             },
+            **({'longitudinal_trends': longitudinal_trends}
+               if longitudinal_trends is not None else {}),
         },
         'strategic_profile': {'market_position': 'Test Tier', 'us_news_rank': 42},
         'application_process': {

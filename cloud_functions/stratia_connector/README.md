@@ -14,7 +14,9 @@ deadlines, profile, plus university search and a few safe write actions.
 
 ## Tools
 
-Read: `search_universities`, `get_university`, `get_college_list`,
+Read: `search_universities`, `get_university` (supports `year=` cycle snapshots
+and `sections=` projection), `get_university_history` (per-year 'what changed'
+view: KB `snapshots` + school-reported `reported_trends`), `get_college_list`,
 `get_fit_analysis`, `get_deadlines`, `get_profile`.
 Write (safe): `add_college`, `remove_college`, `recompute_fit` (costs 1 credit),
 `update_profile_field`.

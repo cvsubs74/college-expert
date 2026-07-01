@@ -7,13 +7,17 @@ This Cloud Function manages university profile documents in **Firestore** for st
 | Method | Endpoint/Condition | Description |
 |--------|-------------------|-------------|
 | GET | `/health` | Health check |
-| GET | `/?id={university_id}` | Get a specific university |
+| GET | `/?id={university_id}` | Get a specific university (current cycle) |
+| GET | `/?id={id}&year=2025` | Get that cycle year's snapshot (ADR 0002); a miss lists available years |
+| GET | `/?id={id}&sections=admissions_data,financials` | Project the profile to just those top-level sections (`sections_returned` / `unknown_sections` in response; all-typo request → 400) |
+| GET | `/?id={id}&action=versions` | List stored cycle-year snapshots |
+| GET | `/?id={id}&action=history` | Two-axis year view: compact per-cycle `snapshots` + school-reported `reported_trends` (`verified:false`); `&sections=` returns raw per-year sections, `&years=2024,2025` filters |
 | GET | `/` | List all universities |
 | POST | `{"query": "...", "limit": 10}` | Search universities |
-| POST | `{"profile": {...}}` | Ingest university profile |
+| POST | `{"profile": {...}, "year": 2026}` | Ingest university profile as a cycle-year snapshot |
 | POST | `{"action": "chat", "university_id": "...", "question": "..."}` | Chat about university |
-| POST | `{"university_ids": [...]}` | Batch get multiple universities |
-| DELETE | `{"university_id": "..."}` | Delete a university |
+| POST | `{"university_ids": [...]}` | Batch get multiple universities (main docs only) |
+| DELETE | `{"university_id": "...", "year": 2025}` | Delete a university (all years), or one snapshot (`year`) |
 
 ## Search Request
 

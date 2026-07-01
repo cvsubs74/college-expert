@@ -124,12 +124,30 @@ def search_universities(query, limit=10, max_acceptance_rate=None, state=None):
     return out
 
 
-def get_university(university_id):
+# Per-key list caps applied to KB profile payloads (shared by get_university
+# and the sections mode of get_university_history — _prune caps match by key
+# name at any depth, so they hold inside per-year maps too).
+_KB_PROFILE_LIST_CAPS = {
+    "scholarships": 40, "majors": 60, "application_deadlines": 30,
+    "supplemental_requirements": 30, "longitudinal_trends": 8,
+}
+
+
+def get_university(university_id, year=None, sections=None):
     """Full KB profile — all sections (admissions, academics, financials,
-    application process, outcomes, student life, strategic profile, ...)."""
-    data = _get(settings.KNOWLEDGE_BASE_UNIVERSITIES_URL, {"university_id": university_id})
+    application process, outcomes, student life, strategic profile, ...).
+    `year` reads that cycle's snapshot; `sections` projects the profile
+    server-side to just those top-level sections."""
+    params = {"university_id": university_id}
+    if year is not None:
+        params["year"] = int(year)
+    if sections:
+        params["sections"] = ",".join(sections)
+    data = _get(settings.KNOWLEDGE_BASE_UNIVERSITIES_URL, params)
     if not data.get("success") or not data.get("university"):
-        raise StratiaError(f"university '{university_id}' not found")
+        # Surface the backend's own message — it names a missing year and
+        # lists the available ones, so the agent can self-correct in one step.
+        raise StratiaError(data.get("error") or f"university '{university_id}' not found")
     u = data["university"]
     out = {
         "university_id": u.get("university_id"),
@@ -137,19 +155,86 @@ def get_university(university_id):
         "location": u.get("location"),
         "acceptance_rate": u.get("acceptance_rate"),
         "us_news_rank": u.get("us_news_rank"),
+        "soft_fit_category": u.get("soft_fit_category"),
         "market_position": u.get("market_position"),
         "data_year": u.get("data_year"),
         "available_years": u.get("available_years"),
     }
+    # Projection metadata (present only when sections were requested) lets
+    # the agent distinguish "school lacks this section" from a typo.
+    for k in ("sections_returned", "sections_available", "unknown_sections"):
+        if u.get(k) is not None:
+            out[k] = u[k]
     # Merge the full profile (every KB section), pruned + list-capped.
-    out.update(_prune(u.get("profile") or {}, list_caps={
-        "scholarships": 40, "majors": 60, "application_deadlines": 30,
-        "supplemental_requirements": 30, "longitudinal_trends": 8,
-    }))
+    out.update(_prune(u.get("profile") or {}, list_caps=_KB_PROFILE_LIST_CAPS))
     # KB docs are large; drop the bulkiest low-value sections only if over cap.
     return _cap_size(out, droppable=(
         "longitudinal_trends", "admitted_student_profile", "student_insights", "outcomes",
     ))
+
+
+def get_university_history(university_id, sections=None, years=None):
+    """Year-by-year view of one university. Compact per-cycle rows plus the
+    school's own reported trend series by default; raw per-year sections when
+    `sections` is passed (oldest years evicted first if oversized)."""
+    params = {"university_id": university_id, "action": "history"}
+    if sections:
+        params["sections"] = ",".join(sections)
+    if years:
+        params["years"] = ",".join(str(int(y)) for y in years)
+    data = _get(settings.KNOWLEDGE_BASE_UNIVERSITIES_URL, params)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or f"history unavailable for '{university_id}'")
+    if "snapshots" not in data and "years" not in data:
+        # Deploy skew / rollback: an older KB ignores unknown actions and
+        # returns a full profile with success:true. Never mis-parse that.
+        raise StratiaError(
+            "the knowledge base does not support action=history yet — "
+            "use get_university(year=...) instead"
+        )
+    out = {
+        "university_id": university_id,
+        "name": data.get("official_name"),
+        "available_years": data.get("available_years"),
+        "notes": data.get("notes") or [],
+    }
+    if "years" in data:  # sections mode
+        year_map = {y: _prune(secs, list_caps=_KB_PROFILE_LIST_CAPS)
+                    for y, secs in (data.get("years") or {}).items()}
+        out["years"] = year_map
+
+        def _as_int(y):
+            try:
+                return int(y)
+            except (TypeError, ValueError):
+                return -1
+
+        # Evict oldest years first until under cap; never drop the newest.
+        truncated = []
+        while (len(json.dumps(out, default=str)) > _RESULT_CAP and len(year_map) > 1):
+            oldest = min(year_map, key=_as_int)
+            year_map.pop(oldest)
+            truncated.append(oldest)
+        if truncated:
+            out["truncated_years"] = sorted(truncated)
+        # A single remaining year can still exceed the cap (one broad-section
+        # year of a 150KB profile) — drop its largest sections until it fits,
+        # recording them so the agent can re-request narrower sections.
+        if len(json.dumps(out, default=str)) > _RESULT_CAP and year_map:
+            (year, secs), = year_map.items()
+            dropped = []
+            while len(json.dumps(out, default=str)) > _RESULT_CAP and len(secs) > 1:
+                largest = max(secs, key=lambda k: len(json.dumps(secs[k], default=str)))
+                secs.pop(largest)
+                dropped.append(largest)
+            if dropped:
+                out["truncated_sections"] = {year: sorted(dropped)}
+        return out
+
+    out["snapshots"] = _prune(data.get("snapshots") or [],
+                              list_caps={"deadlines": 20, "early_admission": 8})
+    out["reported_trends"] = _prune(data.get("reported_trends") or [])[:12]
+    return _cap_size(out, droppable=("reported_trends",))
 
 
 # ----------------------------------------------------------------------------
