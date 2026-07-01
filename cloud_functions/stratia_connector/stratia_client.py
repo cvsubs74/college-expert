@@ -173,6 +173,48 @@ def get_university(university_id, year=None, sections=None):
     ))
 
 
+def get_university_majors(university_id, college=None, query=None, year=None):
+    """Trust-labeled per-major entry facts (KB action=majors): entry_path enum
+    (+ verbatim wording when unclear), structural entry_risk, door policy,
+    hedged legacy stats, richness_tier, data_notes. Deterministic and free."""
+    params = {"university_id": university_id, "action": "majors"}
+    if college:
+        params["college"] = college
+    if query:
+        params["q"] = query
+    if year is not None:
+        params["year"] = int(year)
+    data = _get(settings.KNOWLEDGE_BASE_UNIVERSITIES_URL, params)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or f"majors unavailable for '{university_id}'")
+    if "colleges" not in data:
+        # Deploy skew: an older KB ignores unknown actions and returns a full
+        # profile with success:true — refuse to mis-parse it.
+        raise StratiaError(
+            "the knowledge base does not support action=majors yet — "
+            "use get_university(sections=['academic_structure','application_strategy'])"
+        )
+    out = {k: data.get(k) for k in (
+        "university_id", "official_name", "data_year", "verification_status",
+        "richness_tier", "structure_type", "colleges", "strategy_notes", "data_notes")}
+    out = _prune(out, list_caps={"majors": 80, "colleges": 25,
+                                 "prerequisite_courses": 10,
+                                 "major_selection_tactics": 10})
+    out["guidance"] = (
+        "basis 'kb_verified' = quote-backed official data; 'kb_reported' = "
+        "unverified legacy data — hedge it ('students report…'); 'opinion' = "
+        "counselor take, present as judgment. Absent/null = the school doesn't "
+        "publish it — never estimate. is_impacted:false does NOT mean easy to "
+        "enter — use entry_risk ('capped_door' means the door locks behind you: "
+        "warn the student, never recommend an apply-easier-transfer-later play "
+        "there). At schools whose colleges admit by university (not by major), "
+        "the listed major barely affects admission — say so instead of "
+        "over-strategizing; the application and essays must cohere with "
+        "whatever major is listed."
+    )
+    return _cap_size(out, droppable=("strategy_notes",))
+
+
 def get_university_history(university_id, sections=None, years=None):
     """Year-by-year view of one university. Compact per-cycle rows plus the
     school's own reported trend series by default; raw per-year sections when
@@ -384,11 +426,12 @@ def remove_college(email, university_id, name=""):
     return {"removed": university_id}
 
 
-def recompute_fit(email, university_id):
+def recompute_fit(email, university_id, major=None):
     # The recompute calls the LLM; allow more time (Claude.ai tool limit is 300s).
-    data = _post(_pm("compute-single-fit"),
-                {"user_email": email, "university_id": university_id},
-                timeout=120, email=email)
+    body = {"user_email": email, "university_id": university_id}
+    if isinstance(major, str) and major.strip():
+        body["intended_major"] = major.strip()
+    data = _post(_pm("compute-single-fit"), body, timeout=120, email=email)
     if not data.get("success"):
         raise StratiaError(data.get("error") or "recompute_fit failed")
     fit = data.get("fit_analysis") or {}
@@ -396,6 +439,38 @@ def recompute_fit(email, university_id):
     return _prune(fit, list_caps={"recommendations": 15, "essay_angles": 15,
                                   "scholarship_matches": 30, "factors": 12},
                  text_caps={"explanation": 6000}, deny={"computed_at"})
+
+
+def set_intended_majors(email, majors, primary=None):
+    body = {"user_email": email, "majors": majors}
+    if primary:
+        body["primary"] = primary
+    data = _post(_pm("set-intended-majors"), body, email=email)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "set_intended_majors failed")
+    return {"intended_majors": data.get("intended_majors"),
+            "primary": data.get("intended_major")}
+
+
+def set_major_choice(email, university_id, primary_major, backup_major=None,
+                     rationale=None, source=None):
+    body = {"user_email": email, "university_id": university_id,
+            "primary_major": primary_major}
+    if backup_major:
+        body["backup_major"] = backup_major
+    if rationale:
+        body["rationale"] = rationale
+    if source:
+        body["source"] = source
+    data = _post(_pm("set-major-choice"), body, email=email)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "set_major_choice failed")
+    return _prune({
+        "university_id": data.get("university_id"),
+        "major_choice": data.get("major_choice"),
+        "near_misses": data.get("near_misses") or [],
+        "note": data.get("note"),
+    }, list_caps={"near_misses": 5})
 
 
 def update_profile_field(email, field_path, value, operation="set"):

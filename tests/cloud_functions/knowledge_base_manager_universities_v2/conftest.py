@@ -75,6 +75,7 @@ def _load(filename, alias):
 kb_versioning = _load('versioning.py', 'kbv2_versioning')
 kb_firestore_db = _load('firestore_db.py', 'kbv2_firestore_db')
 kb_year_history = _load('year_history.py', 'kbv2_year_history')
+kb_major_facts = _load('major_facts.py', 'kbv2_major_facts')
 kb_gemini_fallback = _load('gemini_fallback.py', 'kbv2_gemini_fallback')
 
 # main.py does `from firestore_db import get_db` / `from versioning import …`
@@ -83,10 +84,11 @@ kb_gemini_fallback = _load('gemini_fallback.py', 'kbv2_gemini_fallback')
 # aliased too so this suite runs in isolation (previously it only resolved
 # because counselor_agent's conftest happened to put ITS copy on sys.path).
 _saved = {n: sys.modules.get(n)
-          for n in ('firestore_db', 'versioning', 'year_history', 'gemini_fallback')}
+          for n in ('firestore_db', 'versioning', 'year_history', 'major_facts', 'gemini_fallback')}
 sys.modules['firestore_db'] = kb_firestore_db
 sys.modules['versioning'] = kb_versioning
 sys.modules['year_history'] = kb_year_history
+sys.modules['major_facts'] = kb_major_facts
 sys.modules['gemini_fallback'] = kb_gemini_fallback
 try:
     kb_main = _load('main.py', 'kbv2_main')
@@ -199,6 +201,7 @@ def kb(db):
         firestore_db=kb_firestore_db,
         versioning=kb_versioning,
         year_history=kb_year_history,
+        major_facts=kb_major_facts,
         db=db,
     )
 
