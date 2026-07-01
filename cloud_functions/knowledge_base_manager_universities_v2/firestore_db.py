@@ -43,6 +43,37 @@ class FirestoreDB:
             logger.error(f"Get university failed: {e}")
             return None
 
+    def get_available_years(self, university_id: str) -> List[int]:
+        """The main doc's available_years via a field-mask read (near-free)."""
+        try:
+            doc = self.collection.document(university_id).get(field_paths=['available_years'])
+            if doc.exists:
+                return (doc.to_dict() or {}).get('available_years') or []
+            return []
+        except Exception as e:
+            logger.error(f"Get available years failed: {e}")
+            return []
+
+    def list_version_docs(self, university_id: str) -> List[Dict]:
+        """Full cycle-year snapshot docs for a university, newest first."""
+        try:
+            docs = []
+            for doc in self._versions(university_id).stream():
+                data = doc.to_dict() or {}
+                data['university_id'] = university_id
+                if data.get('data_year') is None:
+                    try:
+                        data['data_year'] = int(doc.id)
+                    except (TypeError, ValueError):
+                        pass
+                docs.append(data)
+            docs.sort(key=lambda d: (d.get('data_year') is not None,
+                                     d.get('data_year') or 0), reverse=True)
+            return docs
+        except Exception as e:
+            logger.error(f"List version docs failed: {e}")
+            return []
+
     def list_university_versions(self, university_id: str) -> List[Dict]:
         """List stored cycle-year snapshots for a university, newest first."""
         try:
@@ -230,6 +261,9 @@ class FirestoreDB:
                 if not legacy_ref.get().exists:
                     legacy_snapshot = dict(existing)
                     legacy_snapshot['data_year'] = legacy_year
+                    # Honest provenance for readers: this year is a guess,
+                    # not a verified collection cycle (year_history surfaces it).
+                    legacy_snapshot['vintage_estimated'] = True
                     legacy_ref.set(legacy_snapshot)
                     logger.info(
                         f"Auto-archived legacy doc {university_id} as year {legacy_year}"

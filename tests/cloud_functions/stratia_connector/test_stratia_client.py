@@ -162,6 +162,89 @@ def test_get_university_returns_all_sections(captured):
     assert out["name"] == "Duke"
 
 
+# --- #279: year-versioned KB access ------------------------------------------
+
+def test_get_university_forwards_year_and_sections(captured):
+    captured["_get_payload"] = {"success": True, "university": {
+        "university_id": "duke", "official_name": "Duke", "data_year": 2025,
+        "available_years": [2025, 2026],
+        "sections_returned": ["admissions_data"],
+        "sections_available": ["admissions_data", "financials"],
+        "profile": {"admissions_data": {"current_status": {"overall_acceptance_rate": 6}}}}}
+    out = sc.get_university("duke", year=2025, sections=["admissions_data"])
+    params = captured["get"]["params"]
+    assert params["year"] == 2025
+    assert params["sections"] == "admissions_data"
+    assert out["data_year"] == 2025
+    assert out["sections_returned"] == ["admissions_data"]
+    assert out["sections_available"] == ["admissions_data", "financials"]
+    assert "admissions_data" in out
+
+
+def test_get_university_year_miss_surfaces_backend_error(captured):
+    # The backend names the missing year AND lists what exists — the agent
+    # must see that verbatim, not a generic "not found".
+    captured["_get_payload"] = {
+        "success": False,
+        "error": "University duke has no data for cycle year 2020; available years: [2025, 2026]",
+        "available_years": [2025, 2026]}
+    with pytest.raises(sc.StratiaError) as e:
+        sc.get_university("duke", year=2020)
+    assert "2020" in str(e.value) and "2025" in str(e.value)
+
+
+def test_get_university_history_compact_mode(captured):
+    captured["_get_payload"] = {
+        "success": True, "official_name": "Duke", "available_years": [2025, 2026],
+        "snapshots": [
+            {"year": 2026, "source": "kb_snapshot", "acceptance_rate": 5.1},
+            {"year": 2025, "source": "kb_snapshot", "acceptance_rate": 6.0},
+        ],
+        "reported_trends": [
+            {"year": 2024, "source": "profile_trend", "verified": False,
+             "acceptance_rate_overall": 6.3}],
+        "notes": []}
+    out = sc.get_university_history("duke")
+    assert captured["get"]["params"]["action"] == "history"
+    assert [s["year"] for s in out["snapshots"]] == [2026, 2025]
+    assert out["reported_trends"][0]["verified"] is False
+    assert out["available_years"] == [2025, 2026]
+
+
+def test_get_university_history_forwards_sections_and_years(captured):
+    captured["_get_payload"] = {"success": True, "official_name": "Duke",
+                                "available_years": [2025, 2026],
+                                "years": {"2026": {"admissions_data": {}}}, "notes": []}
+    sc.get_university_history("duke", sections=["admissions_data", "financials"],
+                              years=[2025, 2026])
+    params = captured["get"]["params"]
+    assert params["sections"] == "admissions_data,financials"
+    assert params["years"] == "2025,2026"
+
+
+def test_get_university_history_rejects_old_backend_shape(captured):
+    # Deploy skew: an older KB ignores action=history and returns a full
+    # profile with success:true — the wrapper must refuse to mis-parse it.
+    captured["_get_payload"] = {"success": True, "university": {
+        "university_id": "duke", "profile": {"admissions_data": {}}}}
+    with pytest.raises(sc.StratiaError) as e:
+        sc.get_university_history("duke")
+    assert "does not support" in str(e.value)
+
+
+def test_get_university_history_evicts_oldest_years_when_oversized(captured):
+    big = {"admissions_data": {"blob": "x" * 70_000}}
+    captured["_get_payload"] = {
+        "success": True, "official_name": "Duke", "available_years": [2024, 2025, 2026],
+        "years": {"2024": big, "2025": big, "2026": big}, "notes": []}
+    out = sc.get_university_history("duke", sections=["admissions_data"])
+    assert "2026" in out["years"]                      # newest always survives
+    assert "2024" in out["truncated_years"]            # oldest dropped first
+    assert set(out["truncated_years"]) | set(out["years"]) == {"2024", "2025", "2026"}
+    import json as _json
+    assert len(_json.dumps(out, default=str)) <= sc._RESULT_CAP
+
+
 def test_get_roadmap_and_credits_wrappers(captured):
     captured["_get_payload"] = {"success": True, "tasks": [{"task_id": "t1", "title": "Draft essay"}], "count": 1}
     rm = sc.get_roadmap("a@b.com", status="pending")

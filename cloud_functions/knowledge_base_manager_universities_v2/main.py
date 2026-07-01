@@ -14,6 +14,7 @@ from google.genai import types
 
 from firestore_db import get_db
 from versioning import coerce_year, normalize_percentages, validate_profile
+from year_history import PROFILE_SECTIONS, build_history, project_profile_sections
 from gemini_fallback import generate_content_with_fallback
 
 # Configure logging
@@ -516,38 +517,125 @@ def list_universities(
 
 
 # --- Get University ---
-def get_university(university_id: str, year: int = None) -> dict:
-    """Get a university profile by ID — current data, or a specific cycle year."""
+def get_university(university_id: str, year: int = None, sections: list = None) -> dict:
+    """Get a university profile by ID — current data, or a specific cycle year.
+
+    `sections` (list of top-level profile section names) projects the profile
+    down to just those sections; the envelope is unchanged. A request whose
+    section names are ALL typos is an error (marked `invalid_sections` for
+    the HTTP layer to 400); valid-but-absent sections are simply omitted and
+    visible via `sections_returned`.
+    """
     try:
         db = get_db()
+
+        if sections is not None and not any(s in PROFILE_SECTIONS for s in sections):
+            return {
+                "success": False,
+                "invalid_sections": True,
+                "error": (f"No valid section names in {sections}; "
+                          f"valid sections: {list(PROFILE_SECTIONS)}"),
+            }
+
         data = db.get_university(university_id, year=year)
 
         if not data:
             if year is not None:
+                available = db.get_available_years(university_id)
+                if available:
+                    return {
+                        "success": False,
+                        "error": (f"University {university_id} has no data for cycle "
+                                  f"year {year}; available years: {available}"),
+                        "available_years": available,
+                    }
                 return {
                     "success": False,
                     "error": f"University {university_id} has no data for cycle year {year}"
                 }
             return {"success": False, "error": f"University {university_id} not found"}
 
-        return {
-            "success": True,
-            "university": {
-                "university_id": data.get('university_id'),
-                "official_name": data.get('official_name'),
-                "location": data.get('location'),
-                "acceptance_rate": data.get('acceptance_rate'),
-                "market_position": data.get('market_position'),
-                "profile": data.get('profile'),
-                "data_year": data.get('data_year'),
-                "available_years": data.get('available_years'),
-                "indexed_at": data.get('indexed_at'),
-                "last_updated": data.get('last_updated')
-            }
+        # Snapshot docs don't carry available_years (main-doc-only field) —
+        # backfill it with a cheap field-mask read so year reads self-describe.
+        available_years = data.get('available_years')
+        if year is not None and available_years is None:
+            available_years = db.get_available_years(university_id) or None
+
+        profile = data.get('profile')
+        extra = {}
+        if sections is not None:
+            projected, returned, unknown = project_profile_sections(profile, sections)
+            extra['sections_returned'] = returned
+            extra['sections_available'] = sorted(
+                k for k in (profile or {}) if k in PROFILE_SECTIONS
+            )
+            if unknown:
+                extra['unknown_sections'] = unknown
+            profile = projected
+
+        university = {
+            "university_id": data.get('university_id'),
+            "official_name": data.get('official_name'),
+            "location": data.get('location'),
+            "acceptance_rate": data.get('acceptance_rate'),
+            "soft_fit_category": data.get('soft_fit_category'),
+            "us_news_rank": data.get('us_news_rank'),
+            "market_position": data.get('market_position'),
+            "profile": profile,
+            "data_year": data.get('data_year'),
+            "available_years": available_years,
+            "indexed_at": data.get('indexed_at'),
+            "last_updated": data.get('last_updated')
         }
+        university.update(extra)
+        return {"success": True, "university": university}
 
     except Exception as e:
         logger.error(f"Get university failed: {e}")
+        return {"success": False, "error": str(e)}
+
+
+# --- University History (two-axis year view) ---
+def get_university_history(university_id: str, sections: list = None, years: list = None) -> dict:
+    """Per-year view of one university (see year_history.build_history).
+
+    Compact mode returns `snapshots` (KB versions, cycle-year axis) and
+    `reported_trends` (school-reported rows from the current profile,
+    entering-class axis, verified:false) as separate structures.
+    """
+    try:
+        db = get_db()
+
+        if sections is not None and not any(s in PROFILE_SECTIONS for s in sections):
+            return {
+                "success": False,
+                "invalid_sections": True,
+                "error": (f"No valid section names in {sections}; "
+                          f"valid sections: {list(PROFILE_SECTIONS)}"),
+            }
+
+        main_doc = db.get_university(university_id)
+        version_docs = db.list_version_docs(university_id)
+        if not main_doc and not version_docs:
+            return {"success": False, "error": f"University {university_id} not found"}
+
+        available_years = (main_doc or {}).get('available_years')
+        if available_years is None:
+            found = sorted(d.get('data_year') for d in version_docs
+                           if d.get('data_year') is not None)
+            available_years = found or None
+
+        result = build_history(main_doc, version_docs, years=years, sections=sections)
+        result.update({
+            "success": True,
+            "university_id": university_id,
+            "official_name": (main_doc or (version_docs[0] if version_docs else {})).get('official_name'),
+            "available_years": available_years,
+        })
+        return result
+
+    except Exception as e:
+        logger.error(f"Get university history failed: {e}")
         return {"success": False, "error": str(e)}
 
 
@@ -775,12 +863,31 @@ def knowledge_base_manager_universities_v2_http_entry(req):
             return add_cors_headers(result)
         
         # GET - List or get specific university (optionally a cycle-year
-        # snapshot via ?year=, or the stored years via ?action=versions)
+        # snapshot via ?year=, the stored years via ?action=versions, or a
+        # per-year view via ?action=history; ?sections=a,b projects the
+        # profile down to those top-level sections)
         if req.method == 'GET':
             university_id = req.args.get('id') or req.args.get('university_id')
+            action = req.args.get('action')
+            raw_sections = req.args.get('sections')
+            sections = ([s.strip() for s in raw_sections.split(',') if s.strip()]
+                        if raw_sections else None)
             if university_id:
-                if req.args.get('action') == 'versions':
+                if action == 'versions':
                     result = list_university_versions(university_id)
+                elif action == 'history':
+                    # `years` filters snapshots; a lone `year` is accepted as
+                    # an alias so it isn't silently ignored.
+                    raw_years = req.args.get('years') or req.args.get('year')
+                    years = None
+                    if raw_years:
+                        try:
+                            years = [coerce_year(y) for y in str(raw_years).split(',') if y.strip()]
+                        except ValueError as e:
+                            return add_cors_headers({"success": False, "error": f"Invalid year: {e}"}, 400)
+                    result = get_university_history(university_id, sections=sections, years=years)
+                    if result.pop('invalid_sections', False):
+                        return add_cors_headers(result, 400)
                 else:
                     raw_year = req.args.get('year')
                     year = None
@@ -789,7 +896,12 @@ def knowledge_base_manager_universities_v2_http_entry(req):
                             year = coerce_year(raw_year)
                         except ValueError as e:
                             return add_cors_headers({"success": False, "error": f"Invalid year: {e}"}, 400)
-                    result = get_university(university_id, year=year)
+                    result = get_university(university_id, year=year, sections=sections)
+                    if result.pop('invalid_sections', False):
+                        return add_cors_headers(result, 400)
+            elif action == 'history':
+                return add_cors_headers(
+                    {"success": False, "error": "action=history requires an 'id' parameter"}, 400)
             else:
                 # Parse pagination and search parameters
                 limit = int(req.args.get('limit', 30))

@@ -8,6 +8,7 @@ Run (Cloud Run / local):  uvicorn server:app --host 0.0.0.0 --port $PORT
 MCP endpoint:             <PUBLIC_BASE_URL>/mcp   (add this URL in Claude)
 """
 import logging
+from typing import Literal
 
 from pydantic import AnyHttpUrl
 from starlette.requests import Request
@@ -47,6 +48,11 @@ mcp = FastMCP(
         "or an overall strategy — offer to save it with save_research so it lands in "
         "the student's Research Notebook in the app, linked to the relevant colleges; "
         "list_research / get_research let you revisit and build on earlier work. "
+        "University knowledge-base data is year-versioned by admission cycle: "
+        "get_university(year=...) reads a specific cycle's snapshot, "
+        "get_university(sections=[...]) keeps large profiles lean, and "
+        "get_university_history answers 'what changed at this school' with per-year "
+        "data — for cross-school comparisons call it once per school and synthesize. "
         "All per-student data is scoped to the authenticated user."
     ),
     stateless_http=True,
@@ -160,15 +166,53 @@ def search_universities(query: str, limit: int = 10,
     return sc.search_universities(query, limit, max_acceptance_rate, state)
 
 
+# Valid top-level profile sections, enum-typed so the section names land in
+# the tool JSON schema (discoverable with zero calls). The backend stays
+# permissive — a schema/server drift can't hard-fail.
+_Section = Literal[
+    "metadata", "strategic_profile", "admissions_data", "academic_structure",
+    "application_process", "application_strategy", "financials",
+    "credit_policies", "student_insights", "outcomes", "student_retention",
+]
+
+
 @mcp.tool(annotations=ToolAnnotations(title="Get university details", readOnlyHint=True, openWorldHint=True))
-def get_university(university_id: str) -> dict:
+def get_university(university_id: str, year: int | None = None,
+                   sections: list[_Section] | None = None) -> dict:
     """Full Stratia knowledge-base profile for one university: identity + every
-    section — admissions data (acceptance/test policy, longitudinal trends,
-    admitted-student profile), academic structure & majors, application process
-    & deadlines, application strategy, financials & cost of attendance,
-    scholarships, credit policies, student insights, outcomes, strategic
-    profile."""
-    return sc.get_university(university_id)
+    section — admissions data (acceptance/test policy, admitted-student
+    profile), academic structure & majors, application process & deadlines,
+    application strategy, financials & cost of attendance, scholarships,
+    credit policies, student insights, outcomes, strategic profile.
+    Full profiles are large (50-150KB): when you need specific facts, pass
+    sections=[...] to fetch just those top-level sections. year=N returns the
+    cycle-N snapshot ('2026' = the 2026-27 application cycle, enrolling fall
+    2027); read data_year / available_years from the response to see what
+    exists — do not derive the current cycle from the calendar date. For
+    multi-year 'what changed' questions use get_university_history."""
+    return sc.get_university(university_id, year=year, sections=sections)
+
+
+@mcp.tool(annotations=ToolAnnotations(title="Get university history", readOnlyHint=True, openWorldHint=True))
+def get_university_history(university_id: str,
+                           sections: list[_Section] | None = None,
+                           years: list[int] | None = None) -> dict:
+    """Year-by-year view of one university — THE tool for 'what changed / is
+    it getting harder' questions. Default: compact per-cycle rows under
+    `snapshots` (acceptance rates, class size, test policy, SAT/ACT middle-50,
+    early-plan stats, in/out-of-state costs, rank, deadlines; newest first)
+    plus `reported_trends`, the school's own multi-year series from the
+    current profile. The two lists use DIFFERENT year conventions and trust
+    levels: snapshots are Stratia KB captures keyed by application-cycle year
+    (verified collections; vintage_estimated:true marks rows whose year is a
+    best guess), while reported_trends rows are school-reported and unverified
+    (verified:false) — attribute numbers accordingly, never merge the two
+    axes into one timeline, and never infer a trend from a single row (many
+    schools have only one snapshot so far). Pass sections=[...] for raw
+    per-year sections and years=[...] to bound the payload — oldest years are
+    dropped first when oversized (see truncated_years). For one year's full
+    detail use get_university(year=N)."""
+    return sc.get_university_history(university_id, sections=sections, years=years)
 
 
 @mcp.tool(annotations=ToolAnnotations(title="Get my college list", readOnlyHint=True, openWorldHint=True))

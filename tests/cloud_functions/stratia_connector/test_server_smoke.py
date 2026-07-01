@@ -24,7 +24,8 @@ from starlette.testclient import TestClient  # noqa: E402
 
 EXPECTED_TOOLS = {
     # reads
-    "search_universities", "get_university", "get_college_list", "get_fit_analysis",
+    "search_universities", "get_university", "get_university_history",
+    "get_college_list", "get_fit_analysis",
     "get_fit_history", "get_deadlines", "get_profile", "get_roadmap", "get_essays",
     "get_aid_packages", "get_scholarships", "get_credits", "check_fit_recomputation",
     # safe writes
@@ -44,6 +45,20 @@ def test_all_tools_registered():
     names = {t.name for t in asyncio.run(server.mcp.list_tools())}
     assert EXPECTED_TOOLS <= names
     assert len(names) >= 17
+
+
+def test_year_access_tools_registered():
+    # #279: year-versioned KB access for agents.
+    tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
+    assert tools["get_university_history"].annotations.readOnlyHint is True
+    # Section names are enum-typed so agents discover them from the schema alone.
+    uni_schema = tools["get_university"].inputSchema
+    assert "year" in uni_schema["properties"]
+    assert "sections" in uni_schema["properties"]
+    hist_schema = tools["get_university_history"].inputSchema
+    assert "years" in hist_schema["properties"]
+    schema_text = str(uni_schema)
+    assert "admissions_data" in schema_text and "academic_structure" in schema_text
 
 
 def test_research_notebook_tools_registered():
