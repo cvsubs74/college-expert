@@ -416,3 +416,11 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 ## 2026-06-20 09:33 — shipped #272 (Gemini CLI API-key card, PR #273)
 - PR #273 squash-merged -> #272 closed. Frontend-only; auto-deploys via main pipeline.
 - Gemini CLI card now documents GEMINI_API_KEY auth (Googles free CLI login retired 2026-06-18).
+
+## SESSION — agents page = Claude + ChatGPT only; prompts ask before saving (PR #274, open)
+- REQUEST (ad-hoc, not /next): on the Connect Agents page keep only Claude + ChatGPT, remove everything else; pre-seeded prompts should NOT command a save — instead the agent should ask if the user wants to save it as a research notebook.
+- USER CHOSE (AskUserQuestion): (1) trim the "Add Stratia to your client" accordion too, not just the ask-buttons; (2) apply the ask-before-saving change everywhere, incl. research.js templated prompts.
+- BUILT: PROVIDERS (AgentLaunchButtons) + AskRow (ConnectAgents) → Claude/ChatGPT only (dropped Gemini CLI copy + Grok). MCP_CLIENTS → claude_web + chatgpt only (removed Claude Code, Cursor, VS Code, Gemini CLI, Windsurf, Cline, Goose) → "See all N clients" toggle gone since both primary. Removed dead geminiCliCommand + gemini/grok keys in askLinks. Reworded WEEKLY_PLAN_PROMPT, 2 ASK_PROMPTS (compare, stale-fit), and research.js repeatPrompt/popularWorkflowPrompt to "…ask me whether I'd like to save…". Left the transcript→profile prompt (saves to profile, not a note).
+- TESTS: frontend 352 passed (49 files); build green. Updated AgentLaunchButtons/ConnectAgents/mcpClients/research tests.
+- REVIEW: self-verified (no dangling geminiCliCommand/links.grok refs; build compiles). No heavy reviewer for a copy/config-only frontend change.
+- NOT shipped: PR #274 open (frontend auto-deploys on merge).
