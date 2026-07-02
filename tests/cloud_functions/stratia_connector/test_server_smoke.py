@@ -35,6 +35,8 @@ EXPECTED_TOOLS = {
     # major strategy phase 2 (#284)
     "get_major_map", "generate_major_map",
     "get_major_strategy", "generate_major_strategy",
+    # per-college major chances (#302)
+    "get_college_major_chances", "rank_college_majors",
 }
 
 
@@ -90,6 +92,20 @@ def test_major_p2_tools_registered():
     # The miss case must be documented so agents relay it honestly.
     assert "NOT charged" in tools["generate_major_strategy"].description
     assert "majors" in tools["generate_major_strategy"].inputSchema["properties"]
+
+
+def test_major_chances_tools_registered():
+    # #302: per-college Major Chances — read free, rank billed.
+    tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
+    assert tools["get_college_major_chances"].annotations.readOnlyHint is True
+    rank = tools["rank_college_majors"]
+    assert rank.annotations.readOnlyHint is False
+    assert rank.annotations.idempotentHint is False
+    # Credit-cost + confirm-first + honest-miss discipline in the docstring.
+    assert "1" in rank.description and "credit" in rank.description
+    assert "get_credits" in rank.description
+    assert "NOT charged" in rank.description
+    assert "university_id" in rank.inputSchema["properties"]
 
 
 def test_research_notebook_tools_registered():

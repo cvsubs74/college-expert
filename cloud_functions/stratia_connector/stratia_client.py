@@ -625,6 +625,68 @@ def get_major_strategy(email, university_id):
     return _cap_size(out, droppable=())
 
 
+# Per-college Major Chances (#302): the ranking's tiers are keyed lists.
+_RANKING_LIST_CAPS = {"strong": 25, "possible": 25, "reach": 25,
+                      "long_shot": 25, "data_notes": 12, "gaps": 12}
+
+
+def get_college_major_chances(email, university_id):
+    """The student's saved per-college Major Chances ranking + KB-vintage
+    staleness. Free — no credit."""
+    data = _get(_pm("get-college-major-chances"),
+                {"user_email": email, "university_id": university_id})
+    out = {
+        "university_id": university_id,
+        "ranking": data.get("ranking"),
+        "stale": bool(data.get("stale")),
+        "current_kb_year": data.get("current_kb_year"),
+    }
+    out = _prune(out, list_caps=_RANKING_LIST_CAPS)
+    return _cap_size(out, droppable=())
+
+
+def rank_college_majors(email, university_id):
+    """Rank the majors ONE school actually offers that fit the student, into
+    likelihood TIERS (strong/possible/reach/long_shot) with a rationale each —
+    1 credit on success. A KB miss (school absent, or no majors stored) returns
+    {ranking: null, gaps} UNCHARGED (the gap is logged for collection) — relay
+    that honestly, never invent a ranking to fill it."""
+    body = {"user_email": email, "university_id": university_id}
+    try:
+        data = _post(_pm("rank-college-majors"), body, timeout=120, email=email)
+    except StratiaError as e:
+        if getattr(e, "status_code", None) == 402:
+            raise _insufficient_credits(
+                e, "rank_college_majors",
+                "Use get_credits for the balance and confirm with the student "
+                "before spending. (A KB miss would have been free — this school "
+                "HAS major data.)") from e
+        raise
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "rank_college_majors failed")
+    if data.get("ranking") is None:
+        # Never-charged miss: make the honesty explicit so agents relay it.
+        return {
+            "university_id": university_id,
+            "ranking": None,
+            "gaps": data.get("gaps") or [],
+            "charged": False,
+            "note": data.get("note") or (
+                "the knowledge base has no major data for this school — the "
+                "student was NOT charged, and the gap was logged for collection. "
+                "Do not invent a ranking to fill it."),
+        }
+    out = {
+        "university_id": university_id,
+        "ranking": data.get("ranking"),
+        "gaps": data.get("gaps") or [],
+        "charged": True,
+        "credits_remaining": data.get("credits_remaining"),
+    }
+    out = _prune(out, list_caps=_RANKING_LIST_CAPS)
+    return _cap_size(out, droppable=())
+
+
 def generate_major_strategy(email, university_id, majors=None):
     """Generate the app-persisted major strategy for one school — 1 credit on
     success. A KB miss returns {strategy: null, gaps} UNCHARGED (the gap is

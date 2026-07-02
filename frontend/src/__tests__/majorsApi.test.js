@@ -21,7 +21,13 @@ vi.mock('axios', () => {
 });
 
 import axios from 'axios';
-import { setMajorChoice, getUniversityMajors, computeSingleFit } from '../services/api';
+import {
+    setMajorChoice,
+    getUniversityMajors,
+    computeSingleFit,
+    rankCollegeMajors,
+    getCollegeMajorChances,
+} from '../services/api';
 
 beforeEach(() => {
     axios.post.mockReset();
@@ -142,5 +148,63 @@ describe('computeSingleFit — intendedMajor extension', () => {
         expect(result.insufficientCredits).toBe(true);
         expect(result.error).toBe('insufficient_credits');
         expect(result.creditsRemaining).toBe(0);
+    });
+});
+
+describe('rankCollegeMajors (#302)', () => {
+    it('POSTs to /rank-college-majors with the X-User-Email header', async () => {
+        axios.post.mockResolvedValue({ data: { success: true, ranking: { tiers: {} }, gaps: [] } });
+
+        const result = await rankCollegeMajors('s@x.com', 'uw');
+
+        const [url, body, config] = axios.post.mock.calls[0];
+        expect(url).toMatch(/\/rank-college-majors$/);
+        expect(body).toEqual({ user_email: 's@x.com', university_id: 'uw' });
+        expect(config.headers['X-User-Email']).toBe('s@x.com');
+        expect(result.success).toBe(true);
+    });
+
+    it('maps a 402 to insufficientCredits (server-billed; no client deduct)', async () => {
+        axios.post.mockRejectedValue({
+            response: { status: 402, data: { credits_remaining: 1 } },
+        });
+        const result = await rankCollegeMajors('s@x.com', 'uw');
+        expect(result.success).toBe(false);
+        expect(result.insufficientCredits).toBe(true);
+        expect(result.creditsRemaining).toBe(1);
+    });
+
+    it('passes the never-charged KB miss through untouched', async () => {
+        axios.post.mockResolvedValue({
+            data: { success: true, ranking: null, gaps: ['Computer Science'], note: 'no data' },
+        });
+        const result = await rankCollegeMajors('s@x.com', 'uw');
+        expect(result.success).toBe(true);
+        expect(result.ranking).toBeNull();
+        expect(result.gaps).toEqual(['Computer Science']);
+    });
+});
+
+describe('getCollegeMajorChances (#302)', () => {
+    it('GETs /get-college-major-chances with user_email + university_id params', async () => {
+        axios.get.mockResolvedValue({
+            data: { success: true, ranking: { tiers: {} }, stale: false, current_kb_year: 2026 },
+        });
+
+        const result = await getCollegeMajorChances('s@x.com', 'uw');
+
+        const [url, config] = axios.get.mock.calls[0];
+        expect(url).toMatch(/\/get-college-major-chances$/);
+        expect(config.params).toEqual({ user_email: 's@x.com', university_id: 'uw' });
+        expect(config.headers['X-User-Email']).toBe('s@x.com');
+        expect(result.success).toBe(true);
+        expect(result.current_kb_year).toBe(2026);
+    });
+
+    it('returns success:false with the error on failure', async () => {
+        axios.get.mockRejectedValue({ message: 'Network Error' });
+        const result = await getCollegeMajorChances('s@x.com', 'uw');
+        expect(result.success).toBe(false);
+        expect(result.error).toBe('Network Error');
     });
 });

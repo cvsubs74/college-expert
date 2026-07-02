@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon, AcademicCapIcon, ClockIcon, CheckCircleIcon, PaperAirplaneIcon, DocumentCheckIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon, AcademicCapIcon, ClockIcon, CheckCircleIcon, PaperAirplaneIcon, DocumentCheckIcon, ArrowPathIcon, TrophyIcon } from '@heroicons/react/24/outline';
 import FitVintageChip from '../FitVintageChip';
 import { fitUpdateAvailable, updateTooltip } from '../../utils/kbVintage';
 
@@ -26,6 +26,7 @@ const UniversityCard = ({
     onUpdateFit,
     onRemove,
     onMajorChange,
+    onMajorChances,
     onRecomputeWithMajor,
     canRemove = false
 }) => {
@@ -400,6 +401,26 @@ const UniversityCard = ({
                                 {/* Tooltip */}
                                 <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
                                     Ask AI questions about this university
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Major Chances Button (#302) — opens the per-college
+                            ranked view of the majors this school offers that fit. */}
+                        {onMajorChances && (
+                            <div className="relative group/tooltip">
+                                <button
+                                    onClick={() => onMajorChances?.(university)}
+                                    aria-label="View major chances"
+                                    className="px-3 py-2 bg-purple-500/80 text-white hover:bg-purple-600/80 rounded-lg transition-all shadow-sm flex items-center gap-2"
+                                >
+                                    <TrophyIcon className="h-5 w-5" />
+                                    <span className="text-sm font-medium">Major Chances</span>
+                                </button>
+                                {/* Tooltip */}
+                                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10">
+                                    Rank this school's majors that fit you
                                     <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-gray-900"></div>
                                 </div>
                             </div>

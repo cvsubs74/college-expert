@@ -1514,6 +1514,59 @@ export const generateMajorStrategy = async (userEmail, universityId, majors = nu
 };
 
 /**
+ * Get the student's saved per-college Major Chances ranking (free).
+ * stale = the KB has newer data than the ranking was built on.
+ * @returns {Promise<{success: boolean, ranking: Object|null, stale: boolean, current_kb_year: number|null}>}
+ */
+export const getCollegeMajorChances = async (userEmail, universityId) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.get(`${baseUrl}/get-college-major-chances`, {
+      params: { user_email: userEmail, university_id: universityId },
+      timeout: 30000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting college major chances:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
+ * Rank the majors a college actually offers that fit the student, into
+ * likelihood tiers (strong/possible/reach/long_shot). SERVER-billed (1 credit)
+ * on success; a KB miss returns 200 {ranking: null, gaps} and is NEVER charged
+ * (#302). 402 → {insufficientCredits: true}. Never deduct client-side.
+ * @param {string} userEmail - User's email
+ * @param {string} universityId - University ID
+ */
+export const rankCollegeMajors = async (userEmail, universityId) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/rank-college-majors`, {
+      user_email: userEmail,
+      university_id: universityId
+    }, {
+      timeout: 120000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    if (error.response?.status === 402) {
+      return {
+        success: false,
+        error: 'insufficient_credits',
+        insufficientCredits: true,
+        creditsRemaining: error.response?.data?.credits_remaining ?? 0
+      };
+    }
+    console.error('Error ranking college majors:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
  * Update fit analysis for a college in user's list
  * @param {string} userEmail - User's email
  * @param {string} universityId - University ID

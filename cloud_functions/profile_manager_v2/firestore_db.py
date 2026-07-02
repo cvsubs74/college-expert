@@ -546,6 +546,42 @@ class FirestoreDB:
             logger.error(f"[Firestore] Error archiving major strategy: {e}")
             return False
 
+    def get_college_major_chances(self, user_id: str, university_id: str) -> Optional[Dict]:
+        """The student's saved per-college major-chances ranking (#302)."""
+        try:
+            doc = (self.db.collection('users').document(user_id)
+                   .collection('college_major_chances').document(university_id).get())
+            return doc.to_dict() if doc.exists else None
+        except Exception as e:
+            logger.error(f"[Firestore] Error getting college major chances: {e}")
+            return None
+
+    def save_college_major_chances(self, user_id: str, university_id: str, ranking: Dict) -> bool:
+        """Replace the saved ranking for one school (full set, same rationale
+        as save_major_strategy)."""
+        try:
+            (self.db.collection('users').document(user_id)
+             .collection('college_major_chances').document(university_id).set(ranking))
+            logger.info(f"[Firestore] Saved college major chances {university_id} for {user_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error saving college major chances: {e}")
+            return False
+
+    def archive_college_major_chances(self, user_id: str, university_id: str,
+                                      ranking: Dict, history_key: str) -> bool:
+        """Archive a prior ranking under
+        users/{id}/college_major_chances/{university_id}/history/{kb_data_year}."""
+        try:
+            (self.db.collection('users').document(user_id)
+             .collection('college_major_chances').document(university_id)
+             .collection('history').document(history_key).set(ranking))
+            logger.info(f"[Firestore] Archived college major chances {university_id}/{history_key}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error archiving college major chances: {e}")
+            return False
+
     def increment_kb_gap(self, university_id: str, major_names: List[str]) -> bool:
         """Demand telemetry for KB misses (ROOT collection kb_gaps/{id}) — the
         priority queue for collection (#193). Atomic nested Increments per
