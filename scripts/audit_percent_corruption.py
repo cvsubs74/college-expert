@@ -188,7 +188,7 @@ def main():
                                       classify(src_profile, path, source)))
 
     print(f'\nCorpus files scanned: {len(corpus)}')
-    print(f'Universities with genuine sub-1%% at-risk source values: {len(sub1_sources)}')
+    print(f'Universities with genuine sub-1% at-risk source values: {len(sub1_sources)}')
     for uid, vals in sorted(sub1_sources.items()):
         for path, v in sorted(vals.items()):
             print(f'  {uid}: {path} = {v}')
