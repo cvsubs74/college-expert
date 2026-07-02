@@ -808,3 +808,24 @@ def test_service_token_is_cached_per_audience(monkeypatch, real_svc_auth_headers
     assert h1 == h2 and h1["Authorization"].startswith("Bearer tok-")
     assert len(calls) == 1              # second call served from cache
     sc._svc_token_cache.clear()
+
+
+# --- #303: global major catalog ------------------------------------------------
+
+def test_list_major_catalog_forwards_and_maps(captured):
+    captured["_get_payload"] = {"success": True, "total": 369, "university_count": 192,
+                                "majors": [{"name": "Computer Science", "normalized": "computer science",
+                                            "offered_count": 133}]}
+    out = sc.list_major_catalog(query="comp", limit=50, min_schools=2)
+    p = captured["get"]["params"]
+    assert p["action"] == "majors-catalog" and p["q"] == "comp"
+    assert p["limit"] == 50 and p["min_schools"] == 2
+    assert out["majors"][0]["offered_count"] == 133
+    assert out["total"] == 369 and out["university_count"] == 192
+
+
+def test_list_major_catalog_error_raises(captured):
+    captured["_get_payload"] = {"success": False, "error": "boom"}
+    import pytest
+    with pytest.raises(sc.StratiaError):
+        sc.list_major_catalog()

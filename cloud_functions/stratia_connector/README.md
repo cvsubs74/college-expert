@@ -17,7 +17,7 @@ deadlines, profile, plus university search and a few safe write actions.
 Read: `search_universities`, `get_university` (supports `year=` cycle snapshots
 and `sections=` projection), `get_university_history` (per-year 'what changed'
 view: KB `snapshots` + school-reported `reported_trends`), `get_college_list`,
-`get_university_majors` (trust-labeled entry paths/door policies per major),
+`get_university_majors`, `list_major_catalog` (trust-labeled entry paths/door policies per major),
 `get_fit_analysis`, `get_deadlines`, `get_profile`.
 Write (safe): `add_college`, `remove_college`, `recompute_fit` (costs 1 credit;
 optional `major=` override), `update_profile_field`, `set_intended_majors`,

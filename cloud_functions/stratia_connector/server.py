@@ -262,6 +262,16 @@ def get_university_majors(university_id: str, college: str | None = None,
     return sc.get_university_majors(university_id, college=college, query=query)
 
 
+@mcp.tool(annotations=ToolAnnotations(title="List the major catalog", readOnlyHint=True, openWorldHint=True))
+def list_major_catalog(query: str | None = None, limit: int = 200) -> dict:
+    """The catalog of majors that actually exist across Stratia's whole
+    university knowledge base — every distinct major with how many schools
+    offer it (offered_count), most-offered first. Use it to ground
+    major suggestions in real, offered programs (not invented names), or to
+    see how common/rare a major is. `query` filters by name; free, no credit."""
+    return sc.list_major_catalog(query=query, limit=limit)
+
+
 @mcp.tool(annotations=ToolAnnotations(title="Get my college list", readOnlyHint=True, openWorldHint=True))
 def get_college_list() -> list:
     """The signed-in student's saved college list (id, name, application

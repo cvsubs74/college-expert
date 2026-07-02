@@ -7,6 +7,8 @@ from datetime import datetime, timezone
 from typing import Dict, List, Optional, Any
 from google.cloud import firestore
 
+import major_catalog
+
 logger = logging.getLogger(__name__)
 
 # Collection name
@@ -14,6 +16,9 @@ COLLECTION_NAME = "universities"
 # Per-year snapshots live under universities/{id}/versions/{year}.
 # The main doc always serves the latest ingested cycle year (ADR 0002).
 VERSIONS_SUBCOLLECTION = "versions"
+# Global majors catalog (#303): union of majors across all profiles, one doc.
+MAJOR_CATALOG_COLLECTION = "major_catalog"
+MAJOR_CATALOG_DOC = "current"
 
 
 class FirestoreDB:
@@ -494,6 +499,44 @@ class FirestoreDB:
         
         return score
     
+    # ==================== MAJOR CATALOG (#303) ====================
+
+    def _catalog_ref(self):
+        return self.db.collection(MAJOR_CATALOG_COLLECTION).document(MAJOR_CATALOG_DOC)
+
+    def get_major_catalog(self) -> Optional[Dict]:
+        """The raw catalog doc (majors keyed by normalized name), or None."""
+        try:
+            doc = self._catalog_ref().get()
+            return doc.to_dict() if doc.exists else None
+        except Exception as e:
+            logger.error(f"Get major catalog failed: {e}")
+            return None
+
+    def save_major_catalog(self, catalog: Dict) -> bool:
+        """Overwrite the catalog doc (full rebuild — backfill script)."""
+        try:
+            catalog['updated_at'] = datetime.now(timezone.utc).isoformat()
+            self._catalog_ref().set(catalog)
+            return True
+        except Exception as e:
+            logger.error(f"Save major catalog failed: {e}")
+            return False
+
+    def update_major_catalog_for_school(self, university_id: str, profile: Dict) -> bool:
+        """Best-effort incremental upsert of one school's majors into the
+        catalog (idempotent). Returns False on failure — callers must NOT let
+        a catalog error break the ingest."""
+        try:
+            current = self.get_major_catalog()
+            updated = major_catalog.add_school(current, university_id, profile)
+            updated['updated_at'] = datetime.now(timezone.utc).isoformat()
+            self._catalog_ref().set(updated)
+            return True
+        except Exception as e:
+            logger.warning(f"[CATALOG] incremental update failed for {university_id}: {e}")
+            return False
+
     def health_check(self) -> Dict:
         """Check Firestore connectivity."""
         try:

@@ -236,6 +236,24 @@ def get_university(university_id, year=None, sections=None):
     ))
 
 
+def list_major_catalog(query=None, limit=200, min_schools=1):
+    """The global major catalog (KB action=majors-catalog): every major offered
+    across all universities, with how many schools offer each. The universe of
+    real, offered majors — use it to keep major suggestions grounded."""
+    params = {"action": "majors-catalog", "limit": int(limit),
+              "min_schools": int(min_schools)}
+    if query:
+        params["q"] = query
+    data = _get(settings.KNOWLEDGE_BASE_UNIVERSITIES_URL, params)
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "major catalog unavailable")
+    return _prune({
+        "majors": data.get("majors") or [],
+        "total": data.get("total"),
+        "university_count": data.get("university_count"),
+    }, list_caps={"majors": 500})
+
+
 def get_university_majors(university_id, college=None, query=None, year=None):
     """Trust-labeled per-major entry facts (KB action=majors): entry_path enum
     (+ verbatim wording when unclear), structural entry_risk, door policy,
