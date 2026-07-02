@@ -10,6 +10,8 @@ from datetime import datetime
 from typing import List, Dict, Optional
 import requests
 
+from svc_auth import pm_auth_headers  # (#223) service identity for PM calls
+
 logger = logging.getLogger(__name__)
 
 # Profile Manager URL for Firestore operations
@@ -69,7 +71,7 @@ def save_counselor_conversation(
             "user_email": user_id,
             "conversation_id": conversation_id,
             "conversation_data": conversation_data
-        }, timeout=15)
+        }, headers=pm_auth_headers(), timeout=15)
         
         if response.status_code == 200:
             logger.info(f"[COUNSELOR_CHAT] Saved conversation {conversation_id} for {user_id}")
@@ -109,7 +111,7 @@ def load_counselor_conversation(user_id: str, conversation_id: str) -> dict:
         response = requests.get(url, params={
             "user_email": user_id,
             "conversation_id": conversation_id
-        }, timeout=10)
+        }, headers=pm_auth_headers(), timeout=10)
         
         if response.status_code == 200:
             data = response.json()
@@ -160,7 +162,7 @@ def list_counselor_conversations(user_id: str, limit: int = 20) -> dict:
         response = requests.get(url, params={
             "user_email": user_id,
             "limit": limit
-        }, timeout=10)
+        }, headers=pm_auth_headers(), timeout=10)
         
         if response.status_code == 200:
             data = response.json()

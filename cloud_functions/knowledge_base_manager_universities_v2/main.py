@@ -16,6 +16,7 @@ from firestore_db import get_db
 from versioning import coerce_year, normalize_percentages, validate_profile
 from year_history import PROFILE_SECTIONS, build_history, project_profile_sections
 from major_facts import extract_major_facts
+from request_auth import authenticate
 from gemini_fallback import generate_content_with_fallback
 
 # Configure logging
@@ -112,6 +113,32 @@ def expand_acronyms(query: str) -> str:
             return expanded
     
     return query
+
+
+# --- Write-path caller gate (#223) ---
+# KB reads are public (no PII); writes (ingest / delete) shape what every
+# student sees, so they require a credential: a Google OIDC token from a
+# trusted service, or the KB_WRITE_TOKEN shared secret used by the ingest
+# CLI (scripts/ingest_universities.py). AUTH_MODE off|log|enforce governs
+# rollout, same contract as the other backends.
+def gate_write(req):
+    """Returns (allow: bool, rejection: (body, status)|None) for mutations."""
+    mode = (os.getenv('AUTH_MODE') or 'log').strip().lower()
+    if mode == 'off':
+        return True, None
+    admin = os.getenv('KB_WRITE_TOKEN')
+    if admin and req.headers.get('X-Admin-Token') == admin:
+        return True, None
+    identity = authenticate(req)
+    if identity['kind'] == 'service':
+        return True, None
+    detail = identity.get('error') or identity['kind']
+    if mode == 'enforce':
+        logger.warning(f"[AUTH] REJECT KB write {req.method} {req.path}: {detail}")
+        return False, ({'success': False,
+                        'error': 'authentication required for KB writes'}, 401)
+    logger.warning(f"[AUTH] (log mode) unauthenticated KB write {req.method} {req.path}: {detail}")
+    return True, None
 
 
 # --- CORS Headers ---
@@ -1058,6 +1085,9 @@ def knowledge_base_manager_universities_v2_http_entry(req):
             # 'year' is an envelope field: a bare-profile POST (no 'profile'
             # wrapper) can't carry one and gets the current cycle.
             elif 'profile' in data or '_id' in data:
+                allow, rejection = gate_write(req)
+                if not allow:
+                    return add_cors_headers(*rejection)
                 profile = data.get('profile', data)
                 try:
                     year = coerce_year(data.get('year')) if 'profile' in data else coerce_year(None)
@@ -1121,6 +1151,9 @@ def knowledge_base_manager_universities_v2_http_entry(req):
         
         # DELETE - Delete university (all years) or one cycle-year snapshot
         elif req.method == 'DELETE':
+            allow, rejection = gate_write(req)
+            if not allow:
+                return add_cors_headers(*rejection)
             data = req.get_json() if req.is_json else {}
             university_id = data.get('id') or data.get('university_id') or req.args.get('id')
 

@@ -20,6 +20,21 @@ logger = logging.getLogger(__name__)
 # Configuration
 PROFILE_MANAGER_URL = os.getenv('PROFILE_MANAGER_URL')
 
+from request_auth import gate_request  # noqa: E402  (#223)
+from svc_auth import pm_auth_headers  # noqa: E402  (#223) outbound service identity
+
+
+def _claimed_email(request) -> str:
+    """The user identity the route would act on (header, query, or body)."""
+    claimed = request.headers.get('X-User-Email')
+    if not claimed:
+        claimed = request.args.get('user_email') or request.args.get('user_id')
+    if not claimed:
+        data = request.get_json(silent=True)
+        if isinstance(data, dict):
+            claimed = data.get('user_email') or data.get('user_id')
+    return claimed
+
 def add_cors_headers(response_data, status_code=200):
     """Add CORS headers to response."""
     if isinstance(response_data, dict):
@@ -40,9 +55,16 @@ def counselor_agent_http(request):
     # Handle CORS preflight
     if request.method == 'OPTIONS':
         return add_cors_headers({'status': 'ok'}, 200)
-        
+
     try:
         path = request.path.strip('/')
+
+        # Verified caller identity gates every per-user route (#223).
+        if path != 'health':
+            allow, _identity, rejection = gate_request(request, _claimed_email(request))
+            if not allow:
+                body, status = rejection
+                return add_cors_headers(body, status)
         
         # Dispatcher logic
         if path == 'roadmap':
@@ -120,7 +142,7 @@ def counselor_agent_http(request):
                     'field_path': f'roadmap_progress.{task_id}',
                     'value': {'completed': completed, 'completed_at': datetime.now().isoformat() if completed else None},
                     'operation': 'set'
-                }, timeout=10)
+                }, headers=pm_auth_headers(), timeout=10)
                 
                 if result.status_code == 200:
                     return add_cors_headers({'success': True, 'task_id': task_id, 'completed': completed})
@@ -171,7 +193,7 @@ def counselor_agent_http(request):
                     'user_email': user_email,
                     'status': status,
                     'university_id': university_id
-                }, timeout=10)
+                }, headers=pm_auth_headers(), timeout=10)
                 
                 if result.status_code == 200:
                     return add_cors_headers(result.json())

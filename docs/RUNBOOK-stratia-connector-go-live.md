@@ -71,11 +71,12 @@ Stratia product for that account. Try `get_deadlines` and `get_fit_analysis`.
 - **Revision rollback:** `gcloud run services update-traffic stratia-connector
   --to-revisions <PRIOR>=100 --region=us-east1`.
 
-## 9. Pre-go-live security check (important)
-The Stratia backends (`profile_manager_v2`, `counselor_agent`, KB) are
-`--allow-unauthenticated` and trust the `X-User-Email` they're given. The
-connector verifies identity via Google before calling them, but those backends
-are independently reachable on the internet — so this connector does **not**
-widen an exposure that already exists. Before broad go-live, confirm whether the
-backends should require a shared secret / IAM auth from callers (tracked
-separately; not introduced by this connector).
+## 9. Pre-go-live security check (RESOLVED — #223)
+The backends now verify callers (`request_auth.py` in each service): the
+connector attaches a Google OIDC ID token minted by its runtime service
+account, audience-bound per backend (`stratia_client._svc_auth_headers`); the
+frontend attaches the signed-in user's Firebase ID token; the backends honor
+`X-User-Email` only from a verified trusted service or when it matches a
+verified user token. Rollout is governed by each backend's `AUTH_MODE` env
+(`log` → dual-accept, `enforce` → 401/403 for unauthenticated/mismatched
+callers). Design: `docs/design/DESIGN-backend-auth.md`.

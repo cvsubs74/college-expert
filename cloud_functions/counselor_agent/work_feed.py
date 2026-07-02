@@ -20,6 +20,8 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
+from svc_auth import pm_auth_headers  # (#223) service identity for PM calls
+
 from counselor_tools import fetch_aggregated_deadlines
 
 logger = logging.getLogger(__name__)
@@ -115,6 +117,7 @@ def _fetch_pm_collection(path: str, user_email: str, json_key: str) -> list:
         resp = requests.get(
             url,
             params={'user_email': user_email},
+            headers=pm_auth_headers(),
             timeout=_FETCH_TIMEOUT_SECONDS,
         )
         if resp.status_code != 200:

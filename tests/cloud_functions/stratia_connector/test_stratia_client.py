@@ -681,3 +681,77 @@ def test_recompute_fit_forwards_major(captured):
         "fit_category": "REACH", "match_percentage": 40}}
     sc.recompute_fit("a@b.com", "uiuc")
     assert "intended_major" not in captured["post"]["json"]
+
+
+# --- #223: outbound service identity ------------------------------------------
+
+def test_audience_maps_urls_to_configured_bases():
+    assert sc._audience_for(sc._pm("get-profile")) == sc.settings.PROFILE_MANAGER_V2_URL.rstrip("/")
+    assert sc._audience_for(f"{sc.settings.COUNSELOR_AGENT_URL}/deadlines") == \
+        sc.settings.COUNSELOR_AGENT_URL.rstrip("/")
+    assert sc._audience_for("https://unknown.example/x") is None
+
+
+def test_get_and_post_attach_service_identity(captured, monkeypatch):
+    monkeypatch.setattr(sc, "_svc_auth_headers",
+                        lambda url: {"Authorization": "Bearer svc-oidc"})
+    captured["_get_payload"] = {"success": True, "profile": {}}
+    sc.get_profile("a@b.com")
+    assert captured["get"]["headers"]["Authorization"] == "Bearer svc-oidc"
+    assert captured["get"]["headers"]["X-User-Email"] == "a@b.com"
+
+    captured["_post_payload"] = {"success": True}
+    sc.add_college("a@b.com", "duke", "Duke")
+    assert captured["post"]["headers"]["Authorization"] == "Bearer svc-oidc"
+
+
+def test_missing_runtime_credentials_degrade_to_no_header(captured, monkeypatch, real_svc_auth_headers):
+    # Local dev has no metadata server: fetch raises, headers omitted, the
+    # request still goes out (backend AUTH_MODE decides what that means).
+    # The raise is mocked — the real fallback would wait out network retries.
+    sc._svc_token_cache.clear()
+    import types as _types, sys as _sys
+
+    def _boom(request, audience):
+        raise RuntimeError('no metadata server')
+
+    fake_id_token = _types.SimpleNamespace(fetch_id_token=_boom)
+    fake_transport = _types.SimpleNamespace(Request=lambda: None)
+    monkeypatch.setitem(_sys.modules, "google.oauth2", _types.SimpleNamespace(id_token=fake_id_token))
+    monkeypatch.setitem(_sys.modules, "google.oauth2.id_token", fake_id_token)
+    monkeypatch.setitem(_sys.modules, "google.auth.transport",
+                        _types.SimpleNamespace(requests=fake_transport))
+    monkeypatch.setitem(_sys.modules, "google.auth.transport.requests", fake_transport)
+    monkeypatch.setattr(sc, "_svc_auth_headers", real_svc_auth_headers)
+    captured["_get_payload"] = {"success": True, "profile": {}}
+    sc.get_profile("a@b.com")
+    assert "Authorization" not in captured["get"]["headers"]
+
+
+def test_service_token_is_cached_per_audience(monkeypatch, real_svc_auth_headers):
+    real = real_svc_auth_headers
+    sc._svc_token_cache.clear()
+    calls = []
+
+    def fake_fetch(request, audience):
+        calls.append(audience)
+        return "tok-" + audience[-4:]
+
+    import types as _types, sys as _sys
+    fake_id_token = _types.SimpleNamespace(fetch_id_token=fake_fetch)
+    fake_transport = _types.SimpleNamespace(Request=lambda: None)
+    monkeypatch.setitem(_sys.modules, "google.oauth2.id_token", fake_id_token)
+    monkeypatch.setitem(_sys.modules, "google.auth.transport.requests", fake_transport)
+    # parent packages must exist for `from google.oauth2 import id_token`
+    monkeypatch.setitem(_sys.modules, "google", _types.SimpleNamespace(oauth2=None, auth=None))
+    monkeypatch.setitem(_sys.modules, "google.oauth2", _types.SimpleNamespace(id_token=fake_id_token))
+    monkeypatch.setitem(_sys.modules, "google.auth", _types.SimpleNamespace(transport=None))
+    monkeypatch.setitem(_sys.modules, "google.auth.transport",
+                        _types.SimpleNamespace(requests=fake_transport))
+
+    url = sc._pm("get-profile")
+    h1 = real(url)
+    h2 = real(url)
+    assert h1 == h2 and h1["Authorization"].startswith("Bearer tok-")
+    assert len(calls) == 1              # second call served from cache
+    sc._svc_token_cache.clear()

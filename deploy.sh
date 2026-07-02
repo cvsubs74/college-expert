@@ -32,6 +32,17 @@ NC='\033[0m' # No Color
 GCP_ACCOUNT=${GCP_ACCOUNT:-"cvsubs@gmail.com"}
 PROJECT_ID=${GCP_PROJECT_ID:-"college-counselling-478115"}
 REGION="us-east1"
+
+# --- Caller-auth rollout (#223) ---------------------------------------------
+# AUTH_MODE: off | log | enforce. Default "log" (dual-accept window): backends
+# verify credentials when present and log anonymous/invalid callers without
+# rejecting. Flip with:  AUTH_MODE=enforce ./deploy.sh <target>
+AUTH_MODE="${AUTH_MODE:-log}"
+# Runtime service accounts whose Google OIDC tokens are trusted to vouch for
+# a forwarded user identity (connector, counselor_agent run as the default
+# compute SA; qa-agent has its own).
+TRUSTED_SERVICE_EMAILS="808989169388-compute@developer.gserviceaccount.com,qa-agent@college-counselling-478115.iam.gserviceaccount.com"
+
 # Warm min-instances for latency-sensitive services (profile-manager-v2,
 # counselor-agent, hybrid agent). Default 0 = scale-to-zero, so idle/pre-launch
 # costs nothing; export WARM_MIN_INSTANCES=1 at launch for low first-request
@@ -543,6 +554,10 @@ FIRESTORE_DATABASE: "(default)"
 KNOWLEDGE_BASE_UNIVERSITIES_URL: "https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app"
 LOG_EXECUTION_ID: "true"
 QA_TEST_USER_EMAIL: "duser8531@gmail.com,stratiaadmissions@gmail.com"
+AUTH_MODE: "${AUTH_MODE}"
+FIREBASE_PROJECT_ID: "${PROJECT_ID}"
+TRUSTED_SERVICE_EMAILS: "${TRUSTED_SERVICE_EMAILS}"
+SELF_AUDIENCES: "https://profile-manager-v2-pfnwjfp26a-ue.a.run.app,https://${REGION}-${PROJECT_ID}.cloudfunctions.net/profile-manager-v2"
 EOF
     
     # QA_ADMIN_TOKEN is the second gate on /clear-test-data; same secret
@@ -704,6 +719,10 @@ deploy_knowledge_base_manager_universities_v2() {
     cat > env.deploy.yaml << EOF
 GEMINI_API_KEY: ${GEMINI_API_KEY}
 FIRESTORE_COLLECTION: universities
+AUTH_MODE: "${AUTH_MODE}"
+FIREBASE_PROJECT_ID: "${PROJECT_ID}"
+TRUSTED_SERVICE_EMAILS: "${TRUSTED_SERVICE_EMAILS}"
+SELF_AUDIENCES: "https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app,https://${REGION}-${PROJECT_ID}.cloudfunctions.net/knowledge-base-manager-universities-v2"
 EOF
     
     gcloud functions deploy knowledge-base-manager-universities-v2 \
@@ -715,6 +734,7 @@ EOF
         --trigger-http \
         --allow-unauthenticated \
         --env-vars-file=env.deploy.yaml \
+        --set-secrets="KB_WRITE_TOKEN=kb-write-token:latest" \
         --timeout=300s \
         --memory=512MB \
         --min-instances=0 \
@@ -1176,6 +1196,10 @@ deploy_counselor_agent() {
 PROFILE_MANAGER_URL: "${PM_URL}"
 KNOWLEDGE_BASE_UNIVERSITIES_URL: "${KB_URL}"
 GEMINI_API_KEY: "${GEMINI_API_KEY}"
+AUTH_MODE: "${AUTH_MODE}"
+FIREBASE_PROJECT_ID: "${PROJECT_ID}"
+TRUSTED_SERVICE_EMAILS: "${TRUSTED_SERVICE_EMAILS}"
+SELF_AUDIENCES: "https://counselor-agent-pfnwjfp26a-ue.a.run.app,https://${REGION}-${PROJECT_ID}.cloudfunctions.net/counselor-agent"
 EOF
 
     # WARM_MIN_INSTANCES (0 by default) keeps a warm instance at launch so the

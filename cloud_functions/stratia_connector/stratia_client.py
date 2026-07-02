@@ -11,10 +11,14 @@ final `_cap_size` guard so results stay under Claude's ~150k-char tool limit.
 """
 import datetime as _dt
 import json
+import logging
+import time
 
 import requests
 
 from settings import settings
+
+logger = logging.getLogger("stratia_connector.client")
 
 
 class StratiaError(RuntimeError):
@@ -73,10 +77,57 @@ def _cap_size(d, droppable=(), limit=_RESULT_CAP):
     return d
 
 
+# ---- outbound service identity (#223) --------------------------------------
+# The backends verify callers now: this connector attaches a Google OIDC ID
+# token minted by its Cloud Run runtime service account, audience-bound to
+# the backend it is calling. The backends recognize the runtime SA
+# (TRUSTED_SERVICE_EMAILS) and then honor the X-User-Email this connector
+# forwards — the human was already verified here via Google OAuth.
+_SVC_TOKEN_TTL_SECONDS = 55 * 60  # tokens live 1h; refresh with slack
+_svc_token_cache = {}  # audience -> (token, fetched_at_monotonic)
+
+
+def _audience_for(url):
+    """The configured base URL of the service this url belongs to — the
+    audience the backend expects (never a bare host: Cloud Functions URLs
+    include the function path)."""
+    for base in (settings.PROFILE_MANAGER_V2_URL,
+                 settings.COUNSELOR_AGENT_URL,
+                 settings.KNOWLEDGE_BASE_UNIVERSITIES_URL):
+        base = (base or '').rstrip('/')
+        if base and url.startswith(base):
+            return base
+    return None
+
+
+def _svc_auth_headers(url):
+    """{'Authorization': 'Bearer <oidc>'} for backend calls, {} when no
+    runtime credentials exist (local dev/tests). Never raises — the
+    backend's AUTH_MODE decides what a missing credential means."""
+    audience = _audience_for(url)
+    if not audience:
+        return {}
+    cached = _svc_token_cache.get(audience)
+    now = time.monotonic()
+    if cached and now - cached[1] < _SVC_TOKEN_TTL_SECONDS:
+        return {"Authorization": f"Bearer {cached[0]}"}
+    try:
+        # Lazy import: full-suite test runs stub the `google` package.
+        from google.auth.transport import requests as google_requests
+        from google.oauth2 import id_token as google_id_token
+        token = google_id_token.fetch_id_token(google_requests.Request(), audience)
+        _svc_token_cache[audience] = (token, now)
+        return {"Authorization": f"Bearer {token}"}
+    except Exception as e:  # noqa: BLE001 — metadata server absent locally
+        logger.info(f"no service identity token available for {audience}: {e}")
+        return {}
+
+
 def _get(url, params=None, timeout=30):
     try:
         r = requests.get(url, params=params, timeout=timeout,
-                         headers={"X-User-Email": (params or {}).get("user_email", "")})
+                         headers={"X-User-Email": (params or {}).get("user_email", ""),
+                                  **_svc_auth_headers(url)})
         r.raise_for_status()
         return r.json()
     except requests.RequestException as e:
@@ -86,7 +137,8 @@ def _get(url, params=None, timeout=30):
 def _post(url, body, timeout=30, email=None):
     try:
         r = requests.post(url, json=body, timeout=timeout,
-                         headers={"X-User-Email": email or body.get("user_email", "")})
+                         headers={"X-User-Email": email or body.get("user_email", ""),
+                                  **_svc_auth_headers(url)})
         r.raise_for_status()
         return r.json()
     except requests.RequestException as e:

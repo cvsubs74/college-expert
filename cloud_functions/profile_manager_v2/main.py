@@ -26,6 +26,7 @@ from majors import (
     set_major_choice,
     resolve_intended_major,
 )
+from request_auth import gate_request
 from gcs_storage import (
     download_file_from_gcs,
     delete_file_from_gcs,
@@ -140,8 +141,33 @@ def add_cors_headers(response_data, status_code=200):
     response.status_code = status_code
     response.headers['Access-Control-Allow-Origin'] = '*'
     response.headers['Access-Control-Allow-Methods'] = 'GET, POST, DELETE, OPTIONS'
-    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, X-User-Email'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, X-User-Email, Authorization'
     return response
+
+
+# ============== CALLER AUTH (#223) ==============
+
+# Routes that stay reachable without a credential: health has no data, and
+# clear-test-data carries its own X-Admin-Token gate (a credential already).
+_AUTH_EXEMPT_ROUTES = {'health', 'clear-test-data'}
+
+
+def _claimed_email(request) -> str:
+    """The user identity the route would act on, wherever this service's
+    routes read it from (header, query, JSON body, or multipart form)."""
+    claimed = request.headers.get('X-User-Email')
+    if not claimed:
+        claimed = request.args.get('user_email') or request.args.get('user_id')
+    if not claimed:
+        data = request.get_json(silent=True)
+        if isinstance(data, dict):
+            claimed = data.get('user_email') or data.get('user_id')
+    if not claimed:
+        try:
+            claimed = request.form.get('user_email')
+        except Exception:  # noqa: BLE001 — non-form bodies
+            claimed = None
+    return claimed
 
 
 # ============== MAIN ENTRY POINT ==============
@@ -149,20 +175,29 @@ def add_cors_headers(response_data, status_code=200):
 @functions_framework.http
 def profile_manager_v2_http_entry(request):
     """HTTP Cloud Function entry point - ES pattern."""
-    
+
     # Enable CORS
     if request.method == 'OPTIONS':
         return add_cors_headers({'status': 'ok'}, 200)
-    
+
     # Parse path to determine resource type
     path_parts = request.path.strip('/').split('/')
-    
+
     if not path_parts or len(path_parts) == 0:
         return add_cors_headers({'error': 'Not Found'}, 404)
-    
+
     resource_type = path_parts[0]
     logger.info(f"Processing {request.method} request for resource_type: {resource_type}, path: {request.path}")
-    
+
+    # Verified caller identity gates every per-user route (#223): a raw
+    # X-User-Email is only honored when it matches a verified user token or
+    # arrives from a trusted service that verified the human upstream.
+    if resource_type not in _AUTH_EXEMPT_ROUTES:
+        allow, _identity, rejection = gate_request(request, _claimed_email(request))
+        if not allow:
+            body, status = rejection
+            return add_cors_headers(body, status)
+
     try:
         # --- HEALTH CHECK ---
         if resource_type == 'health' and request.method == 'GET':
