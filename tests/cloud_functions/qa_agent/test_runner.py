@@ -1155,3 +1155,33 @@ class TestTasksLifecycle:
         get_calls = [c for c in capture if 'get-tasks' in c['url']]
         assert len(get_calls) == 1
         assert get_calls[0]['method'] == 'GET'
+
+
+class TestFitCreditProvisioning:
+    """#295: /compute-single-fit bills server-side (#285) — the runner must
+    top up the test user before the fit loop or later runs 402 in ways that
+    read as product regressions."""
+
+    def test_top_up_precedes_fit_computes_and_matches_target_count(self):
+        cfg = _make_cfg()
+        scenario = _scenario_with_fit_target()
+        scenario['fit_target_colleges'] = [
+            'massachusetts_institute_of_technology', 'duke_university']
+        calls = []
+        overrides = [
+            ('compute-single-fit',
+             _good_fit_response('massachusetts_institute_of_technology')),
+        ]
+        runner.run_scenario(
+            scenario, cfg, poster=_smart_poster(overrides=overrides, capture=calls))
+        urls = [c['url'] for c in calls]
+        add_idx = [i for i, u in enumerate(urls) if 'add-credits' in u]
+        fit_idx = [i for i, u in enumerate(urls) if 'compute-single-fit' in u]
+        assert len(add_idx) == 1, f"expected one top-up, got urls: {urls}"
+        assert fit_idx and add_idx[0] < min(fit_idx), "top-up must precede computes"
+
+    def test_no_top_up_for_roadmap_only_scenarios(self):
+        cfg = _make_cfg()
+        calls = []
+        runner.run_scenario(_scenario(), cfg, poster=_smart_poster(capture=calls))
+        assert not any('add-credits' in c['url'] for c in calls)

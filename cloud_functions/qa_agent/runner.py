@@ -498,6 +498,24 @@ def run_scenario(
     # after every per-school step has run.
     collected_fit_responses: List[tuple] = []
 
+    # /compute-single-fit bills server-side since #285: each real compute
+    # deducts 1 credit and an empty balance returns 402 insufficient_credits.
+    # The QA test user has no provisioning (free tier = 3 credits), so a run
+    # exercising several fit targets would drain it and later runs would 402
+    # in ways that read as product regressions (#295). Top up exactly what
+    # this run needs before the loop; /add-credits is open until #223 lands.
+    if fit_targets:
+        poster(
+            f"{pm}/add-credits",
+            {
+                "user_email": cfg.test_user_email,
+                "credits": len(fit_targets),
+                "source": "qa_agent_fit_provisioning",
+            },
+            admin_token=cfg.admin_token,
+            timeout=30,
+        )
+
     for fit_target in fit_targets:
         # /compute-single-fit makes an LLM call AND profile_manager_v2
         # sometimes cold-starts (it scales to zero). Observed in PR #76
