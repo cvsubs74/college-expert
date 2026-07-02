@@ -63,6 +63,15 @@ mcp = FastMCP(
         "set_major_choice, recompute fits that changed major (recompute_fit(major=...), "
         "1 credit each), and save the narrative with save_research (kind 'strategy', "
         "tag 'majors'). "
+        "In-app major artifacts: get_major_map / get_major_strategy read the "
+        "student's saved Major Map and per-school strategy for free (in-app users "
+        "can also generate these via the app); generate_major_map / "
+        "generate_major_strategy create them at 1 credit each — confirm with the "
+        "student and check get_credits first, PREFER reasoning over "
+        "get_university_majors facts yourself, and reserve generate_major_strategy "
+        "for when the student wants the app-persisted artifact. A "
+        "{strategy: null, gaps} response means the KB doesn't know — the student "
+        "was NOT charged; relay that honestly and never invent a strategy. "
         "All per-student data is scoped to the authenticated user."
     ),
     stateless_http=True,
@@ -403,6 +412,79 @@ def set_major_choice(university_id: str, primary_major: str,
     return sc.set_major_choice(email, university_id, primary_major,
                                backup_major=backup_major, rationale=rationale,
                                source=source)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Get my Major Map", readOnlyHint=True, openWorldHint=True))
+def get_major_map() -> dict:
+    """The student's saved Major Map: 3-6 career-theme clusters built from
+    their OWN record (courses/APs/activities/awards cited as evidence), each
+    listing candidate majors tagged core / adjacent / strategic_alternative
+    with a generic watch_out, plus questions_to_explore. This is counselor
+    INFERENCE, not school facts — never present it as data about any
+    university. stale:true means the profile changed since generation (see
+    stale_reasons); mention it, but only regenerate (generate_major_map,
+    1 credit) if the student wants a refresh. Free — no credit."""
+    return sc.get_major_map(_email())
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Generate my Major Map (uses 1 credit)", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=False, openWorldHint=True))
+def generate_major_map(force: bool = False) -> dict:
+    """Generate (or refresh) the student's Major Map from their profile —
+    persisted in the app's Profile page. Costs 1 Stratia credit, deducted by
+    the server on success: CONFIRM with the student first and check
+    get_credits. An unchanged profile returns the saved map free
+    (force=true regenerates anyway). Requires grade plus at least two of
+    courses/activities/GPA on the profile — otherwise it fails clearly,
+    unbilled (build the profile first via update_student_profile). The map is
+    pure counselor inference citing the student's own record; it never makes
+    school-specific claims or states numbers absent from the profile — keep
+    that discipline when you discuss it."""
+    email = _email()
+    # Tighter limit — this spends a credit and calls the LLM.
+    _rate_guard(email, "recompute", settings.RATE_RECOMPUTE_PER_HOUR, 3600)
+    return sc.generate_major_map(email, force=force)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Get my major strategy for a school", readOnlyHint=True, openWorldHint=True))
+def get_major_strategy(university_id: str) -> dict:
+    """The student's saved per-school major strategy: the trust-labeled KB
+    fact extract it was built on (facts), Stratia's read (synthesis:
+    primary_call, second_choice_play, backup_rationale, undeclared_tactic,
+    essay_implication, what_to_verify_yourself), and data_notes (including
+    any numeric claims the anti-fabrication validator stripped). The
+    synthesis is counselor judgment over labeled facts — hedge anything
+    [REPORTED], treat [MISSING] as 'the school doesn't publish this', and
+    relay data_notes as caveats. stale:true = the KB now has newer data than
+    this strategy was built on. Free — no credit."""
+    return sc.get_major_strategy(_email(), university_id)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Generate major strategy for a school (uses 1 credit)", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=False, openWorldHint=True))
+def generate_major_strategy(university_id: str,
+                            majors: list[str] | None = None) -> dict:
+    """Generate the app-persisted major strategy for ONE school. Costs 1
+    Stratia credit on success — CONFIRM with the student and check
+    get_credits first. PREFER reasoning over get_university_majors facts
+    yourself in conversation; reserve this tool for when the student wants
+    the artifact saved in the app (it renders on their Fit Analysis Majors
+    tab). `majors` (max 4) overrides the default set (the school's saved
+    major_choice + the profile's intended majors). When the KB has no
+    entry-path data for those majors the response is {strategy: null,
+    gaps: [...]} and the student is NOT charged — relay that honestly (the
+    gap is queued for collection); never invent a strategy to fill it. The
+    synthesis warns on capped_door majors (the door locks — no
+    apply-easier-then-transfer plays) and a server-side validator strips any
+    number the KB extract doesn't contain."""
+    email = _email()
+    # Tighter limit — this spends a credit and calls the LLM.
+    _rate_guard(email, "recompute", settings.RATE_RECOMPUTE_PER_HOUR, 3600)
+    return sc.generate_major_strategy(email, university_id, majors=majors)
 
 
 @mcp.tool(annotations=ToolAnnotations(

@@ -56,6 +56,16 @@ class _StubQuery:
 _firestore.Query = _StubQuery
 
 
+class _StubIncrement:
+    """Sentinel mirror of firestore.Increment — used by upsert_workflow_stat
+    and increment_kb_gap; tests assert on .value."""
+    def __init__(self, value):
+        self.value = value
+
+
+_firestore.Increment = _StubIncrement
+
+
 # google.cloud.firestore_v1.base_query.FieldFilter — used in queries.
 _firestore_v1 = _ensure_module('google.cloud.firestore_v1')
 _base_query = _ensure_module('google.cloud.firestore_v1.base_query')

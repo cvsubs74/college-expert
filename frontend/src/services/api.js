@@ -1340,6 +1340,142 @@ export const setMajorChoice = async (userEmail, universityId, primaryMajor, { ba
 };
 
 /**
+ * Persist the student's ranked candidate majors (≤5) — mirrors intended_major.
+ * Free (no credit). Used by the Major Map card's "Set as my majors" action.
+ * @param {string} userEmail - User's email
+ * @param {Array<string>} majors - Ranked list of majors (max 5)
+ * @param {string|null} primary - Optional primary (moves to front)
+ * @returns {Promise<{success: boolean, intended_majors: Array, intended_major: string}>}
+ */
+export const setIntendedMajors = async (userEmail, majors, primary = null) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const body = { user_email: userEmail, majors };
+    if (primary) body.primary = primary;
+    const response = await axios.post(`${baseUrl}/set-intended-majors`, body, {
+      timeout: 30000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error setting intended majors:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
+ * Get the student's saved Major Map (free).
+ * @returns {Promise<{success: boolean, map: Object|null, stale: boolean, stale_reasons: Array}>}
+ */
+export const getMajorMap = async (userEmail) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.get(`${baseUrl}/get-major-map`, {
+      params: { user_email: userEmail },
+      timeout: 30000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting major map:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
+ * Generate (or refresh) the student's Major Map. The SERVER charges 1 credit
+ * per real generation (#284): an unchanged profile returns the cached map free,
+ * 402 → {insufficientCredits: true}, 422 → {profileIncomplete: true, missing}.
+ * Never deduct client-side around this call.
+ * @param {string} userEmail - User's email
+ * @param {boolean} force - Regenerate even when the profile hasn't changed
+ */
+export const generateMajorMap = async (userEmail, force = false) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/generate-major-map`, {
+      user_email: userEmail,
+      force
+    }, {
+      timeout: 120000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    if (error.response?.status === 402) {
+      return {
+        success: false,
+        error: 'insufficient_credits',
+        insufficientCredits: true,
+        creditsRemaining: error.response?.data?.credits_remaining ?? 0
+      };
+    }
+    if (error.response?.status === 422) {
+      return {
+        success: false,
+        error: 'profile_incomplete',
+        profileIncomplete: true,
+        missing: error.response?.data?.missing || []
+      };
+    }
+    console.error('Error generating major map:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
+ * Get the student's saved per-school major strategy (free).
+ * stale = the KB has newer data than the strategy was built on.
+ * @returns {Promise<{success: boolean, strategy: Object|null, stale: boolean, current_kb_year: number|null}>}
+ */
+export const getMajorStrategy = async (userEmail, universityId) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.get(`${baseUrl}/get-major-strategy`, {
+      params: { user_email: userEmail, university_id: universityId },
+      timeout: 30000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting major strategy:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
+ * Generate the per-school major strategy. SERVER-billed (1 credit) on success;
+ * a KB miss returns 200 {strategy: null, gaps} and is NEVER charged (#284).
+ * 402 → {insufficientCredits: true}. Never deduct client-side.
+ * @param {string} userEmail - User's email
+ * @param {string} universityId - University ID
+ * @param {Array<string>|null} majors - Optional override (max 4)
+ */
+export const generateMajorStrategy = async (userEmail, universityId, majors = null) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const body = { user_email: userEmail, university_id: universityId };
+    if (majors && majors.length > 0) body.majors = majors;
+    const response = await axios.post(`${baseUrl}/generate-major-strategy`, body, {
+      timeout: 120000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    if (error.response?.status === 402) {
+      return {
+        success: false,
+        error: 'insufficient_credits',
+        insufficientCredits: true,
+        creditsRemaining: error.response?.data?.credits_remaining ?? 0
+      };
+    }
+    console.error('Error generating major strategy:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
  * Update fit analysis for a college in user's list
  * @param {string} userEmail - User's email
  * @param {string} universityId - University ID

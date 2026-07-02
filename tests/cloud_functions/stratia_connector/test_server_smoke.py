@@ -32,6 +32,9 @@ EXPECTED_TOOLS = {
     # safe writes
     "add_college", "remove_college", "recompute_fit", "update_profile_field",
     "set_intended_majors", "set_major_choice",
+    # major strategy phase 2 (#284)
+    "get_major_map", "generate_major_map",
+    "get_major_strategy", "generate_major_strategy",
 }
 
 
@@ -71,6 +74,22 @@ def test_major_tools_registered():
     assert tools["set_intended_majors"].annotations.idempotentHint is True
     assert tools["set_major_choice"].annotations.idempotentHint is True
     assert "major" in tools["recompute_fit"].inputSchema["properties"]
+
+
+def test_major_p2_tools_registered():
+    # #284: Major Map + per-school strategy — reads free, generates billed.
+    tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
+    assert tools["get_major_map"].annotations.readOnlyHint is True
+    assert tools["get_major_strategy"].annotations.readOnlyHint is True
+    for gen in ("generate_major_map", "generate_major_strategy"):
+        assert tools[gen].annotations.readOnlyHint is False
+        assert tools[gen].annotations.idempotentHint is False
+        # Docstrings must carry the credit-cost + confirm-first discipline.
+        assert "1" in tools[gen].description and "credit" in tools[gen].description
+        assert "get_credits" in tools[gen].description
+    # The miss case must be documented so agents relay it honestly.
+    assert "NOT charged" in tools["generate_major_strategy"].description
+    assert "majors" in tools["generate_major_strategy"].inputSchema["properties"]
 
 
 def test_research_notebook_tools_registered():

@@ -21,6 +21,7 @@ import { checkCredits } from '../services/api';
 import FitInfographicView from './FitInfographicView';
 import FitUpdateBanner from './FitUpdateBanner';
 import MajorStrategyPanel from './majors/MajorStrategyPanel';
+import MajorStrategySynthesis from './majors/MajorStrategySynthesis';
 
 // ============================================================================
 // FIT ANALYSIS PAGE - Complete display of all fit analysis data
@@ -500,12 +501,20 @@ const FitAnalysisPage = ({ college, onBack, kbUpdate = null, onUpdateFit = null 
                     </React.Fragment>
                 )}
 
-                {/* ===== MAJORS TAB — facts-only, trust-labeled KB extract ===== */}
+                {/* ===== MAJORS TAB — facts panel + the strategy layer (#284) ===== */}
                 {activeTab === 'majors' && (
-                    <MajorStrategyPanel
-                        universityId={college.university_id}
-                        universityName={college.university_name}
-                    />
+                    <React.Fragment>
+                        <MajorStrategyPanel
+                            universityId={college.university_id}
+                            universityName={college.university_name}
+                        />
+                        <div className="mt-6">
+                            <MajorStrategySynthesis
+                                userEmail={currentUser?.email}
+                                universityId={college.university_id}
+                            />
+                        </div>
+                    </React.Fragment>
                 )}
 
                 {/* ===== TIMELINE TAB ===== */}
