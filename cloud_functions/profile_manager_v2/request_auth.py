@@ -123,6 +123,12 @@ def authenticate(req) -> dict:
     try:
         if 'securetoken.google.com' in issuer:
             project = os.getenv('FIREBASE_PROJECT_ID') or os.getenv('GCP_PROJECT_ID')
+            if not project:
+                # Fail CLOSED: verifying with audience=None skips the project
+                # pin, so any Firebase project's token (shared securetoken
+                # keys) would verify — cross-project impersonation (#301 review).
+                return {'kind': 'invalid', 'email': None,
+                        'error': 'FIREBASE_PROJECT_ID unconfigured — cannot verify audience'}
             claims = _verify_firebase(token, project)
             email = (claims.get('email') or '').lower()
             if not email or not claims.get('email_verified', False):
@@ -147,32 +153,47 @@ def authenticate(req) -> dict:
         return {'kind': 'invalid', 'email': None, 'error': str(e)}
 
 
-def gate_request(req, claimed_email=None) -> tuple:
+def _normalize_claims(claimed_emails) -> set:
+    """The set of distinct non-empty user identities a request references."""
+    if claimed_emails is None:
+        values = []
+    elif isinstance(claimed_emails, str):
+        values = [claimed_emails]
+    else:
+        values = list(claimed_emails)
+    return {v.strip().lower() for v in values if isinstance(v, str) and v.strip()}
+
+
+def gate_request(req, claimed_emails=None) -> tuple:
     """Apply the AUTH_MODE policy to one request.
 
     Args:
         req: the flask request.
-        claimed_email: the user identity the route would act on (from
-            X-User-Email / user_email in args, body, or form), or None for
-            routes that don't act on a specific user.
+        claimed_emails: EVERY user identity the request references — pass all
+            candidate values (X-User-Email header, user_email/user_id in args,
+            JSON body, and form), not one caller-chosen source. A str is
+            accepted for convenience. None for routes that don't act on a
+            specific user.
 
     Returns (allow: bool, identity: dict, rejection: (body, status)|None).
     The caller must return `rejection` when allow is False. When a verified
-    USER token is present, its email is authoritative: a mismatch with the
-    claimed identity is rejected in enforce mode (403) — the raw header
-    never widens access beyond the credential.
+    USER token is present it is authoritative: the request is rejected in
+    enforce mode (403) if ANY referenced identity differs from the token
+    email — an attacker can't satisfy the gate with a matching header while
+    the handler acts on a victim id in the body (#301 review, high).
     """
     mode = _mode()
     if mode == 'off':
-        return True, {'kind': 'off', 'email': claimed_email, 'error': None}, None
+        return True, {'kind': 'off', 'email': None, 'error': None}, None
 
     identity = authenticate(req)
-    claimed = (claimed_email or '').strip().lower() or None
+    claimed = _normalize_claims(claimed_emails)
 
     if identity['kind'] == 'user':
-        if claimed and claimed != identity['email']:
+        mismatched = claimed - {identity['email']}
+        if mismatched:
             msg = (f"identity mismatch: token={identity['email']} "
-                   f"claimed={claimed} path={req.path}")
+                   f"claimed={sorted(claimed)} path={req.path}")
             if mode == 'enforce':
                 logger.warning(f"[AUTH] REJECT {msg}")
                 return False, identity, (
@@ -188,10 +209,10 @@ def gate_request(req, claimed_email=None) -> tuple:
     detail = identity['error'] or 'no credential'
     if mode == 'enforce':
         logger.warning(f"[AUTH] REJECT {identity['kind']} caller "
-                       f"path={req.path} claimed={claimed}: {detail}")
+                       f"path={req.path} claimed={sorted(claimed)}: {detail}")
         return False, identity, (
             {'success': False, 'error': 'authentication required'}, 401)
     log = logger.warning if identity['kind'] == 'invalid' else logger.info
     log(f"[AUTH] (log mode) {identity['kind']} caller "
-        f"path={req.path} claimed={claimed}: {detail}")
+        f"path={req.path} claimed={sorted(claimed)}: {detail}")
     return True, identity, None

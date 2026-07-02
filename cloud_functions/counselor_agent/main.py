@@ -24,16 +24,15 @@ from request_auth import gate_request  # noqa: E402  (#223)
 from svc_auth import pm_auth_headers  # noqa: E402  (#223) outbound service identity
 
 
-def _claimed_email(request) -> str:
-    """The user identity the route would act on (header, query, or body)."""
-    claimed = request.headers.get('X-User-Email')
-    if not claimed:
-        claimed = request.args.get('user_email') or request.args.get('user_id')
-    if not claimed:
-        data = request.get_json(silent=True)
-        if isinstance(data, dict):
-            claimed = data.get('user_email') or data.get('user_id')
-    return claimed
+def _claimed_emails(request) -> list:
+    """EVERY user identity this request references (header, query, body) — the
+    gate checks the verified token against ALL of them (#301 review, high)."""
+    values = [request.headers.get('X-User-Email'),
+              request.args.get('user_email'), request.args.get('user_id')]
+    data = request.get_json(silent=True)
+    if isinstance(data, dict):
+        values += [data.get('user_email'), data.get('user_id')]
+    return [v for v in values if v]
 
 def add_cors_headers(response_data, status_code=200):
     """Add CORS headers to response."""
@@ -61,7 +60,7 @@ def counselor_agent_http(request):
 
         # Verified caller identity gates every per-user route (#223).
         if path != 'health':
-            allow, _identity, rejection = gate_request(request, _claimed_email(request))
+            allow, _identity, rejection = gate_request(request, _claimed_emails(request))
             if not allow:
                 body, status = rejection
                 return add_cors_headers(body, status)

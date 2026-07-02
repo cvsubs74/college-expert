@@ -147,3 +147,34 @@ class TestRolloutModes:
             assert request_auth._mode() == 'log'
         with patch.dict('os.environ', {'AUTH_MODE': 'bananas'}, clear=False):
             assert request_auth._mode() == 'log'
+
+
+class TestMultiSourceClaimBypass:
+    """#301 review (high): the gate must reject when ANY referenced identity
+    differs from the verified token — not just a caller-chosen source."""
+
+    def test_matching_header_but_victim_in_body_is_403(self):
+        # attacker@x sets X-User-Email:attacker (matches token) but the handler
+        # would act on the body's victim@x — enforce must catch the mismatch.
+        allow, _, rejection = _run_gate(
+            _bearer(), ['attacker@x.com', 'victim@x.com'])
+        assert allow is False and rejection[1] == 403
+
+    def test_all_sources_match_token_allows(self):
+        allow, _, rejection = _run_gate(_bearer(), ['student@x.com', 'student@x.com'])
+        assert allow is True and rejection is None
+
+    def test_str_claim_still_accepted(self):
+        allow, _, _ = _run_gate(_bearer(), 'student@x.com')
+        assert allow is True
+
+
+class TestFirebaseProjectFailClosed:
+    """#301 review (medium): unconfigured project must fail closed, not verify
+    with audience=None (which accepts any Firebase project's token)."""
+
+    def test_unset_project_rejects(self):
+        allow, identity, rejection = _run_gate(
+            _bearer(), 'student@x.com',
+            env={'FIREBASE_PROJECT_ID': '', 'GCP_PROJECT_ID': ''})
+        assert allow is False and rejection[1] == 401

@@ -71,7 +71,9 @@ export const attachAuthTokenInterceptor = (axiosLike, getAuthInstance) => {
     try {
       const url = config.url || '';
       const authedBases = [getProfileManagerUrl(), COUNSELOR_AGENT_URL].filter(Boolean);
-      if (authedBases.some((base) => url.startsWith(base))) {
+      // Exact origin+path-prefix match — startsWith alone would also match
+      // a look-alike host like `<base>.evil.com` and leak the token (#301 review).
+      if (authedBases.some((base) => url === base || url.startsWith(base + '/') || url.startsWith(base + '?'))) {
         const user = getAuthInstance()?.currentUser;
         if (user) {
           // getIdToken caches and auto-refreshes near expiry — cheap per call.

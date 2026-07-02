@@ -42,6 +42,12 @@ describe('auth token interceptor', () => {
     expect(cfg.headers.Authorization).toBeUndefined();
   });
 
+  it('does not leak the token to a look-alike host', async () => {
+    const handler = capture(signedIn);
+    const cfg = await handler({ url: `${PM_BASE}.evil.com/steal`, headers: {} });
+    expect(cfg.headers.Authorization).toBeUndefined();
+  });
+
   it('signed-out users send no token (backend AUTH_MODE decides)', async () => {
     const handler = capture(() => ({ currentUser: null }));
     const cfg = await handler({ url: `${PM_BASE}/get-profile`, headers: {} });

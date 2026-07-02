@@ -152,22 +152,22 @@ def add_cors_headers(response_data, status_code=200):
 _AUTH_EXEMPT_ROUTES = {'health', 'clear-test-data'}
 
 
-def _claimed_email(request) -> str:
-    """The user identity the route would act on, wherever this service's
-    routes read it from (header, query, JSON body, or multipart form)."""
-    claimed = request.headers.get('X-User-Email')
-    if not claimed:
-        claimed = request.args.get('user_email') or request.args.get('user_id')
-    if not claimed:
-        data = request.get_json(silent=True)
-        if isinstance(data, dict):
-            claimed = data.get('user_email') or data.get('user_id')
-    if not claimed:
-        try:
-            claimed = request.form.get('user_email')
-        except Exception:  # noqa: BLE001 — non-form bodies
-            claimed = None
-    return claimed
+def _claimed_emails(request) -> list:
+    """EVERY user identity this request references — the gate must check the
+    verified token against ALL of them, because different routes read the id
+    from different places (header, query, JSON body, multipart form). Passing
+    only one source let an attacker match the gate with a header while the
+    handler acted on a victim id in the body (#301 review, high)."""
+    values = [request.headers.get('X-User-Email'),
+              request.args.get('user_email'), request.args.get('user_id')]
+    data = request.get_json(silent=True)
+    if isinstance(data, dict):
+        values += [data.get('user_email'), data.get('user_id')]
+    try:
+        values.append(request.form.get('user_email'))
+    except Exception:  # noqa: BLE001 — non-form bodies
+        pass
+    return [v for v in values if v]
 
 
 # ============== MAIN ENTRY POINT ==============
@@ -193,7 +193,7 @@ def profile_manager_v2_http_entry(request):
     # X-User-Email is only honored when it matches a verified user token or
     # arrives from a trusted service that verified the human upstream.
     if resource_type not in _AUTH_EXEMPT_ROUTES:
-        allow, _identity, rejection = gate_request(request, _claimed_email(request))
+        allow, _identity, rejection = gate_request(request, _claimed_emails(request))
         if not allow:
             body, status = rejection
             return add_cors_headers(body, status)

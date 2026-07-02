@@ -3,6 +3,7 @@ Knowledge Base Manager - Universities V2 (Firestore)
 Manages university profile documents in Firestore for storage and retrieval.
 API-compatible with the Elasticsearch version.
 """
+import hmac
 import functions_framework
 import json
 import os
@@ -127,7 +128,7 @@ def gate_write(req):
     if mode == 'off':
         return True, None
     admin = os.getenv('KB_WRITE_TOKEN')
-    if admin and req.headers.get('X-Admin-Token') == admin:
+    if admin and hmac.compare_digest(req.headers.get('X-Admin-Token') or '', admin):
         return True, None
     identity = authenticate(req)
     if identity['kind'] == 'service':
