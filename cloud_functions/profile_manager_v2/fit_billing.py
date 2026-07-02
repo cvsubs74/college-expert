@@ -55,6 +55,15 @@ def run_compute_single_fit(data: Dict, compute_and_save: Callable[[], Tuple[Dict
         # No (real) cached fit → fall through to a (charged) compute.
 
     credit_check = check_credits_available(user_email, FIT_CREDIT_COST)
+    if credit_check.get('error') == 'credits_read_failed':
+        # #298: a credit-ledger read blip is retryable infra trouble — a 402
+        # here would show a paying user the upgrade modal for our outage.
+        logger.warning(f"[FIT] Credit ledger unavailable for {user_email} — 503")
+        return {
+            'success': False,
+            'error': 'credits_unavailable_retry',
+            'retryable': True,
+        }, 503
     if not credit_check.get('has_credits'):
         logger.warning(f"[FIT] Insufficient credits for {user_email}")
         return {
