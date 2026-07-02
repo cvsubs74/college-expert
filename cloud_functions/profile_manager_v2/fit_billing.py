@@ -41,7 +41,10 @@ def run_compute_single_fit(data: Dict, compute_and_save: Callable[[], Tuple[Dict
 
     if not force_recompute:
         cached = get_fit_analysis(user_email, university_id)
-        if cached:
+        # A cached FALLBACK doc ("analysis unavailable — retry") is a miss:
+        # serving it free would make a paid recompute the only path to a real
+        # analysis (#296 review F2).
+        if cached and not cached.get('is_fallback'):
             logger.info(f"[FIT] Returning cached fit for {university_id} (no charge)")
             return {
                 'success': True,
@@ -49,7 +52,7 @@ def run_compute_single_fit(data: Dict, compute_and_save: Callable[[], Tuple[Dict
                 'university_id': university_id,
                 'from_cache': True,
             }, 200
-        # No cached fit → fall through to a (charged) compute.
+        # No (real) cached fit → fall through to a (charged) compute.
 
     credit_check = check_credits_available(user_email, FIT_CREDIT_COST)
     if not credit_check.get('has_credits'):
@@ -65,7 +68,24 @@ def run_compute_single_fit(data: Dict, compute_and_save: Callable[[], Tuple[Dict
         # Failed compute or save (404 inputs, 500 LLM/persistence) — never charge.
         return payload, status
 
+    if (payload.get('fit_analysis') or {}).get('is_fallback'):
+        # The LLM failed and the compute degraded to a placeholder doc —
+        # never charge a student for "analysis unavailable, please retry"
+        # (#296 review F2). The doc is still saved/returned for UI stability.
+        logger.warning(f"[FIT] Fallback fit for {university_id} — not billed")
+        payload['from_cache'] = False
+        payload['credits_remaining'] = credit_check.get('credits_remaining')
+        payload['billing_note'] = 'fallback analysis — not charged'
+        return payload, status
+
     deducted = deduct_credit(user_email, FIT_CREDIT_COST, FIT_CREDIT_REASON)
+    if not deducted.get('success'):
+        # Fit already computed and saved — ship it, but make the revenue
+        # leak loud (#296 review F4).
+        logger.warning(
+            f"[FIT] deduct_credit FAILED after successful compute for "
+            f"{user_email}/{university_id}: {deducted.get('error')}"
+        )
     payload['from_cache'] = False
     payload['credits_remaining'] = deducted.get('credits_remaining')
     return payload, status

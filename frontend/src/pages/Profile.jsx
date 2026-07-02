@@ -15,7 +15,6 @@ import {
   deleteVertexAIProfile,
   startSession,
   extractFullResponse,
-  recomputeLaunchpadFits,
   resetAllProfile,
   profileChat,
   saveProfileChat,
@@ -266,15 +265,10 @@ function Profile() {
     await loadProfileMarkdown();
     console.log('[Profile] refreshAll completed');
 
-    // Trigger recomputation of fits for Launchpad universities (runs in background)
-    if (currentUser?.email) {
-      console.log('[Profile] Triggering Launchpad fit recomputation...');
-      recomputeLaunchpadFits(currentUser.email).then(result => {
-        if (result.success) {
-          console.log(`[Profile] Recomputed ${result.recomputed} Launchpad fits`);
-        }
-      });
-    }
+    // NOTE (#296 review F1): the background bulk fit recompute that used to
+    // run here was removed — with server-side billing (#285) it silently
+    // charged 1 credit per Launchpad school on every profile edit. Fits now
+    // refresh via explicit, priced user actions (cards/banners).
   };
 
 

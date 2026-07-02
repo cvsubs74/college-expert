@@ -116,3 +116,53 @@ def test_missing_inputs_404_from_compute_never_deducts():
         body, compute_payload={'error': 'Profile not found'}, compute_status=404)
     assert status == 404 and payload == {'error': 'Profile not found'}
     assert calls['deduct'] == 0
+
+
+def test_fallback_fit_is_never_billed():
+    """#296 review F2: an LLM failure degrades to a placeholder fit doc —
+    charging a student for 'analysis unavailable, please retry' is theft."""
+    body = {'user_email': 'a@b.com', 'university_id': 'duke'}
+    payload, status, calls = _run(body, compute_payload={
+        'success': True,
+        'fit_analysis': {'fit_category': 'TARGET', 'is_fallback': True},
+        'university_id': 'duke'})
+    assert status == 200
+    assert calls['deduct'] == 0
+    assert payload['billing_note'] == 'fallback analysis — not charged'
+    assert payload['credits_remaining'] == 5   # untouched balance
+
+
+def test_cached_fallback_is_treated_as_a_miss():
+    """force_recompute=false must not serve a cached fallback free — that
+    would make a second PAID compute the only path to a real analysis."""
+    body = {'user_email': 'a@b.com', 'university_id': 'duke',
+            'force_recompute': False}
+    payload, status, calls = _run(
+        body, cached={'fit_category': 'TARGET', 'is_fallback': True})
+    assert calls['compute'] == 1               # fell through to a real compute
+    assert payload['from_cache'] is False
+    assert calls['deduct'] == 1                # the real compute is billed
+
+
+def test_deduct_failure_after_success_still_ships_the_fit(caplog):
+    """#296 review F4: a deduct write failure after compute+save must ship the
+    fit (the student did the work's worth) but log the revenue leak loudly."""
+    import logging
+    body = {'user_email': 'a@b.com', 'university_id': 'duke'}
+    calls = {'compute': 0}
+
+    def compute():
+        calls['compute'] += 1
+        return {'success': True, 'fit_analysis': dict(_FIT),
+                'university_id': 'duke'}, 200
+
+    from unittest.mock import patch
+    with patch.object(fit_billing, 'get_fit_analysis', return_value=None), \
+         patch.object(fit_billing, 'check_credits_available',
+                      return_value={'has_credits': True, 'credits_remaining': 5}), \
+         patch.object(fit_billing, 'deduct_credit',
+                      return_value={'success': False, 'error': 'firestore down'}), \
+         caplog.at_level(logging.WARNING):
+        payload, status = fit_billing.run_compute_single_fit(body, compute)
+    assert status == 200 and payload['success'] is True
+    assert any('deduct_credit FAILED' in r.message for r in caplog.records)

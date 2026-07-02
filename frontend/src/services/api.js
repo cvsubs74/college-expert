@@ -1395,7 +1395,7 @@ export const computeSingleFit = async (userEmail, universityId, forceRecompute =
     };
     if (intendedMajor) body.intended_major = intendedMajor;
     const response = await axios.post(`${baseUrl}/compute-single-fit`, body, {
-      timeout: 60000,  // 1 min timeout for single university
+      timeout: 120000,  // match connector/QA budgets — a shorter client abort after the server computes+bills means paying twice (#296 review F3)
       headers: { 'X-User-Email': userEmail }
     });
     console.log(`[API] Computed single fit (from_cache=${response.data.from_cache}):`, response.data);
@@ -1501,50 +1501,11 @@ export const getPrecomputedFits = async (userEmail, filters = {}, limit = 20, so
   }
 };
 
-/**
- * Recompute fits for all universities in user's Launchpad
- * Called when profile is updated to refresh fit analyses
- * @param {string} userEmail - User's email
- * @returns {Promise<{success: boolean, recomputed: number}>}
- */
-export const recomputeLaunchpadFits = async (userEmail) => {
-  try {
-    console.log(`[API] Recomputing Launchpad fits for ${userEmail}...`);
-
-    // First, get the user's college list
-    const listResult = await getCollegeList(userEmail);
-    if (!listResult.success || !listResult.colleges || listResult.colleges.length === 0) {
-      console.log('[API] No universities in Launchpad, skipping recomputation');
-      return { success: true, recomputed: 0 };
-    }
-
-    // Recompute fits for each university in the Launchpad (in parallel, limited)
-    const universities = listResult.colleges;
-    console.log(`[API] Recomputing fits for ${universities.length} Launchpad universities`);
-
-    let recomputed = 0;
-    // Process in batches of 3 to avoid overwhelming the backend
-    // forceRecompute=true because profile changed and we need fresh analysis
-    for (let i = 0; i < universities.length; i += 3) {
-      const batch = universities.slice(i, i + 3);
-      const promises = batch.map(uni =>
-        computeSingleFit(userEmail, uni.university_id, true).catch(err => {  // force=true for profile update
-          console.warn(`[API] Failed to recompute fit for ${uni.university_id}:`, err);
-          return { success: false };
-        })
-      );
-      const results = await Promise.all(promises);
-      recomputed += results.filter(r => r.success).length;
-    }
-
-    console.log(`[API] Recomputed ${recomputed}/${universities.length} Launchpad fits`);
-    return { success: true, recomputed };
-  } catch (error) {
-    console.error('Error recomputing Launchpad fits:', error);
-    return { success: false, error: error.message };
-  }
-};
-
+// recomputeLaunchpadFits was removed (#296 review F1): it bulk-recomputed
+// every Launchpad fit (force=true, fire-and-forget) after profile edits.
+// Once /compute-single-fit bills server-side (#285), that loop silently
+// drained credits with no consent UI. Fits now recompute only on explicit,
+// priced user actions; KB-drift staleness banners cover the nudge.
 /**
  * Check if fits are ready for a user
  * @param {string} userEmail - User's email
