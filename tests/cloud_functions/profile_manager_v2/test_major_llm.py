@@ -1150,3 +1150,51 @@ class TestNormalizerParity:
         assert normalize_major('Data Science Program') == 'data science'
         assert normalize_major('Nursing Track') == 'nursing'
         assert normalize_major('Biology Concentration') == 'biology'
+
+
+class TestMapGeneratorVersionStaleness:
+    """#308: a Major Map generated before catalog grounding (#307) must be
+    flagged stale so the regenerate CTA fires — a code improvement has to
+    reach students still holding a cached map."""
+
+    def test_pre_grounding_map_is_stale_with_upgrade_reason(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        # A map from before #307: no catalog_grounded, profile unchanged.
+        fp = major_llm.profile_fingerprint(READY_PROFILE)
+        db.major_map = {'clusters': [{'theme': 't', 'majors': [{'name': 'CS'}]}],
+                        'profile_fingerprint': fp}   # catalog_grounded absent
+        with patch.object(major_llm, 'get_db', return_value=db):
+            payload, status = major_llm.get_major_map_payload('s@x.com')
+        assert status == 200 and payload['stale'] is True
+        assert any('grounded' in r for r in payload['stale_reasons'])
+
+    def test_grounded_map_unchanged_profile_is_not_stale(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        fp = major_llm.profile_fingerprint(READY_PROFILE)
+        db.major_map = {'clusters': [{'theme': 't', 'majors': [{'name': 'Computer Science'}]}],
+                        'profile_fingerprint': fp, 'catalog_grounded': True}
+        with patch.object(major_llm, 'get_db', return_value=db):
+            payload, status = major_llm.get_major_map_payload('s@x.com')
+        assert payload['stale'] is False and payload['stale_reasons'] == []
+
+    def test_both_reasons_compose(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        # pre-grounding AND profile changed since generation
+        db.major_map = {'clusters': [{'theme': 't', 'majors': [{'name': 'CS'}]}],
+                        'profile_fingerprint': {'sha1': 'OLD', 'parts': {'grade': 'x'}}}
+        with patch.object(major_llm, 'get_db', return_value=db):
+            payload, _ = major_llm.get_major_map_payload('s@x.com')
+        assert payload['stale'] is True
+        assert any('grounded' in r for r in payload['stale_reasons'])
+        assert len(payload['stale_reasons']) >= 2
+
+    def test_non_force_generate_regenerates_a_pre_grounding_map(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        fp = major_llm.profile_fingerprint(READY_PROFILE)
+        db.major_map = {'clusters': [{'theme': 'old'}], 'profile_fingerprint': fp}
+        # No force, profile unchanged — but the cached map is ungrounded, so it
+        # must regenerate (billed) rather than serve the stale cache.
+        payload, status, calls = _run_map(db)   # _run_map patches catalog + llm
+        assert status == 200 and payload.get('from_cache') is not True
+        assert calls['deduct'] == 1
+        assert db.major_map['catalog_grounded'] is True
