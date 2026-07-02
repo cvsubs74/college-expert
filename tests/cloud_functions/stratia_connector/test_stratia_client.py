@@ -574,3 +574,75 @@ def test_get_outcome_calibration_passes_through(captured):
     assert out["decided_count"] == 2 and out["total"] == 3
     assert out["outcomes"][0]["university_id"] == "umich"
     assert captured["get"]["params"]["user_email"] == "a@b.com"
+
+
+# --- #281/#282: major-selection tools ------------------------------------------
+
+def test_get_university_majors_maps_and_guides(captured):
+    captured["_get_payload"] = {
+        "success": True, "university_id": "uiuc", "official_name": "UIUC",
+        "data_year": 2026, "verification_status": "verified", "richness_tier": 1,
+        "structure_type": "Decentralized",
+        "colleges": [{"name": "Grainger", "majors": [
+            {"name": "Computer Science", "entry_risk": "capped_door",
+             "entry_path": {"value": "direct_admit", "basis": "kb_verified"}}]}],
+        "strategy_notes": {}, "data_notes": []}
+    out = sc.get_university_majors("uiuc", college="grainger", query="computer")
+    params = captured["get"]["params"]
+    assert params["action"] == "majors"
+    assert params["college"] == "grainger" and params["q"] == "computer"
+    assert out["colleges"][0]["majors"][0]["entry_risk"] == "capped_door"
+    assert "capped_door" in out["guidance"]          # trust discipline rides along
+    assert "is_impacted:false does NOT" in out["guidance"]
+
+
+def test_get_university_majors_rejects_old_backend_shape(captured):
+    captured["_get_payload"] = {"success": True, "university": {"profile": {}}}
+    with pytest.raises(sc.StratiaError) as e:
+        sc.get_university_majors("uiuc")
+    assert "does not support" in str(e.value)
+
+
+def test_set_intended_majors_posts_and_maps(captured):
+    captured["_post_payload"] = {"success": True,
+                                 "intended_majors": ["Statistics", "CS"],
+                                 "intended_major": "Statistics"}
+    out = sc.set_intended_majors("a@b.com", ["CS", "Statistics"], primary="Statistics")
+    body = captured["post"]["json"]
+    assert body["majors"] == ["CS", "Statistics"] and body["primary"] == "Statistics"
+    assert out == {"intended_majors": ["Statistics", "CS"], "primary": "Statistics"}
+
+
+def test_set_major_choice_posts_and_surfaces_near_misses(captured):
+    captured["_post_payload"] = {
+        "success": True, "university_id": "uiuc",
+        "major_choice": {"primary": "CS + Advertising", "matched": False,
+                         "match_confidence": "none", "kb_year": 2026},
+        "near_misses": ["Computer Science"],
+        "note": "couldn't be matched"}
+    out = sc.set_major_choice("a@b.com", "uiuc", "CS + Advertising",
+                              backup_major="Statistics", rationale="why",
+                              source="claude")
+    body = captured["post"]["json"]
+    assert body["primary_major"] == "CS + Advertising"
+    assert body["backup_major"] == "Statistics" and body["source"] == "claude"
+    assert out["major_choice"]["matched"] is False
+    assert out["near_misses"] == ["Computer Science"]
+
+
+def test_set_major_choice_failure_raises(captured):
+    captured["_post_payload"] = {"success": False, "error": "not on the college list"}
+    with pytest.raises(sc.StratiaError) as e:
+        sc.set_major_choice("a@b.com", "x", "CS")
+    assert "not on the college list" in str(e.value)
+
+
+def test_recompute_fit_forwards_major(captured):
+    captured["_post_payload"] = {"success": True, "fit_analysis": {
+        "fit_category": "REACH", "match_percentage": 40}}
+    sc.recompute_fit("a@b.com", "uiuc", major="Mathematics & Computer Science")
+    assert captured["post"]["json"]["intended_major"] == "Mathematics & Computer Science"
+    captured["_post_payload"] = {"success": True, "fit_analysis": {
+        "fit_category": "REACH", "match_percentage": 40}}
+    sc.recompute_fit("a@b.com", "uiuc")
+    assert "intended_major" not in captured["post"]["json"]
