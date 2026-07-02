@@ -396,21 +396,18 @@ def run_generate_major_map(data: Dict) -> Tuple[Dict, int]:
 def get_major_map_payload(user_email: str) -> Tuple[Dict, int]:
     """GET /get-major-map (free): {success, map|null, stale, stale_reasons}.
 
-    Stale when the PROFILE it was built from changed, OR when it predates a
-    generator improvement — a map generated before catalog grounding (#307)
-    carries no `catalog_grounded: True`, so we flag it (#308) and the existing
-    regenerate CTA fires; otherwise a code improvement would never reach
-    students still holding a cached map."""
+    Stale ONLY when the PROFILE it was built from actually changed — the card's
+    banner reads "your profile changed", so it must not fire otherwise (#311).
+    A pre-grounding map is no longer force-flagged here (that made the banner
+    show on every old map); the always-available Regenerate control on the card
+    covers refreshing an old/ungrounded map without a false alarm, and the
+    generate cache-hit still requires catalog_grounded so a regenerate upgrades
+    it."""
     db = get_db()
     map_doc = db.get_major_map(user_email)
     if not map_doc:
         return {'success': True, 'map': None, 'stale': False, 'stale_reasons': []}, 200
     stale_reasons = []
-    # Generator-version staleness: a pre-grounding map wasn't drawn from real
-    # offered majors — framed as an upgrade, not a defect.
-    if not map_doc.get('catalog_grounded'):
-        stale_reasons.append('generated before we grounded suggestions in real '
-                             'offered majors — regenerate to refresh')
     stored = map_doc.get('profile_fingerprint') or {}
     if stored.get('sha1'):
         current = profile_fingerprint(db.get_profile(user_email))

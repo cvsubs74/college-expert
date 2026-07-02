@@ -168,9 +168,22 @@ const MajorMapCard = ({ userEmail, profile = null }) => {
                     Your Major Map
                 </h2>
                 {map && (
-                    <span className="stratia-chip bg-purple-100 text-purple-700 border border-purple-200">
-                        Stratia's read — inference, not school facts
-                    </span>
+                    <div className="flex items-center gap-2 flex-wrap">
+                        <span className="stratia-chip bg-purple-100 text-purple-700 border border-purple-200">
+                            Stratia's read — inference, not school facts
+                        </span>
+                        {/* Regenerate is ALWAYS available (not gated behind a
+                            staleness warning) so a refresh needs no false alarm (#311). */}
+                        <button
+                            onClick={() => handleGenerate(true)}
+                            disabled={generating}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[#F1EFE9] text-[#1A4D2E] border border-[#E0DED8] hover:bg-[#E8E5DD] transition-colors disabled:opacity-50"
+                            data-testid="map-regenerate"
+                        >
+                            <ArrowPathIcon className={`h-3.5 w-3.5 ${generating ? 'animate-spin' : ''}`} />
+                            Regenerate — 1 credit
+                        </button>
+                    </div>
                 )}
             </div>
 
@@ -208,28 +221,20 @@ const MajorMapCard = ({ userEmail, profile = null }) => {
                 </div>
             )}
 
-            {/* ---- Staleness banner — informative, never auto-regenerates ---- */}
+            {/* ---- Profile-change note — shown ONLY when the profile actually
+                 changed since this map (accurate copy driven by the real
+                 reason); regenerate lives in the header, always available (#311). ---- */}
             {map && stale && (
-                <div className="mt-3 bg-amber-50 border border-amber-300 rounded-lg p-3 flex items-start justify-between gap-3 flex-wrap" role="note" data-testid="map-stale-banner">
-                    <div className="flex items-start gap-2">
-                        <ExclamationTriangleIcon className="h-4 w-4 text-amber-700 mt-0.5 flex-shrink-0" />
-                        <div>
-                            <p className="text-sm text-amber-900 font-medium">
-                                Your profile changed since this map — regenerate when ready.
-                            </p>
-                            {staleReasons.length > 0 && (
-                                <p className="text-xs text-amber-800 mt-0.5">{staleReasons.join(' · ')}</p>
-                            )}
-                        </div>
+                <div className="mt-3 bg-amber-50 border border-amber-300 rounded-lg p-3 flex items-start gap-2" role="note" data-testid="map-stale-banner">
+                    <ExclamationTriangleIcon className="h-4 w-4 text-amber-700 mt-0.5 flex-shrink-0" />
+                    <div>
+                        <p className="text-sm text-amber-900 font-medium">
+                            Your profile changed since this map — regenerate to refresh it.
+                        </p>
+                        {staleReasons.length > 0 && (
+                            <p className="text-xs text-amber-800 mt-0.5">{staleReasons.join(' · ')}</p>
+                        )}
                     </div>
-                    <button
-                        onClick={() => handleGenerate(true)}
-                        disabled={generating}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200 transition-colors disabled:opacity-50"
-                    >
-                        <ArrowPathIcon className={`h-3.5 w-3.5 ${generating ? 'animate-spin' : ''}`} />
-                        Regenerate — 1 credit
-                    </button>
                 </div>
             )}
 

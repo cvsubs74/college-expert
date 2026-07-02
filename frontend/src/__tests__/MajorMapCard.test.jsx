@@ -154,14 +154,14 @@ describe('MajorMapCard — generated state', () => {
 });
 
 describe('MajorMapCard — staleness', () => {
-    it('shows the banner with reasons and a regenerate button; never auto-regenerates', async () => {
+    it('shows the profile-change banner + reasons; never auto-regenerates (#311)', async () => {
         getMajorMap.mockResolvedValue({
             success: true, map: MAP_FIXTURE, stale: true,
             stale_reasons: ['courses changed since this map was generated'],
         });
         render(<MajorMapCard userEmail="s@x.com" profile={READY_PROFILE} />);
         const banner = await screen.findByTestId('map-stale-banner');
-        expect(banner).toHaveTextContent(/Your profile changed since this map — regenerate when ready/);
+        expect(banner).toHaveTextContent(/Your profile changed since this map — regenerate to refresh it/);
         expect(banner).toHaveTextContent(/courses changed/);
         // No generation happened just from rendering the stale state.
         expect(generateMajorMap).not.toHaveBeenCalled();
@@ -174,6 +174,27 @@ describe('MajorMapCard — staleness', () => {
         generateMajorMap.mockResolvedValue({ success: true, map: MAP_FIXTURE });
         render(<MajorMapCard userEmail="s@x.com" profile={READY_PROFILE} />);
         fireEvent.click(await screen.findByRole('button', { name: /Regenerate — 1 credit/i }));
+        await waitFor(() => expect(generateMajorMap).toHaveBeenCalledWith('s@x.com', true));
+    });
+});
+
+describe('MajorMapCard — #311 regenerate always available, banner only on profile change', () => {
+    beforeEach(() => { vi.clearAllMocks(); });
+
+    it('shows a Regenerate control when a map exists even if NOT stale (no false banner)', async () => {
+        getMajorMap.mockResolvedValue({ success: true, map: MAP_FIXTURE, stale: false, stale_reasons: [] });
+        render(<MajorMapCard userEmail="s@x.com" profile={READY_PROFILE} />);
+        // regenerate is available (header)…
+        expect(await screen.findByTestId('map-regenerate')).toBeInTheDocument();
+        // …and NO stale/profile-changed banner is shown.
+        expect(screen.queryByTestId('map-stale-banner')).not.toBeInTheDocument();
+    });
+
+    it('header regenerate passes force=true', async () => {
+        getMajorMap.mockResolvedValue({ success: true, map: MAP_FIXTURE, stale: false, stale_reasons: [] });
+        generateMajorMap.mockResolvedValue({ success: true, map: MAP_FIXTURE });
+        render(<MajorMapCard userEmail="s@x.com" profile={READY_PROFILE} />);
+        fireEvent.click(await screen.findByTestId('map-regenerate'));
         await waitFor(() => expect(generateMajorMap).toHaveBeenCalledWith('s@x.com', true));
     });
 });
