@@ -114,6 +114,13 @@ class TestSetIntendedMajors:
         result, _ = self._run(['   '])
         assert result['success'] is False
 
+    def test_rejects_bare_string(self):
+        """A bare string would iterate into characters and store
+        intended_major='C' (adversarial review M3)."""
+        result, db = self._run('CS')
+        assert result['success'] is False
+        assert db.profile_writes == []
+
 
 # --- per-school major choice -------------------------------------------------
 
@@ -198,6 +205,16 @@ class TestResolveIntendedMajor:
         assert resolve_intended_major({'intended_major': 'Bio'}, None) == \
             {'major': 'Bio', 'source': 'profile'}
         assert resolve_intended_major({}, None) == {'major': '', 'source': 'profile'}
+
+    def test_corrupt_major_choice_does_not_crash(self):
+        r = resolve_intended_major({'intended_major': 'Bio'},
+                                   {'major_choice': 'corrupt-string'})
+        assert r == {'major': 'Bio', 'source': 'profile'}
+
+    def test_onboarding_flatten_tolerates_non_dict_sections(self):
+        flat = flatten_onboarding_profile({'student_info': 'oops',
+                                           'interests': {'intended_majors': ['A']}})
+        assert flat['intended_major'] == 'A'
 
 
 # --- matcher ------------------------------------------------------------------

@@ -39,11 +39,20 @@ _PRE_MAJOR_PATTERNS = (
     'pre-major', 'pre major', 'premajor', 'pre-business', 'pre-nursing',
     'pre-engineering', 'admitted as pre-', 'pre-professional program',
 )
+# Negated phrasings that must be neutralized BEFORE pattern matching —
+# 'no secondary application' must not fire the secondary bucket (real case:
+# Michigan Applied Exercise Science).
+_NEGATED_PHRASES = (
+    'no secondary application', 'no separate application',
+    'no internal application', 'without a secondary application',
+    'no additional application', 'no competitive application',
+)
 _OPEN_PATTERNS = (
-    'chosen after enrolling', 'declare', 'no separate admission',
-    'open enrollment', 'open to all', 'not admitted by major',
-    'apply to the university, not', 'concentration',
-    'selected after enrollment', 'chosen in', 'undeclared',
+    'chosen after enrolling', 'declared in', 'declared after',
+    'declare their major', 'declare a major', 'freely declare',
+    'no separate admission', 'open enrollment', 'open to all',
+    'not admitted by major', 'apply to the university, not',
+    'concentration declared', 'selected after enrollment', 'undeclared',
 )
 _DIRECT_PATTERNS = (
     'direct admit', 'direct-admit', 'directly admit', 'admitted directly',
@@ -62,9 +71,15 @@ def classify_entry_path(pathway_text: Optional[str],
     """
     if direct_admit_only is True:
         return 'direct_admit'
-    text = (pathway_text or '').strip().lower()
+    if not isinstance(pathway_text, str):
+        return 'unclear'
+    text = pathway_text.strip().lower()
     if not text:
         return 'unclear'
+    # Neutralize explicit negations so 'no secondary application' can't
+    # assert the very thing it denies.
+    for neg in _NEGATED_PHRASES:
+        text = text.replace(neg, ' ')
 
     hits = set()
     if any(p in text for p in _SECONDARY_PATTERNS):
@@ -109,9 +124,21 @@ def derive_entry_risk(major: Dict, college: Dict, entry_path: str) -> str:
     unknown — not enough structure to say (never guessed).
     """
     transfer_allowed = major.get('internal_transfer_allowed')
-    if major.get('direct_admit_only') is True or transfer_allowed is False:
+    raw_gpa = _num(major.get('internal_transfer_gpa'))
+    # GPA plausibility guard: free-text fields yield course numbers ('MOL 214')
+    # or unit counts — only 0 < x <= 5 is a GPA.
+    gpa_bar = raw_gpa if raw_gpa is not None and 0 < raw_gpa <= 5 else None
+    if transfer_allowed is False:
         return 'capped_door'
-    gpa_bar = _num(major.get('internal_transfer_gpa'))
+    if major.get('direct_admit_only') is True:
+        # Self-contradictory legacy rows exist (UF CS: direct_admit_only true
+        # AND internal_transfer_allowed true with a 2.5 GPA path). A stated
+        # transfer path means the door is NOT locked — a false 'capped_door'
+        # is this feature's worst trust failure. Restricted-but-open lands on
+        # 'elevated'.
+        if transfer_allowed is True or gpa_bar is not None:
+            return 'elevated'
+        return 'capped_door'
     if (major.get('is_impacted') is True
             or (college or {}).get('is_restricted_or_capped') is True
             or (gpa_bar is not None and gpa_bar >= 3.5)
@@ -180,7 +207,8 @@ def _tier(verified: bool, colleges: List[Dict]) -> int:
         m.get(k) not in (None, '', [])
         for m in majors
         for k in ('internal_transfer_gpa', 'minimum_gpa_to_declare',
-                  'prerequisite_courses', 'internal_transfer_allowed'))
+                  'prerequisite_courses', 'internal_transfer_allowed',
+                  'direct_admit_only'))
     if with_pathway >= 0.6 * len(majors) and has_depth:
         return 2
     return 3

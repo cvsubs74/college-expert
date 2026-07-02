@@ -31,6 +31,28 @@ class TestClassifyEntryPath:
         assert c('Chosen after enrolling; concentration declared in spring of '
                  'sophomore year') == 'open_declaration'
 
+    def test_negation_blindness_fixed(self, kb):
+        """Real Michigan verified sample: 'First-year admission; no secondary
+        application, but minimum grades...' must NOT badge secondary_application
+        (adversarial review M2)."""
+        c = kb.major_facts.classify_entry_path
+        assert c('First-year admission; no secondary application, but minimum '
+                 'grades in required lower-level coursework') != 'secondary_application'
+
+    def test_bare_declare_and_concentration_no_longer_fire_open(self, kb):
+        """'may not declare until junior year after competitive review' and
+        Purdue's 'concentrations include General, ...' are not open doors (m1)."""
+        c = kb.major_facts.classify_entry_path
+        assert c('Students may not declare until junior year after competitive review') == 'unclear'
+        assert c('FYE then Transition-to-Major (T2M); concentrations include General') == 'unclear'
+        # Princeton's real phrasing still classifies open.
+        assert c('Chosen after enrolling; concentration declared in spring of '
+                 'sophomore year') == 'open_declaration'
+
+    def test_non_string_pathway_is_unclear(self, kb):
+        assert kb.major_facts.classify_entry_path({'oops': True}) == 'unclear'
+        assert kb.major_facts.classify_entry_path(42) == 'unclear'
+
     def test_unclear_on_conflict_or_no_match(self, kb):
         c = kb.major_facts.classify_entry_path
         assert c('') == 'unclear'
@@ -69,6 +91,27 @@ class TestEntryRisk:
         assert d({'internal_transfer_gpa': 3.67}, {}, 'pre_major') == 'elevated'
         assert d({'internal_transfer_gpa': '3.8 GPA required'}, {}, 'pre_major') == 'elevated'
         assert d({}, {}, 'secondary_application') == 'elevated'
+
+    def test_self_contradictory_row_is_not_a_locked_door(self, kb):
+        """Real UF CS rows: direct_admit_only=true AND internal_transfer_allowed
+        =true with a 2.5 GPA path ('Direct Admit / Internal Transfer'). A stated
+        transfer path means the door is NOT locked — false capped_door is this
+        feature's worst trust failure (adversarial review M1)."""
+        d = kb.major_facts.derive_entry_risk
+        assert d({'direct_admit_only': True, 'internal_transfer_allowed': True,
+                  'internal_transfer_gpa': 2.5}, {}, 'direct_admit') == 'elevated'
+        assert d({'direct_admit_only': True, 'internal_transfer_gpa': 3.0},
+                 {}, 'direct_admit') == 'elevated'
+        # No stated transfer path at all → genuinely capped.
+        assert d({'direct_admit_only': True}, {}, 'direct_admit') == 'capped_door'
+
+    def test_gpa_plausibility_guard(self, kb):
+        """Free-text transfer fields yield course numbers ('C or better in MOL
+        214') — 214 is not a GPA and must not trigger 'elevated' (m2)."""
+        d = kb.major_facts.derive_entry_risk
+        assert d({'internal_transfer_gpa': 'C or better in MOL 214.'},
+                 {}, 'open_declaration') == 'standard'
+        assert d({'internal_transfer_gpa': '3.67 GPA'}, {}, 'open_declaration') == 'elevated'
 
     def test_standard_and_unknown(self, kb):
         d = kb.major_facts.derive_entry_risk

@@ -32,15 +32,18 @@ def flatten_onboarding_profile(profile_data: Dict) -> Dict:
     preferences:{preferred_locations[],school_size,campus_type},
     onboarding_status, onboarding_completed_at} — plus optional major_openness.
     """
-    profile_data = profile_data or {}
-    student = profile_data.get('student_info') or {}
-    academic = profile_data.get('academic_profile') or {}
-    gpa = academic.get('gpa') or {}
-    tests = academic.get('test_scores') or {}
-    sat = tests.get('sat') or {}
-    act = tests.get('act') or {}
-    interests = profile_data.get('interests') or {}
-    preferences = profile_data.get('preferences') or {}
+    def _d(value):
+        return value if isinstance(value, dict) else {}
+
+    profile_data = _d(profile_data)
+    student = _d(profile_data.get('student_info'))
+    academic = _d(profile_data.get('academic_profile'))
+    gpa = _d(academic.get('gpa'))
+    tests = _d(academic.get('test_scores'))
+    sat = _d(tests.get('sat'))
+    act = _d(tests.get('act'))
+    interests = _d(profile_data.get('interests'))
+    preferences = _d(profile_data.get('preferences'))
 
     majors = [m for m in (interests.get('intended_majors') or [])
               if isinstance(m, str) and m.strip()][:3]
@@ -89,6 +92,10 @@ def set_intended_majors(user_email: str, majors: List, primary: Optional[str] = 
     """Write the ranked candidate-major list (≤5, deduped case-insensitively)
     and mirror intended_major = primary (default: first item)."""
     try:
+        if not isinstance(majors, list):
+            # A bare string would iterate into characters and store garbage
+            # in the load-bearing intended_major field.
+            return {'success': False, 'error': 'majors must be a list of strings'}
         cleaned, seen = [], set()
         for m in (majors or []):
             if not isinstance(m, str) or not m.strip():
@@ -193,7 +200,9 @@ def resolve_intended_major(profile: Optional[Dict], list_item: Optional[Dict],
     Returns {major, source} so the fit doc can stamp intended_major_used."""
     if isinstance(explicit, str) and explicit.strip():
         return {'major': explicit.strip(), 'source': 'request'}
-    choice = (list_item or {}).get('major_choice') or {}
+    choice = (list_item or {}).get('major_choice')
+    if not isinstance(choice, dict):
+        choice = {}
     if isinstance(choice.get('primary'), str) and choice['primary'].strip():
         return {'major': choice['primary'].strip(), 'source': 'major_choice'}
     selected = (list_item or {}).get('selected_major')

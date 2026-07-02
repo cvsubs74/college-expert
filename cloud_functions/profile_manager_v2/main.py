@@ -405,7 +405,9 @@ def profile_manager_v2_http_entry(request):
             university_id = data.get('university_id')
             if not user_email or not university_id:
                 return add_cors_headers({'error': 'user_email and university_id required'}, 400)
-            envelope = fetch_university_profile(university_id)  # None degrades to matched=False
+            # Single attempt: the caller's own timeout beats the default 4-id x
+            # 3-retry x 30s ladder, and a KB miss degrades to matched=False anyway.
+            envelope = fetch_university_profile(university_id, max_retries=1)
             result = set_major_choice(
                 user_email, university_id,
                 primary_major=data.get('primary_major') or data.get('major') or '',
@@ -635,6 +637,9 @@ def profile_manager_v2_http_entry(request):
 
             # Compute fit
             fit_analysis = calculate_fit_for_college(user_email, university_id, intended_major=resolution['major'])
+            if not fit_analysis:
+                return add_cors_headers({'success': False,
+                                         'error': 'Fit computation failed — try again'}, 500)
             fit_analysis['intended_major_used'] = resolution['major'] or None
             fit_analysis['intended_major_source'] = resolution['source']
 
