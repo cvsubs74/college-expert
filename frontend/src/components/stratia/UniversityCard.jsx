@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon, AcademicCapIcon, ClockIcon, CheckCircleIcon, PaperAirplaneIcon, DocumentCheckIcon, ArrowPathIcon, TrophyIcon } from '@heroicons/react/24/outline';
 import FitVintageChip from '../FitVintageChip';
+import AgentChatHandoff from '../AgentChatHandoff';
 import { fitUpdateAvailable, updateTooltip } from '../../utils/kbVintage';
+import { agentUpdateAnalysisPrompt } from '../../utils/mcpClients';
 
 /**
  * UniversityCard - Rich, interactive M3 card for university listings
@@ -437,6 +439,18 @@ const UniversityCard = ({
                             <TrashIcon className="w-5 h-5" />
                         </button>
                     )}
+                </div>
+
+                {/* Credit-saving alternative to the 1-credit in-app regenerate
+                    (#310): hand the recompute + save of BOTH the fit and the
+                    major chances off to the student's own AI via the Stratia MCP
+                    tools — free. The save-schema is never shown here; the agent
+                    fetches it via get_analysis_schema. */}
+                <div className="mt-3 pt-3 border-t border-[#EFEDE7]" data-testid="agent-update-affordance">
+                    <AgentChatHandoff
+                        prompt={agentUpdateAnalysisPrompt(university_name)}
+                        label="Update via ChatGPT/Claude — free"
+                    />
                 </div>
             </div>
         </>

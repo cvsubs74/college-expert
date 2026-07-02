@@ -829,3 +829,89 @@ def test_list_major_catalog_error_raises(captured):
     import pytest
     with pytest.raises(sc.StratiaError):
         sc.list_major_catalog()
+
+
+# --- #310: agentic credit-saving route (schema + free trust-enforced writes) ---
+
+def test_get_analysis_schema_forwards_kind_and_returns_schema(captured):
+    captured["_get_payload"] = {"success": True, "schema": {
+        "kind": "fit", "trust_rules": "floored by acceptance rate"}}
+    out = sc.get_analysis_schema("fit")
+    assert captured["get"]["url"].endswith("/get-analysis-schema")
+    assert captured["get"]["params"] == {"kind": "fit"}
+    assert out["kind"] == "fit"
+
+
+def test_get_analysis_schema_error_raises(captured):
+    captured["_get_payload"] = {"success": False, "error": "kind must be fit or major_chances"}
+    import pytest
+    with pytest.raises(sc.StratiaError):
+        sc.get_analysis_schema("bogus")
+
+
+def test_save_fit_analysis_posts_payload_and_source(captured):
+    captured["_post_payload"] = {"success": True, "fit_analysis": {
+        "fit_category": "SUPER_REACH", "match_percentage": 30, "explanation": "x"}}
+    out = sc.save_fit_analysis("s@x.com", "uw",
+                               {"fit_category": "SAFETY", "match_percentage": 95,
+                                "explanation": "x"}, source="claude")
+    post = captured["post"]
+    assert post["url"].endswith("/save-external-fit")
+    assert post["json"]["university_id"] == "uw"
+    assert post["json"]["source"] == "claude"
+    assert post["json"]["fit_analysis"]["fit_category"] == "SAFETY"
+    # The server's re-floored fit is what comes back (trust-enforced).
+    assert out["fit_category"] == "SUPER_REACH"
+    assert out["university_id"] == "uw"
+
+
+def test_save_fit_analysis_relays_field_errors(captured):
+    captured["_post_payload"] = {"success": False, "error": "invalid fit_analysis",
+                                 "field_errors": ["fit_category is required",
+                                                  "explanation is required (a non-empty string)"]}
+    captured["_post_status"] = 400
+    import pytest
+    with pytest.raises(sc.StratiaError) as ei:
+        sc.save_fit_analysis("s@x.com", "uw", {"match_percentage": 50})
+    msg = str(ei.value)
+    assert "fit_category is required" in msg and "explanation is required" in msg
+
+
+def test_save_major_chances_posts_ranking_and_source(captured):
+    captured["_post_payload"] = {"success": True, "ranking": {
+        "tiers": {"strong": [], "possible": [], "reach": [{"name": "Computer Science"}],
+                  "long_shot": []}}}
+    ranking = {"majors": [{"name": "Computer Science", "tier": "reach", "rationale": "x"}]}
+    out = sc.save_major_chances("s@x.com", "uw", ranking, source="chatgpt")
+    post = captured["post"]
+    assert post["url"].endswith("/save-external-major-chances")
+    assert post["json"]["ranking"] == ranking
+    assert post["json"]["source"] == "chatgpt"
+    assert out["university_id"] == "uw"
+    assert out["ranking"]["tiers"]["reach"][0]["name"] == "Computer Science"
+
+
+def test_save_major_chances_relays_field_errors(captured):
+    captured["_post_payload"] = {"success": False, "error": "invalid ranking",
+                                 "field_errors": ["majors[0].tier must be one of "
+                                                  "['strong', 'possible', 'reach', 'long_shot']"]}
+    captured["_post_status"] = 400
+    import pytest
+    with pytest.raises(sc.StratiaError) as ei:
+        sc.save_major_chances("s@x.com", "uw",
+                              {"majors": [{"name": "CS", "tier": "safety"}]})
+    assert "must be one of" in str(ei.value)
+
+
+def test_save_major_chances_kb_miss_400_surfaces_message(captured):
+    # A KB-majors miss is a plain 400 (no field_errors) — the server's message
+    # is surfaced as-is, not swallowed by the validation relay.
+    captured["_post_payload"] = {"success": False,
+                                 "error": "no knowledge-base major data for uw — "
+                                          "chances cannot be validated for a school with no KB majors"}
+    captured["_post_status"] = 400
+    import pytest
+    with pytest.raises(sc.StratiaError) as ei:
+        sc.save_major_chances("s@x.com", "uw",
+                              {"majors": [{"name": "CS", "tier": "reach", "rationale": "x"}]})
+    assert "no knowledge-base major data" in str(ei.value)

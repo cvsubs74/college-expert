@@ -78,6 +78,17 @@ mcp = FastMCP(
         "fabricated percentage); get_college_major_chances reads the saved "
         "ranking free. A {ranking: null, gaps} response is the same unbilled KB "
         "miss — relay it honestly. "
+        "SAVE THE STUDENT A CREDIT: the in-app Generate costs 1 credit, but YOU "
+        "(the agent) can compute the fit and/or the major chances yourself and "
+        "save them for FREE via save_fit_analysis / save_major_chances — your "
+        "subscription bears the LLM cost. Call get_analysis_schema(kind) first "
+        "for the exact shape; compute honestly from get_profile + get_university "
+        "(+ get_university_majors for chances); the server re-derives KB-sourced "
+        "fields (fit category is floored by the school's selectivity, "
+        "entry_path/entry_risk come from the KB, off-catalog majors are dropped) "
+        "and REJECTS fabricated numbers, relaying field errors so you can fix and "
+        "retry. Reserve the 1-credit in-app Generate for when the student "
+        "specifically wants Stratia to run it. "
         "All per-student data is scoped to the authenticated user."
     ),
     stateless_http=True,
@@ -537,6 +548,60 @@ def rank_college_majors(university_id: str) -> dict:
     # Tighter limit — this spends a credit and calls the LLM.
     _rate_guard(email, "recompute", settings.RATE_RECOMPUTE_PER_HOUR, 3600)
     return sc.rank_college_majors(email, university_id)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Get the analysis save-schema", readOnlyHint=True, openWorldHint=True))
+def get_analysis_schema(kind: Literal["fit", "major_chances"]) -> dict:
+    """The exact shape + trust_rules for an analysis you compute yourself and
+    save for FREE (vs the in-app Generate at 1 credit each). Call this BEFORE
+    save_fit_analysis / save_major_chances so your payload matches and you
+    understand which fields the server RE-DERIVES server-side (and therefore
+    ignores from you): for 'fit' the category is floored by the school's KB
+    selectivity and match% is clamped; for 'major_chances' entry_path/entry_risk
+    come from the KB, off-catalog names are dropped, fabricated numbers are
+    stripped. Free — no credit."""
+    return sc.get_analysis_schema(kind)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Save a fit analysis I computed (free)", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=True, openWorldHint=True))
+def save_fit_analysis(university_id: str, fit_analysis: dict) -> dict:
+    """Save a college-fit analysis YOU computed into the student's app — FREE
+    (0 credits), the credit-saving alternative to the in-app Generate (1 credit).
+    Compute it honestly from get_profile + get_university, then save it here.
+    Call get_analysis_schema('fit') first for the exact shape. The server
+    re-applies the selectivity floor/ceiling and match%/factor clamps and sources
+    acceptance_rate + KB provenance from the knowledge base — so a category that
+    violates the school's selectivity is corrected, and fabricated numbers are
+    rejected. Validation errors are relayed field-by-field so you can fix and
+    retry."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    source, _model = _client_attribution()
+    return sc.save_fit_analysis(email, university_id, fit_analysis, source=source)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Save major chances I computed (free)", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=True, openWorldHint=True))
+def save_major_chances(university_id: str, ranking: dict) -> dict:
+    """Save a per-college major-chances ranking YOU computed into the student's
+    app — FREE (0 credits), the credit-saving alternative to the in-app Generate
+    (rank_college_majors, 1 credit). Scan the school's real offered catalog
+    (get_university_majors), select the majors that fit the student, and rank
+    each into a likelihood tier. `ranking` is
+    {"majors": [{"name", "tier": strong|possible|reach|long_shot, "rationale"}]}
+    — call get_analysis_schema('major_chances') first for the exact shape. The
+    server re-derives entry_path/entry_risk from the KB, DROPS any major the
+    school doesn't offer, strips any %/GPA the KB doesn't contain, applies the
+    capped_door door-lock, and coerces tiers — so a saved ranking is
+    trust-identical to the in-app one. A school with no KB majors is rejected."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    source, _model = _client_attribution()
+    return sc.save_major_chances(email, university_id, ranking, source=source)
 
 
 @mcp.tool(annotations=ToolAnnotations(

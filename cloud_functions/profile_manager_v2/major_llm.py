@@ -1211,44 +1211,75 @@ def run_rank_college_majors(data: Dict) -> Tuple[Dict, int]:
         }, 200
 
     def _generate():
-        extract_text = build_labeled_extract(facts, catalog_rows, [])
-        parsed = _llm_json(build_ranking_prompt(extract_text, profile))
-        if not isinstance(parsed, dict):
-            return {'success': False,
-                    'error': 'ranking generation failed — try again'}, 500
-        tiers, stripped_notes = normalize_college_major_ranking(
-            parsed, catalog_rows, facts)
-        ranked_count = sum(len(v) for v in tiers.values())
-        note = None
-        if ranked_count == 0:
-            # A real generation that found no fitting majors — billed (the LLM
-            # ran), distinct from the unbilled KB miss above.
-            note = ('based on your record, none of this school\'s majors stood out '
-                    'as a fit right now — sharpen your profile and try again')
-
-        ranking_doc = {
-            'university_id': university_id,
-            'tiers': tiers,
-            'data_notes': list(facts.get('data_notes') or []) + stripped_notes,
-            'note': note,
-            'kb_data_year': facts.get('data_year'),
-            'verification_status': facts.get('verification_status'),
-            'richness_tier': facts.get('richness_tier'),
-            'intended_majors_at_generation': _intended_majors(profile),
-            'generated_at': datetime.utcnow().isoformat(),
-            'model': MODEL,
-            'basis': 'inference',
-        }
-        prior = db.get_college_major_chances(user_email, university_id)
-        if prior:
-            history_key = str(prior.get('kb_data_year') or 'pre-versioning')
-            db.archive_college_major_chances(user_email, university_id, prior, history_key)
-        if not db.save_college_major_chances(user_email, university_id, ranking_doc):
-            return {'success': False,
-                    'error': 'ranking generated but could not be saved — try again'}, 500
-        return {'success': True, 'ranking': ranking_doc, 'gaps': []}, 200
+        return run_ranking_generation(user_email, university_id, db, profile,
+                                      facts, catalog_rows)
 
     return run_billed_generation(user_email, 'major_chances', _generate)
+
+
+def assemble_and_save_ranking(user_email: str, university_id: str, db,
+                              profile: Dict, facts: Dict, catalog_rows: List[Dict],
+                              parsed: Optional[Dict], *, source: Optional[str] = None,
+                              model: str = MODEL) -> Optional[Dict]:
+    """Run a parsed ranking through the trust machinery, build the doc,
+    archive the prior, and save. Returns the saved doc, or None on save failure.
+
+    normalize_college_major_ranking re-derives entry_path/entry_risk from the
+    KB, runs the per-major numeric-claim validator over rationales, applies the
+    capped_door door-lock, catalog-matches names (dropping off-catalog ones), and
+    coerces tiers — so this is the SINGLE trust gate shared by the in-app LLM
+    ranker (run_rank_college_majors), the bundled add-college-analysis path, and
+    the agent-save path (/save-external-major-chances). An agent-saved ranking
+    and a Stratia-generated one are therefore trust-equivalent; `source` only
+    stamps honest provenance (claude/chatgpt) and is absent on the LLM path."""
+    tiers, stripped_notes = normalize_college_major_ranking(parsed, catalog_rows, facts)
+    ranked_count = sum(len(v) for v in tiers.values())
+    note = None
+    if ranked_count == 0:
+        note = ('based on your record, none of this school\'s majors stood out '
+                'as a fit right now — sharpen your profile and try again')
+
+    ranking_doc = {
+        'university_id': university_id,
+        'tiers': tiers,
+        'data_notes': list(facts.get('data_notes') or []) + stripped_notes,
+        'note': note,
+        'kb_data_year': facts.get('data_year'),
+        'verification_status': facts.get('verification_status'),
+        'richness_tier': facts.get('richness_tier'),
+        'intended_majors_at_generation': _intended_majors(profile),
+        'generated_at': datetime.utcnow().isoformat(),
+        'model': model,
+        'basis': 'inference',
+    }
+    if source:
+        ranking_doc['source'] = source
+    prior = db.get_college_major_chances(user_email, university_id)
+    if prior:
+        history_key = str(prior.get('kb_data_year') or 'pre-versioning')
+        db.archive_college_major_chances(user_email, university_id, prior, history_key)
+    if not db.save_college_major_chances(user_email, university_id, ranking_doc):
+        return None
+    return ranking_doc
+
+
+def run_ranking_generation(user_email: str, university_id: str, db, profile: Dict,
+                           facts: Dict, catalog_rows: List[Dict]) -> Tuple[Dict, int]:
+    """UNBILLED core of run_rank_college_majors: LLM ranking → trust machinery
+    → save. Returns (payload, status). Reused by the bundled
+    add-college-analysis path (already billed once for the fit+chances unit) so
+    the ranking is never charged a second credit."""
+    extract_text = build_labeled_extract(facts, catalog_rows, [])
+    parsed = _llm_json(build_ranking_prompt(extract_text, profile))
+    if not isinstance(parsed, dict):
+        return {'success': False,
+                'error': 'ranking generation failed — try again'}, 500
+    ranking_doc = assemble_and_save_ranking(user_email, university_id, db, profile,
+                                            facts, catalog_rows, parsed)
+    if ranking_doc is None:
+        return {'success': False,
+                'error': 'ranking generated but could not be saved — try again'}, 500
+    return {'success': True, 'ranking': ranking_doc, 'gaps': []}, 200
 
 
 def get_college_major_chances_payload(user_email: str, university_id: str) -> Tuple[Dict, int]:

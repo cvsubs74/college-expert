@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
-import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, checkCredits, checkFitRecomputationNeeded, setMajorChoice } from '../services/api';
+import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, addCollegeAnalysis, checkCredits, checkFitRecomputationNeeded, setMajorChoice } from '../services/api';
 import { useToast } from '../components/Toast';
 import KbRefreshBanner from '../components/KbRefreshBanner';
 import KbRefreshReviewModal from '../components/KbRefreshReviewModal';
@@ -281,12 +281,14 @@ const StratiaLaunchpad = () => {
         setKbUpdates(prev => prev.filter(u => u.university_id !== universityId));
     };
 
-    // "Update Fit" on a card: recompute against the current KB cycle, then open
-    // the refreshed analysis. The replaced analysis is archived server-side.
-    // force=true: explicit recompute — server charges 1 credit, 402 when out (#285).
+    // "Update Fit" on a card: regenerate BOTH the fit AND the major-chances
+    // against the current KB cycle via the bundle (#310), then open the
+    // refreshed analysis. Prior fit + chances are archived server-side.
+    // force=true: explicit regenerate — server charges 1 credit for the bundle,
+    // 402 when out. The free agent route is offered on the card itself.
     const handleUpdateFit = async (university) => {
         const universityId = university.university_id;
-        const result = await computeSingleFit(currentUser.email, universityId, true);
+        const result = await addCollegeAnalysis(currentUser.email, universityId, true);
         if (result?.insufficientCredits) {
             setShowCreditsModal(true);
             throw new Error('Not enough credits to update this fit');
@@ -589,10 +591,11 @@ const StratiaLaunchpad = () => {
             });
 
             if (addResult.success) {
-                // Step 2: Compute fit analysis — the server charges 1 credit
-                // and answers 402 when the balance is out (#285).
+                // Step 2: Bundled analysis (#310) — ONE credit generates BOTH
+                // the fit AND the major-chances ranking. The server charges the
+                // single credit and answers 402 when the balance is out.
                 setAnalysisModal(prev => ({ ...prev, step: 'fit', progress: 40 }));
-                const fitResult = await computeSingleFit(currentUser.email, school.university_id, false);
+                const fitResult = await addCollegeAnalysis(currentUser.email, school.university_id, false);
                 if (fitResult?.insufficientCredits) {
                     setShowCreditsModal(true);
                     setAnalysisModal(prev => ({ ...prev, isOpen: false }));
