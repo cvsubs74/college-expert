@@ -44,10 +44,12 @@ _ABBREVIATIONS = {
     'me': 'mechanical engineering',
 }
 
-# Degree suffixes/noise stripped before comparison.
+# Degree suffixes/noise stripped before comparison. Kept in parity with the
+# KB's major_catalog.normalize_major (#306) — including program/track/
+# concentration — so a catalog key and a match result line up.
 _SUFFIX_RE = re.compile(
     r'[,\s]*(\(|\b)(b\.?s\.?e?\.?|b\.?a\.?|a\.?b\.?|bachelor(s)?( of (science|arts))?|'
-    r'major|degree)(\))?\s*$', re.IGNORECASE)
+    r'major|degree|program|track|concentration)(\))?\s*$', re.IGNORECASE)
 _PUNCT_RE = re.compile(r'[^a-z0-9+& ]+')
 
 

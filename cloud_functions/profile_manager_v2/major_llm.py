@@ -93,6 +93,24 @@ def fetch_university_majors(university_id: str, query: Optional[str] = None,
         return None
 
 
+def fetch_major_catalog(limit: int = 250, timeout: int = 15) -> Optional[List[Dict]]:
+    """The global major catalog (KB ?action=majors-catalog): the universe of
+    majors that ACTUALLY exist across all universities, most-offered first.
+    Returns [{name, normalized, offered_count}] or None on any failure (the
+    Major Map degrades to unconstrained generation rather than breaking)."""
+    try:
+        r = requests.get(KNOWLEDGE_BASE_UNIVERSITIES_URL,
+                         params={'action': 'majors-catalog', 'limit': int(limit)},
+                         timeout=timeout)
+        data = r.json()
+        if not data.get('success') or not isinstance(data.get('majors'), list):
+            return None
+        return data['majors']
+    except Exception as e:
+        logger.warning(f"[MAJOR_LLM] major catalog fetch failed: {e}")
+        return None
+
+
 # ---------------------------------------------------------------------------
 # Major Map — readiness, fingerprint, prompt, generation
 # ---------------------------------------------------------------------------
@@ -165,11 +183,21 @@ def _intended_majors(profile: Dict) -> List[str]:
     return majors
 
 
-def build_major_map_prompt(profile: Dict) -> str:
+def build_major_map_prompt(profile: Dict, catalog: Optional[List[Dict]] = None) -> str:
     """Prompt over the FLAT student profile. Grade-aware tone; pre-professional
-    intents translated to real majors; hard anti-fabrication rules."""
+    intents translated to real majors; hard anti-fabrication rules. When a
+    `catalog` (the global list of real, offered majors) is supplied, the LLM is
+    told to draw ONLY from it — so the map suggests majors that actually exist
+    somewhere, not free-form names (#306)."""
     grade = str(profile.get('grade') or profile.get('grade_level') or '')
     intended = _intended_majors(profile)
+    catalog_block = ''
+    if catalog:
+        names = [str(m.get('name')) for m in catalog if m.get('name')]
+        catalog_block = (
+            "\n**MAJOR CATALOG — the ONLY majors you may name (every major that "
+            "actually exists across real universities; pick from THIS list, using "
+            "these exact names):**\n" + ', '.join(names) + "\n")
     if grade in ('9', '10'):
         tone = ("The student is in grade {g} — use an EXPLORATION tone: this map opens "
                 "doors and suggests low-stakes ways to test interests; nothing is a "
@@ -185,7 +213,7 @@ def build_major_map_prompt(profile: Dict) -> str:
 {build_profile_content_from_fields(profile)}
 
 Stated intended major(s): {', '.join(intended) or 'none stated — this is a discovery exercise'}
-
+{catalog_block}
 {tone}
 
 **YOUR TASK:** Produce 3-6 career-theme clusters. Each cluster names a theme the student's record actually supports, explains why in `why_you` by citing the student's OWN courses, APs, extracurriculars, or awards VERBATIM (repeat the exact names in `evidence`), and lists candidate majors with a `relation`:
@@ -275,9 +303,36 @@ def _normalize_clusters(clusters) -> List[Dict]:
     return out
 
 
+def ground_clusters_in_catalog(clusters: List[Dict], catalog: Optional[List[Dict]]) -> List[Dict]:
+    """Annotate each suggested major with whether it's a REAL offered major
+    (#306). Matching is display-name → display-name via the single
+    major_match normalizer, so the catalog's own stored key (a different
+    normalizer) never causes a mismatch. A matched major is canonicalized to
+    the catalog name + carries offered_count; an unmatched one is flagged
+    `in_catalog: false` (never silently presented as offered) rather than
+    dropped — the map is exploratory, so we keep the suggestion but label it.
+    No-op when the catalog is unavailable."""
+    if not catalog:
+        return clusters
+    names = [str(m.get('name')) for m in catalog if m.get('name')]
+    counts = {str(m.get('name')): m.get('offered_count') for m in catalog if m.get('name')}
+    for cluster in clusters:
+        for major in cluster.get('majors', []):
+            res = match_major(major.get('name', ''), names)
+            if res['confidence'] in ('exact', 'strong'):
+                kb_name = res['kb_major_name']
+                major['name'] = kb_name
+                major['in_catalog'] = True
+                major['offered_count'] = counts.get(kb_name)
+            else:
+                major['in_catalog'] = False
+    return clusters
+
+
 def run_generate_major_map(data: Dict) -> Tuple[Dict, int]:
     """POST /generate-major-map — readiness 422 (unbilled) → cache-unless-force
-    (free) → billed LLM generation with archive-on-overwrite."""
+    (free) → billed LLM generation with archive-on-overwrite. The candidate
+    majors are grounded in the global catalog (#306) — real, offered majors."""
     user_email = data.get('user_email')
     force = bool(data.get('force'))
     db = get_db()
@@ -295,12 +350,18 @@ def run_generate_major_map(data: Dict) -> Tuple[Dict, int]:
             logger.info(f"[MAJOR_LLM] Returning cached major map for {user_email} (no charge)")
             return {'success': True, 'map': existing, 'from_cache': True}, 200
 
+    # Ground candidates in the real, offered-majors catalog; a fetch failure
+    # degrades to unconstrained generation (with a data note) rather than
+    # blocking the map the student is paying for.
+    catalog = fetch_major_catalog()
+
     def _generate():
-        parsed = _llm_json(build_major_map_prompt(profile))
+        parsed = _llm_json(build_major_map_prompt(profile, catalog=catalog))
         clusters = _normalize_clusters((parsed or {}).get('clusters'))
         if not clusters:
             return {'success': False,
                     'error': 'map generation failed — try again'}, 500
+        clusters = ground_clusters_in_catalog(clusters, catalog)
         map_doc = {
             'clusters': clusters,
             'questions_to_explore': [str(q) for q in (parsed.get('questions_to_explore') or [])
@@ -308,6 +369,10 @@ def run_generate_major_map(data: Dict) -> Tuple[Dict, int]:
             'generated_at': datetime.utcnow().isoformat(),
             'model': MODEL,
             'basis': 'inference',   # counselor inference — never school facts
+            'catalog_grounded': bool(catalog),
+            'data_notes': ([] if catalog else
+                           ['Major catalog was unavailable — suggestions are not '
+                            'yet checked against real offerings; regenerate later.']),
             'intended_majors_at_generation': _intended_majors(profile),
             'profile_fingerprint': fingerprint,
         }

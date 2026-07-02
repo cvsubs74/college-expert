@@ -206,6 +206,15 @@ class FakeDB:
         return True
 
 
+MAP_CATALOG = [
+    {'name': 'Computer Science', 'normalized': 'computer science', 'offered_count': 133},
+    {'name': 'Computer Engineering', 'normalized': 'computer engineering', 'offered_count': 40},
+    {'name': 'Data Science', 'normalized': 'data science', 'offered_count': 30},
+    {'name': 'Statistics', 'normalized': 'statistics', 'offered_count': 25},
+    # Industrial Engineering deliberately absent → exercises in_catalog:false.
+]
+
+
 def _billing_seams(has_credits=True, remaining=5):
     """Patch generation_billing's credit seams; returns the calls recorder."""
     calls = {'check': 0, 'deduct': 0}
@@ -224,11 +233,12 @@ def _billing_seams(has_credits=True, remaining=5):
         patch.object(generation_billing, 'deduct_credit', side_effect=fake_deduct)
 
 
-def _run_map(db, body=None, llm=MAP_LLM_RESPONSE, has_credits=True):
+def _run_map(db, body=None, llm=MAP_LLM_RESPONSE, has_credits=True, catalog=MAP_CATALOG):
     body = body or {'user_email': 's@x.com'}
     calls, p_check, p_deduct = _billing_seams(has_credits=has_credits)
     with patch.object(major_llm, 'get_db', return_value=db), \
          patch.object(major_llm, '_llm_json', return_value=llm) as p_llm, \
+         patch.object(major_llm, 'fetch_major_catalog', return_value=catalog), \
          p_check, p_deduct:
         payload, status = run_generate_major_map(body)
     calls['llm'] = p_llm.call_count
@@ -1080,3 +1090,63 @@ class TestGetCollegeMajorChances:
         db = FakeDB(rankings={'uw': {'kb_data_year': 2025}})
         payload, _ = self._get(db, facts=None)
         assert payload['stale'] is False and payload['current_kb_year'] is None
+
+
+class TestMajorMapCatalogGrounding:
+    """#306: the Major Map is grounded in the global catalog — real offered
+    majors, not free-form names."""
+
+    def test_catalog_injected_into_prompt(self):
+        from major_llm import build_major_map_prompt
+        prompt = build_major_map_prompt(dict(READY_PROFILE), catalog=MAP_CATALOG)
+        assert 'MAJOR CATALOG' in prompt
+        assert 'Computer Science' in prompt and 'Data Science' in prompt
+
+    def test_no_catalog_block_when_unavailable(self):
+        from major_llm import build_major_map_prompt
+        prompt = build_major_map_prompt(dict(READY_PROFILE), catalog=None)
+        assert 'MAJOR CATALOG' not in prompt
+
+    def test_matched_majors_carry_offered_count_and_flag(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        _run_map(db)
+        by_name = {m['name']: m
+                   for c in db.major_map['clusters'] for m in c['majors']}
+        assert by_name['Computer Science']['in_catalog'] is True
+        assert by_name['Computer Science']['offered_count'] == 133
+
+    def test_off_catalog_major_is_flagged_not_silently_offered(self):
+        # Industrial Engineering isn't in MAP_CATALOG → flagged in_catalog:false,
+        # kept (map is exploratory) but never presented as offered.
+        db = FakeDB(profile=dict(READY_PROFILE))
+        _run_map(db)
+        by_name = {m['name']: m
+                   for c in db.major_map['clusters'] for m in c['majors']}
+        assert by_name['Industrial Engineering']['in_catalog'] is False
+        assert 'offered_count' not in by_name['Industrial Engineering']
+        assert db.major_map['catalog_grounded'] is True
+
+    def test_catalog_fetch_failure_degrades_gracefully(self):
+        # Catalog unavailable → still generates (billed), flags not-grounded +
+        # a data note, rather than failing the map the student paid for.
+        db = FakeDB(profile=dict(READY_PROFILE))
+        payload, status, calls = _run_map(db, catalog=None)
+        assert status == 200 and payload['success'] is True
+        assert calls['deduct'] == 1
+        assert db.major_map['catalog_grounded'] is False
+        assert any('catalog was unavailable' in n.lower()
+                   for n in db.major_map['data_notes'])
+        # majors are NOT annotated with in_catalog when there's no catalog
+        m = db.major_map['clusters'][0]['majors'][0]
+        assert 'in_catalog' not in m
+
+
+class TestNormalizerParity:
+    """#304/#306 review: major_match and the KB catalog normalizer must agree
+    on the display-name transforms grounding relies on."""
+
+    def test_program_track_concentration_suffixes_stripped(self):
+        from major_match import normalize_major
+        assert normalize_major('Data Science Program') == 'data science'
+        assert normalize_major('Nursing Track') == 'nursing'
+        assert normalize_major('Biology Concentration') == 'biology'
