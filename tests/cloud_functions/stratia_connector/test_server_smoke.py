@@ -25,7 +25,7 @@ from starlette.testclient import TestClient  # noqa: E402
 EXPECTED_TOOLS = {
     # reads
     "search_universities", "get_university", "get_university_history",
-    "get_university_majors",
+    "get_university_majors", "list_major_catalog",
     "get_college_list", "get_fit_analysis",
     "get_fit_history", "get_deadlines", "get_profile", "get_roadmap", "get_essays",
     "get_aid_packages", "get_scholarships", "get_credits", "check_fit_recomputation",

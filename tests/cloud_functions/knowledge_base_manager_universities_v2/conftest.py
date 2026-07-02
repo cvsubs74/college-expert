@@ -74,6 +74,10 @@ def _load(filename, alias):
 
 
 kb_versioning = _load('versioning.py', 'kbv2_versioning')
+# major_catalog must be aliased BEFORE firestore_db — firestore_db imports it
+# at module scope (the source dir isn't on sys.path; only aliases resolve).
+kb_major_catalog = _load('major_catalog.py', 'kbv2_major_catalog')
+sys.modules['major_catalog'] = kb_major_catalog
 kb_firestore_db = _load('firestore_db.py', 'kbv2_firestore_db')
 kb_year_history = _load('year_history.py', 'kbv2_year_history')
 kb_major_facts = _load('major_facts.py', 'kbv2_major_facts')
@@ -86,11 +90,12 @@ kb_gemini_fallback = _load('gemini_fallback.py', 'kbv2_gemini_fallback')
 # aliased too so this suite runs in isolation (previously it only resolved
 # because counselor_agent's conftest happened to put ITS copy on sys.path).
 _saved = {n: sys.modules.get(n)
-          for n in ('firestore_db', 'versioning', 'year_history', 'major_facts', 'request_auth', 'gemini_fallback')}
+          for n in ('firestore_db', 'versioning', 'year_history', 'major_facts', 'major_catalog', 'request_auth', 'gemini_fallback')}
 sys.modules['firestore_db'] = kb_firestore_db
 sys.modules['versioning'] = kb_versioning
 sys.modules['year_history'] = kb_year_history
 sys.modules['major_facts'] = kb_major_facts
+sys.modules['major_catalog'] = kb_major_catalog
 sys.modules['request_auth'] = kb_request_auth
 sys.modules['gemini_fallback'] = kb_gemini_fallback
 try:
@@ -205,6 +210,7 @@ def kb(db):
         versioning=kb_versioning,
         year_history=kb_year_history,
         major_facts=kb_major_facts,
+        major_catalog=kb_major_catalog,
         request_auth=kb_request_auth,
         db=db,
     )
