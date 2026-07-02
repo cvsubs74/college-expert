@@ -445,3 +445,8 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Fix 4249e4f9: stub google parent in counselor conftest (verified in a clean CI-parity venv: pytest -q => 1064 passed, 3 skipped).
 - Re-trigger eb11039e: minimal touch to the 4 target dirs (detect-targets diffs COMMIT^..COMMIT, so the tests-only fix wouldn't redeploy the feature). Build 2faac19d => SUCCESS: deployed counselor-agent, knowledge-universities-v2, profile-v2, frontend.
 - Gotcha saved to memory [[auto-deploy-on-main]]: red gate aborts before deploy; re-trigger needs target dirs in a fresh commit.
+
+## 2026-07-01 18:30 — #286 implemented, PR #293 open (year-history consumers)
+- university_chat now injects a fault-isolated YEARLY ADMISSIONS HISTORY block (only when >=2 rows across snapshots+reported_trends; null-stripped compact JSON; snapshot-precedence + never-merge labeling). First-ever tests for university_chat (7).
+- AdmissionsTab chart switched from profile-baked longitudinal_trends to action=history via new api.getUniversityHistory + AdmissionsHistoryChart: two labeled groups (KB snapshots w/ estimated-year marker vs muted school-reported), single-series selectivity indicator, 1-row "history builds up" state, legacy rendering kept as fetch-failure fallback. 13 new vitest cases.
+- pytest 1156 passed / vitest 417 passed / build + verify.sh green. Project-board set-status skipped: token lacks 'project' scope (needs interactive gh auth refresh).
