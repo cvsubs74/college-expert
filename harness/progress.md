@@ -453,3 +453,7 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Connector: recompute_fit sends force_recompute:true, surfaces 402 as a clear budget error (_post attaches status_code/body to StratiaError, no behavior change for other callers).
 - Tests: test_fit_billing.py (7 sequencing tests), 4 new connector tests. Full backend 1159 passed; vitest 404 passed; build + verify.sh green.
 - Filed #295 (P2): QA agent has no credit provisioning — its fit scenarios will 402 once this deploys and the balance drains.
+## 2026-07-01 18:30 — #286 implemented, PR #293 open (year-history consumers)
+- university_chat now injects a fault-isolated YEARLY ADMISSIONS HISTORY block (only when >=2 rows across snapshots+reported_trends; null-stripped compact JSON; snapshot-precedence + never-merge labeling). First-ever tests for university_chat (7).
+- AdmissionsTab chart switched from profile-baked longitudinal_trends to action=history via new api.getUniversityHistory + AdmissionsHistoryChart: two labeled groups (KB snapshots w/ estimated-year marker vs muted school-reported), single-series selectivity indicator, 1-row "history builds up" state, legacy rendering kept as fetch-failure fallback. 13 new vitest cases.
+- pytest 1156 passed / vitest 417 passed / build + verify.sh green. Project-board set-status skipped: token lacks 'project' scope (needs interactive gh auth refresh).

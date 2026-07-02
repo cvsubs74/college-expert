@@ -24,6 +24,7 @@ import {
 import { StarIcon } from '@heroicons/react/24/solid';
 import MediaGallery from '../MediaGallery';
 import UniversityChatWidget from '../UniversityChatWidget';
+import AdmissionsHistoryChart from './AdmissionsHistoryChart';
 import { ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
 
 // ============================================================================
@@ -401,66 +402,13 @@ const AdmissionsTab = ({ university }) => {
                 </div>
             </div>
 
-            {/* Trends */}
-            {trends.length > 0 && (
-                <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
-                    <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                        <ChartBarIcon className="h-5 w-5 text-blue-500" />
-                        Acceptance Rate Trends
-                    </h3>
-                    <div className="flex items-end justify-between gap-2 h-40">
-                        {trends
-                            .slice(0, 5)
-                            .reverse()
-                            .filter(t => t.acceptance_rate_overall && t.acceptance_rate_overall > 0)
-                            .map((t, i) => {
-                                // Normalize: if value < 1, it's a decimal (0.48 = 48%), otherwise it's already a percentage
-                                const rawRate = t.acceptance_rate_overall;
-                                const normalizedRate = rawRate < 1 ? rawRate * 100 : rawRate;
-                                const displayRate = normalizedRate.toFixed(1);
-
-                                return (
-                                    <div key={i} className="flex-1 flex flex-col items-center">
-                                        <div
-                                            className="w-full bg-gradient-to-t from-blue-600 to-blue-400 rounded-t transition-all hover:from-blue-700 hover:to-blue-500"
-                                            style={{ height: `${(normalizedRate / 100) * 100}%`, minHeight: '20px' }}
-                                        ></div>
-                                        <span className="text-xs text-gray-500 mt-2">{t.year}</span>
-                                        <span className="text-sm font-bold text-blue-600">{displayRate}%</span>
-                                    </div>
-                                );
-                            })}
-                    </div>
-                    {/* Trend indicator */}
-                    {trends.length >= 2 && (
-                        <div className="mt-4 pt-4 border-t border-gray-100">
-                            {(() => {
-                                const validTrends = trends.filter(t => t.acceptance_rate_overall && t.acceptance_rate_overall > 0);
-                                if (validTrends.length < 2) return null;
-                                const latest = validTrends[0].acceptance_rate_overall < 1
-                                    ? validTrends[0].acceptance_rate_overall * 100
-                                    : validTrends[0].acceptance_rate_overall;
-                                const oldest = validTrends[validTrends.length - 1].acceptance_rate_overall < 1
-                                    ? validTrends[validTrends.length - 1].acceptance_rate_overall * 100
-                                    : validTrends[validTrends.length - 1].acceptance_rate_overall;
-                                const change = latest - oldest;
-                                const isMoreSelective = change < 0;
-                                return (
-                                    <p className={`text-sm flex items-center gap-2 ${isMoreSelective ? 'text-red-600' : 'text-green-600'}`}>
-                                        {isMoreSelective ? '📉' : '📈'}
-                                        <span className="font-medium">
-                                            {isMoreSelective ? 'Getting more selective' : 'Getting less selective'}
-                                        </span>
-                                        <span className="text-gray-500">
-                                            ({change > 0 ? '+' : ''}{change.toFixed(1)}% over {validTrends.length} years)
-                                        </span>
-                                    </p>
-                                );
-                            })()}
-                        </div>
-                    )}
-                </div>
-            )}
+            {/* Trends — real per-cycle history from action=history (#286);
+                falls back to the profile-baked longitudinal_trends if the
+                history fetch fails. */}
+            <AdmissionsHistoryChart
+                universityId={university?.university_id || university?.id || fullProfile?._id}
+                fallbackTrends={trends}
+            />
 
             {/* Holistic Factors */}
             {fullProfile?.application_process?.holistic_factors && (

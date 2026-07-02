@@ -53,6 +53,7 @@ _setdefault_attr(_genai, 'Client', lambda *a, **k: None)
 _genai_types = _ensure_module('google.genai.types')
 _setdefault_attr(_genai_types, 'Content', lambda *a, **k: None)
 _setdefault_attr(_genai_types, 'Part', lambda *a, **k: None)
+_setdefault_attr(_genai_types, 'GenerateContentConfig', lambda *a, **k: None)
 _setdefault_attr(_genai, 'types', _genai_types)
 _setdefault_attr(_google, 'genai', _genai)
 

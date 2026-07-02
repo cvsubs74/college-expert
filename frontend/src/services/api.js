@@ -1046,6 +1046,28 @@ export const getUniversityMajors = async (universityId, { college, query } = {})
 };
 
 /**
+ * Get the two-axis year history for a university (`?id=X&action=history`).
+ * `snapshots` are Stratia KB per-cycle rows (application-CYCLE year axis,
+ * authoritative); `reported_trends` are the school's own trend rows
+ * (entering-class year axis, verified:false). The two use different year
+ * conventions — never merge them into one timeline.
+ * @param {string} universityId - University ID
+ * @returns {Promise<{success: boolean, snapshots: Array, reported_trends: Array, notes: Array}>}
+ */
+export const getUniversityHistory = async (universityId) => {
+  try {
+    // Fallback pins the LIVE v2 service (the non-v2 fallback used elsewhere in
+    // this file predates the ES service going offline).
+    const baseUrl = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app';
+    const response = await axios.get(baseUrl, { params: { id: universityId, action: 'history' }, timeout: 30000 });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting university history:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
  * Delete a document from the knowledge base
  * Uses the knowledge base manager cloud function
  * Works with all approaches (RAG, Firestore, Elasticsearch) using the same endpoint
