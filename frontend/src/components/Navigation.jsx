@@ -10,6 +10,7 @@ import {
     BeakerIcon,
     CpuChipIcon,
     CircleStackIcon,
+    AcademicCapIcon,
     ArrowRightOnRectangleIcon,
     Bars3Icon,
     XMarkIcon,
@@ -39,6 +40,7 @@ import { logout } from '../services/authService';
 const NAV_LINKS = [
     { path: '/profile', label: 'Profile', icon: DocumentTextIcon, requiresAuth: true },
     { path: '/universities', label: 'Discover', icon: BuildingLibraryIcon, requiresAuth: true },
+    { path: '/major-map', label: 'Major Map', icon: AcademicCapIcon, requiresAuth: true },
     { path: '/launchpad', label: 'Launchpad', icon: RocketLaunchIcon, requiresAuth: true },
     { path: '/roadmap', label: 'Roadmap', icon: SparklesIcon, requiresAuth: true },
     { path: '/research', label: 'Research', icon: BeakerIcon, requiresAuth: true },

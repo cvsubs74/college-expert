@@ -17,17 +17,22 @@ from unittest.mock import patch
 import generation_billing
 import major_llm
 from major_llm import (
+    build_full_catalog_rows,
     build_labeled_extract,
     check_map_readiness,
     derive_door_flags,
     ensure_door_lock_warning,
+    ensure_major_door_lock_rationale,
     filter_facts_to_majors,
+    get_college_major_chances_payload,
     get_major_map_payload,
     get_major_strategy_payload,
+    normalize_college_major_ranking,
     profile_fingerprint,
     resolve_strategy_majors,
     run_generate_major_map,
     run_generate_major_strategy,
+    run_rank_college_majors,
     validate_numeric_claims,
 )
 
@@ -131,16 +136,19 @@ STRATEGY_LLM_RESPONSE = {
 
 class FakeDB:
     def __init__(self, profile=None, list_items=None, major_map=None,
-                 strategies=None):
+                 strategies=None, rankings=None):
         self.profile = profile
         self.list_items = list_items or {}
         self.major_map = major_map
         self.strategies = strategies or {}
+        self.rankings = rankings or {}
         self.map_archives = []
         self.strategy_archives = []
+        self.ranking_archives = []
         self.kb_gap_calls = []
         self.save_map_ok = True
         self.save_strategy_ok = True
+        self.save_ranking_ok = True
 
     def get_profile(self, user_id):
         return self.profile
@@ -182,6 +190,19 @@ class FakeDB:
 
     def increment_kb_gap(self, university_id, major_names):
         self.kb_gap_calls.append((university_id, list(major_names)))
+        return True
+
+    def get_college_major_chances(self, user_id, university_id):
+        return self.rankings.get(university_id)
+
+    def save_college_major_chances(self, user_id, university_id, ranking):
+        if not self.save_ranking_ok:
+            return False
+        self.rankings[university_id] = ranking
+        return True
+
+    def archive_college_major_chances(self, user_id, university_id, ranking, history_key):
+        self.ranking_archives.append((university_id, history_key, ranking))
         return True
 
 
@@ -784,3 +805,278 @@ class TestDoorLockMarkerHardening:
         out, appended = major_llm.ensure_door_lock_warning(
             dict(synthesis), ['Computer Science'])
         assert appended is False
+
+
+# ---------------------------------------------------------------------------
+# Per-college Major Chances ranking (#302) — sibling of the strategy generator
+# ---------------------------------------------------------------------------
+
+RANKING_LLM_RESPONSE = {
+    'majors': [
+        {'name': 'Computer Science', 'college': 'College of Engineering',
+         'tier': 'reach',
+         'rationale': "A strong record, but CS here is direct-admit only."},
+        {'name': 'Computer Engineering', 'college': 'College of Engineering',
+         'tier': 'possible',
+         'rationale': "Your robotics work maps well; a realistic match."},
+    ],
+}
+
+
+def _run_ranking(db, body=None, llm=RANKING_LLM_RESPONSE, facts=KB_FACTS,
+                 has_credits=True):
+    body = body or {'user_email': 's@x.com', 'university_id': 'uw'}
+    calls, p_check, p_deduct = _billing_seams(has_credits=has_credits)
+    with patch.object(major_llm, 'get_db', return_value=db), \
+         patch.object(major_llm, '_llm_json', return_value=llm) as p_llm, \
+         patch.object(major_llm, 'fetch_university_majors', return_value=facts), \
+         p_check, p_deduct:
+        payload, status = run_rank_college_majors(body)
+    calls['llm'] = p_llm.call_count
+    return payload, status, calls
+
+
+class TestBuildFullCatalogRows:
+    def test_every_major_bound_with_college_and_context(self):
+        rows = build_full_catalog_rows(KB_FACTS)
+        assert [r['name'] for r in rows] == ['Computer Science', 'Computer Engineering']
+        assert all(r['college'] == 'College of Engineering' for r in rows)
+        assert rows[0]['college_context']['admissions_model'] == 'Direct to College'
+        assert rows[0]['college_context']['is_restricted_or_capped'] is True
+
+    def test_respects_the_cap(self):
+        rows = build_full_catalog_rows(KB_FACTS, cap=1)
+        assert len(rows) == 1
+
+    def test_empty_when_no_colleges(self):
+        assert build_full_catalog_rows({'colleges': []}) == []
+
+
+class TestRankNeverChargeOnMiss:
+    def test_zero_majors_in_kb_is_200_null_ranking_unbilled(self):
+        db = FakeDB(profile={'intended_majors': ['Computer Science']})
+        empty_facts = {**KB_FACTS, 'colleges': []}
+        payload, status, calls = _run_ranking(db, facts=empty_facts)
+        assert status == 200
+        assert payload['success'] is True and payload['ranking'] is None
+        assert payload['gaps'] == ['Computer Science']
+        # No billing surface touched at all — not even the credit check.
+        assert calls['check'] == 0 and calls['deduct'] == 0 and calls['llm'] == 0
+
+    def test_miss_increments_kb_gaps_demand_signal(self):
+        db = FakeDB(profile={'intended_majors': ['Computer Science']})
+        empty_facts = {**KB_FACTS, 'colleges': []}
+        _run_ranking(db, facts=empty_facts)
+        assert db.kb_gap_calls == [('uw', ['Computer Science'])]
+
+    def test_miss_with_no_intended_majors_still_records_a_gap(self):
+        db = FakeDB(profile={})
+        empty_facts = {**KB_FACTS, 'colleges': []}
+        payload, status, _ = _run_ranking(db, facts=empty_facts)
+        assert status == 200 and payload['ranking'] is None
+        assert db.kb_gap_calls == [('uw', ['(whole catalog)'])]
+
+    def test_miss_works_even_with_zero_credits(self):
+        db = FakeDB(profile={'intended_majors': ['Computer Science']})
+        empty_facts = {**KB_FACTS, 'colleges': []}
+        payload, status, calls = _run_ranking(db, facts=empty_facts, has_credits=False)
+        assert status == 200 and payload['ranking'] is None
+
+    def test_transport_failure_is_502_unbilled(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        payload, status, calls = _run_ranking(db, facts=None)
+        assert status == 502 and calls['check'] == 0 and calls['deduct'] == 0
+
+    def test_unknown_university_is_404_unbilled(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        payload, status, calls = _run_ranking(
+            db, facts={'success': False, 'error': 'University uw not found'})
+        assert status == 404 and calls['deduct'] == 0
+
+
+class TestRankBillingAndPersistence:
+    def test_insufficient_credits_402_never_generates(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        payload, status, calls = _run_ranking(db, has_credits=False)
+        assert status == 402 and payload['error'] == 'insufficient_credits'
+        assert calls['llm'] == 0 and calls['deduct'] == 0
+
+    def test_success_deducts_once_and_persists_tiers(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        payload, status, calls = _run_ranking(db)
+        assert status == 200 and payload['success'] is True
+        assert calls['deduct'] == 1
+        assert calls['deduct_args'] == ('s@x.com', 1, 'major_chances')
+        doc = db.rankings['uw']
+        assert doc['kb_data_year'] == 2026
+        assert doc['verification_status'] == 'legacy'
+        assert doc['basis'] == 'inference'
+        # tiers keyed by exactly the four canonical tiers
+        assert set(doc['tiers']) == {'strong', 'possible', 'reach', 'long_shot'}
+        names = {m['name'] for tier in doc['tiers'].values() for m in tier}
+        assert names == {'Computer Science', 'Computer Engineering'}
+
+    def test_entry_path_and_risk_come_from_the_kb_not_the_llm(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        # LLM lies about the fields — the KB row is authoritative.
+        lying = {'majors': [
+            {'name': 'Computer Science', 'tier': 'strong',
+             'entry_path': 'open_declaration', 'entry_risk': 'standard',
+             'rationale': 'x'}]}
+        _run_ranking(db, llm=lying)
+        cs = db.rankings['uw']['tiers']['reach'] + db.rankings['uw']['tiers']['strong']
+        cs = [m for m in cs if m['name'] == 'Computer Science'][0]
+        assert cs['entry_path'] == 'direct_admit'   # from KB, not the LLM
+        assert cs['entry_risk'] == 'capped_door'     # from KB, not the LLM
+
+    def test_llm_failure_is_500_never_deducts(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        payload, status, calls = _run_ranking(db, llm=None)
+        assert status == 500 and calls['deduct'] == 0
+        assert 'uw' not in db.rankings
+
+    def test_save_failure_is_500_never_deducts(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        db.save_ranking_ok = False
+        payload, status, calls = _run_ranking(db)
+        assert status == 500 and calls['deduct'] == 0
+
+    def test_regeneration_archives_the_prior_ranking_by_kb_year(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        _run_ranking(db)
+        prior = db.rankings['uw']
+        newer_facts = {**KB_FACTS, 'data_year': 2027}
+        _run_ranking(db, facts=newer_facts)
+        assert db.ranking_archives == [('uw', '2026', prior)]
+        assert db.rankings['uw']['kb_data_year'] == 2027
+
+    def test_empty_fit_selection_is_still_billed_with_a_note(self):
+        # A real generation that binds NO catalog majors (rare) — billed, but
+        # distinguished from the unbilled KB miss by an explicit note + empty tiers.
+        db = FakeDB(profile=dict(READY_PROFILE))
+        no_fit = {'majors': [{'name': 'Basket Weaving', 'tier': 'reach', 'rationale': 'x'}]}
+        payload, status, calls = _run_ranking(db, llm=no_fit)
+        assert status == 200 and payload['success'] is True
+        assert calls['deduct'] == 1                     # real generation → billed
+        doc = db.rankings['uw']
+        assert sum(len(v) for v in doc['tiers'].values()) == 0
+        assert doc['note']
+
+
+class TestRankTrustDiscipline:
+    def test_capped_door_major_gets_door_lock_appended_when_missing(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        bland = {'majors': [
+            {'name': 'Computer Science', 'tier': 'reach',
+             'rationale': 'A stretch given how competitive it is.'}]}
+        _run_ranking(db, llm=bland)
+        cs = db.rankings['uw']['tiers']['reach'][0]
+        assert "can't switch in later" in cs['rationale']
+
+    def test_fabricated_percentage_stripped_from_rationale(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        lying = {'majors': [
+            {'name': 'Computer Engineering', 'tier': 'possible',
+             'rationale': 'A realistic match. Only 3% get in though.'}]}
+        _run_ranking(db, llm=lying)
+        ce = db.rankings['uw']['tiers']['possible'][0]
+        assert '3%' not in ce['rationale']
+        assert any('3%' in n for n in db.rankings['uw']['data_notes'])
+
+    def test_reported_rate_rides_along_only_where_kb_has_one(self):
+        db = FakeDB(profile=dict(READY_PROFILE))
+        _run_ranking(db)
+        by_name = {m['name']: m for tier in db.rankings['uw']['tiers'].values() for m in tier}
+        # CS has reported_stats.acceptance_rate 7 in KB_FACTS; CE has none.
+        assert by_name['Computer Science']['reported_rate']['value'] == 7
+        assert by_name['Computer Science']['reported_rate']['label'] == 'reported (unverified)'
+        assert 'reported_rate' not in by_name['Computer Engineering']
+
+    def test_major_not_in_catalog_is_dropped(self):
+        rows = build_full_catalog_rows(KB_FACTS)
+        parsed = {'majors': [
+            {'name': 'Underwater Basket Weaving', 'tier': 'strong', 'rationale': 'x'},
+            {'name': 'Computer Science', 'tier': 'reach', 'rationale': 'y'}]}
+        tiers, _ = normalize_college_major_ranking(parsed, rows, KB_FACTS)
+        names = {m['name'] for t in tiers.values() for m in t}
+        assert names == {'Computer Science'}    # invented major dropped
+
+    def test_unknown_tier_coerces_to_reach(self):
+        rows = build_full_catalog_rows(KB_FACTS)
+        parsed = {'majors': [{'name': 'Computer Engineering',
+                              'tier': 'definitely-in', 'rationale': 'x'}]}
+        tiers, _ = normalize_college_major_ranking(parsed, rows, KB_FACTS)
+        assert [m['name'] for m in tiers['reach']] == ['Computer Engineering']
+
+    def test_capped_door_carries_flag_and_caveat_in_any_tier(self):
+        # #305 review F1: tier is the admission-chance read; a capped_door
+        # major may legitimately be 'strong' (a strong direct-admit candidate),
+        # but it ALWAYS gets door_lock=True + the door-lock caveat so a
+        # "Strong match" chip can never hide a locked door.
+        db = FakeDB(profile=dict(READY_PROFILE))
+        strong_capped = {'majors': [
+            {'name': 'Computer Science', 'tier': 'strong',
+             'rationale': "You're a strong candidate here."}]}
+        _run_ranking(db, llm=strong_capped)
+        cs = db.rankings['uw']['tiers']['strong'][0]
+        assert cs['entry_risk'] == 'capped_door'
+        assert cs['door_lock'] is True
+        assert "can't switch in later" in cs['rationale']
+
+    def test_cross_major_number_attribution_is_stripped(self):
+        # #305 review F2: CS has a real 7% in the KB; CE has none. A rationale
+        # for CE claiming "7%" must be stripped — a real rate for one major
+        # cannot legitimize the same figure on another (per-major validation).
+        db = FakeDB(profile=dict(READY_PROFILE))
+        cross = {'majors': [
+            {'name': 'Computer Engineering', 'tier': 'possible',
+             'rationale': 'A realistic match — about 7% get in.'}]}
+        _run_ranking(db, llm=cross)
+        ce = db.rankings['uw']['tiers']['possible'][0]
+        assert '7%' not in ce['rationale']
+        assert any('7%' in n for n in db.rankings['uw']['data_notes'])
+
+    def test_tiers_dict_shape_is_also_accepted(self):
+        rows = build_full_catalog_rows(KB_FACTS)
+        parsed = {'tiers': {'possible': [
+            {'name': 'Computer Engineering', 'rationale': 'x'}]}}
+        tiers, _ = normalize_college_major_ranking(parsed, rows, KB_FACTS)
+        assert [m['name'] for m in tiers['possible']] == ['Computer Engineering']
+
+
+class TestEnsureMajorDoorLock:
+    def test_appends_when_missing(self):
+        out = ensure_major_door_lock_rationale('A stretch.', 'Computer Science')
+        assert "can't switch in later" in out
+        assert 'Computer Science' in out
+
+    def test_no_append_when_already_warned(self):
+        r = "Direct admit only — you cannot switch in later, so commit."
+        assert ensure_major_door_lock_rationale(r, 'Computer Science') == r
+
+
+class TestGetCollegeMajorChances:
+    def _get(self, db, facts=KB_FACTS):
+        with patch.object(major_llm, 'get_db', return_value=db), \
+             patch.object(major_llm, 'fetch_university_majors', return_value=facts):
+            return get_college_major_chances_payload('s@x.com', 'uw')
+
+    def test_no_ranking_yet(self):
+        payload, status = self._get(FakeDB())
+        assert status == 200
+        assert payload == {'success': True, 'ranking': None, 'stale': False}
+
+    def test_current_ranking_is_not_stale(self):
+        db = FakeDB(rankings={'uw': {'kb_data_year': 2026}})
+        payload, _ = self._get(db)
+        assert payload['stale'] is False and payload['current_kb_year'] == 2026
+
+    def test_older_kb_year_is_stale(self):
+        db = FakeDB(rankings={'uw': {'kb_data_year': 2025}})
+        payload, _ = self._get(db)
+        assert payload['stale'] is True
+
+    def test_kb_check_failure_degrades_to_not_stale(self):
+        db = FakeDB(rankings={'uw': {'kb_data_year': 2025}})
+        payload, _ = self._get(db, facts=None)
+        assert payload['stale'] is False and payload['current_kb_year'] is None

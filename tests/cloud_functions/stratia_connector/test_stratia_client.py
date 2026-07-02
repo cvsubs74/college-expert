@@ -672,6 +672,59 @@ def test_set_major_choice_failure_raises(captured):
     assert "not on the college list" in str(e.value)
 
 
+# --- #302: per-college Major Chances tools -------------------------------------
+
+def test_rank_college_majors_posts_and_returns_tiers(captured):
+    captured["_post_payload"] = {"success": True, "ranking": {
+        "university_id": "uw", "kb_data_year": 2026,
+        "tiers": {"strong": [], "possible": [
+            {"name": "Computer Engineering", "tier": "possible",
+             "entry_path": "direct_admit", "entry_risk": "standard",
+             "rationale": "A realistic match."}],
+            "reach": [{"name": "Computer Science", "tier": "reach",
+                       "entry_risk": "capped_door", "rationale": "the door locks."}],
+            "long_shot": []},
+        "data_notes": []}}
+    out = sc.rank_college_majors("a@b.com", "uw")
+    assert captured["post"]["json"] == {"user_email": "a@b.com", "university_id": "uw"}
+    assert captured["post"]["timeout"] == 120
+    assert out["charged"] is True
+    assert out["ranking"]["tiers"]["possible"][0]["name"] == "Computer Engineering"
+
+
+def test_rank_college_majors_relays_kb_miss_uncharged(captured):
+    captured["_post_payload"] = {"success": True, "ranking": None,
+                                 "gaps": ["Computer Science"],
+                                 "note": "no major data for this school"}
+    out = sc.rank_college_majors("a@b.com", "uw")
+    assert out["ranking"] is None
+    assert out["charged"] is False
+    assert out["gaps"] == ["Computer Science"]
+    assert "note" in out
+
+
+def test_rank_college_majors_402_surfaces_clear_credit_error(captured):
+    captured["_post_payload"] = {"success": False, "error": "insufficient_credits",
+                                 "credits_remaining": 1}
+    captured["_post_status"] = 402
+    with pytest.raises(sc.StratiaError) as e:
+        sc.rank_college_majors("a@b.com", "uw")
+    msg = str(e.value)
+    assert "insufficient credits" in msg and "1 remaining" in msg and "costs 1" in msg
+    assert "get_credits" in msg
+
+
+def test_get_college_major_chances_reads_ranking_and_stale(captured):
+    captured["_get_payload"] = {"success": True, "ranking": {
+        "university_id": "uw", "kb_data_year": 2025,
+        "tiers": {"strong": [], "possible": [], "reach": [], "long_shot": []}},
+        "stale": True, "current_kb_year": 2026}
+    out = sc.get_college_major_chances("a@b.com", "uw")
+    assert captured["get"]["params"] == {"user_email": "a@b.com", "university_id": "uw"}
+    assert out["stale"] is True and out["current_kb_year"] == 2026
+    assert out["ranking"]["kb_data_year"] == 2025
+
+
 def test_recompute_fit_forwards_major(captured):
     captured["_post_payload"] = {"success": True, "fit_analysis": {
         "fit_category": "REACH", "match_percentage": 40}}

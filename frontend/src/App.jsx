@@ -12,6 +12,7 @@ import Chat from './pages/Chat';
 import KnowledgeBase from './pages/KnowledgeBase';
 import UniversityExplorer from './pages/UniversityExplorer';
 import StratiaLaunchpad from './pages/StratiaLaunchpad';
+import MajorMap from './pages/MajorMap';
 import EssayHelpPage from './pages/EssayHelpPage';
 import FitVisualizer from './pages/FitVisualizer';
 import LandingPage from './pages/LandingPage';
@@ -199,6 +200,7 @@ function App() {
                   {/* <Route path="/chat" element={<Chat />} /> */}
                   <Route path="/universities" element={<UniversityExplorer />} />
                   <Route path="/launchpad" element={<StratiaLaunchpad />} />
+                  <Route path="/major-map" element={<MajorMap />} />
                   <Route path="/roadmap" element={<RoadmapPage />} />
                   <Route path="/research" element={<ResearchNotebook />} />
                   <Route path="/connect" element={<ConnectAgents />} />

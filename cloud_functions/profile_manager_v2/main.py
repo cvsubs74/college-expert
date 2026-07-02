@@ -78,6 +78,8 @@ from major_llm import (
     get_major_map_payload,
     run_generate_major_strategy,
     get_major_strategy_payload,
+    run_rank_college_majors,
+    get_college_major_chances_payload,
     stamp_door_flags,
 )
 from fit_staleness import get_kb_updates, mark_suppressed
@@ -507,6 +509,27 @@ def profile_manager_v2_http_entry(request):
             if not user_email or not university_id:
                 return add_cors_headers({'error': 'user_email and university_id required'}, 400)
             payload, status = get_major_strategy_payload(user_email, university_id)
+            return add_cors_headers(payload, status)
+
+        # --- PER-COLLEGE MAJOR CHANCES (billed LLM ranking, #302) ---
+        elif resource_type == 'rank-college-majors' and request.method == 'POST':
+            data = request.get_json() or {}
+            if not data.get('user_email') or not data.get('university_id'):
+                return add_cors_headers({'error': 'user_email and university_id required'}, 400)
+            payload, status = run_rank_college_majors(data)
+            return add_cors_headers(payload, status)
+
+        elif resource_type == 'get-college-major-chances' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+                user_email = data.get('user_email')
+                university_id = data.get('university_id')
+            else:
+                user_email = request.args.get('user_email')
+                university_id = request.args.get('university_id')
+            if not user_email or not university_id:
+                return add_cors_headers({'error': 'user_email and university_id required'}, 400)
+            payload, status = get_college_major_chances_payload(user_email, university_id)
             return add_cors_headers(payload, status)
 
         # --- COLLEGE LIST MANAGEMENT ---

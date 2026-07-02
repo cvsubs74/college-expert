@@ -21,6 +21,7 @@ import { askLinks } from '../utils/mcpClients';
 import FitChatWidget from '../components/FitChatWidget';
 import CreditsUpgradeModal from '../components/CreditsUpgradeModal';
 import FitAnalysisPage from '../components/FitAnalysisPage';
+import MajorChancesView from '../components/majors/MajorChancesView';
 import { Link, useNavigate } from 'react-router-dom';
 
 // Icons
@@ -65,6 +66,7 @@ const StratiaLaunchpad = () => {
 
     // Modal states
     const [fitModalCollege, setFitModalCollege] = useState(null);
+    const [majorChancesCollege, setMajorChancesCollege] = useState(null);
     const [chatCollege, setChatCollege] = useState(null);
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [showDiscoveryPanel, setShowDiscoveryPanel] = useState(false);
@@ -357,6 +359,25 @@ const StratiaLaunchpad = () => {
     const handleCloseFitModal = () => {
         setFitModalCollege(null);
         // Scroll back to the school after a brief delay to let the list render
+        setTimeout(() => {
+            const lastSchoolId = sessionStorage.getItem('lastViewedSchool');
+            if (lastSchoolId) {
+                const element = document.getElementById(`school-${lastSchoolId}`);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                sessionStorage.removeItem('lastViewedSchool');
+            }
+        }, 100);
+    };
+
+    const handleMajorChances = (college) => {
+        sessionStorage.setItem('lastViewedSchool', college.university_id);
+        setMajorChancesCollege(college);
+    };
+
+    const handleCloseMajorChances = () => {
+        setMajorChancesCollege(null);
         setTimeout(() => {
             const lastSchoolId = sessionStorage.getItem('lastViewedSchool');
             if (lastSchoolId) {
@@ -689,6 +710,18 @@ const StratiaLaunchpad = () => {
         );
     }
 
+    // Major Chances Full Page View (#302) — opened in place like Fit Analysis.
+    if (majorChancesCollege) {
+        return (
+            <MajorChancesView
+                userEmail={currentUser?.email}
+                universityId={majorChancesCollege.university_id}
+                universityName={majorChancesCollege.university_name}
+                onBack={handleCloseMajorChances}
+            />
+        );
+    }
+
     // Fit Analysis Full Page View
     if (fitModalCollege) {
         return (
@@ -910,6 +943,7 @@ const StratiaLaunchpad = () => {
                                         onEssayHelp={handleEssayHelp}
                                         onUpdateFit={handleUpdateFit}
                                         onMajorChange={handleMajorChange}
+                                        onMajorChances={handleMajorChances}
                                         onRecomputeWithMajor={handleRecomputeWithMajor}
                                         canRemove={!isFreeTier}
                                         onRemove={handleRemoveCollege}

@@ -72,6 +72,12 @@ mcp = FastMCP(
         "for when the student wants the app-persisted artifact. A "
         "{strategy: null, gaps} response means the KB doesn't know — the student "
         "was NOT charged; relay that honestly and never invent a strategy. "
+        "For 'what are my chances across a school's majors?': rank_college_majors "
+        "(1 credit) ranks the FIT majors a school offers into likelihood TIERS "
+        "(strong/possible/reach/long_shot with a rationale each — never a "
+        "fabricated percentage); get_college_major_chances reads the saved "
+        "ranking free. A {ranking: null, gaps} response is the same unbilled KB "
+        "miss — relay it honestly. "
         "All per-student data is scoped to the authenticated user."
     ),
     stateless_http=True,
@@ -495,6 +501,42 @@ def generate_major_strategy(university_id: str,
     # Tighter limit — this spends a credit and calls the LLM.
     _rate_guard(email, "recompute", settings.RATE_RECOMPUTE_PER_HOUR, 3600)
     return sc.generate_major_strategy(email, university_id, majors=majors)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Get my Major Chances for a school", readOnlyHint=True, openWorldHint=True))
+def get_college_major_chances(university_id: str) -> dict:
+    """The student's saved per-college Major Chances: the majors THIS school
+    actually offers that fit them, ranked into likelihood TIERS (ranking.tiers:
+    strong / possible / reach / long_shot) with a rationale each, plus
+    entry_path / entry_risk per major and any reported (unverified) rate the KB
+    holds. These are counselor-judgment tiers over the school's real offered
+    catalog — NOT fabricated admit percentages, and never invent one. stale:true
+    = the KB now has newer data than this ranking was built on. Free — no
+    credit."""
+    return sc.get_college_major_chances(_email(), university_id)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Rank my chances across a school's majors (uses 1 credit)", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=False, openWorldHint=True))
+def rank_college_majors(university_id: str) -> dict:
+    """Rank the majors ONE school actually offers that fit the student into
+    likelihood TIERS (strong / possible / reach / long_shot) with a rationale
+    each — persisted in the app's Major Chances view. Costs 1 Stratia credit on
+    success — CONFIRM with the student and check get_credits first. The ranking
+    scans the school's FULL offered catalog (so strategic/adjacent doors surface)
+    but shows only the majors that fit; likelihood is a TIER, never a fabricated
+    percentage. When the KB has no major data for the school the response is
+    {ranking: null, gaps: [...]} and the student is NOT charged — relay that
+    honestly (the gap is queued for collection); never invent a ranking. A
+    server-side validator strips any number the KB extract doesn't contain, and
+    capped_door majors are ranked honestly (reach/long_shot) with the door-lock
+    caveat."""
+    email = _email()
+    # Tighter limit — this spends a credit and calls the LLM.
+    _rate_guard(email, "recompute", settings.RATE_RECOMPUTE_PER_HOUR, 3600)
+    return sc.rank_college_majors(email, university_id)
 
 
 @mcp.tool(annotations=ToolAnnotations(

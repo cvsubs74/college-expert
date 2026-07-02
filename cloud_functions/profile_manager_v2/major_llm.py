@@ -55,6 +55,13 @@ _RELATIONS = ('core', 'adjacent', 'strategic_alternative')
 SYNTHESIS_FIELDS = ('primary_call', 'second_choice_play', 'backup_rationale',
                     'undeclared_tactic', 'essay_implication')
 
+# Per-college Major Chances (#302): the full offered catalog is scanned but
+# bounded so a 200-major school can't blow the prompt budget; likelihood is
+# expressed as a TIER (never a fabricated per-major admit rate — we lack
+# verified ones).
+MAX_CATALOG_MAJORS = 60
+RANKING_TIERS = ('strong', 'possible', 'reach', 'long_shot')
+
 
 # ---------------------------------------------------------------------------
 # KB fetch (sibling of essay_copilot.fetch_university_profile — but a single
@@ -870,3 +877,322 @@ def stamp_door_flags(user_email: str, university_id: str, choice: Dict) -> Optio
     except Exception as e:
         logger.warning(f"[MAJOR_LLM] door_flags stamping failed for {university_id}: {e}")
         return None
+
+
+# ---------------------------------------------------------------------------
+# Per-college Major Chances (#302): rank the majors a school ACTUALLY offers
+# that fit the student, into likelihood TIERS (strong/possible/reach/long_shot)
+# with a rationale each. A SIBLING of the strategy generator — it reuses the
+# same trust machinery verbatim (labeled extract, numeric-claim validator,
+# door-lock belt, never-charge-on-miss, kb_gaps telemetry, archive-on-overwrite,
+# run_billed_generation). The product decision (owner, locked): TIERS not
+# numeric odds (we lack verified per-major admit rates — never fabricate a %);
+# show only the FIT majors ranked, but the LLM scans the WHOLE catalog so
+# strategic/adjacent doors the student didn't ask about still surface.
+# ---------------------------------------------------------------------------
+
+def build_full_catalog_rows(facts: Dict, cap: int = MAX_CATALOG_MAJORS) -> List[Dict]:
+    """Every offered major bound with its college + college_context, shaped
+    exactly like filter_facts_to_majors' matched rows so build_labeled_extract
+    can label them unchanged. Bounded at `cap` majors (biggest schools first
+    fill the budget) — the LLM still sees the breadth, never an unbounded prompt."""
+    rows = []
+    for c in (facts.get('colleges') or []):
+        college_context = {
+            'admissions_model': c.get('admissions_model'),
+            'is_restricted_or_capped': c.get('is_restricted_or_capped'),
+            'acceptance_rate_estimate': c.get('acceptance_rate_estimate'),
+            'strategic_fit_advice': c.get('strategic_fit_advice'),
+        }
+        for m in (c.get('majors') or []):
+            if not isinstance(m, dict) or not m.get('name'):
+                continue
+            row = dict(m)
+            row['college'] = c.get('name')
+            row['college_context'] = college_context
+            rows.append(row)
+            if len(rows) >= cap:
+                return rows
+    return rows
+
+
+def _entry_path_value(row: Dict):
+    ep = row.get('entry_path')
+    return ep.get('value') if isinstance(ep, dict) else ep
+
+
+def _reported_rate(row: Dict):
+    """The per-major reported admit rate, ONLY where the KB actually has one
+    (labeled 'reported (unverified)' downstream — never invented)."""
+    reported = row.get('reported_stats')
+    if isinstance(reported, dict):
+        rate = reported.get('acceptance_rate')
+        if rate not in (None, '', []):
+            return rate
+    return None
+
+
+def _coerce_tier(tier) -> str:
+    """Map the LLM's tier label to one of the four canonical tiers. Unknown
+    labels default to 'reach' — the conservative choice (never overstate odds)."""
+    if not isinstance(tier, str):
+        return 'reach'
+    key = tier.strip().lower().replace('-', ' ').replace('_', ' ')
+    if 'long' in key:
+        return 'long_shot'
+    if 'reach' in key or 'stretch' in key:
+        return 'reach'
+    if 'strong' in key or 'likely' in key or 'safe' in key or 'safety' in key:
+        return 'strong'
+    if 'possible' in key or 'target' in key or 'match' in key or 'realistic' in key:
+        return 'possible'
+    return 'reach'
+
+
+def _collect_ranked_majors(parsed: Optional[Dict]) -> List[Dict]:
+    """Normalize the LLM's shape into a flat list of {name, college, tier,
+    rationale}. Accepts either a flat `majors` list (with a tier per item) or a
+    `tiers` dict keyed by tier name — resilient to either JSON shape."""
+    if not isinstance(parsed, dict):
+        return []
+    out = []
+    majors = parsed.get('majors')
+    if isinstance(majors, list):
+        out.extend(m for m in majors if isinstance(m, dict))
+    tiers = parsed.get('tiers')
+    if isinstance(tiers, dict):
+        for tier_name, items in tiers.items():
+            for m in (items or []):
+                if isinstance(m, dict):
+                    out.append({**m, 'tier': m.get('tier') or tier_name})
+    return out
+
+
+def _rationale_has_door_lock(text: Optional[str]) -> bool:
+    blob = (text or '').lower()
+    return any(marker in blob for marker in _DOOR_LOCK_MARKERS)
+
+
+def ensure_major_door_lock_rationale(rationale: str, major_name: str) -> str:
+    """Belt-and-suspenders anti-backdoor for a capped_door major's rationale:
+    if the LLM's rationale carries no door-lock marker, append a deterministic
+    one (reuses the strategy generator's _DOOR_LOCK_MARKERS set)."""
+    if _rationale_has_door_lock(rationale):
+        return rationale
+    warning = (f"{major_name} locks its door at this school — if you're not "
+               "admitted to it directly you can't switch in later, so never plan "
+               "an apply-easier-then-transfer route.")
+    return f"{(rationale or '').strip()} {warning}".strip()
+
+
+def build_ranking_prompt(extract_text: str, profile: Dict) -> str:
+    grade = str(profile.get('grade') or profile.get('grade_level') or 'unknown')
+    intended = _intended_majors(profile)
+    return f"""You are a private college admissions counselor helping a student decide, for ONE school, which of the majors it ACTUALLY OFFERS are worth applying to — and how realistic each is. Reason ONLY from the labeled fact extract below (the school's full offered catalog) and the student's own record.
+
+**FULL OFFERED CATALOG (labeled facts — your ONLY source of school facts):**
+{extract_text}
+
+**STUDENT (grade {grade}):**
+{build_profile_content_from_fields(profile)}
+
+Majors the student has mentioned interest in: {', '.join(intended) or 'none stated'}
+
+**HOW TO READ THE TAGS:**
+- [VERIFIED] — quote-backed official data; cite plainly.
+- [REPORTED] — unverified legacy data; hedge it ("students report…", "reportedly…").
+- [OPINION] — counselor take; present as judgment.
+- [MISSING] — the school does not publish this; SAY SO. Never estimate or fill it in.
+
+**YOUR TASK:**
+1. SCAN THE FULL CATALOG. Do NOT limit yourself to the majors the student already named — actively surface strategic and adjacent doors they did NOT ask about but that their record supports. This discovery is the whole point.
+2. SELECT the majors that genuinely FIT this student: attainable given their record AND aligned with their interests and strengths. Only pick majors that appear in the catalog above.
+3. RANK each selected major into EXACTLY ONE tier by the student's ADMISSION CHANCE at that major's primary door (this is what they asked to rank by):
+   - "strong" — their record is clearly competitive for this door.
+   - "possible" — a realistic match with real uncertainty.
+   - "reach" — a stretch; possible but the odds are against them.
+   - "long_shot" — a long shot given the door's competitiveness or their record.
+4. Write a one-to-three-sentence `rationale` for each, in your own voice as counselor judgment.
+
+**HARD RULES (violating any of these makes the output unusable):**
+1. NEVER state a percentage, admit rate, GPA, or any number that does not appear in THIS major's own facts in the extract above. If a number is [MISSING], say the school doesn't publish it. Likelihood is a TIER — NEVER a fabricated percentage.
+2. Frame every call as counselor judgment ("my read", "I'd call this…"), not fact.
+3. ANTI-BACKDOOR: the tier is admission chance, but for a `capped_door` major ALWAYS warn in its rationale that the door locks — if the student isn't admitted directly they cannot switch in later — REGARDLESS of its tier (a strong applicant can still face a locked door). NEVER recommend applying to an easier major planning to transfer into a capped one later.
+4. SCHOOL-TYPE: when the extract shows the school admits by university rather than by major (open_declaration paths dominate, or the admissions model is university-level), say plainly that the listed major barely affects admission here.
+
+**OUTPUT — return ONLY valid JSON, no markdown fences:**
+{{
+  "majors": [
+    {{"name": "<exact major name from the catalog>",
+      "college": "<the college it sits in, if the catalog shows one>",
+      "tier": "strong|possible|reach|long_shot",
+      "rationale": "<1-3 sentences of counselor judgment>"}}
+  ]
+}}"""
+
+
+def normalize_college_major_ranking(parsed: Optional[Dict], catalog_rows: List[Dict],
+                                    facts: Dict) -> Tuple[Dict, List[str]]:
+    """Shape + trust pass over the LLM's ranking. Returns (tiers, data_notes):
+
+    - Every ranked name is bound to a REAL catalog major (exact/strong match);
+      a name the school doesn't offer is dropped — the ranking only shows majors
+      the college actually offers.
+    - entry_path / entry_risk come from the KB row (authoritative), never the LLM.
+    - Anti-fabrication is PER-MAJOR (#305 review F2): each rationale is validated
+      against a pool of ONLY that major's own KB numbers + school-level numbers,
+      so a real admit rate for one major can't legitimize the same figure
+      misattributed to another major in the 60-major catalog.
+    - `tier` is the LLM's admission-chance read (that's what the student asked to
+      rank by). `entry_risk` (capped_door / elevated / …) is an ORTHOGONAL
+      structural fact carried on every major regardless of tier; a capped_door
+      major always gets `door_lock: true` + a deterministic door-lock caveat in
+      its rationale (#305 review F1) so a "Strong match" chip can never hide a
+      locked door.
+    - a reported admit rate rides along ONLY where the KB row has one, labeled.
+    """
+    rows_by_name = {r['name']: r for r in catalog_rows if r.get('name')}
+    names = list(rows_by_name)
+
+    tiers = {t: [] for t in RANKING_TIERS}
+    all_notes, seen = [], set()
+    for item in _collect_ranked_majors(parsed):
+        if not item.get('name'):
+            continue
+        res = match_major(str(item['name']), names)
+        if res['confidence'] not in ('exact', 'strong'):
+            continue  # never rank a major the college doesn't actually offer
+        kb_name = res['kb_major_name']
+        if kb_name in seen:
+            continue
+        seen.add(kb_name)
+        row = rows_by_name[kb_name]
+
+        # Per-major numeric validation: the allowed pool is THIS major's own
+        # KB extract (+ school-level notes), never the whole catalog.
+        per_major_extract = build_labeled_extract(facts, [row], [])
+        cleaned, notes = validate_numeric_claims(
+            {'r': str(item.get('rationale') or '')}, per_major_extract)
+        all_notes.extend(notes)
+        rationale = cleaned.get('r', '')
+
+        entry_risk = row.get('entry_risk')
+        major = {
+            'name': kb_name,
+            'college': row.get('college'),
+            'entry_path': _entry_path_value(row),
+            'entry_risk': entry_risk,
+            'tier': _coerce_tier(item.get('tier')),
+            'rationale': rationale,
+        }
+        if entry_risk == 'capped_door':
+            major['door_lock'] = True  # UI flags this on any tier
+            major['rationale'] = ensure_major_door_lock_rationale(rationale, kb_name)
+        rate = _reported_rate(row)
+        if rate is not None:
+            major['reported_rate'] = {'value': rate, 'label': 'reported (unverified)'}
+        tiers[major['tier']].append(major)
+    return tiers, all_notes
+
+
+def run_rank_college_majors(data: Dict) -> Tuple[Dict, int]:
+    """POST /rank-college-majors — deterministic KB fetch FIRST (free), so a
+    school missing from the KB (or with zero majors) returns 200 {ranking:null,
+    gaps} without ever touching the credit gate (never-charge-on-miss +
+    kb_gaps telemetry), then billed LLM ranking with archive-on-overwrite.
+
+    An empty catalog AFTER fit-selection (the LLM finds no fitting majors —
+    rare) is a REAL generation: 200 with empty tiers + a note, and it IS billed.
+    """
+    user_email = data.get('user_email')
+    university_id = data.get('university_id')
+    db = get_db()
+    profile = db.get_profile(user_email) or {}
+
+    facts = fetch_university_majors(university_id)
+    if facts is None:
+        return {'success': False,
+                'error': f'knowledge base unavailable for {university_id} — try again'}, 502
+    if not facts.get('success'):
+        return {'success': False,
+                'error': facts.get('error') or f'university {university_id} not found'}, 404
+
+    catalog_rows = build_full_catalog_rows(facts)
+    if not catalog_rows:
+        # School in the KB but no majors stored (or none at all) — never charge
+        # for "we don't know", and record the demand signal (#193).
+        gap_signal = _intended_majors(profile) or ['(whole catalog)']
+        db.increment_kb_gap(university_id, gap_signal)
+        logger.info(f"[MAJOR_LLM] KB has no majors for {university_id} (no charge)")
+        return {
+            'success': True,
+            'ranking': None,
+            'gaps': gap_signal,
+            'note': ('our knowledge base has no major data for this school yet — '
+                     'nothing was charged, and the gap is now on the collection '
+                     'priority list'),
+        }, 200
+
+    def _generate():
+        extract_text = build_labeled_extract(facts, catalog_rows, [])
+        parsed = _llm_json(build_ranking_prompt(extract_text, profile))
+        if not isinstance(parsed, dict):
+            return {'success': False,
+                    'error': 'ranking generation failed — try again'}, 500
+        tiers, stripped_notes = normalize_college_major_ranking(
+            parsed, catalog_rows, facts)
+        ranked_count = sum(len(v) for v in tiers.values())
+        note = None
+        if ranked_count == 0:
+            # A real generation that found no fitting majors — billed (the LLM
+            # ran), distinct from the unbilled KB miss above.
+            note = ('based on your record, none of this school\'s majors stood out '
+                    'as a fit right now — sharpen your profile and try again')
+
+        ranking_doc = {
+            'university_id': university_id,
+            'tiers': tiers,
+            'data_notes': list(facts.get('data_notes') or []) + stripped_notes,
+            'note': note,
+            'kb_data_year': facts.get('data_year'),
+            'verification_status': facts.get('verification_status'),
+            'richness_tier': facts.get('richness_tier'),
+            'intended_majors_at_generation': _intended_majors(profile),
+            'generated_at': datetime.utcnow().isoformat(),
+            'model': MODEL,
+            'basis': 'inference',
+        }
+        prior = db.get_college_major_chances(user_email, university_id)
+        if prior:
+            history_key = str(prior.get('kb_data_year') or 'pre-versioning')
+            db.archive_college_major_chances(user_email, university_id, prior, history_key)
+        if not db.save_college_major_chances(user_email, university_id, ranking_doc):
+            return {'success': False,
+                    'error': 'ranking generated but could not be saved — try again'}, 500
+        return {'success': True, 'ranking': ranking_doc, 'gaps': []}, 200
+
+    return run_billed_generation(user_email, 'major_chances', _generate)
+
+
+def get_college_major_chances_payload(user_email: str, university_id: str) -> Tuple[Dict, int]:
+    """GET/POST /get-college-major-chances (free): {success, ranking|null, stale}.
+    stale = the saved ranking's kb_data_year is older than the KB doc's current
+    data_year (read cheaply off the action=majors envelope; a failed check
+    degrades to stale:false rather than blocking the read) — mirrors
+    get-major-strategy."""
+    db = get_db()
+    ranking = db.get_college_major_chances(user_email, university_id)
+    if not ranking:
+        return {'success': True, 'ranking': None, 'stale': False}, 200
+    stale = False
+    current_year = None
+    facts = fetch_university_majors(university_id, timeout=15)
+    if facts and facts.get('success'):
+        current_year = facts.get('data_year')
+        try:
+            if current_year is not None and ranking.get('kb_data_year') is not None:
+                stale = int(ranking['kb_data_year']) < int(current_year)
+        except (TypeError, ValueError):
+            stale = False
+    return {'success': True, 'ranking': ranking, 'stale': stale,
+            'current_kb_year': current_year}, 200
