@@ -70,6 +70,7 @@ from essay_copilot import (
     fetch_university_profile,
     generate_essay_outline
 )
+from fit_billing import run_compute_single_fit
 from fit_computation import calculate_fit_for_college
 from fit_staleness import get_kb_updates, mark_suppressed
 from email_service import send_signup_welcome_email
@@ -615,42 +616,51 @@ def profile_manager_v2_http_entry(request):
             data = request.get_json()
             user_email = data.get('user_email')
             university_id = data.get('university_id')
-            
+
             if not user_email or not university_id:
                 return add_cors_headers({'error': 'user_email and university_id required'}, 400)
-            
-            # Get student profile
-            profile = get_student_profile(user_email)
-            if not profile:
-                return add_cors_headers({'error': 'Profile not found'}, 404)
-            
-            # Fetch university profile
-            university_profile = fetch_university_profile(university_id)
-            if not university_profile:
-                return add_cors_headers({'error': 'University profile not found'}, 404)
 
-            # Resolve which major to compute for (#281): explicit request
-            # param → the school's saved major_choice → profile.intended_major.
-            list_item = get_db().get_college_list_item(user_email, university_id)
-            resolution = resolve_intended_major(profile, list_item,
-                                                explicit=data.get('intended_major'))
+            def _compute_and_save():
+                # Get student profile
+                profile = get_student_profile(user_email)
+                if not profile:
+                    return {'error': 'Profile not found'}, 404
 
-            # Compute fit
-            fit_analysis = calculate_fit_for_college(user_email, university_id, intended_major=resolution['major'])
-            if not fit_analysis:
-                return add_cors_headers({'success': False,
-                                         'error': 'Fit computation failed — try again'}, 500)
-            fit_analysis['intended_major_used'] = resolution['major'] or None
-            fit_analysis['intended_major_source'] = resolution['source']
+                # Fetch university profile
+                university_profile = fetch_university_profile(university_id)
+                if not university_profile:
+                    return {'error': 'University profile not found'}, 404
 
-            # Save fit analysis
-            save_fit_analysis(user_email, university_id, fit_analysis)
+                # Resolve which major to compute for (#281): explicit request
+                # param → the school's saved major_choice → profile.intended_major.
+                list_item = get_db().get_college_list_item(user_email, university_id)
+                resolution = resolve_intended_major(profile, list_item,
+                                                    explicit=data.get('intended_major'))
 
-            return add_cors_headers({
-                'success': True,
-                'fit_analysis': fit_analysis,
-                'university_id': university_id
-            })
+                # Compute fit
+                fit_analysis = calculate_fit_for_college(user_email, university_id, intended_major=resolution['major'])
+                if not fit_analysis:
+                    return {'success': False,
+                            'error': 'Fit computation failed — try again'}, 500
+                fit_analysis['intended_major_used'] = resolution['major'] or None
+                fit_analysis['intended_major_source'] = resolution['source']
+
+                # Save fit analysis
+                save_result = save_fit_analysis(user_email, university_id, fit_analysis)
+                if not save_result.get('success'):
+                    # An unsaved fit isn't delivered value (the app re-reads the
+                    # fit store after computing) — fail without charging.
+                    return {'success': False,
+                            'error': 'Fit computed but could not be saved — try again'}, 500
+
+                return {'success': True,
+                        'fit_analysis': fit_analysis,
+                        'university_id': university_id}, 200
+
+            # Billing sequence (#285): cache-unless-force → 402 gate →
+            # compute → deduct exactly once after success.
+            payload, status = run_compute_single_fit(data, _compute_and_save)
+            return add_cors_headers(payload, status)
         
         # --- CREDITS ---
         elif resource_type == 'get-credits' and request.method in ['GET', 'POST']:

@@ -17,7 +17,7 @@ import {
     PhotoIcon
 } from '@heroicons/react/24/outline';
 import { useAuth } from '../context/AuthContext';
-import { checkCredits, deductCredit } from '../services/api';
+import { checkCredits } from '../services/api';
 import FitInfographicView from './FitInfographicView';
 import FitUpdateBanner from './FitUpdateBanner';
 import MajorStrategyPanel from './majors/MajorStrategyPanel';

@@ -90,7 +90,18 @@ def _post(url, body, timeout=30, email=None):
         r.raise_for_status()
         return r.json()
     except requests.RequestException as e:
-        raise StratiaError(f"request to {url} failed: {e}") from e
+        err = StratiaError(f"request to {url} failed: {e}")
+        # Attach the HTTP status + parsed body (when available) so callers can
+        # react to specific statuses — recompute_fit reads 402
+        # insufficient_credits (#285) — without changing the exception type
+        # every other caller already catches.
+        resp = getattr(e, "response", None)
+        err.status_code = getattr(resp, "status_code", None)
+        try:
+            err.body = resp.json() if resp is not None else None
+        except Exception:
+            err.body = None
+        raise err from e
 
 
 def _pm(path):
@@ -428,10 +439,24 @@ def remove_college(email, university_id, name=""):
 
 def recompute_fit(email, university_id, major=None):
     # The recompute calls the LLM; allow more time (Claude.ai tool limit is 300s).
-    body = {"user_email": email, "university_id": university_id}
+    # force_recompute is explicit: this tool's purpose IS recomputation, and the
+    # server (#285) returns the cached fit for an explicit false. A real compute
+    # costs 1 credit, deducted server-side on success.
+    body = {"user_email": email, "university_id": university_id,
+            "force_recompute": True}
     if isinstance(major, str) and major.strip():
         body["intended_major"] = major.strip()
-    data = _post(_pm("compute-single-fit"), body, timeout=120, email=email)
+    try:
+        data = _post(_pm("compute-single-fit"), body, timeout=120, email=email)
+    except StratiaError as e:
+        if getattr(e, "status_code", None) == 402:
+            remaining = (getattr(e, "body", None) or {}).get("credits_remaining", 0)
+            raise StratiaError(
+                f"insufficient credits — the student has {remaining} remaining; "
+                "recompute_fit costs 1. Use get_credits for the balance and "
+                "check_fit_recomputation to see which recomputes are worth it."
+            ) from e
+        raise
     if not data.get("success"):
         raise StratiaError(data.get("error") or "recompute_fit failed")
     fit = data.get("fit_analysis") or {}

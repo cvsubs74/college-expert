@@ -774,6 +774,9 @@ def _build_fallback_fit(acceptance_rate, selectivity_tier, university_data):
     placeholder = "Detailed analysis unavailable — please retry."
 
     return {
+        # Billing marker (#285/#296 review F2): a fallback is not a real
+        # analysis — fit_billing must not charge for it or serve it from cache.
+        "is_fallback": True,
         "fit_category": fallback_category,
         "match_percentage": _FALLBACK_MATCH_PERCENT[fallback_category],
         "explanation": (

@@ -18,7 +18,9 @@ class _Resp:
     def raise_for_status(self):
         if self.status_code >= 400:
             import requests
-            raise requests.HTTPError(f"{self.status_code}")
+            # Real requests attaches the response — _post reads status/body
+            # off it to enrich StratiaError (#285).
+            raise requests.HTTPError(f"{self.status_code}", response=self)
 
 
 @pytest.fixture
@@ -31,7 +33,7 @@ def captured(monkeypatch):
 
     def fake_post(url, json=None, timeout=None, headers=None):
         calls["post"] = {"url": url, "json": json, "timeout": timeout, "headers": headers}
-        return _Resp(calls["_post_payload"])
+        return _Resp(calls["_post_payload"], calls.get("_post_status", 200))
 
     monkeypatch.setattr(sc.requests, "get", fake_get)
     monkeypatch.setattr(sc.requests, "post", fake_post)
@@ -100,6 +102,39 @@ def test_recompute_fit_uses_longer_timeout(captured):
     out = sc.recompute_fit("a@b.com", "duke_university")
     assert out["match_percentage"] == 30
     assert captured["post"]["timeout"] == 120
+
+
+def test_recompute_fit_sends_force_recompute_true(captured):
+    # The tool's purpose is recomputation — an explicit false would get the
+    # cached fit under the server's #285 semantics, so it must always be true.
+    captured["_post_payload"] = {"success": True, "fit_analysis": {"fit_category": "REACH", "match_percentage": 30}}
+    sc.recompute_fit("a@b.com", "duke_university")
+    assert captured["post"]["json"]["force_recompute"] is True
+
+
+def test_recompute_fit_402_surfaces_clear_credit_error(captured):
+    captured["_post_payload"] = {"success": False, "error": "insufficient_credits",
+                                 "credits_remaining": 2}
+    captured["_post_status"] = 402
+    with pytest.raises(sc.StratiaError) as e:
+        sc.recompute_fit("a@b.com", "duke_university")
+    msg = str(e.value)
+    assert "insufficient credits" in msg
+    assert "2 remaining" in msg
+    assert "costs 1" in msg
+    # Budgeting conventions are pointed to by name.
+    assert "get_credits" in msg and "check_fit_recomputation" in msg
+
+
+def test_post_non_402_http_error_still_raises_generic_stratia_error(captured):
+    # _post's #285 enrichment (status_code/body on StratiaError) must not
+    # change what other callers see on unrelated HTTP failures.
+    captured["_post_payload"] = {"error": "boom"}
+    captured["_post_status"] = 500
+    with pytest.raises(sc.StratiaError) as e:
+        sc.add_college("a@b.com", "x", "X")
+    assert "failed" in str(e.value)
+    assert getattr(e.value, "status_code", None) == 500
 
 
 # --- comprehensiveness: prune helper + full passthrough --------------------

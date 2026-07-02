@@ -361,7 +361,10 @@ def recompute_fit(university_id: str, major: str | None = None) -> dict:
     the latest knowledge-base data. Pass `major` to compute the fit for a
     specific major at this school; otherwise the saved per-school
     major_choice applies, then the profile's intended_major. The fit doc
-    records intended_major_used. Note: this consumes 1 Stratia credit."""
+    records intended_major_used. Costs 1 Stratia credit, deducted by the
+    server on success (fails clearly when the balance is 0). Budget before
+    spending: get_credits shows the balance; check_fit_recomputation shows
+    which fits are stale and worth recomputing."""
     email = _email()
     # Tighter limit — this spends a credit and calls the LLM.
     _rate_guard(email, "recompute", settings.RATE_RECOMPUTE_PER_HOUR, 3600)

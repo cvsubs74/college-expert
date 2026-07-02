@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
-import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, checkCredits, deductCredit, checkFitRecomputationNeeded, getOutcomeCalibration, setApplicationDecision, setMajorChoice } from '../services/api';
+import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, checkCredits, checkFitRecomputationNeeded, getOutcomeCalibration, setApplicationDecision, setMajorChoice } from '../services/api';
 import { useToast } from '../components/Toast';
 import KbRefreshBanner from '../components/KbRefreshBanner';
 import KbRefreshReviewModal from '../components/KbRefreshReviewModal';
@@ -285,11 +285,18 @@ const StratiaLaunchpad = () => {
 
     // Recompute one fit from the KB-refresh review modal (design §3b/c).
     // The replaced analysis is archived server-side before overwrite.
+    // force=true: this is an explicit recompute — the server charges 1 credit
+    // and answers 402 when the balance is out (#285).
     const handleKbUpdateFit = async (universityId) => {
-        const result = await computeSingleFit(currentUser.email, universityId);
+        const result = await computeSingleFit(currentUser.email, universityId, true);
+        if (result?.insufficientCredits) {
+            setShowCreditsModal(true);
+            throw new Error('Not enough credits to update this fit');
+        }
         if (!result?.success) {
             throw new Error(result?.error || 'Fit update failed');
         }
+        await fetchCredits(); // refresh balance after the server-side charge
         const fresh = result.fit_analysis || {};
         setCollegeList(prev => prev.map(college =>
             college.university_id === universityId
@@ -301,12 +308,18 @@ const StratiaLaunchpad = () => {
 
     // "Update Fit" on a card: recompute against the current KB cycle, then open
     // the refreshed analysis. The replaced analysis is archived server-side.
+    // force=true: explicit recompute — server charges 1 credit, 402 when out (#285).
     const handleUpdateFit = async (university) => {
         const universityId = university.university_id;
-        const result = await computeSingleFit(currentUser.email, universityId);
+        const result = await computeSingleFit(currentUser.email, universityId, true);
+        if (result?.insufficientCredits) {
+            setShowCreditsModal(true);
+            throw new Error('Not enough credits to update this fit');
+        }
         if (!result?.success) {
             throw new Error(result?.error || 'Fit update failed');
         }
+        await fetchCredits(); // refresh balance after the server-side charge
         const fresh = result.fit_analysis || {};
         const current = collegeList.find(c => c.university_id === universityId) || university;
         const refreshed = {
@@ -459,14 +472,8 @@ const StratiaLaunchpad = () => {
         });
 
         try {
-            // The server does not yet deduct for compute-single-fit (#285) —
-            // charge client-side like every other paid action on this page.
-            const deduction = await deductCredit(currentUser.email, 1, 'fit_analysis');
-            if (!deduction?.success) {
-                setAnalysisModal(prev => ({ ...prev, isOpen: false }));
-                setShowCreditsModal(true);
-                return;
-            }
+            // The server charges 1 credit for the compute and answers 402
+            // when the balance is out (#285) — no client-side deduct.
             const result = await computeSingleFit(currentUser.email, university.university_id, true, newMajor);
             if (result?.insufficientCredits) {
                 setAnalysisModal(prev => ({ ...prev, isOpen: false }));
@@ -580,29 +587,7 @@ const StratiaLaunchpad = () => {
         });
 
         try {
-            // Step 1: Deduct Credit
-            // Fit Analysis costs 1 credit
-            try {
-                const deduction = await deductCredit(currentUser.email, 1, 'fit_analysis');
-                if (!deduction.success) {
-                    setShowCreditsModal(true);
-                    setAnalysisModal(prev => ({ ...prev, isOpen: false }));
-                    setAddingSchoolId(null); // Reset loading state
-                    return;
-                }
-                await fetchCredits(); // Refresh global credits
-                console.log('[Discovery] Credit deducted:', deduction);
-            } catch (creditErr) {
-                console.error('[Discovery] Credit deduction failed:', creditErr);
-                // If 402, it would be caught here if API throws, but api.js handles it gracefully usually
-                // Safe to fallback to modal
-                setShowCreditsModal(true);
-                setAnalysisModal(prev => ({ ...prev, isOpen: false }));
-                setAddingSchoolId(null);
-                return;
-            }
-
-            // Step 2: Add to college list
+            // Step 1: Add to college list (free — the fit compute is the paid step)
             setAnalysisModal(prev => ({ ...prev, step: 'adding', progress: 20 }));
             const addResult = await updateCollegeList(currentUser.email, 'add', {
                 id: school.university_id,
@@ -610,9 +595,16 @@ const StratiaLaunchpad = () => {
             });
 
             if (addResult.success) {
-                // Step 3: Compute fit analysis
+                // Step 2: Compute fit analysis — the server charges 1 credit
+                // and answers 402 when the balance is out (#285).
                 setAnalysisModal(prev => ({ ...prev, step: 'fit', progress: 40 }));
-                await computeSingleFit(currentUser.email, school.university_id, false);
+                const fitResult = await computeSingleFit(currentUser.email, school.university_id, false);
+                if (fitResult?.insufficientCredits) {
+                    setShowCreditsModal(true);
+                    setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+                    return;
+                }
+                await fetchCredits(); // Refresh global credits after the server-side charge
 
                 // Step 3: Saving
                 setAnalysisModal(prev => ({ ...prev, step: 'saving', progress: 70 }));
