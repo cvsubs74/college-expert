@@ -1,6 +1,6 @@
 # DESIGN — Major Strategy: discovery + per-school application-major strategy
 
-- Status: phase 1 implemented (#281 server, #282 connector; #283 client in flight)
+- Status: phase 2 implemented (#284 — major map + per-school synthesis, server-side credits, kb_gaps telemetry); phase 1 shipped (#281/#282/#283)
 - Date: 2026-07-01
 - Epic: #280 · Related: #193 (collector asks → #287), #203/#252 (drift), #223 (auth), #285 (credit regression), #289 (normalizer bug)
 - Provenance: synthesized from a 3-design judge panel (student-journey / data-trust / agent-native lenses, scored by an engineer judge and an admissions-domain judge; data-trust won on both cards) plus the panel's shared blind spots.

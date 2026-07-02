@@ -23,6 +23,7 @@ import {
   deleteProfileChat
 } from '../services/api';
 import ProfileViewCard from '../components/ProfileViewCard';
+import MajorMapCard from '../components/majors/MajorMapCard';
 import ProfileBuilder from '../components/ProfileBuilder';
 import GuidedInterview from '../components/GuidedInterview';
 import ConfirmationModal from '../components/ConfirmationModal';
@@ -1166,6 +1167,12 @@ function Profile() {
                   {profileMarkdown || '# No Profile Data\n\nUpload a profile document or click "Refresh" to load your profile.'}
                 </ReactMarkdown>
               </div>
+            )}
+
+            {/* Major Map (#284): profile → career-theme clusters. Readiness-aware
+                empty state; server-billed generation (1 credit). */}
+            {!loadingProfile && currentUser?.email && (
+              <MajorMapCard userEmail={currentUser.email} profile={structuredProfile} />
             )}
           </div>
         )}

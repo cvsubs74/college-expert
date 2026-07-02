@@ -247,6 +247,21 @@ const UniversityCard = ({
                             </div>
                         )}
 
+                        {/* Impacted-major callout (#284) — deterministic, zero LLM.
+                            Rendered only when set-major-choice stamped door_flags
+                            with the KB's structural capped_door signal. */}
+                        {currentMajor && major_choice?.door_flags?.entry_risk === 'capped_door' && (
+                            <div
+                                className="mt-2 bg-amber-50 border border-amber-300 rounded-lg px-3 py-2 text-xs text-amber-900"
+                                role="note"
+                                data-testid="impacted-major-callout"
+                            >
+                                <span className="font-semibold">Heads up:</span> {currentMajor} at {university_name || 'this school'} is
+                                direct-admit only — if you're not admitted to it directly, you can't
+                                switch in later. Your essays must make the case for this major.
+                            </div>
+                        )}
+
                         {/* Explicit recompute offer — the saved fit was computed for a
                             different major. Never recompute silently; 1 credit. */}
                         {fitMajorMismatch && (

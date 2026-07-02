@@ -72,6 +72,13 @@ from essay_copilot import (
 )
 from fit_billing import run_compute_single_fit
 from fit_computation import calculate_fit_for_college
+from major_llm import (
+    run_generate_major_map,
+    get_major_map_payload,
+    run_generate_major_strategy,
+    get_major_strategy_payload,
+    stamp_door_flags,
+)
 from fit_staleness import get_kb_updates, mark_suppressed
 from email_service import send_signup_welcome_email
 
@@ -417,7 +424,55 @@ def profile_manager_v2_http_entry(request):
                 source=data.get('source'),
                 university_envelope=envelope,
             )
+            # Door-flag enrichment (#284): one extra KB call stamps
+            # {entry_path, entry_risk} for the Launchpad callout. Best-effort —
+            # a KB failure never blocks the save the student asked for.
+            if result.get('success'):
+                flags = stamp_door_flags(user_email, university_id,
+                                         result.get('major_choice') or {})
+                if flags:
+                    result['major_choice']['door_flags'] = flags
             return add_cors_headers(result, 200 if result.get('success') else 400)
+
+        # --- MAJOR MAP (billed LLM artifact, #284) ---
+        elif resource_type == 'generate-major-map' and request.method == 'POST':
+            data = request.get_json() or {}
+            if not data.get('user_email'):
+                return add_cors_headers({'error': 'user_email required'}, 400)
+            payload, status = run_generate_major_map(data)
+            return add_cors_headers(payload, status)
+
+        elif resource_type == 'get-major-map' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+                user_email = data.get('user_email')
+            else:
+                user_email = request.args.get('user_email')
+            if not user_email:
+                return add_cors_headers({'error': 'user_email required'}, 400)
+            payload, status = get_major_map_payload(user_email)
+            return add_cors_headers(payload, status)
+
+        # --- PER-SCHOOL MAJOR STRATEGY (billed LLM artifact, #284) ---
+        elif resource_type == 'generate-major-strategy' and request.method == 'POST':
+            data = request.get_json() or {}
+            if not data.get('user_email') or not data.get('university_id'):
+                return add_cors_headers({'error': 'user_email and university_id required'}, 400)
+            payload, status = run_generate_major_strategy(data)
+            return add_cors_headers(payload, status)
+
+        elif resource_type == 'get-major-strategy' and request.method in ['GET', 'POST']:
+            if request.method == 'POST':
+                data = request.get_json() or {}
+                user_email = data.get('user_email')
+                university_id = data.get('university_id')
+            else:
+                user_email = request.args.get('user_email')
+                university_id = request.args.get('university_id')
+            if not user_email or not university_id:
+                return add_cors_headers({'error': 'user_email and university_id required'}, 400)
+            payload, status = get_major_strategy_payload(user_email, university_id)
+            return add_cors_headers(payload, status)
 
         # --- COLLEGE LIST MANAGEMENT ---
         elif resource_type == 'add-to-list' and request.method == 'POST':

@@ -470,8 +470,108 @@ class FirestoreDB:
             logger.error(f"[Firestore] Error reading fit history: {e}")
             return []
     
+    # ==================== MAJOR MAP & MAJOR STRATEGIES (#284) ====================
+    # Billed LLM artifacts. Both follow the archive-before-overwrite rule
+    # (mirrors archive_college_fit): a regeneration never destroys what the
+    # student previously saw and paid for.
+
+    def get_major_map(self, user_id: str) -> Optional[Dict]:
+        """The student's current Major Map (users/{id}/major_map/current)."""
+        try:
+            doc = (self.db.collection('users').document(user_id)
+                   .collection('major_map').document('current').get())
+            return doc.to_dict() if doc.exists else None
+        except Exception as e:
+            logger.error(f"[Firestore] Error getting major map: {e}")
+            return None
+
+    def save_major_map(self, user_id: str, map_data: Dict) -> bool:
+        """Replace the current Major Map (full set — a regenerated map is a
+        whole new artifact; merging would leak stale clusters)."""
+        try:
+            (self.db.collection('users').document(user_id)
+             .collection('major_map').document('current').set(map_data))
+            logger.info(f"[Firestore] Saved major map for {user_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error saving major map: {e}")
+            return False
+
+    def archive_major_map(self, user_id: str, map_data: Dict) -> bool:
+        """Archive a prior map under users/{id}/major_map_history/{generated_at}.
+        Best-effort: a failed archive logs but never blocks the new save."""
+        try:
+            key = str(map_data.get('generated_at') or 'unknown')
+            (self.db.collection('users').document(user_id)
+             .collection('major_map_history').document(key).set(map_data))
+            logger.info(f"[Firestore] Archived major map {key} for {user_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error archiving major map: {e}")
+            return False
+
+    def get_major_strategy(self, user_id: str, university_id: str) -> Optional[Dict]:
+        """The student's saved per-school major strategy."""
+        try:
+            doc = (self.db.collection('users').document(user_id)
+                   .collection('major_strategies').document(university_id).get())
+            return doc.to_dict() if doc.exists else None
+        except Exception as e:
+            logger.error(f"[Firestore] Error getting major strategy: {e}")
+            return None
+
+    def save_major_strategy(self, user_id: str, university_id: str, strategy: Dict) -> bool:
+        """Replace the saved strategy for one school (full set, same rationale
+        as save_major_map)."""
+        try:
+            (self.db.collection('users').document(user_id)
+             .collection('major_strategies').document(university_id).set(strategy))
+            logger.info(f"[Firestore] Saved major strategy {university_id} for {user_id}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error saving major strategy: {e}")
+            return False
+
+    def archive_major_strategy(self, user_id: str, university_id: str,
+                               strategy: Dict, history_key: str) -> bool:
+        """Archive a prior strategy under
+        users/{id}/major_strategies/{university_id}/history/{kb_data_year}."""
+        try:
+            (self.db.collection('users').document(user_id)
+             .collection('major_strategies').document(university_id)
+             .collection('history').document(history_key).set(strategy))
+            logger.info(f"[Firestore] Archived major strategy {university_id}/{history_key}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error archiving major strategy: {e}")
+            return False
+
+    def increment_kb_gap(self, university_id: str, major_names: List[str]) -> bool:
+        """Demand telemetry for KB misses (ROOT collection kb_gaps/{id}) — the
+        priority queue for collection (#193). Atomic nested Increments per
+        major name; no user identity is ever written here (PII-free, like
+        workflow_stats)."""
+        try:
+            now = datetime.utcnow().isoformat()
+            majors = {
+                str(name): {'requests': firestore.Increment(1), 'last_requested': now}
+                for name in (major_names or []) if str(name).strip()
+            }
+            if not majors:
+                return False
+            self.db.collection('kb_gaps').document(university_id).set({
+                'university_id': university_id,
+                'majors': majors,
+                'updated_at': now,
+            }, merge=True)
+            logger.info(f"[Firestore] kb_gaps incremented for {university_id}: {list(majors)}")
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error incrementing kb_gap: {e}")
+            return False
+
     # ==================== CHAT CONVERSATIONS ====================
-    
+
     def save_conversation(self, user_id: str, conversation_id: str, conversation_data: Dict) -> bool:
         """Save chat conversation."""
         try:

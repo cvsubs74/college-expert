@@ -437,6 +437,17 @@ def remove_college(email, university_id, name=""):
     return {"removed": university_id}
 
 
+def _insufficient_credits(e, action, tip=""):
+    """Shared 402 → clear budget-error shape (#285/#296): every billed tool
+    (recompute_fit, generate_major_map, generate_major_strategy) surfaces the
+    same honest message with the remaining balance."""
+    remaining = (getattr(e, "body", None) or {}).get("credits_remaining", 0)
+    return StratiaError(
+        f"insufficient credits — the student has {remaining} remaining; "
+        f"{action} costs 1." + (f" {tip}" if tip else "")
+    )
+
+
 def recompute_fit(email, university_id, major=None):
     # The recompute calls the LLM; allow more time (Claude.ai tool limit is 300s).
     # force_recompute is explicit: this tool's purpose IS recomputation, and the
@@ -450,12 +461,10 @@ def recompute_fit(email, university_id, major=None):
         data = _post(_pm("compute-single-fit"), body, timeout=120, email=email)
     except StratiaError as e:
         if getattr(e, "status_code", None) == 402:
-            remaining = (getattr(e, "body", None) or {}).get("credits_remaining", 0)
-            raise StratiaError(
-                f"insufficient credits — the student has {remaining} remaining; "
-                "recompute_fit costs 1. Use get_credits for the balance and "
-                "check_fit_recomputation to see which recomputes are worth it."
-            ) from e
+            raise _insufficient_credits(
+                e, "recompute_fit",
+                "Use get_credits for the balance and check_fit_recomputation "
+                "to see which recomputes are worth it.") from e
         raise
     if not data.get("success"):
         raise StratiaError(data.get("error") or "recompute_fit failed")
@@ -496,6 +505,116 @@ def set_major_choice(email, university_id, primary_major, backup_major=None,
         "near_misses": data.get("near_misses") or [],
         "note": data.get("note"),
     }, list_caps={"near_misses": 5})
+
+
+# ----------------------------------------------------------------------------
+# Major Map + per-school Major Strategy (#284) — billed LLM artifacts
+# ----------------------------------------------------------------------------
+
+_MAP_LIST_CAPS = {"clusters": 8, "majors": 12, "evidence": 10,
+                  "questions_to_explore": 10, "stale_reasons": 8}
+
+
+def get_major_map(email):
+    """The student's saved Major Map + fingerprint staleness. Free."""
+    data = _get(_pm("get-major-map"), {"user_email": email})
+    return _prune({
+        "map": data.get("map"),
+        "stale": bool(data.get("stale")),
+        "stale_reasons": data.get("stale_reasons") or [],
+    }, list_caps=_MAP_LIST_CAPS)
+
+
+def generate_major_map(email, force=False):
+    """Generate (or refresh) the Major Map — 1 credit, deducted server-side on
+    success. 422 profile_incomplete and 402 insufficient_credits surface as
+    clear, unbilled errors; an unchanged profile returns the cached map free."""
+    body = {"user_email": email, "force": bool(force)}
+    try:
+        data = _post(_pm("generate-major-map"), body, timeout=120, email=email)
+    except StratiaError as e:
+        status = getattr(e, "status_code", None)
+        if status == 402:
+            raise _insufficient_credits(
+                e, "generate_major_map",
+                "Use get_credits for the balance and confirm with the student "
+                "before spending.") from e
+        if status == 422:
+            missing = (getattr(e, "body", None) or {}).get("missing") or []
+            raise StratiaError(
+                "the student's profile isn't complete enough for a Major Map — "
+                f"missing: {', '.join(missing) or 'profile data'}. Add courses/"
+                "activities/GPA via update_student_profile first. Nothing was charged."
+            ) from e
+        raise
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "generate_major_map failed")
+    return _prune({
+        "map": data.get("map"),
+        "from_cache": bool(data.get("from_cache")),
+        "credits_remaining": data.get("credits_remaining"),
+    }, list_caps=_MAP_LIST_CAPS)
+
+
+def get_major_strategy(email, university_id):
+    """The student's saved per-school major strategy + KB-vintage staleness.
+    Free."""
+    data = _get(_pm("get-major-strategy"),
+                {"user_email": email, "university_id": university_id})
+    out = {
+        "university_id": university_id,
+        "strategy": data.get("strategy"),
+        "stale": bool(data.get("stale")),
+        "current_kb_year": data.get("current_kb_year"),
+    }
+    out = _prune(out, list_caps={"matched": 8, "related": 8, "gaps": 8,
+                                 "data_notes": 12, "what_to_verify_yourself": 10},
+                 text_caps={"extract": 12000})
+    return _cap_size(out, droppable=())
+
+
+def generate_major_strategy(email, university_id, majors=None):
+    """Generate the app-persisted major strategy for one school — 1 credit on
+    success. A KB miss returns {strategy: null, gaps} UNCHARGED (the gap is
+    logged for collection) — relay that honestly, never fill it in."""
+    body = {"user_email": email, "university_id": university_id}
+    if majors:
+        body["majors"] = [str(m) for m in majors][:4]
+    try:
+        data = _post(_pm("generate-major-strategy"), body, timeout=120, email=email)
+    except StratiaError as e:
+        if getattr(e, "status_code", None) == 402:
+            raise _insufficient_credits(
+                e, "generate_major_strategy",
+                "Use get_credits for the balance and confirm with the student "
+                "before spending. (A KB miss would have been free — this school "
+                "HAS data for these majors.)") from e
+        raise
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "generate_major_strategy failed")
+    if data.get("strategy") is None:
+        # Never-charged miss: make the honesty explicit so agents relay it.
+        return {
+            "university_id": university_id,
+            "strategy": None,
+            "gaps": data.get("gaps") or [],
+            "charged": False,
+            "note": data.get("note") or (
+                "the knowledge base has no entry-path data for these majors at "
+                "this school — the student was NOT charged, and the gap was "
+                "logged for collection. Do not invent a strategy to fill it."),
+        }
+    out = {
+        "university_id": university_id,
+        "strategy": data.get("strategy"),
+        "gaps": data.get("gaps") or [],
+        "charged": True,
+        "credits_remaining": data.get("credits_remaining"),
+    }
+    out = _prune(out, list_caps={"matched": 8, "related": 8, "gaps": 8,
+                                 "data_notes": 12, "what_to_verify_yourself": 10},
+                 text_caps={"extract": 12000})
+    return _cap_size(out, droppable=())
 
 
 def update_profile_field(email, field_path, value, operation="set"):
