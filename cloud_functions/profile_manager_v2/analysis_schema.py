@@ -23,6 +23,11 @@ from typing import Dict, List, Tuple
 FIT_CATEGORIES = ('SAFETY', 'TARGET', 'REACH', 'SUPER_REACH')
 CHANCES_TIERS = ('strong', 'possible', 'reach', 'long_shot')
 
+# No real school offers anywhere near this many majors; a longer list is an agent
+# sending junk (each entry drives a KB normalize + catalog match downstream), so
+# reject it at the shape gate rather than doing the work (#314 review: cap size).
+_MAX_MAJORS = 200
+
 
 FIT_SCHEMA = {
     'kind': 'fit',
@@ -162,6 +167,10 @@ def _validate_major_chances(payload: Dict, errors: List[str]) -> None:
     majors = payload.get('majors')
     if not isinstance(majors, list) or not majors:
         errors.append('majors is required (a non-empty list of {name, tier, rationale})')
+        return
+    if len(majors) > _MAX_MAJORS:
+        errors.append(f'majors has {len(majors)} entries (max {_MAX_MAJORS}) — '
+                      'no school offers this many; send only the majors that fit the student')
         return
     for i, m in enumerate(majors):
         if not isinstance(m, dict):

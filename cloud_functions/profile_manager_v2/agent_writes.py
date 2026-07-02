@@ -45,6 +45,20 @@ from major_llm import (
 logger = logging.getLogger(__name__)
 
 
+# The ONLY fit keys taken from the agent — the counselor-judgment content the
+# post-processor then trust-clamps. Everything else (identity, logo, selectivity
+# tier, acceptance_rate, KB provenance, match_score, timestamps) is server-owned
+# and rebuilt below, so an agent can't inject extra keys (e.g. a tracking
+# logo_url render sink, or a fake `verified`/`kb_data_year`) into the saved doc
+# (#314 review F: no extra-field passthrough).
+_ALLOWED_FIT_CONTENT_FIELDS = frozenset({
+    'fit_category', 'match_percentage', 'explanation', 'factors', 'gap_analysis',
+    'recommendations', 'test_strategy', 'essay_angles', 'application_timeline',
+    'scholarship_matches', 'major_strategy', 'demonstrated_interest_tips',
+    'red_flags_to_avoid',
+})
+
+
 def _normalize_source(source: Optional[str]) -> str:
     """Honest, bounded provenance label. The connector passes claude/chatgpt/etc.
     from the authenticated client's OAuth registration; a missing/odd value falls
@@ -53,23 +67,12 @@ def _normalize_source(source: Optional[str]) -> str:
     return s[:32] if s else 'agent'
 
 
-def _authoritative_acceptance_rate(university_data: Optional[Dict],
-                                   fit_analysis: Dict):
-    """The acceptance rate the selectivity floor/ceiling is enforced against —
-    the KB's number wins so an agent cannot dodge the floor by sending a fake
-    rate. Falls back to the agent's only when the KB doc is unavailable."""
-    rate = _acceptance_rate(university_data) if university_data else None
-    if rate is None:
-        rate = (fit_analysis or {}).get('acceptance_rate')
-    return rate
-
-
 def run_save_external_fit(user_email: str, university_id: str,
                           fit_analysis: Dict, source: Optional[str]) -> Tuple[Dict, int]:
     """POST /save-external-fit — validate shape, RE-APPLY the deterministic fit
     post-processing (selectivity floor/ceiling, match% band, factor bounds,
-    don't-submit-when-no-scores), stamp source/basis/KB provenance, archive the
-    prior fit, and save. FREE (0 credits)."""
+    don't-submit-when-no-scores), stamp source/basis/identity/KB provenance from
+    the KB (never the agent), archive the prior fit, and save. FREE (0 credits)."""
     ok, errors = validate_against('fit', fit_analysis)
     if not ok:
         return {'success': False, 'error': 'invalid fit_analysis', 'field_errors': errors}, 400
@@ -77,25 +80,42 @@ def run_save_external_fit(user_email: str, university_id: str,
     db = get_db()
     profile = db.get_profile(user_email) or {}
     university_data = fetch_university_profile(university_id)
+    # Require the KB doc: the selectivity floor is enforced against the KB
+    # acceptance rate, so a school missing from the KB is a floor-dodge window
+    # (#314 review F). Symmetric with the in-app compute-single-fit (404s on a
+    # missing university) and with the chances save path.
+    if not university_data:
+        return {'success': False,
+                'error': f'{university_id} is not in the knowledge base — a fit '
+                         'cannot be trust-validated for a school we do not have'}, 400
 
-    fit = dict(fit_analysis)
+    # Rebuild from the content allow-list ONLY — agent junk keys are dropped.
+    fit = {k: fit_analysis[k] for k in _ALLOWED_FIT_CONTENT_FIELDS if k in fit_analysis}
     # Trust re-application: the same deterministic post-processor the in-app LLM
     # path runs — an inflated fit_category for a <8% school is floored here.
-    acceptance_rate = _authoritative_acceptance_rate(university_data, fit)
+    # acceptance_rate comes ONLY from the KB (never the agent), so the floor
+    # cannot be dodged with a fake rate.
+    acceptance_rate = _acceptance_rate(university_data)
     post_process_fit(fit, acceptance_rate, profile)
 
     # Server-owned stamps (the agent cannot forge these):
     fit['source'] = _normalize_source(source)
     fit['basis'] = 'inference'
+    fit['university_id'] = university_id
     if acceptance_rate is not None:
         fit['acceptance_rate'] = acceptance_rate
-    if university_data:
-        fit.update(build_kb_provenance(university_data))  # kb_data_year etc. from the KB
-    else:
-        logger.warning(
-            f"[AGENT_WRITE] KB profile unavailable for {university_id} — fit "
-            f"floored on the agent-supplied acceptance rate; no KB provenance")
-    fit.setdefault('calculated_at', datetime.utcnow().isoformat())
+    # Identity + logo from the KB, never the agent (logo_url is a live
+    # background-image render sink — #314 review F).
+    if university_data.get('official_name'):
+        fit['university_name'] = university_data['official_name']
+    if university_data.get('location') is not None:
+        fit['location'] = university_data['location']
+    logo = (university_data.get('logo_url')
+            or (university_data.get('profile') or {}).get('logo_url'))
+    if logo:
+        fit['logo_url'] = logo
+    fit.update(build_kb_provenance(university_data))  # kb_data_year etc. from the KB
+    fit['calculated_at'] = datetime.utcnow().isoformat()
 
     result = save_fit_analysis(user_email, university_id, fit)  # archives prior
     if not result.get('success'):

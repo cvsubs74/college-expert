@@ -88,6 +88,13 @@ class TestValidateMajorChances:
             {'tier': 'reach'}]})
         assert ok is False and any('name' in e for e in errors)
 
+    def test_oversized_majors_list_is_rejected(self):
+        # No school offers 300 majors — reject at the shape gate before doing the
+        # per-major KB normalize + catalog match (#314 review: cap size).
+        big = [{'name': f'Major {i}', 'tier': 'reach'} for i in range(300)]
+        ok, errors = validate_against('major_chances', {'majors': big})
+        assert ok is False and any('max' in e for e in errors)
+
 
 def test_unknown_kind_is_invalid():
     ok, errors = validate_against('bogus', {})

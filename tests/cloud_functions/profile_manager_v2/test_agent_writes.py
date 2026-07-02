@@ -169,6 +169,59 @@ class TestSaveExternalFit:
             profile={'grade': '12'})
         assert saved['fit']['test_strategy']['recommendation'] == "Don't Submit"
 
+    def test_injected_extra_fields_are_dropped_or_overridden(self):
+        # An agent stuffs the payload with keys it shouldn't control: a render-sink
+        # logo_url, a fake verified flag, a fake KB year, a spoofed source/basis,
+        # and a mismatched university_id. All must be dropped (not in the content
+        # allow-list) or overridden server-side (#314 review F: no passthrough).
+        payload, status, saved = _run_fit(
+            {'fit_category': 'REACH', 'match_percentage': 45, 'explanation': 'x',
+             'logo_url': 'https://evil.example/track.gif',
+             'verified': True, 'kb_data_year': 1999, 'kb_verified': True,
+             'source': 'stratia', 'basis': 'kb_verified',
+             'university_id': 'not-uw', 'acceptance_rate': 60,
+             'selectivity_tier': 'accessible', 'match_score': 99},
+            university_data={'acceptance_rate': 4, 'data_year': 2026},
+            source='claude')
+        fit = saved['fit']
+        assert 'verified' not in fit and 'kb_verified' not in fit  # junk dropped
+        assert fit.get('logo_url', '').find('evil') == -1          # no render-sink logo
+        assert fit['kb_data_year'] == 2026                         # from KB, not 1999
+        assert fit['source'] == 'claude'                           # connector-attributed
+        assert fit['basis'] == 'inference'                         # never kb_verified
+        assert fit['university_id'] == 'uw'                        # from the arg, not payload
+        assert fit['acceptance_rate'] == 4                         # KB, not agent's 60
+
+    def test_logo_url_comes_from_kb_not_the_agent(self):
+        payload, status, saved = _run_fit(
+            {'fit_category': 'REACH', 'match_percentage': 45, 'explanation': 'x',
+             'logo_url': 'https://evil.example/x.gif'},
+            university_data={'acceptance_rate': 4, 'data_year': 2026,
+                             'official_name': 'UW', 'logo_url': 'https://cdn/uw.png'})
+        assert saved['fit']['logo_url'] == 'https://cdn/uw.png'
+        assert saved['fit']['university_name'] == 'UW'
+
+    def test_kb_miss_is_400_and_agent_rate_never_used(self):
+        # School not in the KB → 400 (the selectivity floor can't be enforced), and
+        # the agent's acceptance_rate is NEVER used as a floor fallback (no save).
+        saved = {}
+
+        def fake_save(user_email, university_id, fit):
+            saved['fit'] = fit
+            return {'success': True}
+
+        with patch.object(aw, 'get_db') as p_db, \
+             patch.object(aw, 'fetch_university_profile', return_value=None), \
+             patch.object(aw, 'save_fit_analysis', side_effect=fake_save):
+            p_db.return_value.get_profile.return_value = {}
+            payload, status = aw.run_save_external_fit(
+                's@x.com', 'ghost-u',
+                {'fit_category': 'SAFETY', 'match_percentage': 95,
+                 'explanation': 'x', 'acceptance_rate': 90}, 'claude')
+        assert status == 400
+        assert payload['success'] is False
+        assert 'saved' not in saved  # never persisted
+
 
 # ---------------------------------------------------------------------------
 # POST /save-external-major-chances
