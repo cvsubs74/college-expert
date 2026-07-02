@@ -95,6 +95,12 @@ const MajorMapCard = ({ userEmail, profile = null }) => {
         setSavedNote(null);
         // Credit gate (reused fit UX): pre-check, then trust the server's 402.
         const credits = await checkCredits(userEmail, 1);
+        if (credits?.error === 'credits_read_failed' || credits?.retryable) {
+            // #298: a ledger read blip is our outage, not their balance —
+            // never show the upsell for it. The server 503s the same way.
+            setError('Credits are temporarily unavailable — please try again in a moment.');
+            return;
+        }
         if (credits?.has_credits !== true) {
             setCreditsRemaining(credits?.credits_remaining ?? 0);
             setShowUpgradeModal(true);

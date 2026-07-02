@@ -33,6 +33,15 @@ def run_billed_generation(user_email: str, reason: str,
             passes; the deduction fires only when it succeeds.
     """
     credit_check = check_credits_available(user_email, GENERATION_CREDIT_COST)
+    if credit_check.get('error') == 'credits_read_failed':
+        # #298: a ledger read blip is retryable infra trouble — a 402 here
+        # would show a paying user the upgrade modal for our outage.
+        logger.warning(f"[GEN_BILLING] Credit ledger unavailable for {user_email} — 503")
+        return {
+            'success': False,
+            'error': 'credits_unavailable_retry',
+            'retryable': True,
+        }, 503
     if not credit_check.get('has_credits'):
         logger.warning(f"[GEN_BILLING] Insufficient credits for {user_email} ({reason})")
         return {

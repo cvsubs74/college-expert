@@ -564,21 +564,43 @@ def build_labeled_extract(facts: Dict, matched: List[Dict], related: List[Dict])
 
 # --- numeric-claim validator (hard AC — deterministic, unit-tested) ----------
 
-_PCT_RE = re.compile(r'(\d+(?:\.\d+)?)\s*%')
+_PCT_RE = re.compile(r'(\d+(?:\.\d+)?)\s*(?:%|％|percent\b)', re.IGNORECASE)
 _GPA_RE = re.compile(r'\b(\d\.\d+)\b')
 _NUM_RE = re.compile(r'\d+(?:\.\d+)?')
 _SENTENCE_SPLIT_RE = re.compile(r'(?<=[.!?])\s+')
 
+# Extract lines whose numbers must NOT legitimize synthesis claims: the
+# metadata header (KB data year / richness tier — review F2: 'tier 2' was
+# whitelisting a fabricated '2%') and prose notes.
+_EXTRACT_METADATA_PREFIXES = ('SCHOOL:', 'KB data year:', '[NOTE]')
 
-def _allowed_numbers(extract_text: str) -> set:
-    return {str(float(n)) for n in _NUM_RE.findall(extract_text or '')}
+
+def _allowed_pools(extract_text: str) -> tuple:
+    """(pct_pool, gpa_pool) built from FACT lines only, type-separated:
+    a GPA bar in the extract must not legitimize a percent claim and vice
+    versa (review F2 — '3.5 GPA' was whitelisting a fabricated '3.5%')."""
+    pct_pool, gpa_pool = set(), set()
+    for line in (extract_text or '').splitlines():
+        stripped = line.strip()
+        if any(stripped.startswith(pfx) for pfx in _EXTRACT_METADATA_PREFIXES):
+            continue
+        nums = {str(float(n)) for n in _NUM_RE.findall(line)}
+        if 'gpa' in line.lower():
+            gpa_pool |= nums
+        else:
+            pct_pool |= nums
+    return pct_pool, gpa_pool
 
 
-def _sentence_numeric_tokens(sentence: str) -> List[str]:
-    """The tokens this validator polices: percent figures and decimal
-    GPA-like tokens. Plain integers ('top 3', 'two essays') never count."""
-    return [m.group(1) for m in _PCT_RE.finditer(sentence)] + \
-           [m.group(1) for m in _GPA_RE.finditer(sentence)]
+def _sentence_numeric_tokens(sentence: str) -> List[tuple]:
+    """The (kind, token) pairs this validator polices: percent figures and
+    decimal GPA-like tokens. Plain integers ('top 3', 'two essays') never
+    count. Percent matches are removed before GPA scanning so '4.9%' isn't
+    double-counted as a GPA."""
+    pct = [('pct', m.group(1)) for m in _PCT_RE.finditer(sentence)]
+    rest = _PCT_RE.sub(' ', sentence)
+    gpa = [('gpa', m.group(1)) for m in _GPA_RE.finditer(rest)]
+    return pct + gpa
 
 
 def validate_numeric_claims(synthesis: Dict, extract_text: str) -> Tuple[Dict, List[str]]:
@@ -587,14 +609,14 @@ def validate_numeric_claims(synthesis: Dict, extract_text: str) -> Tuple[Dict, L
     logged into the returned data notes. Deterministic — no LLM judgment.
 
     Returns (cleaned_synthesis, stripped_notes)."""
-    allowed = _allowed_numbers(extract_text)
+    pct_pool, gpa_pool = _allowed_pools(extract_text)
     notes = []
 
     def _clean_text(text: str) -> str:
         kept = []
         for sentence in _SENTENCE_SPLIT_RE.split(text):
-            bad = [t for t in _sentence_numeric_tokens(sentence)
-                   if str(float(t)) not in allowed]
+            bad = [t for kind, t in _sentence_numeric_tokens(sentence)
+                   if str(float(t)) not in (pct_pool if kind == 'pct' else gpa_pool)]
             if bad:
                 logger.warning("[MAJOR_LLM] stripped unverifiable numeric claim "
                                f"({', '.join(bad)}): {sentence.strip()!r}")
@@ -618,10 +640,14 @@ def validate_numeric_claims(synthesis: Dict, extract_text: str) -> Tuple[Dict, L
 
 # --- deterministic capped_door guard (belt-and-suspenders) --------------------
 
+# Only NEGATED/locking phrasings count as an existing warning — neutral
+# 'switch into X later' is the backdoor RECOMMENDATION this guard exists to
+# counter, and must not suppress it (review F3).
 _DOOR_LOCK_MARKERS = (
-    'switch in later', 'switch into', "can't switch", 'cannot switch',
-    'door locks', 'locks behind', 'direct admit only', 'direct-admit only',
-    'transfer in later', 'no internal transfer',
+    "can't switch", 'cannot switch', 'door locks', 'locks behind',
+    'direct admit only', 'direct-admit only', 'no internal transfer',
+    'not admitted directly', "can't transfer in", 'cannot transfer in',
+    'transfers are not permitted', 'no side door',
 )
 
 
@@ -739,6 +765,12 @@ def run_generate_major_strategy(data: Dict) -> Tuple[Dict, int]:
             if isinstance(v, str) and v.strip()][:8]
 
         synthesis, stripped_notes = validate_numeric_claims(synthesis, extract_text)
+        if not (synthesis.get('primary_call') or '').strip():
+            # The validator wiped the headline (everything in it was
+            # fabricated numbers) — that's a failed generation, and a failed
+            # generation is never billed (review F6).
+            return {'success': False,
+                    'error': 'strategy generation failed — try again'}, 500
         capped = [r['name'] for r in matched if r.get('entry_risk') == 'capped_door']
         synthesis, warning_appended = ensure_door_lock_warning(synthesis, capped)
 

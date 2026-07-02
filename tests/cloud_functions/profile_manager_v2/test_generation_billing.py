@@ -79,3 +79,21 @@ def test_deduct_failure_after_success_still_ships_the_artifact(caplog):
         payload, status, calls = _run(deduct_success=False)
     assert status == 200 and payload['success'] is True
     assert any('deduct_credit FAILED' in r.message for r in caplog.records)
+
+
+def test_ledger_read_failure_is_503_retryable_not_402():
+    """#298 parity (review F1): a credits_read_failed marker must never reach
+    the 402/upsell path — paying users see retry, not upgrade, on our outage."""
+    from unittest.mock import patch
+    import generation_billing as gb
+    with patch.object(gb, 'check_credits_available',
+                      return_value={'has_credits': False, 'credits_remaining': None,
+                                    'credits_needed': 1,
+                                    'error': 'credits_read_failed', 'retryable': True}), \
+         patch.object(gb, 'deduct_credit') as deduct:
+        calls = []
+        payload, status = gb.run_billed_generation(
+            'a@b.com', 'major_map', lambda: calls.append(1) or ({'success': True}, 200))
+    assert status == 503
+    assert payload['error'] == 'credits_unavailable_retry'
+    assert calls == [] and not deduct.called

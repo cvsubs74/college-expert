@@ -716,3 +716,71 @@ class TestDoorFlags:
              patch.object(major_llm, 'fetch_university_majors', return_value=None):
             assert major_llm.stamp_door_flags(
                 's@x.com', 'uw', {'primary': 'Computer Science'}) is None
+
+
+class TestValidatorHardening:
+    """Review F2/F4: pool separation + percent-form coverage."""
+
+    _EXTRACT = (
+        "SCHOOL: UIUC\n"
+        "KB data year: 2026; verification: legacy; richness tier 2\n"
+        "MAJOR: Computer Science (in Grainger)\n"
+        "  [REPORTED] acceptance_rate: 7.0 (unverified legacy data — hedge)\n"
+        "  [REPORTED] internal transfer GPA bar: 3.5\n"
+    )
+
+    def _clean(self, text):
+        import major_llm
+        synthesis, notes = major_llm.validate_numeric_claims(
+            {'primary_call': text}, self._EXTRACT)
+        return synthesis['primary_call'], notes
+
+    def test_metadata_numbers_do_not_legitimize_claims(self):
+        # 'richness tier 2' must not whitelist a fabricated '2%'.
+        out, notes = self._clean('Only 2% of transfer applicants make it in.')
+        assert out == '' and notes
+
+    def test_gpa_fact_does_not_legitimize_percent_claim(self):
+        out, notes = self._clean('Historically 3.5% of applicants are admitted.')
+        assert out == '' and notes
+
+    def test_percent_fact_supports_percent_claim(self):
+        out, notes = self._clean('The reported rate is about 7.0% — hedge it.')
+        assert '7.0%' in out and not notes
+
+    def test_gpa_fact_supports_gpa_claim(self):
+        out, notes = self._clean('Transferring in needs a 3.5 GPA (reported).')
+        assert '3.5' in out and not notes
+
+    def test_word_and_fullwidth_percent_forms_are_policed(self):
+        out, _ = self._clean('Roughly 4 percent of applicants get in.')
+        assert out == ''
+        out, _ = self._clean('Rate is 9％ here.')
+        assert out == ''
+
+    def test_fabricated_gpa_stripped(self):
+        out, notes = self._clean('You need a 2.0 GPA to transfer.')
+        assert out == '' and notes
+
+
+class TestDoorLockMarkerHardening:
+    """Review F3: a backdoor RECOMMENDATION must not suppress the warning."""
+
+    def test_neutral_switch_into_does_not_count_as_warning(self):
+        import major_llm
+        synthesis = {'primary_call': 'Apply to Pre-Sciences and switch into '
+                                     'Computer Science after year one — many do.'}
+        out, appended = major_llm.ensure_door_lock_warning(
+            dict(synthesis), ['Computer Science'])
+        assert appended is True                 # the deterministic warning fires
+        assert "can't switch" in out['primary_call'].lower() or \
+               'cannot switch' in out['primary_call'].lower() or \
+               'lock' in out['primary_call'].lower()
+
+    def test_genuine_negated_warning_suppresses_append(self):
+        import major_llm
+        synthesis = {'primary_call': 'CS is direct admit only here — if not '
+                                     'admitted directly you cannot switch in.'}
+        out, appended = major_llm.ensure_door_lock_warning(
+            dict(synthesis), ['Computer Science'])
+        assert appended is False
