@@ -1030,7 +1030,9 @@ export const getUniversitiesByCategory = async (category, excludeIds = [], limit
  */
 export const getUniversityMajors = async (universityId, { college, query } = {}) => {
   try {
-    const baseUrl = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-pfnwjfp26a-ue.a.run.app';
+    // Fallback pins the LIVE v2 service (the non-v2 fallback used elsewhere in
+    // this file predates the ES service going offline).
+    const baseUrl = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app';
     const params = { id: universityId, action: 'majors' };
     if (college) params.college = college;
     if (query) params.q = query;

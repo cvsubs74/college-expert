@@ -459,6 +459,14 @@ const StratiaLaunchpad = () => {
         });
 
         try {
+            // The server does not yet deduct for compute-single-fit (#285) —
+            // charge client-side like every other paid action on this page.
+            const deduction = await deductCredit(currentUser.email, 1, 'fit_analysis');
+            if (!deduction?.success) {
+                setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+                setShowCreditsModal(true);
+                return;
+            }
             const result = await computeSingleFit(currentUser.email, university.university_id, true, newMajor);
             if (result?.insufficientCredits) {
                 setAnalysisModal(prev => ({ ...prev, isOpen: false }));
