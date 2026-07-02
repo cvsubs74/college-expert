@@ -691,6 +691,42 @@ def list_university_versions(university_id: str) -> dict:
 
 
 # --- University Chat with Context Injection ---
+def _strip_null_values(row: dict) -> dict:
+    """Drop null-valued and empty-container keys from a history row so the
+    chat prompt stays lean. False survives — it's meaningful data here
+    (is_test_optional, vintage_estimated, verified)."""
+    return {k: v for k, v in row.items() if v is not None and v != [] and v != {}}
+
+
+def _build_chat_history_block(university_id: str) -> str:
+    """Compact two-axis year-history context for university_chat (#286).
+
+    Returns '' unless snapshots + reported_trends total at least 2 rows —
+    a single row is a stat, not a history. Rows are null-stripped compact
+    JSON. Callers must wrap this in try/except: a bad snapshot must never
+    break chat.
+    """
+    history = get_university_history(university_id)
+    if not history.get('success'):
+        return ""
+    snapshots = [_strip_null_values(r) for r in history.get('snapshots') or []]
+    trends = [_strip_null_values(r) for r in history.get('reported_trends') or []]
+    if len(snapshots) + len(trends) < 2:
+        return ""
+    compact = dict(separators=(',', ':'), default=str)
+    return (
+        "\n\nYEARLY ADMISSIONS HISTORY:\n"
+        "- Stratia KB snapshots (authoritative; keyed by application-cycle "
+        "year; rows marked vintage_estimated have a best-guess year): "
+        f"{json.dumps(snapshots, **compact)}\n"
+        "- School-reported trend series (UNVERIFIED, entering-class year axis "
+        "— attribute as 'the school reports', never present as verified): "
+        f"{json.dumps(trends, **compact)}\n"
+        "When the two disagree, prefer the KB snapshots. These use two "
+        "different year conventions — never merge them into one timeline."
+    )
+
+
 def university_chat(university_id: str, question: str, conversation_history: list = None) -> dict:
     """
     Chat about a specific university using its full profile as context.
@@ -733,11 +769,20 @@ def university_chat(university_id: str, question: str, conversation_history: lis
             }
         
         university_json = json.dumps(profile_data, indent=2, default=str)
-        
+
+        # Two-axis year history (#286): assembled once per request; a bad
+        # snapshot must never break chat, so any failure just drops the block.
+        history_block = ""
+        try:
+            history_block = _build_chat_history_block(university_id)
+        except Exception as history_err:
+            logger.warning(
+                f"Skipping history block in chat for {university_id}: {history_err}")
+
         system_prompt = f"""You are a helpful university advisor for {university_name}. Answer questions using ONLY the data provided below.
 
 UNIVERSITY DATA:
-{university_json}
+{university_json}{history_block}
 
 RULES:
 - Only answer based on the data above
