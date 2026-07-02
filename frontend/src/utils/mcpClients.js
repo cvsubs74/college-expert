@@ -68,6 +68,26 @@ export const ASK_PROMPTS = [
   { title: 'Tune up a stale fit and capture the strategy', prompt: "Check my saved fit analyses for any that are stale. If one is, recompute the one that matters most (yes, spend the credit) and summarize what changed; if none are stale, just tell me that. When you're done, ask me whether I'd like to save the updated strategy to my Research Notebook." },
 ];
 
+/**
+ * A launch prompt that asks the connected agent to RECOMPUTE this school's fit
+ * analysis and major-chances itself and SAVE them via the Stratia MCP tools —
+ * FREE (0 credits) vs the in-app 1-credit Generate (#310). The server
+ * re-derives KB-sourced fields and rejects fabricated numbers, so the saved
+ * analysis is trust-identical to an in-app one. Never exposes the save-schema
+ * in the UI — the agent fetches it via get_analysis_schema.
+ */
+export function agentUpdateAnalysisPrompt(universityName) {
+  const name = (universityName || '').trim() || 'this school';
+  return (
+    `Recompute my Stratia fit analysis AND major chances for ${name} and save `
+    + `them so I don't spend a credit. Use my profile (get_profile) and the `
+    + `school knowledge base (get_university, get_university_majors); call `
+    + `get_analysis_schema first for the exact shape, then save with `
+    + `save_fit_analysis and save_major_chances. Tell me my fit category and the `
+    + `strongest majors when you're done.`
+  );
+}
+
 /** Open-in-agent deep links for a prompt (best-effort; Copy is the reliable path). */
 export function askLinks(prompt) {
   const q = encodeURIComponent(prompt);

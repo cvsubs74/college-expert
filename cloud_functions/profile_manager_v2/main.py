@@ -73,6 +73,9 @@ from essay_copilot import (
 )
 from fit_billing import run_compute_single_fit
 from fit_computation import calculate_fit_for_college
+from add_college_analysis import run_add_college_analysis
+from agent_writes import run_save_external_fit, run_save_external_major_chances
+from analysis_schema import get_schema as get_analysis_schema
 from major_llm import (
     run_generate_major_map,
     get_major_map_payload,
@@ -530,6 +533,65 @@ def profile_manager_v2_http_entry(request):
             if not user_email or not university_id:
                 return add_cors_headers({'error': 'user_email and university_id required'}, 400)
             payload, status = get_college_major_chances_payload(user_email, university_id)
+            return add_cors_headers(payload, status)
+
+        # --- BUNDLED ADD-COLLEGE ANALYSIS (#310): 1 credit → fit + chances ---
+        # Adding a college always consumes 1 credit and generates BOTH the fit
+        # analysis AND the major-chances ranking as a single billed unit
+        # (server-billed; the frontend keeps its hasCredits pre-check but never
+        # deducts client-side). `force` regenerates both (the card's regenerate).
+        elif resource_type == 'add-college-analysis' and request.method == 'POST':
+            data = request.get_json() or {}
+            if not data.get('user_email') or not data.get('university_id'):
+                return add_cors_headers({'error': 'user_email and university_id required'}, 400)
+            payload, status = run_add_college_analysis(data)
+            return add_cors_headers(payload, status)
+
+        # --- AGENT-ONLY analysis schema (#310) ---
+        # The SINGLE source for the agent-write shapes + trust_rules. Consumed
+        # ONLY by the MCP tool get_analysis_schema — deliberately NOT wired into
+        # the frontend/api.js (never rendered in the human UI).
+        elif resource_type == 'get-analysis-schema' and request.method == 'GET':
+            kind = request.args.get('kind')
+            schema = get_analysis_schema(kind)
+            if schema is None:
+                return add_cors_headers(
+                    {'success': False,
+                     'error': "kind must be 'fit' or 'major_chances'"}, 400)
+            return add_cors_headers({'success': True, 'schema': schema}, 200)
+
+        # --- AGENT WRITE: external fit (FREE, trust-enforced) (#310) ---
+        # The agent computed the fit itself; the server RE-APPLIES the
+        # deterministic post-processing (selectivity floor/ceiling, match% band,
+        # factor bounds) and sources acceptance_rate + KB provenance from the KB,
+        # so a fabricated category is floored. No credit.
+        elif resource_type == 'save-external-fit' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            university_id = data.get('university_id')
+            fit_analysis = data.get('fit_analysis')
+            if not user_email or not university_id or not isinstance(fit_analysis, dict):
+                return add_cors_headers(
+                    {'error': 'user_email, university_id, and fit_analysis (object) required'}, 400)
+            payload, status = run_save_external_fit(
+                user_email, university_id, fit_analysis, data.get('source'))
+            return add_cors_headers(payload, status)
+
+        # --- AGENT WRITE: external major chances (FREE, trust-enforced) (#310) ---
+        # The agent produced the {majors:[{name,tier,rationale}]} ranking; the
+        # server runs it through normalize_college_major_ranking (KB-derived
+        # entry_path/entry_risk, fabricated %/GPA stripped, off-catalog names
+        # dropped, tiers coerced). No credit. A KB-majors miss → 400.
+        elif resource_type == 'save-external-major-chances' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            university_id = data.get('university_id')
+            ranking = data.get('ranking')
+            if not user_email or not university_id or not isinstance(ranking, dict):
+                return add_cors_headers(
+                    {'error': 'user_email, university_id, and ranking (object) required'}, 400)
+            payload, status = run_save_external_major_chances(
+                user_email, university_id, ranking, data.get('source'))
             return add_cors_headers(payload, status)
 
         # --- COLLEGE LIST MANAGEMENT ---

@@ -1,6 +1,6 @@
 # DESIGN — Major Strategy: discovery + per-school application-major strategy
 
-- Status: phase 2 implemented (#284 — major map + per-school synthesis, server-side credits, kb_gaps telemetry); phase 1 shipped (#281/#282/#283)
+- Status: bundle + agent-write trust route shipped (#310 — 1-credit add-college bundle: fit + chances; free trust-enforced agent saves); per-college major chances (#302/#306); phase 2 (#284 — major map + per-school synthesis, server-side credits, kb_gaps telemetry); phase 1 (#281/#282/#283)
 - Date: 2026-07-01
 - Epic: #280 · Related: #193 (collector asks → #287), #203/#252 (drift), #223 (auth), #285 (credit regression), #289 (normalizer bug)
 - Provenance: synthesized from a 3-design judge panel (student-journey / data-trust / agent-native lenses, scored by an engineer judge and an admissions-domain judge; data-trust won on both cards) plus the panel's shared blind spots.
@@ -130,6 +130,63 @@ get/generate tools + Profile Major Map card + Launchpad door-policy callout.
 Depends on: #285 (credit enforcement pattern), #223 caveat (server gating is
 spoofable until auth lands — and deduction on caller-supplied email lets an
 attacker drain a victim's credits, so sequence deliberately).
+
+## Bundle + agent-write trust model (#310)
+
+Owner decision (2026-07-02): **adding a college always costs 1 credit and
+generates BOTH the fit analysis AND the per-college major-chances ranking** —
+one credit for the bundle, not two. **Regeneration has a FREE agent path**: the
+in-app Generate is 1 credit, but ChatGPT/Claude can compute the analyses
+themselves (their subscription bears the LLM cost) and save them into the SAME
+Firestore structure via MCP — 0 Stratia credits.
+
+**Bundle** (`POST /add-college-analysis`, `add_college_analysis.py`): one credit
+gate — reusing `fit_billing`'s exact sequencing (check → 402 insufficient /
+503 on the #298 `credits_read_failed` marker → generate → deduct once AFTER
+success, never on failure, never on a fallback fit) — around a single billed
+unit. Inside it: (a) compute the fit (`calculate_fit_for_college`,
+resolution-order major) + save-with-archive; (b) fetch the KB majors and, if
+present, generate the ranking via `major_llm.run_ranking_generation` (the
+extracted UNBILLED core of `run_rank_college_majors`) + save-with-archive. The
+fit is the primary artifact: its failure/save-failure fails the whole add
+(500, unbilled); a KB-majors miss → `major_chances:null` + note + `kb_gap`
+(no second charge, fit still saved); a ranking hiccup degrades chances to null
+too. `force` regenerates both (the card's "Update Fit"). The granular
+`compute-single-fit` / `rank-college-majors` endpoints stay for single-artifact
+in-app regen.
+
+**Agent-write trust re-application** — THE critical correctness surface. An agent
+can save for free, but it must NOT be able to write fabricated or malformed
+data, so every agent write is re-validated + trust-enforced by reusing the EXACT
+in-app normalizers/post-processors (agent-saved and Stratia-generated artifacts
+are indistinguishable in trust):
+
+- Shared schema (`analysis_schema.py`): FIT_SCHEMA + MAJOR_CHANCES_SCHEMA
+  (fields, types, enums, required, per-kind human-readable `trust_rules`) +
+  `validate_against(kind, payload)`. The SINGLE source for both the agent-facing
+  describe surface (`GET /get-analysis-schema` → MCP `get_analysis_schema`,
+  never wired into the app UI) and agent-write shape validation.
+- `POST /save-external-fit` (`agent_writes.py`): validate shape → RE-APPLY
+  `fit_computation.post_process_fit` (extracted so the in-app LLM path and the
+  agent path enforce IDENTICAL rules: selectivity floor/ceiling, match% band
+  clamp, factor bounds, don't-submit-when-no-scores). `acceptance_rate` + KB
+  provenance are sourced from the KB, **never** the agent — so an inflated
+  category for a hyper-selective school is floored regardless of what the agent
+  sends. Stamp `source`(claude/chatgpt)/`basis:inference`, archive prior, save,
+  0 credits.
+- `POST /save-external-major-chances`: validate shape → run the agent's
+  `{majors:[{name,tier,rationale}]}` through `major_llm.assemble_and_save_ranking`
+  → `normalize_college_major_ranking` (entry_path/entry_risk re-derived from the
+  KB, per-major numeric-claim validator strips fabricated %/GPA, capped_door
+  door-lock, catalog name-match drops off-catalog majors, tiers coerced). A
+  school with no KB majors → 400 (chances can't be validated). Stamp
+  source/basis, archive prior, save, 0 credits.
+
+Connector: `get_analysis_schema` (readOnly, free) + `save_fit_analysis` /
+`save_major_chances` (write rate-guard, `_client_attribution` source, honest
+field-error relay so the agent can fix + retry). Server instructions carry the
+credit-saving recipe. Frontend surfaces a free "Update via ChatGPT/Claude"
+`AgentChatHandoff` on the card; the schema is never rendered in the UI.
 
 ## Phase 3 — data depth
 

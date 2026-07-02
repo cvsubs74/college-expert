@@ -37,6 +37,8 @@ EXPECTED_TOOLS = {
     "get_major_strategy", "generate_major_strategy",
     # per-college major chances (#302)
     "get_college_major_chances", "rank_college_majors",
+    # agentic credit-saving route (#310): schema + free trust-enforced writes
+    "get_analysis_schema", "save_fit_analysis", "save_major_chances",
 }
 
 
@@ -106,6 +108,22 @@ def test_major_chances_tools_registered():
     assert "get_credits" in rank.description
     assert "NOT charged" in rank.description
     assert "university_id" in rank.inputSchema["properties"]
+
+
+def test_agentic_save_tools_registered():
+    # #310: get_analysis_schema (read/free) + save_fit_analysis /
+    # save_major_chances (free trust-enforced writes).
+    tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
+    assert tools["get_analysis_schema"].annotations.readOnlyHint is True
+    # kind is enum-typed so agents discover fit|major_chances from the schema.
+    kind_schema = str(tools["get_analysis_schema"].inputSchema)
+    assert "fit" in kind_schema and "major_chances" in kind_schema
+    for w in ("save_fit_analysis", "save_major_chances"):
+        assert tools[w].annotations.readOnlyHint is False
+        # The credit-saving contract must be explicit in the docstring.
+        assert "free" in tools[w].description.lower()
+    assert "fit_analysis" in tools["save_fit_analysis"].inputSchema["properties"]
+    assert "ranking" in tools["save_major_chances"].inputSchema["properties"]
 
 
 def test_research_notebook_tools_registered():

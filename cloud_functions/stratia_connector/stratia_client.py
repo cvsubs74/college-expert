@@ -749,6 +749,89 @@ def generate_major_strategy(email, university_id, majors=None):
     return _cap_size(out, droppable=())
 
 
+# ----------------------------------------------------------------------------
+# Agentic credit-saving route (#310): the agent computes the fit / major chances
+# ITSELF and saves them for FREE. The server re-validates + trust-enforces every
+# write (reusing the exact in-app normalizers), so a saved analysis is
+# indistinguishable in trust from an in-app 1-credit generation.
+# ----------------------------------------------------------------------------
+
+def _relay_server_error(e, action):
+    """Turn a server rejection into an actionable message the agent can act on —
+    honest relay, never swallowed. Per-field validation errors are surfaced so
+    the agent can fix and retry; a plain error (e.g. a KB-majors miss) surfaces
+    the server's own message instead of the generic transport error."""
+    body = getattr(e, "body", None) or {}
+    field_errors = body.get("field_errors")
+    if field_errors:
+        return StratiaError(
+            f"{action}: the server rejected the payload — fix these and retry: "
+            + "; ".join(str(x) for x in field_errors))
+    msg = body.get("error")
+    if msg:
+        return StratiaError(f"{action}: {msg}")
+    return None
+
+
+def get_analysis_schema(kind):
+    """The exact save-schema + trust_rules for an analysis kind ('fit' |
+    'major_chances'). Read-only, free. Call before save_fit_analysis /
+    save_major_chances so the payload matches and the server-derived fields
+    (which the server overwrites) are understood."""
+    data = _get(_pm("get-analysis-schema"), {"kind": kind})
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or f"no analysis schema for kind '{kind}'")
+    return data.get("schema") or {}
+
+
+def save_fit_analysis(email, university_id, fit_analysis, source=None):
+    """Save a college-fit analysis YOU computed — FREE (0 credits). The server
+    re-applies the selectivity floor/ceiling + match%/factor clamps and sources
+    acceptance_rate + KB provenance from the knowledge base, so a fabricated
+    category is corrected. Get the shape from get_analysis_schema('fit')."""
+    body = {"user_email": email, "university_id": university_id,
+            "fit_analysis": fit_analysis}
+    if source:
+        body["source"] = source
+    try:
+        data = _post(_pm("save-external-fit"), body, timeout=60, email=email)
+    except StratiaError as e:
+        relayed = _relay_server_error(e, "save_fit_analysis")
+        if relayed:
+            raise relayed from e
+        raise
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "save_fit_analysis failed")
+    fit = data.get("fit_analysis") or {}
+    fit.setdefault("university_id", university_id)
+    return _prune(fit, list_caps={"recommendations": 15, "essay_angles": 15,
+                                  "scholarship_matches": 30, "factors": 12},
+                 text_caps={"explanation": 6000}, deny={"computed_at"})
+
+
+def save_major_chances(email, university_id, ranking, source=None):
+    """Save a per-college major-chances ranking YOU computed — FREE (0 credits).
+    `ranking` is {"majors": [{"name", "tier", "rationale"}]}. The server
+    re-derives entry_path/entry_risk from the KB, drops off-catalog majors,
+    strips fabricated numbers, applies the capped_door door-lock, and coerces
+    tiers. Get the shape from get_analysis_schema('major_chances')."""
+    body = {"user_email": email, "university_id": university_id, "ranking": ranking}
+    if source:
+        body["source"] = source
+    try:
+        data = _post(_pm("save-external-major-chances"), body, timeout=60, email=email)
+    except StratiaError as e:
+        relayed = _relay_server_error(e, "save_major_chances")
+        if relayed:
+            raise relayed from e
+        raise
+    if not data.get("success"):
+        raise StratiaError(data.get("error") or "save_major_chances failed")
+    out = {"university_id": university_id, "ranking": data.get("ranking")}
+    out = _prune(out, list_caps=_RANKING_LIST_CAPS)
+    return _cap_size(out, droppable=())
+
+
 def update_profile_field(email, field_path, value, operation="set"):
     data = _post(_pm("update-structured-field"),
                 {"user_email": email, "field_path": field_path,

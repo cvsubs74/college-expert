@@ -1671,6 +1671,51 @@ export const computeSingleFit = async (userEmail, universityId, forceRecompute =
 };
 
 /**
+ * Bundled add-college analysis (#310): ONE credit generates BOTH the fit
+ * analysis AND the per-college major-chances ranking (server-billed). Adding a
+ * college to the Launchpad always uses this — the server does the 402, so keep
+ * the hasCredits pre-check + CreditsUpgradeModal but NEVER deduct client-side.
+ * `force` regenerates both artifacts (used by the card's regenerate). A
+ * KB-majors miss returns {major_chances: null, note} — not a second charge and
+ * not a failure; the fit is still generated.
+ * 402 → {insufficientCredits: true, creditsRemaining}; 503 → {retryable: true}.
+ * @param {string} userEmail
+ * @param {string} universityId
+ * @param {boolean} force - regenerate both artifacts (bypass any cache)
+ * @returns {Promise<{success, fit_analysis, major_chances, note?, credits_remaining?}>}
+ */
+export const addCollegeAnalysis = async (userEmail, universityId, force = false) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const response = await axios.post(`${baseUrl}/add-college-analysis`, {
+      user_email: userEmail,
+      university_id: universityId,
+      force,
+    }, {
+      timeout: 120000,  // matches compute-single-fit — a shorter abort after the server bills means paying twice
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    if (error.response?.status === 402) {
+      return {
+        success: false,
+        error: 'insufficient_credits',
+        insufficientCredits: true,
+        creditsRemaining: error.response?.data?.credits_remaining ?? 0,
+        message: error.response?.data?.message || 'You need more credits to add this school'
+      };
+    }
+    if (error.response?.status === 503) {
+      // #298: credit-ledger read blip — retryable, not the upsell modal.
+      return { success: false, error: 'credits_unavailable_retry', retryable: true };
+    }
+    console.error('Error adding college analysis:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
  * Generate fit infographic image using Gemini AI
  * Creates a personalized visual infographic for the student's fit analysis
  * @param {string} userEmail - User's email

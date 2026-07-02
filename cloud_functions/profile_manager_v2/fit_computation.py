@@ -518,99 +518,13 @@ You have access to COMPLETE university data. Generate recommendations across ALL
                 if 'fit_category' not in result or 'match_percentage' not in result:
                     raise ValueError("Missing required fields in LLM response")
                 
-                # === POST-PROCESSING: SELECTIVITY OVERRIDE ===
-                original_category = result['fit_category']
-                
-                # Apply selectivity floor - this CANNOT be overridden
-                if category_floor == "SUPER_REACH" and original_category in ['SAFETY', 'TARGET', 'REACH']:
-                    result['fit_category'] = 'SUPER_REACH'
-                    logger.info(f"[FIT_COMP] Selectivity override: {original_category} -> SUPER_REACH (acceptance rate {acceptance_rate}%)")
-                elif category_floor == "REACH" and original_category in ['SAFETY', 'TARGET']:
-                    result['fit_category'] = 'REACH'
-                    logger.info(f"[FIT_COMP] Selectivity override: {original_category} -> REACH (acceptance rate {acceptance_rate}%)")
-                elif category_floor == "TARGET" and original_category == 'SAFETY':
-                    result['fit_category'] = 'TARGET'
-                    logger.info(f"[FIT_COMP] Selectivity override: {original_category} -> TARGET (acceptance rate {acceptance_rate}%)")
-                
-                # === POST-PROCESSING: SELECTIVITY CEILING ===
-                # Enforce alignment with soft_fit_category thresholds
-                if acceptance_rate >= 50 and result['fit_category'] in ['TARGET', 'REACH', 'SUPER_REACH']:
-                    logger.info(f"[FIT_COMP] Ceiling override: {result['fit_category']} -> SAFETY (acceptance rate {acceptance_rate}% >= 50%)")
-                    result['fit_category'] = 'SAFETY'
-                elif acceptance_rate >= 25 and result['fit_category'] in ['REACH', 'SUPER_REACH']:
-                    logger.info(f"[FIT_COMP] Ceiling override: {result['fit_category']} -> TARGET (acceptance rate {acceptance_rate}% >= 25%)")
-                    result['fit_category'] = 'TARGET'
-                
-                # Validate category is in allowed list
-                valid_categories = ['SAFETY', 'TARGET', 'REACH', 'SUPER_REACH']
-                if result['fit_category'] not in valid_categories:
-                    result['fit_category'] = 'REACH'
-                
-                # === POST-PROCESSING: ENSURE MATCH_PERCENTAGE ALIGNS WITH CATEGORY ===
-                # This prevents LLM from giving inconsistent percentages for same category
-                original_percentage = result['match_percentage']
-                category = result['fit_category']
-                
-                # Define percentage ranges for each category
-                # SUPER_REACH: 0-34, REACH: 35-54, TARGET: 55-74, SAFETY: 75-100
-                if category == 'SUPER_REACH':
-                    # Cap at 34% for SUPER_REACH schools
-                    if result['match_percentage'] > 34:
-                        result['match_percentage'] = min(34, max(15, result['match_percentage'] - 30))
-                        logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {result['match_percentage']} (SUPER_REACH cap)")
-                elif category == 'REACH':
-                    # Clamp to 35-54% for REACH schools
-                    if result['match_percentage'] < 35:
-                        result['match_percentage'] = 35
-                    elif result['match_percentage'] > 54:
-                        result['match_percentage'] = 54
-                    if original_percentage != result['match_percentage']:
-                        logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {result['match_percentage']} (REACH range)")
-                elif category == 'TARGET':
-                    # Clamp to 55-74% for TARGET schools
-                    if result['match_percentage'] < 55:
-                        result['match_percentage'] = 55
-                    elif result['match_percentage'] > 74:
-                        result['match_percentage'] = 74
-                    if original_percentage != result['match_percentage']:
-                        logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {result['match_percentage']} (TARGET range)")
-                elif category == 'SAFETY':
-                    # Clamp to 75-100% for SAFETY schools
-                    if result['match_percentage'] < 75:
-                        result['match_percentage'] = 75
-                    if original_percentage != result['match_percentage']:
-                        logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {result['match_percentage']} (SAFETY floor)")
-                
-                # === POST-PROCESSING: FACTOR BOUNDS CLAMP ===
-                # The prompt documents per-factor ranges (Academic 0-40,
-                # Holistic 0-30, Major Fit 0-15, Selectivity -15 to +5)
-                # but the LLM occasionally exceeds them — most often
-                # Major Fit. Without this clamp the over-range value
-                # flows to the user AND the QA agent's
-                # factor_bounds_respected assertion (correctly) fails.
-                # Surfaced 2026-05-06 by run_20260506T060001Z.
-                factors_to_clamp = result.get('factors')
-                if isinstance(factors_to_clamp, list):
-                    _clamp_factor_bounds(factors_to_clamp)
-
-                # === POST-PROCESSING: TEST_STRATEGY OVERRIDE WHEN NO SCORES ===
-                # Bug surfaced 2026-05-04 by QA agent probe: the LLM
-                # defaulted to "Submit" for several schools (MIT, UF)
-                # even when the student profile carried no SAT/ACT.
-                # There's nothing to submit. Override deterministically
-                # so dashboard advice never tells a scoreless student
-                # to "Submit". "Consider Submitting" stays unchanged
-                # (means "go take a test, then decide").
-                if _student_has_no_scores(student_profile_json):
-                    ts = result.get('test_strategy') or {}
-                    if isinstance(ts, dict) and ts.get('recommendation') == 'Submit':
-                        original = ts['recommendation']
-                        ts['recommendation'] = "Don't Submit"
-                        result['test_strategy'] = ts
-                        logger.info(
-                            f"[FIT_COMP] test_strategy override: "
-                            f"{original} → Don't Submit (student profile has no SAT/ACT)"
-                        )
+                # === POST-PROCESSING (selectivity floor/ceiling, match% band,
+                # factor bounds, test-strategy override) ===
+                # Extracted to post_process_fit (#310) so the agent-save path
+                # (/save-external-fit) re-applies the IDENTICAL deterministic
+                # rules — an agent-saved fit and a Stratia-generated one are
+                # indistinguishable in trust. Behavior here is unchanged.
+                post_process_fit(result, acceptance_rate, student_profile_json)
 
                 # Add metadata
                 result['university_name'] = uni_name
@@ -742,6 +656,116 @@ def _student_has_no_scores(profile_json):
         if v not in (None, "", 0, "0"):
             return False
     return True
+
+
+_VALID_FIT_CATEGORIES = ('SAFETY', 'TARGET', 'REACH', 'SUPER_REACH')
+
+
+def _category_floor_for_rate(acceptance_rate):
+    """The most-optimistic category the selectivity rules allow at this rate.
+    Mirrors the acceptance-rate thresholds in calculate_fit_with_llm
+    (<8% → SUPER_REACH floor, 8-15% → REACH floor, else no floor)."""
+    try:
+        rate = float(acceptance_rate)
+    except (TypeError, ValueError):
+        return None
+    if rate < 8:
+        return "SUPER_REACH"
+    if rate < 15:
+        return "REACH"
+    return None
+
+
+def post_process_fit(fit, acceptance_rate, profile=None):
+    """Deterministic trust post-processing for a fit doc (#310).
+
+    Extracted verbatim from calculate_fit_with_llm so BOTH the in-app LLM path
+    AND the agent-save path (POST /save-external-fit) enforce the SAME rules —
+    an agent cannot persist a fit that violates them:
+
+      - selectivity FLOOR (never overridable): <8% acceptance can be no better
+        than SUPER_REACH; 8-15% no better than REACH.
+      - selectivity CEILING: >=50% acceptance is SAFETY; >=25% is at least TARGET.
+      - fit_category coerced into the four valid values (unknown → REACH).
+      - match_percentage clamped into the final category's band
+        (SUPER_REACH 0-34, REACH 35-54, TARGET 55-74, SAFETY 75-100).
+      - factor scores clamped to their documented [min,max] ranges.
+      - test_strategy forced off "Submit" when the profile carries no scores.
+
+    Mutates and returns `fit`. Behavior is unchanged from the previous inline
+    implementation; `acceptance_rate` MUST be the authoritative KB rate (on the
+    agent-save path the server sources it from the KB, never from the agent).
+    """
+    try:
+        rate = float(acceptance_rate)
+    except (TypeError, ValueError):
+        rate = 50.0
+    category_floor = _category_floor_for_rate(rate)
+
+    # === SELECTIVITY FLOOR (cannot be overridden) ===
+    original_category = fit.get('fit_category')
+    if category_floor == "SUPER_REACH" and original_category in ['SAFETY', 'TARGET', 'REACH']:
+        fit['fit_category'] = 'SUPER_REACH'
+        logger.info(f"[FIT_COMP] Selectivity override: {original_category} -> SUPER_REACH (acceptance rate {rate}%)")
+    elif category_floor == "REACH" and original_category in ['SAFETY', 'TARGET']:
+        fit['fit_category'] = 'REACH'
+        logger.info(f"[FIT_COMP] Selectivity override: {original_category} -> REACH (acceptance rate {rate}%)")
+    elif category_floor == "TARGET" and original_category == 'SAFETY':
+        fit['fit_category'] = 'TARGET'
+        logger.info(f"[FIT_COMP] Selectivity override: {original_category} -> TARGET (acceptance rate {rate}%)")
+
+    # === SELECTIVITY CEILING (align with soft_fit_category thresholds) ===
+    if rate >= 50 and fit.get('fit_category') in ['TARGET', 'REACH', 'SUPER_REACH']:
+        logger.info(f"[FIT_COMP] Ceiling override: {fit.get('fit_category')} -> SAFETY (acceptance rate {rate}% >= 50%)")
+        fit['fit_category'] = 'SAFETY'
+    elif rate >= 25 and fit.get('fit_category') in ['REACH', 'SUPER_REACH']:
+        logger.info(f"[FIT_COMP] Ceiling override: {fit.get('fit_category')} -> TARGET (acceptance rate {rate}% >= 25%)")
+        fit['fit_category'] = 'TARGET'
+
+    # Coerce to a valid category
+    if fit.get('fit_category') not in _VALID_FIT_CATEGORIES:
+        fit['fit_category'] = 'REACH'
+
+    # === MATCH_PERCENTAGE ALIGNS WITH CATEGORY ===
+    category = fit['fit_category']
+    mp = fit.get('match_percentage')
+    if isinstance(mp, (int, float)) and not isinstance(mp, bool):
+        original_percentage = mp
+        if category == 'SUPER_REACH':
+            if mp > 34:
+                fit['match_percentage'] = min(34, max(15, mp - 30))
+                logger.info(f"[FIT_COMP] Match% adjusted: {original_percentage} -> {fit['match_percentage']} (SUPER_REACH cap)")
+        elif category == 'REACH':
+            if mp < 35:
+                fit['match_percentage'] = 35
+            elif mp > 54:
+                fit['match_percentage'] = 54
+        elif category == 'TARGET':
+            if mp < 55:
+                fit['match_percentage'] = 55
+            elif mp > 74:
+                fit['match_percentage'] = 74
+        elif category == 'SAFETY':
+            if mp < 75:
+                fit['match_percentage'] = 75
+
+    # === FACTOR BOUNDS CLAMP ===
+    factors_to_clamp = fit.get('factors')
+    if isinstance(factors_to_clamp, list):
+        _clamp_factor_bounds(factors_to_clamp)
+
+    # === TEST_STRATEGY OVERRIDE WHEN NO SCORES ===
+    if _student_has_no_scores(profile):
+        ts = fit.get('test_strategy') or {}
+        if isinstance(ts, dict) and ts.get('recommendation') == 'Submit':
+            original = ts['recommendation']
+            ts['recommendation'] = "Don't Submit"
+            fit['test_strategy'] = ts
+            logger.info(
+                f"[FIT_COMP] test_strategy override: "
+                f"{original} → Don't Submit (student profile has no SAT/ACT)"
+            )
+    return fit
 
 
 _FALLBACK_MATCH_PERCENT = {
