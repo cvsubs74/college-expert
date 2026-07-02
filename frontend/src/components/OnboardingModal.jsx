@@ -47,6 +47,7 @@ const OnboardingModal = ({ isOpen, onComplete, onSkip, userEmail }) => {
 
         // Step 3: Interests
         majors: [],
+        undecidedMajor: false,
         topActivity: '',
         activityType: '',
 
@@ -86,6 +87,14 @@ const OnboardingModal = ({ isOpen, onComplete, onSkip, userEmail }) => {
     };
 
     const handleComplete = async () => {
+        // Major openness: 'undecided' when the student explicitly picked the
+        // "Undecided — exploring" chip (zero majors is fine); 'exploring' when
+        // they picked majors (they're starting points, not commitments);
+        // omitted when neither applies.
+        const majorOpenness = formData.undecidedMajor
+            ? 'undecided'
+            : (formData.majors.length > 0 ? 'exploring' : null);
+
         // Transform form data to profile structure
         const profileData = {
             student_info: {
@@ -116,7 +125,8 @@ const OnboardingModal = ({ isOpen, onComplete, onSkip, userEmail }) => {
                 campus_type: formData.campusType
             },
             onboarding_status: 'completed',
-            onboarding_completed_at: new Date().toISOString()
+            onboarding_completed_at: new Date().toISOString(),
+            ...(majorOpenness ? { major_openness: majorOpenness } : {})
         };
 
         onComplete(profileData);
@@ -135,10 +145,22 @@ const OnboardingModal = ({ isOpen, onComplete, onSkip, userEmail }) => {
             if (current.includes(major)) {
                 return { ...prev, majors: current.filter(m => m !== major) };
             } else if (current.length < 3) {
-                return { ...prev, majors: [...current, major] };
+                // Picking a major clears the explicit "Undecided" state.
+                return { ...prev, majors: [...current, major], undecidedMajor: false };
             }
             return prev;
         });
+    };
+
+    // "Undecided — exploring" is mutually exclusive with picked majors:
+    // turning it on clears the selection so the profile stores an honest
+    // major_openness='undecided' rather than a contradictory mix.
+    const toggleUndecided = () => {
+        setFormData(prev => (
+            prev.undecidedMajor
+                ? { ...prev, undecidedMajor: false }
+                : { ...prev, undecidedMajor: true, majors: [] }
+        ));
     };
 
     const toggleLocation = (location) => {
@@ -363,6 +385,9 @@ const OnboardingModal = ({ isOpen, onComplete, onSkip, userEmail }) => {
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
                                     Intended major(s) <span className="text-gray-400">(select up to 3)</span>
                                 </label>
+                                <p className="text-xs text-gray-500 mb-3">
+                                    Not sure? Pick what's interesting — Stratia helps you find majors you haven't considered.
+                                </p>
                                 <div className="flex flex-wrap gap-2">
                                     {POPULAR_MAJORS.map(major => (
                                         <button
@@ -377,6 +402,17 @@ const OnboardingModal = ({ isOpen, onComplete, onSkip, userEmail }) => {
                                             {major}
                                         </button>
                                     ))}
+                                    {/* Undecided — completing with zero majors is a valid answer */}
+                                    <button
+                                        onClick={toggleUndecided}
+                                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all border ${formData.undecidedMajor
+                                                ? 'bg-gray-700 text-white border-gray-700 shadow-md'
+                                                : 'bg-white text-gray-600 border-gray-300 border-dashed hover:border-gray-500'
+                                            }`}
+                                    >
+                                        {formData.undecidedMajor && <CheckCircleIcon className="inline h-4 w-4 mr-1" />}
+                                        Undecided — exploring
+                                    </button>
                                 </div>
                             </div>
 

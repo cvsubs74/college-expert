@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon, AcademicCapIcon, ExclamationTriangleIcon, ClockIcon, CheckCircleIcon, PaperAirplaneIcon, DocumentCheckIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import { MapPinIcon, TrashIcon, ChartBarIcon, PencilSquareIcon, ChatBubbleLeftRightIcon, AcademicCapIcon, ClockIcon, CheckCircleIcon, PaperAirplaneIcon, DocumentCheckIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
 import FitVintageChip from '../FitVintageChip';
 import { fitUpdateAvailable, updateTooltip } from '../../utils/kbVintage';
 
@@ -14,7 +14,8 @@ import { fitUpdateAvailable, updateTooltip } from '../../utils/kbVintage';
  * - SegmentedButtonGroup for actions
  * - M3 State Layer hover effects
  * - Remove button for paid plans
- * - Major selection dropdown with credit consumption
+ * - Major dropdown persists via set-major-choice (free); recompute is a
+ *   separate, explicit 1-credit action (never silent)
  */
 const UniversityCard = ({
     university,
@@ -25,11 +26,10 @@ const UniversityCard = ({
     onUpdateFit,
     onRemove,
     onMajorChange,
+    onRecomputeWithMajor,
     canRemove = false
 }) => {
     const [isRemoving, setIsRemoving] = useState(false);
-    const [showMajorConfirm, setShowMajorConfirm] = useState(false);
-    const [pendingMajor, setPendingMajor] = useState(null);
     const [isUpdatingFit, setIsUpdatingFit] = useState(false);
     const [updateFailed, setUpdateFailed] = useState(false);
 
@@ -44,33 +44,38 @@ const UniversityCard = ({
         acceptance_rate,
         us_news_rank,
         selected_major,
+        major_choice = null,        // per-school decision: {primary, backup, matched, ...}
+        major_choice_note = null,   // transient server note (e.g. unmatched name)
         available_majors = [],
         application_status = null,  // planning, in_progress, submitted, decision_pending, decision
         kb_data_year = null,        // KB cycle year the saved fit was computed on
-        kb_update = null            // staleness entry from check-fit-recomputation
+        kb_update = null,           // staleness entry from check-fit-recomputation
+        fit_analysis = null
     } = university || {};
 
-    // Handle major selection with confirmation
+    // The student's current per-school major decision. major_choice.primary is
+    // authoritative (persisted via set-major-choice); selected_major is the
+    // legacy mirror kept for older list items.
+    const currentMajor = major_choice?.primary || selected_major || '';
+
+    // Persist immediately on change — saving the decision is free. Recomputing
+    // the fit is a separate, explicit action below (never triggered silently).
     const handleMajorSelect = (e) => {
         const newMajor = e.target.value;
-        if (newMajor && newMajor !== selected_major) {
-            setPendingMajor(newMajor);
-            setShowMajorConfirm(true);
+        if (newMajor && newMajor !== currentMajor && onMajorChange) {
+            onMajorChange(university_id, newMajor);
         }
     };
 
-    const confirmMajorChange = () => {
-        if (pendingMajor && onMajorChange) {
-            onMajorChange(university_id, pendingMajor);
-        }
-        setShowMajorConfirm(false);
-        setPendingMajor(null);
-    };
-
-    const cancelMajorChange = () => {
-        setShowMajorConfirm(false);
-        setPendingMajor(null);
-    };
+    // The saved fit was computed for a different major than the current
+    // decision → offer an explicit, clearly-priced recompute. Never automatic.
+    const fitMajor = fit_analysis?.intended_major_used
+        || fit_analysis?.major_strategy?.intended_major
+        || null;
+    const fitMajorMismatch = Boolean(
+        onRecomputeWithMajor && currentMajor && fitMajor
+        && fitMajor.trim().toLowerCase() !== currentMajor.trim().toLowerCase()
+    );
 
     // The saved fit was computed on superseded KB data. The Fit Analysis
     // control becomes a split button: the green segment always opens the
@@ -207,24 +212,51 @@ const UniversityCard = ({
                             )}
                         </div>
 
-                        {/* Major Selection Dropdown */}
+                        {/* Major Selection Dropdown — persists on change (free) */}
                         {available_majors.length > 0 && onMajorChange && (
                             <div className="flex items-center gap-2 mt-2">
                                 <AcademicCapIcon className="w-4 h-4 text-[#4A7C59]" />
                                 <select
-                                    value={selected_major || ''}
+                                    value={currentMajor}
                                     onChange={handleMajorSelect}
+                                    aria-label="Intended major"
                                     className="text-sm border border-[#E0DED8] rounded-lg px-2 py-1 bg-white text-[#2C2C2C] focus:ring-2 focus:ring-[#4A7C59] focus:border-[#4A7C59] max-w-[200px]"
                                 >
                                     <option value="">Select intended major...</option>
+                                    {/* Unmatched names are stored as given — keep them selectable */}
+                                    {currentMajor && !available_majors.includes(currentMajor) && (
+                                        <option value={currentMajor}>{currentMajor}</option>
+                                    )}
                                     {available_majors.map((major, idx) => (
                                         <option key={idx} value={major}>{major}</option>
                                     ))}
                                 </select>
-                                {selected_major && (
+                                {currentMajor && major_choice?.matched !== false && (
                                     <span className="text-xs text-[#6B6B6B]">✓</span>
                                 )}
+                                {/* The saved name couldn't be bound to the KB's official
+                                    major list — stored as given, flagged, never rewritten. */}
+                                {major_choice?.matched === false && (
+                                    <span className="relative group/unmatched" data-testid="major-unmatched-dot">
+                                        <span className="block w-2.5 h-2.5 rounded-full bg-amber-500 border border-amber-600 cursor-help" aria-label="Major name not matched" />
+                                        <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/unmatched:opacity-100 transition-opacity pointer-events-none whitespace-normal w-56 z-10">
+                                            We couldn't match this name to {university_name || 'this school'}'s official major list{major_choice_note ? ` — ${major_choice_note}` : ''}
+                                        </span>
+                                    </span>
+                                )}
                             </div>
+                        )}
+
+                        {/* Explicit recompute offer — the saved fit was computed for a
+                            different major. Never recompute silently; 1 credit. */}
+                        {fitMajorMismatch && (
+                            <button
+                                onClick={() => onRecomputeWithMajor(university, currentMajor)}
+                                className="mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-amber-50 text-amber-800 border border-amber-300 hover:bg-amber-100 transition-colors"
+                            >
+                                <ArrowPathIcon className="w-3.5 h-3.5" />
+                                Fit was computed for {fitMajor} — Recompute with {currentMajor}? (1 credit)
+                            </button>
                         )}
                     </div>
 
@@ -371,45 +403,6 @@ const UniversityCard = ({
                     )}
                 </div>
             </div>
-
-            {/* Major Change Confirmation Modal */}
-            {showMajorConfirm && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={cancelMajorChange}>
-                    <div
-                        className="bg-white rounded-2xl p-6 max-w-sm mx-4 shadow-xl"
-                        onClick={e => e.stopPropagation()}
-                    >
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="p-2 bg-amber-100 rounded-full">
-                                <ExclamationTriangleIcon className="w-6 h-6 text-amber-600" />
-                            </div>
-                            <h3 className="text-lg font-semibold text-gray-900">Confirm Major Change</h3>
-                        </div>
-                        <p className="text-gray-600 mb-4">
-                            Changing your intended major to <strong>{pendingMajor}</strong> will trigger a new fit analysis.
-                        </p>
-                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
-                            <p className="text-sm text-amber-800">
-                                ⚡ This action uses <strong>1 credit</strong>
-                            </p>
-                        </div>
-                        <div className="flex gap-3">
-                            <button
-                                onClick={cancelMajorChange}
-                                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
-                            >
-                                Cancel
-                            </button>
-                            <button
-                                onClick={confirmMajorChange}
-                                className="flex-1 px-4 py-2 bg-[#4A7C59] text-white rounded-lg hover:bg-[#3D6B4A] transition-colors"
-                            >
-                                Confirm
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
         </>
     );
 };
