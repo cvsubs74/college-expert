@@ -27,6 +27,7 @@ import json
 import sys
 from pathlib import Path
 
+import os
 import requests
 
 # Make the cloud function's validation importable so the CLI pre-checks
@@ -128,7 +129,15 @@ def main():
             continue
 
         try:
-            resp = requests.post(args.url, json={"profile": profile, "year": year}, timeout=120)
+            # #223: KB writes require a credential. The CLI uses the shared
+            # write token:  export KB_WRITE_TOKEN=$(gcloud secrets versions \
+            #   access latest --secret kb-write-token --project college-counselling-478115)
+            headers = {}
+            write_token = os.getenv('KB_WRITE_TOKEN')
+            if write_token:
+                headers['X-Admin-Token'] = write_token
+            resp = requests.post(args.url, json={"profile": profile, "year": year},
+                                 headers=headers, timeout=120)
             body = resp.json()
         except (requests.RequestException, ValueError) as e:
             print(f"  FAIL  {path.name}: request failed: {e}")

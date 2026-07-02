@@ -1,5 +1,7 @@
 
 import logging
+
+from svc_auth import pm_auth_headers  # (#223) service identity for PM calls
 from datetime import datetime
 
 logger = logging.getLogger(__name__)
@@ -1032,9 +1034,11 @@ def _fetch_saved_tasks(user_email):
 
     PROFILE_MANAGER_URL = os.getenv('PROFILE_MANAGER_URL', 'http://localhost:8080')
     try:
+        from svc_auth import pm_auth_headers  # (#223)
         resp = requests.get(
             f"{PROFILE_MANAGER_URL}/get-roadmap-tasks",
             params={'user_email': user_email},
+            headers=pm_auth_headers(),
             timeout=10,
         )
         if resp.status_code == 200:
@@ -1086,6 +1090,7 @@ def save_personalized_tasks(user_email, tasks):
                     'task_id': task['task_id'],
                     'task_data': task
                 },
+                headers=pm_auth_headers(),
                 timeout=10
             )
             if response.status_code == 200:

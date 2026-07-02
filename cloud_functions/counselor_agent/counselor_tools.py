@@ -5,6 +5,8 @@ import requests
 import json
 from datetime import datetime
 
+from svc_auth import pm_auth_headers  # (#223) service identity for PM calls
+
 logger = logging.getLogger(__name__)
 
 # Service URLs
@@ -15,7 +17,8 @@ def get_student_profile(user_email):
     """Fetch student profile from Profile Manager service."""
     try:
         url = f"{PROFILE_MANAGER_URL}/get-profile"
-        response = requests.get(url, params={'user_email': user_email}, timeout=10)
+        response = requests.get(url, params={'user_email': user_email},
+                                headers=pm_auth_headers(), timeout=10)
         
         if response.status_code == 200:
             data = response.json()
@@ -31,7 +34,8 @@ def get_college_list(user_email):
     """Fetch user's college list from Profile Manager service."""
     try:
         url = f"{PROFILE_MANAGER_URL}/get-college-list"
-        response = requests.get(url, params={'user_email': user_email}, timeout=10)
+        response = requests.get(url, params={'user_email': user_email},
+                                headers=pm_auth_headers(), timeout=10)
         
         if response.status_code == 200:
             data = response.json()
@@ -47,7 +51,8 @@ def get_all_fits(user_email):
     """Fetch user's fit analysis for all colleges. Returns dict keyed by university_id."""
     try:
         url = f"{PROFILE_MANAGER_URL}/get-fits"
-        response = requests.get(url, params={'user_email': user_email}, timeout=10)
+        response = requests.get(url, params={'user_email': user_email},
+                                headers=pm_auth_headers(), timeout=10)
         
         if response.status_code == 200:
             data = response.json()

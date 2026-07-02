@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { auth as firebaseAuth } from '../firebase';
 
 // Get API base URLs from environment or use defaults
 const RAG_AGENT_URL = import.meta.env.VITE_RAG_AGENT_URL;
@@ -54,6 +55,43 @@ const api = axios.create({
 // Note: We don't create static axios instances for profile/KB managers
 // because the baseURL needs to change dynamically when user switches approaches.
 // Instead, we'll use axios directly with the dynamic URL in each function.
+
+// --- Verified caller identity (#223) ---------------------------------------
+// The per-user backends (profile-manager-v2, counselor-agent) verify callers
+// now: every request to them carries the signed-in user's Firebase ID token.
+// The backend derives identity from the VERIFIED token — the X-User-Email
+// header stays only as the legacy claimed-identity field it checks against.
+// KB reads stay public (no PII) and get no token. Registered on BOTH the
+// default axios object and the created `api` instance (instances do not
+// inherit global interceptors).
+export const attachAuthTokenInterceptor = (axiosLike, getAuthInstance) => {
+  // Defensive: test environments mock axios without an interceptors API.
+  if (!axiosLike?.interceptors?.request?.use) return;
+  axiosLike.interceptors.request.use(async (config) => {
+    try {
+      const url = config.url || '';
+      const authedBases = [getProfileManagerUrl(), COUNSELOR_AGENT_URL].filter(Boolean);
+      // Exact origin+path-prefix match — startsWith alone would also match
+      // a look-alike host like `<base>.evil.com` and leak the token (#301 review).
+      if (authedBases.some((base) => url === base || url.startsWith(base + '/') || url.startsWith(base + '?'))) {
+        const user = getAuthInstance()?.currentUser;
+        if (user) {
+          // getIdToken caches and auto-refreshes near expiry — cheap per call.
+          config.headers = config.headers || {};
+          config.headers.Authorization = `Bearer ${await user.getIdToken()}`;
+        }
+      }
+    } catch (e) {
+      // Never block a request on token plumbing — the backend's AUTH_MODE
+      // decides what a missing credential means.
+      console.warn('[API] could not attach auth token:', e?.message);
+    }
+    return config;
+  });
+};
+
+attachAuthTokenInterceptor(axios, () => firebaseAuth);
+attachAuthTokenInterceptor(api, () => firebaseAuth);
 
 console.log(`[FRONTEND] Using knowledge base approach: ${KNOWLEDGE_BASE_APPROACH}`);
 console.log(`[FRONTEND] Profile manager URL: ${getProfileManagerUrl()}`);
