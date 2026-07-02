@@ -997,7 +997,7 @@ class TestRankTrustDiscipline:
         parsed = {'majors': [
             {'name': 'Underwater Basket Weaving', 'tier': 'strong', 'rationale': 'x'},
             {'name': 'Computer Science', 'tier': 'reach', 'rationale': 'y'}]}
-        tiers, _ = normalize_college_major_ranking(parsed, rows, '')
+        tiers, _ = normalize_college_major_ranking(parsed, rows, KB_FACTS)
         names = {m['name'] for t in tiers.values() for m in t}
         assert names == {'Computer Science'}    # invented major dropped
 
@@ -1005,14 +1005,42 @@ class TestRankTrustDiscipline:
         rows = build_full_catalog_rows(KB_FACTS)
         parsed = {'majors': [{'name': 'Computer Engineering',
                               'tier': 'definitely-in', 'rationale': 'x'}]}
-        tiers, _ = normalize_college_major_ranking(parsed, rows, '')
+        tiers, _ = normalize_college_major_ranking(parsed, rows, KB_FACTS)
         assert [m['name'] for m in tiers['reach']] == ['Computer Engineering']
+
+    def test_capped_door_carries_flag_and_caveat_in_any_tier(self):
+        # #305 review F1: tier is the admission-chance read; a capped_door
+        # major may legitimately be 'strong' (a strong direct-admit candidate),
+        # but it ALWAYS gets door_lock=True + the door-lock caveat so a
+        # "Strong match" chip can never hide a locked door.
+        db = FakeDB(profile=dict(READY_PROFILE))
+        strong_capped = {'majors': [
+            {'name': 'Computer Science', 'tier': 'strong',
+             'rationale': "You're a strong candidate here."}]}
+        _run_ranking(db, llm=strong_capped)
+        cs = db.rankings['uw']['tiers']['strong'][0]
+        assert cs['entry_risk'] == 'capped_door'
+        assert cs['door_lock'] is True
+        assert "can't switch in later" in cs['rationale']
+
+    def test_cross_major_number_attribution_is_stripped(self):
+        # #305 review F2: CS has a real 7% in the KB; CE has none. A rationale
+        # for CE claiming "7%" must be stripped — a real rate for one major
+        # cannot legitimize the same figure on another (per-major validation).
+        db = FakeDB(profile=dict(READY_PROFILE))
+        cross = {'majors': [
+            {'name': 'Computer Engineering', 'tier': 'possible',
+             'rationale': 'A realistic match — about 7% get in.'}]}
+        _run_ranking(db, llm=cross)
+        ce = db.rankings['uw']['tiers']['possible'][0]
+        assert '7%' not in ce['rationale']
+        assert any('7%' in n for n in db.rankings['uw']['data_notes'])
 
     def test_tiers_dict_shape_is_also_accepted(self):
         rows = build_full_catalog_rows(KB_FACTS)
         parsed = {'tiers': {'possible': [
             {'name': 'Computer Engineering', 'rationale': 'x'}]}}
-        tiers, _ = normalize_college_major_ranking(parsed, rows, '')
+        tiers, _ = normalize_college_major_ranking(parsed, rows, KB_FACTS)
         assert [m['name'] for m in tiers['possible']] == ['Computer Engineering']
 
 

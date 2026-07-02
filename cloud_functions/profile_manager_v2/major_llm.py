@@ -1007,7 +1007,7 @@ Majors the student has mentioned interest in: {', '.join(intended) or 'none stat
 **YOUR TASK:**
 1. SCAN THE FULL CATALOG. Do NOT limit yourself to the majors the student already named — actively surface strategic and adjacent doors they did NOT ask about but that their record supports. This discovery is the whole point.
 2. SELECT the majors that genuinely FIT this student: attainable given their record AND aligned with their interests and strengths. Only pick majors that appear in the catalog above.
-3. RANK each selected major into EXACTLY ONE tier:
+3. RANK each selected major into EXACTLY ONE tier by the student's ADMISSION CHANCE at that major's primary door (this is what they asked to rank by):
    - "strong" — their record is clearly competitive for this door.
    - "possible" — a realistic match with real uncertainty.
    - "reach" — a stretch; possible but the odds are against them.
@@ -1015,9 +1015,9 @@ Majors the student has mentioned interest in: {', '.join(intended) or 'none stat
 4. Write a one-to-three-sentence `rationale` for each, in your own voice as counselor judgment.
 
 **HARD RULES (violating any of these makes the output unusable):**
-1. NEVER state a percentage, admit rate, GPA, or any number that does not appear in the extract above. If a number is [MISSING], say the school doesn't publish it. Likelihood is a TIER — NEVER a fabricated percentage.
+1. NEVER state a percentage, admit rate, GPA, or any number that does not appear in THIS major's own facts in the extract above. If a number is [MISSING], say the school doesn't publish it. Likelihood is a TIER — NEVER a fabricated percentage.
 2. Frame every call as counselor judgment ("my read", "I'd call this…"), not fact.
-3. ANTI-BACKDOOR: a capped_door major must be ranked HONESTLY (reach or long_shot) with a warning in its rationale that the door locks — if the student isn't admitted directly they cannot switch in later. NEVER recommend applying to an easier major planning to transfer in.
+3. ANTI-BACKDOOR: the tier is admission chance, but for a `capped_door` major ALWAYS warn in its rationale that the door locks — if the student isn't admitted directly they cannot switch in later — REGARDLESS of its tier (a strong applicant can still face a locked door). NEVER recommend applying to an easier major planning to transfer into a capped one later.
 4. SCHOOL-TYPE: when the extract shows the school admits by university rather than by major (open_declaration paths dominate, or the admissions model is university-level), say plainly that the listed major barely affects admission here.
 
 **OUTPUT — return ONLY valid JSON, no markdown fences:**
@@ -1032,23 +1032,30 @@ Majors the student has mentioned interest in: {', '.join(intended) or 'none stat
 
 
 def normalize_college_major_ranking(parsed: Optional[Dict], catalog_rows: List[Dict],
-                                    extract_text: str) -> Tuple[Dict, List[str]]:
+                                    facts: Dict) -> Tuple[Dict, List[str]]:
     """Shape + trust pass over the LLM's ranking. Returns (tiers, data_notes):
 
     - Every ranked name is bound to a REAL catalog major (exact/strong match);
       a name the school doesn't offer is dropped — the ranking only shows majors
       the college actually offers.
     - entry_path / entry_risk come from the KB row (authoritative), never the LLM.
-    - validate_numeric_claims (reused) strips any %/GPA token absent from the
-      extract out of every rationale, logging the strips into data_notes.
-    - a capped_door major whose rationale lacks a door-lock marker gets a
-      deterministic one appended (anti-backdoor belt).
+    - Anti-fabrication is PER-MAJOR (#305 review F2): each rationale is validated
+      against a pool of ONLY that major's own KB numbers + school-level numbers,
+      so a real admit rate for one major can't legitimize the same figure
+      misattributed to another major in the 60-major catalog.
+    - `tier` is the LLM's admission-chance read (that's what the student asked to
+      rank by). `entry_risk` (capped_door / elevated / …) is an ORTHOGONAL
+      structural fact carried on every major regardless of tier; a capped_door
+      major always gets `door_lock: true` + a deterministic door-lock caveat in
+      its rationale (#305 review F1) so a "Strong match" chip can never hide a
+      locked door.
     - a reported admit rate rides along ONLY where the KB row has one, labeled.
     """
     rows_by_name = {r['name']: r for r in catalog_rows if r.get('name')}
     names = list(rows_by_name)
 
-    normalized, seen = [], set()
+    tiers = {t: [] for t in RANKING_TIERS}
+    all_notes, seen = [], set()
     for item in _collect_ranked_majors(parsed):
         if not item.get('name'):
             continue
@@ -1060,31 +1067,32 @@ def normalize_college_major_ranking(parsed: Optional[Dict], catalog_rows: List[D
             continue
         seen.add(kb_name)
         row = rows_by_name[kb_name]
-        normalized.append({
+
+        # Per-major numeric validation: the allowed pool is THIS major's own
+        # KB extract (+ school-level notes), never the whole catalog.
+        per_major_extract = build_labeled_extract(facts, [row], [])
+        cleaned, notes = validate_numeric_claims(
+            {'r': str(item.get('rationale') or '')}, per_major_extract)
+        all_notes.extend(notes)
+        rationale = cleaned.get('r', '')
+
+        entry_risk = row.get('entry_risk')
+        major = {
             'name': kb_name,
             'college': row.get('college'),
             'entry_path': _entry_path_value(row),
-            'entry_risk': row.get('entry_risk'),
+            'entry_risk': entry_risk,
             'tier': _coerce_tier(item.get('tier')),
-            'rationale': str(item.get('rationale') or ''),
-            '_row': row,
-        })
-
-    # Anti-fabrication: one validator pass over all rationales at once.
-    rationale_synthesis = {str(i): m['rationale'] for i, m in enumerate(normalized)}
-    cleaned, notes = validate_numeric_claims(rationale_synthesis, extract_text)
-
-    tiers = {t: [] for t in RANKING_TIERS}
-    for i, m in enumerate(normalized):
-        m['rationale'] = cleaned.get(str(i), '')
-        if m['entry_risk'] == 'capped_door':
-            m['rationale'] = ensure_major_door_lock_rationale(m['rationale'], m['name'])
-        rate = _reported_rate(m['_row'])
+            'rationale': rationale,
+        }
+        if entry_risk == 'capped_door':
+            major['door_lock'] = True  # UI flags this on any tier
+            major['rationale'] = ensure_major_door_lock_rationale(rationale, kb_name)
+        rate = _reported_rate(row)
         if rate is not None:
-            m['reported_rate'] = {'value': rate, 'label': 'reported (unverified)'}
-        m.pop('_row', None)
-        tiers[m['tier']].append(m)
-    return tiers, notes
+            major['reported_rate'] = {'value': rate, 'label': 'reported (unverified)'}
+        tiers[major['tier']].append(major)
+    return tiers, all_notes
 
 
 def run_rank_college_majors(data: Dict) -> Tuple[Dict, int]:
@@ -1132,7 +1140,7 @@ def run_rank_college_majors(data: Dict) -> Tuple[Dict, int]:
             return {'success': False,
                     'error': 'ranking generation failed — try again'}, 500
         tiers, stripped_notes = normalize_college_major_ranking(
-            parsed, catalog_rows, extract_text)
+            parsed, catalog_rows, facts)
         ranked_count = sum(len(v) for v in tiers.values())
         note = None
         if ranked_count == 0:

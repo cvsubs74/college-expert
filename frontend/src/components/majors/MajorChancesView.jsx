@@ -154,6 +154,10 @@ const MajorChancesView = ({ userEmail, universityId, universityName, onBack }) =
         } else if (result?.insufficientCredits) {
             setCreditsRemaining(result.creditsRemaining ?? 0);
             setShowUpgradeModal(true);
+        } else if (result?.retryable || result?.error === 'credits_unavailable_retry') {
+            // #305 review F5: a server-side ledger blip (503) is our outage —
+            // friendly retry copy, never the raw token or the upsell.
+            setError('Credits are temporarily unavailable — please try again in a moment.');
         } else {
             setError(result?.error || 'Ranking generation failed — try again.');
         }
@@ -198,6 +202,19 @@ const MajorChancesView = ({ userEmail, universityId, universityName, onBack }) =
                             <span className="stratia-chip bg-amber-100 text-amber-800 border border-amber-300" data-testid="chances-stale-chip">
                                 Built on {ranking.kb_data_year} data{currentKbYear ? ` — ${currentKbYear} available` : ''}
                             </span>
+                        )}
+                        {/* #305 review F4: a stale ranking is actionable, not just flagged. */}
+                        {ranking && stale && (
+                            <button
+                                onClick={handleGenerate}
+                                disabled={generating}
+                                className="stratia-chip bg-[#1A4D2E] text-white border border-[#1A4D2E] hover:bg-[#143D24] disabled:opacity-50 inline-flex items-center gap-1"
+                                data-testid="chances-rerank"
+                            >
+                                {generating
+                                    ? (<><ArrowPathIcon className="h-3.5 w-3.5 animate-spin" /> Re-ranking…</>)
+                                    : (<><ArrowPathIcon className="h-3.5 w-3.5" /> Re-rank — 1 credit</>)}
+                            </button>
                         )}
                     </div>
                 </div>

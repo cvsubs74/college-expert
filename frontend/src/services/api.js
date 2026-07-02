@@ -1561,6 +1561,10 @@ export const rankCollegeMajors = async (userEmail, universityId) => {
         creditsRemaining: error.response?.data?.credits_remaining ?? 0
       };
     }
+    if (error.response?.status === 503) {
+      // #298/#305 F5: credit-ledger read blip — retryable, not the upsell.
+      return { success: false, error: 'credits_unavailable_retry', retryable: true };
+    }
     console.error('Error ranking college majors:', error);
     return { success: false, error: error.response?.data?.error || error.message };
   }
