@@ -346,7 +346,11 @@ def run_generate_major_map(data: Dict) -> Tuple[Dict, int]:
     fingerprint = profile_fingerprint(profile)
     if not force:
         existing = db.get_major_map(user_email)
-        if existing and (existing.get('profile_fingerprint') or {}).get('sha1') == fingerprint['sha1']:
+        # Serve the cache only if the profile is unchanged AND the map is
+        # already grounded — a pre-grounding map (#308) regenerates instead of
+        # being served stale, even without force.
+        if (existing and existing.get('catalog_grounded')
+                and (existing.get('profile_fingerprint') or {}).get('sha1') == fingerprint['sha1']):
             logger.info(f"[MAJOR_LLM] Returning cached major map for {user_email} (no charge)")
             return {'success': True, 'map': existing, 'from_cache': True}, 200
 
@@ -390,20 +394,31 @@ def run_generate_major_map(data: Dict) -> Tuple[Dict, int]:
 
 
 def get_major_map_payload(user_email: str) -> Tuple[Dict, int]:
-    """GET /get-major-map (free): {success, map|null, stale, stale_reasons}."""
+    """GET /get-major-map (free): {success, map|null, stale, stale_reasons}.
+
+    Stale when the PROFILE it was built from changed, OR when it predates a
+    generator improvement — a map generated before catalog grounding (#307)
+    carries no `catalog_grounded: True`, so we flag it (#308) and the existing
+    regenerate CTA fires; otherwise a code improvement would never reach
+    students still holding a cached map."""
     db = get_db()
     map_doc = db.get_major_map(user_email)
     if not map_doc:
         return {'success': True, 'map': None, 'stale': False, 'stale_reasons': []}, 200
     stale_reasons = []
+    # Generator-version staleness: a pre-grounding map wasn't drawn from real
+    # offered majors — framed as an upgrade, not a defect.
+    if not map_doc.get('catalog_grounded'):
+        stale_reasons.append('generated before we grounded suggestions in real '
+                             'offered majors — regenerate to refresh')
     stored = map_doc.get('profile_fingerprint') or {}
     if stored.get('sha1'):
         current = profile_fingerprint(db.get_profile(user_email))
         if stored['sha1'] != current['sha1']:
             stored_parts = stored.get('parts') or {}
-            stale_reasons = [f'{k} changed since this map was generated'
-                             for k, v in current['parts'].items()
-                             if stored_parts.get(k) != v] or ['profile changed since this map was generated']
+            stale_reasons += [f'{k} changed since this map was generated'
+                              for k, v in current['parts'].items()
+                              if stored_parts.get(k) != v] or ['profile changed since this map was generated']
     return {'success': True, 'map': map_doc,
             'stale': bool(stale_reasons), 'stale_reasons': stale_reasons}, 200
 
