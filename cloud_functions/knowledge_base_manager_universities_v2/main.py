@@ -714,16 +714,30 @@ def _build_chat_history_block(university_id: str) -> str:
     if len(snapshots) + len(trends) < 2:
         return ""
     compact = dict(separators=(',', ':'), default=str)
+    # A zero-version legacy school degrades to a single source:'kb_current'
+    # row — the current serving doc, NOT a verified cycle snapshot. Label it
+    # honestly instead of letting "authoritative" cover it (#293 review).
+    has_current_only = any(r.get('source') == 'kb_current' for r in snapshots)
+    snapshot_label = (
+        "- Current KB serving doc (source 'kb_current': collection year "
+        "unknown — NOT a verified cycle snapshot; treat like the profile data "
+        "above): "
+        if has_current_only else
+        "- Stratia KB snapshots (authoritative; keyed by application-cycle "
+        "year; rows marked vintage_estimated were auto-archived from "
+        "pre-versioning data — both their year AND contents are unverified): "
+    )
+    notes = [n for n in (history.get('notes') or []) if isinstance(n, str)]
+    notes_line = ("\nData notes: " + " | ".join(notes)) if notes else ""
     return (
         "\n\nYEARLY ADMISSIONS HISTORY:\n"
-        "- Stratia KB snapshots (authoritative; keyed by application-cycle "
-        "year; rows marked vintage_estimated have a best-guess year): "
-        f"{json.dumps(snapshots, **compact)}\n"
+        f"{snapshot_label}{json.dumps(snapshots, **compact)}\n"
         "- School-reported trend series (UNVERIFIED, entering-class year axis "
         "— attribute as 'the school reports', never present as verified): "
         f"{json.dumps(trends, **compact)}\n"
-        "When the two disagree, prefer the KB snapshots. These use two "
-        "different year conventions — never merge them into one timeline."
+        "When the two disagree, prefer verified KB snapshots over "
+        "school-reported rows. These use two different year conventions — "
+        f"never merge them into one timeline.{notes_line}"
     )
 
 

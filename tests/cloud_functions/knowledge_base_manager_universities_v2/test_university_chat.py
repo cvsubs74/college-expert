@@ -73,7 +73,7 @@ class TestHistoryInjection:
         assert ('School-reported trend series (UNVERIFIED, entering-class '
                 'year axis') in prompt
         # Precedence + never-merge sentences.
-        assert 'When the two disagree, prefer the KB snapshots.' in prompt
+        assert 'prefer verified KB snapshots over school-reported rows' in prompt
         assert 'never merge them into one timeline' in prompt
         # Both cycle rows and both trend rows made it in (compact JSON).
         assert '"acceptance_rate":25.0' in prompt
@@ -164,3 +164,23 @@ class TestChatContractUnchanged:
         assert result['success'] is True
         assert result['answer'] == 'plain, not JSON'
         assert result['suggested_questions'] == []
+
+
+def test_legacy_current_doc_row_is_not_labeled_authoritative(kb, make_profile, monkeypatch):
+    """#293 review: a zero-version legacy school degrades to one 'kb_current'
+    row — the block must label it as the current serving doc (unknown
+    collection year), never as an authoritative cycle snapshot, and must
+    carry the history notes through."""
+    doc = {'official_name': 'Legacy U',
+           'profile': make_profile(uid='legacy', name='Legacy U',
+                                   longitudinal_trends=[
+                                       {'year': 2024, 'acceptance_rate_overall': 40.0},
+                                       {'year': 2023, 'acceptance_rate_overall': 44.0},
+                                   ])}
+    kb.db.collection.document('legacy').set(doc)
+    block = kb.main._build_chat_history_block('legacy')
+    assert block
+    assert 'NOT a verified cycle snapshot' in block
+    assert 'authoritative' not in block.split('School-reported')[0]
+    assert 'Data notes:' in block          # history notes ride along
+    assert 'No versioned snapshots stored yet' in block
