@@ -58,6 +58,23 @@ class Metadata(BaseModel):
     last_updated: str = Field(
         description="[REQUIRED] ISO date of data collection. Format: 'YYYY-MM-DD'. Auto-generated"
     )
+    cycle_year: Optional[int] = Field(
+        default=None,
+        description="[OPTIONAL] Entering-cohort Fall year this profile was collected for. "
+                    "Example: 2026. Stamped by the collector; drives KB year-versioning (ADR 0002)"
+    )
+    verification_status: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] 'verified' when produced by the self-verifying collector "
+                    "(kb_collect_workflow.js), 'legacy' otherwise. Downstream switch: "
+                    "major_facts.py flips per-major basis labels kb_reported -> kb_verified "
+                    "when this reads 'verified'"
+    )
+    collector_version: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Which collector produced this profile. "
+                    "Example: 'kb_collect_workflow/v2'. Stamped alongside verification_status"
+    )
     report_source_files: List[str] = Field(
         default=[],
         description="[OPTIONAL] List of source files used. Auto-populated"
@@ -512,7 +529,18 @@ class Major(BaseModel):
     )
     admissions_pathway: str = Field(
         default="Direct Admit",
-        description="[REQUIRED] How students enter. Values: 'Direct Admit', 'Pre-Major', 'Apply as Sophomore'"
+        description="[REQUIRED] How students enter, in the school's OWN wording (as close to a "
+                    "verbatim quote of the official page as possible). "
+                    "Examples: 'Direct Admit', 'Pre-Major', 'Apply as Sophomore'"
+    )
+    entry_path: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Structured entry-path enum, set by the collector ONLY when the "
+                    "official admissions_pathway text clearly supports exactly one value. "
+                    "Values: 'direct_admit', 'pre_major', 'secondary_application', "
+                    "'open_declaration'. Null when ambiguous or unstated — the serving-side "
+                    "classifier (major_facts.classify_entry_path) remains the fallback for "
+                    "raw admissions_pathway text"
     )
     internal_transfer_allowed: bool = Field(
         default=True,
@@ -550,6 +578,102 @@ class Major(BaseModel):
 # Sources: Official college pages, Reddit, housing reviews, Niche
 # ==============================================================================
 
+class InternalTransferPolicy(BaseModel):
+    """A college's official internal-transfer (change-of-major into this college)
+    policy for students already enrolled elsewhere at the university.
+
+    Null-over-guess (#287 / REDESIGN.md): every non-null flag must be supported
+    by the verbatim quote — a bare GPA number loses "3.5 is a floor, not a
+    guarantee", which is why gpa_floor and competitive travel together.
+    """
+    allowed: Optional[bool] = Field(
+        default=None,
+        description="[OPTIONAL] Whether internal transfer into this college is possible at all. "
+                    "Null when the official pages do not state it"
+    )
+    competitive: Optional[bool] = Field(
+        default=None,
+        description="[OPTIONAL] True when admission is competitive/space-available even for "
+                    "students who meet the stated requirements (a GPA floor is not a guarantee)"
+    )
+    gpa_floor: Optional[float] = Field(
+        default=None,
+        description="[OPTIONAL] Minimum GPA to APPLY for internal transfer. A floor, not a "
+                    "guarantee — pair with 'competitive'. Example: 3.5"
+    )
+    application_required: Optional[bool] = Field(
+        default=None,
+        description="[OPTIONAL] Whether a formal (secondary) application is required to switch in"
+    )
+    quote: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Verbatim quote from the official policy page supporting every "
+                    "non-null flag above. Required for any non-null flag"
+    )
+    source_url: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Official (.edu) URL the quote was taken from"
+    )
+
+
+class SecondChoiceMajorPolicy(BaseModel):
+    """Policy on listing a second-choice major on the freshman application.
+
+    Lives at university level (AcademicStructure.second_choice_major_policy) and,
+    when a college's rules differ, per-college (College.second_choice_major_policy).
+    The UIUC 'CS+X blends unavailable as a second choice' class of fact.
+    """
+    allowed: Optional[bool] = Field(
+        default=None,
+        description="[OPTIONAL] Whether applicants may list a second-choice major. "
+                    "Null when the official pages do not state it"
+    )
+    constraints: List[str] = Field(
+        default=[],
+        description="[OPTIONAL] Official constraints on the second choice. "
+                    "Example: ['CS+X blended degrees are unavailable as a second choice']"
+    )
+    quote: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Verbatim quote from the official page supporting the policy. "
+                    "Required for any non-null field"
+    )
+    source_url: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Official (.edu) URL the quote was taken from"
+    )
+
+
+class UndeclaredOption(BaseModel):
+    """The university's official undeclared/exploratory entry path for freshmen.
+
+    Example: UIUC's Division of General Studies.
+    """
+    exists: Optional[bool] = Field(
+        default=None,
+        description="[OPTIONAL] Whether an official undeclared/exploratory entry path exists. "
+                    "Null when the official pages do not state it"
+    )
+    division_name: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Official name of the undeclared division/program. "
+                    "Example: 'Division of General Studies'"
+    )
+    restrictions: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Official restrictions on the undeclared path (e.g. majors it "
+                    "cannot lead to, time limits to declare)"
+    )
+    quote: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Verbatim quote from the official page supporting the fields above"
+    )
+    source_url: Optional[str] = Field(
+        default=None,
+        description="[OPTIONAL] Official (.edu) URL the quote was taken from"
+    )
+
+
 class College(BaseModel):
     """A college or school within the university."""
     name: str = Field(
@@ -582,6 +706,16 @@ class College(BaseModel):
         description="[REQUIRED] Stereotypical student type. Source: Reddit, Niche. "
                     "Examples: 'The Overachiever', 'The STEM Nerd', 'The Humanities Scholar', 'The Pre-Med'"
     )
+    internal_transfer_policy: Optional[InternalTransferPolicy] = Field(
+        default=None,
+        description="[OPTIONAL] This college's official internal-transfer (switch-in) policy, "
+                    "quote-backed. Null when not officially stated"
+    )
+    second_choice_major_policy: Optional[SecondChoiceMajorPolicy] = Field(
+        default=None,
+        description="[OPTIONAL] ONLY when this college's second-choice-major rules differ from "
+                    "the university-wide AcademicStructure.second_choice_major_policy"
+    )
     majors: List[Major] = Field(
         default=[],
         description="[REQUIRED] All majors offered by this college. MUST BE POPULATED BY MajorsAgent"
@@ -601,6 +735,17 @@ class AcademicStructure(BaseModel):
     minors_certificates: List[str] = Field(
         default=[],
         description="[REQUIRED] Available minors and certificate programs"
+    )
+    second_choice_major_policy: Optional[SecondChoiceMajorPolicy] = Field(
+        default=None,
+        description="[OPTIONAL] University-wide policy on listing a second-choice major on the "
+                    "freshman application, quote-backed. Per-college deviations live on "
+                    "College.second_choice_major_policy"
+    )
+    undeclared_option: Optional[UndeclaredOption] = Field(
+        default=None,
+        description="[OPTIONAL] The official undeclared/exploratory entry path for freshmen "
+                    "(e.g. UIUC Division of General Studies), quote-backed"
     )
 
 
