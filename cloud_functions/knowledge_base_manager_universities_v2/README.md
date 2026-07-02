@@ -11,6 +11,7 @@ This Cloud Function manages university profile documents in **Firestore** for st
 | GET | `/?id={id}&year=2025` | Get that cycle year's snapshot (ADR 0002); a miss lists available years |
 | GET | `/?id={id}&sections=admissions_data,financials` | Project the profile to just those top-level sections (`sections_returned` / `unknown_sections` in response; all-typo request → 400) |
 | GET | `/?id={id}&action=versions` | List stored cycle-year snapshots |
+| GET | `/?action=majors-catalog[&q=&limit=&min_schools=]` | Global major catalog (#303): every major offered across ALL profiles + how many schools offer each, most-offered first. No id. |
 | GET | `/?id={id}&action=majors` | Trust-labeled per-major entry facts (entry_path enum + verbatim wording, structural entry_risk, basis labels, richness_tier); `&college=`/`&q=` filter, `&year=` reads a snapshot |
 | GET | `/?id={id}&action=history` | Two-axis year view: compact per-cycle `snapshots` + school-reported `reported_trends` (`verified:false`); `&sections=` returns raw per-year sections, `&years=2024,2025` filters |
 | GET | `/` | List all universities |

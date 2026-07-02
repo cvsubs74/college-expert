@@ -17,6 +17,7 @@ from firestore_db import get_db
 from versioning import coerce_year, normalize_percentages, validate_profile
 from year_history import PROFILE_SECTIONS, build_history, project_profile_sections
 from major_facts import extract_major_facts
+import major_catalog
 from request_auth import authenticate
 from gemini_fallback import generate_content_with_fallback
 
@@ -390,6 +391,16 @@ def ingest_university(profile: dict, year: int = None) -> dict:
                 "error": f"Failed to save {official_name} (year {year})",
             }
         logger.info(f"Indexed university: {official_name} (year {year})")
+
+        # Maintain the global major catalog (#303). Only the CURRENT-serving
+        # profile contributes (promoted ingests); best-effort with a belt-and-
+        # suspenders guard here too — a catalog failure must never fail the
+        # ingest (the university is already saved).
+        if save_result.get("promoted", True):
+            try:
+                db.update_major_catalog_for_school(university_id, profile)
+            except Exception as e:  # noqa: BLE001
+                logger.warning(f"[CATALOG] hook failed for {university_id}: {e}")
 
         return {
             "success": True,
@@ -948,6 +959,19 @@ def delete_university(university_id: str, year: int = None) -> dict:
         raise
 
 
+# --- Major Catalog (#303) ---
+def get_majors_catalog(limit: int = None, min_schools: int = 1, query: str = None) -> dict:
+    """Lean, sorted view of the global major catalog (names + offered_count)."""
+    try:
+        catalog = get_db().get_major_catalog()
+        view = major_catalog.catalog_view(
+            catalog, limit=limit, min_schools=min_schools, query=query)
+        return {"success": True, **view}
+    except Exception as e:
+        logger.error(f"Get majors catalog failed: {e}")
+        return {"success": False, "error": str(e), "majors": [], "total": 0}
+
+
 # --- Health Check ---
 def health_check() -> dict:
     """Check service health."""
@@ -1031,6 +1055,14 @@ def knowledge_base_manager_universities_v2_http_entry(req):
                     result = get_university(university_id, year=year, sections=sections)
                     if result.pop('invalid_sections', False):
                         return add_cors_headers(result, 400)
+            elif action == 'majors-catalog':
+                # Global union of majors across all profiles (#303) — no id.
+                raw_limit = req.args.get('limit')
+                raw_min = req.args.get('min_schools')
+                result = get_majors_catalog(
+                    limit=int(raw_limit) if raw_limit else None,
+                    min_schools=int(raw_min) if raw_min else 1,
+                    query=req.args.get('q') or req.args.get('query'))
             elif action in ('history', 'majors'):
                 return add_cors_headers(
                     {"success": False, "error": f"action={action} requires an 'id' parameter"}, 400)
