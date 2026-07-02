@@ -38,6 +38,10 @@ if (typeof INPUT === 'string') { try { INPUT = JSON.parse(INPUT); } catch (e) { 
 INPUT = INPUT || {};
 const UNIVERSITY = INPUT.university || 'University of Illinois Urbana-Champaign';
 const YEAR = Number(INPUT.year) || 2026;                   // entering-cohort Fall year
+// Stamped into metadata.collector_version. Bump when the collection contract changes.
+// v2 = #287 major-strategy asks: per-major entry_path enum, second_choice_major_policy,
+//      internal_transfer_policy, undeclared_option, verification_status stamping.
+const COLLECTOR_VERSION = 'kb_collect_workflow/v2';
 log(`INPUT → university="${UNIVERSITY}", year=${YEAR}${INPUT.university ? '' : ' (DEFAULT — no university in args!)'}`);
 const CDS_EDITION = `${YEAR}-${YEAR + 1}`;                  // e.g. "2024-2025"
 const CYCLE = `Fall ${YEAR}`;
@@ -266,7 +270,19 @@ const SECTIONS = [
   { key: 'strategic_profile', tier: 'mixed', prompt:
     `Build strategic_profile for ${resolved.official_name}: {executive_summary (2-3 sentences), market_position, admissions_philosophy, us_news_rank (integer or null — only from a US News page you fetch), analyst_takeaways:[{category,insight,implication}] (3-5), campus_dynamics:{social_environment,transportation_impact,research_impact}}. us_news_rank is a FACT: null unless quoted. The rest are sourced opinion — attribute and keep concise.` },
   { key: 'academic_structure', tier: 'official', prompt:
-    `Build academic_structure for ${resolved.official_name} from the official catalog (${resolved.sources.majors_catalog_url}): {structure_type, colleges:[{name, admissions_model, is_restricted_or_capped (bool), strategic_fit_advice, housing_profile, student_archetype, majors:[{name, degree_type, is_impacted (bool, ONLY if the school officially designates it capped/impacted — else false), admissions_pathway, direct_admit_only (bool), internal_transfer_gpa (number or null), prerequisite_courses:[]}]}], minors_certificates:[]}. List the real colleges and 8-15 real majors each from the catalog. Do NOT invent weeder courses or GPA cutoffs — null/omit unless officially stated.` },
+    `Build academic_structure for ${resolved.official_name} from the official catalog (${resolved.sources.majors_catalog_url}) and the school's official admissions/advising/change-of-major pages:\n` +
+    `{structure_type,\n` +
+    ` colleges:[{name, admissions_model, is_restricted_or_capped (bool), strategic_fit_advice, housing_profile, student_archetype,\n` +
+    `   internal_transfer_policy: {allowed (bool or null), competitive (bool or null), gpa_floor (number or null), application_required (bool or null), quote, source_url} or null — this college's OFFICIAL policy for already-enrolled students switching in from elsewhere at the university. The quote must carry the nuance a bare number loses (e.g. "a 3.5 GPA is the minimum to apply, not a guarantee of admission" → gpa_floor 3.5 AND competitive true). Each non-null flag must be directly supported by the quoted official text; anything the page does not state → null.\n` +
+    `   second_choice_major_policy: {allowed (bool or null), constraints:[strings], quote, source_url} or null — ONLY when this college's second-choice-major rules differ from the university-wide policy below; otherwise omit/null.\n` +
+    `   majors:[{name, degree_type, is_impacted (bool, ONLY if the school officially designates it capped/impacted — else false),\n` +
+    `     admissions_pathway (the school's OWN wording for how a freshman enters this major — quote it as close to verbatim as possible),\n` +
+    `     entry_path ("direct_admit" | "pre_major" | "secondary_application" | "open_declaration" or null — set ONLY when the official text you quoted in admissions_pathway clearly supports exactly ONE of these; ambiguous, mixed, or unstated → null. A downstream classifier handles raw text; a wrong enum here is worse than a null),\n` +
+    `     direct_admit_only (bool), internal_transfer_gpa (number or null), prerequisite_courses:[]}]}],\n` +
+    ` minors_certificates:[],\n` +
+    ` second_choice_major_policy: {allowed (bool or null), constraints:[strings — e.g. "CS+X blended degrees are unavailable as a second choice"], quote, source_url} or null — the UNIVERSITY-WIDE policy on listing a second-choice major on the freshman application,\n` +
+    ` undeclared_option: {exists (bool or null), division_name (string or null — e.g. "Division of General Studies"), restrictions (string or null), quote, source_url} or null — the official undeclared/exploratory entry path for freshmen}.\n` +
+    `List the real colleges and 8-15 real majors each from the catalog. Every policy object above is null-over-guess: a verbatim quote + official (.edu) source_url is REQUIRED for any non-null flag, else null the whole object. Do NOT invent weeder courses or GPA cutoffs — null/omit unless officially stated.` },
   { key: 'application_process', tier: 'official', prompt:
     `Build application_process for ${resolved.official_name} for the ${CYCLE} cycle from the official admissions site (${resolved.sources.official_admissions_url}): {platforms:[], application_deadlines:[{plan_type, date "YYYY-MM-DD", is_binding (bool), notes}] (dates MUST fall in the ${YEAR}..${YEAR + 1} window — quote them), supplemental_requirements:[{target_program, requirement_type, details}], holistic_factors:{primary_factors:[], secondary_factors:[], essay_importance, demonstrated_interest, interview_policy, legacy_consideration, first_gen_boost}}. Holistic factors come from the CDS C7 if available. Null anything not stated officially.` },
   { key: 'financials', tier: 'official', prompt:
@@ -336,6 +352,10 @@ const profile = {
     location: { city: resolved.city, state: resolved.state, type: resolved.institution_type },
     last_updated: `${YEAR}-CYCLE`,            // stamped by ingest; cycle-pinned
     cycle_year: YEAR,
+    // The badge switch: major_facts.py (knowledge_base_manager_universities_v2) flips
+    // per-major basis labels kb_reported → kb_verified when this reads 'verified'.
+    verification_status: 'verified',
+    collector_version: COLLECTOR_VERSION,
     report_source_files: [resolved.sources.common_data_set_url, resolved.sources.scorecard_url].filter(Boolean),
   },
   strategic_profile: {
@@ -390,8 +410,11 @@ const profile = {
   },
   academic_structure: (() => {
     const AC = D('academic_structure');
-    if (!AC || !Array.isArray(AC.colleges) || !AC.colleges.length) return { structure_type: 'Colleges', colleges: [], minors_certificates: [] };
-    return { ...AC, structure_type: toStr(AC.structure_type) || 'Colleges', minors_certificates: toStrArr(AC.minors_certificates) };
+    // second_choice_major_policy / undeclared_option (university level) and the per-college
+    // internal_transfer_policy / second_choice_major_policy objects flow through the spread —
+    // their {.., quote, source_url} shape has no 'value' key, so unwrap() leaves them intact.
+    if (!AC || !Array.isArray(AC.colleges) || !AC.colleges.length) return { structure_type: 'Colleges', colleges: [], minors_certificates: [], second_choice_major_policy: null, undeclared_option: null };
+    return { ...AC, structure_type: toStr(AC.structure_type) || 'Colleges', minors_certificates: toStrArr(AC.minors_certificates), second_choice_major_policy: AC.second_choice_major_policy || null, undeclared_option: AC.undeclared_option || null };
   })(),
   application_process: (() => {
     const AP = D('application_process');

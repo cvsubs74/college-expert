@@ -77,6 +77,41 @@ curl -X DELETE "$KB_URL" -H 'Content-Type: application/json' \
 
 `KB_URL=https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app`
 
+## Major-strategy fields in the verified collector (#287)
+
+`agents/university_profile_collector/kb_collect_workflow.js` (v2, stamped as
+`metadata.collector_version: 'kb_collect_workflow/v2'`) now also gathers —
+all null-over-guess, each non-null policy backed by a verbatim quote + an
+official source URL:
+
+- **Per-major `entry_path`** — a structured enum (`direct_admit` /
+  `pre_major` / `secondary_application` / `open_declaration`) alongside the
+  raw `admissions_pathway` quote. Set only when the official text clearly
+  supports one value; null otherwise. For newly collected schools this
+  removes the serving-side keyword classifier
+  (`major_facts.classify_entry_path`) from the trust path — it stays as the
+  fallback for nulls and for legacy profiles.
+- **`second_choice_major_policy`** — university-wide on
+  `academic_structure`, plus per-college only where a college's rules
+  differ (the UIUC "CS+X unavailable as a second choice" class of fact).
+- **Per-college `internal_transfer_policy`** —
+  `{allowed, competitive, gpa_floor, application_required, quote,
+  source_url}`; the quote carries what a bare number loses ("3.5 is a
+  floor, not a guarantee").
+- **`undeclared_option`** — the official undeclared/exploratory entry path
+  (e.g. UIUC Division of General Studies) on `academic_structure`.
+
+The collector also stamps **`metadata.verification_status: 'verified'`**
+next to `cycle_year`. This is the badge switch: `major_facts.py` in
+`knowledge_base_manager_universities_v2` flips per-major basis labels from
+`kb_reported` to `kb_verified` when it reads `'verified'` — so schools
+re-collected with the v2 workflow surface Verified badges in the app while
+the other ~176 legacy profiles stay honestly "reported". Legacy profiles
+have no `verification_status`; nothing needs backfilling.
+
+The Pydantic schema (`agents/university_profile_collector/model.py`) is in
+sync with these fields, so `--dry-run` validation covers them.
+
 ## Gotchas
 
 - **Deploy before ingesting with `--year`.** The CLI aborts if the deployed
