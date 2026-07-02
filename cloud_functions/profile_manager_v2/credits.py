@@ -41,17 +41,25 @@ def get_user_credits(user_id: str) -> Dict:
     try:
         db = get_db()
         credits = db.get_credits(user_id)
-        
+
         if not credits:
-            # Initialize for new user
+            # Initialize for new user — only on a CONFIRMED missing document.
             credits = initialize_user_credits(user_id)
-        
+
         return credits
-        
+
     except Exception as e:
-        logger.error(f"[CREDITS] Error getting credits for {user_id}: {e}")
-        # Return default free tier
-        return initialize_user_credits(user_id)
+        # #298: a transient READ failure must never be treated like a missing
+        # record — initialize_user_credits WRITES a fresh free-tier doc and
+        # would overwrite a paying subscriber's balance on an infra blip.
+        # Return a retryable error marker instead; callers map it to a
+        # retry-style response, never to insufficient_credits.
+        logger.error(f"[CREDITS] Read failed for {user_id} (no re-init): {e}")
+        return {
+            "user_id": user_id,
+            "error": "credits_read_failed",
+            "retryable": True,
+        }
 
 
 def initialize_user_credits(user_id: str, tier: str = "free") -> Dict:
@@ -116,20 +124,32 @@ def check_credits_available(user_id: str, credits_needed: int = 1) -> Dict:
     """
     try:
         credits = get_user_credits(user_id)
+        if credits.get('error') == 'credits_read_failed':
+            # #298: distinguish "can't read the ledger right now" from "broke" —
+            # a paying user must see a retryable failure, not an upsell.
+            return {
+                "has_credits": False,
+                "credits_remaining": None,
+                "credits_needed": credits_needed,
+                "error": "credits_read_failed",
+                "retryable": True,
+            }
         credits_remaining = credits.get('credits_remaining', 0)
-        
+
         return {
             "has_credits": credits_remaining >= credits_needed,
             "credits_remaining": credits_remaining,
             "credits_needed": credits_needed
         }
-        
+
     except Exception as e:
         logger.error(f"[CREDITS] Error checking credits: {e}")
         return {
             "has_credits": False,
-            "credits_remaining": 0,
-            "credits_needed": credits_needed
+            "credits_remaining": None,
+            "credits_needed": credits_needed,
+            "error": "credits_read_failed",
+            "retryable": True,
         }
 
 
@@ -153,7 +173,12 @@ def deduct_credit(user_id: str, credit_count: int = 1, reason: str = "fit_analys
     try:
         db = get_db()
         credits = get_user_credits(user_id)
-        
+
+        if credits.get('error') == 'credits_read_failed':
+            # #298: never mutate/save on a read failure; surface it as-is.
+            return {"success": False, "error": "credits_read_failed",
+                    "retryable": True}
+
         # Ensure credit values are integers (may be stored as strings in Firestore)
         credits_remaining = int(credits.get('credits_remaining', 0))
         credits_used = int(credits.get('credits_used', 0))
