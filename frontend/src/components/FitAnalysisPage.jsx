@@ -20,13 +20,14 @@ import { useAuth } from '../context/AuthContext';
 import { checkCredits, deductCredit } from '../services/api';
 import FitInfographicView from './FitInfographicView';
 import FitUpdateBanner from './FitUpdateBanner';
+import MajorStrategyPanel from './majors/MajorStrategyPanel';
 
 // ============================================================================
 // FIT ANALYSIS PAGE - Complete display of all fit analysis data
 // ============================================================================
 const FitAnalysisPage = ({ college, onBack, kbUpdate = null, onUpdateFit = null }) => {
     const { currentUser } = useAuth();
-    const [activeTab, setActiveTab] = useState('snapshot'); // 'snapshot', 'scores', 'strategy', 'timeline', 'tips'
+    const [activeTab, setActiveTab] = useState('snapshot'); // 'snapshot', 'scores', 'strategy', 'majors', 'timeline', 'tips'
     // Removed infographicUrl state - using HTML template instead
     const [isGenerating, setIsGenerating] = useState(false);
     const [generationError, setGenerationError] = useState(null);
@@ -151,6 +152,7 @@ const FitAnalysisPage = ({ college, onBack, kbUpdate = null, onUpdateFit = null 
                         { id: 'snapshot', icon: ChartBarIcon, label: 'Snapshot' },
                         { id: 'scores', icon: AcademicCapIcon, label: 'Scores' },
                         { id: 'strategy', icon: DocumentTextIcon, label: 'Strategy' },
+                        { id: 'majors', icon: BookOpenIcon, label: 'Majors' },
                         { id: 'timeline', icon: CalendarIcon, label: 'Timeline' },
                         { id: 'tips', icon: LightBulbIcon, label: 'Tips' }
                     ].map(tab => (
@@ -402,10 +404,18 @@ const FitAnalysisPage = ({ college, onBack, kbUpdate = null, onUpdateFit = null 
                         {/* Major Strategy */}
                         {majorStrategy.intended_major && (
                             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                                <h2 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                    <BookOpenIcon className="h-5 w-5 text-[#1A4D2E]" />
-                                    Major Strategy
-                                </h2>
+                                <div className="flex items-center justify-between mb-4">
+                                    <h2 className="font-bold text-gray-900 flex items-center gap-2">
+                                        <BookOpenIcon className="h-5 w-5 text-[#1A4D2E]" />
+                                        Major Strategy
+                                    </h2>
+                                    <button
+                                        onClick={() => setActiveTab('majors')}
+                                        className="text-sm font-medium text-[#1A4D2E] hover:underline"
+                                    >
+                                        See major facts →
+                                    </button>
+                                </div>
                                 <div className="bg-[#F8F6F0] p-4 rounded-lg border border-[#E0DED8]">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                                         <div>
@@ -488,6 +498,14 @@ const FitAnalysisPage = ({ college, onBack, kbUpdate = null, onUpdateFit = null 
                             </div>
                         )}
                     </React.Fragment>
+                )}
+
+                {/* ===== MAJORS TAB — facts-only, trust-labeled KB extract ===== */}
+                {activeTab === 'majors' && (
+                    <MajorStrategyPanel
+                        universityId={college.university_id}
+                        universityName={college.university_name}
+                    />
                 )}
 
                 {/* ===== TIMELINE TAB ===== */}

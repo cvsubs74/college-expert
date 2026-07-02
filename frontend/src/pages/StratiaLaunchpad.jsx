@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
-import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, checkCredits, deductCredit, checkFitRecomputationNeeded, getOutcomeCalibration, setApplicationDecision } from '../services/api';
+import { getPrecomputedFits, getUniversitiesByCategory, updateCollegeList, computeSingleFit, checkCredits, deductCredit, checkFitRecomputationNeeded, getOutcomeCalibration, setApplicationDecision, setMajorChoice } from '../services/api';
+import { useToast } from '../components/Toast';
 import KbRefreshBanner from '../components/KbRefreshBanner';
 import KbRefreshReviewModal from '../components/KbRefreshReviewModal';
 import { kbUpdateFor } from '../utils/kbVintage';
@@ -48,6 +49,7 @@ const FIX_BALANCE_PROMPT = "Look at my Stratia college list and its reach/target
 const StratiaLaunchpad = () => {
     const { currentUser } = useAuth();
     const { isFreeTier, fetchCredits, hasCredits } = usePayment();
+    const toast = useToast();
     const navigate = useNavigate();
     const FREE_TIER_SCHOOL_LIMIT = 3;
 
@@ -125,6 +127,10 @@ const StratiaLaunchpad = () => {
                             scholarship_matches: fit.scholarship_matches || [],
                             test_strategy: fit.test_strategy || {},
                             major_strategy: fit.major_strategy || {},
+                            // Which major this fit was actually computed for (#283) —
+                            // drives the explicit "Recompute with {new}?" offer.
+                            intended_major_used: fit.intended_major_used,
+                            intended_major_source: fit.intended_major_source,
                             infographic_url: fit.infographic_url,
                             logo_url: fit.logo_url,
                             // KB provenance (design §1) — drives vintage chips
@@ -376,54 +382,120 @@ const StratiaLaunchpad = () => {
         }
     };
 
-    // Handle major change - recompute fit analysis
+    // Handle major change — persist the decision via set-major-choice (free).
+    // Optimistic UI: reflect the pick immediately, revert + toast on failure.
+    // NEVER recomputes the fit here — that's an explicit, separately-priced
+    // action offered by the mismatch chip on the card (handleRecomputeWithMajor).
     const handleMajorChange = async (universityId, newMajor) => {
         if (!currentUser?.email) return;
 
-        console.log(`[StratiaLaunchpad] Changing major for ${universityId} to ${newMajor}`);
+        console.log(`[StratiaLaunchpad] Saving major for ${universityId}: ${newMajor}`);
 
-        // Show analysis progress modal
         const college = collegeList.find(c => c.university_id === universityId);
+        if (!college) return;
+        const prevSelectedMajor = college.selected_major;
+        const prevMajorChoice = college.major_choice;
+        const prevNote = college.major_choice_note;
+
+        // Optimistic update
+        setCollegeList(prev => prev.map(c =>
+            c.university_id === universityId
+                ? {
+                    ...c,
+                    selected_major: newMajor,
+                    major_choice: { ...(c.major_choice || {}), primary: newMajor, matched: true },
+                    major_choice_note: null
+                }
+                : c
+        ));
+
+        try {
+            const result = await setMajorChoice(currentUser.email, universityId, newMajor);
+            if (!result?.success) {
+                throw new Error(result?.error || 'Failed to save major choice');
+            }
+            // Adopt the server's canonical decision (matched flag, KB spelling,
+            // kb_year, updated_at) + any unmatched-name note.
+            setCollegeList(prev => prev.map(c =>
+                c.university_id === universityId
+                    ? {
+                        ...c,
+                        selected_major: result.major_choice?.primary || newMajor,
+                        major_choice: result.major_choice || { primary: newMajor },
+                        major_choice_note: result.note || null
+                    }
+                    : c
+            ));
+            console.log(`[StratiaLaunchpad] Major saved for ${universityId}:`, result.major_choice);
+        } catch (err) {
+            console.error('[StratiaLaunchpad] Error saving major choice:', err);
+            // Revert the optimistic update
+            setCollegeList(prev => prev.map(c =>
+                c.university_id === universityId
+                    ? { ...c, selected_major: prevSelectedMajor, major_choice: prevMajorChoice, major_choice_note: prevNote }
+                    : c
+            ));
+            toast.error("Couldn't save your major", err.message || 'Please try again.');
+        }
+    };
+
+    // Explicit recompute with the newly chosen major (from the mismatch chip on
+    // the card). Reuses the existing credit-check + progress-modal flow and
+    // passes intended_major so the fit is computed for the right major.
+    const handleRecomputeWithMajor = async (university, newMajor) => {
+        if (!currentUser?.email) return;
+
+        // Credit gate — same pattern as the other paid actions on this page.
+        if (!hasCredits) {
+            setShowCreditsModal(true);
+            return;
+        }
+
         setAnalysisModal({
             isOpen: true,
-            universityName: college?.university_name || universityId,
+            universityName: university.university_name || university.university_id,
             step: 'fit',
             progress: 30
         });
 
         try {
-            // Update college list with new major
-            setAnalysisModal(prev => ({ ...prev, step: 'fit', progress: 50 }));
-
-            // Recompute fit with new major (pass major as parameter if API supports it)
-            await computeSingleFit(currentUser.email, universityId, false);
+            // The server does not yet deduct for compute-single-fit (#285) —
+            // charge client-side like every other paid action on this page.
+            const deduction = await deductCredit(currentUser.email, 1, 'fit_analysis');
+            if (!deduction?.success) {
+                setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+                setShowCreditsModal(true);
+                return;
+            }
+            const result = await computeSingleFit(currentUser.email, university.university_id, true, newMajor);
+            if (result?.insufficientCredits) {
+                setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+                setShowCreditsModal(true);
+                return;
+            }
+            if (!result?.success) {
+                throw new Error(result?.error || 'Fit recompute failed');
+            }
 
             setAnalysisModal(prev => ({ ...prev, step: 'saving', progress: 70 }));
+            await fetchCredits(); // refresh global credits after the paid compute
 
-            // Update local state with new major
-            setCollegeList(prev => prev.map(c =>
-                c.university_id === universityId
-                    ? { ...c, selected_major: newMajor }
-                    : c
-            ));
-
-            // Small delay for ES to index
+            // Small delay for the fit doc to be readable, then refresh
             await new Promise(resolve => setTimeout(resolve, 600));
-
-            // Refresh to get new fit data
             await fetchCollegeList();
 
             setAnalysisModal(prev => ({ ...prev, step: 'complete', progress: 100 }));
-
-            // Auto-close modal
             setTimeout(() => {
                 setAnalysisModal(prev => ({ ...prev, isOpen: false }));
             }, 1500);
 
-            console.log(`[StratiaLaunchpad] Major changed to ${newMajor}, fit recomputed`);
+            console.log(`[StratiaLaunchpad] Fit recomputed for ${university.university_id} with major ${newMajor}`);
         } catch (err) {
-            console.error('[StratiaLaunchpad] Error changing major:', err);
+            console.error('[StratiaLaunchpad] Error recomputing fit with major:', err);
             setAnalysisModal(prev => ({ ...prev, step: 'error', progress: 0 }));
+            setTimeout(() => {
+                setAnalysisModal(prev => ({ ...prev, isOpen: false }));
+            }, 2000);
         }
     };
 
@@ -829,8 +901,11 @@ const StratiaLaunchpad = () => {
                                             us_news_rank: college.us_news_rank || college.fit_analysis?.us_news_rank,
                                             fit_category: college.fit_analysis?.fit_category || college.soft_fit_category || 'TARGET',
                                             match_score: college.fit_analysis?.match_score || 0,
-                                            // Major data
+                                            // Major data — major_choice is the persisted
+                                            // per-school decision; selected_major the legacy mirror
                                             selected_major: college.selected_major,
+                                            major_choice: college.major_choice || null,
+                                            major_choice_note: college.major_choice_note || null,
                                             available_majors: college.available_majors || [],
                                             // Application status
                                             application_status: college.application_status || null,
@@ -843,6 +918,7 @@ const StratiaLaunchpad = () => {
                                         onEssayHelp={handleEssayHelp}
                                         onUpdateFit={handleUpdateFit}
                                         onMajorChange={handleMajorChange}
+                                        onRecomputeWithMajor={handleRecomputeWithMajor}
                                         canRemove={!isFreeTier}
                                         onRemove={handleRemoveCollege}
                                     />

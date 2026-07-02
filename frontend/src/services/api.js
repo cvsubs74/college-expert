@@ -1019,6 +1019,33 @@ export const getUniversitiesByCategory = async (category, excludeIds = [], limit
 };
 
 /**
+ * Get trust-labeled major facts for a university from the universities KB
+ * (`?id=X&action=majors`). Every claim carries a `basis` (kb_verified /
+ * kb_reported / opinion) and nulls mean "the school doesn't publish this".
+ * @param {string} universityId - University ID
+ * @param {Object} options - Optional filters
+ * @param {string} options.college - Filter to one college within the university
+ * @param {string} options.query - Server-side major-name filter
+ * @returns {Promise<{success: boolean, colleges: Array, verification_status: string}>}
+ */
+export const getUniversityMajors = async (universityId, { college, query } = {}) => {
+  try {
+    // Fallback pins the LIVE v2 service (the non-v2 fallback used elsewhere in
+    // this file predates the ES service going offline).
+    const baseUrl = import.meta.env.VITE_KNOWLEDGE_BASE_UNIVERSITIES_URL || 'https://knowledge-base-manager-universities-v2-pfnwjfp26a-ue.a.run.app';
+    const params = { id: universityId, action: 'majors' };
+    if (college) params.college = college;
+    if (query) params.q = query;
+
+    const response = await axios.get(baseUrl, { params, timeout: 30000 });
+    return response.data;
+  } catch (error) {
+    console.error('Error getting university majors:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
  * Delete a document from the knowledge base
  * Uses the knowledge base manager cloud function
  * Works with all approaches (RAG, Firestore, Elasticsearch) using the same endpoint
@@ -1256,6 +1283,41 @@ export const updateCollegeList = async (userEmail, action, university, intendedM
 };
 
 /**
+ * Persist the student's per-school major decision (college_list/{id}.major_choice).
+ * The server validates the school is on the list and match-binds the major
+ * name against the KB's official list (matched:false = stored as given).
+ * @param {string} userEmail - User's email
+ * @param {string} universityId - University ID (must already be on the list)
+ * @param {string} primaryMajor - The major the student will apply under
+ * @param {Object} options - Optional fields
+ * @param {string} options.backupMajor - Backup/alternate major
+ * @param {string} options.rationale - Why this major
+ * @returns {Promise<{success: boolean, major_choice: Object, near_misses: Array, note: string|null}>}
+ */
+export const setMajorChoice = async (userEmail, universityId, primaryMajor, { backupMajor, rationale } = {}) => {
+  try {
+    const baseUrl = getProfileManagerUrl();
+    const body = {
+      user_email: userEmail,
+      university_id: universityId,
+      primary_major: primaryMajor,
+      source: 'app'
+    };
+    if (backupMajor) body.backup_major = backupMajor;
+    if (rationale) body.rationale = rationale;
+
+    const response = await axios.post(`${baseUrl}/set-major-choice`, body, {
+      timeout: 30000,
+      headers: { 'X-User-Email': userEmail }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error setting major choice:', error);
+    return { success: false, error: error.response?.data?.error || error.message };
+  }
+};
+
+/**
  * Update fit analysis for a college in user's list
  * @param {string} userEmail - User's email
  * @param {string} universityId - University ID
@@ -1315,17 +1377,21 @@ export const computeAllFits = async (userEmail) => {
  * @param {string} userEmail - User's email
  * @param {string} universityId - University ID to compute fit for
  * @param {boolean} forceRecompute - If true, bypass cache and force LLM recomputation
+ * @param {string|null} intendedMajor - Optional explicit major override; the fit doc
+ *                                      stamps intended_major_used/_source in response
  * @returns {Promise<{success: boolean, fit_analysis: object, from_cache: boolean}>}
  */
-export const computeSingleFit = async (userEmail, universityId, forceRecompute = false) => {
+export const computeSingleFit = async (userEmail, universityId, forceRecompute = false, intendedMajor = null) => {
   try {
     console.log(`[API] Computing single fit for ${userEmail} - ${universityId} (force=${forceRecompute})...`);
     const baseUrl = getProfileManagerUrl();
-    const response = await axios.post(`${baseUrl}/compute-single-fit`, {
+    const body = {
       user_email: userEmail,
       university_id: universityId,
       force_recompute: forceRecompute
-    }, {
+    };
+    if (intendedMajor) body.intended_major = intendedMajor;
+    const response = await axios.post(`${baseUrl}/compute-single-fit`, body, {
       timeout: 60000,  // 1 min timeout for single university
       headers: { 'X-User-Email': userEmail }
     });
