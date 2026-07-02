@@ -38,12 +38,52 @@ def coerce_year(raw, default: Optional[int] = None) -> int:
 
 
 # Percent-like fields that research passes sometimes return as fractions
-# (0.459 for 45.9%). No US university has a sub-1% value for any of these
-# (lowest real acceptance rate ≈ 3%), so 0 < v < 1 unambiguously means a
-# fraction. loan_default_rate is excluded — real values below 1% exist.
+# (0.459 for 45.9%). The heuristic 0 < v < 1 ⇒ fraction is only safe for
+# fields with no legitimate sub-1% values (overall admission-style rates:
+# the lowest real acceptance rate ≈ 3%). It is UNSAFE — and corrupts data —
+# for rare-event rates and small population slices, where genuine sub-1%
+# values exist in the corpus (#289):
+#   transfer_acceptance_rate      Harvard: a real 0.8% became 80%
+#   waitlist_admit_rate           CMU series [1.5, 0.9, ...] → [1.5, 90, ...]
+#   international/legacy/first_gen_percentage, geographic 'percentage'
+#                                 Clemson intl 0.84% → 84%
+# Those keys are excluded: null-over-guess — an unconverted fraction is a
+# recoverable ambiguity, a silent ×100 is corruption.
 _PERCENT_KEY_SUFFIXES = ('_rate', '_percentage')
-_PERCENT_KEY_EXACT = {'percentage', 'percent_receiving_aid', 'class_fill_percentage'}
-_PERCENT_KEY_EXCLUDE = {'loan_default_rate'}
+_PERCENT_KEY_EXACT = {'percent_receiving_aid', 'class_fill_percentage'}
+_PERCENT_KEY_EXCLUDE = {
+    'loan_default_rate',
+    'transfer_acceptance_rate',
+    'waitlist_admit_rate',
+    'waitlist_acceptance_rate',
+    'waitlist_yield_rate',
+    'international_percentage',
+    'legacy_percentage',
+    'first_gen_percentage',
+}
+
+
+def _normalize_share_groups(obj):
+    """Convert PROVABLE fraction groups: a list of dicts whose 'percentage'
+    values sum to ~1.0 is a share breakdown stored as fractions (0.57+0.43);
+    ×100 all members. This is arithmetic, not a guess — sub-1 'percentage'
+    values are otherwise excluded as ambiguous (#289). Returns count converted.
+    """
+    converted = 0
+    if isinstance(obj, dict):
+        for value in obj.values():
+            converted += _normalize_share_groups(value)
+    elif isinstance(obj, list):
+        shares = [item.get('percentage') for item in obj
+                  if isinstance(item, dict) and isinstance(item.get('percentage'), (int, float))]
+        if len(shares) >= 2 and all(0 < v <= 1 for v in shares) and 0.95 <= sum(shares) <= 1.05:
+            for item in obj:
+                if isinstance(item, dict) and isinstance(item.get('percentage'), (int, float)):
+                    item['percentage'] = round(item['percentage'] * 100, 2)
+                    converted += 1
+        for item in obj:
+            converted += _normalize_share_groups(item)
+    return converted
 
 
 def normalize_percentages(obj):
@@ -51,7 +91,7 @@ def normalize_percentages(obj):
 
     Returns the number of fields converted.
     """
-    converted = 0
+    converted = _normalize_share_groups(obj)
     if isinstance(obj, dict):
         for key, value in obj.items():
             if isinstance(value, (dict, list)):
