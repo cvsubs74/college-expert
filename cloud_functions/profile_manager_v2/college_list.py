@@ -222,6 +222,10 @@ def get_college_list(user_id: str) -> List[Dict]:
                 # distinct from the population-level soft_fit_category above.
                 'fit_category': fit.get('fit_category'),
                 'match_percentage': fit.get('match_percentage') or fit.get('match_score'),
+                # Per-school major decision (#281) — previously stripped by this
+                # whitelist, which broke the Launchpad round-trip.
+                'selected_major': item.get('selected_major'),
+                'major_choice': item.get('major_choice'),
             }
             enriched_items.append(enriched_item)
         

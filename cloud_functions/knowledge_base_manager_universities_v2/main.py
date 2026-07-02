@@ -15,6 +15,7 @@ from google.genai import types
 from firestore_db import get_db
 from versioning import coerce_year, normalize_percentages, validate_profile
 from year_history import PROFILE_SECTIONS, build_history, project_profile_sections
+from major_facts import extract_major_facts
 from gemini_fallback import generate_content_with_fallback
 
 # Configure logging
@@ -639,6 +640,38 @@ def get_university_history(university_id: str, sections: list = None, years: lis
         return {"success": False, "error": str(e)}
 
 
+# --- University Majors (trust-labeled extract) ---
+def get_university_majors(university_id: str, year: int = None,
+                          college: str = None, query: str = None) -> dict:
+    """Deterministic trust-labeled per-major facts (see major_facts.py).
+    Optional `year` reads a cycle snapshot; `college`/`query` filter by
+    college or major-name substring."""
+    try:
+        db = get_db()
+        data = db.get_university(university_id, year=year)
+        if not data:
+            if year is not None:
+                available = db.get_available_years(university_id)
+                return {"success": False,
+                        "error": (f"University {university_id} has no data for cycle "
+                                  f"year {year}"
+                                  + (f"; available years: {available}" if available else "")),
+                        **({"available_years": available} if available else {})}
+            return {"success": False, "error": f"University {university_id} not found"}
+
+        facts = extract_major_facts(data.get('profile'), college=college, query=query)
+        facts.update({
+            "success": True,
+            "university_id": university_id,
+            "official_name": data.get('official_name'),
+            "data_year": data.get('data_year'),
+        })
+        return facts
+    except Exception as e:
+        logger.error(f"Get university majors failed: {e}")
+        return {"success": False, "error": str(e)}
+
+
 # --- List University Versions ---
 def list_university_versions(university_id: str) -> dict:
     """List the cycle-year snapshots stored for a university."""
@@ -875,6 +908,18 @@ def knowledge_base_manager_universities_v2_http_entry(req):
             if university_id:
                 if action == 'versions':
                     result = list_university_versions(university_id)
+                elif action == 'majors':
+                    raw_year = req.args.get('year')
+                    year = None
+                    if raw_year:
+                        try:
+                            year = coerce_year(raw_year)
+                        except ValueError as e:
+                            return add_cors_headers({"success": False, "error": f"Invalid year: {e}"}, 400)
+                    result = get_university_majors(
+                        university_id, year=year,
+                        college=req.args.get('college'),
+                        query=req.args.get('q') or req.args.get('query'))
                 elif action == 'history':
                     # `years` filters snapshots; a lone `year` is accepted as
                     # an alias so it isn't silently ignored.
@@ -899,9 +944,9 @@ def knowledge_base_manager_universities_v2_http_entry(req):
                     result = get_university(university_id, year=year, sections=sections)
                     if result.pop('invalid_sections', False):
                         return add_cors_headers(result, 400)
-            elif action == 'history':
+            elif action in ('history', 'majors'):
                 return add_cors_headers(
-                    {"success": False, "error": "action=history requires an 'id' parameter"}, 400)
+                    {"success": False, "error": f"action={action} requires an 'id' parameter"}, 400)
             else:
                 # Parse pagination and search parameters
                 limit = int(req.args.get('limit', 30))

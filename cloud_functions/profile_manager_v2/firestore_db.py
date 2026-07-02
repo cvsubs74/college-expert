@@ -204,6 +204,32 @@ class FirestoreDB:
         except Exception as e:
             logger.error(f"[Firestore] Error getting college list: {e}")
             return []
+
+    def get_college_list_item(self, user_id: str, university_id: str) -> Optional[Dict]:
+        """One college-list item, or None if the school isn't on the list."""
+        try:
+            doc = (self.db.collection('users').document(user_id)
+                   .collection('college_list').document(university_id).get())
+            if doc.exists:
+                return {'university_id': doc.id, **doc.to_dict()}
+            return None
+        except Exception as e:
+            logger.error(f"[Firestore] Error getting college list item: {e}")
+            return None
+
+    def update_college_list_item(self, user_id: str, university_id: str, data: Dict) -> bool:
+        """Merge fields into an EXISTING list item — unlike add_to_college_list
+        it never creates a stray item and never re-stamps added_at."""
+        try:
+            doc_ref = (self.db.collection('users').document(user_id)
+                       .collection('college_list').document(university_id))
+            if not doc_ref.get().exists:
+                return False
+            doc_ref.set(data, merge=True)
+            return True
+        except Exception as e:
+            logger.error(f"[Firestore] Error updating college list item: {e}")
+            return False
     
     def remove_from_college_list(self, user_id: str, university_id: str) -> bool:
         """Remove university from college list."""

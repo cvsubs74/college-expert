@@ -25,11 +25,13 @@ from starlette.testclient import TestClient  # noqa: E402
 EXPECTED_TOOLS = {
     # reads
     "search_universities", "get_university", "get_university_history",
+    "get_university_majors",
     "get_college_list", "get_fit_analysis",
     "get_fit_history", "get_deadlines", "get_profile", "get_roadmap", "get_essays",
     "get_aid_packages", "get_scholarships", "get_credits", "check_fit_recomputation",
     # safe writes
     "add_college", "remove_college", "recompute_fit", "update_profile_field",
+    "set_intended_majors", "set_major_choice",
 }
 
 
@@ -59,6 +61,16 @@ def test_year_access_tools_registered():
     assert "years" in hist_schema["properties"]
     schema_text = str(uni_schema)
     assert "admissions_data" in schema_text and "academic_structure" in schema_text
+
+
+def test_major_tools_registered():
+    # #281/#282: major-selection tools.
+    tools = {t.name: t for t in asyncio.run(server.mcp.list_tools())}
+    assert tools["get_university_majors"].annotations.readOnlyHint is True
+    assert tools["set_intended_majors"].annotations.readOnlyHint is False
+    assert tools["set_intended_majors"].annotations.idempotentHint is True
+    assert tools["set_major_choice"].annotations.idempotentHint is True
+    assert "major" in tools["recompute_fit"].inputSchema["properties"]
 
 
 def test_research_notebook_tools_registered():

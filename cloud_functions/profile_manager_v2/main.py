@@ -20,6 +20,12 @@ from profile_operations import (
     cleanup_profile_on_document_delete,
     update_profile_field
 )
+from majors import (
+    save_onboarding_profile,
+    set_intended_majors,
+    set_major_choice,
+    resolve_intended_major,
+)
 from gcs_storage import (
     download_file_from_gcs,
     delete_file_from_gcs,
@@ -368,6 +374,50 @@ def profile_manager_v2_http_entry(request):
                     'total': 0
                 })
         
+        # --- ONBOARDING PROFILE (the route OnboardingModal always posted to;
+        # it never existed in v2, so onboarding majors/preferences were lost) ---
+        elif resource_type == 'save-onboarding-profile' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            profile_data = data.get('profile_data') or {}
+            if not user_email:
+                return add_cors_headers({'error': 'user_email required'}, 400)
+            if not isinstance(profile_data, dict) or not profile_data:
+                return add_cors_headers({'success': False,
+                                         'error': 'profile_data (object) required'}, 400)
+            result = save_onboarding_profile(user_email, profile_data)
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+
+        # --- INTENDED MAJORS (ranked candidate set, ≤5; mirrors intended_major) ---
+        elif resource_type == 'set-intended-majors' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            if not user_email:
+                return add_cors_headers({'error': 'user_email required'}, 400)
+            result = set_intended_majors(user_email, data.get('majors'),
+                                         primary=data.get('primary'))
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+
+        # --- PER-SCHOOL MAJOR CHOICE (validated against the school's KB majors) ---
+        elif resource_type == 'set-major-choice' and request.method == 'POST':
+            data = request.get_json() or {}
+            user_email = data.get('user_email')
+            university_id = data.get('university_id')
+            if not user_email or not university_id:
+                return add_cors_headers({'error': 'user_email and university_id required'}, 400)
+            # Single attempt: the caller's own timeout beats the default 4-id x
+            # 3-retry x 30s ladder, and a KB miss degrades to matched=False anyway.
+            envelope = fetch_university_profile(university_id, max_retries=1)
+            result = set_major_choice(
+                user_email, university_id,
+                primary_major=data.get('primary_major') or data.get('major') or '',
+                backup_major=data.get('backup_major'),
+                rationale=data.get('rationale'),
+                source=data.get('source'),
+                university_envelope=envelope,
+            )
+            return add_cors_headers(result, 200 if result.get('success') else 400)
+
         # --- COLLEGE LIST MANAGEMENT ---
         elif resource_type == 'add-to-list' and request.method == 'POST':
             data = request.get_json()
@@ -578,13 +628,24 @@ def profile_manager_v2_http_entry(request):
             university_profile = fetch_university_profile(university_id)
             if not university_profile:
                 return add_cors_headers({'error': 'University profile not found'}, 404)
-            
+
+            # Resolve which major to compute for (#281): explicit request
+            # param → the school's saved major_choice → profile.intended_major.
+            list_item = get_db().get_college_list_item(user_email, university_id)
+            resolution = resolve_intended_major(profile, list_item,
+                                                explicit=data.get('intended_major'))
+
             # Compute fit
-            fit_analysis = calculate_fit_for_college(user_email, university_id, intended_major=profile.get('intended_major', ''))
-            
+            fit_analysis = calculate_fit_for_college(user_email, university_id, intended_major=resolution['major'])
+            if not fit_analysis:
+                return add_cors_headers({'success': False,
+                                         'error': 'Fit computation failed — try again'}, 500)
+            fit_analysis['intended_major_used'] = resolution['major'] or None
+            fit_analysis['intended_major_source'] = resolution['source']
+
             # Save fit analysis
             save_fit_analysis(user_email, university_id, fit_analysis)
-            
+
             return add_cors_headers({
                 'success': True,
                 'fit_analysis': fit_analysis,

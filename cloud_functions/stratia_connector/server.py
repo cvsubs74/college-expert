@@ -53,6 +53,16 @@ mcp = FastMCP(
         "get_university(sections=[...]) keeps large profiles lean, and "
         "get_university_history answers 'what changed at this school' with per-year "
         "data — for cross-school comparisons call it once per school and synthesize. "
+        "For major-selection strategy ('what major should I list at X?'): explore the "
+        "student's genuine interests from get_profile FIRST, then call "
+        "get_university_majors per school and reason from the labeled facts (hedge "
+        "kb_reported values; null = not published; entry_risk 'capped_door' means the "
+        "door locks behind you — warn, never recommend an apply-easier-then-transfer "
+        "play there, and remind the student their essays must cohere with the listed "
+        "major). Persist agreed decisions with set_intended_majors and "
+        "set_major_choice, recompute fits that changed major (recompute_fit(major=...), "
+        "1 credit each), and save the narrative with save_research (kind 'strategy', "
+        "tag 'majors'). "
         "All per-student data is scoped to the authenticated user."
     ),
     stateless_http=True,
@@ -215,6 +225,28 @@ def get_university_history(university_id: str,
     return sc.get_university_history(university_id, sections=sections, years=years)
 
 
+@mcp.tool(annotations=ToolAnnotations(title="Get a university's majors & entry paths", readOnlyHint=True, openWorldHint=True))
+def get_university_majors(university_id: str, college: str | None = None,
+                          query: str | None = None) -> dict:
+    """How ONE university admits students into majors — trust-labeled facts
+    for major-selection strategy: each college's admissions model, every
+    listed major's entry_path (direct_admit / pre_major /
+    secondary_application / open_declaration — 'unclear' carries the school's
+    verbatim wording, never a guessed badge), a structural `entry_risk`
+    signal ('capped_door' = if you're not admitted directly you can't switch
+    in later — warn the student; never recommend an apply-easier-then-
+    transfer play there), door policy (direct-admit-only, internal-transfer
+    allowed/GPA bar), prerequisites, and hedged legacy stats. Every value
+    carries a `basis` label — 'kb_verified' cite plainly, 'kb_reported' hedge
+    as unverified, 'opinion' present as counselor take; null means the school
+    doesn't publish it (never estimate). IMPORTANT: is_impacted:false does
+    NOT mean easy to enter (use entry_risk), and at schools that admit by
+    university rather than by major, say the listed major barely affects
+    admission instead of over-strategizing. `college`/`query` filter by
+    college or major-name substring (use for big schools). Free — no credit."""
+    return sc.get_university_majors(university_id, college=college, query=query)
+
+
 @mcp.tool(annotations=ToolAnnotations(title="Get my college list", readOnlyHint=True, openWorldHint=True))
 def get_college_list() -> list:
     """The signed-in student's saved college list (id, name, application
@@ -324,13 +356,50 @@ def remove_college(university_id: str, name: str = "") -> dict:
 @mcp.tool(annotations=ToolAnnotations(
     title="Recompute fit (uses 1 credit)", readOnlyHint=False,
     destructiveHint=False, idempotentHint=False, openWorldHint=True))
-def recompute_fit(university_id: str) -> dict:
+def recompute_fit(university_id: str, major: str | None = None) -> dict:
     """Recompute the student's college-fit analysis for one university against
-    the latest knowledge-base data. Note: this consumes 1 Stratia credit."""
+    the latest knowledge-base data. Pass `major` to compute the fit for a
+    specific major at this school; otherwise the saved per-school
+    major_choice applies, then the profile's intended_major. The fit doc
+    records intended_major_used. Note: this consumes 1 Stratia credit."""
     email = _email()
     # Tighter limit — this spends a credit and calls the LLM.
     _rate_guard(email, "recompute", settings.RATE_RECOMPUTE_PER_HOUR, 3600)
-    return sc.recompute_fit(email, university_id)
+    return sc.recompute_fit(email, university_id, major=major)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Set my intended majors", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=True, openWorldHint=True))
+def set_intended_majors(majors: list[str], primary: str | None = None) -> dict:
+    """Persist the student's ranked candidate majors (max 5, deduped).
+    `primary` (default: the first item) becomes the profile's intended_major
+    and drives fit computation. Use after agreeing the candidate set with the
+    student — e.g. at the end of a major-discovery conversation."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    return sc.set_intended_majors(email, majors, primary=primary)
+
+
+@mcp.tool(annotations=ToolAnnotations(
+    title="Set my major choice at a school", readOnlyHint=False,
+    destructiveHint=False, idempotentHint=True, openWorldHint=True))
+def set_major_choice(university_id: str, primary_major: str,
+                     backup_major: str | None = None,
+                     rationale: str | None = None) -> dict:
+    """Record which major the student will LIST at one school (plus an
+    on-campus backup and a one-line why). Pass the school's exact major name
+    from get_university_majors; only exact/strong matches auto-canonicalize —
+    an unmatched name is stored flagged matched:false with near_misses
+    returned, so confirm fuzzy names with the student before relying on them.
+    Shown on the Launchpad card and used the next time this school's fit is
+    recomputed. The school must already be on the college list."""
+    email = _email()
+    _rate_guard(email, "write", settings.RATE_WRITES_PER_MIN, 60)
+    source, _model = _client_attribution()
+    return sc.set_major_choice(email, university_id, primary_major,
+                               backup_major=backup_major, rationale=rationale,
+                               source=source)
 
 
 @mcp.tool(annotations=ToolAnnotations(
