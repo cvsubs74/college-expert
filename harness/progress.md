@@ -445,3 +445,11 @@ Events include: `kickoff`, `F<NNN> <title>`, `retro F<NNN>`, `shipped F<NNN>`, `
 - Fix 4249e4f9: stub google parent in counselor conftest (verified in a clean CI-parity venv: pytest -q => 1064 passed, 3 skipped).
 - Re-trigger eb11039e: minimal touch to the 4 target dirs (detect-targets diffs COMMIT^..COMMIT, so the tests-only fix wouldn't redeploy the feature). Build 2faac19d => SUCCESS: deployed counselor-agent, knowledge-universities-v2, profile-v2, frontend.
 - Gotcha saved to memory [[auto-deploy-on-main]]: red gate aborts before deploy; re-trigger needs target dirs in a fresh commit.
+
+## 2026-07-01 18:40 — #285 server-side credit billing for compute-single-fit (implementer)
+- New `fit_billing.run_compute_single_fit`: cache-unless-force → 402 insufficient_credits → compute → deduct 1 AFTER compute+save. Absent force_recompute defaults TRUE (QA agent / pre-#285 MCP compat); explicit false = free cached path.
+- main.py compute-single-fit branch rewired through it; #290's major-resolution logic untouched inside the compute closure; save failure now 500s without charging.
+- Frontend: removed all client-side deductCredit for fit computes (Launchpad add-school + recompute-with-major, Explorer add-to-list); KB-refresh "Update fit" flows now send force=true + handle 402 + fetchCredits().
+- Connector: recompute_fit sends force_recompute:true, surfaces 402 as a clear budget error (_post attaches status_code/body to StratiaError, no behavior change for other callers).
+- Tests: test_fit_billing.py (7 sequencing tests), 4 new connector tests. Full backend 1159 passed; vitest 404 passed; build + verify.sh green.
+- Filed #295 (P2): QA agent has no credit provisioning — its fit scenarios will 402 once this deploys and the balance drains.

@@ -35,7 +35,7 @@ import {
 import { StarIcon as StarIconSolid, FilmIcon } from '@heroicons/react/24/solid';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, checkCredits, deductCredit } from '../services/api';
+import { startSession, sendMessage, extractFullResponse, getCollegeList, updateCollegeList, getPrecomputedFits, checkFitRecomputationNeeded, computeAllFits, computeSingleFit, checkCredits } from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import { usePayment } from '../context/PaymentContext';
 import { useToast } from '../components/Toast';
@@ -911,11 +911,17 @@ const UniversityExplorer = () => {
 
     // Recompute one fit from the KB-refresh review modal (design §3b/c).
     // The replaced analysis is archived server-side before overwrite.
+    // force=true: explicit recompute — server charges 1 credit, 402 when out (#285).
     const handleKbUpdateFit = async (universityId) => {
-        const result = await computeSingleFit(currentUser.email, universityId);
+        const result = await computeSingleFit(currentUser.email, universityId, true);
+        if (result?.insufficientCredits) {
+            promptCreditsUpgrade('updating this fit analysis');
+            throw new Error('Not enough credits to update this fit');
+        }
         if (!result?.success) {
             throw new Error(result?.error || 'Fit update failed');
         }
+        await fetchCredits(); // refresh balance after the server-side charge
         const fresh = result.fit_analysis || {};
         setPrecomputedFits(prev => ({
             ...prev,
@@ -952,23 +958,9 @@ const UniversityExplorer = () => {
         }
 
         try {
-            // Deduct credit if adding a new school
-            if (action === 'add') {
-                try {
-                    const deduction = await deductCredit(currentUser.email, 1, 'fit_analysis');
-                    if (!deduction.success) {
-                        promptCreditsUpgrade('adding a new school for fit analysis');
-                        return;
-                    }
-                    await fetchCredits(); // Refresh global credits
-                    console.log('[Explorer] Credit deducted for analyze:', deduction);
-                } catch (creditErr) {
-                    console.error('[Explorer] Credit deduction failed:', creditErr);
-                    promptCreditsUpgrade('adding a new school for fit analysis');
-                    return;
-                }
-            }
-
+            // Adding is free — the fit compute below is the paid step. The
+            // server charges 1 credit and answers 402 when out (#285); the
+            // insufficientCredits branch below handles it.
             const result = await updateCollegeList(
                 currentUser.email,
                 action,
@@ -1005,6 +997,7 @@ const UniversityExplorer = () => {
                             promptCreditsUpgrade('fit analysis');
                             return;
                         }
+                        await fetchCredits(); // refresh balance after the server-side charge (#285)
 
                         console.log(`[Fit] Computed: ${university.name} -> ${fitResult?.fit_analysis?.fit_category || 'N/A'}`);
                         // Infographic generation removed - using static CSS template instead

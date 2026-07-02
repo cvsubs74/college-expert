@@ -1374,12 +1374,15 @@ export const computeAllFits = async (userEmail) => {
 /**
  * Compute fit analysis for a SINGLE university (lazy fit computation with caching)
  * Called when a university is added to the Launchpad
+ * The SERVER charges 1 credit per real compute (#285): cache hits are free,
+ * and an empty balance returns 402 → {insufficientCredits: true, creditsRemaining}.
+ * Do NOT deduct client-side around this call — that would double-charge.
  * @param {string} userEmail - User's email
  * @param {string} universityId - University ID to compute fit for
  * @param {boolean} forceRecompute - If true, bypass cache and force LLM recomputation
  * @param {string|null} intendedMajor - Optional explicit major override; the fit doc
  *                                      stamps intended_major_used/_source in response
- * @returns {Promise<{success: boolean, fit_analysis: object, from_cache: boolean}>}
+ * @returns {Promise<{success: boolean, fit_analysis: object, from_cache: boolean, credits_remaining?: number}>}
  */
 export const computeSingleFit = async (userEmail, universityId, forceRecompute = false, intendedMajor = null) => {
   try {
